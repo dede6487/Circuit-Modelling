@@ -1,0 +1,153 @@
+\section{Numerical Solutions}
+This chapter focuses on the numerical solution of the mentioned systems. (based on the DAE-lecture)
+It will include Code that illustrates some of the shown procedures.
+
+We will first focus on the general methods used for solving a more general problem
+\begin{equation}
+	\label{general numerical problem}
+	\begin{align}
+		y'(t) &= f(t,y), \quad t \in [t_0, t_l], \\
+		y(t_0) &= y_0.
+	\end{align}
+\end{equation}
+
+We will presume that the function $f(t,y)$ is continuous 
+
+
+from book circuit modelling 35-47
+
+\subsection{Single-Step-Methods}
+page 46 modelling circuit
+
+page 20 num gew dgl
+\subsection{Multistep-Methods}
+based on chapter 4 of book num gew dgl steif nichtsteif \newline
+Linear multistep methods use approxiamtions $u_{m+l}$ along the gridpoints $t_{m+l}, \quad l=0,1,...,k-1$ to calculate the new approximation $u_{m+k}$ at $t_{m+k}$. WE will first discuss topics related to the order of the methods depending on its parameters, stability and convergence.
+
+\begin{definition}
+	For given $\alpha_0, ..., \alpha_k$ and $\beta_0, ..., \beta_k$ the iteration rule
+	\begin{equation}
+		\label{linear-multistep-method}
+		\sum_{l=0}^{k} \alpha_l u_{m+l} = h \sum_{l=0}^{k} \beta_l f(t_{m+l}, u_{m+l}), \quad m=0,1,...,N-k
+	\end{equation}
+	is called a \emph{linear multistep method} (linear k-step method). It is always assumed that $\alpha_k \neq 0$ and $|\alpha_0| + |\beta_k| > 0$. If $\beta_k=0$ holds, then the method is called explicit, otherwise implicit.
+\end{definition}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{screenshot010}
+	\caption{}
+	\label{fig:screenshot010}
+\end{figure}
+
+A linear multi-step method consists of two parts:
+\begin{enumerate}
+	\item In the \emph{starting-phase} approximations $u_1,...,u_{k-1}$ for the first $k-1$ gridpoints $t_l = t_0+th, l=1,...,k-1$ are calculated using a single-step method. For example using an explicit Runge-Kutta Methodor a multi-step method with fewer steps.
+	
+	\item  In the \emph{run-phase} the multi-step formula is used to determine new approximations $u_{m+k}$ for the gridpoint $t_{m+k}$
+\end{enumerate}
+
+For theoretical analysis of the multi-step methods we consider the generating polynomials
+\begin{equation}
+	\rho(x) := \sum_{l=0}^{k} \alpha_l x^l
+\end{equation}
+\begin{equation}
+	\sigma(x) := \sum_{l=0}^{k} \beta_l x^l
+\end{equation}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{screenshot013}
+	\caption{}
+	\label{fig:screenshot013}
+\end{figure}
+
+
+\subsubsection{Consistency and order}
+local discretization error - def 4.2.2
+\begin{definition}
+	Let $\tilde{u}_{m+k}$ be the result of one step of the multi-step method \ref{linear-multistep-method} with the start-vectors $u_m, u_{m+1}, ..., u_{m+k-1}$ lying on the exact solution $y(t)$ of the problem \textbf{reference}. This means
+	\begin{displaymath}
+		\alpha_k \tilde{u}_{m+k} = \sum_{l=0}^{k-1} \left( h \beta_l f(t_{m+l}, y(t_{m+l})) - \alpha_l y(t_{m+l}) \right) + h \beta_k f(t_{m+k}, \tilde{u}_{m+k}) .
+	\end{displaymath}
+	Then
+	\begin{displaymath}
+		le_{m+k} = le(t_{m+k}) = y(t_{m+k}) - \tilde{u}_{m+k}, \quad m=0,1,...,N-k
+	\end{displaymath}
+	is called the \emph{local discretization error} (local error) of the linear multi-step method \ref{linear-multistep-method} at the point $t_{m+k}$.
+\end{definition}
+
+We will assign the linear difference opreator
+\begin{equation}
+	L[y(t),h] = \sum_{l=0}^{k} \left( \alpha_l y(t+lh) - h \beta_l y'(t+lh) \right)
+\end{equation}
+to the local discretization error. Using this we gain the following definition.
+
+\begin{definition}
+	A linear multi-step method is called \emph{preconsistent} if for all functions $y(t) \in C^1[t_0,t_l]$
+	\begin{displaymath}
+		\lim\limits_{h \to 0} L[y(t),h]=0
+	\end{displaymath}
+	holds. It is called \emph{consistent}, if for all functions $y(t) \in C^2[t_0,t_l]$
+	\begin{displaymath}
+		\lim\limits_{h \to 0} \frac{1}{h} L[y(t),h] = 0
+	\end{displaymath}
+	holds. It has the \emph{consistency order p}, if for all functions $y(t) \in C^{p+1}[t_0, t_l]$
+	\begin{displaymath}
+		L[y(t),h] = \mathcal{O}(h^{p+1}) \quad \text{for} \quad h \to 0
+	\end{displaymath}
+	holds.
+\end{definition}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{screenshot014}
+	\caption{}
+	\label{fig:screenshot014}
+\end{figure}
+
+
+
+\subsubsection{Convergence and stability}
+
+\begin{definition}
+	A linear multi-step method is called \emph{zero-stable} if all solutions of the difference equation
+	\begin{displaymath}
+		\sum_{l=0}^{k} \alpha_l u_{m+l} = 0
+	\end{displaymath}
+	are bounded.
+\end{definition}
+
+\begin{theorem}
+	A linear multi-step method is zero-stable, if and only if the polynomial $\rho(x)$ fullfills the root-condition, this means:
+	\begin{enumerate}
+		\item All roots $\bar{x}$ of $\rho(x)$ are within the unit-circle $|\bar{x}| \leq$ in the complex plane.
+		\item All roots $\bar{x}$ with $|x| = 1$ are singular.
+	\end{enumerate}
+\end{theorem}
+
+
+\textbf{from circuit book below, above from modelling book}
+
+\subsection{Implicit linear multi-step formulas}
+These kinds of multi-step methods are conventionally used to numerically solve the systems obtained using modified nodal analysis. 
+
+The conventional approach can be split into three main steps:
+\begin{enumerate}
+	\item Computation of consistent initial values
+	\item numerical integration based on multi-step schemes
+	\item transformation of the DAE into a nonlinear system and its numerical solutioon by Newton's procedure (?????????????????will not be discussed further because not very specific)
+\end{enumerate}
+
+\textbf{Consistant initial values} 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{screenshot009}
+	\caption{}
+	\label{fig:screenshot009}
+\end{figure}
+
+\textbf{Nunmerical integration}.
+
+
+\subsubsection{BDF schemes and trapezoidal rule}

@@ -1,0 +1,164 @@
+\section{Formulating a Mathematical Model}
+based on DAE lecture and modelling and discretiztation of elec circuit problems.
+\subsection{Network Topology}
+An electrical circuit is usually considered as a graph $(N,E)$ where $N = (n_0, n_1, n_2, ...)$ are the Nodes and $E = (e_{ij})_{ij}$ are the edges, where for some $i$ and some $j$ we have that $e_{ij} = (n_j, n_k)$ is the edge from node $j$ to node $k$. %rewrite that
+We can store this information in an \emph{incidence matrix} $\tilde{A} = (\tilde{a}_{ij})_{ij}$ which is defined by
+\begin{displaymath}
+	\tilde{a}_{ij} = 
+	\begin{cases}
+		1 &   \text{edge $j$ starts at node $i$},\\
+		-1 &  \text{edge $j$  ends at node $i$},\\
+		0 & \text{else}.				
+	\end{cases}
+\end{displaymath}
+We call $u = (u_0, u_1, u_2, ...)$ the corresponding potentials to the nodes $N$. The difference of these potentials is the voltage at the associated edge. To fix the absolute values of these potentials we have to set one node to a fixed potential. We will do that by ``grounding'' the node $n_0$, this means we set the potential $u_0 := 0$. This grounding of a node allows us to remove the corresponding row from the incidence matrix to get the \emph{reduced incidence matrix} $A$. The vector $v = (v_{ij})_{ij}$ represents the voltages at the edges. For some $i$ and some $j$ the voltage at edge $ij$ is $v_{ij} = u_i - u_j$.
+
+We will later see, that the components of an electrical crircuit, which will be installed along the edges, describe a relationship between the edges current and its voltage. Thus a current vector $i = (i_1, i_2, i_3, ...)$ containing the currents along the edges is required.
+
+\subsection{Energy Conservation Laws}
+To fully fix all the variables that arrise in the model of an electrical circuit we will need some \emph{conservation laws}:
+\begin{itemize}
+	\item \textbf{Kirchhoff's voltage law (KVL):} \newline
+	The sum of voltages along each loop of the network must equal to zero. Using the incidence matrix $A$ this law can be formulated as
+	\begin{equation}
+		\label{KVL}
+		A^\top * u = v.
+	\end{equation}
+	\item \textbf{Kirchhoff's current law (KCL):} \newline
+	For any node, the sum of currents flowing into the node is equal to the sum of currents flowing out of the node. Using the incidence matrix $A$ again, this law can be formulated as
+	\begin{equation}
+		\label{KCL}
+		A * i = 0.
+	\end{equation}
+\end{itemize}
+
+\subsection{Electrical Components and their relations}
+Electrical components are described by equations relating their edge voltage $v$ to their edge current $i$.
+\begin{itemize}
+	\item \textbf{Resistor} \newline
+	$v = R*i$ or $i = G*u$
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=2cm]{pictures/resistor.png}
+	\end{figure}
+	\item \textbf{Capacitor} \newline
+	$Q = C * v$ → $I = C*\dot{v}$
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=2cm]{pictures/capacitor.png}
+	\end{figure}
+	\item \textbf{Coil} \newline
+	$\Phi = L*i$ → $v = L*\dot{i}$
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=3cm]{pictures/coil.png}
+	\end{figure}
+	\item \textbf{Voltage Source} \newline
+	$v = v_{src}$
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=4cm]{pictures/voltage_source.png}
+	\end{figure}
+	\item \textbf{Current Source} \newline
+	$i = i_{src}$
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=4cm]{pictures/current_source.png}
+	\end{figure}
+	\item Diode - to be filled with information after the rest is complete
+	\item Transistor
+\end{itemize}
+
+\subsection{Modified Nodal Analysis - MNA}
+
+num gew dgl steif n steif - seite 422 \newline
+modelling discr circ prob - seite 19
+
+To analyse the network further we will sort the reduced incidence matrix $A$ such that is has the block form
+\begin{displaymath}
+	A = (A_R A_C A_L A_V A_I)
+\end{displaymath}
+where $A_R$, $A_C$, $A_L$, $A_V$ and $A_I$ all include the collumns that are related to the resistors, capacitors, coils, voltage sources and current sources. 
+
+To mathematically describe the circuit we will use \emph{modified nodal analysis} (or short MNA). MNA uses the node voltages as well as the currents of the coils and the voltage sources as unknowns and is based on the conservation laws
+\begin{equation}
+	\label{KCL}
+	Ai(t) = 0 
+\end{equation}
+\begin{equation}
+	\label{KVL}
+	v = A^\top u(t)
+\end{equation}
+
+as well as on the voltage-current relations of the electrical components. By replacing all edge-currents with their respective voltage-current relation and ell egde-voltages with their node-potentials we obtain the MNA-equations
+
+\begin{displaymath}
+	\begin{aligned}
+		A_C C A_C^\top \dot{u} + A_R G A_R^\top u + A_L i_L + A_V i_V + A_I i_{src} &= 0 \\
+		L \dot{i_L}	- A_L^\top u &= 0 \\
+		-A_V^\top + v_{src} &= 0.
+	\end{aligned}	
+\end{displaymath}
+In matrix form these read as
+\begin{displaymath}
+	\begin{pmatrix}
+		A_C C A_C^\top & 0 & 0 \\
+		0 & L & 0 \\
+		0 & 0 & 0
+	\end{pmatrix}
+	*
+	\begin{pmatrix}
+		\dot{u} \\
+		\dot{i_L} \\
+		\dot{i_V}
+	\end{pmatrix}
+	+
+	\begin{pmatrix}
+		A_R G A_R^\top & A_L & A_V \\
+		-A_L^\top & 0 & 0 \\
+		-A_V^\top & 0 & 0 
+	\end{pmatrix}
+	*
+	\begin{pmatrix}
+		u \\
+		i_L \\
+		i_V
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		-A_I i_{src} \\
+		0 \\
+		-v_{src}
+	\end{pmatrix} , 
+\end{displaymath}
+where the diagonal matrices $C$, $G$ and $L$ contain the capacities, conductivities and inductivities.
+
+\subsection{Energy \textbf{bilanz??????????}}
+
+\subsection{Charge/Flux oriented formulation of MNA}
+Again using KCL \ref{KCL} and the component equations we formulate a system of equations. (\textbf{more here}) What is flux and charge - explain either here or witht the components
+
+\begin{align}
+	A_C\dot{q} + A_R r(A_R^\top u,t) + A_L i_L + A_V i_V + A_I i(A^\top u, \dot{q}, i_L, i_V, t) &= 0 \label{charge/flux-1} \\
+	\dot{\phi} - A_L^\top u &= 0 \label{charge/flux-2} \\
+	v(A^\top u, \dot{q}, i_L, i_V, t) - A_V^\top u &= 0 \label{charge/flux-3} \\
+	q - q_C(A_C^\top u) &= 0 \label{charge/flux-4} \\
+	\phi - \phi_L(i_L) &= 0  \label{charge/flux-5} 
+\end{align}
+
+Using
+\begin{description}
+	\item node potentials $u$,
+	\item branch currents through voltage and flux controlled elements $i_V$ and $i_L$,
+	\item charges and fluxes $q$ and $\phi$,
+	\item voltage dependent resistors $r$,
+	\item voltage and current dependent charge and flux sources $q_C$ and $\phi_L$,
+	\item controlled current and voltage sources $i_src$ and $v_src$.
+\end{description} 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{screenshot007}
+	\caption{}
+	\label{fig:screenshot007}
+\end{figure}
