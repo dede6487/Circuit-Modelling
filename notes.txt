@@ -1,0 +1,11 @@
+<<<<<<< Updated upstream
+modified nodal analysis - parallelen?
+
+Kapitel über lineare und nicht lineare DAEs
+
+SPICE (code um DGL zu lösen), Netzliste, MONA (größere systeme üblicherweise)
+=======
+Kapitel über lineare und nicht lineare DAEs
+
+SPICE (code um DGL zu lösen), Netzliste, MONA (größere systeme üblicherweise)
+>>>>>>> Stashed changes
