@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.4.4)  12 SEP 2024 12:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.4.4)  12 SEP 2024 13:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1097,56 +1097,117 @@ Package scrhack Info: loading setspace hack on input line 197.
 File: setspace.hak 2021/03/17 v3.33 KOMA-Script scrhack part (hacking package s
 etspace)
 ))
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 112.
+(f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks34
+\thm@bodyfont=\toks35
+\thm@headfont=\toks36
+\thm@notefont=\toks37
+\thm@headpunct=\toks38
+\thm@preskip=\skip100
+\thm@postskip=\skip101
+\thm@headsep=\skip102
+\dth@everypar=\toks39
+)
+Class scrbook Info: amsthm's \deferred@thm@head patched.
+
+(f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/esdiff/esdiff.sty
+Package: esdiff 
+)
+(f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2021/03/18 v1.25 mathematical typesetting tools
+
+(f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count441
+\calc@Bcount=\count442
+\calc@Adimen=\dimen193
+\calc@Bdimen=\dimen194
+\calc@Askip=\skip103
+\calc@Bskip=\skip104
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count443
+\calc@Cskip=\skip105
+)
+(f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
+\g_MT_multlinerow_int=\count444
+\l_MT_multwidth_dim=\dimen195
+\origjot=\skip106
+\l_MT_shortvdotswithinadjustabove_dim=\dimen196
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen197
+\l_MT_above_intertext_sep=\dimen198
+\l_MT_below_intertext_sep=\dimen199
+\l_MT_above_shortintertext_sep=\dimen256
+\l_MT_below_shortintertext_sep=\dimen257
+\xmathstrut@box=\box67
+\xmathstrut@dim=\dimen258
+)
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 118.
 
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
-LaTeX Font Info:    Trying to load font information for T1+ppl on input line 13
-7.
+LaTeX Font Info:    Trying to load font information for T1+ppl on input line 14
+3.
 
 (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 ) (./MAIN.aux
-(./cover/coversheet.aux))
+(./cover/coversheet.aux) (./chapters/Introduction.aux)
+(./chapters/Formulating_a_mathematical_model.aux
+
+LaTeX Warning: Label `KCL' multiply defined.
+
+
+LaTeX Warning: Label `KVL' multiply defined.
+
+) (./chapters/Differential_Algebraic_Equations.aux)
+(./chapters/Index_Analysis.aux) (./chapters/Numerical_Solution.aux))
 \openout1 = `MAIN.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-Package scrbase Info: activating english \contentsname on input line 137.
-Package scrbase Info: activating english \listfigurename on input line 137.
-Package scrbase Info: activating english \listtablename on input line 137.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 143.
+LaTeX Font Info:    ... okay on input line 143.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 143.
+LaTeX Font Info:    ... okay on input line 143.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 143.
+LaTeX Font Info:    ... okay on input line 143.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 143.
+LaTeX Font Info:    ... okay on input line 143.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 143.
+LaTeX Font Info:    ... okay on input line 143.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 143.
+LaTeX Font Info:    ... okay on input line 143.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 143.
+LaTeX Font Info:    ... okay on input line 143.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 143.
+LaTeX Font Info:    ... okay on input line 143.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 143.
+LaTeX Font Info:    ... okay on input line 143.
+Package scrbase Info: activating english \contentsname on input line 143.
+Package scrbase Info: activating english \listfigurename on input line 143.
+Package scrbase Info: activating english \listtablename on input line 143.
 
 (f:/Anwendungen/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count441
-\scratchdimen=\dimen193
-\scratchbox=\box67
-\nofMPsegments=\count442
-\nofMParguments=\count443
-\everyMPshowfont=\toks34
-\MPscratchCnt=\count444
-\MPscratchDim=\dimen194
-\MPnumerator=\count445
-\makeMPintoPDFobject=\count446
-\everyMPtoPDFconversion=\toks35
+\scratchcounter=\count445
+\scratchdimen=\dimen259
+\scratchbox=\box68
+\nofMPsegments=\count446
+\nofMParguments=\count447
+\everyMPshowfont=\toks40
+\MPscratchCnt=\count448
+\MPscratchDim=\dimen260
+\MPnumerator=\count449
+\makeMPintoPDFobject=\count450
+\everyMPtoPDFconversion=\toks41
 )
 (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.st
 y
@@ -1158,7 +1219,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 137.
+Package hyperref Info: Link coloring OFF on input line 143.
  (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -1169,11 +1230,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ng.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count447
+\c@section@level=\count451
 )
-LaTeX Info: Redefining \ref on input line 137.
-LaTeX Info: Redefining \pageref on input line 137.
-LaTeX Info: Redefining \nameref on input line 137.
+LaTeX Info: Redefining \ref on input line 143.
+LaTeX Info: Redefining \pageref on input line 143.
+LaTeX Info: Redefining \nameref on input line 143.
  (./MAIN.out) (./MAIN.out)
 \@outlinefile=\write5
 \openout5 = `MAIN.out'.
@@ -1185,23 +1246,23 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           `bookmarkpackage=false' before \begin{document} and
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
-(scrbook)           before \begin{document} on input line 137.
+(scrbook)           before \begin{document} on input line 143.
 
 (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 
 (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
-\BKM@id=\count448
+\BKM@id=\count452
 ))
-LaTeX Info: Redefining \microtypecontext on input line 137.
+LaTeX Info: Redefining \microtypecontext on input line 143.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 137.
+LaTeX Info: Redefining \showhyphens on input line 143.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1258,35 +1319,35 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'MAIN.bbl' found.
 
 (./MAIN.bbl)
-Package biblatex Info: Reference section=0 on input line 137.
-Package biblatex Info: Reference segment=0 on input line 137.
+Package biblatex Info: Reference section=0 on input line 143.
+Package biblatex Info: Reference segment=0 on input line 143.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 137.
+(lastpage)             ! on input line 143.
 LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 1
-37.
+43.
  (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
 LaTeX Font Info:    Trying to load font information for OML+zplm on input line 
-137.
+143.
  (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 
-137.
+143.
 
 (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 
-137.
+143.
 
 (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 
-137.
+143.
 
 (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
@@ -1356,7 +1417,7 @@ Package pdftex.def Info: cover/arr.png  used on input line 106.
 
 ]
 Package tocbasic Info: character protrusion at toc deactivated on input line 15
-2.
+8.
  (./MAIN.toc)
 \tf@toc=\write6
 \openout6 = `MAIN.toc'.
@@ -1366,7 +1427,7 @@ Package tocbasic Info: character protrusion at toc deactivated on input line 15
 
 ]
 Package tocbasic Info: character protrusion at lof deactivated on input line 15
-3.
+9.
  (./MAIN.lof)
 \tf@lof=\write7
 \openout7 = `MAIN.lof'.
@@ -1374,8 +1435,8 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 15
  [4
 
 ]
-Package tocbasic Info: character protrusion at lot deactivated on input line 15
-4.
+Package tocbasic Info: character protrusion at lot deactivated on input line 16
+0.
  (./MAIN.lot)
 \tf@lot=\write8
 \openout8 = `MAIN.lot'.
@@ -1383,17 +1444,239 @@ Package tocbasic Info: character protrusion at lot deactivated on input line 15
  [5
 
 ] (./mainmatter.tex
-chapter 1.
-)
+\c@definition=\count453
+\c@theorem=\count454
+\c@lemma=\count455
+\openout2 = `chapters/Introduction.aux'.
 
-LaTeX Warning: Empty bibliography on input line 165.
+
+(./chapters/introduction.tex
+chapter 1.
+) [1
+
+
+
+]
+\openout2 = `chapters/Formulating_a_mathematical_model.aux'.
+
+ (./chapters/Formulating_a_mathematical_model.tex
+chapter 2.
+[2
+
+
+
+
+]
+LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 2
+1.
+ (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ppl.fd
+File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
+)
+<pictures/resistor.png, id=114, 201.00093pt x 76.03406pt>
+File: pictures/resistor.png Graphic file (type png)
+<use pictures/resistor.png>
+Package pdftex.def Info: pictures/resistor.png  used on input line 42.
+(pdftex.def)             Requested size: 56.9055pt x 21.52606pt.
+LaTeX Info: Symbol \textrightarrow not provided by
+            font family ppl in TS1 encoding.
+            Default family used instead on input line 45.
+
+(f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+<pictures/capacitor.png, id=115, 100.12407pt x 93.34875pt>
+File: pictures/capacitor.png Graphic file (type png)
+<use pictures/capacitor.png>
+Package pdftex.def Info: pictures/capacitor.png  used on input line 48.
+(pdftex.def)             Requested size: 56.9055pt x 53.0555pt.
+LaTeX Info: Symbol \textrightarrow not provided by
+            font family ppl in TS1 encoding.
+            Default family used instead on input line 51.
+<pictures/coil.png, id=116, 277.78781pt x 101.62968pt>
+File: pictures/coil.png Graphic file (type png)
+<use pictures/coil.png>
+Package pdftex.def Info: pictures/coil.png  used on input line 54.
+(pdftex.def)             Requested size: 85.35826pt x 31.22884pt.
+
+[3 <./pictures/resistor.png> <./pictures/capacitor.png>]
+<pictures/voltage_source.png, id=125, 310.91156pt x 179.16937pt>
+File: pictures/voltage_source.png Graphic file (type png)
+<use pictures/voltage_source.png>
+Package pdftex.def Info: pictures/voltage_source.png  used on input line 60.
+(pdftex.def)             Requested size: 113.81102pt x 65.58627pt.
+<pictures/current_source.png, id=126, 310.91156pt x 179.16937pt>
+File: pictures/current_source.png Graphic file (type png)
+<use pictures/current_source.png>
+Package pdftex.def Info: pictures/current_source.png  used on input line 66.
+(pdftex.def)             Requested size: 113.81102pt x 65.58627pt.
+ [4 <./pictures/coil.png> <./pictures/voltage_source.png> <./pictures/current_s
+ource.png>] [5]
+<screenshot007.png, id=139, 658.71094pt x 314.67563pt>
+File: screenshot007.png Graphic file (type png)
+<use screenshot007.png>
+Package pdftex.def Info: screenshot007.png  used on input line 161.
+(pdftex.def)             Requested size: 298.75267pt x 142.72148pt.
+)
+[6] [7pdfTeX warning (ext4): destination with the same identifier (name{figure.
+2.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.10 ...ters/Formulating_a_mathematical_model.tex}
+                                                   <./screenshot007.png (PNG co
+py)>]
+\openout2 = `chapters/Differential_Algebraic_Equations.aux'.
+
+ (./chapters/Differential_Algebraic_Equations.tex
+chapter 3.
+LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 
+11.
+(f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/psnfss/ufplmbb.fd
+File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
+) [8
+
+
+
+
+]
+Missing character: There is no n in font fplmbb!
+Missing character: There is no n in font fplmbb!
+
+[9] [10]
+<screenshot001.png, id=177, 366.61969pt x 48.18pt>
+File: screenshot001.png Graphic file (type png)
+<use screenshot001.png>
+Package pdftex.def Info: screenshot001.png  used on input line 187.
+(pdftex.def)             Requested size: 298.75267pt x 39.26375pt.
+ [11]
+<screenshot003.png, id=182, 438.13687pt x 544.28343pt>
+File: screenshot003.png Graphic file (type png)
+<use screenshot003.png>
+Package pdftex.def Info: screenshot003.png  used on input line 242.
+(pdftex.def)             Requested size: 298.75267pt x 371.13766pt.
+<screenshot004.png, id=183, 440.39531pt x 341.77687pt>
+File: screenshot004.png Graphic file (type png)
+<use screenshot004.png>
+Package pdftex.def Info: screenshot004.png  used on input line 249.
+(pdftex.def)             Requested size: 298.75267pt x 231.8576pt.
+ [12pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.259 \begin{displaymath}
+                          <./screenshot001.png (PNG copy)>] [13pdfTeX warning (
+ext4): destination with the same identifier (name{figure.3.2}) has been already
+ used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.259 \begin{displaymath}
+                          <./screenshot003.png (PNG copy)>] [14pdfTeX warning (
+ext4): destination with the same identifier (name{figure.3.3}) has been already
+ used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.293 \end{equation}
+                     <./screenshot004.png (PNG copy)>] [15]
+<screenshot005.png, id=211, 434.37282pt x 227.34938pt>
+File: screenshot005.png Graphic file (type png)
+<use screenshot005.png>
+Package pdftex.def Info: screenshot005.png  used on input line 350.
+(pdftex.def)             Requested size: 298.75267pt x 156.37515pt.
+) [16] [17pdfTeX warning (ext4): destination with the same identifier (name{fig
+ure.3.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.12 ...ters/Differential_Algebraic_Equations.tex}
+                                                   <./screenshot005.png (PNG co
+py)>]
+\openout2 = `chapters/Index_Analysis.aux'.
+
+ (./chapters/Index_Analysis.tex
+chapter 4.
+<screenshot006.png, id=225, 980.16188pt x 59.47218pt>
+File: screenshot006.png Graphic file (type png)
+<use screenshot006.png>
+Package pdftex.def Info: screenshot006.png  used on input line 20.
+(pdftex.def)             Requested size: 298.75267pt x 18.12672pt.
+[18
+
+
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.33 \end{itemize}
+                   <./screenshot006.png (PNG copy)>]) [19]
+\openout2 = `chapters/Numerical_Solution.aux'.
+
+
+(./chapters/Numerical_Solution.tex
+chapter 5.
+[20
+
+
+
+
+]
+<screenshot010.png, id=243, 544.28343pt x 785.18344pt>
+File: screenshot010.png Graphic file (type png)
+<use screenshot010.png>
+Package pdftex.def Info: screenshot010.png  used on input line 37.
+(pdftex.def)             Requested size: 298.75267pt x 430.97763pt.
+ [21] [22pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.5.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.47 \end{enumerate}
+                     <./screenshot010.png (PNG copy)>]
+<screenshot013.png, id=256, 513.41812pt x 210.7875pt>
+File: screenshot013.png Graphic file (type png)
+<use screenshot013.png>
+Package pdftex.def Info: screenshot013.png  used on input line 59.
+(pdftex.def)             Requested size: 298.75267pt x 122.65565pt.
+ [23pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.75 	\end{displaymath}
+                        <./screenshot013.png (PNG copy)>]
+<screenshot014.png, id=269, 511.9125pt x 508.14844pt>
+File: screenshot014.png Graphic file (type png)
+<use screenshot014.png>
+Package pdftex.def Info: screenshot014.png  used on input line 103.
+(pdftex.def)             Requested size: 298.75267pt x 296.55617pt.
+ [24] [25pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.5.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.125 	\end{enumerate}
+                       <./screenshot014.png (PNG copy)>]
+<screenshot009.png, id=286, 496.85625pt x 432.11438pt>
+File: screenshot009.png Graphic file (type png)
+<use screenshot009.png>
+Package pdftex.def Info: screenshot009.png  used on input line 144.
+(pdftex.def)             Requested size: 298.75267pt x 259.82448pt.
+ [26]) [27pdfTeX warning (ext4): destination with the same identifier (name{fig
+ure.5.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.16 \include{chapters/Numerical_Solution.tex}
+                                               <./screenshot009.png (PNG copy)>
+])
+
+LaTeX Warning: Empty bibliography on input line 171.
 
 
 AED: lastpage setting LastPage
-[1
+(./MAIN.aux (./cover/coversheet.aux) (./chapters/Introduction.aux)
+(./chapters/Formulating_a_mathematical_model.aux)
+(./chapters/Differential_Algebraic_Equations.aux)
+(./chapters/Index_Analysis.aux) (./chapters/Numerical_Solution.aux))
 
+LaTeX Warning: There were multiply-defined labels.
 
-] (./MAIN.aux (./cover/coversheet.aux))
 Package rerunfilecheck Info: File `MAIN.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'MAIN.run.xml'.
@@ -1401,21 +1684,34 @@ Package logreq Info: Writing requests to 'MAIN.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 31641 strings out of 478994
- 608610 string characters out of 5856172
- 1533163 words of memory out of 5000000
- 48510 multiletter control sequences out of 15000+600000
- 450050 words of font info for 122 fonts, out of 8000000 for 9000
+ 33049 strings out of 478994
+ 632108 string characters out of 5856172
+ 1573881 words of memory out of 5000000
+ 49508 multiletter control sequences out of 15000+600000
+ 479693 words of font info for 297 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 111i,19n,116p,10599b,3818s stack positions out of 5000i,500n,10000p,200000b,80000s
-{f:/Anwendungen/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<f:/Anwen
-dungen/texlive/2021/texmf-dist/fonts/type1/urw/grotesq/ugqb8a.pfb><f:/Anwendung
-en/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><f:/Anwendungen/
-texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><f:/Anwendungen/tex
-live/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on MAIN.pdf (7 pages, 89323 bytes).
+ 111i,20n,116p,10599b,3819s stack positions out of 5000i,500n,10000p,200000b,80000s
+{f:/Anwendungen/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}{f:/Anwen
+dungen/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<f:/An
+wendungen/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><f:
+/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+<f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
+b><f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb><f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/mathpazo/fplmbb
+.pfb><f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/mathpazo/fplmr.
+pfb><f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/mathpazo/fplmri.
+pfb><f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm109
+5.pfb><f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/urw/grotesq/ugqb8a.pf
+b><f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><
+f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><f:/
+Anwendungen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><f:/Anw
+endungen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb><f:/Anwen
+dungen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendun
+gen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendungen
+/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on MAIN.pdf (33 pages, 1287470 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
- 15 named destinations out of 1000 (max. 500000)
- 52775 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 452 PDF objects out of 1000 (max. 8388607)
+ 114 named destinations out of 1000 (max. 500000)
+ 90362 words of extra memory for PDF output out of 106986 (max. 10000000)
 
