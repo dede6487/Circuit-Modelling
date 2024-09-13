@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.4.4)  13 SEP 2024 10:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.4.4)  13 SEP 2024 12:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1472,7 +1472,7 @@ LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 2
  (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )
-<pictures/resistor.png, id=122, 201.00093pt x 76.03406pt>
+<pictures/resistor.png, id=126, 201.00093pt x 76.03406pt>
 File: pictures/resistor.png Graphic file (type png)
 <use pictures/resistor.png>
 Package pdftex.def Info: pictures/resistor.png  used on input line 42.
@@ -1485,7 +1485,7 @@ LaTeX Info: Symbol \textrightarrow not provided by
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-<pictures/capacitor.png, id=123, 100.12407pt x 93.34875pt>
+<pictures/capacitor.png, id=127, 100.12407pt x 93.34875pt>
 File: pictures/capacitor.png Graphic file (type png)
 <use pictures/capacitor.png>
 Package pdftex.def Info: pictures/capacitor.png  used on input line 48.
@@ -1493,26 +1493,26 @@ Package pdftex.def Info: pictures/capacitor.png  used on input line 48.
 LaTeX Info: Symbol \textrightarrow not provided by
             font family ppl in TS1 encoding.
             Default family used instead on input line 51.
-<pictures/coil.png, id=124, 277.78781pt x 101.62968pt>
+<pictures/coil.png, id=128, 277.78781pt x 101.62968pt>
 File: pictures/coil.png Graphic file (type png)
 <use pictures/coil.png>
 Package pdftex.def Info: pictures/coil.png  used on input line 54.
 (pdftex.def)             Requested size: 85.35826pt x 31.22884pt.
 
 [3 <./pictures/resistor.png> <./pictures/capacitor.png>]
-<pictures/voltage_source.png, id=133, 310.91156pt x 179.16937pt>
+<pictures/voltage_source.png, id=137, 310.91156pt x 179.16937pt>
 File: pictures/voltage_source.png Graphic file (type png)
 <use pictures/voltage_source.png>
 Package pdftex.def Info: pictures/voltage_source.png  used on input line 60.
 (pdftex.def)             Requested size: 113.81102pt x 65.58627pt.
-<pictures/current_source.png, id=134, 310.91156pt x 179.16937pt>
+<pictures/current_source.png, id=138, 310.91156pt x 179.16937pt>
 File: pictures/current_source.png Graphic file (type png)
 <use pictures/current_source.png>
 Package pdftex.def Info: pictures/current_source.png  used on input line 66.
 (pdftex.def)             Requested size: 113.81102pt x 65.58627pt.
  [4 <./pictures/coil.png> <./pictures/voltage_source.png> <./pictures/current_s
 ource.png>] [5]
-<screenshot007.png, id=147, 658.71094pt x 314.67563pt>
+<screenshot007.png, id=151, 658.71094pt x 314.67563pt>
 File: screenshot007.png Graphic file (type png)
 <use screenshot007.png>
 Package pdftex.def Info: screenshot007.png  used on input line 161.
@@ -1543,18 +1543,18 @@ Missing character: There is no n in font fplmbb!
 Missing character: There is no n in font fplmbb!
 
 [9] [10]
-<screenshot001.png, id=183, 366.61969pt x 48.18pt>
+<screenshot001.png, id=187, 366.61969pt x 48.18pt>
 File: screenshot001.png Graphic file (type png)
 <use screenshot001.png>
 Package pdftex.def Info: screenshot001.png  used on input line 187.
 (pdftex.def)             Requested size: 298.75267pt x 39.26375pt.
  [11]
-<screenshot003.png, id=188, 438.13687pt x 544.28343pt>
+<screenshot003.png, id=192, 438.13687pt x 544.28343pt>
 File: screenshot003.png Graphic file (type png)
 <use screenshot003.png>
 Package pdftex.def Info: screenshot003.png  used on input line 242.
 (pdftex.def)             Requested size: 298.75267pt x 371.13766pt.
-<screenshot004.png, id=189, 440.39531pt x 341.77687pt>
+<screenshot004.png, id=193, 440.39531pt x 341.77687pt>
 File: screenshot004.png Graphic file (type png)
 <use screenshot004.png>
 Package pdftex.def Info: screenshot004.png  used on input line 249.
@@ -1577,7 +1577,7 @@ ext4): destination with the same identifier (name{figure.3.3}) has been already
                                                   
 l.293 \end{equation}
                      <./screenshot004.png (PNG copy)>] [15]
-<screenshot005.png, id=217, 434.37282pt x 227.34938pt>
+<screenshot005.png, id=221, 434.37282pt x 227.34938pt>
 File: screenshot005.png Graphic file (type png)
 <use screenshot005.png>
 Package pdftex.def Info: screenshot005.png  used on input line 350.
@@ -1593,7 +1593,7 @@ py)>]
 
  (./chapters/Index_Analysis.tex
 chapter 4.
-<screenshot006.png, id=231, 980.16188pt x 59.47218pt>
+<screenshot006.png, id=235, 980.16188pt x 59.47218pt>
 File: screenshot006.png Graphic file (type png)
 <use screenshot006.png>
 Package pdftex.def Info: screenshot006.png  used on input line 20.
@@ -1622,52 +1622,62 @@ put line 45.
 
  (./chapters/Numerical_Solution.tex
 chapter 5.
+<screenshot015.png, id=249, 514.17094pt x 282.30469pt>
+File: screenshot015.png Graphic file (type png)
+<use screenshot015.png>
+Package pdftex.def Info: screenshot015.png  used on input line 17.
+(pdftex.def)             Requested size: 298.75267pt x 164.02974pt.
 [20
 
 
 
 
-]
-<screenshot010.png, id=251, 544.28343pt x 785.18344pt>
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.27 	p
+       age 20 num gew dgl <./screenshot015.png (PNG copy)>] [21]
+<screenshot010.png, id=266, 544.28343pt x 785.18344pt>
 File: screenshot010.png Graphic file (type png)
 <use screenshot010.png>
-Package pdftex.def Info: screenshot010.png  used on input line 37.
+Package pdftex.def Info: screenshot010.png  used on input line 65.
 (pdftex.def)             Requested size: 298.75267pt x 430.97763pt.
- [21] [22pdfTeX warning (ext4): destination with the same identifier (name{figu
-re.5.1}) has been already used, duplicate ignored
+ [22] [23pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.5.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.47 \end{enumerate}
-                     <./screenshot010.png (PNG copy)>]
-<screenshot013.png, id=264, 513.41812pt x 210.7875pt>
+l.75 	\end{enumerate}
+                      <./screenshot010.png (PNG copy)>]
+<screenshot013.png, id=279, 513.41812pt x 210.7875pt>
 File: screenshot013.png Graphic file (type png)
 <use screenshot013.png>
-Package pdftex.def Info: screenshot013.png  used on input line 59.
+Package pdftex.def Info: screenshot013.png  used on input line 87.
 (pdftex.def)             Requested size: 298.75267pt x 122.65565pt.
- [23pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
-2}) has been already used, duplicate ignored
+ [24pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.75 	\end{displaymath}
-                        <./screenshot013.png (PNG copy)>]
-<screenshot014.png, id=275, 511.9125pt x 508.14844pt>
+l.103 		\end{displaymath}
+                          <./screenshot013.png (PNG copy)>]
+<screenshot014.png, id=290, 511.9125pt x 508.14844pt>
 File: screenshot014.png Graphic file (type png)
 <use screenshot014.png>
-Package pdftex.def Info: screenshot014.png  used on input line 103.
+Package pdftex.def Info: screenshot014.png  used on input line 131.
 (pdftex.def)             Requested size: 298.75267pt x 296.55617pt.
- [24] [25pdfTeX warning (ext4): destination with the same identifier (name{figu
-re.5.3}) has been already used, duplicate ignored
+ [25] [26pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.5.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.125 	\end{enumerate}
-                       <./screenshot014.png (PNG copy)>]
-<screenshot009.png, id=290, 496.85625pt x 432.11438pt>
+l.153 		\end{enumerate}
+                        <./screenshot014.png (PNG copy)>]
+<screenshot009.png, id=305, 496.85625pt x 432.11438pt>
 File: screenshot009.png Graphic file (type png)
 <use screenshot009.png>
-Package pdftex.def Info: screenshot009.png  used on input line 144.
+Package pdftex.def Info: screenshot009.png  used on input line 172.
 (pdftex.def)             Requested size: 298.75267pt x 259.82448pt.
- [26]) [27pdfTeX warning (ext4): destination with the same identifier (name{fig
-ure.5.4}) has been already used, duplicate ignored
+ [27]) [28pdfTeX warning (ext4): destination with the same identifier (name{fig
+ure.5.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.16 \include{chapters/Numerical_Solution.tex}
@@ -1700,11 +1710,11 @@ Package logreq Info: Writing requests to 'MAIN.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33246 strings out of 478994
- 635708 string characters out of 5856172
- 1574939 words of memory out of 5000000
- 49698 multiletter control sequences out of 15000+600000
- 482617 words of font info for 303 fonts, out of 8000000 for 9000
+ 33276 strings out of 478994
+ 636131 string characters out of 5856172
+ 1575040 words of memory out of 5000000
+ 49709 multiletter control sequences out of 15000+600000
+ 483171 words of font info for 311 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  111i,20n,116p,10599b,3819s stack positions out of 5000i,500n,10000p,200000b,80000s
 {f:/Anwendungen/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}{f:/Anwen
@@ -1725,9 +1735,9 @@ endungen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb><f:/Anwen
 dungen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendun
 gen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendungen
 /texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on MAIN.pdf (33 pages, 1291299 bytes).
+Output written on MAIN.pdf (34 pages, 1412005 bytes).
 PDF statistics:
- 466 PDF objects out of 1000 (max. 8388607)
- 112 named destinations out of 1000 (max. 500000)
- 94490 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 485 PDF objects out of 1000 (max. 8388607)
+ 119 named destinations out of 1000 (max. 500000)
+ 94503 words of extra memory for PDF output out of 106986 (max. 10000000)
 
