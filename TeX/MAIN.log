@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.4.4)  12 SEP 2024 13:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.4.4)  13 SEP 2024 10:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1608,11 +1608,15 @@ has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.33 \end{itemize}
-                   <./screenshot006.png (PNG copy)>]) [19]
+                   <./screenshot006.png (PNG copy)>]
+
+LaTeX Warning: Citation 'Tischendorf2004Topological' on page 19 undefined on in
+put line 39.
+
+) [19]
 \openout2 = `chapters/Numerical_Solution.aux'.
 
-
-(./chapters/Numerical_Solution.tex
+ (./chapters/Numerical_Solution.tex
 chapter 5.
 [20
 
@@ -1675,19 +1679,27 @@ AED: lastpage setting LastPage
 (./chapters/Differential_Algebraic_Equations.aux)
 (./chapters/Index_Analysis.aux) (./chapters/Numerical_Solution.aux))
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `MAIN.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                MAIN
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'MAIN.run.xml'.
 \openout1 = `MAIN.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33049 strings out of 478994
- 632108 string characters out of 5856172
+ 33230 strings out of 478994
+ 635658 string characters out of 5856172
  1573881 words of memory out of 5000000
- 49508 multiletter control sequences out of 15000+600000
+ 49689 multiletter control sequences out of 15000+600000
  479693 words of font info for 297 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  111i,20n,116p,10599b,3819s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1709,7 +1721,7 @@ endungen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb><f:/Anwen
 dungen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendun
 gen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendungen
 /texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on MAIN.pdf (33 pages, 1287470 bytes).
+Output written on MAIN.pdf (33 pages, 1288069 bytes).
 PDF statistics:
  452 PDF objects out of 1000 (max. 8388607)
  114 named destinations out of 1000 (max. 500000)
