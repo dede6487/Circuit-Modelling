@@ -15,11 +15,11 @@ We will presume that the function $f(t,y)$ is continuous
 
 from book circuit modelling 35-47
 
-\subsection{Single-Step-Methods}
+\section{Single-Step-Methods}
 page 46 modelling circuit
 
 page 20 num gew dgl
-\subsection{Multistep-Methods}
+\section{Multistep-Methods}
 based on chapter 4 of book num gew dgl steif nichtsteif \newline
 Linear multistep methods use approxiamtions $u_{m+l}$ along the gridpoints $t_{m+l}, \quad l=0,1,...,k-1$ to calculate the new approximation $u_{m+k}$ at $t_{m+k}$. WE will first discuss topics related to the order of the methods depending on its parameters, stability and convergence.
 
@@ -62,7 +62,7 @@ For theoretical analysis of the multi-step methods we consider the generating po
 \end{figure}
 
 
-\subsubsection{Consistency and order}
+\subsection{Consistency and order}
 local discretization error - def 4.2.2
 \begin{definition}
 	Let $\tilde{u}_{m+k}$ be the result of one step of the multi-step method \ref{linear-multistep-method} with the start-vectors $u_m, u_{m+1}, ..., u_{m+k-1}$ lying on the exact solution $y(t)$ of the problem \textbf{reference}. This means
@@ -107,7 +107,7 @@ to the local discretization error. Using this we gain the following definition.
 
 
 
-\subsubsection{Convergence and stability}
+\subsection{Convergence and stability}
 
 \begin{definition}
 	A linear multi-step method is called \emph{zero-stable} if all solutions of the difference equation
@@ -128,7 +128,7 @@ to the local discretization error. Using this we gain the following definition.
 
 \textbf{from circuit book below, above from modelling book}
 
-\subsection{Implicit linear multi-step formulas}
+\section{Implicit linear multi-step formulas}
 These kinds of multi-step methods are conventionally used to numerically solve the systems obtained using modified nodal analysis. 
 
 The conventional approach can be split into three main steps:
@@ -149,4 +149,4 @@ The conventional approach can be split into three main steps:
 \textbf{Nunmerical integration}.
 
 
-\subsubsection{BDF schemes and trapezoidal rule}
+\subsection{BDF schemes and trapezoidal rule}

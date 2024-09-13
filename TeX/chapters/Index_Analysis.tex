@@ -8,7 +8,7 @@ In the linear case, the capacitances, inductances and resistances are symmetrica
 
 In our further analysis we will only consider such RLC networks.
 
-\subsection{General Index analysis}
+\section{General Index analysis}
 
 Assuming the system only contains linear elements or is linearized at an operating point in order to investigate the system behaviour then the corresponding network equation represent a DAE with constant coefficients \ref{DAE-const-coeff}. Ww will denote $x=(u i_L i_V)^\top$.
 
@@ -32,8 +32,16 @@ Assuming the system only contains linear elements or is linearized at an operati
 	nevermind thats the same as we did in the \ref{DAE-const-coeff} chapter. - reference to that an explain in these terms. - page 20
 \end{itemize}
 
-\subsection{Topological Conditions}
+\section{Topological Conditions}
 For this we consider RLC networks with independant voltage and current sources (\textbf{what does that mean?}). To obtain the perturbation index of the MNA we perturb the right-hand side of  
 \newline reference to Tischendorf
 
-\cite{Tischendorf2004Topological}
+From analyzing the MNA some conditions to the circuit topology can be obtained. We will be concidering the impact of loops containing only capacitances and voltage sources as well as cutsets containing only inductances and current sources.
+
+\begin{theorem}[Index-1 condition] \cite{Tischendorf2004Topological}
+	Let the matrices of the capacitances, inductances and resistances respectively be positive definite. If the network neither cointains \emph{inductance-current-source cutsets} nor (controlled?) \emph{capacitance-voltage-source loops}, then the MNA leads to an index-1 DAE.
+\end{theorem}
+
+\begin{theorem}[Index-2 condition] \cite{Tischendorf2004Topological}
+	If the Network contains \emph{inductance-current-source cutsets} or \emph{capacitance-voltage-source loops} except for capacitance-only loops, then the MNA leads to an index-2 DAE.
+\end{theorem}

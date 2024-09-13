@@ -1,6 +1,6 @@
 \chapter{Formulating a Mathematical Model}
 based on DAE lecture and modelling and discretiztation of elec circuit problems.
-\subsection{Network Topology}
+\section{Network Topology}
 An electrical circuit is usually considered as a graph $(N,E)$ where $N = (n_0, n_1, n_2, ...)$ are the Nodes and $E = (e_{ij})_{ij}$ are the edges, where for some $i$ and some $j$ we have that $e_{ij} = (n_j, n_k)$ is the edge from node $j$ to node $k$. %rewrite that
 We can store this information in an \emph{incidence matrix} $\tilde{A} = (\tilde{a}_{ij})_{ij}$ which is defined by
 \begin{displaymath}
@@ -15,7 +15,7 @@ We call $u = (u_0, u_1, u_2, ...)$ the corresponding potentials to the nodes $N$
 
 We will later see, that the components of an electrical crircuit, which will be installed along the edges, describe a relationship between the edges current and its voltage. Thus a current vector $i = (i_1, i_2, i_3, ...)$ containing the currents along the edges is required.
 
-\subsection{Energy Conservation Laws}
+\section{Energy Conservation Laws}
 To fully fix all the variables that arrise in the model of an electrical circuit we will need some \emph{conservation laws}:
 \begin{itemize}
 	\item \textbf{Kirchhoff's voltage law (KVL):} \newline
@@ -32,7 +32,7 @@ To fully fix all the variables that arrise in the model of an electrical circuit
 	\end{equation}
 \end{itemize}
 
-\subsection{Electrical Components and their relations}
+\section{Electrical Components and their relations}
 Electrical components are described by equations relating their edge voltage $v$ to their edge current $i$.
 \begin{itemize}
 	\item \textbf{Resistor} \newline
@@ -69,7 +69,7 @@ Electrical components are described by equations relating their edge voltage $v$
 	\item Transistor
 \end{itemize}
 
-\subsection{Modified Nodal Analysis - MNA}
+\section{Modified Nodal Analysis - MNA}
 
 num gew dgl steif n steif - seite 422 \newline
 modelling discr circ prob - seite 19
@@ -133,9 +133,9 @@ In matrix form these read as
 \end{displaymath}
 where the diagonal matrices $C$, $G$ and $L$ contain the capacities, conductivities and inductivities.
 
-\subsection{Energy \textbf{bilanz??????????}}
+\section{Energy \textbf{bilanz??????????}}
 
-\subsection{Charge/Flux oriented formulation of MNA}
+\section{Charge/Flux oriented formulation of MNA}
 Again using KCL \ref{KCL} and the component equations we formulate a system of equations. (\textbf{more here}) What is flux and charge - explain either here or witht the components
 
 \begin{align}
