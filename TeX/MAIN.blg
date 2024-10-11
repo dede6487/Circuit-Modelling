@@ -1,11 +1,9 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
-[1] Config.pm:314> INFO - Logfile is 'MAIN.blg'
-[353] biber-MSWIN32:340> INFO - === 
-[450] Biber.pm:415> INFO - Reading 'MAIN.bcf'
-[611] Biber.pm:952> INFO - Found 1 citekeys in bib section 0
-[631] Biber.pm:4340> INFO - Processing section 0
-[693] Biber.pm:4531> INFO - Looking for bibtex format file 'literature.bib' for section 0
-[800] bibtex.pm:1689> INFO - LaTeX decoding ...
-[815] bibtex.pm:1494> INFO - Found BibTeX data source 'literature.bib'
-[822] Utils.pm:411> ERROR - BibTeX subsystem: C:\Users\dede4\AppData\Local\Temp\biber_tmp_QlJm\a42497fa0f805ce74b9af7d16715cbd8_24244.utf8, line 45, syntax error: found "and", expected ","
-[823] Biber.pm:132> INFO - ERRORS: 1
+[0] Config.pm:314> INFO - Logfile is 'MAIN.blg'
+[153] biber-MSWIN32:340> INFO - === 
+[198] Biber.pm:415> INFO - Reading 'MAIN.bcf'
+[360] Biber.pm:952> INFO - Found 1 citekeys in bib section 0
+[387] Biber.pm:4340> INFO - Processing section 0
+[409] Biber.pm:4531> INFO - Looking for bibtex format file 'literature.bib' for section 0
+[1075] Utils.pm:411> ERROR - Cannot find 'literature.bib'!
+[1075] Biber.pm:132> INFO - ERRORS: 1

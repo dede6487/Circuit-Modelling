@@ -46,6 +46,25 @@ from book circuit modelling 35-47
 		is called the \emph{local discretization error} of the single step method at the point $t_{m+1}$.
 	\end{definition}
 
+	\begin{definition}
+		A single-step method is called \emph{consistent} if for all initial value problems \ref{general numerical problem} 
+		\begin{equation}
+			\lim\limits_{h \to 0} \frac{||le(t+h)||}{h} = 0 \quad \text{for} \quad t_0 \leq t \leq t_l
+		\end{equation}
+		holds.\newline
+		It is called \emph{consistent of order p}, if for a sufficiently smooth function $f$
+		\begin{equation}
+			||le(t+h)|| \leq Ch^{p+1} \quad \text{for all} \quad h \in \mathopen{(} 0,H \mathclose{]} \quad \text{and} \quad t_0 \leq t \leq t_l - h
+		\end{equation}
+		holds with $C$ not dependent on $h$.
+	\end{definition}
+
+	\begin{definition}
+		A single-step method is called \emph{convergent}, if for all initial value problems \ref{general numerical problem} the \emph{global discretization error}
+		\begin{displaymath}
+			Inhalt...
+		\end{displaymath}
+	\end{definition}
 
 \section{Multistep-Methods}
 	based on chapter 4 of book num gew dgl steif nichtsteif \newline
