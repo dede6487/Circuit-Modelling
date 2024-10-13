@@ -60,12 +60,50 @@ from book circuit modelling 35-47
 	\end{definition}
 
 	\begin{definition}
-		A single-step method is called \emph{convergent}, if for all initial value problems \ref{general numerical problem} the \emph{global discretization error}
+		A single-step method is called \emph{convergent}, if for all initial value problems \ref{general numerical problem} for the \emph{global discretization error}
 		\begin{displaymath}
-			Inhalt...
+			e_m = y(t_m)-y_h(t_m)
 		\end{displaymath}
+		holds that
+		\begin{displaymath}
+			\max\limits_{m}||e_m|| \to 0 \quad \text{for} \quad h_{max} \to 0.
+		\end{displaymath}
+		The single-step method is called to have the \emph{convergence order} $p$, if
+		\begin{displaymath}
+			\max\limits_{m} ||e_m|| \leq C h_max^p \quad \text{for} \quad h_{max} \in \mathopen{(} 0,H \mathclose{]} \quad \text{with} \quad t_0 \leq t_m \leq t_l
+		\end{displaymath}
+		with the constant $C$ not dependent on the step size $h$.
 	\end{definition}
 
+	\subsection{Runge-Kutta Methods}
+		this chapter gives a brief overview for Runge-Kutta Methods, then presents some of those methods.
+		
+		\begin{definition}
+			Let $s \in \mathbb{N}$. A single-step method of the form
+			\begin{align}
+				y_{m+1} = y_m + h \sum_{i=1}^{s} b_i f(t_m + c_ih, y_{m+1}^{(i)}) \\ 
+				y_{m+1}^{(i)} = y_m +  \sum_{j=1}^{s} a_{ij} f(t_m + c_jh, y_{m+1}^{(j)})
+			\end{align}
+			is called a \emph{Runge-Kutta Method} with $s$ steps.
+		\end{definition}
+		
+		We usually collect the coefficients into the vectors and matrices $c=(c_1, ...,c_s)$, $A = (a_{ij})_{ij}$ and $b=(b_1, ..., b_s)$.
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{screenshot016}
+			\caption{}
+			\label{fig:screenshot016}
+		\end{figure}
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{screenshot017}
+			\caption{}
+			\label{fig:screenshot017}
+		\end{figure}
+		
+		
 \section{Multistep-Methods}
 	based on chapter 4 of book num gew dgl steif nichtsteif \newline
 	Linear multistep methods use approxiamtions $u_{m+l}$ along the gridpoints $t_{m+l}, \quad l=0,1,...,k-1$ to calculate the new approximation $u_{m+k}$ at $t_{m+k}$. WE will first discuss topics related to the order of the methods depending on its parameters, stability and convergence.

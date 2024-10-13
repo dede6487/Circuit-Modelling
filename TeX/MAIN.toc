@@ -16,16 +16,17 @@
 \contentsline {section}{\numberline {3.1}Abstract Problem}{8}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Types of DAEs}{8}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Weierstraß-Kronecker Normalform}{9}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Index of a Differential Algebraic Equation}{15}{section.3.3}%
+\contentsline {section}{\numberline {3.3}Index of a Differential Algebraic Equation}{16}{section.3.3}%
 \contentsline {chapter}{\numberline {4}Index Analysis of the MNA}{18}{chapter.4}%
 \contentsline {section}{\numberline {4.1}General Index analysis}{18}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Topological Conditions}{19}{section.4.2}%
 \contentsline {chapter}{\numberline {5}Numerical Solutions}{20}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Single-Step-Methods}{21}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Consistency and Convergence}{21}{subsection.5.1.1}%
-\contentsline {section}{\numberline {5.2}Multistep-Methods}{22}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Consistency and order}{24}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Convergence and stability}{26}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Implicit linear multi-step formulas}{27}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}BDF schemes and trapezoidal rule}{28}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.1.2}Runge-Kutta Methods}{22}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Multistep-Methods}{24}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Consistency and order}{26}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Convergence and stability}{28}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Implicit linear multi-step formulas}{29}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}BDF schemes and trapezoidal rule}{30}{subsection.5.3.1}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
