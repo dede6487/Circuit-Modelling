@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.4.4)  13 OCT 2024 16:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.4.4)  14 OCT 2024 17:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1579,7 +1579,7 @@ LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 2
  (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )
-<pictures/resistor.png, id=132, 201.00093pt x 76.03406pt>
+<pictures/resistor.png, id=126, 201.00093pt x 76.03406pt>
 File: pictures/resistor.png Graphic file (type png)
 <use pictures/resistor.png>
 Package pdftex.def Info: pictures/resistor.png  used on input line 42.
@@ -1592,7 +1592,7 @@ LaTeX Info: Symbol \textrightarrow not provided by
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-<pictures/capacitor.png, id=133, 100.12407pt x 93.34875pt>
+<pictures/capacitor.png, id=127, 100.12407pt x 93.34875pt>
 File: pictures/capacitor.png Graphic file (type png)
 <use pictures/capacitor.png>
 Package pdftex.def Info: pictures/capacitor.png  used on input line 48.
@@ -1600,26 +1600,26 @@ Package pdftex.def Info: pictures/capacitor.png  used on input line 48.
 LaTeX Info: Symbol \textrightarrow not provided by
             font family ppl in TS1 encoding.
             Default family used instead on input line 51.
-<pictures/coil.png, id=134, 277.78781pt x 101.62968pt>
+<pictures/coil.png, id=128, 277.78781pt x 101.62968pt>
 File: pictures/coil.png Graphic file (type png)
 <use pictures/coil.png>
 Package pdftex.def Info: pictures/coil.png  used on input line 54.
 (pdftex.def)             Requested size: 85.35826pt x 31.22884pt.
 
 [3 <./pictures/resistor.png> <./pictures/capacitor.png>]
-<pictures/voltage_source.png, id=143, 310.91156pt x 179.16937pt>
+<pictures/voltage_source.png, id=137, 310.91156pt x 179.16937pt>
 File: pictures/voltage_source.png Graphic file (type png)
 <use pictures/voltage_source.png>
 Package pdftex.def Info: pictures/voltage_source.png  used on input line 60.
 (pdftex.def)             Requested size: 113.81102pt x 65.58627pt.
-<pictures/current_source.png, id=144, 310.91156pt x 179.16937pt>
+<pictures/current_source.png, id=138, 310.91156pt x 179.16937pt>
 File: pictures/current_source.png Graphic file (type png)
 <use pictures/current_source.png>
 Package pdftex.def Info: pictures/current_source.png  used on input line 66.
 (pdftex.def)             Requested size: 113.81102pt x 65.58627pt.
  [4 <./pictures/coil.png> <./pictures/voltage_source.png> <./pictures/current_s
 ource.png>] [5]
-<screenshot007.png, id=157, 658.71094pt x 314.67563pt>
+<screenshot007.png, id=151, 658.71094pt x 314.67563pt>
 File: screenshot007.png Graphic file (type png)
 <use screenshot007.png>
 Package pdftex.def Info: screenshot007.png  used on input line 161.
@@ -1663,7 +1663,7 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 80.
  [10] [11]
-<screenshot001.png, id=197, 366.61969pt x 48.18pt>
+<screenshot001.png, id=191, 366.61969pt x 48.18pt>
 File: screenshot001.png Graphic file (type png)
 <use screenshot001.png>
 Package pdftex.def Info: screenshot001.png  used on input line 187.
@@ -1681,12 +1681,12 @@ Package mdframed Info: Not enough space on this page on input line 232.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 236.
-<screenshot003.png, id=202, 438.13687pt x 544.28343pt>
+<screenshot003.png, id=196, 438.13687pt x 544.28343pt>
 File: screenshot003.png Graphic file (type png)
 <use screenshot003.png>
 Package pdftex.def Info: screenshot003.png  used on input line 242.
 (pdftex.def)             Requested size: 298.75267pt x 371.13766pt.
-<screenshot004.png, id=203, 440.39531pt x 341.77687pt>
+<screenshot004.png, id=197, 440.39531pt x 341.77687pt>
 File: screenshot004.png Graphic file (type png)
 <use screenshot004.png>
 Package pdftex.def Info: screenshot004.png  used on input line 249.
@@ -1714,7 +1714,7 @@ Package mdframed Info: You first box width is to small
  mdframed fixed it
 (mdframed)              on input line 344.
  [16]
-<screenshot005.png, id=233, 434.37282pt x 227.34938pt>
+<screenshot005.png, id=227, 434.37282pt x 227.34938pt>
 File: screenshot005.png Graphic file (type png)
 <use screenshot005.png>
 Package pdftex.def Info: screenshot005.png  used on input line 350.
@@ -1730,7 +1730,7 @@ py)>]
 
  (./chapters/Index_Analysis.tex
 chapter 4.
-<screenshot006.png, id=241, 980.16188pt x 59.47218pt>
+<screenshot006.png, id=235, 980.16188pt x 59.47218pt>
 File: screenshot006.png Graphic file (type png)
 <use screenshot006.png>
 Package pdftex.def Info: screenshot006.png  used on input line 20.
@@ -1766,124 +1766,92 @@ put line 45.
 
  (./chapters/Numerical_Solution.tex
 chapter 5.
-<screenshot015.png, id=255, 514.17094pt x 282.30469pt>
-File: screenshot015.png Graphic file (type png)
-<use screenshot015.png>
-Package pdftex.def Info: screenshot015.png  used on input line 17.
-(pdftex.def)             Requested size: 298.75267pt x 164.02974pt.
 [20
 
 
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1}) 
-has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.27 	p
-       age 20 num gew dgl <./screenshot015.png (PNG copy)>]
+]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 29.
+(mdframed)              on input line 25.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 40.
+(mdframed)              on input line 38.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 49.
-
-
-Package mdframed Warning: You got a bad break
-(mdframed)                because the last box will be empty
-(mdframed)                you have to change it manually
-(mdframed)                by changing the text, the space
-(mdframed)                or something else on input line 60.
-
-[21]
+ [21]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 62.
+(mdframed)              on input line 64.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 81.
-<screenshot016.png, id=277, 547.2947pt x 526.96875pt>
-File: screenshot016.png Graphic file (type png)
-<use screenshot016.png>
-Package pdftex.def Info: screenshot016.png  used on input line 94.
-(pdftex.def)             Requested size: 298.75267pt x 287.66266pt.
-<screenshot017.png, id=278, 518.6878pt x 210.03468pt>
-File: screenshot017.png Graphic file (type png)
-<use screenshot017.png>
-Package pdftex.def Info: screenshot017.png  used on input line 101.
-(pdftex.def)             Requested size: 298.75267pt x 120.98051pt.
- [22] [23pdfTeX warning (ext4): destination with the same identifier (name{figu
-re.5.2}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.107 \section
-              {Multistep-Methods}pdfTeX warning (ext4): destination with the sa
-me identifier (name{figure.5.3}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.107 \section
-              {Multistep-Methods} <./screenshot016.png (PNG copy)> <./screensho
-t017.png (PNG copy)>]
+(mdframed)              on input line 85.
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 92.
+ [22]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 111.
-<screenshot010.png, id=291, 544.28343pt x 785.18344pt>
+(mdframed)              on input line 98.
+ [23]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 129.
+<screenshot010.png, id=284, 544.28343pt x 785.18344pt>
 File: screenshot010.png Graphic file (type png)
 <use screenshot010.png>
-Package pdftex.def Info: screenshot010.png  used on input line 122.
+Package pdftex.def Info: screenshot010.png  used on input line 140.
 (pdftex.def)             Requested size: 298.75267pt x 430.97763pt.
  [24] [25pdfTeX warning (ext4): destination with the same identifier (name{figu
-re.5.4}) has been already used, duplicate ignored
+re.5.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.132 	\end{enumerate}
+l.150 	\end{enumerate}
                        <./screenshot010.png (PNG copy)>]
-<screenshot013.png, id=305, 513.41812pt x 210.7875pt>
+<screenshot013.png, id=297, 513.41812pt x 210.7875pt>
 File: screenshot013.png Graphic file (type png)
 <use screenshot013.png>
-Package pdftex.def Info: screenshot013.png  used on input line 144.
+Package pdftex.def Info: screenshot013.png  used on input line 162.
 (pdftex.def)             Requested size: 298.75267pt x 122.65565pt.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 152.
+(mdframed)              on input line 170.
  [26pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
-5}) has been already used, duplicate ignored
+2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.162 	\end{definition}
+l.180 	\end{definition}
                         <./screenshot013.png (PNG copy)>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 170.
-<screenshot014.png, id=316, 511.9125pt x 508.14844pt>
+(mdframed)              on input line 188.
+<screenshot014.png, id=308, 511.9125pt x 508.14844pt>
 File: screenshot014.png Graphic file (type png)
 <use screenshot014.png>
-Package pdftex.def Info: screenshot014.png  used on input line 188.
+Package pdftex.def Info: screenshot014.png  used on input line 206.
 (pdftex.def)             Requested size: 298.75267pt x 296.55617pt.
  [27]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 197.
+(mdframed)              on input line 215.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 205.
+(mdframed)              on input line 223.
  [28pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
-6}) has been already used, duplicate ignored
+3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.211 	\end{theorem}
+l.229 	\end{theorem}
                      <./screenshot014.png (PNG copy)>]
-<screenshot009.png, id=329, 496.85625pt x 432.11438pt>
+<screenshot009.png, id=321, 496.85625pt x 432.11438pt>
 File: screenshot009.png Graphic file (type png)
 <use screenshot009.png>
-Package pdftex.def Info: screenshot009.png  used on input line 229.
+Package pdftex.def Info: screenshot009.png  used on input line 247.
 (pdftex.def)             Requested size: 298.75267pt x 259.82448pt.
  [29]) [30pdfTeX warning (ext4): destination with the same identifier (name{fig
-ure.5.7}) has been already used, duplicate ignored
+ure.5.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.16 \include{chapters/Numerical_Solution.tex}
@@ -1916,11 +1884,11 @@ Package logreq Info: Writing requests to 'MAIN.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34121 strings out of 478994
- 653139 string characters out of 5856172
- 1605490 words of memory out of 5000000
- 50509 multiletter control sequences out of 15000+600000
- 483908 words of font info for 320 fonts, out of 8000000 for 9000
+ 34104 strings out of 478994
+ 652729 string characters out of 5856172
+ 1606027 words of memory out of 5000000
+ 50485 multiletter control sequences out of 15000+600000
+ 484377 words of font info for 326 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  111i,20n,116p,10599b,3819s stack positions out of 5000i,500n,10000p,200000b,80000s
 {f:/Anwendungen/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}{f:/Anwen
@@ -1941,9 +1909,9 @@ endungen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb><f:/Anwen
 dungen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendun
 gen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendungen
 /texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on MAIN.pdf (36 pages, 1622479 bytes).
+Output written on MAIN.pdf (36 pages, 1307393 bytes).
 PDF statistics:
- 515 PDF objects out of 1000 (max. 8388607)
- 131 named destinations out of 1000 (max. 500000)
- 94521 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 507 PDF objects out of 1000 (max. 8388607)
+ 129 named destinations out of 1000 (max. 500000)
+ 94506 words of extra memory for PDF output out of 106986 (max. 10000000)
 

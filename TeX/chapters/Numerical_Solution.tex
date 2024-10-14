@@ -1,8 +1,7 @@
 \chapter{Numerical Solutions}
-This chapter focuses on the numerical solution of the mentioned systems. (based on the DAE-lecture)
-It will include Code that illustrates some of the shown procedures.
+As we are usually interested in finding real (or complex) valued solutions of our systems we also have to look into solving them numerically. This chapter focuses on the numerical solution of the mentioned systems.
 
-We will first focus on the general methods used for solving a more general problem
+We will first focus on methods used to solve a more general problem
 \begin{align}
 	\label{general numerical problem}
 	y'(t) &= f(t,y), \quad t \in [t_0, t_l], \\
@@ -10,21 +9,18 @@ We will first focus on the general methods used for solving a more general probl
 \end{align}
 
 
-We will presume that the function $f(t,y)$ is continuous and Lipschitz, thus for every $y_0$ it is uniquely solvable in $[t_0, t_l]$.
+For this we presume that the function $f(t,y)$ is continuous and Lipschitz, thus \emph{Picard-Lindelöf} gives us, that for every $y_0$ it is uniquely solvable in $[t_0, t_l]$.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{screenshot015}
-	\caption{}
-	\label{fig:screenshot015}
-\end{figure}
+Numerical Methods work by discretization, this means we divide the time-intervall into
 
-from book circuit modelling 35-47
+\begin{displaymath}
+	t_0 < t_1 < ... < t_N \leq t_l
+\end{displaymath}
+
+and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, SChrittweite, äquidistant, nicht äquidistant.
 
 \section{Single-Step-Methods}
-	page 46 modelling circuit
-	
-	page 20 num gew dgl
+	The first class of numerical methods we will have a look at are single-step methods. These methods use the previous approximated value $y_j$ and (for implicit methods) also the current approximated value to determine the current value through a \emph{procedural function}. ... waht does implicit and explicit mean?
 	
 	\begin{definition}
 		A numerical method to approximate a differential equation \ref{general numerical problem} on a time-grid $t_0,...,t_l$ with the intermediate values $y_0,...,y_l$ is called a single-step method if it is from the form
@@ -37,6 +33,8 @@ from book circuit modelling 35-47
 
 	\subsection{Consistency and Convergence}
 	
+	To compare different single-step methods we have to define some notions to compare their quality. This leads to the definition of the error of the mehtod, its consistency and its convergence.
+	
 	\begin{definition}
 		Let $\tilde{y}_{m+1}$ be the result of one step of \ref{single-step method} with the exact start-vector $y_m = y(t_m)$ then
 		\begin{equation}
@@ -45,6 +43,8 @@ from book circuit modelling 35-47
 		\end{equation}
 		is called the \emph{local discretization error} of the single step method at the point $t_{m+1}$.
 	\end{definition}
+
+	The error encodes how far off the numerical method is from the true value of the solution. In real applications this solution is usually not known. This shows how important error bounds for numerical methods can be.
 
 	\begin{definition}
 		A single-step method is called \emph{consistent} if for all initial value problems \ref{general numerical problem} 
@@ -58,6 +58,8 @@ from book circuit modelling 35-47
 		\end{equation}
 		holds with $C$ not dependent on $h$.
 	\end{definition}
+
+	Consistency aims to give insight in how similar the problem that the numerical methods solves it to the real problem that we want the solution from.
 
 	\begin{definition}
 		A single-step method is called \emph{convergent}, if for all initial value problems \ref{general numerical problem} for the \emph{global discretization error}
@@ -75,8 +77,10 @@ from book circuit modelling 35-47
 		with the constant $C$ not dependent on the step size $h$.
 	\end{definition}
 
+	As the name suggestes convergence tries to quantify how far off a numerical solution is from the real solution of a system.
+
 	\subsection{Runge-Kutta Methods}
-		this chapter gives a brief overview for Runge-Kutta Methods, then presents some of those methods.
+		A very prevalent family of numerical single-step methods are the \emph{Runge-Kutta} methods. ... Whats the idea behind those methods?
 		
 		\begin{definition}
 			Let $s \in \mathbb{N}$. A single-step method of the form
@@ -89,20 +93,34 @@ from book circuit modelling 35-47
 		
 		We usually collect the coefficients into the vectors and matrices $c=(c_1, ...,c_s)$, $A = (a_{ij})_{ij}$ and $b=(b_1, ..., b_s)$.
 		
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.7\linewidth]{screenshot016}
-			\caption{}
-			\label{fig:screenshot016}
-		\end{figure}
+		If $A$ is a strictly lower triangle matrix, this means for all $j \geq i$ holds $a_{ij} = 0$ then the Runge-Kutta method is explicit, otherwise it is implicit. In general implicit Runge-Kutta methods might need more computational effort because to calculate $y_m^{(i)}$ a nonlinear system of equations has to be solved. But in contrast those methods can also lead to very good stability characteristics.
 		
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.7\linewidth]{screenshot017}
-			\caption{}
-			\label{fig:screenshot017}
-		\end{figure}
+		\begin{lemma}%\cite{NumerikgewöhnlicherDifferentialgleichungen}
+			A Runge-Kutta mehtod is consistent, if and only if
+			\begin{displaymath}
+				\sum_{i=1}^{s} b_i = 1
+			\end{displaymath}
+		\end{lemma}
 		
+		The coefficients of a Runge-Kutta method are usually represented in the \emph{Butchertableau}, which was introduced by John C. Butcher and has the following form.
+		
+		\begin{displaymath}
+			\begin{array}{c|ccc}
+				c_1 & a_{11} & \dots & a_{1s} \\
+				\vdots & \vdots & & \vdots \\
+				c_s & a_{s1} & \dots & a_{ss} \\
+				\hline
+				 & b_1 & \dots & b_s
+			\end{array}
+			\qquad
+			\text{of in matrix form}
+			\qquad
+			\begin{array}{c|c}
+				c & A \\
+				\hline
+				 & b
+			\end{array}
+		\end{displaymath}
 		
 \section{Multistep-Methods}
 	based on chapter 4 of book num gew dgl steif nichtsteif \newline
