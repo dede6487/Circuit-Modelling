@@ -33,40 +33,55 @@ To fully fix all the variables that arrise in the model of an electrical circuit
 \end{itemize}
 
 \section{Electrical Components and their relations}
-Electrical components are described by equations relating their edge voltage $v$ to their edge current $i$.
+Electrical components are described by equations relating their edge voltage $v$ to their edge current $i$. We will mainly focus on so called RLC-networks which consist of resistors, capacitors, inductances, voltage sources and current sources. Diodes and Transistors as well as other electrical components can be described in a similar way, although these would lead to a more difficult analysis of the system.
 \begin{itemize}
 	\item \textbf{Resistor} \newline
-	$v = R*i$ or $i = G*u$
+	Resistors ''resist`` the flow of current, which causes voltage to drop. This behaviour is described by the \emph{resistance} $R$ which is given in \emph{Ohm} ($\Omega$) and its reciprocal, the \emph{conductance} $G$, which is given in \emph{Simens} ($S=\frac{1}{\Omega}$). 
+	\begin{displaymath}
+		v = R*i \quad \text{or} \quad i = G*u.
+	\end{displaymath}
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=2cm]{pictures/resistor.png}
 	\end{figure}
 	\item \textbf{Capacitor} \newline
-	$Q = C * v$ → $I = C*\dot{v}$
+	Capacitors ''store`` electrical energy by accumulating electrical charge. Their characteristic equations can be described directly using the stored charge $Q$ or indirectly using the change in charge, which is nothing other than the current $I$. The \emph{capacitance} $C$ is given in \emph{Farads} ($F$).
+	\begin{displaymath}
+		Q = C * v \quad \text{and by derivation in t} \quad I = C*\dot{v}.
+	\end{displaymath}
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=2cm]{pictures/capacitor.png}
 	\end{figure}
-	\item \textbf{Coil} \newline
-	$\Phi = L*i$ → $v = L*\dot{i}$
+	\item \textbf{Inductor (Coil)} \newline
+	An electric current flowing through a conductor generates a magnetic field $\Phi$ surrounding it. This magnetic field causes a voltage drop dependant on the change in current. The \emph{inductance} $L$ is given in \emph{Henry} ($H$).
+	\begin{displaymath}
+		\Phi = L*i \quad \text{and by derivation in t} \quad v = L*\dot{i}.
+	\end{displaymath}
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=3cm]{pictures/coil.png}
 	\end{figure}
 	\item \textbf{Voltage Source} \newline
-	$v = v_{src}$
+	A voltage source supplies the system with a voltage. It can either supply varying amounts of voltage (with the special case of alternating current AC) or a fixed amount of voltage. The unit of voltage is \emph{Volts} ($V$).
+	\begin{displaymath}
+		v = v_{src}
+	\end{displaymath}
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=4cm]{pictures/voltage_source.png}
 	\end{figure}
 	\item \textbf{Current Source} \newline
-	$i = i_{src}$
+	A current source supplies the system with current. It can either supply varying amounts of current (with the special case of alternating current AC) or a fixed amount of current. The unit of current is \emph{Ampere} ($A$).
+	\begin{displaymath}
+		i = i_{src}
+	\end{displaymath}
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=4cm]{pictures/current_source.png}
 	\end{figure}
 	\item Diode - to be filled with information after the rest is complete
-	\item Transistor
+	\item Transistor - unlike the other components which where all two-teminal components a transisstoor is a three-terminal component
 \end{itemize}
 
 \section{Modified Nodal Analysis - MNA}

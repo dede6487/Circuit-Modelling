@@ -9,7 +9,7 @@
 \contentsline {section}{\numberline {2.1}Network Topology}{2}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Energy Conservation Laws}{3}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Electrical Components and their relations}{3}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Modified Nodal Analysis - MNA}{4}{section.2.4}%
+\contentsline {section}{\numberline {2.4}Modified Nodal Analysis - MNA}{5}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Energy \textbf {bilanz??????????}}{6}{section.2.5}%
 \contentsline {section}{\numberline {2.6}Charge/Flux oriented formulation of MNA}{6}{section.2.6}%
 \contentsline {chapter}{\numberline {3}Differential Algebraic Equations}{8}{chapter.3}%
