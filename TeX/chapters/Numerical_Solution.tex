@@ -165,10 +165,10 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 	\end{figure}
 	
 	
-	\subsection{Consistency and order}
+	\subsection{Consistency and Convergence}
 	local discretization error - def 4.2.2
 	\begin{definition}
-		Let $\tilde{u}_{m+k}$ be the result of one step of the multi-step method \ref{linear-multistep-method} with the start-vectors $u_m, u_{m+1}, ..., u_{m+k-1}$ lying on the exact solution $y(t)$ of the problem \textbf{reference}. This means
+		Let $\tilde{y}_{m+k}$ be the result of one step of the multi-step method \ref{linear-multistep-method} with the start-vectors $y_m = y(t_m)$. This means
 		\begin{displaymath}
 			\alpha_k \tilde{u}_{m+k} = \sum_{l=0}^{k-1} \left( h \beta_l f(t_{m+l}, y(t_{m+l})) - \alpha_l y(t_{m+l}) \right) + h \beta_k f(t_{m+k}, \tilde{u}_{m+k}) .
 		\end{displaymath}
@@ -184,7 +184,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 		L[y(t),h] = \sum_{l=0}^{k} \left( \alpha_l y(t+lh) - h \beta_l y'(t+lh) \right)
 	\end{equation}
 	to the local discretization error. Using this we gain the following definition.
-	
+
 	\begin{definition}
 		A linear multi-step method is called \emph{preconsistent} if for all functions $y(t) \in C^1[t_0,t_l]$
 		\begin{displaymath}
@@ -200,15 +200,6 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 		\end{displaymath}
 		holds.
 	\end{definition}
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.7\linewidth]{screenshot014}
-		\caption{}
-		\label{fig:screenshot014}
-	\end{figure}
-	
-	
 	
 	\subsection{Convergence and stability}
 	
