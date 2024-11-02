@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.4.4)  28 OCT 2024 12:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.4.4)  2 NOV 2024 16:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1816,35 +1816,50 @@ l.180 	\end{definition}
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 188.
-<screenshot014.png, id=311, 511.9125pt x 508.14844pt>
-File: screenshot014.png Graphic file (type png)
-<use screenshot014.png>
-Package pdftex.def Info: screenshot014.png  used on input line 206.
-(pdftex.def)             Requested size: 298.75267pt x 296.55617pt.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 206.
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 212.
  [28]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 215.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 223.
- [29pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+(mdframed)              on input line 214.
+<screenshot009.png, id=317, 496.85625pt x 432.11438pt>
+File: screenshot009.png Graphic file (type png)
+<use screenshot009.png>
+Package pdftex.def Info: screenshot009.png  used on input line 238.
+(pdftex.def)             Requested size: 298.75267pt x 259.82448pt.
+ [29]
+<screenshot018.png, id=329, 527.72156pt x 363.60844pt>
+File: screenshot018.png Graphic file (type png)
+<use screenshot018.png>
+Package pdftex.def Info: screenshot018.png  used on input line 254.
+(pdftex.def)             Requested size: 298.75267pt x 205.84416pt.
+ [30pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.229 	\end{theorem}
-                     <./screenshot014.png (PNG copy)>]
-<screenshot009.png, id=324, 496.85625pt x 432.11438pt>
-File: screenshot009.png Graphic file (type png)
-<use screenshot009.png>
-Package pdftex.def Info: screenshot009.png  used on input line 247.
-(pdftex.def)             Requested size: 298.75267pt x 259.82448pt.
- [30]) [31pdfTeX warning (ext4): destination with the same identifier (name{fig
-ure.5.4}) has been already used, duplicate ignored
+l.258 	
+        <./screenshot009.png (PNG copy)>]
+<screenshot019.png, id=334, 525.46312pt x 581.92406pt>
+File: screenshot019.png Graphic file (type png)
+<use screenshot019.png>
+Package pdftex.def Info: screenshot019.png  used on input line 262.
+(pdftex.def)             Requested size: 298.75267pt x 330.8655pt.
+ [31pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.266 	
+        <./screenshot018.png (PNG copy)>]) [32pdfTeX warning (ext4): destinatio
+n with the same identifier (name{figure.5.5}) has been already used, duplicate 
+ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.16 \include{chapters/Numerical_Solution.tex}
-                                               <./screenshot009.png (PNG copy)>
+                                               <./screenshot019.png (PNG copy)>
 ])
 
 LaTeX Warning: Empty bibliography on input line 174.
@@ -1873,11 +1888,11 @@ Package logreq Info: Writing requests to 'MAIN.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34023 strings out of 478994
- 651026 string characters out of 5856172
+ 34038 strings out of 478994
+ 651606 string characters out of 5856172
  1606027 words of memory out of 5000000
- 50404 multiletter control sequences out of 15000+600000
- 484195 words of font info for 327 fonts, out of 8000000 for 9000
+ 50422 multiletter control sequences out of 15000+600000
+ 483709 words of font info for 321 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  111i,20n,116p,10599b,3819s stack positions out of 5000i,500n,10000p,200000b,80000s
 {f:/Anwendungen/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<f:/Anwen
@@ -1896,9 +1911,9 @@ gen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb><f:/Anwendunge
 n/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendungen/t
 exlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendungen/texl
 ive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on MAIN.pdf (37 pages, 1307967 bytes).
+Output written on MAIN.pdf (38 pages, 1408992 bytes).
 PDF statistics:
- 508 PDF objects out of 1000 (max. 8388607)
- 130 named destinations out of 1000 (max. 500000)
- 93482 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 519 PDF objects out of 1000 (max. 8388607)
+ 136 named destinations out of 1000 (max. 500000)
+ 93487 words of extra memory for PDF output out of 106986 (max. 10000000)
 
