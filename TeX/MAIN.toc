@@ -21,13 +21,14 @@
 \contentsline {section}{\numberline {4.2}Topological Conditions}{19}{section.4.2}%
 \contentsline {chapter}{\numberline {5}Numerical Solutions}{20}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Single-Step-Methods}{20}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Consistency and Convergence}{21}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Runge-Kutta Methods}{22}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.1}Consistency, Stability and Convergence}{21}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Runge-Kutta Methods}{23}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}further stability properties}{24}{subsection.5.1.3}%
 \contentsline {section}{\numberline {5.2}Multistep-Methods}{24}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Consistency and Convergence}{26}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Convergence and stability}{27}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Implicit linear multi-step formulas}{28}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}BDF-schemes and trapezoidal rule}{29}{subsection.5.3.1}%
-\contentsline {subsubsection}{\nonumberline BDF-schemes}{30}{subsubsection*.7}%
-\contentsline {subsubsection}{\nonumberline trapezoidal Rule}{31}{subsubsection*.9}%
+\contentsline {subsection}{\numberline {5.2.1}Consistency, Stability and Convergence}{26}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}further stability properties}{28}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Implicit linear multi-step formulas}{29}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}BDF-schemes}{30}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}trapezoidal rule}{31}{subsection.5.3.2}%
+\contentsline {subsubsection}{\nonumberline trapezoidal Rule}{32}{subsubsection*.7}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

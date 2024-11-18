@@ -31,11 +31,11 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 		With the \emph{procedural function} $\phi$. If $\phi$ is not dependent on $y_{j+1}$ then the method is called \emph{explicit}, otherwise it is called \emph{implicit}.
 	\end{definition}
 
-	\subsection{Consistency and Convergence}
+	\subsection{Consistency, Stability and Convergence}
 	
 	To compare different single-step methods we have to define some notions to compare their quality. This leads to the definition of the error of the mehtod, its consistency and its convergence.
 	
-	\begin{definition}
+	\begin{definition}\label{Discretization_Error_SingleStep}
 		Let $\tilde{y}_{m+1}$ be the result of one step of \ref{single-step method} with the exact start-vector $y_m = y(t_m)$ then
 		\begin{equation}
 			\label{local discretization error single step}
@@ -46,7 +46,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 
 	The error encodes how far off the numerical method is from the true value of the solution. In real applications this solution is usually not known. This shows how important error bounds for numerical methods can be.
 
-	\begin{definition}
+	\begin{definition}\label{Consistency_SingleStep}
 		A single-step method is called \emph{consistent} if for all initial value problems \ref{general numerical problem} 
 		\begin{equation}
 			\lim\limits_{h \to 0} \frac{||le(t+h)||}{h} = 0 \quad \text{for} \quad t_0 \leq t \leq t_l
@@ -59,9 +59,9 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 		holds with $C$ not dependent on $h$.
 	\end{definition}
 
-	Consistency aims to give insight in how similar the problem that the numerical methods solves it to the real problem that we want the solution from.
+	Consistency aims to give insight in how similar the problem that the numerical methods solves it to the real problem that we want the solution from. 
 
-	\begin{definition}
+	\begin{definition}\label{Convergence_SingleStep}
 		A single-step method is called \emph{convergent}, if for all initial value problems \ref{general numerical problem} for the \emph{global discretization error}
 		\begin{displaymath}
 			e_m = y(t_m)-y_h(t_m)
@@ -77,7 +77,28 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 		with the constant $C$ not dependent on the step size $h$.
 	\end{definition}
 
-	As the name suggestes convergence tries to quantify how far off a numerical solution is from the real solution of a system.
+	As the name suggestes convergence tries to quantify how far off a numerical solution is from the real solution of a system. A very interesting result follows if we also require the Single-Step Method to be stable.
+	
+	\begin{definition}\label{Discrete_Stability_SingleStep - lecture notes for numpdgl}
+		A Single-Step Method is called \emph{()discretely) stable} if for grid-functions $y_h$ and $\tilde{y}_h$ with
+		\begin{align}
+			y_{i+1} &= y_i + h \phi(t_i, y_i), \\
+			\tilde{y}_{i+1} &=  \tilde{y}_i + h [\phi(t_i, \tilde{y}_i) + \theta_i],
+		\end{align}
+		and perturbations $\theta_i = \theta_h(t_i)$ of the right side as well as a bounded perturbation in the staring-values $y_0 - \tilde{y}_0$ the Error is bounded by
+		\begin{displaymath}
+			||y_h - \tilde{y}_h||_{\infty,h} \leq C (||y_0 - \tilde{y}_0||_{l^2} + ||\theta_h||_{\infty,h}
+		\end{displaymath}
+		with a constant $C$ which is not dependent on $h$.
+	\end{definition}
+	
+	For Single-Step Methods which are consistent and stable we obtain the following convergence theorem.
+	
+	\begin{theorem}[Lax-Richtmyer]\label{Lax-Richtmyer}
+		A consistent (with order $p$) and discretely stable Single-Step Method is convergent (with order $p$). (assuming smootheness of the solution $y$)
+	\end{theorem}
+	
+	This theorem is due to Lax and Richtmyer. The converse of this statement is also true. 
 
 	\subsection{Runge-Kutta Methods}
 		A very prevalent family of numerical single-step methods are the \emph{Runge-Kutta} methods. ... Whats the idea behind those methods?
@@ -122,6 +143,10 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 			\end{array}
 		\end{displaymath}
 		
+	\subsection{further stability properties}
+		do i need this?
+	
+		
 \section{Multistep-Methods}
 	based on chapter 4 of book num gew dgl steif nichtsteif \newline
 	Linear multistep methods use approxiamtions $u_{m+l}$ along the gridpoints $t_{m+l}, \quad l=0,1,...,k-1$ to calculate the new approximation $u_{m+k}$ at $t_{m+k}$. WE will first discuss topics related to the order of the methods depending on its parameters, stability and convergence.
@@ -165,7 +190,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 	\end{figure}
 	
 	
-	\subsection{Consistency and Convergence}
+	\subsection{Consistency, Stability and Convergence}
 	local discretization error - def 4.2.2
 	\begin{definition}
 		Let $\tilde{y}_{m+k}$ be the result of one step of the multi-step method \ref{linear-multistep-method} with the start-vectors $y_m = y(t_m)$. This means
@@ -201,7 +226,17 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 		holds.
 	\end{definition}
 	
-	\subsection{Convergence and stability}
+	\begin{definition} \label{discrete stability LMSM}
+		A linear multi-step method is called stable, if for solutions $u_h$ and $\tilde{u}_h$ of
+		\begin{align}
+			\sum_{l=0}^{k} \alpha_l u_{m+l} &= h \sum_{l=0}^{k} \beta_l f(t_{m+l}, u_{m+l}), \\
+			\sum_{l=0}^{k} \alpha_l \tilde{u}_{m+l} = h \sum_{l=0}^{k} \beta_l f(t_{m+l}, \tilde{u}_{m+l}) + h\theta_n
+		\end{align} 
+		and bounded initial values $y_j - y_j$ for $j \in {0,...,k}$ we have that
+		\begin{displaymath}
+			\max_{t_0 \leq t_n \leq T} ||y_n - \tilde{y}_n|| \leq C \sum_{j=0}^{k-1} ||y_j - \tilde{y}_j|| + \max_{t_0 \leq t_n \leq T} ||\theta_n||.
+		\end{displaymath}
+	\end{definition}
 	
 	\begin{definition}
 		A linear multi-step method is called \emph{zero-stable} if all solutions of the difference equation
@@ -219,8 +254,15 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 		\end{enumerate}
 	\end{theorem}
 	
+	\begin{theorem}[DAE lecture]
+		A linear multistep method is stable if and only if it is zero-stable.
+	\end{theorem}
 	
 	\textbf{from circuit book below, above from modelling book}
+	
+	\subsection{further stability properties}
+	
+	A($\alpha$)-stability
 
 \section{Implicit linear multi-step formulas}
 These kinds of multi-step methods are conventionally used to numerically solve the systems obtained using modified nodal analysis. 
@@ -243,18 +285,40 @@ The conventional approach can be split into three main steps:
 \textbf{Nunmerical integration}.
 
 
-\subsection{BDF-schemes and trapezoidal rule}
+\subsection{BDF-schemes}
 	chapter 9.2 numerik book
 	
 	The most commonly used numerical methods for solving the systems that arrise in electrical circuits are the BDF-scheme and the trapezoidal rule. 
 	
-	\subsubsection{BDF-schemes}
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=0.7\linewidth]{screenshot018}
-			\caption{}
-			\label{fig:screenshot018}
-		\end{figure}
+	We will not give a deeper look into their construction but will only state their properties.
+	
+	The BDF or BDF-k formulas for $k=1,...6$ have the following form
+	
+	\begin{align*}
+		k = 1 &: h f_{m+1} = u_{m+1} - u_m \\
+		k = 2 &: h f_{m+2} = \frac{1}{2} (3 u_{m+2} - 4 iu_{m+1} + u_m) \\
+		k = 3 &: h f_{m+3} = \frac{1}{6} (11 u_{m+3} - 18 u_{m+2} + 9 u_{m+1} - 2 u_m) \\
+		k = 4 &: h f_{m+4} = \frac{1}{12} (25 u_{m+4} - 48 u_{m+3} + 36 u_{m+2} - 16 u_{m+1} + 3 u_m) \\
+		k = 5 &: h f_{m+5} = \frac{1}{260} (137 u_{m+5} - 300 u_{m+4} + 300 u_{m+3} - 200 u_{m+2} +75 u_{m+1} -12 u_m) \\
+		k = 6 &: h f_{m+6} = \frac{1}{60} (147 u_{m+6} - 360 u_{m+5} + 450 u_{m+4} - 400 u_{m+3} + 225 u_{m+2} - 72 u_{m+1} + 10 u_m)
+	\end{align*}
+	
+	BDF schemes have consistency order $p = k$.
+	
+	BDF schemes are methods for solving stiff equations, thus their stability is indicated by their region of absolute stability. They are not A stable but their stability region still contains a large part of the complex left half-plane. They are the most efficient linear multistep methods of this kind.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{screenshot020}
+		\caption{}
+		\label{fig:screenshot020}
+	\end{figure}
+	
+	
+	
+	\subsection{trapezoidal rule}
+	
+	Wikipedia
 	
 	\subsubsection{trapezoidal Rule}
 	\begin{figure}[H]
