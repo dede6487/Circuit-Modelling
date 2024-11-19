@@ -144,8 +144,37 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 		\end{displaymath}
 		
 	\subsection{further stability properties}
-		do i need this?
-	
+		from numpdgl skript \\
+		In this section we consider the following simple problem
+		\begin{align}
+			u' &= \lambda u, \quad t > 0 \\
+			u(0) &= u_0
+		\end{align}
+		with $\lambda \in \mathbb{C}$ and $u_0$ fixed.
+		
+		\begin{definition}
+			\begin{enumerate}
+				\item 
+				If a single-step method can be written in the form
+				\begin{equation}
+					u_{i+1} = R(z) u_i, \quad z:= h*y
+				\end{equation}
+				then we call $R: \mathbb{C} \to \mathbb{C}$ the \emph{stability function} of the single-step method.
+				\item 
+				The set
+				\begin{equation}
+					S := {z \in \mathbb{C} : |R(z)| \leq 1}
+				\end{equation}
+				is called the region of stability of the method.
+				\item 
+				A single-step method is called
+				\begin{itemize}
+					\item \emph{0-stable}, if $0 \in S$.
+					\item \emph{A-stable}, if $\mathbb{C}^- \subset S$.
+					\item \emph{L-stable}, if $R(z) \to 0$ for $Re(z) \to -\infty$.
+				\end{itemize}
+			\end{enumerate}
+		\end{definition}
 		
 \section{Multistep-Methods}
 	based on chapter 4 of book num gew dgl steif nichtsteif \newline
@@ -261,8 +290,45 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 	\textbf{from circuit book below, above from modelling book}
 	
 	\subsection{further stability properties}
+	In this section we consider the following simple problem
+	\begin{align}
+		u' &= \lambda u, \quad t > 0 \\
+		u(0) &= u_0
+	\end{align}
+	with $\lambda \in \mathbb{C}$ and $u_0$ fixed.\\
 	
-	A($\alpha$)-stability
+	Thus the resulting linear multistep method is of the form
+	
+	\begin{align*}
+		\sum_{l=0}^{k} \alpha_l u_{n+l} = h \sum_{l=0}^{k} \beta_l \lambda u_{n+l} \\
+		\iff \sum_{l=0}^{k}  [\alpha_l - h \beta_l \lambda] u_{n+l}
+	\end{align*}
+	
+	\begin{definition}
+		\begin{enumerate}
+			\item 
+			The set
+			\begin{equation}
+				S := {z \in \mathbb{C} : \rho(\xi) - z \sigma(\xi) = 0 \implies \xi \text{fullfills root criteria}}
+			\end{equation}
+			is called the region of stability of the method.
+			\item 
+			A linear multistep method is called
+			\begin{itemize}
+				\item \emph{0-stable}, if $0 \in S$.
+				\item stable in the point $z \in \mathbb{C}$, if Wurzelbedingung erfüllt bei z, aber doch eigentlich z in S oder?
+				\item \emph{$A(\alpha)$-stable}, if it is stable in all $z$ that lie within the set
+				 \begin{figure}[H]
+				 	\centering
+				 	\includegraphics[width=0.3\linewidth]{screenshot021}
+				 	\caption{}
+				 	\label{fig:screenshot021}
+				 \end{figure}
+				 
+			\end{itemize}
+		\end{enumerate}
+	\end{definition}
+	
 
 \section{Implicit linear multi-step formulas}
 These kinds of multi-step methods are conventionally used to numerically solve the systems obtained using modified nodal analysis. 
