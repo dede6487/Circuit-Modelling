@@ -331,7 +331,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 	
 
 \section{Implicit linear multi-step formulas}
-These kinds of multi-step methods are conventionally used to numerically solve the systems obtained using modified nodal analysis. 
+These kinds of multi-step methods are conventionally used to numerically solve the systems obtained using modified nodal analysis. We will assume that the network equations arrise from networks only consisting of RLC components as well as controlled sources which keep the index between 1 and 2.
 
 The conventional approach can be split into three main steps:
 \begin{enumerate}
@@ -353,10 +353,19 @@ The conventional approach can be split into three main steps:
 
 \subsection{BDF-schemes}
 	chapter 9.2 numerik book
+	wikipedia
 	
 	The most commonly used numerical methods for solving the systems that arrise in electrical circuits are the BDF-scheme and the trapezoidal rule. 
 	
-	We will not give a deeper look into their construction but will only state their properties.
+	We will not give a deeper look into their construction but will only state their properties. (specifically for BDF schemes)
+	
+	The .\emph{backward differentiation fooormula (BDF)} is a family of implicit linear multistep methods. They have the general form
+	
+	\begin{equation}
+		\sum_{k=0}^{s} \alpha_k y_{n+k} = h \beta f(t_{n+s}, y_{n+s})
+	\end{equation}
+
+	Since we are interested in the unknown $y_{n+s}$ which is used to evaluate $f$, this method is implicit. The coefficients $\alpha_k$ and $\beta$ are chosen, so that the method achieves order $s$ which is the maximum possible.
 	
 	The BDF or BDF-k formulas for $k=1,...6$ have the following form
 	
@@ -369,9 +378,13 @@ The conventional approach can be split into three main steps:
 		k = 6 &: h f_{m+6} = \frac{1}{60} (147 u_{m+6} - 360 u_{m+5} + 450 u_{m+4} - 400 u_{m+3} + 225 u_{m+2} - 72 u_{m+1} + 10 u_m)
 	\end{align*}
 	
+	Methods with $s > 6$ are not zero-stable and (cannot be used?).
+	
 	BDF schemes have consistency order $p = k$.
 	
 	BDF schemes are methods for solving stiff equations, thus their stability is indicated by their region of absolute stability. They are not A stable but their stability region still contains a large part of the complex left half-plane. They are the most efficient linear multistep methods of this kind.
+	
+	The first timestep is always performed by BDF1 (implicit Euler scheme) as a starting procedure.
 	
 	\begin{figure}[H]
 		\centering
@@ -384,16 +397,39 @@ The conventional approach can be split into three main steps:
 	
 	\subsection{trapezoidal rule}
 	
-	Wikipedia
+	The trapezoidal rule is a somewhat natural alternative to BDF2 since it is A-stable and as a linear multistep method of order 2 the one with the smallest leading error coefficient (source? - aus modelling book)
 	
-	\subsubsection{trapezoidal Rule}
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.7\linewidth]{screenshot019}
-		\caption{}
-		\label{fig:screenshot019}
-	\end{figure}
+	It works by approximating the region under the graph of the function $f(x)$ as a trapezoid, hence the name. It follows that (picture)
 	
+	\begin{displaymath}
+		\int_{a}^{b} f(x) dx \approx (b-a)\frac{1}{2} (f(a)+f(b))
+	\end{displaymath}
+
+	This procedure is repeated for small subsections of the Intervall $[a,b]$. Thus we obtain the iteration formula
+	
+	\begin{displaymath}
+		u_h (t+h) = u_h(t) +\frac{h}{2}[f(t,u_h(t)) + f(t+h, u_h(t+h))].
+	\end{displaymath}
+
+	This iteration rule can also be formulated using the butcher tableau
+	
+	
+	
+	\begin{displaymath}
+		\begin{array}{c|cc}
+			0 & 0 & 0 \\
+			1 & \frac{1}{2} & \frac{1}{2} \\
+			\hline
+			& \frac{1}{2} & \frac{1}{2}
+		\end{array}
+	\end{displaymath}
+	
+	modelling book says
+	
+	Because $u_h(t+h)$ appears in $f$ again we see that this is an implicit method. The butcher tableau confirms this as well.
+	
+	energy conserving (BDF methods are not)
+
 		
 		
 	
