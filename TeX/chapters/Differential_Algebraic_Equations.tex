@@ -180,17 +180,19 @@ aus buch seite 401
 	\begin{displaymath}
 		T_W^{-1}(W^{-1}-cI)T_W = R \quad \text{and} \quad T_{\tilde{N}}^{-1}(I-c\tilde{N})^{-1}\tilde{N}T_{\tilde{N}} = N
 	\end{displaymath}
-	Considering
+
+	Considering this definition together with the Neumann-series of $(I-c\tilde{N})^{-1}$ we obtain
+	\begin{displaymath}
+		\tilde{N} (I-c\tilde{N})^{-1} = \tilde{N} (c \sum_{i=0}^{\infty} \tilde{N}^i) = \tilde{N} (c \sum_{i=0}^{k-1} \tilde{N}^i) = c \sum_{i=0}^{k-1} \tilde{N}^{i+1} = (c \sum_{i=0}^{k-1} \tilde{N}^{i}) \tilde{N}
+	\end{displaymath}
+	where we used that $\tilde{N}$ is nilpotent with nilpotency index $k$. This shows that $\tilde{N}$ and $(I-c\tilde{N})^{-1}$ commute.
 	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.7\linewidth]{screenshot001}
-		\caption{fig 1, i dont get why}
-		\label{fig:screenshot001}
-	\end{figure}
+	From this we can conclude that
+	\begin{displaymath}
+		N^k = [T_{\tilde{N}}^{-1}(I-c\tilde{N})^{-1}\tilde{N}T_{\tilde{N}}]^k = T_{\tilde{N}}^{-1}[(I-c\tilde{N})^{-1}\tilde{N}]^kT_{\tilde{N}} = T_{\tilde{N}}^{-1}(I-c\tilde{N})^{-k}\underbrace{\tilde{N}^k}_{=0}T_{\tilde{N}} = 0
+	\end{displaymath}
 	
-	
-	The nilpotent matrix $N$ thus has the nilpotency index $k$. A transformation with
+	We used the commutativity in the third step here. The nilpotent matrix $N$ thus also has the nilpotency index $k$. A transformation with
 	\begin{displaymath}
 		T_3 := 
 		\left(
@@ -237,19 +239,19 @@ next lemma needs quotation, it is lemma 13.2.1
 	The Kronecker-Index $ind\{A,B\}$ is independant of the choice of the matrices $P$ and $Q$.
 \end{lemma}
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{screenshot003}
-	\caption{}
-	\label{fig:screenshot003}
-\end{figure}
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=0.7\linewidth]{screenshot003}
+%	\caption{}
+%	\label{fig:screenshot003}
+%\end{figure}
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{screenshot004}
-	\caption{}
-	\label{fig:screenshot004}
-\end{figure}
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=0.7\linewidth]{screenshot004}
+%	\caption{}
+%	\label{fig:screenshot004}
+%\end{figure}
 
 
 Lemma 13.2.2 maybe
@@ -292,11 +294,11 @@ we get a system of the form
 	\end{aligned}
 \end{equation}
 
-The first equation is an ordinary differential equation of first order and posesses a unique solution $u(t)$ in $[t_0,t_l]$ for any starting values $u_0 \in \mathbb{R}^d$. Additionally setting $q(t) \in C^{k-1}([t_0,t_l])$ then differentiating the second equation in \ref{transformed-DAE-const-coeff} gives (\textbf{whyyyyyyy??????})
+The first equation is an ordinary differential equation of first order and posesses a unique solution $u(t)$ in $[t_0,t_l]$ for any starting values $u_0 \in \mathbb{R}^d$. Additionally setting $q(t) \in C^{k-1}([t_0,t_l])$ then differentiating the second equation in \ref{transformed-DAE-const-coeff} gives
 
 \begin{displaymath}
 	\begin{aligned}
-		v(t) &= q(t) - Nv'(t) = q(t) - N(q(t)-Nv'(t))' = q-Nq'+N^2v'' \\
+		v(t) &= q(t) - Nv'(t) = q(t) - N(\underbrace{q(t)-Nv'(t)}_{=v(t)})' = q-Nq'+N^2v'' \\
 		&= q-Nq'+N^2(q-Nv')'' = q-Nq'+N^2q''-N^3v''' \\
 		&\vdots \\
 		&= q-Nq'+...+(-1)^{k-1}N^{k-1}q^{(k-1)}+(-1) \underbrace{N^kv^{(k)}}_{=0}
