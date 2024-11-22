@@ -18,17 +18,17 @@
 \contentsline {subsection}{\numberline {3.2.1}Weierstraß-Kronecker Normalform}{10}{subsection.3.2.1}%
 \contentsline {section}{\numberline {3.3}Index of a Differential Algebraic Equation}{15}{section.3.3}%
 \contentsline {chapter}{\numberline {4}Index Analysis of the MNA}{18}{chapter.4}%
-\contentsline {section}{\numberline {4.1}General Index analysis}{18}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Topological Conditions}{19}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Numerical Solutions}{20}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Single-Step-Methods}{20}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Consistency, Stability and Convergence}{21}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Runge-Kutta Methods}{23}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}further stability properties}{24}{subsection.5.1.3}%
-\contentsline {section}{\numberline {5.2}Multistep-Methods}{25}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Consistency, Stability and Convergence}{27}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}further stability properties}{29}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Implicit linear multi-step formulas}{31}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}BDF-schemes}{32}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}trapezoidal rule}{33}{subsection.5.3.2}%
+\contentsline {section}{\numberline {4.1}General Index analysis}{19}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Topological Conditions}{20}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Numerical Solutions}{21}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Single-Step-Methods}{21}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Consistency, Stability and Convergence}{22}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Runge-Kutta Methods}{24}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}further stability properties}{25}{subsection.5.1.3}%
+\contentsline {section}{\numberline {5.2}Multistep-Methods}{26}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Consistency, Stability and Convergence}{28}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}further stability properties}{30}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Implicit linear multi-step formulas}{32}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}BDF-schemes}{33}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}trapezoidal rule}{34}{subsection.5.3.2}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

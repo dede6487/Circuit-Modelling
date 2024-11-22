@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.4.4)  21 NOV 2024 16:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.4.4)  22 NOV 2024 14:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1579,40 +1579,40 @@ LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 2
  (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )
-<pictures/resistor.png, id=130, 201.00093pt x 76.03406pt>
+<pictures/resistor.png, id=126, 201.00093pt x 76.03406pt>
 File: pictures/resistor.png Graphic file (type png)
 <use pictures/resistor.png>
 Package pdftex.def Info: pictures/resistor.png  used on input line 47.
 (pdftex.def)             Requested size: 56.9055pt x 21.52606pt.
 
 [3]
-<pictures/capacitor.png, id=139, 100.12407pt x 93.34875pt>
+<pictures/capacitor.png, id=135, 100.12407pt x 93.34875pt>
 File: pictures/capacitor.png Graphic file (type png)
 <use pictures/capacitor.png>
 Package pdftex.def Info: pictures/capacitor.png  used on input line 56.
 (pdftex.def)             Requested size: 56.9055pt x 53.0555pt.
-<pictures/coil.png, id=140, 277.78781pt x 101.62968pt>
+<pictures/coil.png, id=136, 277.78781pt x 101.62968pt>
 File: pictures/coil.png Graphic file (type png)
 <use pictures/coil.png>
 Package pdftex.def Info: pictures/coil.png  used on input line 65.
 (pdftex.def)             Requested size: 85.35826pt x 31.22884pt.
-<pictures/voltage_source.png, id=141, 310.91156pt x 179.16937pt>
+<pictures/voltage_source.png, id=137, 310.91156pt x 179.16937pt>
 File: pictures/voltage_source.png Graphic file (type png)
 <use pictures/voltage_source.png>
 Package pdftex.def Info: pictures/voltage_source.png  used on input line 74.
 (pdftex.def)             Requested size: 113.81102pt x 65.58627pt.
  [4 <./pictures/resistor.png> <./pictures/capacitor.png> <./pictures/coil.png>]
-<pictures/current_source.png, id=146, 310.91156pt x 179.16937pt>
+<pictures/current_source.png, id=142, 310.91156pt x 179.16937pt>
 File: pictures/current_source.png Graphic file (type png)
 <use pictures/current_source.png>
 Package pdftex.def Info: pictures/current_source.png  used on input line 83.
 (pdftex.def)             Requested size: 113.81102pt x 65.58627pt.
  [5 <./pictures/voltage_source.png> <./pictures/current_source.png>]
 [6]
-<screenshot007.png, id=158, 658.71094pt x 314.67563pt>
+<screenshot007.png, id=155, 658.71094pt x 314.67563pt>
 File: screenshot007.png Graphic file (type png)
 <use screenshot007.png>
-Package pdftex.def Info: screenshot007.png  used on input line 184.
+Package pdftex.def Info: screenshot007.png  used on input line 185.
 (pdftex.def)             Requested size: 298.75267pt x 142.72148pt.
  [7]) [8pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.2.1}) has been already used, duplicate ignored
@@ -1665,7 +1665,7 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 340.
-<screenshot005.png, id=221, 434.37282pt x 227.34938pt>
+<screenshot005.png, id=218, 434.37282pt x 227.34938pt>
 File: screenshot005.png Graphic file (type png)
 <use screenshot005.png>
 Package pdftex.def Info: screenshot005.png  used on input line 352.
@@ -1681,43 +1681,48 @@ py)>]
 
  (./chapters/Index_Analysis.tex
 chapter 4.
-<screenshot006.png, id=235, 980.16188pt x 59.47218pt>
-File: screenshot006.png Graphic file (type png)
-<use screenshot006.png>
-Package pdftex.def Info: screenshot006.png  used on input line 20.
-(pdftex.def)             Requested size: 298.75267pt x 18.12672pt.
+
+LaTeX Warning: Command \" invalid in math mode on input line 35.
+
+Missing character: There is no ä in font pplr7t!
 [18
 
 
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1}) 
-has been already used, duplicate ignored
+]
+<screenshot006.png, id=238, 980.16188pt x 59.47218pt>
+File: screenshot006.png Graphic file (type png)
+<use screenshot006.png>
+Package pdftex.def Info: screenshot006.png  used on input line 60.
+(pdftex.def)             Requested size: 298.75267pt x 18.12672pt.
+ [19pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.33 \end{itemize}
-                   <./screenshot006.png (PNG copy)>]
+l.93 	\end{displaymath}
+                        <./screenshot006.png (PNG copy)>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 41.
+(mdframed)              on input line 110.
 
 
-LaTeX Warning: Citation 'Tischendorf2004Topological' on page 19 undefined on in
-put line 41.
+LaTeX Warning: Citation 'Tischendorf2004Topological' on page 20 undefined on in
+put line 110.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 45.
+(mdframed)              on input line 114.
 
-LaTeX Warning: Citation 'Tischendorf2004Topological' on page 19 undefined on in
-put line 45.
+LaTeX Warning: Citation 'Tischendorf2004Topological' on page 20 undefined on in
+put line 114.
 
-) [19]
+) [20]
 \openout2 = `chapters/Numerical_Solution.aux'.
 
  (./chapters/Numerical_Solution.tex
 chapter 5.
-[20
+[21
 
 
 
@@ -1732,43 +1737,43 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 49.
- [21]
+ [22]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 64.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 82.
- [22]
+ [23]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 97.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 106.
- [23]
+ [24]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 119.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 155.
- [24]
+ [25]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 183.
-<screenshot010.png, id=296, 544.28343pt x 785.18344pt>
+<screenshot010.png, id=303, 544.28343pt x 785.18344pt>
 File: screenshot010.png Graphic file (type png)
 <use screenshot010.png>
 Package pdftex.def Info: screenshot010.png  used on input line 194.
 (pdftex.def)             Requested size: 298.75267pt x 430.97763pt.
- [25] [26pdfTeX warning (ext4): destination with the same identifier (name{figu
+ [26] [27pdfTeX warning (ext4): destination with the same identifier (name{figu
 re.5.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.204 	\end{enumerate}
                        <./screenshot010.png (PNG copy)>]
-<screenshot013.png, id=312, 513.41812pt x 210.7875pt>
+<screenshot013.png, id=318, 513.41812pt x 210.7875pt>
 File: screenshot013.png Graphic file (type png)
 <use screenshot013.png>
 Package pdftex.def Info: screenshot013.png  used on input line 216.
@@ -1776,7 +1781,7 @@ Package pdftex.def Info: screenshot013.png  used on input line 216.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 224.
- [27pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+ [28pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
@@ -1788,7 +1793,7 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 258.
- [28]
+ [29]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 270.
@@ -1803,27 +1808,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 297--299
 
  []
 
-[29]
+[30]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 307.
-<screenshot021.png, id=343, 276.28218pt x 226.59656pt>
+<screenshot021.png, id=349, 276.28218pt x 226.59656pt>
 File: screenshot021.png Graphic file (type png)
 <use screenshot021.png>
 Package pdftex.def Info: screenshot021.png  used on input line 323.
 (pdftex.def)             Requested size: 121.79866pt x 99.89294pt.
- [30pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+ [31pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.335 
        <./screenshot021.png (PNG copy)>]
-<screenshot009.png, id=351, 496.85625pt x 432.11438pt>
+<screenshot009.png, id=358, 496.85625pt x 432.11438pt>
 File: screenshot009.png Graphic file (type png)
 <use screenshot009.png>
 Package pdftex.def Info: screenshot009.png  used on input line 346.
 (pdftex.def)             Requested size: 298.75267pt x 259.82448pt.
- [31pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+ [32pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
@@ -1838,18 +1843,18 @@ Overfull \hbox (10.95pt too wide) in paragraph at lines 379--379
 [] 
  []
 
-[32]
-<screenshot020.png, id=365, 761.84625pt x 522.45187pt>
+[33]
+<screenshot020.png, id=371, 761.84625pt x 522.45187pt>
 File: screenshot020.png Graphic file (type png)
 <use screenshot020.png>
 Package pdftex.def Info: screenshot020.png  used on input line 391.
 (pdftex.def)             Requested size: 298.75267pt x 204.87148pt.
- [33pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+ [34pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.406 	\end{displaymath}
-                         <./screenshot020.png>]) [34])
+                         <./screenshot020.png>]) [35])
 
 LaTeX Warning: Empty bibliography on input line 174.
 
@@ -1877,38 +1882,32 @@ Package logreq Info: Writing requests to 'MAIN.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34056 strings out of 478994
- 651372 string characters out of 5856172
- 1606183 words of memory out of 5000000
- 50398 multiletter control sequences out of 15000+600000
- 484143 words of font info for 336 fonts, out of 8000000 for 9000
+ 34069 strings out of 478994
+ 651465 string characters out of 5856172
+ 1606191 words of memory out of 5000000
+ 50397 multiletter control sequences out of 15000+600000
+ 484759 words of font info for 344 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  111i,20n,116p,10599b,3819s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{figure.3.3} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.3.2} has been referenced but does not exist,
- replaced by a fixed one
-
-{f:/Anwendungen/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<f:/Anwendu
-ngen/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><f:/Anwe
-ndungen/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><f:/A
-nwendungen/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><f:
-/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-<f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb>
-<f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb><
-f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb><
-f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/urw/grotesq/ugqb8a.pfb><f:/A
-nwendungen/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><f:/Anwe
-ndungen/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><f:/Anwendu
-ngen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><f:/Anwendunge
-n/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb><f:/Anwendungen/
-texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendungen/tex
-live/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendungen/texliv
-e/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on MAIN.pdf (40 pages, 1084214 bytes).
+{f:/Anwendungen/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<f:/Anwen
+dungen/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><f:/An
+wendungen/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><f:
+/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b><f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pf
+b><f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb
+><f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb
+><f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/urw/grotesq/ugqb8a.pfb><f:
+/Anwendungen/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><f:/An
+wendungen/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><f:/Anwen
+dungen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><f:/Anwendun
+gen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb><f:/Anwendunge
+n/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendungen/t
+exlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendungen/texl
+ive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on MAIN.pdf (41 pages, 1087804 bytes).
 PDF statistics:
- 556 PDF objects out of 1000 (max. 8388607)
- 156 named destinations out of 1000 (max. 500000)
+ 563 PDF objects out of 1000 (max. 8388607)
+ 158 named destinations out of 1000 (max. 500000)
  91440 words of extra memory for PDF output out of 106986 (max. 10000000)
 
