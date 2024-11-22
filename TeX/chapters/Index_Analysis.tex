@@ -8,6 +8,15 @@ In the linear case, the capacitances, inductances and resistances are symmetrica
 
 In our further analysis we will only consider such RLC networks.
 
+where the RLC components are described by linear functions with positive cap, res, ind- thus the matrices
+\begin{displaymath}
+	C:=\frac{\partial q_C(w)}{\partial w}, \quad L:=\frac{\partial \phi_L(w)}{\partial w}, \quad G:=\frac{\partial r(w)}{\partial w}
+\end{displaymath}
+
+are positive definite and symmetric.
+generalized to ninlinear case we still need positive definiteness.
+
+
 This means we consider the equations resulting from the analysis above. As a reminder, these equations are of the form \ref{DAE-const-coeff}
 
 \begin{displaymath}
@@ -103,9 +112,14 @@ continue herer with modelling book from bottom of page 20-21
 For this we consider RLC networks with independant voltage and current sources (\textbf{what does that mean?}). To obtain the perturbation index of the MNA we perturb the right-hand side of  
 \newline reference to Tischendorf
 
+
+
 basically chapter 7 of modelling book
 
 From analyzing the MNA some conditions to the circuit topology can be obtained. We will be concidering the impact of loops containing only capacitances and voltage sources as well as cutsets containing only inductances and current sources.
+
+In \cite{Tischendorf2005Topological} they present very interesting results about the index of MNA equations. Namely the following:
+
 
 \begin{theorem}[Index-1 condition] \cite{Tischendorf2004Topological}
 	Let the matrices of the capacitances, inductances and resistances respectively be positive definite. If the network neither cointains \emph{inductance-current-source cutsets} nor (controlled?) \emph{capacitance-voltage-source loops}, then the MNA leads to an index-1 DAE.
@@ -114,3 +128,5 @@ From analyzing the MNA some conditions to the circuit topology can be obtained. 
 \begin{theorem}[Index-2 condition] \cite{Tischendorf2004Topological}
 	If the Network contains \emph{inductance-current-source cutsets} or \emph{capacitance-voltage-source loops} except for capacitance-only loops, then the MNA leads to an index-2 DAE.
 \end{theorem}
+
+WE will apply those results to some examples:

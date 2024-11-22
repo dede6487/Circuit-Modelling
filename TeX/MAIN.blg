@@ -1,8 +1,12 @@
-[1] Config.pm:307> INFO - This is Biber 2.19
-[2] Config.pm:310> INFO - Logfile is 'MAIN.blg'
-[827] biber-MSWIN64:340> INFO - === 
-[1021] Biber.pm:419> INFO - Reading 'MAIN.bcf'
-[1694] Utils.pm:410> ERROR - Error: Found biblatex control file version 3.7, expected version 3.10.
-This means that your biber (2.19) and biblatex (3.16) versions are incompatible.
-See compat matrix in biblatex or biber PDF documentation.
-[1694] Biber.pm:136> INFO - ERRORS: 1
+[0] Config.pm:311> INFO - This is Biber 2.16
+[1] Config.pm:314> INFO - Logfile is 'MAIN.blg'
+[193] biber-MSWIN32:340> INFO - === 
+[264] Biber.pm:415> INFO - Reading 'MAIN.bcf'
+[452] Biber.pm:952> INFO - Found 2 citekeys in bib section 0
+[471] Biber.pm:4340> INFO - Processing section 0
+[487] Biber.pm:4531> INFO - Looking for bibtex format file 'literature.bib' for section 0
+[579] bibtex.pm:1689> INFO - LaTeX decoding ...
+[602] bibtex.pm:1494> INFO - Found BibTeX data source 'literature.bib'
+[646] Utils.pm:411> ERROR - BibTeX subsystem: C:\Users\dede4\AppData\Local\Temp\biber_tmp_G0Yv\a42497fa0f805ce74b9af7d16715cbd8_1464.utf8, line 45, syntax error: found "and", expected ","
+[646] Biber.pm:132> INFO - ERRORS: 1
+
