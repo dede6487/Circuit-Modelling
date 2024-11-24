@@ -4,27 +4,23 @@ der ane satz do + proof hopefully
 
 seite 22 kap 7 netw top and dae ind for rlc - modelling and discretization circ prob
 
-In the linear case, the capacitances, inductances and resistances are symmetrical positive definite (We consider them as matrices in this case). In the nonlinear case ... . Then it is called an RLC network.
+In the previous chapter we have seen two different kinds of Index concepts for differential algebraic equations. We have also seen that these two, even thoough they describe rather different structural aspects of the equation, are the same for our use-cases. This of course leads to the question : ´´What are the indices we can usually expect for MNA?''.
 
-In our further analysis we will only consider such RLC networks.
-
-where the RLC components are described by linear functions with positive cap, res, ind- thus the matrices
+This chapter aims to answer that question for the linear RLC case. Which means that the RLC components are described by linear functions with positive capacitances, inductances and resistances. Thus the matrices
 \begin{displaymath}
 	C:=\frac{\partial q_C(w)}{\partial w}, \quad L:=\frac{\partial \phi_L(w)}{\partial w}, \quad G:=\frac{\partial r(w)}{\partial w}
 \end{displaymath}
 
 are positive definite and symmetric.
-generalized to ninlinear case we still need positive definiteness.
 
+The generalization of these results to the nonlinear case still relies on positive definiteness.
 
-This means we consider the equations resulting from the analysis above. As a reminder, these equations are of the form \ref{DAE-const-coeff}
-
+Recall that we consider the equations resulting from the analysis above. These equations are of the form \ref{DAE-const-coeff}
 \begin{displaymath}
 	A y'(t) + B y(t) = f(t).
 \end{displaymath}
 
 Specifically the obtained equations from the Modified Nodal Analysis \ref{MNA_Matrixform} are
-
 \begin{displaymath}
 	\begin{pmatrix}
 		A_C C A_C^\top & 0 & 0 \\
@@ -54,31 +50,25 @@ Specifically the obtained equations from the Modified Nodal Analysis \ref{MNA_Ma
 		-A_I i_{src} \\
 		0 \\
 		-v_{src}
-	\end{pmatrix}
+	\end{pmatrix}.
 \end{displaymath}
 
 \section{General Index analysis}
 
-Assuming the system only contains linear elements or is linearized at an operating point in order to investigate the system behaviour then the corresponding network equation represent a DAE with constant coefficients \ref{DAE-const-coeff}. We will denote $x=(u i_L i_V)^\top$.
+Assuming the system only contains linear elements or is linearized at an operating point in order to investigate the system behaviour then the corresponding network equation represent a DAE with constant coefficients \ref{DAE-const-coeff}. We will denote $x=(u, i_L, i_V)^\top$. The structure of the system is reliant on the matrix $B$, thus we consider
 
 \begin{itemize}
 	\item \textbf{ODE-case}: \newline
-	The matrix $B$ is regular in \ref{DAE-const-coeff}. This is the case if
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.7\linewidth]{screenshot006}
-		\caption{}
-		\label{fig:screenshot006}
-	\end{figure}
-	, then the system represents  a linear-implicit system of ODEs and can be transformed into the explicit ODE sytstem.
+	The matrix $B$ is regular in \ref{DAE-const-coeff}. This is the case iff the circuit contains no voltage sources and there are no nodes which have no path to ground via capacitors. Then the system represents a linear-implicit system of ODEs and can be transformed into the explicit ODE sytstem
+	\begin{displaymath}
+		\dot{x}=B^{-1}(-Ax+f(t)).
+	\end{displaymath}
+	Thus we obtain an index of $0$.
 		
 	\item \textbf{DAE-case}:
-	The matrix $B$ is singular in \ref{DAE-const-coeff}. In the following we will assume $D$ to be regular. Multiplying with $D^{-1}$ from the left side produces
-	\newline
-	nevermind thats the same as we did in the \ref{DAE-const-coeff} chapter. - reference to that an explain in these terms. - page 20
+	The matrix $B$ is singular in \ref{DAE-const-coeff}. This is the interesting case which we will analyse further.
 \end{itemize}
 
-The index of the MNA is the same as $ind(A,B)$, which denotes the nilpotency index of $N$ as we have seen in the previous analysis in chapter 3.
 
 
 Investigating the index-cases further we can again distinct into two cases:
@@ -103,7 +93,7 @@ reminder for the structure obtained in previous chapter
 
 	\item index $\geq$ 2 case
 	
-	results in the solution we derived in \ref{solution-to-transformed-DAE-const-coeff-part2}.
+	results in the solution we derived in \ref{solution-to-transformed-DAE-const-coeff-part2}. The index of the MNA is the same as $ind(A,B)$, which denotes the nilpotency index of $N$ as we have seen in the previous analysis in chapter 3.
 \end{enumerate}
 
 continue herer with modelling book from bottom of page 20-21
