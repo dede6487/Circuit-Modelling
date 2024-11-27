@@ -55,7 +55,7 @@ Specifically the obtained equations from the Modified Nodal Analysis \ref{MNA_Ma
 
 \section{General Index analysis}
 
-Assuming the system only contains linear elements or is linearized at an operating point in order to investigate the system behaviour then the corresponding network equation represent a DAE with constant coefficients \ref{DAE-const-coeff}. We will denote $x=(u, i_L, i_V)^\top$. The structure of the system is reliant on the matrix $B$, thus we consider
+Assuming the system only contains linear elements or is linearized at an operating point in order to investigate the system behaviour then the corresponding network equation represents a DAE with constant coefficients \ref{DAE-const-coeff}. We will denote $x=(u, i_L, i_V)^\top$. The structure of the system is reliant on the matrix $B$, thus we consider
 
 \begin{itemize}
 	\item \textbf{ODE-case}: \newline
@@ -69,15 +69,13 @@ Assuming the system only contains linear elements or is linearized at an operati
 	The matrix $B$ is singular in \ref{DAE-const-coeff}. This is the interesting case which we will analyse further.
 \end{itemize}
 
-
-
-Investigating the index-cases further we can again distinct into two cases:
-
 reminder for the structure obtained in previous chapter
 \begin{align*}
 	u'(t) + Ru(t) &= s(t), \\
 	Nv'(t) + v(t) &= q(t)
 \end{align*}
+
+We now consider the nilpotency index of the matrix $N$, as seen in the previous chapter, this index correlates to the differentiation as well as the perturbation index.
 
 \begin{enumerate}
 	\item index 1 case
@@ -86,10 +84,7 @@ reminder for the structure obtained in previous chapter
 		u'(t) + Ru(t) &= s(t), \\
 		v(t) &= q(t).
 	\end{align*}
-	This means that the algebraic variables are given explicitly. Thus the system can be written in ODE form
-	\begin{displaymath}
-		\dot{x}=B^{-1}(-Ax+f(t)).
-	\end{displaymath}
+	This means that the algebraic variables are given explicitly. Thus the system can be written in ODE form. (what properies does R have?)
 
 	\item index $\geq$ 2 case
 	
@@ -114,19 +109,20 @@ differentiation index - since numerical differentiation is an unstable procedure
 
 perturbation index - derivatives of perturbations enter solution
 
-remark: tracability index
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{screenshot022}
+	\caption{}
+	\label{fig:screenshot022}
+\end{figure}
 
 
-
-\section{Topological Conditions}
-For this we consider RLC networks with independant voltage and current sources (\textbf{what does that mean?}). To obtain the perturbation index of the MNA we perturb the right-hand side of  
-\newline reference to Tischendorf
-
-
-
+\section{Topological Conditions} 
+reference to Tischendorf
 basically chapter 7 of modelling book
 
-From analyzing the MNA some conditions to the circuit topology can be obtained. We will be concidering the impact of loops containing only capacitances and voltage sources as well as cutsets containing only inductances and current sources.
+From analyzing the MNA some conditions to the circuit topology can be obtained. We will be considering the impact of loops containing only capacitances and voltage sources as well as cutsets containing only inductances and current sources.
 
 In \cite{Tischendorf2005Topological} they present very interesting results about the index of MNA equations. Namely the following:
 
@@ -138,5 +134,13 @@ In \cite{Tischendorf2005Topological} they present very interesting results about
 \begin{theorem}[Index-2 condition] \cite{Tischendorf2004Topological}
 	If the Network contains \emph{inductance-current-source cutsets} or \emph{capacitance-voltage-source loops} except for capacitance-only loops, then the MNA leads to an index-2 DAE.
 \end{theorem}
+
+These theorems can be interpreted as follows:
+
+
+This means that for ´´reasonable'' RLC circuits (satisfying the prerequisites from the above theorems) the index will not exceed 2.
+
+
+ker conditions from page 22
 
 WE will apply those results to some examples:
