@@ -4,13 +4,12 @@ der ane satz do + proof hopefully
 
 seite 22 kap 7 netw top and dae ind for rlc - modelling and discretization circ prob
 
-In the previous chapter we have seen two different kinds of Index concepts for differential algebraic equations. We have also seen that these two, even thoough they describe rather different structural aspects of the equation, are the same for our use-cases. This of course leads to the question : ´´What are the indices we can usually expect for MNA?''.
+In the previous chapter we have seen two different kinds of Index concepts for differential algebraic equations. We have also seen that these two, even thoough they describe rather different structural aspects of the equation, are the same for our use-cases. This of course leads to the question : ``What are the indices we can usually expect for MNA?''.
 
 This chapter aims to answer that question for the linear RLC case. Which means that the RLC components are described by linear functions with positive capacitances, inductances and resistances. Thus the matrices
 \begin{displaymath}
 	C:=\frac{\partial q_C(w)}{\partial w}, \quad L:=\frac{\partial \phi_L(w)}{\partial w}, \quad G:=\frac{\partial r(w)}{\partial w}
 \end{displaymath}
-
 are positive definite and symmetric.
 
 The generalization of these results to the nonlinear case still relies on positive definiteness.
@@ -19,7 +18,6 @@ Recall that we consider the equations resulting from the analysis above. These e
 \begin{displaymath}
 	A y'(t) + B y(t) = f(t).
 \end{displaymath}
-
 Specifically the obtained equations from the Modified Nodal Analysis \ref{MNA_Matrixform} are
 \begin{displaymath}
 	\begin{pmatrix}
@@ -69,31 +67,33 @@ Assuming the system only contains linear elements or is linearized at an operati
 	The matrix $B$ is singular in \ref{DAE-const-coeff}. This is the interesting case which we will analyse further.
 \end{itemize}
 
-reminder for the structure obtained in previous chapter
+For $B$ being singular we have already obtained a representation of the form
 \begin{align*}
 	u'(t) + Ru(t) &= s(t), \\
 	Nv'(t) + v(t) &= q(t)
 \end{align*}
-
-We now consider the nilpotency index of the matrix $N$, as seen in the previous chapter, this index correlates to the differentiation as well as the perturbation index.
+in the previous chapter. We now consider the nilpotency index of the matrix $N$, we already know that this index correlates with the differentiation as well as the perturbation index. We consider two cases:
 
 \begin{enumerate}
-	\item index 1 case
-	Because $N$ is nilpotent with nipotency index $\nu = 1$ it holds that $N^1 = 0$, thus the system transforms to
-	\begin{align*}
-		u'(t) + Ru(t) &= s(t), \\
-		v(t) &= q(t).
-	\end{align*}
-	This means that the algebraic variables are given explicitly. Thus the system can be written in ODE form. (what properies does R have?)
+	\item \textbf{The nilpotency index is 1} \newline
+		Because $N$ is nilpotent with nipotency index $\nu = 1$ it holds that $N^1 = 0$, thus the system transforms to
+		\begin{align*}
+			u'(t) + Ru(t) &= s(t), \\
+			v(t) &= q(t).
+		\end{align*}
+		This means that the algebraic variables are given explicitly. Thus the system can be written in ODE form. (what properies does R have? - state ODE form)
 
-	\item index $\geq$ 2 case
-	
-	results in the solution we derived in \ref{solution-to-transformed-DAE-const-coeff-part2}. The index of the MNA is the same as $ind(A,B)$, which denotes the nilpotency index of $N$ as we have seen in the previous analysis in chapter 3.
+	\item \textbf{The nilpotency index is $\geq$ 2} \newline
+		This case is the situation we have seen in \ref{Weierstraß-Kronecker Normalform} , it led to \ref{solution-to-transformed-DAE-const-coeff-part2}.
+
 \end{enumerate}
 
-continue herer with modelling book from bottom of page 20-21 (did that on 26.11)
+We can see that an algebraic constraint has to be fulfilled by the solution. In the case of index 1 this equation is given explicitly, for index $\geq$ 2 it is given implicitly. By differentiating...
 
-an algebraic constraint has to be fulfilled by thesolution. case of index 1 this equation is given explicitly. for index geq 2 it is given implicitly (i need to show that somewhere) 
+\begin{displaymath}
+	Inhalt...
+\end{displaymath}
+
 
 system is sensitive to perturbations - small input noise can have arbitrarily large derivatives (shows in formula above for z)
 
@@ -103,11 +103,6 @@ however sever numerical problems may arrise for index geq 2. hidden algebraic co
 
 index is called algebraic index? - elaborate maybe on that
 
-put that one chapter up?
-
-differentiation index - since numerical differentiation is an unstable procedure this index gives a measure for the numerical problems to be expected when solving such systems
-
-perturbation index - derivatives of perturbations enter solution
 
 
 \begin{figure}[H]

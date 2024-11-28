@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.4.4)  27 NOV 2024 09:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.4.4)  28 NOV 2024 21:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1681,19 +1681,8 @@ py)>]
 
  (./chapters/Index_Analysis.tex
 chapter 4.
-LaTeX Info: Symbol \textasciiacute not provided by
-            font family ppl in TS1 encoding.
-            Default family used instead on input line 7.
-(f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/microtype/mt-cmr.cfg
-File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
-(RS)
-)
-LaTeX Info: Symbol \textasciiacute not provided by
-            font family ppl in TS1 encoding.
-            Default family used instead on input line 7.
 
-
-LaTeX Warning: Command \" invalid in math mode on input line 40.
+LaTeX Warning: Command \" invalid in math mode on input line 38.
 
 Missing character: There is no ‰ in font pplr7t!
 [18
@@ -1702,48 +1691,57 @@ Missing character: There is no ‰ in font pplr7t!
 
 
 ] [19]
+
+LaTeX Warning: Reference `Weierstra√ü-Kronecker Normalform' on page 20 undefine
+d on input line 87.
+
 <screenshot022.png, id=248, 643.6547pt x 197.98969pt>
 File: screenshot022.png Graphic file (type png)
 <use screenshot022.png>
-Package pdftex.def Info: screenshot022.png  used on input line 115.
+Package pdftex.def Info: screenshot022.png  used on input line 110.
 (pdftex.def)             Requested size: 298.75267pt x 91.89809pt.
- [20]
-
-LaTeX Warning: Citation 'Tischendorf2005Topological' on page 21 undefined on in
-put line 127.
-
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 130.
-
-LaTeX Warning: Citation 'Tischendorf2004Topological' on page 21 undefined on in
-put line 130.
-
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 134.
-
-LaTeX Warning: Citation 'Tischendorf2004Topological' on page 21 undefined on in
-put line 134.
-
-LaTeX Info: Symbol \textasciiacute not provided by
-            font family ppl in TS1 encoding.
-            Default family used instead on input line 141.
-LaTeX Info: Symbol \textasciiacute not provided by
-            font family ppl in TS1 encoding.
-            Default family used instead on input line 141.
-) [21pdfTeX warning (ext4): destination with the same identifier (name{figure.4
-.1}) has been already used, duplicate ignored
+[20pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.14 \include{chapters/Index_Analysis.tex}
-                                           <./screenshot022.png (PNG copy)>]
-[22]
+l.120 F
+       rom analyzing the MNA some conditions to the circuit topology can be ...
+ <./screenshot022.png (PNG copy)>]
+
+LaTeX Warning: Citation 'Tischendorf2005Topological' on page 21 undefined on in
+put line 122.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 125.
+
+LaTeX Warning: Citation 'Tischendorf2004Topological' on page 21 undefined on in
+put line 125.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 129.
+
+LaTeX Warning: Citation 'Tischendorf2004Topological' on page 21 undefined on in
+put line 129.
+
+LaTeX Info: Symbol \textasciiacute not provided by
+            font family ppl in TS1 encoding.
+            Default family used instead on input line 136.
+(f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+LaTeX Info: Symbol \textasciiacute not provided by
+            font family ppl in TS1 encoding.
+            Default family used instead on input line 136.
+)
+[21]
 \openout2 = `chapters/Numerical_Solution.aux'.
 
  (./chapters/Numerical_Solution.tex
 chapter 5.
-[23
+[22
 
 
 
@@ -1758,43 +1756,43 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 49.
- [24]
+ [23]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 64.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 82.
- [25]
+ [24]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 97.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 106.
- [26]
+ [25]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 119.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 155.
- [27]
+ [26]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 183.
-<screenshot010.png, id=313, 544.28343pt x 785.18344pt>
+<screenshot010.png, id=309, 544.28343pt x 785.18344pt>
 File: screenshot010.png Graphic file (type png)
 <use screenshot010.png>
 Package pdftex.def Info: screenshot010.png  used on input line 194.
 (pdftex.def)             Requested size: 298.75267pt x 430.97763pt.
- [28] [29pdfTeX warning (ext4): destination with the same identifier (name{figu
+ [27] [28pdfTeX warning (ext4): destination with the same identifier (name{figu
 re.5.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.204 	\end{enumerate}
                        <./screenshot010.png (PNG copy)>]
-<screenshot013.png, id=328, 513.41812pt x 210.7875pt>
+<screenshot013.png, id=324, 513.41812pt x 210.7875pt>
 File: screenshot013.png Graphic file (type png)
 <use screenshot013.png>
 Package pdftex.def Info: screenshot013.png  used on input line 216.
@@ -1802,7 +1800,7 @@ Package pdftex.def Info: screenshot013.png  used on input line 216.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 224.
- [30pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+ [29pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
@@ -1814,7 +1812,7 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 258.
- [31]
+ [30]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 270.
@@ -1829,27 +1827,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 297--299
 
  []
 
-[32]
+[31]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 307.
-<screenshot021.png, id=360, 276.28218pt x 226.59656pt>
+<screenshot021.png, id=356, 276.28218pt x 226.59656pt>
 File: screenshot021.png Graphic file (type png)
 <use screenshot021.png>
 Package pdftex.def Info: screenshot021.png  used on input line 323.
 (pdftex.def)             Requested size: 121.79866pt x 99.89294pt.
- [33pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+ [32pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.335 
        <./screenshot021.png (PNG copy)>]
-<screenshot009.png, id=368, 496.85625pt x 432.11438pt>
+<screenshot009.png, id=364, 496.85625pt x 432.11438pt>
 File: screenshot009.png Graphic file (type png)
 <use screenshot009.png>
 Package pdftex.def Info: screenshot009.png  used on input line 346.
 (pdftex.def)             Requested size: 298.75267pt x 259.82448pt.
- [34pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+ [33pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
@@ -1864,18 +1862,18 @@ Overfull \hbox (10.95pt too wide) in paragraph at lines 379--379
 [] 
  []
 
-[35]
-<screenshot020.png, id=381, 761.84625pt x 522.45187pt>
+[34]
+<screenshot020.png, id=377, 761.84625pt x 522.45187pt>
 File: screenshot020.png Graphic file (type png)
 <use screenshot020.png>
 Package pdftex.def Info: screenshot020.png  used on input line 391.
 (pdftex.def)             Requested size: 298.75267pt x 204.87148pt.
- [36pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+ [35pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.406 	\end{displaymath}
-                         <./screenshot020.png>]) [37])
+                         <./screenshot020.png>]) [36])
 
 LaTeX Warning: Empty bibliography on input line 174.
 
@@ -1903,11 +1901,11 @@ Package logreq Info: Writing requests to 'MAIN.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34155 strings out of 478994
- 653217 string characters out of 5856172
+ 34149 strings out of 478994
+ 653190 string characters out of 5856172
  1606245 words of memory out of 5000000
- 50479 multiletter control sequences out of 15000+600000
- 485015 words of font info for 343 fonts, out of 8000000 for 9000
+ 50480 multiletter control sequences out of 15000+600000
+ 484717 words of font info for 339 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  111i,20n,116p,10599b,3819s stack positions out of 5000i,500n,10000p,200000b,80000s
 {f:/Anwendungen/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1
@@ -1928,9 +1926,9 @@ endungen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb><f:/Anwen
 dungen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendun
 gen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendungen
 /texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on MAIN.pdf (43 pages, 1125442 bytes).
+Output written on MAIN.pdf (42 pages, 1124730 bytes).
 PDF statistics:
- 582 PDF objects out of 1000 (max. 8388607)
- 161 named destinations out of 1000 (max. 500000)
+ 577 PDF objects out of 1000 (max. 8388607)
+ 160 named destinations out of 1000 (max. 500000)
  92472 words of extra memory for PDF output out of 106986 (max. 10000000)
 
