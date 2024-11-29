@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.4.4)  28 NOV 2024 21:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.4.4)  29 NOV 2024 18:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1256,14 +1256,44 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \c@mdf@zref@counter=\count451
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 120.
+(f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
+
+(f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+
+(f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen259
+\captionmargin@=\dimen260
+\captionwidth=\dimen261
+\caption@tempdima=\dimen262
+\caption@indent=\dimen263
+\caption@parindent=\dimen264
+\caption@hangindent=\dimen265
+Package caption Info: KOMA-Script document class detected.
+
+(f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/caption/caption-koma.sto
+File: caption-koma.sto 2020/09/21 v2.0b Adaption of the caption package to the 
+KOMA-Script document classes (AR)
+))
+\c@caption@flags=\count452
+\c@continuedfloat=\count453
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: wrapfig package is loaded.
+)
+\c@subfigure=\count454
+\c@subtable=\count455
+)
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 121.
 
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
 LaTeX Font Info:    Trying to load font information for T1+ppl on input line 14
-6.
+7.
 
 (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
@@ -1280,40 +1310,40 @@ LaTeX Warning: Label `KVL' multiply defined.
 (./chapters/Index_Analysis.aux) (./chapters/Numerical_Solution.aux))
 \openout1 = `MAIN.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 146.
-LaTeX Font Info:    ... okay on input line 146.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 146.
-LaTeX Font Info:    ... okay on input line 146.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 146.
-LaTeX Font Info:    ... okay on input line 146.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 146.
-LaTeX Font Info:    ... okay on input line 146.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 146.
-LaTeX Font Info:    ... okay on input line 146.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 146.
-LaTeX Font Info:    ... okay on input line 146.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 146.
-LaTeX Font Info:    ... okay on input line 146.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 146.
-LaTeX Font Info:    ... okay on input line 146.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 146.
-LaTeX Font Info:    ... okay on input line 146.
-Package scrbase Info: activating english \contentsname on input line 146.
-Package scrbase Info: activating english \listfigurename on input line 146.
-Package scrbase Info: activating english \listtablename on input line 146.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+Package scrbase Info: activating english \contentsname on input line 147.
+Package scrbase Info: activating english \listfigurename on input line 147.
+Package scrbase Info: activating english \listtablename on input line 147.
 
 (f:/Anwendungen/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count452
-\scratchdimen=\dimen259
+\scratchcounter=\count456
+\scratchdimen=\dimen266
 \scratchbox=\box73
-\nofMPsegments=\count453
-\nofMParguments=\count454
+\nofMPsegments=\count457
+\nofMParguments=\count458
 \everyMPshowfont=\toks40
-\MPscratchCnt=\count455
-\MPscratchDim=\dimen260
-\MPnumerator=\count456
-\makeMPintoPDFobject=\count457
+\MPscratchCnt=\count459
+\MPscratchDim=\dimen267
+\MPnumerator=\count460
+\makeMPintoPDFobject=\count461
 \everyMPtoPDFconversion=\toks41
 )
 (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.st
@@ -1326,7 +1356,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 146.
+Package hyperref Info: Link coloring OFF on input line 147.
  (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -1337,11 +1367,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ng.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count458
+\c@section@level=\count462
 )
-LaTeX Info: Redefining \ref on input line 146.
-LaTeX Info: Redefining \pageref on input line 146.
-LaTeX Info: Redefining \nameref on input line 146.
+LaTeX Info: Redefining \ref on input line 147.
+LaTeX Info: Redefining \pageref on input line 147.
+LaTeX Info: Redefining \nameref on input line 147.
  (./MAIN.out) (./MAIN.out)
 \@outlinefile=\write5
 \openout5 = `MAIN.out'.
@@ -1353,23 +1383,23 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           `bookmarkpackage=false' before \begin{document} and
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
-(scrbook)           before \begin{document} on input line 146.
+(scrbook)           before \begin{document} on input line 147.
 
 (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 
 (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
-\BKM@id=\count459
+\BKM@id=\count463
 ))
-LaTeX Info: Redefining \microtypecontext on input line 146.
+LaTeX Info: Redefining \microtypecontext on input line 147.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 146.
+LaTeX Info: Redefining \showhyphens on input line 147.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1426,35 +1456,37 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'MAIN.bbl' found.
 
 (./MAIN.bbl)
-Package biblatex Info: Reference section=0 on input line 146.
-Package biblatex Info: Reference segment=0 on input line 146.
+Package biblatex Info: Reference section=0 on input line 147.
+Package biblatex Info: Reference segment=0 on input line 147.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 146.
+(lastpage)             ! on input line 147.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 1
-46.
+47.
  (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
 LaTeX Font Info:    Trying to load font information for OML+zplm on input line 
-146.
+147.
  (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 
-146.
+147.
 
 (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 
-146.
+147.
 
 (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 
-146.
+147.
 
 (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
@@ -1524,7 +1556,7 @@ Package pdftex.def Info: cover/arr.png  used on input line 106.
 
 ]
 Package tocbasic Info: character protrusion at toc deactivated on input line 16
-1.
+2.
  (./MAIN.toc)
 \tf@toc=\write6
 \openout6 = `MAIN.toc'.
@@ -1534,7 +1566,7 @@ Package tocbasic Info: character protrusion at toc deactivated on input line 16
 
 ]
 Package tocbasic Info: character protrusion at lof deactivated on input line 16
-2.
+3.
  (./MAIN.lof)
 \tf@lof=\write7
 \openout7 = `MAIN.lof'.
@@ -1543,7 +1575,7 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 16
 
 ]
 Package tocbasic Info: character protrusion at lot deactivated on input line 16
-3.
+4.
  (./MAIN.lot)
 \tf@lot=\write8
 \openout8 = `MAIN.lot'.
@@ -1551,9 +1583,9 @@ Package tocbasic Info: character protrusion at lot deactivated on input line 16
  [5
 
 ] (./mainmatter.tex
-\c@definition=\count460
-\c@theorem=\count461
-\c@lemma=\count462
+\c@definition=\count464
+\c@theorem=\count465
+\c@lemma=\count466
 \openout2 = `chapters/Introduction.aux'.
 
 
@@ -1591,39 +1623,35 @@ File: pictures/capacitor.png Graphic file (type png)
 <use pictures/capacitor.png>
 Package pdftex.def Info: pictures/capacitor.png  used on input line 56.
 (pdftex.def)             Requested size: 56.9055pt x 53.0555pt.
-<pictures/coil.png, id=138, 277.78781pt x 101.62968pt>
-File: pictures/coil.png Graphic file (type png)
-<use pictures/coil.png>
-Package pdftex.def Info: pictures/coil.png  used on input line 65.
+<pictures/inductance.png, id=138, 277.78781pt x 101.62968pt>
+File: pictures/inductance.png Graphic file (type png)
+<use pictures/inductance.png>
+Package pdftex.def Info: pictures/inductance.png  used on input line 65.
 (pdftex.def)             Requested size: 85.35826pt x 31.22884pt.
 <pictures/voltage_source.png, id=139, 310.91156pt x 179.16937pt>
 File: pictures/voltage_source.png Graphic file (type png)
 <use pictures/voltage_source.png>
 Package pdftex.def Info: pictures/voltage_source.png  used on input line 74.
 (pdftex.def)             Requested size: 113.81102pt x 65.58627pt.
- [4 <./pictures/resistor.png> <./pictures/capacitor.png> <./pictures/coil.png>]
-<pictures/current_source.png, id=144, 310.91156pt x 179.16937pt>
+ [4 <./pictures/resistor.png> <./pictures/capacitor.png> <./pictures/inductance
+.png>]
+<pictures/current_source.png, id=147, 310.91156pt x 179.16937pt>
 File: pictures/current_source.png Graphic file (type png)
 <use pictures/current_source.png>
 Package pdftex.def Info: pictures/current_source.png  used on input line 83.
 (pdftex.def)             Requested size: 113.81102pt x 65.58627pt.
  [5 <./pictures/voltage_source.png> <./pictures/current_source.png>]
 [6]
-<screenshot007.png, id=157, 658.71094pt x 314.67563pt>
+<screenshot007.png, id=162, 658.71094pt x 314.67563pt>
 File: screenshot007.png Graphic file (type png)
 <use screenshot007.png>
 Package pdftex.def Info: screenshot007.png  used on input line 185.
 (pdftex.def)             Requested size: 298.75267pt x 142.72148pt.
- [7]) [8pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.2.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.10 ...ters/Formulating_a_mathematical_model.tex}
-                                                   <./screenshot007.png (PNG co
-py)>]
+ [7]) [8 <./screenshot007.png (PNG copy)>]
 \openout2 = `chapters/Differential_Algebraic_Equations.aux'.
 
- (./chapters/Differential_Algebraic_Equations.tex
+
+(./chapters/Differential_Algebraic_Equations.tex
 chapter 3.
 LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 
 11.
@@ -1665,21 +1693,16 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 340.
-<screenshot005.png, id=220, 434.37282pt x 227.34938pt>
+<screenshot005.png, id=225, 434.37282pt x 227.34938pt>
 File: screenshot005.png Graphic file (type png)
 <use screenshot005.png>
 Package pdftex.def Info: screenshot005.png  used on input line 355.
 (pdftex.def)             Requested size: 298.75267pt x 156.37515pt.
- [16]) [17pdfTeX warning (ext4): destination with the same identifier (name{fig
-ure.3.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.12 ...ters/Differential_Algebraic_Equations.tex}
-                                                   <./screenshot005.png (PNG co
-py)>]
+ [16]) [17 <./screenshot005.png (PNG copy)>]
 \openout2 = `chapters/Index_Analysis.aux'.
 
- (./chapters/Index_Analysis.tex
+
+(./chapters/Index_Analysis.tex
 chapter 4.
 
 LaTeX Warning: Command \" invalid in math mode on input line 38.
@@ -1695,53 +1718,65 @@ Missing character: There is no ‰ in font pplr7t!
 LaTeX Warning: Reference `Weierstra√ü-Kronecker Normalform' on page 20 undefine
 d on input line 87.
 
-<screenshot022.png, id=248, 643.6547pt x 197.98969pt>
+<screenshot022.png, id=253, 643.6547pt x 197.98969pt>
 File: screenshot022.png Graphic file (type png)
 <use screenshot022.png>
 Package pdftex.def Info: screenshot022.png  used on input line 110.
 (pdftex.def)             Requested size: 298.75267pt x 91.89809pt.
-[20pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
-}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.120 F
-       rom analyzing the MNA some conditions to the circuit topology can be ...
- <./screenshot022.png (PNG copy)>]
+[20 <./screenshot022.png (PNG copy)>]
 
 LaTeX Warning: Citation 'Tischendorf2005Topological' on page 21 undefined on in
-put line 122.
+put line 120.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 125.
+(mdframed)              on input line 123.
 
 LaTeX Warning: Citation 'Tischendorf2004Topological' on page 21 undefined on in
-put line 125.
+put line 123.
+
+<pictures/inductance-current-source_cutset.png, id=260, 948.54375pt x 543.53062
+pt>
+File: pictures/inductance-current-source_cutset.png Graphic file (type png)
+<use pictures/inductance-current-source_cutset.png>
+Package pdftex.def Info: pictures/inductance-current-source_cutset.png  used on
+ input line 131.
+(pdftex.def)             Requested size: 149.37633pt x 85.58994pt.
+File: pictures/inductance-current-source_cutset.png Graphic file (type png)
+<use pictures/inductance-current-source_cutset.png>
+Package pdftex.def Info: pictures/inductance-current-source_cutset.png  used on
+ input line 135.
+(pdftex.def)             Requested size: 149.37633pt x 85.58994pt.
+
+Overfull \hbox (2.08049pt too wide) in paragraph at lines 130--138
+[]$[]$ $[]$ 
+ []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 129.
+(mdframed)              on input line 142.
 
 LaTeX Warning: Citation 'Tischendorf2004Topological' on page 21 undefined on in
-put line 129.
+put line 142.
 
 LaTeX Info: Symbol \textasciiacute not provided by
             font family ppl in TS1 encoding.
-            Default family used instead on input line 136.
+            Default family used instead on input line 149.
 (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
 LaTeX Info: Symbol \textasciiacute not provided by
             font family ppl in TS1 encoding.
-            Default family used instead on input line 136.
+            Default family used instead on input line 149.
 )
-[21]
+[21 <./pictures/inductance-current-source_cutset.png>] [22]
 \openout2 = `chapters/Numerical_Solution.aux'.
 
- (./chapters/Numerical_Solution.tex
+
+(./chapters/Numerical_Solution.tex
 chapter 5.
-[22
+[23
 
 
 
@@ -1756,43 +1791,38 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 49.
- [23]
+ [24]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 64.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 82.
- [24]
+ [25]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 97.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 106.
- [25]
+ [26]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 119.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 155.
- [26]
+ [27]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 183.
-<screenshot010.png, id=309, 544.28343pt x 785.18344pt>
+<screenshot010.png, id=321, 544.28343pt x 785.18344pt>
 File: screenshot010.png Graphic file (type png)
 <use screenshot010.png>
 Package pdftex.def Info: screenshot010.png  used on input line 194.
 (pdftex.def)             Requested size: 298.75267pt x 430.97763pt.
- [27] [28pdfTeX warning (ext4): destination with the same identifier (name{figu
-re.5.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.204 	\end{enumerate}
-                       <./screenshot010.png (PNG copy)>]
-<screenshot013.png, id=324, 513.41812pt x 210.7875pt>
+ [28] [29 <./screenshot010.png (PNG copy)>]
+<screenshot013.png, id=336, 513.41812pt x 210.7875pt>
 File: screenshot013.png Graphic file (type png)
 <use screenshot013.png>
 Package pdftex.def Info: screenshot013.png  used on input line 216.
@@ -1800,19 +1830,14 @@ Package pdftex.def Info: screenshot013.png  used on input line 216.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 224.
- [29pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
-2}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.234 	\end{definition}
-                        <./screenshot013.png (PNG copy)>]
+ [30 <./screenshot013.png (PNG copy)>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 242.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 258.
- [30]
+ [31]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 270.
@@ -1827,32 +1852,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 297--299
 
  []
 
-[31]
+[32]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 307.
-<screenshot021.png, id=356, 276.28218pt x 226.59656pt>
+<screenshot021.png, id=368, 276.28218pt x 226.59656pt>
 File: screenshot021.png Graphic file (type png)
 <use screenshot021.png>
 Package pdftex.def Info: screenshot021.png  used on input line 323.
 (pdftex.def)             Requested size: 121.79866pt x 99.89294pt.
- [32pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
-3}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.335 
-       <./screenshot021.png (PNG copy)>]
-<screenshot009.png, id=364, 496.85625pt x 432.11438pt>
+ [33 <./screenshot021.png (PNG copy)>]
+<screenshot009.png, id=376, 496.85625pt x 432.11438pt>
 File: screenshot009.png Graphic file (type png)
 <use screenshot009.png>
 Package pdftex.def Info: screenshot009.png  used on input line 346.
 (pdftex.def)             Requested size: 298.75267pt x 259.82448pt.
- [33pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
-4}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.354 \subsection
-                 {BDF-schemes} <./screenshot009.png (PNG copy)>]
+ [34 <./screenshot009.png (PNG copy)>]
 Overfull \hbox (43.47769pt too wide) detected at line 379
 []
  []
@@ -1862,20 +1877,15 @@ Overfull \hbox (10.95pt too wide) in paragraph at lines 379--379
 [] 
  []
 
-[34]
-<screenshot020.png, id=377, 761.84625pt x 522.45187pt>
+[35]
+<screenshot020.png, id=389, 761.84625pt x 522.45187pt>
 File: screenshot020.png Graphic file (type png)
 <use screenshot020.png>
 Package pdftex.def Info: screenshot020.png  used on input line 391.
 (pdftex.def)             Requested size: 298.75267pt x 204.87148pt.
- [35pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
-5}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.406 	\end{displaymath}
-                         <./screenshot020.png>]) [36])
+ [36 <./screenshot020.png>]) [37])
 
-LaTeX Warning: Empty bibliography on input line 174.
+LaTeX Warning: Empty bibliography on input line 175.
 
 
 AED: lastpage setting LastPage
@@ -1901,11 +1911,11 @@ Package logreq Info: Writing requests to 'MAIN.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34149 strings out of 478994
- 653190 string characters out of 5856172
- 1606245 words of memory out of 5000000
- 50480 multiletter control sequences out of 15000+600000
- 484717 words of font info for 339 fonts, out of 8000000 for 9000
+ 35446 strings out of 478994
+ 679052 string characters out of 5856172
+ 1631132 words of memory out of 5000000
+ 51743 multiletter control sequences out of 15000+600000
+ 486800 words of font info for 347 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  111i,20n,116p,10599b,3819s stack positions out of 5000i,500n,10000p,200000b,80000s
 {f:/Anwendungen/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1
@@ -1926,9 +1936,9 @@ endungen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb><f:/Anwen
 dungen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendun
 gen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendungen
 /texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on MAIN.pdf (42 pages, 1124730 bytes).
+Output written on MAIN.pdf (43 pages, 1138084 bytes).
 PDF statistics:
- 577 PDF objects out of 1000 (max. 8388607)
- 160 named destinations out of 1000 (max. 500000)
- 92472 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 591 PDF objects out of 1000 (max. 8388607)
+ 168 named destinations out of 1000 (max. 500000)
+ 96573 words of extra memory for PDF output out of 106986 (max. 10000000)
 

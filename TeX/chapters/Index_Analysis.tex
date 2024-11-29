@@ -67,7 +67,7 @@ Assuming the system only contains linear elements or is linearized at an operati
 	The matrix $B$ is singular in \ref{DAE-const-coeff}. This is the interesting case which we will analyse further.
 \end{itemize}
 
-For $B$ being singular we have already obtained a representation of the form
+For the matrix $B$ being singular we have already obtained a representation of the form
 \begin{align*}
 	u'(t) + Ru(t) &= s(t), \\
 	Nv'(t) + v(t) &= q(t)
@@ -84,24 +84,24 @@ in the previous chapter. We now consider the nilpotency index of the matrix $N$,
 		This means that the algebraic variables are given explicitly. Thus the system can be written in ODE form. (what properies does R have? - state ODE form)
 
 	\item \textbf{The nilpotency index is $\geq$ 2} \newline
-		This case is the situation we have seen in \ref{Weierstraß-Kronecker Normalform} , it led to \ref{solution-to-transformed-DAE-const-coeff-part2}.
-
+		This case is the situation we have seen in \ref{Weierstraß-Kronecker Normalform} , it led to \ref{solution-to-transformed-DAE-const-coeff-part2}
+		\begin{displaymath}
+			v(t) = \sum_{i=0}^{k-1} (-1)^iN^iq^{(i)}(t).
+		\end{displaymath}
+		By differentiating one more time we receive
+		\begin{equation}
+			v'(t) = \sum_{i=0}^{k-1} (-1)^iN^iq^{(i+1)}(t)
+		\end{equation}
+		with the assumption that $q$ is $\nu$ times differentiable.
 \end{enumerate}
 
-We can see that an algebraic constraint has to be fulfilled by the solution. In the case of index 1 this equation is given explicitly, for index $\geq$ 2 it is given implicitly. By differentiating...
+We can see that an algebraic constraint has to be fulfilled by the solution. In the case of index 1 this equation is given explicitly, for index $\geq$ 2 it is given implicitly.
 
-\begin{displaymath}
-	Inhalt...
-\end{displaymath}
+The system is also sensitive to perturbations. Small noise in the input can have arbitrarily large derivatives which can influence $v$ as we it depends on them.
 
+Thus no severe numerical problems arise from index-1 systems. Hence implicit numerical integration schemes for stiff systems are feasable. On the other hand severe nunmerical problems may occur in the case that the system has index greater or equal to $2$. The hidden constraints can only be resolved by an unstable differentiation process.
 
-system is sensitive to perturbations - small input noise can have arbitrarily large derivatives (shows in formula above for z)
-
-book says - no severe numerical problems with index 1. might show up for implicit algebraic constraint.  Hence implicit numerical integration schemes for stiff systems are feasable.
-
-however sever numerical problems may arrise for index geq 2. hidden algebraic constraints can make problems.
-
-index is called algebraic index? - elaborate maybe on that
+As $\nu$ defines the behaviour of the system theoretically as well as numerically it is called the \emph{algebraic index} of the linear implicit system.
 
 
 
@@ -117,14 +117,27 @@ index is called algebraic index? - elaborate maybe on that
 reference to Tischendorf
 basically chapter 7 of modelling book
 
-From analyzing the MNA some conditions to the circuit topology can be obtained. We will be considering the impact of loops containing only capacitances and voltage sources as well as cutsets containing only inductances and current sources.
-
-In \cite{Tischendorf2005Topological} they present very interesting results about the index of MNA equations. Namely the following:
+From analyzing the MNA some conditions to the circuit topology can be obtained. We will be considering the impact of special arrangements of components on the index of the system. In \cite{Tischendorf2005Topological} they present very interesting results about the index of MNA equations.
 
 
 \begin{theorem}[Index-1 condition] \cite{Tischendorf2004Topological}
 	Let the matrices of the capacitances, inductances and resistances respectively be positive definite. If the network neither cointains \emph{inductance-current-source cutsets} nor (controlled?) \emph{capacitance-voltage-source loops}, then the MNA leads to an index-1 DAE.
 \end{theorem}
+
+Where inductance-current-source cutsets and capacitance-voltage-source loops are subcircuits of the form Seite 481 (searchbar)
+
+\begin{figure}[H]
+	\begin{subfigure}{0.5\textwidth}
+		\includegraphics[width=0.9\linewidth]{pictures/inductance-current-source_cutset.png}
+		\caption{inductance-current-source cutset}
+	\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+		\includegraphics[width=0.9\linewidth]{pictures/inductance-current-source_cutset.png}
+		\caption{capacitance-voltage-source loop}
+	\end{subfigure}
+\end{figure}
+
+This result can be interpreted as 
 
 \begin{theorem}[Index-2 condition] \cite{Tischendorf2004Topological}
 	If the Network contains \emph{inductance-current-source cutsets} or \emph{capacitance-voltage-source loops} except for capacitance-only loops, then the MNA leads to an index-2 DAE.
