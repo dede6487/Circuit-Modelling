@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.4.4)  29 NOV 2024 18:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.4.4)  29 NOV 2024 22:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1740,41 +1740,32 @@ pt>
 File: pictures/inductance-current-source_cutset.png Graphic file (type png)
 <use pictures/inductance-current-source_cutset.png>
 Package pdftex.def Info: pictures/inductance-current-source_cutset.png  used on
- input line 131.
-(pdftex.def)             Requested size: 149.37633pt x 85.58994pt.
-File: pictures/inductance-current-source_cutset.png Graphic file (type png)
-<use pictures/inductance-current-source_cutset.png>
-Package pdftex.def Info: pictures/inductance-current-source_cutset.png  used on
- input line 135.
-(pdftex.def)             Requested size: 149.37633pt x 85.58994pt.
+ input line 133.
+(pdftex.def)             Requested size: 192.05481pt x 110.04776pt.
+<pictures/capacitance-voltage-source_loop.png, id=261, 858.20625pt x 543.53062p
+t>
+File: pictures/capacitance-voltage-source_loop.png Graphic file (type png)
+<use pictures/capacitance-voltage-source_loop.png>
+Package pdftex.def Info: pictures/capacitance-voltage-source_loop.png  used on 
+input line 138.
+(pdftex.def)             Requested size: 192.05481pt x 121.63391pt.
 
-Overfull \hbox (2.08049pt too wide) in paragraph at lines 130--138
+Overfull \hbox (2.08049pt too wide) in paragraph at lines 131--141
 []$[]$ $[]$ 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 142.
+(mdframed)              on input line 145.
 
 LaTeX Warning: Citation 'Tischendorf2004Topological' on page 21 undefined on in
-put line 142.
+put line 145.
 
-LaTeX Info: Symbol \textasciiacute not provided by
-            font family ppl in TS1 encoding.
-            Default family used instead on input line 149.
-(f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/microtype/mt-cmr.cfg
-File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
-(RS)
-)
-LaTeX Info: Symbol \textasciiacute not provided by
-            font family ppl in TS1 encoding.
-            Default family used instead on input line 149.
-)
-[21 <./pictures/inductance-current-source_cutset.png>] [22]
+[21 <./pictures/inductance-current-source_cutset.png> <./pictures/capacitance-v
+oltage-source_loop.png>]) [22]
 \openout2 = `chapters/Numerical_Solution.aux'.
 
-
-(./chapters/Numerical_Solution.tex
+ (./chapters/Numerical_Solution.tex
 chapter 5.
 [23
 
@@ -1816,13 +1807,13 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 183.
-<screenshot010.png, id=321, 544.28343pt x 785.18344pt>
+<screenshot010.png, id=323, 544.28343pt x 785.18344pt>
 File: screenshot010.png Graphic file (type png)
 <use screenshot010.png>
 Package pdftex.def Info: screenshot010.png  used on input line 194.
 (pdftex.def)             Requested size: 298.75267pt x 430.97763pt.
  [28] [29 <./screenshot010.png (PNG copy)>]
-<screenshot013.png, id=336, 513.41812pt x 210.7875pt>
+<screenshot013.png, id=338, 513.41812pt x 210.7875pt>
 File: screenshot013.png Graphic file (type png)
 <use screenshot013.png>
 Package pdftex.def Info: screenshot013.png  used on input line 216.
@@ -1856,13 +1847,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 297--299
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 307.
-<screenshot021.png, id=368, 276.28218pt x 226.59656pt>
+<screenshot021.png, id=370, 276.28218pt x 226.59656pt>
 File: screenshot021.png Graphic file (type png)
 <use screenshot021.png>
 Package pdftex.def Info: screenshot021.png  used on input line 323.
 (pdftex.def)             Requested size: 121.79866pt x 99.89294pt.
  [33 <./screenshot021.png (PNG copy)>]
-<screenshot009.png, id=376, 496.85625pt x 432.11438pt>
+<screenshot009.png, id=378, 496.85625pt x 432.11438pt>
 File: screenshot009.png Graphic file (type png)
 <use screenshot009.png>
 Package pdftex.def Info: screenshot009.png  used on input line 346.
@@ -1878,7 +1869,7 @@ Overfull \hbox (10.95pt too wide) in paragraph at lines 379--379
  []
 
 [35]
-<screenshot020.png, id=389, 761.84625pt x 522.45187pt>
+<screenshot020.png, id=391, 761.84625pt x 522.45187pt>
 File: screenshot020.png Graphic file (type png)
 <use screenshot020.png>
 Package pdftex.def Info: screenshot020.png  used on input line 391.
@@ -1911,34 +1902,32 @@ Package logreq Info: Writing requests to 'MAIN.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35446 strings out of 478994
- 679052 string characters out of 5856172
- 1631132 words of memory out of 5000000
- 51743 multiletter control sequences out of 15000+600000
- 486800 words of font info for 347 fonts, out of 8000000 for 9000
+ 35371 strings out of 478994
+ 677630 string characters out of 5856172
+ 1631223 words of memory out of 5000000
+ 51668 multiletter control sequences out of 15000+600000
+ 486618 words of font info for 348 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  111i,20n,116p,10599b,3819s stack positions out of 5000i,500n,10000p,200000b,80000s
-{f:/Anwendungen/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1
-.enc}{f:/Anwendungen/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<f:/An
-wendungen/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><f:
-/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-<f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
-b><f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb><f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/mathpazo/fplmbb
-.pfb><f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/mathpazo/fplmr.
-pfb><f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/mathpazo/fplmri.
-pfb><f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm109
-5.pfb><f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/urw/grotesq/ugqb8a.pf
-b><f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><
-f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><f:/
-Anwendungen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><f:/Anw
-endungen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb><f:/Anwen
-dungen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendun
-gen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendungen
-/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on MAIN.pdf (43 pages, 1138084 bytes).
+{f:/Anwendungen/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<f:/Anwen
+dungen/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><f:/An
+wendungen/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><f:
+/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b><f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pf
+b><f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb
+><f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb
+><f:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/urw/grotesq/ugqb8a.pfb><f:
+/Anwendungen/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><f:/An
+wendungen/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><f:/Anwen
+dungen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><f:/Anwendun
+gen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb><f:/Anwendunge
+n/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendungen/t
+exlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendungen/texl
+ive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on MAIN.pdf (43 pages, 1146299 bytes).
 PDF statistics:
- 591 PDF objects out of 1000 (max. 8388607)
+ 587 PDF objects out of 1000 (max. 8388607)
  168 named destinations out of 1000 (max. 500000)
- 96573 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 95554 words of extra memory for PDF output out of 106986 (max. 10000000)
 

@@ -124,31 +124,35 @@ From analyzing the MNA some conditions to the circuit topology can be obtained. 
 	Let the matrices of the capacitances, inductances and resistances respectively be positive definite. If the network neither cointains \emph{inductance-current-source cutsets} nor (controlled?) \emph{capacitance-voltage-source loops}, then the MNA leads to an index-1 DAE.
 \end{theorem}
 
-Where inductance-current-source cutsets and capacitance-voltage-source loops are subcircuits of the form Seite 481 (searchbar)
+Where inductance-current-source cutsets and capacitance-voltage-source loops are subcircuits of the form Seite 481 (searchbar) in basic circuit theory
 
 \begin{figure}[H]
+	\label{cutset and loop}
 	\begin{subfigure}{0.5\textwidth}
+		\centering
 		\includegraphics[width=0.9\linewidth]{pictures/inductance-current-source_cutset.png}
 		\caption{inductance-current-source cutset}
 	\end{subfigure}
 	\begin{subfigure}{0.5\textwidth}
-		\includegraphics[width=0.9\linewidth]{pictures/inductance-current-source_cutset.png}
+		\centering
+		\includegraphics[width=0.9\linewidth]{pictures/capacitance-voltage-source_loop.png}
 		\caption{capacitance-voltage-source loop}
 	\end{subfigure}
 \end{figure}
 
-This result can be interpreted as 
+This means that if our circuit does not contain any loops or cutsets of the above form the resulting MNA has index 1.
 
 \begin{theorem}[Index-2 condition] \cite{Tischendorf2004Topological}
 	If the Network contains \emph{inductance-current-source cutsets} or \emph{capacitance-voltage-source loops} except for capacitance-only loops, then the MNA leads to an index-2 DAE.
 \end{theorem}
 
-These theorems can be interpreted as follows:
 
 
-This means that for ´´reasonable'' RLC circuits (satisfying the prerequisites from the above theorems) the index will not exceed 2.
 
+This means that for ``reasonable'' RLC circuits (satisfying the prerequisites from the above theorems) the index will not exceed 2.
 
-ker conditions from page 22
+These results can also be interpreted in a more formal way. As they are just descriptions of the topology of the circuit we can reformulate the theorems in terms of the incidence matrix $A$.
+
+ker conditions from page 22 - kapitel 7 quasi
 
 WE will apply those results to some examples:
