@@ -120,7 +120,7 @@ basically chapter 7 of modelling book
 From analyzing the MNA some conditions to the circuit topology can be obtained. We will be considering the impact of special arrangements of components on the index of the system. In \cite{Tischendorf2005Topological} they present very interesting results about the index of MNA equations.
 
 
-\begin{theorem}[Index-1 condition] \cite{Tischendorf2004Topological}
+\begin{theorem}[Index-1 condition] \cite{Tischendorf2004Topological} \label{Index-1 condition}
 	Let the matrices of the capacitances, inductances and resistances respectively be positive definite. If the network neither cointains \emph{inductance-current-source cutsets} nor (controlled?) \emph{capacitance-voltage-source loops}, then the MNA leads to an index-1 DAE.
 \end{theorem}
 
@@ -142,17 +142,33 @@ Where inductance-current-source cutsets and capacitance-voltage-source loops are
 
 This means that if our circuit does not contain any loops or cutsets of the above form the resulting MNA has index 1.
 
-\begin{theorem}[Index-2 condition] \cite{Tischendorf2004Topological}
+\begin{theorem}[Index-2 condition] \cite{Tischendorf2004Topological} \label{Index-2 condition}
 	If the Network contains \emph{inductance-current-source cutsets} or \emph{capacitance-voltage-source loops} except for capacitance-only loops, then the MNA leads to an index-2 DAE.
 \end{theorem}
 
-
-
-
-This means that for ``reasonable'' RLC circuits (satisfying the prerequisites from the above theorems) the index will not exceed 2.
-
 These results can also be interpreted in a more formal way. As they are just descriptions of the topology of the circuit we can reformulate the theorems in terms of the incidence matrix $A$.
 
-ker conditions from page 22 - kapitel 7 quasi
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{screenshot024}
+	\caption{}
+	\label{fig:screenshot024}
+\end{figure}
 
-WE will apply those results to some examples:
+Theorem \ref{Index-1 condition} can be interpreted as the two conditions
+\begin{enumerate}
+	\item	\begin{displaymath}
+				kerQ_C^\top A_v = {0},
+			\end{displaymath}
+	
+	\item	\begin{displaymath}
+				ker(A_C A_R A_V)^\top = {0}.
+			\end{displaymath}
+	
+\end{enumerate}
+
+This means that for ``reasonable'' RLC circuits (satisfying the prerequisites from the above theorems) the index will not exceed 2. We will only consider such circuits.
+
+If one of those conditions is violated we are in the case of Theorem \ref{Index-2 condition} and thus have index 2.
+
+WE will apply those results to some examples: (there are examples on page 23)
