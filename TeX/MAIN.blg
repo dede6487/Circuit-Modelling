@@ -1,11 +1,17 @@
-[0] Config.pm:311> INFO - This is Biber 2.16
-[0] Config.pm:314> INFO - Logfile is 'MAIN.blg'
-[157] biber-MSWIN32:340> INFO - === 
-[230] Biber.pm:415> INFO - Reading 'MAIN.bcf'
-[408] Biber.pm:952> INFO - Found 2 citekeys in bib section 0
-[427] Biber.pm:4340> INFO - Processing section 0
-[442] Biber.pm:4531> INFO - Looking for bibtex format file 'literature.bib' for section 0
-[504] bibtex.pm:1689> INFO - LaTeX decoding ...
-[529] bibtex.pm:1494> INFO - Found BibTeX data source 'literature.bib'
-[580] Utils.pm:411> ERROR - BibTeX subsystem: C:\Users\dede4\AppData\Local\Temp\biber_tmp_IU0K\a42497fa0f805ce74b9af7d16715cbd8_13324.utf8, line 45, syntax error: found "and", expected ","
-[580] Biber.pm:132> INFO - ERRORS: 1
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'MAIN.blg'
+[159] biber-MSWIN64:340> INFO - === 
+[219] Biber.pm:420> INFO - Reading 'MAIN.bcf'
+[383] Biber.pm:994> INFO - Found 2 citekeys in bib section 0
+[403] Biber.pm:4463> INFO - Processing section 0
+[419] Biber.pm:4654> INFO - Looking for bibtex file 'literature.bib' for section 0
+[507] bibtex.pm:1713> INFO - LaTeX decoding ...
+[521] bibtex.pm:1519> INFO - Found BibTeX data source 'literature.bib'
+[572] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[572] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[572] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[572] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[574] bbl.pm:676> INFO - Writing 'MAIN.bbl' with encoding 'UTF-8'
+[575] bbl.pm:779> INFO - Output to MAIN.bbl
+[575] Biber.pm:131> WARN - I didn't find a database entry for 'Tischendorf2004Topological' (section 0)
+[575] Biber.pm:133> INFO - WARNINGS: 1

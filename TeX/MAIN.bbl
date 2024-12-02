@@ -1,0 +1,55 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{Tischendorf2005Topological}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=f31e597f9ce1e216940725c8d991def9}{%
+           family={Tischendorf},
+           familyi={T\bibinitperiod},
+           given={Caren},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Humboldt-Universität zu Berlin, Mathematisch-Naturwissenschaftliche Fakultät II, Institut für Mathematik}%
+      }
+      \strng{namehash}{f31e597f9ce1e216940725c8d991def9}
+      \strng{fullhash}{f31e597f9ce1e216940725c8d991def9}
+      \strng{fullhashraw}{f31e597f9ce1e216940725c8d991def9}
+      \strng{bibnamehash}{f31e597f9ce1e216940725c8d991def9}
+      \strng{authorbibnamehash}{f31e597f9ce1e216940725c8d991def9}
+      \strng{authornamehash}{f31e597f9ce1e216940725c8d991def9}
+      \strng{authorfullhash}{f31e597f9ce1e216940725c8d991def9}
+      \strng{authorfullhashraw}{f31e597f9ce1e216940725c8d991def9}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Topological index calculation of DAEs in circuit simulation}
+      \field{year}{2005}
+      \verb{doi}
+      \verb http://dx.doi.org/10.18452/2717
+      \endverb
+    \endentry
+  \enddatalist
+  \missing{Tischendorf2004Topological}
+\endrefsection
+\endinput
+

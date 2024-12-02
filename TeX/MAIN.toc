@@ -1,35 +1,33 @@
-\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\babel@toc {english}{}
-\babel@toc {naustrian}{}
-\babel@toc {english}{}
-\babel@toc {english}{}
-\babel@toc {english}{}
+\babel@toc {english}{}\relax 
+\babel@toc {naustrian}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {english}{}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Formulating a Mathematical Model}{2}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Network Topology}{2}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Energy Conservation Laws}{3}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Electrical Components and their relations}{3}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Modified Nodal Analysis - MNA}{5}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Energy \textbf {bilanz??????????}}{6}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Charge/Flux oriented formulation of MNA}{7}{section.2.6}%
-\contentsline {chapter}{\numberline {3}Differential Algebraic Equations}{9}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Abstract Problem}{9}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Types of DAEs}{9}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Weierstraß-Kronecker Normalform}{10}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Index of a Differential Algebraic Equation}{15}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Special Case of Index = 1 and Index geq 2}{17}{subsection.3.3.1}%
-\contentsline {chapter}{\numberline {4}Index Analysis of the MNA}{18}{chapter.4}%
-\contentsline {section}{\numberline {4.1}General Index analysis}{19}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Topological Conditions}{21}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Numerical Solutions}{23}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Single-Step-Methods}{23}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Consistency, Stability and Convergence}{24}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Runge-Kutta Methods}{26}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}further stability properties}{27}{subsection.5.1.3}%
-\contentsline {section}{\numberline {5.2}Multistep-Methods}{28}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Consistency, Stability and Convergence}{30}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}further stability properties}{32}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Implicit linear multi-step formulas}{34}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}BDF-schemes}{35}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}trapezoidal rule}{36}{subsection.5.3.2}%
+\contentsline {section}{\numberline {2.5}Charge/Flux oriented formulation of MNA}{6}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Differential Algebraic Equations}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Abstract Problem}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Types of DAEs}{8}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Weierstraß-Kronecker Normalform}{9}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Index of a Differential Algebraic Equation}{14}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Special Case of Index = 1 and Index geq 2}{16}{subsection.3.3.1}%
+\contentsline {chapter}{\numberline {4}Index Analysis of the MNA}{17}{chapter.4}%
+\contentsline {section}{\numberline {4.1}General Index analysis}{18}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Topological Conditions}{20}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Numerical Solutions}{22}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Single-Step-Methods}{22}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Consistency, Stability and Convergence}{23}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Runge-Kutta Methods}{25}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}further stability properties}{26}{subsection.5.1.3}%
+\contentsline {section}{\numberline {5.2}Multistep-Methods}{27}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Consistency, Stability and Convergence}{29}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}further stability properties}{31}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Implicit linear multi-step formulas}{33}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}BDF-schemes}{34}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}trapezoidal rule}{35}{subsection.5.3.2}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

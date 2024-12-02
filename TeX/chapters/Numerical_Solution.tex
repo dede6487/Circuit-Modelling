@@ -80,7 +80,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 	As the name suggestes convergence tries to quantify how far off a numerical solution is from the real solution of a system. A very interesting result follows if we also require the Single-Step Method to be stable.
 	
 	\begin{definition}\label{Discrete_Stability_SingleStep - lecture notes for numpdgl}
-		A Single-Step Method is called \emph{()discretely) stable} if for grid-functions $y_h$ and $\tilde{y}_h$ with
+		A Single-Step Method is called \emph{(discretely) stable} if for grid-functions $y_h$ and $\tilde{y}_h$ with
 		\begin{align}
 			y_{i+1} &= y_i + h \phi(t_i, y_i), \\
 			\tilde{y}_{i+1} &=  \tilde{y}_i + h [\phi(t_i, \tilde{y}_i) + \theta_i],
@@ -198,7 +198,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 	
 	A linear multi-step method consists of two parts:
 	\begin{enumerate}
-		\item In the \emph{starting-phase} approximations $u_1,...,u_{k-1}$ for the first $k-1$ gridpoints $t_l = t_0+th, l=1,...,k-1$ are calculated using a single-step method. For example using an explicit Runge-Kutta Methodor a multi-step method with fewer steps.
+		\item In the \emph{starting-phase} approximations $u_1,...,u_{k-1}$ for the first $k-1$ gridpoints $t_l = t_0+th, l=1,...,k-1$ are calculated using a single-step method. For example using an explicit Runge-Kutta Method or a multi-step method with fewer steps.
 		
 		\item  In the \emph{run-phase} the multi-step formula is used to determine new approximations $u_{m+k}$ for the gridpoint $t_{m+k}$
 	\end{enumerate}
@@ -276,7 +276,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 	\end{definition}
 	
 	\begin{theorem}
-		A linear multi-step method is zero-stable, if and only if the polynomial $\rho(x)$ fullfills the root-condition, this means:
+		A linear multi-step method is zero-stable, if and only if the polynomial $\rho(x)$ fullfills the ``root-condition'', this means:
 		\begin{enumerate}
 			\item All roots $\bar{x}$ of $\rho(x)$ are within the unit-circle $|\bar{x}| \leq$ in the complex plane.
 			\item All roots $\bar{x}$ with $|x| = 1$ are singular.
@@ -290,6 +290,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 	\textbf{from circuit book below, above from modelling book}
 	
 	\subsection{further stability properties}
+	
 	In this section we consider the following simple problem
 	\begin{align}
 		u' &= \lambda u, \quad t > 0 \\
@@ -297,12 +298,16 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 	\end{align}
 	with $\lambda \in \mathbb{C}$ and $u_0$ fixed.\\
 	
+	Asessment for stiff equations lt wikipedia (LMSM)
+	
 	Thus the resulting linear multistep method is of the form
 	
 	\begin{align*}
 		\sum_{l=0}^{k} \alpha_l u_{n+l} = h \sum_{l=0}^{k} \beta_l \lambda u_{n+l} \\
 		\iff \sum_{l=0}^{k}  [\alpha_l - h \beta_l \lambda] u_{n+l}
 	\end{align*}
+	
+	in numerik book auf seite 326
 	
 	\begin{definition}
 		\begin{enumerate}
@@ -359,7 +364,7 @@ The conventional approach can be split into three main steps:
 	
 	We will not give a deeper look into their construction but will only state their properties. (specifically for BDF schemes)
 	
-	The .\emph{backward differentiation fooormula (BDF)} is a family of implicit linear multistep methods. They have the general form
+	The \emph{backward differentiation fooormula (BDF)} is a family of implicit linear multistep methods. They have the general form
 	
 	\begin{equation}
 		\sum_{k=0}^{s} \alpha_k y_{n+k} = h \beta f(t_{n+s}, y_{n+s})
