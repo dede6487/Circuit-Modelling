@@ -1,8 +1,9 @@
-\babel@toc {english}{}\relax 
-\babel@toc {naustrian}{}\relax 
-\babel@toc {english}{}\relax 
-\babel@toc {english}{}\relax 
-\babel@toc {english}{}\relax 
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\babel@toc {naustrian}{}
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {english}{}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Formulating a Mathematical Model}{2}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Network Topology}{2}{section.2.1}%
@@ -22,12 +23,12 @@
 \contentsline {chapter}{\numberline {5}Numerical Solutions}{22}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Single-Step-Methods}{22}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Consistency, Stability and Convergence}{23}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Runge-Kutta Methods}{25}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}further stability properties}{26}{subsection.5.1.3}%
-\contentsline {section}{\numberline {5.2}Multistep-Methods}{27}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Consistency, Stability and Convergence}{29}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}further stability properties}{31}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Implicit linear multi-step formulas}{33}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}BDF-schemes}{34}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}trapezoidal rule}{35}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.1.2}further stability properties}{25}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Runge-Kutta Methods}{26}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}trapezoidal rule}{27}{subsection.5.1.4}%
+\contentsline {section}{\numberline {5.2}Multistep-Methods}{28}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Consistency, Stability and Convergence}{30}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}further stability properties}{33}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Implicit linear multi-step formulas}{34}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}BDF-schemes}{35}{subsection.5.3.1}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

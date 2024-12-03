@@ -100,49 +100,6 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 	
 	This theorem is due to Lax and Richtmyer. The converse of this statement is also true. 
 
-	\subsection{Runge-Kutta Methods}
-		A very prevalent family of numerical single-step methods are the \emph{Runge-Kutta} methods. ... Whats the idea behind those methods?
-		
-		\begin{definition}
-			Let $s \in \mathbb{N}$. A single-step method of the form
-			\begin{align}
-				y_{m+1} = y_m + h \sum_{i=1}^{s} b_i f(t_m + c_ih, y_{m+1}^{(i)}) \\ 
-				y_{m+1}^{(i)} = y_m +  \sum_{j=1}^{s} a_{ij} f(t_m + c_jh, y_{m+1}^{(j)})
-			\end{align}
-			is called a \emph{Runge-Kutta Method} with $s$ steps.
-		\end{definition}
-		
-		We usually collect the coefficients into the vectors and matrices $c=(c_1, ...,c_s)$, $A = (a_{ij})_{ij}$ and $b=(b_1, ..., b_s)$.
-		
-		If $A$ is a strictly lower triangle matrix, this means for all $j \geq i$ holds $a_{ij} = 0$ then the Runge-Kutta method is explicit, otherwise it is implicit. In general implicit Runge-Kutta methods might need more computational effort because to calculate $y_m^{(i)}$ a nonlinear system of equations has to be solved. But in contrast those methods can also lead to very good stability characteristics.
-		
-		\begin{lemma}%\cite{NumerikgewöhnlicherDifferentialgleichungen}
-			A Runge-Kutta mehtod is consistent, if and only if
-			\begin{displaymath}
-				\sum_{i=1}^{s} b_i = 1
-			\end{displaymath}
-		\end{lemma}
-		
-		The coefficients of a Runge-Kutta method are usually represented in the \emph{Butchertableau}, which was introduced by John C. Butcher and has the following form.
-		
-		\begin{displaymath}
-			\begin{array}{c|ccc}
-				c_1 & a_{11} & \dots & a_{1s} \\
-				\vdots & \vdots & & \vdots \\
-				c_s & a_{s1} & \dots & a_{ss} \\
-				\hline
-				 & b_1 & \dots & b_s
-			\end{array}
-			\qquad
-			\text{of in matrix form}
-			\qquad
-			\begin{array}{c|c}
-				c & A \\
-				\hline
-				 & b
-			\end{array}
-		\end{displaymath}
-		
 	\subsection{further stability properties}
 		from numpdgl skript \\
 		In this section we consider the following simple problem
@@ -175,7 +132,88 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 				\end{itemize}
 			\end{enumerate}
 		\end{definition}
+
+	\subsection{Runge-Kutta Methods}
+		A very prevalent family of numerical single-step methods are the \emph{Runge-Kutta} methods. ... Whats the idea behind those methods?
 		
+		\begin{definition}
+			Let $s \in \mathbb{N}$. A single-step method of the form
+			\begin{align}
+				y_{m+1} = y_m + h \sum_{i=1}^{s} b_i f(t_m + c_ih, y_{m+1}^{(i)}) \\ 
+				y_{m+1}^{(i)} = y_m +  \sum_{j=1}^{s} a_{ij} f(t_m + c_jh, y_{m+1}^{(j)})
+			\end{align}
+			is called a \emph{Runge-Kutta Method} with $s$ steps.
+		\end{definition}
+		
+		We usually collect the coefficients into the vectors and matrices $c=(c_1, ...,c_s)$, $A = (a_{ij})_{ij}$ and $b=(b_1, ..., b_s)$.
+		
+		If $A$ is a strictly lower triangle matrix, this means for all $j \geq i$ holds $a_{ij} = 0$ then the Runge-Kutta method is explicit, otherwise it is implicit. In general implicit Runge-Kutta methods might need more computational effort because to calculate $y_m^{(i)}$ a nonlinear system of equations has to be solved. But in contrast those methods can also lead to very good stability characteristics.
+		
+		\begin{lemma}%\cite{NumerikgewöhnlicherDifferentialgleichungen}
+			A Runge-Kutta mehtod is consistent, if and only if
+			\begin{displaymath}
+				\sum_{i=1}^{s} b_i = 1
+			\end{displaymath}
+		\end{lemma}
+	
+		The coefficients of a Runge-Kutta method are usually represented in the \emph{Butchertableau}, which was introduced by John C. Butcher and has the following form.
+		
+		\begin{displaymath}
+			\begin{array}{c|ccc}
+				c_1 & a_{11} & \dots & a_{1s} \\
+				\vdots & \vdots & & \vdots \\
+				c_s & a_{s1} & \dots & a_{ss} \\
+				\hline
+				 & b_1 & \dots & b_s
+			\end{array}
+			\qquad
+			\text{of in matrix form}
+			\qquad
+			\begin{array}{c|c}
+				c & A \\
+				\hline
+				 & b
+			\end{array}
+		\end{displaymath}
+	
+		Their stability can directly be derived from the butcher tableau as the following theorem suggests:
+		
+		
+	\subsection{trapezoidal rule}
+		
+		The trapezoidal rule is a somewhat natural alternative to BDF2 since it is A-stable and as a linear multistep method of order 2 the one with the smallest leading error coefficient (source? - aus modelling book)
+		
+		It works by approximating the region under the graph of the function $f(x)$ as a trapezoid, hence the name. It follows that (picture)
+		
+		\begin{displaymath}
+			\int_{a}^{b} f(x) dx \approx (b-a)\frac{1}{2} (f(a)+f(b))
+		\end{displaymath}
+		
+		This procedure is repeated for small subsections of the Intervall $[a,b]$. Thus we obtain the iteration formula
+		
+		\begin{displaymath}
+			u_h (t+h) = u_h(t) +\frac{h}{2}[f(t,u_h(t)) + f(t+h, u_h(t+h))].
+		\end{displaymath}
+		
+		This iteration rule can also be formulated using the butcher tableau
+		
+		
+		
+		\begin{displaymath}
+			\begin{array}{c|cc}
+				0 & 0 & 0 \\
+				1 & \frac{1}{2} & \frac{1}{2} \\
+				\hline
+				& \frac{1}{2} & \frac{1}{2}
+			\end{array}
+		\end{displaymath}
+		
+		modelling book says
+		
+		Because $u_h(t+h)$ appears in $f$ again we see that this is an implicit method. The butcher tableau confirms this as well.
+		
+		energy conserving (BDF methods are not)
+			
 \section{Multistep-Methods}
 	based on chapter 4 of book num gew dgl steif nichtsteif \newline
 	Linear multistep methods use approxiamtions $u_{m+l}$ along the gridpoints $t_{m+l}, \quad l=0,1,...,k-1$ to calculate the new approximation $u_{m+k}$ at $t_{m+k}$. WE will first discuss topics related to the order of the methods depending on its parameters, stability and convergence.
@@ -211,13 +249,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 		\sigma(x) := \sum_{l=0}^{k} \beta_l x^l
 	\end{equation}
 	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.7\linewidth]{screenshot013}
-		\caption{}
-		\label{fig:screenshot013}
-	\end{figure}
-	
+		
 	
 	\subsection{Consistency, Stability and Convergence}
 	local discretization error - def 4.2.2
@@ -254,9 +286,23 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 		\end{displaymath}
 		holds.
 	\end{definition}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{screenshot013}
+		\caption{}
+		\label{fig:screenshot013}
+	\end{figure}
+
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{screenshot025}
+		\caption{}
+		\label{fig:screenshot025}
+	\end{figure}
 	
 	\begin{definition} \label{discrete stability LMSM}
-		A linear multi-step method is called stable, if for solutions $u_h$ and $\tilde{u}_h$ of
+		A linear multi-step method is called (discretely) stable, if for solutions $u_h$ and $\tilde{u}_h$ of
 		\begin{align}
 			\sum_{l=0}^{k} \alpha_l u_{m+l} &= h \sum_{l=0}^{k} \beta_l f(t_{m+l}, u_{m+l}), \\
 			\sum_{l=0}^{k} \alpha_l \tilde{u}_{m+l} = h \sum_{l=0}^{k} \beta_l f(t_{m+l}, \tilde{u}_{m+l}) + h\theta_n
@@ -274,6 +320,8 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 		\end{displaymath}
 		are bounded.
 	\end{definition}
+	
+	\textbf{Lax-Richtmyer}
 	
 	\begin{theorem}
 		A linear multi-step method is zero-stable, if and only if the polynomial $\rho(x)$ fullfills the ``root-condition'', this means:
@@ -400,40 +448,7 @@ The conventional approach can be split into three main steps:
 	
 	
 	
-	\subsection{trapezoidal rule}
-	
-	The trapezoidal rule is a somewhat natural alternative to BDF2 since it is A-stable and as a linear multistep method of order 2 the one with the smallest leading error coefficient (source? - aus modelling book)
-	
-	It works by approximating the region under the graph of the function $f(x)$ as a trapezoid, hence the name. It follows that (picture)
-	
-	\begin{displaymath}
-		\int_{a}^{b} f(x) dx \approx (b-a)\frac{1}{2} (f(a)+f(b))
-	\end{displaymath}
 
-	This procedure is repeated for small subsections of the Intervall $[a,b]$. Thus we obtain the iteration formula
-	
-	\begin{displaymath}
-		u_h (t+h) = u_h(t) +\frac{h}{2}[f(t,u_h(t)) + f(t+h, u_h(t+h))].
-	\end{displaymath}
-
-	This iteration rule can also be formulated using the butcher tableau
-	
-	
-	
-	\begin{displaymath}
-		\begin{array}{c|cc}
-			0 & 0 & 0 \\
-			1 & \frac{1}{2} & \frac{1}{2} \\
-			\hline
-			& \frac{1}{2} & \frac{1}{2}
-		\end{array}
-	\end{displaymath}
-	
-	modelling book says
-	
-	Because $u_h(t+h)$ appears in $f$ again we see that this is an implicit method. The butcher tableau confirms this as well.
-	
-	energy conserving (BDF methods are not)
 
 		
 		
