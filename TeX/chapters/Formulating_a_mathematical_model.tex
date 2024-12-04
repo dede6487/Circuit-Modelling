@@ -1,9 +1,11 @@
 \chapter{Formulating a Mathematical Model}
 based on DAE lecture and modelling and discretiztation of elec circuit problems.
 
+To accurately represent a physical system in a mathematical model we first have to think about \textbf{how} to best formulate a mathematical model that foormulates this system.
+This chapter aims to elaborate on the Modified Nodal Analysis (MNA) of an electrical circuit. For this we have to introduce the notions of network topology as well as some basic electrical components and laws.
 
 \section{Network Topology}
-An electrical circuit is usually considered as a graph $(N,E)$ where $N = (n_0, n_1, n_2, ...)$ are the Nodes and $E = (e_{ij})_{ij}$ are the edges, where for some $i$ and some $j$ we have that $e_{ij} = (n_j, n_k)$ is the edge from node $j$ to node $k$. %rewrite that
+An electrical circuit is usually considered as a graph $(N,E)$ where $N = (n_0, n_1, n_2, ...)$ are the Nodes and $E = (e_{ij})_{ij}$ are the edges.For some $i$ and some $j$ we have that $e_{ij} = (n_j, n_k)$ is the edge from node $j$ to node $k$.
 We can store this information in an \emph{incidence matrix} $\tilde{A} = (\tilde{a}_{ij})_{ij}$ which is defined by
 \begin{displaymath}
 	\tilde{a}_{ij} = 
@@ -13,9 +15,11 @@ We can store this information in an \emph{incidence matrix} $\tilde{A} = (\tilde
 		0 & \text{else}.				
 	\end{cases}
 \end{displaymath}
-We call $u = (u_0, u_1, u_2, ...)$ the corresponding potentials to the nodes $N$. The difference of these potentials is the voltage at the associated edge. To fix the absolute values of these potentials we have to set one node to a fixed potential. We will do that by ``grounding'' the node $n_0$, this means we set the potential $u_0 := 0$. This grounding of a node allows us to remove the corresponding row from the incidence matrix to get the \emph{reduced incidence matrix} $A$. The vector $v = (v_{ij})_{ij}$ represents the voltages at the edges. For some $i$ and some $j$ the voltage at edge $ij$ is $v_{ij} = u_i - u_j$.
+We call $u = (u_0, u_1, u_2, ...)$ the corresponding potentials to the nodes $N$. The difference between the potentials at two connected nodes is called the voltage at the respective edge. To fix the absolute values of these potentials we have to set one node to a fixed potential. We will do that by ``grounding'' the node $n_0$, this means we set the potential $u_0 := 0$. This grounding of a node allows us to remove the corresponding row from the incidence matrix to get the \emph{reduced incidence matrix} $A$. The vector $v = (v_{ij})_{ij}$ represents the voltages at the edges. For some $i$ and some $j$ the voltage at edge $ij$ is $v_{ij} = u_i - u_j$.
 
 We will later see, that the components of an electrical crircuit, which will be installed along the edges, describe a relationship between the edges current and its voltage. Thus a current vector $i = (i_1, i_2, i_3, ...)$ containing the currents along the edges is required.
+
+\textbf{example}
 
 \section{Energy Conservation Laws}
 To fully fix all the variables that arrise in the model of an electrical circuit we will need some \emph{conservation laws}:
@@ -43,8 +47,10 @@ Electrical components are described by equations relating their edge voltage $v$
 		v = R*i \quad \text{or} \quad i = G*u.
 	\end{displaymath}
 	\begin{figure}[H]
+		\label{fig:resistor symbol}
 		\centering
 		\includegraphics[width=2cm]{pictures/resistor.png}
+		\caption{resistor symbol}
 	\end{figure}
 	\item \textbf{Capacitor} \newline
 	Capacitors ''store`` electrical energy by accumulating electrical charge. Their characteristic equations can be described directly using the stored charge $Q$ or indirectly using the change in charge, which is nothing other than the current $I$. The \emph{capacitance} $C$ is given in \emph{Farads} ($F$).
@@ -52,8 +58,10 @@ Electrical components are described by equations relating their edge voltage $v$
 		Q = C * v \quad \text{and by derivation in t} \quad I = C*\dot{v}.
 	\end{displaymath}
 	\begin{figure}[H]
+		\label{fig:capacitor symbol}
 		\centering
 		\includegraphics[width=2cm]{pictures/capacitor.png}
+		\caption{capacitor symbol}
 	\end{figure}
 	\item \textbf{Inductor (Coil)} \newline
 	An electric current flowing through a conductor generates a magnetic field $\Phi$ surrounding it. This magnetic field causes a voltage drop dependant on the change in current. The \emph{inductance} $L$ is given in \emph{Henry} ($H$).
@@ -61,8 +69,10 @@ Electrical components are described by equations relating their edge voltage $v$
 		\Phi = L*i \quad \text{and by derivation in t} \quad v = L*\dot{i}.
 	\end{displaymath}
 	\begin{figure}[H]
+		\label{fig:inductor symbol}
 		\centering
 		\includegraphics[width=3cm]{pictures/inductance.png}
+		\caption{inductor symbol}
 	\end{figure}
 	\item \textbf{Voltage Source} \newline
 	A voltage source supplies the system with a voltage. It can either supply varying amounts of voltage (with the special case of alternating current AC) or a fixed amount of voltage. The unit of voltage is \emph{Volts} ($V$).
@@ -70,8 +80,10 @@ Electrical components are described by equations relating their edge voltage $v$
 		v = v_{src}
 	\end{displaymath}
 	\begin{figure}[H]
+		\label{fig:voltage source symbol}
 		\centering
 		\includegraphics[width=4cm]{pictures/voltage_source.png}
+		\caption{voltage source symbol}
 	\end{figure}
 	\item \textbf{Current Source} \newline
 	A current source supplies the system with current. It can either supply varying amounts of current (with the special case of alternating current AC) or a fixed amount of current. The unit of current is \emph{Ampere} ($A$).
@@ -79,11 +91,13 @@ Electrical components are described by equations relating their edge voltage $v$
 		i = i_{src}
 	\end{displaymath}
 	\begin{figure}[H]
+		\label{fig:current source symbol}
 		\centering
 		\includegraphics[width=4cm]{pictures/current_source.png}
+		\caption{current source symbol}
 	\end{figure}
 	\item Diode - to be filled with information after the rest is complete
-	\item Transistor - unlike the other components which where all two-teminal components a transisstoor is a three-terminal component
+	\item Transistor - unlike the other components which where all two-teminal components a transisstor is a three-terminal component
 \end{itemize}
 
 \section{Modified Nodal Analysis - MNA}
@@ -97,22 +111,12 @@ To analyse the network further we will sort the reduced incidence matrix $A$ suc
 \end{displaymath}
 where $A_R$, $A_C$, $A_L$, $A_V$ and $A_I$ all include the collumns that are related to the resistors, capacitors, coils, voltage sources and current sources. 
 
-To mathematically describe the circuit we will use \emph{modified nodal analysis} (or short MNA). MNA uses the node voltages as well as the currents of the coils and the voltage sources as unknowns and is based on the conservation laws
-\begin{equation}
-	\label{KCL}
-	Ai(t) = 0 
-\end{equation}
-\begin{equation}
-	\label{KVL}
-	v = A^\top u(t)
-\end{equation}
-
-as well as on the voltage-current relations of the electrical components. By replacing all edge-currents with their respective voltage-current relation and ell egde-voltages with their node-potentials we obtain the MNA-equations
+To mathematically describe the circuit we will use \emph{modified nodal analysis} (or short MNA). MNA uses the node voltages as well as the currents of the coils and the voltage sources as unknowns and is based on the conservation laws \ref{KCL} and \ref{KVL} as well as on the voltage-current relations of the electrical components. By replacing all edge-currents with their respective voltage-current relation and ell egde-voltages with their node-potentials we obtain the MNA-equations
 
 \begin{displaymath}
 	\begin{aligned}
-		A_C C A_C^\top \dot{u} + A_R G A_R^\top u + A_L i_L + A_V i_V + A_I i_{src} &= 0 \\
-		L \dot{i_L}	- A_L^\top u &= 0 \\
+		A_C C A_C^\top \dot{u} + A_R G A_R^\top u + A_L i_L + A_V i_V + A_I i_{src} &= 0 , \\
+		L \dot{i_L}	- A_L^\top u &= 0 , \\
 		-A_V^\top + v_{src} &= 0.
 	\end{aligned}	
 \end{displaymath}
@@ -152,6 +156,8 @@ In matrix form these read as
 where the diagonal matrices $C$, $G$ and $L$ contain the capacities, conductivities and inductivities.
 
 The resulting systems are \emph{stiff} systems. This means that for their numerical solution special care has to be put into which methods are suitable for a solving these sytsems in a stable manner.
+
+\textbf{example}
 
 \section{Charge/Flux oriented formulation of MNA}
 may noot be too importatn - leave out?

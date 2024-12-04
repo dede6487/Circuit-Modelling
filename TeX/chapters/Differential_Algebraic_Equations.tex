@@ -2,47 +2,47 @@
 
 von num gew dgl niochtsteife steife und dae
 
+The resulting MNA of electrical circuits leads to a special form of differential equations, namely \emph{differential algebraic equations} (DAE). To understand the general solvability of those systems and to find good numerical methods we first have to take a look at the theory of such DAEs.
+
 \section{Abstract Problem}
+In the most general form a DAE can be written as
 \begin{equation}
 	\label{Abstract_DAE}
-	F(t, y(t), y'(t)) = 0 \qquad \forall t \in I
+	F(t, y(t), y'(t)) = 0, \qquad \forall t \in I
 \end{equation}
 
-with $F:\mathbb{R} \times \mathbb{R}^N \times \mathbb{R}^N \to \mathbb{R}^N$ sufficiently smooth. We will focus on linear time invaraiant systems of the form
-
-\begin{displaymath}
-	E u'(t) = A u(t) + f(t).
-\end{displaymath}
-
-With $E, A \in \mathbb{R}^{n \times n}$. If $E$ is regular, then this system is just an ordinary differential equation, thus we assume $E$ to be singular to obtain a ``true'' DAE. 
-
-In the following chapters we will discuss important analytical properties of this such sytems. We will discuss the solvability and the index of these systems.
+with $F:\mathbb{R} \times \mathbb{R}^N \times \mathbb{R}^N \to \mathbb{R}^N$ sufficiently smooth. As this is usually too general one has to consider more specific types of DAEs.
 
 \section{Types of DAEs}
 
-\begin{itemize}
-	\item \textbf{Linear systems with constant coeffiecients} \newline
-	are systems of the form 
-	\begin{equation}
-		\label{DAE-const-coeff}
-		A y'(t) + B y(t) = f(t)
-	\end{equation}
-	with $A,B \in \mathbb{R}^{n \times n}$, $A$ singular and $f(t)$ a function.
-	\item \textbf{linear time dependent systems}
-	\begin{displaymath}
-		A(t) y'(t) + B(t) y(t) = f(t)
-	\end{displaymath}
-	with $A(t),B(t),f(t)$ functions.
-	\item  \textbf{structured (non-linear) systems} \newline
-	are semi-explicit systems of the form
-	\begin{displaymath}
-		y'(t) = f(t, y(t), z(t)),
-		0 = g(t,y(t),z(t))
-	\end{displaymath}
-	with $f$ and $g$ functions.
-\end{itemize}
-
-For our analysis of electrical networks we will focus on linear systems with constant coefficients. (where do the other systems arrise? what are they about?)
+	Commonly systems of either of the three types below are considered when talking about DAEs.
+	
+	\begin{itemize}
+		\item \textbf{Linear systems with constant coeffiecients} \newline
+		are systems of the form 
+		\begin{equation}
+			\label{DAE-const-coeff}
+			A y'(t) + B y(t) = f(t) ,
+		\end{equation}
+		with $A,B \in \mathbb{R}^{n \times n}$, $A$ singular, $B$ regular and $f(t)$ a function. If $A$ would not be singular this equation could be transformed into an ordinary differental equation. Thus it is reasonable to assume $A$ singular.
+		
+		\item \textbf{Linear time dependent systems}
+		are systems of the form
+		\begin{displaymath}
+			A(t) y'(t) + B(t) y(t) = f(t) ,
+		\end{displaymath}
+		with $A(t),B(t),f(t)$ functions.
+		
+		\item  \textbf{Structured (non-linear) systems} \newline
+		are semi-explicit systems of the form
+		\begin{align}
+			y'(t) &= f(t, y(t), z(t)) , \\
+			0 &= g(t,y(t),z(t)) ,
+		\end{align}
+		with $f$ and $g$ functions.
+	\end{itemize}
+	
+	For our analysis of electrical networks we will focus on linear systems with constant coefficients. The other systems could for example occur when we also consider time-dependant component relations (e.q. Temperature, ...).
 
 \subsection{Weierstraß-Kronecker Normalform}
 kapitel aus buch seite 399 num gew dgl steif, kapitel 13.2.2
@@ -69,9 +69,6 @@ To determine the solvability of a linear system with constant coefficients \ref{
 	\end{displaymath} 
 	and $n = m_1 + ... + m_r$.
 \end{theorem}
-quote that from somewhere.
-
-translate that:
 
 The matrix $J$ is called Jordan Normalform of $Q$, the $J_i$ are called Jordan Blocks, where $\lambda_i$ are the eigenvalues of $Q$. The matrix $J$ is uniquely determined by $Q$ except for the arrangement of the diagonal blocks. If $Q$ posesses only real eigenvalues, then $T$ can also be choosen from the reals. \newline
 A transformation from $A$ and $B$ in \ref{DAE-const-coeff} enables a seperation into differential and algebraic variables.	
@@ -233,7 +230,7 @@ aus buch seite 401
 	The nilpotency index $k$ from the Weierstraß-Kronecker Normalform of a matrix pencil $\{A,B\}$ with $A$ singular is called the \emph{Kronecker-Index} of $\{A,B\}$. We write $ind\{A,B\}$. For $A$ regular we set $ind\{A,B\} = 0$.
 \end{definition}
 
-next lemma needs quotation, it is lemma 13.2.1
+lemma 13.2.1
 
 \begin{lemma}
 	The Kronecker-Index $ind\{A,B\}$ is independant of the choice of the matrices $P$ and $Q$.
@@ -254,7 +251,7 @@ next lemma needs quotation, it is lemma 13.2.1
 %\end{figure}
 
 
-Lemma 13.2.2 maybe
+Lemma 13.2.2
 
 Using the findings above we are able to Transform the initial DAE \ref{DAE-const-coeff} using the matrix $P$ from \ref{Kronecker-Normalform}. By multiplying $P$ from the left we obtain
 
@@ -314,7 +311,7 @@ The Kronecker index $k$ shows, that $k$ differentiations are required to receive
 
 \section{Index of a Differential Algebraic Equation}
 
-The Index of a DAE gives us insight about it's numerical properties and in general about the solvability. In general, the higher the index, the harder it is, to solve the system. 
+The Index of a DAE gives us insight about its numerical properties and in general about the solvability. (``The higher the index, the harder to solve'')
 
 We will consider two types of index concepts, the differentiation index and the perturbation index.
 
@@ -348,14 +345,16 @@ In the previous chapter we have already discussed, that for a DAE with constant 
 for lin const nilpot ind  = ind + proof (as we will later see, it turns out that same for our case)
 
 
-remark: tracability index
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{screenshot005}
 	\caption{}
 	\label{fig:screenshot005}
 \end{figure}
+
+
+remark: tracability index
+
 
 \subsection{Special Case of Index = 1 and Index geq 2}
 
