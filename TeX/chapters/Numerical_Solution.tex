@@ -12,12 +12,11 @@ We will first focus on methods used to solve a more general problem
 For this we presume that the function $f(t,y)$ is continuous and Lipschitz, thus \emph{Picard-Lindelöf} gives us, that for every $y_0$ it is uniquely solvable in $[t_0, t_l]$.
 
 Numerical Methods work by discretization, this means we divide the time-intervall into
-
 \begin{displaymath}
 	t_0 < t_1 < ... < t_N \leq t_l
 \end{displaymath}
 
-and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, SChrittweite, äquidistant, nicht äquidistant.
+and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, Schrittweite, äquidistant, nicht äquidistant.
 
 \section{Single-Step-Methods}
 	The first class of numerical methods we will have a look at are single-step methods. These methods use the previous approximated value $y_j$ and (for implicit methods) also the current approximated value to determine the current value through a \emph{procedural function}. ... waht does implicit and explicit mean?
@@ -447,6 +446,9 @@ The conventional approach can be split into three main steps:
 	\end{figure}
 	
 	
+\section{Numerical Examples}
+	
+	In this section we will give two explicit examples of circuits being solved using either of the above mentioned methods and compare the convergence speed between the methods as well as comparing the suitability of the methods for systems of different index.
 	
 
 

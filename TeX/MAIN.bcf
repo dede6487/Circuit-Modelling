@@ -2345,8 +2345,8 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1">Tischendorf2005Topological</bcf:citekey>
-    <bcf:citekey order="2">Tischendorf2004Topological</bcf:citekey>
-    <bcf:citekey order="3">Tischendorf2004Topological</bcf:citekey>
+    <bcf:citekey order="2">Tischendorf2005Topological</bcf:citekey>
+    <bcf:citekey order="3">Tischendorf2005Topological</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

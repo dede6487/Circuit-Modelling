@@ -4,17 +4,15 @@ der ane satz do + proof hopefully
 
 seite 22 kap 7 netw top and dae ind for rlc - modelling and discretization circ prob
 
-In the previous chapter we have seen two different kinds of Index concepts for differential algebraic equations. We have also seen that these two, even thoough they describe rather different structural aspects of the equation, are the same for our use-cases. This of course leads to the question : ``What are the indices we can usually expect for MNA?''.
+In the previous chapter we have seen two different kinds of Index concepts for differential algebraic equations. We have also seen that these two, even though they describe rather different structural aspects of the equation, are the same for our use-cases. This of course leads to the question : ``What are the indices we can usually expect for MNA?''.
 
 This chapter aims to answer that question for the linear RLC case. Which means that the RLC components are described by linear functions with positive capacitances, inductances and resistances. Thus the matrices
 \begin{displaymath}
 	C:=\frac{\partial q_C(w)}{\partial w}, \quad L:=\frac{\partial \phi_L(w)}{\partial w}, \quad G:=\frac{\partial r(w)}{\partial w}
 \end{displaymath}
-are positive definite and symmetric.
+are positive definite and symmetric. The generalization of these results to the nonlinear case still relies on positive definiteness.
 
-The generalization of these results to the nonlinear case still relies on positive definiteness.
-
-Recall that we consider the equations resulting from the analysis above. These equations are of the form \ref{DAE-const-coeff}
+Recall that we consider the equations resulting from the analysis above. These equations are of the form \ref{DAE-const-coeff}:
 \begin{displaymath}
 	A y'(t) + B y(t) = f(t).
 \end{displaymath}
@@ -81,10 +79,10 @@ in the previous chapter. We now consider the nilpotency index of the matrix $N$,
 			u'(t) + Ru(t) &= s(t), \\
 			v(t) &= q(t).
 		\end{align*}
-		This means that the algebraic variables are given explicitly. Thus the system can be written in ODE form. (what properies does R have? - state ODE form)
+		This means that the algebraic variables are given explicitly. Thus the system is in ODE form.
 
 	\item \textbf{The nilpotency index is $\geq$ 2} \newline
-		This case is the situation we have seen in \ref{Weierstraß-Kronecker Normalform} , it led to \ref{solution-to-transformed-DAE-const-coeff-part2}
+		This case is the situation we have seen in \ref{chap:Weierstraß-Kronecker Normalform}, it led to \ref{solution-to-transformed-DAE-const-coeff-part2}
 		\begin{displaymath}
 			v(t) = \sum_{i=0}^{k-1} (-1)^iN^iq^{(i)}(t).
 		\end{displaymath}
@@ -99,12 +97,12 @@ We can see that an algebraic constraint has to be fulfilled by the solution. In 
 
 The system is also sensitive to perturbations. Small noise in the input can have arbitrarily large derivatives which can influence $v$ as we it depends on them.
 
-Thus no severe numerical problems arise from index-1 systems. Hence implicit numerical integration schemes for stiff systems are feasable. On the other hand severe nunmerical problems may occur in the case that the system has index greater or equal to $2$. The hidden constraints can only be resolved by an unstable differentiation process.
+This means no severe numerical problems arise from index-1 systems. Implicit numerical integration schemes for stiff systems are feasable. On the other hand severe nunmerical problems may occur in the case that the system has index greater or equal to $2$. The hidden constraints can only be resolved by an unstable differentiation process.
 
-As $\nu$ defines the behaviour of the system theoretically as well as numerically it is called the \emph{algebraic index} of the linear implicit system.
+As the Kronecker index $k=ind{A,B}$ defines the behaviour of the system theoretically as well as numerically it is called the \emph{algebraic index} of the linear implicit system.
 
 
-
+(below is already aid above - delete?)
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{screenshot022}
@@ -120,14 +118,13 @@ basically chapter 7 of modelling book
 From analyzing the MNA some conditions to the circuit topology can be obtained. We will be considering the impact of special arrangements of components on the index of the system. In \cite{Tischendorf2005Topological} they present very interesting results about the index of MNA equations.
 
 
-\begin{theorem}[Index-1 condition] \cite{Tischendorf2004Topological} \label{Index-1 condition}
+\begin{theorem}[Index-1 condition] \cite{Tischendorf2005Topological} \label{Index-1 condition}
 	Let the matrices of the capacitances, inductances and resistances respectively be positive definite. If the network neither cointains \emph{inductance-current-source cutsets} nor (controlled?) \emph{capacitance-voltage-source loops}, then the MNA leads to an index-1 DAE.
 \end{theorem}
 
-Where inductance-current-source cutsets and capacitance-voltage-source loops are subcircuits of the form Seite 481 (searchbar) in basic circuit theory
+Where inductance-current-source cutsets and capacitance-voltage-source loops are subcircuits of the form (Seite 481 (searchbar) in basic circuit theory)
 
 \begin{figure}[H]
-	\label{cutset and loop}
 	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[width=0.9\linewidth]{pictures/inductance-current-source_cutset.png}
@@ -138,11 +135,13 @@ Where inductance-current-source cutsets and capacitance-voltage-source loops are
 		\includegraphics[width=0.9\linewidth]{pictures/capacitance-voltage-source_loop.png}
 		\caption{capacitance-voltage-source loop}
 	\end{subfigure}
+	\label{cutset and loop}
+	\caption{cutset and loop}
 \end{figure}
 
 This means that if our circuit does not contain any loops or cutsets of the above form the resulting MNA has index 1.
 
-\begin{theorem}[Index-2 condition] \cite{Tischendorf2004Topological} \label{Index-2 condition}
+\begin{theorem}[Index-2 condition] \cite{Tischendorf2005Topological} \label{Index-2 condition}
 	If the Network contains \emph{inductance-current-source cutsets} or \emph{capacitance-voltage-source loops} except for capacitance-only loops, then the MNA leads to an index-2 DAE.
 \end{theorem}
 
@@ -156,18 +155,12 @@ These results can also be interpreted in a more formal way. As they are just des
 \end{figure}
 
 Theorem \ref{Index-1 condition} can be interpreted as the two conditions
-\begin{enumerate}
-	\item	\begin{displaymath}
-				kerQ_C^\top A_v = {0},
-			\end{displaymath}
-	
-	\item	\begin{displaymath}
-				ker(A_C A_R A_V)^\top = {0}.
-			\end{displaymath}
-	
-\end{enumerate}
+	\begin{align}
+		kerQ_C^\top A_v &= {0}, \\
+		ker(A_C A_R A_V)^\top &= {0}.
+	\end{align}
 
-This means that for ``reasonable'' RLC circuits (satisfying the prerequisites from the above theorems) the index will not exceed 2. We will only consider such circuits.
+This means that for ``reasonable'' RLC circuits (satisfying the prerequisites from the above theorems) the index will not exceed 2. We will only consider such circuits in this document.
 
 If one of those conditions is violated we are in the case of Theorem \ref{Index-2 condition} and thus have index 2.
 
