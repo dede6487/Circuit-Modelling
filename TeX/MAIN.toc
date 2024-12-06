@@ -27,9 +27,10 @@
 \contentsline {subsection}{\numberline {5.1.3}Runge-Kutta Methods}{28}{subsection.5.1.3}%
 \contentsline {subsection}{\numberline {5.1.4}trapezoidal rule}{29}{subsection.5.1.4}%
 \contentsline {section}{\numberline {5.2}Multistep-Methods}{30}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Consistency, Stability and Convergence}{32}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}further stability properties}{35}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Implicit linear multi-step formulas}{36}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}BDF-schemes}{37}{subsection.5.3.1}%
-\contentsline {section}{\numberline {5.4}Numerical Examples}{39}{section.5.4}%
+\contentsline {subsection}{\numberline {5.2.1}Consistency, Stability and Convergence}{33}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}further stability properties}{36}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Implicit linear multi-step formulas}{37}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}BDF-schemes}{38}{subsection.5.3.1}%
+\contentsline {section}{\numberline {5.4}Comparisons}{40}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Numerical Examples}{40}{section.5.5}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

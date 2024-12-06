@@ -16,10 +16,10 @@ Numerical Methods work by discretization, this means we divide the time-interval
 	t_0 < t_1 < ... < t_N \leq t_l
 \end{displaymath}
 
-and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, Schrittweite, äquidistant, nicht äquidistant.
+and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a \emph{time-grid}. The step-size between two grid-points $t_i - t_j$ might not be choosen equidistant. This can be usefull in certain situations. For simplicity we will non the less assume the stepsize to be equidistant.
 
 \section{Single-Step-Methods}
-	The first class of numerical methods we will have a look at are single-step methods. These methods use the previous approximated value $y_j$ and (for implicit methods) also the current approximated value to determine the current value through a \emph{procedural function}. ... waht does implicit and explicit mean?
+	The first class of numerical methods we will have a look at are single-step methods. These methods use the previous approximated value $y_j$ and (for implicit methods) also the current approximated value to determine the current value through a \emph{procedural function}.
 	
 	\begin{definition}
 		A numerical method to approximate a differential equation \ref{general numerical problem} on a time-grid $t_0,...,t_l$ with the intermediate values $y_0,...,y_l$ is called a single-step method if it is from the form
@@ -133,7 +133,14 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 		\end{definition}
 
 	\subsection{Runge-Kutta Methods}
-		A very prevalent family of numerical single-step methods are the \emph{Runge-Kutta} methods. ... Whats the idea behind those methods?
+		A very prevalent family of numerical single-step methods are the \emph{Runge-Kutta} methods. 
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{screenshot026}
+			\caption{}
+			\label{fig:screenshot026}
+		\end{figure}
 		
 		\begin{definition}
 			Let $s \in \mathbb{N}$. A single-step method of the form
@@ -148,7 +155,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 		
 		If $A$ is a strictly lower triangle matrix, this means for all $j \geq i$ holds $a_{ij} = 0$ then the Runge-Kutta method is explicit, otherwise it is implicit. In general implicit Runge-Kutta methods might need more computational effort because to calculate $y_m^{(i)}$ a nonlinear system of equations has to be solved. But in contrast those methods can also lead to very good stability characteristics.
 		
-		\begin{lemma}%\cite{NumerikgewöhnlicherDifferentialgleichungen}
+		\begin{lemma}\cite{NumerikGewöhnlicherDifferentialgleichungen}
 			A Runge-Kutta mehtod is consistent, if and only if
 			\begin{displaymath}
 				\sum_{i=1}^{s} b_i = 1
@@ -176,6 +183,8 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. Gitterpunkte, 
 		\end{displaymath}
 	
 		Their stability can directly be derived from the butcher tableau as the following theorem suggests:
+		
+		\textbf{Stabilitätsfunktion}
 		
 		
 	\subsection{trapezoidal rule}
@@ -445,6 +454,10 @@ The conventional approach can be split into three main steps:
 		\label{fig:screenshot020}
 	\end{figure}
 	
+	
+\section{Comparisons}
+
+	The trapezoidal rule is a somewhat natural alternative to BDF2 since it is A-stable and as a linear multistep method of order 2 the one with the smallest leading error coefficient (source? - aus modelling book)
 	
 \section{Numerical Examples}
 	

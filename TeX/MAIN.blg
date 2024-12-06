@@ -1,17 +1,15 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
-[1] Config.pm:314> INFO - Logfile is 'MAIN.blg'
-[296] biber-MSWIN32:340> INFO - === 
-[409] Biber.pm:415> INFO - Reading 'MAIN.bcf'
-[560] Biber.pm:952> INFO - Found 2 citekeys in bib section 0
-[579] Biber.pm:4340> INFO - Processing section 0
-[628] Biber.pm:4531> INFO - Looking for bibtex format file 'literature.bib' for section 0
-[700] bibtex.pm:1689> INFO - LaTeX decoding ...
-[728] bibtex.pm:1494> INFO - Found BibTeX data source 'literature.bib'
-[830] Utils.pm:395> WARN - I didn't find a database entry for 'Tischendorf2004Topological' (section 0)
-[850] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[850] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[850] Biber.pm:4168> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[850] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
-[853] bbl.pm:654> INFO - Writing 'MAIN.bbl' with encoding 'UTF-8'
-[854] bbl.pm:757> INFO - Output to MAIN.bbl
-[854] Biber.pm:128> INFO - WARNINGS: 1
+[0] Config.pm:314> INFO - Logfile is 'MAIN.blg'
+[270] biber-MSWIN32:340> INFO - === 
+[376] Biber.pm:415> INFO - Reading 'MAIN.bcf'
+[522] Biber.pm:952> INFO - Found 2 citekeys in bib section 0
+[540] Biber.pm:4340> INFO - Processing section 0
+[573] Biber.pm:4531> INFO - Looking for bibtex format file 'literature.bib' for section 0
+[639] bibtex.pm:1689> INFO - LaTeX decoding ...
+[659] bibtex.pm:1494> INFO - Found BibTeX data source 'literature.bib'
+[745] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[746] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[746] Biber.pm:4168> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[746] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[749] bbl.pm:654> INFO - Writing 'MAIN.bbl' with encoding 'UTF-8'
+[750] bbl.pm:757> INFO - Output to MAIN.bbl
