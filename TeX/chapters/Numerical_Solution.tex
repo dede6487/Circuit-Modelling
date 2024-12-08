@@ -186,45 +186,12 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 		
 		\textbf{Stabilitätsfunktion}
 		
-		
-	\subsection{trapezoidal rule}
-		
-		The trapezoidal rule is a somewhat natural alternative to BDF2 since it is A-stable and as a linear multistep method of order 2 the one with the smallest leading error coefficient (source? - aus modelling book)
-		
-		It works by approximating the region under the graph of the function $f(x)$ as a trapezoid, hence the name. It follows that (picture)
-		
-		\begin{displaymath}
-			\int_{a}^{b} f(x) dx \approx (b-a)\frac{1}{2} (f(a)+f(b))
-		\end{displaymath}
-		
-		This procedure is repeated for small subsections of the Intervall $[a,b]$. Thus we obtain the iteration formula
-		
-		\begin{displaymath}
-			u_h (t+h) = u_h(t) +\frac{h}{2}[f(t,u_h(t)) + f(t+h, u_h(t+h))].
-		\end{displaymath}
-		
-		This iteration rule can also be formulated using the butcher tableau
-		
-		
-		
-		\begin{displaymath}
-			\begin{array}{c|cc}
-				0 & 0 & 0 \\
-				1 & \frac{1}{2} & \frac{1}{2} \\
-				\hline
-				& \frac{1}{2} & \frac{1}{2}
-			\end{array}
-		\end{displaymath}
-		
-		modelling book says
-		
-		Because $u_h(t+h)$ appears in $f$ again we see that this is an implicit method. The butcher tableau confirms this as well.
-		
-		energy conserving (BDF methods are not)
+		\textbf{Remark:} The trapezoidal rule is a widely used Runge-Kutta method which we can also consider as a multistep-method. It will be discussed later on.
+	
 			
 \section{Multistep-Methods}
 	based on chapter 4 of book num gew dgl steif nichtsteif \newline
-	Linear multistep methods use approxiamtions $u_{m+l}$ along the gridpoints $t_{m+l}, \quad l=0,1,...,k-1$ to calculate the new approximation $u_{m+k}$ at $t_{m+k}$. WE will first discuss topics related to the order of the methods depending on its parameters, stability and convergence.
+	Linear multistep methods use approxiamtions $u_{m+l}$ along the gridpoints $t_{m+l}, \quad l=0,1,...,k-1$ to calculate the new approximation $u_{m+k}$ at $t_{m+k}$. We will first discuss topics related to the order of the methods depending on its parameters, stability and convergence.
 	
 	\begin{definition}
 		For given $\alpha_0, ..., \alpha_k$ and $\beta_0, ..., \beta_k$ the iteration rule
@@ -234,13 +201,6 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 		\end{equation}
 		is called a \emph{linear multistep method} (linear k-step method). It is always assumed that $\alpha_k \neq 0$ and $|\alpha_0| + |\beta_k| > 0$. If $\beta_k=0$ holds, then the method is called explicit, otherwise implicit.
 	\end{definition}
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.7\linewidth]{screenshot010}
-		\caption{}
-		\label{fig:screenshot010}
-	\end{figure}
 	
 	A linear multi-step method consists of two parts:
 	\begin{enumerate}
@@ -261,6 +221,8 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 	
 	\subsection{Consistency, Stability and Convergence}
 	local discretization error - def 4.2.2
+	
+	Again we need to define the properties consistency, stability and convergence for this method.
 	\begin{definition}
 		Let $\tilde{y}_{m+k}$ be the result of one step of the multi-step method \ref{linear-multistep-method} with the start-vectors $y_m = y(t_m)$. This means
 		\begin{displaymath}
@@ -273,7 +235,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 		is called the \emph{local discretization error} (local error) of the linear multi-step method \ref{linear-multistep-method} at the point $t_{m+k}$.
 	\end{definition}
 	
-	We will assign the linear difference opreator
+	We will assign the linear difference operator
 	\begin{equation}
 		L[y(t),h] = \sum_{l=0}^{k} \left( \alpha_l y(t+lh) - h \beta_l y'(t+lh) \right)
 	\end{equation}
@@ -454,10 +416,40 @@ The conventional approach can be split into three main steps:
 		\label{fig:screenshot020}
 	\end{figure}
 	
-	
-\section{Comparisons}
+\subsection{trapezoidal rule}
 
 	The trapezoidal rule is a somewhat natural alternative to BDF2 since it is A-stable and as a linear multistep method of order 2 the one with the smallest leading error coefficient (source? - aus modelling book)
+	
+	It works by approximating the region under the graph of the function $f(x)$ as a trapezoid, hence the name. It follows that (picture)
+	
+	\begin{displaymath}
+		\int_{a}^{b} f(x) dx \approx (b-a)\frac{1}{2} (f(a)+f(b))
+	\end{displaymath}
+	
+	This procedure is repeated for small subsections of the Intervall $[a,b]$. Thus we obtain the iteration formula
+	
+	\begin{displaymath}
+		u_h (t+h) = u_h(t) +\frac{h}{2}[f(t,u_h(t)) + f(t+h, u_h(t+h))].
+	\end{displaymath}
+	
+	This iteration rule can also be formulated using the butcher tableau
+	
+	
+	
+	\begin{displaymath}
+		\begin{array}{c|cc}
+			0 & 0 & 0 \\
+			1 & \frac{1}{2} & \frac{1}{2} \\
+			\hline
+			& \frac{1}{2} & \frac{1}{2}
+		\end{array}
+	\end{displaymath}
+	
+	modelling book says
+	
+	Because $u_h(t+h)$ appears in $f$ again we see that this is an implicit method. The butcher tableau confirms this as well.
+	
+	energy conserving (BDF methods are not)
 	
 \section{Numerical Examples}
 	
