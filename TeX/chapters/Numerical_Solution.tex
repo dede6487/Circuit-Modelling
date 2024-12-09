@@ -354,33 +354,84 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 	
 
 \section{Implicit linear multi-step formulas}
-These kinds of multi-step methods are conventionally used to numerically solve the systems obtained using modified nodal analysis. We will assume that the network equations arrise from networks only consisting of RLC components as well as controlled sources which keep the index between 1 and 2.
+These kinds of multi-step methods are conventionally used to numerically solve the systems obtained using modified nodal analysis. Our assumption that we only consider network equations arising from networks consisting of RLC components as well as controlled sources which keep the index between 1 and 2 still holds.
 
-The conventional approach can be split into three main steps:
+We consider the equations in charge/flux oriented formulation
+
+\begin{align*}
+	0 &=
+	\underbrace{ 
+	\left( \begin{matrix}
+		A_c & 0 \\
+		0 & I \\
+		0 & 0
+	\end{matrix} \right)}_{=:A}
+	\underbrace{
+	\left( \begin{matrix}
+		\dot{q} \\
+		\dot{\phi} 
+	\end{matrix} \right)}_{=:\dot{y}}
+	+
+	\underbrace{
+	\left( \begin{matrix}
+		A_R r(A_R^\top u,t) + A_L i_L + A_V i_V + A_I i(u, i_L, i_V, t) \\
+		- A_L^\top u \\
+		v(u, i_L, i_V, t) - A_V^\top u
+	\end{matrix} \right)}_{=:f(x,t)}, \\
+	\underbrace{
+	\left( \begin{matrix}
+		q \\
+		\phi 
+	\end{matrix} \right)}_{=:y} 
+	&=
+	\underbrace{
+	\left( \begin{matrix}
+		q_C(A_C^\top u) \\
+		\phi_L(i_L) 
+	\end{matrix} \right)}_{=:g(x,t)},
+\end{align*}
+
+or simply
+\begin{align*}
+	0 &= F(\dot{y}(t), x(t), t) :=A \dot{y}(t) + f(x(t),t), \\
+	0 &= y(t) - g(x(t)).
+\end{align*}
+with $x:=(u, i_L, i_V)^\top$ containing the unknowns.
+
+The conventional approach to solve those systems numerically can be split into three main steps:
 \begin{enumerate}
 	\item Computation of consistent initial values
-	\item numerical integration based on multi-step schemes
-	\item transformation of the DAE into a nonlinear system and its numerical solutioon by Newton's procedure (?????????????????will not be discussed further because not very specific)
+	
+	The first step is to compute consistant inital values $(x_0, y_0)$ at the initial time point $t_0$. In the index-1 case this can be done by solving a so called steady state problem. Steady state means that we consider a not time-dependent circuit (DC operating point). This means we have to solve
+	\begin{displaymath}
+		F(0,x_0,t_0) = 0
+	\end{displaymath}
+	
+	for $x_0$ and then set $y_0 = g(x_0)$.
+	
+	\item Numerical integration based on multi-step schemes
+	
+	Using the consistent initial values we obtain solutions of the network equations at discrete timepoints $t_1, t_2, ...$ by integration with linear multi-step methods.
+	
+	\item Transformation of the DAE into a nonlinear system of equations. 
+	
+	The numerical solution is now reduced into solving a system of equations of the form
+	\begin{displaymath}
+		F(\alpha_k g(x_k) + r_k, x_k, t_k) = 0
+	\end{displaymath}
+	
+	which can be solved iteratively using Newton's method.
 \end{enumerate}
 
-\textbf{Consistant initial values} 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{screenshot009}
-	\caption{}
-	\label{fig:screenshot009}
-\end{figure}
-
-\textbf{Nunmerical integration}.
-
+In the following two subchapters we will give a short overview over the two most commonly used methods for solving those systems.
 
 \subsection{BDF-schemes}
 	chapter 9.2 numerik book
 	wikipedia
 	
-	The most commonly used numerical methods for solving the systems that arrise in electrical circuits are the BDF-scheme and the trapezoidal rule. 
+	The most commonly used numerical methods for solving the systems that arise in electrical circuits are the BDF-scheme and the trapezoidal rule. 
 	
-	We will not give a deeper look into their construction but will only state their properties. (specifically for BDF schemes)
+	We will not give a deeper look into their construction but will only state their properties. BDF schemes are appealing because they save function evaluation as much as possible, since this is very costly in circuit simulation.
 	
 	The \emph{backward differentiation fooormula (BDF)} is a family of implicit linear multistep methods. They have the general form
 	
@@ -401,13 +452,9 @@ The conventional approach can be split into three main steps:
 		k = 6 &: h f_{m+6} = \frac{1}{60} (147 u_{m+6} - 360 u_{m+5} + 450 u_{m+4} - 400 u_{m+3} + 225 u_{m+2} - 72 u_{m+1} + 10 u_m)
 	\end{align*}
 	
-	Methods with $s > 6$ are not zero-stable and (cannot be used?).
+	Methods with $s > 6$ are not zero-stable. Indeed in reality methods with order greater than 3 are rarely used because of their low smoothness properties.
 	
-	BDF schemes have consistency order $p = k$.
-	
-	BDF schemes are methods for solving stiff equations, thus their stability is indicated by their region of absolute stability. They are not A stable but their stability region still contains a large part of the complex left half-plane. They are the most efficient linear multistep methods of this kind.
-	
-	The first timestep is always performed by BDF1 (implicit Euler scheme) as a starting procedure.
+	BDF schemes have consistency order $p = k$. They are methods for solving stiff equations, thus their stability is indicated by their region of absolute stability. Unfortunately not all BDF-schemes are A stable, but their stability region still contains a large part of the complex left half-plane (see figure \ref{fig:screenshot020} They are the most efficient linear multistep methods of this kind.
 	
 	\begin{figure}[H]
 		\centering
@@ -416,26 +463,24 @@ The conventional approach can be split into three main steps:
 		\label{fig:screenshot020}
 	\end{figure}
 	
+	The first timestep is always performed by BDF1 (implicit Euler scheme) as a starting procedure.
+	
+	
 \subsection{trapezoidal rule}
 
-	The trapezoidal rule is a somewhat natural alternative to BDF2 since it is A-stable and as a linear multistep method of order 2 the one with the smallest leading error coefficient (source? - aus modelling book)
+	The trapezoidal rule is a somewhat natural alternative to BDF2 since it is A-stable and as a linear multistep method of order 2 the one with the smallest leading error coefficient. (\cite{ModellingAndDiscretizationOfCircuitProblems})
 	
-	It works by approximating the region under the graph of the function $f(x)$ as a trapezoid, hence the name. It follows that (picture)
-	
+	It works by approximating the region under the graph of the function $f(x)$ as a trapezoid, hence the name. It follows that	
 	\begin{displaymath}
 		\int_{a}^{b} f(x) dx \approx (b-a)\frac{1}{2} (f(a)+f(b))
 	\end{displaymath}
 	
 	This procedure is repeated for small subsections of the Intervall $[a,b]$. Thus we obtain the iteration formula
-	
 	\begin{displaymath}
 		u_h (t+h) = u_h(t) +\frac{h}{2}[f(t,u_h(t)) + f(t+h, u_h(t+h))].
 	\end{displaymath}
 	
-	This iteration rule can also be formulated using the butcher tableau
-	
-	
-	
+	This iteration rule can also be formulated using the butcher tableau	
 	\begin{displaymath}
 		\begin{array}{c|cc}
 			0 & 0 & 0 \\
@@ -445,11 +490,7 @@ The conventional approach can be split into three main steps:
 		\end{array}
 	\end{displaymath}
 	
-	modelling book says
-	
 	Because $u_h(t+h)$ appears in $f$ again we see that this is an implicit method. The butcher tableau confirms this as well.
-	
-	energy conserving (BDF methods are not)
 	
 \section{Numerical Examples}
 	

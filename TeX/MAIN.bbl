@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.1 $
+% $ biblatex bbl format version 3.3 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -18,8 +18,48 @@
 
 
 \refsection{0}
-  \datalist[entry]{nty/global//global/global}
-    \entry{NumerikGewöhnlicherDifferentialgleichungen}{book}{}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{ModellingAndDiscretizationOfCircuitProblems}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=8b3a5d76aa159898985a14f33b458c28}{%
+           family={Günther},
+           familyi={G\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3d8ff8c9f594e0920c9e98964c3e3275}{%
+           family={Feldmann},
+           familyi={F\bibinitperiod},
+           given={U.},
+           giveni={U\bibinitperiod}}}%
+        {{hash=5cc628d871e24ae2e62eb6bcaa14e9af}{%
+           family={{Maten, ter}},
+           familyi={M\bibinitperiod},
+           given={E.J.W.},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \list{publisher}{1}{%
+        {Technische Universiteit Eindhoven}%
+      }
+      \strng{namehash}{6cc4365b17d0c6b0525b773f9bdd5d3b}
+      \strng{fullhash}{6cc4365b17d0c6b0525b773f9bdd5d3b}
+      \strng{fullhashraw}{6cc4365b17d0c6b0525b773f9bdd5d3b}
+      \strng{bibnamehash}{6cc4365b17d0c6b0525b773f9bdd5d3b}
+      \strng{authorbibnamehash}{6cc4365b17d0c6b0525b773f9bdd5d3b}
+      \strng{authornamehash}{6cc4365b17d0c6b0525b773f9bdd5d3b}
+      \strng{authorfullhash}{6cc4365b17d0c6b0525b773f9bdd5d3b}
+      \strng{authorfullhashraw}{6cc4365b17d0c6b0525b773f9bdd5d3b}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{CASA-report}
+      \field{title}{Modelling and discretization of circuit problems}
+      \field{year}{2005}
+    \endentry
+    \entry{NumerikGewöhnlicherDifferentialgleichungen}{book}{}{}
       \name{author}{1}{}{%
         {{hash=fc4fef8c9ff00f23a193ed01b6c1c2db}{%
            family={Karl\bibnamedelima Strehmel},
@@ -34,10 +74,12 @@
       }
       \strng{namehash}{fc4fef8c9ff00f23a193ed01b6c1c2db}
       \strng{fullhash}{fc4fef8c9ff00f23a193ed01b6c1c2db}
+      \strng{fullhashraw}{fc4fef8c9ff00f23a193ed01b6c1c2db}
       \strng{bibnamehash}{fc4fef8c9ff00f23a193ed01b6c1c2db}
       \strng{authorbibnamehash}{fc4fef8c9ff00f23a193ed01b6c1c2db}
       \strng{authornamehash}{fc4fef8c9ff00f23a193ed01b6c1c2db}
       \strng{authorfullhash}{fc4fef8c9ff00f23a193ed01b6c1c2db}
+      \strng{authorfullhashraw}{fc4fef8c9ff00f23a193ed01b6c1c2db}
       \field{sortinit}{K}
       \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
       \field{labelnamesource}{author}
@@ -48,7 +90,7 @@
       \verb https://doi.org/10.1007/978-3-8348-2263-5
       \endverb
     \endentry
-    \entry{Tischendorf2005Topological}{book}{}
+    \entry{Tischendorf2005Topological}{book}{}{}
       \name{author}{1}{}{%
         {{hash=f31e597f9ce1e216940725c8d991def9}{%
            family={Tischendorf},
@@ -61,10 +103,12 @@
       }
       \strng{namehash}{f31e597f9ce1e216940725c8d991def9}
       \strng{fullhash}{f31e597f9ce1e216940725c8d991def9}
+      \strng{fullhashraw}{f31e597f9ce1e216940725c8d991def9}
       \strng{bibnamehash}{f31e597f9ce1e216940725c8d991def9}
       \strng{authorbibnamehash}{f31e597f9ce1e216940725c8d991def9}
       \strng{authornamehash}{f31e597f9ce1e216940725c8d991def9}
       \strng{authorfullhash}{f31e597f9ce1e216940725c8d991def9}
+      \strng{authorfullhashraw}{f31e597f9ce1e216940725c8d991def9}
       \field{sortinit}{T}
       \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
       \field{labelnamesource}{author}
