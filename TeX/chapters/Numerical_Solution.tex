@@ -312,7 +312,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 		\end{enumerate}
 	\end{theorem}
 	
-	\begin{theorem}[DAE lecture]
+	\begin{theorem}%[DAE lecture]
 		A linear multistep method is stable if and only if it is zero-stable.
 	\end{theorem}
 	
@@ -327,10 +327,9 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 	\end{align}
 	with $\lambda \in \mathbb{C}$ and $u_0$ fixed.\\
 	
-	Asessment for stiff equations lt wikipedia (LMSM)
+	%Asessment for stiff equations lt wikipedia (LMSM)
 	
 	Thus the resulting linear multistep method is of the form
-	
 	\begin{align*}
 		\sum_{l=0}^{k} \alpha_l u_{n+l} = h \sum_{l=0}^{k} \beta_l \lambda u_{n+l} \\
 		\iff \sum_{l=0}^{k}  [\alpha_l - h \beta_l \lambda] u_{n+l}
@@ -356,7 +355,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 				 \begin{figure}[H]
 				 	\centering
 				 	\includegraphics[width=0.3\linewidth]{screenshot021}
-				 	\caption{}
+				 	\caption{$A(\alpha)$ stability}
 				 	\label{fig:screenshot021}
 				 \end{figure}
 				 
@@ -468,7 +467,7 @@ In the following two subchapters we will give a short overview over the two most
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.7\linewidth]{screenshot020}
-		\caption{}
+		\caption{stability regions of BDF-schemes}
 		\label{fig:screenshot020}
 	\end{figure}
 	
