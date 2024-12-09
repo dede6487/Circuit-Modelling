@@ -182,9 +182,12 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 			\end{array}
 		\end{displaymath}
 	
-		Their stability can directly be derived from the butcher tableau as the following theorem suggests:
-		
-		\textbf{Stabilitätsfunktion}
+		Their stability can directly be derived from the butcher tableau. The stability function of an arbitrary m-stage Runge-Kutta method has the form
+		\begin{displaymath}
+			R(z) = 1+zb^\top (I_m-zA)^{-1}e
+		\end{displaymath}
+	
+		where $e = (1,...,1)$.
 		
 		\textbf{Remark:} The trapezoidal rule is a widely used Runge-Kutta method which we can also consider as a multistep-method. It will be discussed later on.
 	
@@ -257,8 +260,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 		holds.
 	\end{definition}
 
-	From the generating polynomials we can derive consistency conditions
-	
+	From the generating polynomials we can derive simple consistency conditions
 	\begin{displaymath}
 		\rho(1) = 0 \quad \text{and} \quad \rho'(1) = \sigma(1).
 	\end{displaymath}
@@ -279,6 +281,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 	%	\label{fig:screenshot025}
 	%\end{figure}
 	
+	The discrete stability is also very similar to the single-step methods.
 	\begin{definition} \label{discrete stability LMSM}
 		A linear multi-step method is called (discretely) stable, if for solutions $u_h$ and $\tilde{u}_h$ of
 		\begin{align}
@@ -313,7 +316,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 		A linear multistep method is stable if and only if it is zero-stable.
 	\end{theorem}
 	
-	\textbf{from circuit book below, above from modelling book}
+	%\textbf{from circuit book below, above from modelling book}
 	
 	\subsection{further stability properties}
 	
@@ -333,8 +336,9 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 		\iff \sum_{l=0}^{k}  [\alpha_l - h \beta_l \lambda] u_{n+l}
 	\end{align*}
 	
-	in numerik book auf seite 326
+	%in numerik book auf seite 326
 	
+	Using this we define the following important stability notions.
 	\begin{definition}
 		\begin{enumerate}
 			\item 
@@ -365,7 +369,6 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 These kinds of multi-step methods are conventionally used to numerically solve the systems obtained using modified nodal analysis. Our assumption that we only consider network equations arising from networks consisting of RLC components as well as controlled sources which keep the index between 1 and 2 still holds.
 
 We consider the equations in charge/flux oriented formulation
-
 \begin{align*}
 	0 &=
 	\underbrace{ 
@@ -442,7 +445,6 @@ In the following two subchapters we will give a short overview over the two most
 	We will not give a deeper look into their construction but will only state their properties. BDF schemes are appealing because they save function evaluation as much as possible, since this is very costly in circuit simulation.
 	
 	The \emph{backward differentiation fooormula (BDF)} is a family of implicit linear multistep methods. They have the general form
-	
 	\begin{equation}
 		\sum_{k=0}^{s} \alpha_k y_{n+k} = h \beta f(t_{n+s}, y_{n+s})
 	\end{equation}
@@ -450,7 +452,6 @@ In the following two subchapters we will give a short overview over the two most
 	Since we are interested in the unknown $y_{n+s}$ which is used to evaluate $f$, this method is implicit. The coefficients $\alpha_k$ and $\beta$ are chosen, so that the method achieves order $s$ which is the maximum possible.
 	
 	The BDF or BDF-k formulas for $k=1,...6$ have the following form
-	
 	\begin{align*}
 		k = 1 &: h f_{m+1} = u_{m+1} - u_m \\
 		k = 2 &: h f_{m+2} = \frac{1}{2} (3 u_{m+2} - 4 iu_{m+1} + u_m) \\

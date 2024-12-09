@@ -1,6 +1,7 @@
 \chapter{Index Analysis of the MNA}
 
-seite 22 kap 7 netw top and dae ind for rlc - modelling and discretization circ prob
+%seite 22 kap 7 netw top and dae ind for rlc - modelling and discretization circ prob
+\cite{ModellingAndDiscretizationOfCircuitProblems}
 
 In the previous chapter we have seen two different kinds of Index concepts for differential algebraic equations. We have also seen that these two, even though they describe rather different structural aspects of the equation, are the same for our use-cases. This of course leads to the question : ``What are the indices we can usually expect for MNA?''.
 
@@ -97,11 +98,12 @@ The system is also sensitive to perturbations. Small noise in the input can have
 
 This means no severe numerical problems arise from index-1 systems. Implicit numerical integration schemes for stiff systems are feasable. On the other hand severe nunmerical problems may occur in the case that the system has index greater or equal to $2$. The hidden constraints can only be resolved by an unstable differentiation process.
 
-As the Kronecker index $k=ind{A,B}$ defines the behaviour of the system theoretically as well as numerically it is called the \emph{algebraic index} of the linear implicit system.
+As the Kronecker index $k=ind\{A,B\}$ defines the behaviour of the system theoretically as well as numerically it is called the \emph{algebraic index} of the linear implicit system.
 
 \section{Topological Conditions} 
 \cite{Tischendorf2005Topological}, %chapter 7 of
 \cite{ModellingAndDiscretizationOfCircuitProblems}
+\cite{DesoerCharlesA1969Bct}
 
 From analyzing the MNA some conditions to the circuit topology can be obtained. We will be considering the impact of special arrangements of components on the index of the system. In \cite{Tischendorf2005Topological} they present very interesting results about the index of MNA equations.
 
@@ -136,7 +138,6 @@ This means that if our circuit does not contain any loops or cutsets of the abov
 These results can also be interpreted in a more formal way. As they are just descriptions of the topology of the circuit we can reformulate the theorems in terms of the incidence matrix $A$.
 
 By perturbing the right hand side of of \ref{MNA_Matrixform} with a slight perturbation $\delta = (\delta_C, \delta_L, \delta_V)^\top$ we get a corresponding solution $x^\delta = (u^\delta, i_l^\delta, i_V^\delta)^\top$. One can show that the difference of this perturbed solution to the solution $x$ of the unperturbed system is bounded by
-
 \begin{displaymath}
 	|| x^\delta - x(t) || \leq C * \left( ||x^\delta (0) - x(0)|| + \max_{0 \leq \tau \leq t} ||\delta(\tau)|| + \max_{0 \leq \tau \leq t} ||Q_{CRV}^\top \dot{\delta_C}|| + \max_{0 \leq \tau \leq t} ||\tilde{Q}_{V-C}^\top \dot{\delta_V}|| \right)
 \end{displaymath}
@@ -153,4 +154,6 @@ This means that for ``reasonable'' RLC circuits (satisfying the prerequisites fr
 
 If one of those conditions is violated we are in the case of Theorem \ref{Index-2 condition} and thus have index 2.
 
-WE will apply those results to some examples: %(there are examples on page 23)
+We will apply those results to some examples: %(there are examples on page 23)
+
+\textbf{examples}

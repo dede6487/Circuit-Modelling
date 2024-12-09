@@ -1,11 +1,11 @@
 \chapter{Formulating a Mathematical Model}
 based on DAE lecture and \cite{ModellingAndDiscretizationOfCircuitProblems}
 
-To accurately represent a physical system in a mathematical model we first have to think about \textbf{how} to best formulate a mathematical model that foormulates this system.
-This chapter aims to elaborate on the Modified Nodal Analysis (MNA) of an electrical circuit. For this we have to introduce the notions of network topology as well as some basic electrical components and laws.
+To accurately represent a physical system in a mathematical model we first have to think about \textbf{how} to best formulate a mathematical model that formulates this system accurately enough.
+This chapter aims to elaborate on the Modified Nodal Analysis (MNA) of an electrical circuit, which is the industry standard for these kinds of models. For this we have to introduce the notions of network topology as well as some basic electrical components and laws.
 
 \section{Network Topology}
-An electrical circuit is usually considered as a graph $(N,E)$ where $N = (n_0, n_1, n_2, ...)$ are the Nodes and $E = (e_{ij})_{ij}$ are the edges.For some $i$ and some $j$ we have that $e_{ij} = (n_j, n_k)$ is the edge from node $j$ to node $k$.
+An electrical circuit is usually considered as a graph $(N,E)$ where $N = (n_0, n_1, n_2, ...)$ are the Nodes and $E = (e_{ij})_{ij}$ are the edges. For some $i$ and some $j$ we have that $e_{ij} = (n_j, n_k)$ is the edge from node $j$ to node $k$.
 We can store this information in an \emph{incidence matrix} $\tilde{A} = (\tilde{a}_{ij})_{ij}$ which is defined by
 \begin{displaymath}
 	\tilde{a}_{ij} = 
@@ -97,13 +97,15 @@ Electrical components are described by equations relating their edge voltage $v$
 		\caption{current source symbol}
 	\end{figure}
 	\item Diode - to be filled with information after the rest is complete
-	\item Transistor - unlike the other components which where all two-teminal components a transisstor is a three-terminal component
+	\item Transistor - unlike the other components which were all two-teminal components a transisstor is a three-terminal component
 \end{itemize}
 
 \section{Modified Nodal Analysis - MNA}
 
-num gew dgl steif n steif - seite 422 \newline
-modelling discr circ prob - seite 19
+%num gew dgl steif n steif - seite 422 \newline
+%modelling discr circ prob - seite 19
+
+\cite{ModellingAndDiscretizationOfCircuitProblems} and \cite{NumerikGewöhnlicherDifferentialgleichungen}
 
 To analyse the network further we will sort the reduced incidence matrix $A$ such that is has the block form
 \begin{displaymath}
@@ -160,7 +162,7 @@ The resulting systems are \emph{stiff} systems. This means that for their numeri
 \textbf{example}
 
 \section{Charge/Flux oriented formulation of MNA}
-Again using KCL \ref{KCL} and the component equations we formulate a system of equations. This time we use the charge and flux based formulations. This means that instead of directly using current and voltage we use the flux of the electric field (used in the description of inductances) and the charge (used in the description of capacitors). We obtain
+Again using KCL \ref{KCL} and the component equations we formulate a system of equations. This time we use the charge and flux based formulations. This means that instead of directly using current and voltage we use the flux of the magnetic field (used in the description of inductances) and the charge (used in the description of capacitors). We obtain
 
 \begin{align}
 	A_C\dot{q} + A_R r(A_R^\top u,t) + A_L i_L + A_V i_V + A_I i(A^\top u, \dot{q}, i_L, i_V, t) &= 0, \label{charge/flux-1} \\

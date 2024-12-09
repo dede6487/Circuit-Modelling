@@ -42,7 +42,7 @@ with $F:\mathbb{R} \times \mathbb{R}^N \times \mathbb{R}^N \to \mathbb{R}^N$ suf
 		with $f$ and $g$ functions.
 	\end{itemize}
 	
-	For our analysis of electrical networks we will focus on linear systems with constant coefficients. The other systems could for example occur when we also consider time-dependant component relations (e.q. Temperature, ...).
+	For our analysis of electrical networks we will focus on linear systems with constant coefficients. The other systems could for example occur when we also consider time-dependant component relations (e.g. Temperature, ...).
 
 \subsection{Weierstraß-Kronecker Normalform}
 \label{chap:Weierstraß-Kronecker Normalform}
@@ -73,7 +73,6 @@ To determine the solvability of a linear system with constant coefficients \ref{
 
 The matrix $J$ is called Jordan Normalform of $Q$, the $J_i$ are called Jordan Blocks, where $\lambda_i$ are the eigenvalues of $Q$. The matrix $J$ is uniquely determined by $Q$ except for the arrangement of the diagonal blocks. If $Q$ posesses only real eigenvalues, then $T$ can also be choosen from the reals. \newline
 A transformation from $A$ and $B$ in \ref{DAE-const-coeff} enables a seperation into differential and algebraic variables.	
-
 %aus buch seite 401
 \begin{theorem}
 	\label{Kronecker-Normalform}
@@ -94,6 +93,7 @@ A transformation from $A$ and $B$ in \ref{DAE-const-coeff} enables a seperation 
 		\end{matrix}
 		\right)
 	\end{displaymath}
+
 	where
 	\begin{displaymath}
 		N = diag(N_1, ..., N_r) \quad \text{with} \quad N_i = 
@@ -255,13 +255,11 @@ A transformation from $A$ and $B$ in \ref{DAE-const-coeff} enables a seperation 
 %Lemma 13.2.2
 
 Using the findings above we are able to Transform the initial DAE \ref{DAE-const-coeff} using the matrix $P$ from \ref{Kronecker-Normalform}. By multiplying $P$ from the left we obtain
-
 \begin{displaymath}
 	P A y'(t) + P B y(t) = P f(t) .
 \end{displaymath}
 
 Setting
-
 \begin{displaymath}
 	y = Q
 	\left(
@@ -283,7 +281,6 @@ Setting
 \end{displaymath}
 
 we get a system of the form
-
 \begin{equation}
 	\label{transformed-DAE-const-coeff}
 	\begin{aligned}
@@ -293,7 +290,6 @@ we get a system of the form
 \end{equation}
 
 The first equation is an ordinary differential equation of first order and posesses a unique solution $u(t)$ in $[t_0,t_l]$ for any starting values $u_0 \in \mathbb{R}^d$. Additionally setting $q(t) \in C^{k-1}([t_0,t_l])$ then differentiating the second equation in \ref{transformed-DAE-const-coeff} gives
-
 \begin{displaymath}
 	\begin{aligned}
 		v(t) &= q(t) - Nv'(t) = q(t) - N(\underbrace{q(t)-Nv'(t)}_{=v(t)})' = q-Nq'+N^2v'' \\
@@ -346,7 +342,6 @@ Since numerical differentiation is an unstable procedure this index gives a meas
 \end{definition}	
 
 In the case of linear DAEs with constant coefficients where the matrix pencil ${A,B}$ is regular we can transform the DAE
-
 \begin{displaymath}
 	A(y'(t)-\tilde{y}'(t)) + B(y'(t)-\tilde{y}(t)) = \delta(t)
 \end{displaymath}
@@ -358,7 +353,6 @@ into% (\textbf{how?} - bemerkung 13.3.5
 \end{align*}
 
 According to \ref{solution-to-transformed-DAE-const-coeff-part2} the solution of the algebraic variable has the form
-
 \begin{displaymath}
 	v(t) - \tilde{v}(t) = \sum_{i=0}^{k-1} (-1)^iN^i \delta_2^{(i)}(t) 
 \end{displaymath}
