@@ -1,6 +1,6 @@
 \chapter{Differential Algebraic Equations}
 
-von num gew dgl niochtsteife steife und dae
+von \cite{NumerikGewöhnlicherDifferentialgleichungen} und DAE lecture
 
 The resulting MNA of electrical circuits leads to a special form of differential equations, namely \emph{differential algebraic equations} (DAE). To understand the general solvability of those systems and to find good numerical methods we first have to take a look at the theory of such DAEs.
 
@@ -46,7 +46,7 @@ with $F:\mathbb{R} \times \mathbb{R}^N \times \mathbb{R}^N \to \mathbb{R}^N$ suf
 
 \subsection{Weierstraß-Kronecker Normalform}
 \label{chap:Weierstraß-Kronecker Normalform}
-kapitel aus buch seite 399 num gew dgl steif, kapitel 13.2.2
+%kapitel aus buch seite 399 num gew dgl steif, kapitel 13.2.2
 
 To determine the solvability of a linear system with constant coefficients \ref{DAE-const-coeff} we first need to introduce a Normalform for the system, the \emph{Weierstraß-Kronecker Normalform}. This Normalform is dependant on the family $\{A,B\} := \{ \mu A+B|\mu \in \mathbb{R} \}$, which is called the  \emph{matrix pencil} of the DAE.
 
@@ -74,7 +74,7 @@ To determine the solvability of a linear system with constant coefficients \ref{
 The matrix $J$ is called Jordan Normalform of $Q$, the $J_i$ are called Jordan Blocks, where $\lambda_i$ are the eigenvalues of $Q$. The matrix $J$ is uniquely determined by $Q$ except for the arrangement of the diagonal blocks. If $Q$ posesses only real eigenvalues, then $T$ can also be choosen from the reals. \newline
 A transformation from $A$ and $B$ in \ref{DAE-const-coeff} enables a seperation into differential and algebraic variables.	
 
-aus buch seite 401
+%aus buch seite 401
 \begin{theorem}
 	\label{Kronecker-Normalform}
 	Let $\{ A,B \}$ be a regular matrix pencil. There exist $P,Q \in \mathbb{C}^{n \times n}$ such that
@@ -231,7 +231,7 @@ aus buch seite 401
 	The nilpotency index $k$ from the Weierstraß-Kronecker Normalform of a matrix pencil $\{A,B\}$ with $A$ singular is called the \emph{Kronecker-Index} of $\{A,B\}$. We write $ind\{A,B\}$. For $A$ regular we set $ind\{A,B\} = 0$.
 \end{definition}
 
-lemma 13.2.1
+%lemma 13.2.1
 
 \begin{lemma}
 	The Kronecker-Index $ind\{A,B\}$ is independant of the choice of the matrices $P$ and $Q$.
@@ -252,7 +252,7 @@ lemma 13.2.1
 %\end{figure}
 
 
-Lemma 13.2.2
+%Lemma 13.2.2
 
 Using the findings above we are able to Transform the initial DAE \ref{DAE-const-coeff} using the matrix $P$ from \ref{Kronecker-Normalform}. By multiplying $P$ from the left we obtain
 
@@ -335,6 +335,8 @@ We will consider two types of index concepts, the differentiation index and the 
 
 In the previous chapter we have already discussed, that for a DAE with constant coefficients \ref{DAE-const-coeff} and a regular matrix pencil $\{A,B\}$  we need $k = ind\{A,B\}$ differentiations to receive an ordinary differential equation. This means that the Kronecker index $k$ is equal to the differentiation index in the case of a DAE with constant coefficients.
 
+Since numerical differentiation is an unstable procedure this index gives a measure for the numerical problems to be expected when solving such systems.
+
 \begin{definition}[perturbation index]
 	Let $y(t)$ be the exact solution to \ref{Abstract_DAE}. This problem has the \textbf{perturbation index} $k \in \mathbb{N}$ along $y(t), t_0 \leq t \leq T$ if for all  $\tilde{y}(t)$ with $F(t, \tilde{y}, \tilde{y}') = \delta(t)$ the inequality
 	\begin{displaymath}
@@ -349,36 +351,23 @@ In the case of linear DAEs with constant coefficients where the matrix pencil ${
 	A(y'(t)-\tilde{y}'(t)) + B(y'(t)-\tilde{y}(t)) = \delta(t)
 \end{displaymath}
 
-into (\textbf{how?} - bemerkung 13.3.5
-
+into% (\textbf{how?} - bemerkung 13.3.5
 \begin{align*}
-	u'(t) - \tilde{u}'(t) + \hat{R} (u(t) - \tilde{u}(t) ) &= \delta_1(t) \\
-	N(v'(t) - \tilde{v}'(t)) &= \delta_2(t)
+	u'(t) - \tilde{u}'(t) + \hat{R} (u(t) - \tilde{u}(t) ) &= \delta_1(t), \\
+	N(v'(t) - \tilde{v}'(t)) &= \delta_2(t).
 \end{align*}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{screenshot005}
-	\caption{}
-	\label{fig:screenshot005}
-\end{figure}
+According to \ref{solution-to-transformed-DAE-const-coeff-part2} the solution of the algebraic variable has the form
 
+\begin{displaymath}
+	v(t) - \tilde{v}(t) = \sum_{i=0}^{k-1} (-1)^iN^i \delta_2^{(i)}(t) 
+\end{displaymath}
 
-remark: tracability index
+Thus the perturbation index is the same as $ind{A,B}$ \cite{NumerikGewöhnlicherDifferentialgleichungen}. We see that the derivatives of the pertubation also enter the solution.
 
+%might want to elaborate on that
 
-\subsection{Special Case of Index = 1 and Index geq 2}
-
-	index 1 - transforms into ODE because algebraic variable is given explicitly
-	
-	index geq 2- hidden constraint is important - only show for index 2 as this is relevant for our analysis
-	
-
-
-	
-	differentiation index - since numerical differentiation is an unstable procedure this index gives a measure for the numerical problems to be expected when solving such systems
-	
-	perturbation index - derivatives of perturbations enter solution
+%Another index concept is the so called \emph{tractability index}.  
 	
 	
 	

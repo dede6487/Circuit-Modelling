@@ -135,12 +135,12 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 	\subsection{Runge-Kutta Methods}
 		A very prevalent family of numerical single-step methods are the \emph{Runge-Kutta} methods. 
 		
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.7\linewidth]{screenshot026}
-			\caption{}
-			\label{fig:screenshot026}
-		\end{figure}
+		%\begin{figure}
+		%	\centering
+		%	\includegraphics[width=0.7\linewidth]{screenshot026}
+		%	\caption{}
+		%	\label{fig:screenshot026}
+		%\end{figure}
 		
 		\begin{definition}
 			Let $s \in \mathbb{N}$. A single-step method of the form
@@ -220,7 +220,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 		
 	
 	\subsection{Consistency, Stability and Convergence}
-	local discretization error - def 4.2.2
+	\cite{NumerikGewöhnlicherDifferentialgleichungen}
 	
 	Again we need to define the properties consistency, stability and convergence for this method.
 	\begin{definition}
@@ -257,27 +257,35 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 		holds.
 	\end{definition}
 
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.7\linewidth]{screenshot013}
-		\caption{}
-		\label{fig:screenshot013}
-	\end{figure}
+	From the generating polynomials we can derive consistency conditions
+	
+	\begin{displaymath}
+		\rho(1) = 0 \quad \text{and} \quad \rho'(1) = \sigma(1).
+	\end{displaymath}
 
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.7\linewidth]{screenshot025}
-		\caption{}
-		\label{fig:screenshot025}
-	\end{figure}
+	Of course we also need convergence of such methods.
+	
+	\begin{definition} \label{def: LMSV convergence}
+		We say that a linear multi-step method is convergent if for a solution $y$ of the problem a solution vector created by an LMSV $y_j$ for $j \in {0,...,k}$ we have that
+		\begin{displaymath}
+			\lim\limits_{h \to \infty} \max_{0 \leq j \leq k} ||y(t_j) - y_j|| = 0.
+		\end{displaymath}
+	\end{definition}
+	
+	%\begin{figure}
+	%	\centering
+	%	\includegraphics[width=0.7\linewidth]{screenshot025}
+	%	\caption{}
+	%	\label{fig:screenshot025}
+	%\end{figure}
 	
 	\begin{definition} \label{discrete stability LMSM}
 		A linear multi-step method is called (discretely) stable, if for solutions $u_h$ and $\tilde{u}_h$ of
 		\begin{align}
 			\sum_{l=0}^{k} \alpha_l u_{m+l} &= h \sum_{l=0}^{k} \beta_l f(t_{m+l}, u_{m+l}), \\
-			\sum_{l=0}^{k} \alpha_l \tilde{u}_{m+l} = h \sum_{l=0}^{k} \beta_l f(t_{m+l}, \tilde{u}_{m+l}) + h\theta_n
+			\sum_{l=0}^{k} \alpha_l \tilde{u}_{m+l} &= h \sum_{l=0}^{k} \beta_l f(t_{m+l}, \tilde{u}_{m+l}) + h\theta_n
 		\end{align} 
-		and bounded initial values $y_j - y_j$ for $j \in {0,...,k}$ we have that
+		and bounded initial values $y_j - \tilde{y}_j$ for $j \in {0,...,k}$ we have that
 		\begin{displaymath}
 			\max_{t_0 \leq t_n \leq T} ||y_n - \tilde{y}_n|| \leq C \sum_{j=0}^{k-1} ||y_j - \tilde{y}_j|| + \max_{t_0 \leq t_n \leq T} ||\theta_n||.
 		\end{displaymath}
@@ -340,7 +348,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 			\begin{itemize}
 				\item \emph{0-stable}, if $0 \in S$.
 				\item stable in the point $z \in \mathbb{C}$, if Wurzelbedingung erfüllt bei z, aber doch eigentlich z in S oder?
-				\item \emph{$A(\alpha)$-stable}, if it is stable in all $z$ that lie within the set
+				\item \emph{$A(\alpha)$-stable}, if it is stable in all $z$ that lie within the set $\{z \in \mathbb{C}^- : |arg(z)-\pi| \leq \alpha\}$ for $\alpha \in (0, \frac{\pi}{2})$.
 				 \begin{figure}[H]
 				 	\centering
 				 	\includegraphics[width=0.3\linewidth]{screenshot021}

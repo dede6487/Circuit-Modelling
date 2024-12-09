@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.11)  9 DEC 2024 13:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.11)  9 DEC 2024 15:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1970,17 +1970,17 @@ File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )
 
 [3]
-<pictures/resistor.png, id=149, 201.00093pt x 76.03406pt>
+<pictures/resistor.png, id=135, 201.00093pt x 76.03406pt>
 File: pictures/resistor.png Graphic file (type png)
 <use pictures/resistor.png>
 Package pdftex.def Info: pictures/resistor.png  used on input line 52.
 (pdftex.def)             Requested size: 56.9055pt x 21.52606pt.
-<pictures/capacitor.png, id=150, 100.12407pt x 93.34875pt>
+<pictures/capacitor.png, id=136, 100.12407pt x 93.34875pt>
 File: pictures/capacitor.png Graphic file (type png)
 <use pictures/capacitor.png>
 Package pdftex.def Info: pictures/capacitor.png  used on input line 63.
 (pdftex.def)             Requested size: 56.9055pt x 53.0555pt.
-<pictures/inductance.png, id=151, 277.78781pt x 101.62968pt>
+<pictures/inductance.png, id=137, 277.78781pt x 101.62968pt>
 File: pictures/inductance.png Graphic file (type png)
 <use pictures/inductance.png>
 Package pdftex.def Info: pictures/inductance.png  used on input line 74.
@@ -1988,12 +1988,12 @@ Package pdftex.def Info: pictures/inductance.png  used on input line 74.
 
 
 [4 <./pictures/resistor.png> <./pictures/capacitor.png>]
-<pictures/voltage_source.png, id=157, 310.91156pt x 179.16937pt>
+<pictures/voltage_source.png, id=143, 310.91156pt x 179.16937pt>
 File: pictures/voltage_source.png Graphic file (type png)
 <use pictures/voltage_source.png>
 Package pdftex.def Info: pictures/voltage_source.png  used on input line 85.
 (pdftex.def)             Requested size: 113.81102pt x 65.58627pt.
-<pictures/current_source.png, id=158, 310.91156pt x 179.16937pt>
+<pictures/current_source.png, id=144, 310.91156pt x 179.16937pt>
 File: pictures/current_source.png Graphic file (type png)
 <use pictures/current_source.png>
 Package pdftex.def Info: pictures/current_source.png  used on input line 96.
@@ -2003,21 +2003,14 @@ Package pdftex.def Info: pictures/current_source.png  used on input line 96.
 [5 <./pictures/inductance.png> <./pictures/voltage_source.png> <./pictures/curr
 ent_source.png>]
 
-[6]
-<screenshot007.png, id=171, 658.71094pt x 314.67563pt>
-File: screenshot007.png Graphic file (type png)
-<use screenshot007.png>
-Package pdftex.def Info: screenshot007.png  used on input line 187.
-(pdftex.def)             Requested size: 298.75267pt x 142.72148pt.
+[6])
 
+[7]
 
-[7])
-
-[8 <./screenshot007.png (PNG copy)>]
+[8]
 \openout2 = `chapters/Differential_Algebraic_Equations.aux'.
 
-
-(./chapters/Differential_Algebraic_Equations.tex
+ (./chapters/Differential_Algebraic_Equations.tex
 chapter 3.
 LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 
 14.
@@ -2040,11 +2033,12 @@ Package mdframed Info: mdframed detected package amsthm
 
 Missing character: There is no n in font fplmbb!
 Missing character: There is no n in font fplmbb!
-Package mdframed Info: Not enough space on this page on input line 72.
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 72.
 
 
 [10]
-Package mdframed Info: Not enough space on this page on input line 72.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 78.
@@ -2064,27 +2058,23 @@ Package mdframed Info: mdframed detected package amsthm
 
 
 [14]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 319.
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 334.
+
 
 [15]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 319.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 338.
+(mdframed)              on input line 340.
 
 
-[16]
-<screenshot005.png, id=243, 434.37282pt x 227.34938pt>
-File: screenshot005.png Graphic file (type png)
-<use screenshot005.png>
-Package pdftex.def Info: screenshot005.png  used on input line 361.
-(pdftex.def)             Requested size: 298.75267pt x 156.37515pt.
-)
+[16])
 
-[17 <./screenshot005.png (PNG copy)>]
-
-[18]
+[17]
 \openout2 = `chapters/Index_Analysis.aux'.
 
  (./chapters/Index_Analysis.tex
@@ -2095,58 +2085,57 @@ LaTeX Warning: Command \" invalid in math mode on input line 34.
 Missing character: There is no ä in font pplr7t!
 
 
-[19
+[18
 
 
 
 
 ]
 
-[20]
-<screenshot022.png, id=269, 643.6547pt x 197.98969pt>
-File: screenshot022.png Graphic file (type png)
-<use screenshot022.png>
-Package pdftex.def Info: screenshot022.png  used on input line 106.
-(pdftex.def)             Requested size: 298.75267pt x 91.89809pt.
-
-
-[21 <./screenshot022.png (PNG copy)>]
+[19]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 119.
-<pictures/inductance-current-source_cutset.png, id=278, 948.54375pt x 543.53062
+(mdframed)              on input line 109.
+
+
+[20]
+Package mdframed Info: Not enough space on this page on input line 111.
+<pictures/inductance-current-source_cutset.png, id=264, 948.54375pt x 543.53062
 pt>
 File: pictures/inductance-current-source_cutset.png Graphic file (type png)
 <use pictures/inductance-current-source_cutset.png>
 Package pdftex.def Info: pictures/inductance-current-source_cutset.png  used on
- input line 128.
+ input line 118.
 (pdftex.def)             Requested size: 192.05481pt x 110.04776pt.
-<pictures/capacitance-voltage-source_loop.png, id=279, 858.20625pt x 543.53062p
+<pictures/capacitance-voltage-source_loop.png, id=265, 858.20625pt x 543.53062p
 t>
 File: pictures/capacitance-voltage-source_loop.png Graphic file (type png)
 <use pictures/capacitance-voltage-source_loop.png>
 Package pdftex.def Info: pictures/capacitance-voltage-source_loop.png  used on 
-input line 133.
+input line 123.
 (pdftex.def)             Requested size: 192.05481pt x 121.63391pt.
 
-Overfull \hbox (2.08049pt too wide) in paragraph at lines 126--137
+Overfull \hbox (2.08049pt too wide) in paragraph at lines 116--127
 [][] []
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 142.
-<screenshot024.png, id=282, 470.50781pt x 213.79875pt>
-File: screenshot024.png Graphic file (type png)
-<use screenshot024.png>
-Package pdftex.def Info: screenshot024.png  used on input line 150.
-(pdftex.def)             Requested size: 298.75267pt x 135.75417pt.
+(mdframed)              on input line 132.
+
+Overfull \hbox (10.01868pt too wide) detected at line 142
+ $\OMS/zplm/m/n/10.95 jj\OML/zplm/m/it/10.95 x[] \OMS/zplm/m/n/10.95 ^^@ \OML/z
+plm/m/it/10.95 x\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 t\OT1/zplm/m/n/10.95 
+)\OMS/zplm/m/n/10.95 jj ^^T \OML/zplm/m/it/10.95 C \OMS/zplm/m/n/10.95 ^^C []$ 
+
+ []
 
 
-[22 <./pictures/inductance-current-source_cutset.png> <./pictures/capacitance-v
+
+[21 <./pictures/inductance-current-source_cutset.png> <./pictures/capacitance-v
 oltage-source_loop.png>])
 
-[23 <./screenshot024.png (PNG copy)>]
+[22]
 \openout2 = `chapters/Numerical_Solution.aux'.
 
  (./chapters/Numerical_Solution.tex
@@ -2156,7 +2145,7 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 24.
 
 
-[24
+[23
 
 
 
@@ -2174,7 +2163,7 @@ Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 59.
 
 
-[25]
+[24]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 63.
@@ -2183,7 +2172,7 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 81.
 
 
-[26]
+[25]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 96.
@@ -2195,117 +2184,100 @@ Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 133.
 
 
-[27]
-<screenshot026.png, id=342, 435.87843pt x 299.61937pt>
-File: screenshot026.png Graphic file (type png)
-<use screenshot026.png>
-Package pdftex.def Info: screenshot026.png  used on input line 140.
-(pdftex.def)             Requested size: 298.75267pt x 205.35689pt.
+[26]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 145.
-
-
-[28 <./screenshot026.png (PNG copy)>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 158.
 
 
-[29]
+[27]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 196.
 
 
-[30]
+[28]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 226.
+
+
+[29]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 244.
-
-
-[31]
-<screenshot013.png, id=378, 513.41812pt x 210.7875pt>
-File: screenshot013.png Graphic file (type png)
-<use screenshot013.png>
-Package pdftex.def Info: screenshot013.png  used on input line 262.
-(pdftex.def)             Requested size: 298.75267pt x 122.65565pt.
-<screenshot025.png, id=379, 339.51843pt x 195.73125pt>
-File: screenshot025.png Graphic file (type png)
-<use screenshot025.png>
-Package pdftex.def Info: screenshot025.png  used on input line 269.
-(pdftex.def)             Requested size: 298.75267pt x 172.23804pt.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 274.
-Package mdframed Info: You first box width is to small
- mdframed fixed it
-(mdframed)              on input line 284.
-
-
-[32 <./screenshot025.png (PNG copy)> <./screenshot013.png (PNG copy)>]
+(mdframed)              on input line 268.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 286.
+(mdframed)              on input line 282.
+
+
+[30]
+Package mdframed Info: Not enough space on this page on input line 292.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 296.
+(mdframed)              on input line 294.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 304.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 312.
 
 
-[33]
-Underfull \hbox (badness 10000) in paragraph at lines 316--318
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 324--326
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 330.
-<screenshot021.png, id=396, 276.28218pt x 226.59656pt>
+(mdframed)              on input line 338.
+<screenshot021.png, id=375, 276.28218pt x 226.59656pt>
 File: screenshot021.png Graphic file (type png)
 <use screenshot021.png>
-Package pdftex.def Info: screenshot021.png  used on input line 346.
+Package pdftex.def Info: screenshot021.png  used on input line 354.
 (pdftex.def)             Requested size: 121.79866pt x 99.89294pt.
 
 
+[32]
+
+[33 <./screenshot021.png (PNG copy)>]
+
 [34]
-
-[35 <./screenshot021.png (PNG copy)>]
-
-[36]
-Overfull \hbox (43.47769pt too wide) detected at line 453
+Overfull \hbox (43.47769pt too wide) detected at line 461
 []
  []
 
 
-Overfull \hbox (10.95pt too wide) in paragraph at lines 453--453
+Overfull \hbox (10.95pt too wide) in paragraph at lines 461--461
 [] 
  []
 
-<screenshot020.png, id=419, 761.84625pt x 522.45187pt>
+<screenshot020.png, id=398, 761.84625pt x 522.45187pt>
 File: screenshot020.png Graphic file (type png)
 <use screenshot020.png>
-Package pdftex.def Info: screenshot020.png  used on input line 461.
+Package pdftex.def Info: screenshot020.png  used on input line 469.
 (pdftex.def)             Requested size: 298.75267pt x 204.87148pt.
 
 
-[37]
+[35]
 
-[38 <./screenshot020.png>])
+[36 <./screenshot020.png>])
 
-[39])
+[37])
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
 
-[40
+[38
 
 
 
@@ -2327,11 +2299,11 @@ Package logreq Info: Writing requests to 'MAIN.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39376 strings out of 473361
- 804956 string characters out of 5725029
- 1809665 words of memory out of 5000000
- 61301 multiletter control sequences out of 15000+600000
- 643178 words of font info for 361 fonts, out of 8000000 for 9000
+ 39289 strings out of 473361
+ 803004 string characters out of 5725029
+ 1809451 words of memory out of 5000000
+ 61217 multiletter control sequences out of 15000+600000
+ 643408 words of font info for 365 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,23n,142p,10899b,4097s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/tex
@@ -2348,9 +2320,9 @@ ino/uplb8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb
 ><c:/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/20
 24/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2024/texmf-dist/f
 onts/type1/urw/palatino/uplri8a.pfb>
-Output written on MAIN.pdf (46 pages, 985906 bytes).
+Output written on MAIN.pdf (44 pages, 488372 bytes).
 PDF statistics:
- 637 PDF objects out of 1000 (max. 8388607)
- 180 named destinations out of 1000 (max. 500000)
- 98119 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 611 PDF objects out of 1000 (max. 8388607)
+ 171 named destinations out of 1000 (max. 500000)
+ 98076 words of extra memory for PDF output out of 106986 (max. 10000000)
 

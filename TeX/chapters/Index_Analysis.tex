@@ -99,19 +99,9 @@ This means no severe numerical problems arise from index-1 systems. Implicit num
 
 As the Kronecker index $k=ind{A,B}$ defines the behaviour of the system theoretically as well as numerically it is called the \emph{algebraic index} of the linear implicit system.
 
-
-(below is already aid above - delete?)
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{screenshot022}
-	\caption{}
-	\label{fig:screenshot022}
-\end{figure}
-
-
 \section{Topological Conditions} 
-reference to Tischendorf
-basically chapter 7 of modelling book
+\cite{Tischendorf2005Topological}, %chapter 7 of
+\cite{ModellingAndDiscretizationOfCircuitProblems}
 
 From analyzing the MNA some conditions to the circuit topology can be obtained. We will be considering the impact of special arrangements of components on the index of the system. In \cite{Tischendorf2005Topological} they present very interesting results about the index of MNA equations.
 
@@ -145,12 +135,13 @@ This means that if our circuit does not contain any loops or cutsets of the abov
 
 These results can also be interpreted in a more formal way. As they are just descriptions of the topology of the circuit we can reformulate the theorems in terms of the incidence matrix $A$.
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{screenshot024}
-	\caption{}
-	\label{fig:screenshot024}
-\end{figure}
+By perturbing the right hand side of of \ref{MNA_Matrixform} with a slight perturbation $\delta = (\delta_C, \delta_L, \delta_V)^\top$ we get a corresponding solution $x^\delta = (u^\delta, i_l^\delta, i_V^\delta)^\top$. One can show that the difference of this perturbed solution to the solution $x$ of the unperturbed system is bounded by
+
+\begin{displaymath}
+	|| x^\delta - x(t) || \leq C * \left( ||x^\delta (0) - x(0)|| + \max_{0 \leq \tau \leq t} ||\delta(\tau)|| + \max_{0 \leq \tau \leq t} ||Q_{CRV}^\top \dot{\delta_C}|| + \max_{0 \leq \tau \leq t} ||\tilde{Q}_{V-C}^\top \dot{\delta_V}|| \right)
+\end{displaymath}
+
+using orthogonal projectors$Q_C$, $Q_{CRV}$ and $\tilde{Q}_{V-C}$  onto $ker(A_C^\top)$, $ker(A_CA_RA_V)^\top$ and $ker(Q_C^\top A_V)$ respectively.
 
 Theorem \ref{Index-1 condition} can be interpreted as the two conditions
 	\begin{align}
@@ -162,4 +153,4 @@ This means that for ``reasonable'' RLC circuits (satisfying the prerequisites fr
 
 If one of those conditions is violated we are in the case of Theorem \ref{Index-2 condition} and thus have index 2.
 
-WE will apply those results to some examples: (there are examples on page 23)
+WE will apply those results to some examples: %(there are examples on page 23)

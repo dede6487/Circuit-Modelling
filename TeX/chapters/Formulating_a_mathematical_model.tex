@@ -1,5 +1,5 @@
 \chapter{Formulating a Mathematical Model}
-based on DAE lecture and modelling and discretiztation of elec circuit problems.
+based on DAE lecture and \cite{ModellingAndDiscretizationOfCircuitProblems}
 
 To accurately represent a physical system in a mathematical model we first have to think about \textbf{how} to best formulate a mathematical model that foormulates this system.
 This chapter aims to elaborate on the Modified Nodal Analysis (MNA) of an electrical circuit. For this we have to introduce the notions of network topology as well as some basic electrical components and laws.
@@ -160,16 +160,14 @@ The resulting systems are \emph{stiff} systems. This means that for their numeri
 \textbf{example}
 
 \section{Charge/Flux oriented formulation of MNA}
-may noot be too importatn - leave out?
-
-Again using KCL \ref{KCL} and the component equations we formulate a system of equations. (\textbf{more here}) What is flux and charge - explain either here or witht the components
+Again using KCL \ref{KCL} and the component equations we formulate a system of equations. This time we use the charge and flux based formulations. This means that instead of directly using current and voltage we use the flux of the electric field (used in the description of inductances) and the charge (used in the description of capacitors). We obtain
 
 \begin{align}
-	A_C\dot{q} + A_R r(A_R^\top u,t) + A_L i_L + A_V i_V + A_I i(A^\top u, \dot{q}, i_L, i_V, t) &= 0 \label{charge/flux-1} \\
-	\dot{\phi} - A_L^\top u &= 0 \label{charge/flux-2} \\
-	v(A^\top u, \dot{q}, i_L, i_V, t) - A_V^\top u &= 0 \label{charge/flux-3} \\
-	q - q_C(A_C^\top u) &= 0 \label{charge/flux-4} \\
-	\phi - \phi_L(i_L) &= 0  \label{charge/flux-5} 
+	A_C\dot{q} + A_R r(A_R^\top u,t) + A_L i_L + A_V i_V + A_I i(A^\top u, \dot{q}, i_L, i_V, t) &= 0, \label{charge/flux-1} \\
+	\dot{\phi} - A_L^\top u &= 0, \label{charge/flux-2} \\
+	v(A^\top u, \dot{q}, i_L, i_V, t) - A_V^\top u &= 0, \label{charge/flux-3} \\
+	q - q_C(A_C^\top u) &= 0, \label{charge/flux-4} \\
+	\phi - \phi_L(i_L) &= 0.  \label{charge/flux-5} 
 \end{align}
 
 Using
@@ -182,11 +180,6 @@ Using
 	\item controlled current and voltage sources $i_{src}$ and $v_{src}$.
 \end{description} 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{screenshot007}
-	\caption{}
-	\label{fig:screenshot007}
-\end{figure}
+We call this formulation the \emph{charge-flux oriented modified nodal analysis}.
 
-so it makes sense to use the conventional approach of MNA - compare with phd thesis 
+%so it makes sense to use the conventional approach of MNA - compare with phd thesis 
