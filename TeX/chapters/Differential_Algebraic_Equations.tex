@@ -4,14 +4,15 @@ von \cite{NumerikGewöhnlicherDifferentialgleichungen} und DAE lecture
 
 The resulting MNA of electrical circuits leads to a special form of differential equations, namely \emph{differential algebraic equations} (DAE). To understand the general solvability of those systems and to find good numerical methods we first have to take a look at the theory of such DAEs.
 
-\section{Abstract Problem}
-In the most general form a DAE can be written as
+In the most general form a DAE can be written as:
+Find $y:\mathbb{R} \to \mathbb{R}^N$ such that
 \begin{equation}
 	\label{Abstract_DAE}
 	F(t, y(t), y'(t)) = 0, \qquad \forall t \in I
 \end{equation}
 
-with $F:\mathbb{R} \times \mathbb{R}^N \times \mathbb{R}^N \to \mathbb{R}^N$ sufficiently smooth. As this is usually too general one has to consider more specific types of DAEs.
+with $F:\mathbb{R} \times \mathbb{R}^N \times \mathbb{R}^N \to \mathbb{R}^N$ sufficiently smooth and $I$ the time-interval. As this is usually too general one has to consider more specific types of DAEs.
+This chapter focuses on giving a brief overview of the different types of differential algebraic equations. We will discuss the specific form of linear systems with constant coefficients in more detail as those are the systems that arise from modified nodal analysis. Additionally this chapter also discusses the notion of the index of an MNA-system.
 
 \section{Types of DAEs}
 
@@ -42,20 +43,20 @@ with $F:\mathbb{R} \times \mathbb{R}^N \times \mathbb{R}^N \to \mathbb{R}^N$ suf
 		with $f$ and $g$ functions.
 	\end{itemize}
 	
-	For our analysis of electrical networks we will focus on linear systems with constant coefficients. The other systems could for example occur when we also consider time-dependant component relations (e.g. Temperature, ...).
+	For our analysis of electrical networks we will focus on linear systems with constant coefficients. The other systems could for example occur when we also consider time-dependant component relations e.g. Temperature.
 
 \subsection{Weierstraß-Kronecker Normalform}
 \label{chap:Weierstraß-Kronecker Normalform}
 %kapitel aus buch seite 399 num gew dgl steif, kapitel 13.2.2
 
-To determine the solvability of a linear system with constant coefficients \ref{DAE-const-coeff} we first need to introduce a Normalform for the system, the \emph{Weierstraß-Kronecker Normalform}. This Normalform is dependant on the family $\{A,B\} := \{ \mu A+B|\mu \in \mathbb{R} \}$, which is called the  \emph{matrix pencil} of the DAE.
+To determine the solvability of a linear system with constant coefficients \eqref{DAE-const-coeff} we first need to introduce a Normalform for the system, the \emph{Weierstraß-Kronecker Normalform}. This Normalform is dependent on the family $\{A,B\} := \{ \mu A+B|\mu \in \mathbb{R} \}$, which is called the  \emph{matrix pencil} of the DAE.
 
 \begin{definition}
 	The matrix pencil $\{ A,B\}$ is called \emph{regular} if there exists some $c \in \mathbb{R}$, such that $(cA+B)$ is regular ($det(cA+B) \neq 0$), otherwise it is called singular.
 \end{definition}
 
 \begin{theorem}[Jordan Normalform]
-	For every matrix $Q \in \mathbb{R^{n \times n}}$ there exists a regular matrix $T \in \mathbb{C}^{n \times n}$, such that
+	For every matrix $Q \in \mathbb{R}^{N \times N}$ there exists a regular matrix $T \in \mathbb{C}^{N \times N}$, such that
 	\begin{displaymath}
 		T^{-1}QT = J = diag(J_1, ..., J_r) \quad \text{with} \quad J_i = 
 		\left(
@@ -71,7 +72,7 @@ To determine the solvability of a linear system with constant coefficients \ref{
 	and $n = m_1 + ... + m_r$.
 \end{theorem}
 
-The matrix $J$ is called Jordan Normalform of $Q$, the $J_i$ are called Jordan Blocks, where $\lambda_i$ are the eigenvalues of $Q$. The matrix $J$ is uniquely determined by $Q$ except for the arrangement of the diagonal blocks. If $Q$ posesses only real eigenvalues, then $T$ can also be choosen from the reals. \newline
+The matrix $J$ is called Jordan Normalform of $Q$, the matrices $J_i$ are called Jordan Blocks, where $\lambda_i$ are corresponding the eigenvalues of $Q$. The matrix $J$ is uniquely determined by $Q$ except for the arrangement of the diagonal blocks. If $Q$ posesses only real eigenvalues, then $T$ can also be choosen from the reals. \newline
 A transformation from $A$ and $B$ in \ref{DAE-const-coeff} enables a seperation into differential and algebraic variables.	
 %aus buch seite 401
 \begin{theorem}
@@ -109,8 +110,11 @@ A transformation from $A$ and $B$ in \ref{DAE-const-coeff} enables a seperation 
 	\end{displaymath}
 	and R has Jordan Normalform.
 \end{theorem}
+
+By $I_k$ we denote the identity matrix of size $k \times k$.
+
 \begin{proof}
-	Becuase $\{A,B\}$ is a regular matrix pencil, there exists $c \in \mathbb{R}$ such that $(cA+B)$ is regular. Set
+	Because $\{A,B\}$ is a regular matrix pencil, there exists $c \in \mathbb{R}$ such that $(cA+B)$ is regular. Set
 	\begin{displaymath}
 		\hat{A} := (cA+B)^{-1}A, \quad \hat{B} := (cA+B)^{-1}B.
 	\end{displaymath}
@@ -228,7 +232,7 @@ A transformation from $A$ and $B$ in \ref{DAE-const-coeff} enables a seperation 
 \end{proof}
 
 \begin{definition}
-	The nilpotency index $k$ from the Weierstraß-Kronecker Normalform of a matrix pencil $\{A,B\}$ with $A$ singular is called the \emph{Kronecker-Index} of $\{A,B\}$. We write $ind\{A,B\}$. For $A$ regular we set $ind\{A,B\} = 0$.
+	The nilpotency index $k$ from the Weierstraß-Kronecker Normalform of a matrix pencil $\{A,B\}$ with $A$ singular is called the \emph{Kronecker-Index} of $\{A,B\}$, denote $ind\{A,B\}$. Note that for $A$ regular we set $ind\{A,B\} = 0$.
 \end{definition}
 
 %lemma 13.2.1
@@ -254,18 +258,18 @@ A transformation from $A$ and $B$ in \ref{DAE-const-coeff} enables a seperation 
 
 %Lemma 13.2.2
 
-Using the findings above we are able to Transform the initial DAE \ref{DAE-const-coeff} using the matrix $P$ from \ref{Kronecker-Normalform}. By multiplying $P$ from the left we obtain
+Using the findings above we are able to Transform the initial DAE \eqref{DAE-const-coeff} using the matrix $P$ from Theorem \ref{Kronecker-Normalform}. By multiplying with $P$ from the left, we obtain
 \begin{displaymath}
 	P A y'(t) + P B y(t) = P f(t) .
 \end{displaymath}
 
 Setting
 \begin{displaymath}
-	y = Q
+	y(t) = Q
 	\left(
 	\begin{matrix}
-		u \\
-		v
+		u(t) \\
+		v(t)
 	\end{matrix}  
 	\right) 
 	, \quad
@@ -277,7 +281,7 @@ Setting
 	\end{matrix}
 	\right)
 	\quad \text{with} \quad
-	u,s \in \mathbb{R}^d ,
+	u(t),s(t) : \mathbb{R} \to \mathbb{R}^d ,
 \end{displaymath}
 
 we get a system of the form
@@ -289,7 +293,7 @@ we get a system of the form
 	\end{aligned}
 \end{equation}
 
-The first equation is an ordinary differential equation of first order and posesses a unique solution $u(t)$ in $[t_0,t_l]$ for any starting values $u_0 \in \mathbb{R}^d$. Additionally setting $q(t) \in C^{k-1}([t_0,t_l])$ then differentiating the second equation in \ref{transformed-DAE-const-coeff} gives
+The first equation of \eqref{transformed-DAE-const-coeff} is a first order ordinary differential equation and posesses a unique solution $u(t)$ in $[t_0,t_l]$ for any initial values $u_0 \in \mathbb{R}^d$. Now let $q(t) \in C^{k-1}([t_0,t_l])$ (where we denote by $C^{k-1}([I])$ the room of all functions with domain $I$ that is $k-1$ times differentiable) and differentiate the second equation in \ref{transformed-DAE-const-coeff} to obtain
 \begin{displaymath}
 	\begin{aligned}
 		v(t) &= q(t) - Nv'(t) = q(t) - N(\underbrace{q(t)-Nv'(t)}_{=v(t)})' = q-Nq'+N^2v'' \\
@@ -308,7 +312,7 @@ The Kronecker index $k$ shows, that $k$ differentiations are required to receive
 
 \section{Index of a Differential Algebraic Equation}
 
-The Index of a DAE gives us insight about its numerical properties and in general about the solvability. (``The higher the index, the harder to solve'')
+The Index of a DAE gives us insight about its numerical properties and in general about the solvability where the intuition is ``The higher the index, the harder to solve''.
 
 We will consider two types of index concepts, the differentiation index and the perturbation index.
 

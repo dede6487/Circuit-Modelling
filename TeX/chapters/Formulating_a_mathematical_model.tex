@@ -2,11 +2,11 @@
 based on DAE lecture and \cite{ModellingAndDiscretizationOfCircuitProblems}
 
 To accurately represent a physical system in a mathematical model we first have to think about \textbf{how} to best formulate a mathematical model that formulates this system accurately enough.
-This chapter aims to elaborate on the Modified Nodal Analysis (MNA) of an electrical circuit, which is the industry standard for these kinds of models. For this we have to introduce the notions of network topology as well as some basic electrical components and laws.
+This chapter aims to elaborate on the Modified Nodal Analysis (MNA) of an electrical circuit, which is the industry standard for these kinds of models. For this we have to introduce the notions of network topology as well as some basic electrical components and laws. Most of the following notions such as voltage, current and electrical potentials are time dependent. For better readability we will leave out the time argument $t$ in some cases.
 
 \section{Network Topology}
-An electrical circuit is usually considered as a graph $(N,E)$ where $N = (n_0, n_1, n_2, ...)$ are the Nodes and $E = (e_{ij})_{ij}$ are the edges. For some $i$ and some $j$ we have that $e_{ij} = (n_j, n_k)$ is the edge from node $j$ to node $k$.
-We can store this information in an \emph{incidence matrix} $\tilde{A} = (\tilde{a}_{ij})_{ij}$ which is defined by
+An electrical circuit is usually considered as a graph $(\mathcal{N},\mathcal{E})$ where $\mathcal{N} = (n_0, n_1, n_2, ..., n_k)$ denotes nodes and $\mathcal{E} = \{e_{ij}: i,j = 1,...,l\}$ is the set of edges where $k$ is the number of nodes and $l$ the number of edges. For some $i$ and some $j$ we have that $e_{ij} = (n_i, n_j)$ is the edge from node $i$ to node $j$.
+We can store this information in an \emph{incidence matrix} $\tilde{A} = (\tilde{a}_{ij}) \in \mathbb{R}^{k \times l}$ which is defined by
 \begin{displaymath}
 	\tilde{a}_{ij} = 
 	\begin{cases}
@@ -15,7 +15,7 @@ We can store this information in an \emph{incidence matrix} $\tilde{A} = (\tilde
 		0 & \text{else}.				
 	\end{cases}
 \end{displaymath}
-We call $u = (u_0, u_1, u_2, ...)$ the corresponding potentials to the nodes $N$. The difference between the potentials at two connected nodes is called the voltage at the respective edge. To fix the absolute values of these potentials we have to set one node to a fixed potential. We will do that by ``grounding'' the node $n_0$, this means we set the potential $u_0 := 0$. This grounding of a node allows us to remove the corresponding row from the incidence matrix to get the \emph{reduced incidence matrix} $A$. The vector $v = (v_{ij})_{ij}$ represents the voltages at the edges. For some $i$ and some $j$ the voltage at edge $ij$ is $v_{ij} = u_i - u_j$.
+We call $u = (u_0, u_1, u_2, ...)$ the corresponding electrical potentials (or just potentials) to the nodes $N$. The difference between those potentials at two connected nodes is called the voltage at the respective edge. To fix the absolute values of these potentials we have to set one node to a fixed potential. We will do that by ``grounding'' the node $n_0$, which means we set the potential $u_0 := 0$. The grounding of a node allows us to remove the corresponding row from the incidence matrix to get the \emph{reduced incidence matrix} $A$. The vector $v = (v_{ij})_{ij}$ represents the voltages at the edges. For some $i$ and some $j$ the voltage at edge $ij$ is $v_{ij} = u_i - u_j$.
 
 We will later see, that the components of an electrical crircuit, which will be installed along the edges, describe a relationship between the edges current and its voltage. Thus a current vector $i = (i_1, i_2, i_3, ...)$ containing the currents along the edges is required.
 
@@ -39,10 +39,10 @@ To fully fix all the variables that arrise in the model of an electrical circuit
 \end{itemize}
 
 \section{Electrical Components and their relations}
-Electrical components are described by equations relating their edge voltage $v$ to their edge current $i$. We will mainly focus on so called RLC-networks which consist of resistors, capacitors, inductances, voltage sources and current sources. Diodes and Transistors as well as other electrical components can be described in a similar way, although these would lead to a more difficult analysis of the system.
+Electrical components are described by equations relating their edge voltage $v$ to their edge current $i$. We will mainly focus on so-called RLC-networks which consist of resistors, capacitors, inductances, voltage sources and current sources. Diodes and Transistors as well as other electrical components can be described in a similar way, although these lead to a more difficult analysis of the system.
 \begin{itemize}
 	\item \textbf{Resistor} \newline
-	Resistors ''resist`` the flow of current, which causes voltage to drop. This behaviour is described by the \emph{resistance} $R$ which is given in \emph{Ohm} ($\Omega$) and its reciprocal, the \emph{conductance} $G$, which is given in \emph{Simens} ($S=\frac{1}{\Omega}$). 
+	Resistors ''resist`` the flow of current, which causes voltage to drop. This behaviour is described by the \emph{resistance} $R$ which is given in \emph{Ohm} ($\Omega$) and its reciprocal, the \emph{conductance} $G$, which is given in \emph{Siemens} ($S=\frac{1}{\Omega}$). 
 	\begin{displaymath}
 		v = R*i \quad \text{or} \quad i = G*u.
 	\end{displaymath}
@@ -111,9 +111,9 @@ To analyse the network further we will sort the reduced incidence matrix $A$ suc
 \begin{displaymath}
 	A = (A_R A_C A_L A_V A_I)
 \end{displaymath}
-where $A_R$, $A_C$, $A_L$, $A_V$ and $A_I$ all include the collumns that are related to the resistors, capacitors, coils, voltage sources and current sources. 
+where $A_R$, $A_C$, $A_L$, $A_V$ and $A_I$ include the columns that are related to the resistors, capacitors, coils, voltage sources and current sources, respectively.
 
-To mathematically describe the circuit we will use \emph{modified nodal analysis} (or short MNA). MNA uses the node voltages as well as the currents of the coils and the voltage sources as unknowns and is based on the conservation laws \ref{KCL} and \ref{KVL} as well as on the voltage-current relations of the electrical components. By replacing all edge-currents with their respective voltage-current relation and ell egde-voltages with their node-potentials we obtain the MNA-equations
+To mathematically describe the circuit we will use \emph{modified nodal analysis} (or short MNA). MNA uses the node voltages as well as the currents of the coils and the voltage sources as unknowns and is based on the conservation laws \eqref{KCL} and \eqref{KVL} as well as on the voltage-current relations of the electrical components. By replacing all edge-currents with their respective voltage-current relation and all egde-voltages with their node-potentials, we obtain the MNA-equations
 
 \begin{displaymath}
 	\begin{aligned}
@@ -162,7 +162,7 @@ The resulting systems are \emph{stiff} systems. This means that for their numeri
 \textbf{example}
 
 \section{Charge/Flux oriented formulation of MNA}
-Again using KCL \ref{KCL} and the component equations we formulate a system of equations. This time we use the charge and flux based formulations. This means that instead of directly using current and voltage we use the flux of the magnetic field (used in the description of inductances) and the charge (used in the description of capacitors). We obtain
+Again using KCL \eqref{KCL} and the component equations we formulate a system of equations. This time we use the charge and flux based formulations. This means that instead of directly using current and voltage we use the flux of the magnetic field (used in the description of inductances) and the charge (used in the description of capacitors). We obtain
 
 \begin{align}
 	A_C\dot{q} + A_R r(A_R^\top u,t) + A_L i_L + A_V i_V + A_I i(A^\top u, \dot{q}, i_L, i_V, t) &= 0, \label{charge/flux-1} \\
@@ -172,15 +172,7 @@ Again using KCL \ref{KCL} and the component equations we formulate a system of e
 	\phi - \phi_L(i_L) &= 0.  \label{charge/flux-5} 
 \end{align}
 
-Using
-\begin{description}
-	\item node potentials $u$,
-	\item branch currents through voltage and flux controlled elements $i_V$ and $i_L$,
-	\item charges and fluxes $q$ and $\phi$,
-	\item voltage dependent resistors $r$,
-	\item voltage and current dependent charge and flux sources $q_C$ and $\phi_L$,
-	\item controlled current and voltage sources $i_{src}$ and $v_{src}$.
-\end{description} 
+Using node potentials $u$, branch currents through voltage and flux controlled elements $i_V$ and $i_L$, charges and fluxes $q$ and $\phi$, voltage dependent resistors $r$, voltage and current dependent charge and flux sources $q_C$ and $\phi_L$, controlled current and voltage sources $i_{src}$ and $v_{src}$.
 
 We call this formulation the \emph{charge-flux oriented modified nodal analysis}.
 
