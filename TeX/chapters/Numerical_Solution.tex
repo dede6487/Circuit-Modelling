@@ -132,8 +132,8 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 			\end{enumerate}
 		\end{definition}
 
-	\subsection{Runge-Kutta Methods}
-		A very prevalent family of numerical single-step methods are the \emph{Runge-Kutta} methods. 
+	%\subsection{Runge-Kutta Methods}
+	%	A very prevalent family of numerical single-step methods are the \emph{Runge-Kutta} methods. 
 		
 		%\begin{figure}
 		%	\centering
@@ -142,59 +142,59 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 		%	\label{fig:screenshot026}
 		%\end{figure}
 		
-		\begin{definition}
-			Let $s \in \mathbb{N}$. A single-step method of the form
-			\begin{align}
-				y_{m+1} = y_m + h \sum_{i=1}^{s} b_i f(t_m + c_ih, y_{m+1}^{(i)}) \\ 
-				y_{m+1}^{(i)} = y_m +  \sum_{j=1}^{s} a_{ij} f(t_m + c_jh, y_{m+1}^{(j)})
-			\end{align}
-			is called a \emph{Runge-Kutta Method} with $s$ steps.
-		\end{definition}
+	%	\begin{definition}
+	%		Let $s \in \mathbb{N}$. A single-step method of the form
+	%		\begin{align}
+	%			y_{m+1} = y_m + h \sum_{i=1}^{s} b_i f(t_m + c_ih, y_{m+1}^{(i)}) \\ 
+	%			y_{m+1}^{(i)} = y_m +  \sum_{j=1}^{s} a_{ij} f(t_m + c_jh, y_{m+1}^{(j)})
+	%		\end{align}
+	%		is called a \emph{Runge-Kutta Method} with $s$ steps.
+	%	\end{definition}
 		
-		We usually collect the coefficients into the vectors and matrices $c=(c_1, ...,c_s)$, $A = (a_{ij})_{ij}$ and $b=(b_1, ..., b_s)$.
+	%	We usually collect the coefficients into the vectors and matrices $c=(c_1, ...,c_s)$, $A = (a_{ij})_{ij}$ and $b=(b_1, ..., b_s)$.
 		
-		If $A$ is a strictly lower triangle matrix, this means for all $j \geq i$ holds $a_{ij} = 0$ then the Runge-Kutta method is explicit, otherwise it is implicit. In general implicit Runge-Kutta methods might need more computational effort because to calculate $y_m^{(i)}$ a nonlinear system of equations has to be solved. But in contrast those methods can also lead to very good stability characteristics.
+	%	If $A$ is a strictly lower triangle matrix, this means for all $j \geq i$ holds $a_{ij} = 0$ then the Runge-Kutta method is explicit, otherwise it is implicit. In general implicit Runge-Kutta methods might need more computational effort because to calculate $y_m^{(i)}$ a nonlinear system of equations has to be solved. But in contrast those methods can also lead to very good stability characteristics.
 		
-		\begin{lemma}\cite{NumerikGewöhnlicherDifferentialgleichungen}
-			A Runge-Kutta mehtod is consistent, if and only if
-			\begin{displaymath}
-				\sum_{i=1}^{s} b_i = 1
-			\end{displaymath}
-		\end{lemma}
+	%	\begin{lemma}\cite{NumerikGewöhnlicherDifferentialgleichungen}
+	%		A Runge-Kutta mehtod is consistent, if and only if
+	%		\begin{displaymath}
+	%			\sum_{i=1}^{s} b_i = 1
+	%		\end{displaymath}
+	%	\end{lemma}
 	
-		The coefficients of a Runge-Kutta method are usually represented in the \emph{Butchertableau}, which was introduced by John C. Butcher and has the following form.
+	%	The coefficients of a Runge-Kutta method are usually represented in the \emph{Butchertableau}, which was introduced by John C. Butcher and has the following form.
 		
-		\begin{displaymath}
-			\begin{array}{c|ccc}
-				c_1 & a_{11} & \dots & a_{1s} \\
-				\vdots & \vdots & & \vdots \\
-				c_s & a_{s1} & \dots & a_{ss} \\
-				\hline
-				 & b_1 & \dots & b_s
-			\end{array}
-			\qquad
-			\text{of in matrix form}
-			\qquad
-			\begin{array}{c|c}
-				c & A \\
-				\hline
-				 & b
-			\end{array}
-		\end{displaymath}
+	%	\begin{displaymath}
+	%		\begin{array}{c|ccc}
+	%			c_1 & a_{11} & \dots & a_{1s} \\
+	%			\vdots & \vdots & & \vdots \\
+	%			c_s & a_{s1} & \dots & a_{ss} \\
+	%			\hline
+	%			 & b_1 & \dots & b_s
+	%		\end{array}
+	%		\qquad
+	%		\text{of in matrix form}
+	%		\qquad
+	%		\begin{array}{c|c}
+	%			c & A \\
+	%			\hline
+	%			 & b
+	%		\end{array}
+	%	\end{displaymath}
 	
-		Their stability can directly be derived from the butcher tableau. The stability function of an arbitrary m-stage Runge-Kutta method has the form
-		\begin{displaymath}
-			R(z) = 1+zb^\top (I_m-zA)^{-1}e
-		\end{displaymath}
+	%	Their stability can directly be derived from the butcher tableau. The stability function of an arbitrary m-stage Runge-Kutta method has the form
+	%	\begin{displaymath}
+	%		R(z) = 1+zb^\top (I_m-zA)^{-1}e
+	%	\end{displaymath}
 	
-		where $e = (1,...,1)$.
+	%	where $e = (1,...,1)$.
 		
-		\textbf{Remark:} The trapezoidal rule is a widely used Runge-Kutta method which we can also consider as a multistep-method. It will be discussed later on.
+	%	\textbf{Remark:} The trapezoidal rule is a widely used Runge-Kutta method which we can also consider as a multistep-method. It will be discussed later on.
 	
 			
 \section{Multistep-Methods}
 	based on chapter 4 of book num gew dgl steif nichtsteif \newline
-	Linear multistep methods use approxiamtions $u_{m+l}$ along the gridpoints $t_{m+l}, \quad l=0,1,...,k-1$ to calculate the new approximation $u_{m+k}$ at $t_{m+k}$. We will first discuss topics related to the order of the methods depending on its parameters, stability and convergence.
+	Linear multistep methods use approximations $u_{m+l}$ along the gridpoints $t_{m+l}, \quad l=0,1,...,k-1$ to calculate the new approximation $u_{m+k}$ at $t_{m+k}$. We will first discuss topics related to the order of the methods depending on its parameters, stability and convergence.
 	
 	\begin{definition}
 		For given $\alpha_0, ..., \alpha_k$ and $\beta_0, ..., \beta_k$ the iteration rule
@@ -215,8 +215,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 	For theoretical analysis of the multi-step methods we consider the generating polynomials
 	\begin{equation}
 		\rho(x) := \sum_{l=0}^{k} \alpha_l x^l
-	\end{equation}
-	\begin{equation}
+		\qquad \text{and} \qquad
 		\sigma(x) := \sum_{l=0}^{k} \beta_l x^l
 	\end{equation}
 	
@@ -294,33 +293,33 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 		\end{displaymath}
 	\end{definition}
 	
-	\begin{definition}
-		A linear multi-step method is called \emph{zero-stable} if all solutions of the difference equation
-		\begin{displaymath}
-			\sum_{l=0}^{k} \alpha_l u_{m+l} = 0
-		\end{displaymath}
-		are bounded.
-	\end{definition}
+%	\begin{definition}
+%		A linear multi-step method is called \emph{zero-stable} if all solutions of the difference equation
+%		\begin{displaymath}
+%			\sum_{l=0}^{k} \alpha_l u_{m+l} = 0
+%		\end{displaymath}
+%		are bounded.
+%	\end{definition}
 	
-	\textbf{Lax-Richtmyer}
+%	\textbf{Lax-Richtmyer}
 	
-	\begin{theorem}
-		A linear multi-step method is zero-stable, if and only if the polynomial $\rho(x)$ fullfills the ``root-condition'', this means:
-		\begin{enumerate}
-			\item All roots $\bar{x}$ of $\rho(x)$ are within the unit-circle $|\bar{x}| \leq$ in the complex plane.
-			\item All roots $\bar{x}$ with $|x| = 1$ are singular.
-		\end{enumerate}
-	\end{theorem}
+%	\begin{theorem}
+%		A linear multi-step method is zero-stable, if and only if the polynomial $\rho(x)$ fullfills the ``root-condition'', this means:
+%		\begin{enumerate}
+%			\item All roots $\bar{x}$ of $\rho(x)$ are within the unit-circle $|\bar{x}| \leq$ in the complex plane.
+%			\item All roots $\bar{x}$ with $|x| = 1$ are singular.
+%		\end{enumerate}
+%	\end{theorem}
 	
-	\begin{theorem}%[DAE lecture]
-		A linear multistep method is stable if and only if it is zero-stable.
-	\end{theorem}
+%	\begin{theorem}%[DAE lecture]
+%		A linear multistep method is stable if and only if it is zero-stable.
+%	\end{theorem}
 	
 	%\textbf{from circuit book below, above from modelling book}
 	
 	\subsection{further stability properties}
 	
-	In this section we consider the following simple problem
+	In this section we consider again the Dahlquist test problem as a model problem
 	\begin{align}
 		u' &= \lambda u, \quad t > 0 \\
 		u(0) &= u_0
@@ -343,7 +342,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 			\item 
 			The set
 			\begin{equation}
-				S := {z \in \mathbb{C} : \rho(\xi) - z \sigma(\xi) = 0 \implies \xi \text{fullfills root criteria}}
+				S := \{z \in \mathbb{C} : \rho(\xi) - z \sigma(\xi) = 0 \implies \xi \in \mathbb{C} \text{fullfills root criteria}\}
 			\end{equation}
 			is called the region of stability of the method.
 			\item 
@@ -406,7 +405,7 @@ or simply
 	0 &= F(\dot{y}(t), x(t), t) :=A \dot{y}(t) + f(x(t),t), \\
 	0 &= y(t) - g(x(t)).
 \end{align*}
-with $x:=(u, i_L, i_V)^\top$ containing the unknowns.
+with the unknowns $x:=(u, i_L, i_V)^\top$.
 
 The conventional approach to solve those systems numerically can be split into three main steps:
 \begin{enumerate}
@@ -443,21 +442,21 @@ In the following two subchapters we will give a short overview over the two most
 	
 	We will not give a deeper look into their construction but will only state their properties. BDF schemes are appealing because they save function evaluation as much as possible, since this is very costly in circuit simulation.
 	
-	The \emph{backward differentiation fooormula (BDF)} is a family of implicit linear multistep methods. They have the general form
+	The \emph{backward differentiation formula (BDF)} is a family of implicit linear multistep methods. They have the general form
 	\begin{equation}
 		\sum_{k=0}^{s} \alpha_k y_{n+k} = h \beta f(t_{n+s}, y_{n+s})
 	\end{equation}
 
-	Since we are interested in the unknown $y_{n+s}$ which is used to evaluate $f$, this method is implicit. The coefficients $\alpha_k$ and $\beta$ are chosen, so that the method achieves order $s$ which is the maximum possible.
+	Since we are interested in the unknown $y_{n+s}$ which is used to evaluate $f$, this method is implicit. The coefficients $\alpha_k$ and $\beta$ are chosen, such that the method achieves order $s$ which is the best possible.
 	
-	The BDF or BDF-k formulas for $k=1,...6$ have the following form
+	The BDF or BDF-k formulas for $k=1,...,3$ have the following form %or till 6
 	\begin{align*}
 		k = 1 &: h f_{m+1} = u_{m+1} - u_m \\
 		k = 2 &: h f_{m+2} = \frac{1}{2} (3 u_{m+2} - 4 iu_{m+1} + u_m) \\
-		k = 3 &: h f_{m+3} = \frac{1}{6} (11 u_{m+3} - 18 u_{m+2} + 9 u_{m+1} - 2 u_m) \\
-		k = 4 &: h f_{m+4} = \frac{1}{12} (25 u_{m+4} - 48 u_{m+3} + 36 u_{m+2} - 16 u_{m+1} + 3 u_m) \\
-		k = 5 &: h f_{m+5} = \frac{1}{260} (137 u_{m+5} - 300 u_{m+4} + 300 u_{m+3} - 200 u_{m+2} +75 u_{m+1} -12 u_m) \\
-		k = 6 &: h f_{m+6} = \frac{1}{60} (147 u_{m+6} - 360 u_{m+5} + 450 u_{m+4} - 400 u_{m+3} + 225 u_{m+2} - 72 u_{m+1} + 10 u_m)
+		k = 3 &: h f_{m+3} = \frac{1}{6} (11 u_{m+3} - 18 u_{m+2} + 9 u_{m+1} - 2 u_m) %\\
+%		k = 4 &: h f_{m+4} = \frac{1}{12} (25 u_{m+4} - 48 u_{m+3} + 36 u_{m+2} - 16 u_{m+1} + 3 u_m) \\
+%		k = 5 &: h f_{m+5} = \frac{1}{260} (137 u_{m+5} - 300 u_{m+4} + 300 u_{m+3} - 200 u_{m+2} +75 u_{m+1} -12 u_m) \\
+%		k = 6 &: h f_{m+6} = \frac{1}{60} (147 u_{m+6} - 360 u_{m+5} + 450 u_{m+4} - 400 u_{m+3} + 225 u_{m+2} - 72 u_{m+1} + 10 u_m)
 	\end{align*}
 	
 	Methods with $s > 6$ are not zero-stable. Indeed in reality methods with order greater than 3 are rarely used because of their low smoothness properties.
@@ -476,7 +475,7 @@ In the following two subchapters we will give a short overview over the two most
 	
 \subsection{trapezoidal rule}
 
-	The trapezoidal rule is a somewhat natural alternative to BDF2 since it is A-stable and as a linear multistep method of order 2 the one with the smallest leading error coefficient. (\cite{ModellingAndDiscretizationOfCircuitProblems})
+	The trapezoidal rule is a natural alternative to BDF2 since it is A-stable and as a linear multistep method of order 2 the one with the smallest leading error coefficient. (\cite{ModellingAndDiscretizationOfCircuitProblems})
 	
 	It works by approximating the region under the graph of the function $f(x)$ as a trapezoid, hence the name. It follows that	
 	\begin{displaymath}

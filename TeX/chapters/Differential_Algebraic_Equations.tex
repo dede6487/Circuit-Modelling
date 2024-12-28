@@ -333,19 +333,19 @@ We will consider two types of index concepts, the differentiation index and the 
 	from which $y$ can be determined is called \textbf{differentiation index}.
 \end{definition}
 
-In the previous chapter we have already discussed, that for a DAE with constant coefficients \ref{DAE-const-coeff} and a regular matrix pencil $\{A,B\}$  we need $k = ind\{A,B\}$ differentiations to receive an ordinary differential equation. This means that the Kronecker index $k$ is equal to the differentiation index in the case of a DAE with constant coefficients.
+In the previous chapter we have already discussed, that for a DAE with constant coefficients \eqref{DAE-const-coeff} and a regular matrix pencil $\{A,B\}$  we need $k = ind\{A,B\}$ differentiations to receive an ordinary differential equation. This means, that the Kronecker index $k$ is equal to the differentiation index (in the case of a DAE with constant coefficients).
 
 Since numerical differentiation is an unstable procedure this index gives a measure for the numerical problems to be expected when solving such systems.
 
 \begin{definition}[perturbation index]
-	Let $y(t)$ be the exact solution to \ref{Abstract_DAE}. This problem has the \textbf{perturbation index} $k \in \mathbb{N}$ along $y(t), t_0 \leq t \leq T$ if for all  $\tilde{y}(t)$ with $F(t, \tilde{y}, \tilde{y}') = \delta(t)$ the inequality
+	Let $y(t)$ be the exact solution to \eqref{Abstract_DAE}. This problem has the \textbf{perturbation index} $k \in \mathbb{N}$ along $y(t), t_0 \leq t \leq T$, if for all  $\tilde{y}(t)$ with $F(t, \tilde{y}, \tilde{y}') = \delta(t)$ the inequality
 	\begin{displaymath}
 		||y(t)-\tilde{y}(t)|| \leq C \left(||y(t_0)-\tilde{y}(t_0)||+\sum_{j=0}^{k}\max_{t_0 \leq \xi \leq T} \left\rVert 		\int_{t_0}^{\xi}\diff[j]{\delta}{\tau}(\tau)d \tau \right\rVert \right)
 	\end{displaymath}
 	for the smallest number $k$.
 \end{definition}	
 
-In the case of linear DAEs with constant coefficients where the matrix pencil ${A,B}$ is regular we can transform the DAE
+In the case of linear DAEs with constant coefficients and a regular matrix pencil ${A,B}$, we can transform the DAE
 \begin{displaymath}
 	A(y'(t)-\tilde{y}'(t)) + B(y'(t)-\tilde{y}(t)) = \delta(t)
 \end{displaymath}
@@ -356,12 +356,12 @@ into% (\textbf{how?} - bemerkung 13.3.5
 	N(v'(t) - \tilde{v}'(t)) &= \delta_2(t).
 \end{align*}
 
-According to \ref{solution-to-transformed-DAE-const-coeff-part2} the solution of the algebraic variable has the form
+According to \eqref{solution-to-transformed-DAE-const-coeff-part2} the solution of the algebraic variable has the form
 \begin{displaymath}
 	v(t) - \tilde{v}(t) = \sum_{i=0}^{k-1} (-1)^iN^i \delta_2^{(i)}(t) 
 \end{displaymath}
 
-Thus the perturbation index is the same as $ind{A,B}$ \cite{NumerikGewöhnlicherDifferentialgleichungen}. We see that the derivatives of the pertubation also enter the solution.
+Thus the perturbation index is the same as $ind\{A,B\}$ \cite{NumerikGewöhnlicherDifferentialgleichungen}. We see that the error depends on the derivatives of the pertubation.
 
 %might want to elaborate on that
 

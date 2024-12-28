@@ -2357,8 +2357,7 @@
     <bcf:citekey order="11">Tischendorf2005Topological</bcf:citekey>
     <bcf:citekey order="12">Tischendorf2005Topological</bcf:citekey>
     <bcf:citekey order="13">NumerikGewöhnlicherDifferentialgleichungen</bcf:citekey>
-    <bcf:citekey order="14">NumerikGewöhnlicherDifferentialgleichungen</bcf:citekey>
-    <bcf:citekey order="15">ModellingAndDiscretizationOfCircuitProblems</bcf:citekey>
+    <bcf:citekey order="14">ModellingAndDiscretizationOfCircuitProblems</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
