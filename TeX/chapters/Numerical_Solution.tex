@@ -379,9 +379,9 @@ We consider the equations in charge/flux oriented formulation introduced in sect
 	\end{matrix} \right)}_{=:A}
 	\underbrace{
 	\left( \begin{matrix}
-		\dot{q} \\
-		\dot{\phi} 
-	\end{matrix} \right)}_{=:\dot{y}}
+		q' \\
+		\phi'
+	\end{matrix} \right)}_{=:y'}
 	+
 	\underbrace{
 	\left( \begin{matrix}
@@ -404,7 +404,7 @@ We consider the equations in charge/flux oriented formulation introduced in sect
 
 or simply
 \begin{align*}
-	0 &= F(\dot{y}(t), x(t), t) :=A \dot{y}(t) + f(x(t),t), \\
+	0 &= F(y'(t), x(t), t) :=A y'(t) + f(x(t),t), \\
 	0 &= y(t) - g(x(t)).
 \end{align*}
 with the unknowns $x:=(u, i_L, i_V)^\top$.

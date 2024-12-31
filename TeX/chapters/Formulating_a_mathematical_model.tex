@@ -55,7 +55,7 @@ Electrical components are described by equations relating their edge voltage $v$
 	\item \textbf{Capacitor} \newline
 	Capacitors ''store`` electrical energy by accumulating electrical charge. Their characteristic equations can be described directly using the stored charge $Q \in \mathbb{R}^+_0 := \{x \ in \mathbb{R}: x \geq 0\}$ or indirectly using the change in charge, which is nothing other than the current $I$. The \emph{capacitance} $C \in \mathbb{R}^+$ is given in \emph{Farads} ($F$).
 	\begin{displaymath}
-		Q = C \ v \quad \text{and by derivation in t} \quad I = C \ \frac{d}{dt}v= C \ \dot{v}.
+		Q = C \ v \quad \text{and by derivation in t} \quad I = C \ \frac{d}{dt}v := C \ v'.
 	\end{displaymath}
 	\begin{figure}[H]
 		\label{fig:capacitor symbol}
@@ -66,7 +66,7 @@ Electrical components are described by equations relating their edge voltage $v$
 	\item \textbf{Inductor (Coil)} \newline
 	An electric current flowing through a conductor generates a magnetic field $\Phi \in \mathbb{R}$ surrounding it. This magnetic field causes a voltage drop dependant on the change in current. The \emph{inductance} $L \in \mathbb{R}^+$ is given in \emph{Henry} ($H$).
 	\begin{displaymath}
-		\Phi = L \ i \quad \text{and by derivation in t} \quad v = L \ \dot{i}.
+		\Phi = L \ i \quad \text{and by derivation in t} \quad v = L \ i'.
 	\end{displaymath}
 	\begin{figure}[H]
 		\label{fig:inductor symbol}
@@ -119,8 +119,8 @@ To mathematically describe the circuit we will use \emph{modified nodal analysis
 
 \begin{displaymath}
 	\begin{aligned}
-		A_C C A_C^\top \dot{u} + A_R G A_R^\top u + A_L i_L + A_V i_V + A_I i_{src} &= 0 , \\
-		L \dot{i_L}	- A_L^\top u &= 0 , \\
+		A_C C A_C^\top u' + A_R G A_R^\top u + A_L i_L + A_V i_V + A_I i_{src} &= 0 , \\
+		L i_L'	- A_L^\top u &= 0 , \\
 		-A_V^\top + v_{src} &= 0.
 	\end{aligned}	
 \end{displaymath}
@@ -134,9 +134,9 @@ In matrix form these read as
 	\end{pmatrix}
 	*
 	\begin{pmatrix}
-		\dot{u} \\
-		\dot{i_L} \\
-		\dot{i_V}
+		u' \\
+		i_L' \\
+		i_V'
 	\end{pmatrix}
 	+
 	\begin{pmatrix}
@@ -168,9 +168,9 @@ The resulting systems are \emph{stiff} systems. This means that for their numeri
  This time we use the charge and flux based formulations. Again using KCL \eqref{KCL} and the component equations we formulate a system of equations. This means that instead of directly using current and voltage we use the flux of the magnetic field (used in the description of inductances) and the charge (used in the description of capacitors). We obtain
 
 \begin{align}
-	A_C\dot{q} + A_R r(A_R^\top u,t) + A_L i_L + A_V i_V + A_I i(A^\top u, \dot{q}, i_L, i_V, t) &= 0, \label{charge/flux-1} \\
-	\dot{\phi} - A_L^\top u &= 0, \label{charge/flux-2} \\
-	v(A^\top u, \dot{q}, i_L, i_V, t) - A_V^\top u &= 0, \label{charge/flux-3} \\
+	A_C q' + A_R r(A_R^\top u,t) + A_L i_L + A_V i_V + A_I i(A^\top u, q', i_L, i_V, t) &= 0, \label{charge/flux-1} \\
+	\phi' - A_L^\top u &= 0, \label{charge/flux-2} \\
+	v(A^\top u, q', i_L, i_V, t) - A_V^\top u &= 0, \label{charge/flux-3} \\
 	q - q_C(A_C^\top u) &= 0, \label{charge/flux-4} \\
 	\phi - \phi_L(i_L) &= 0.  \label{charge/flux-5} 
 \end{align}

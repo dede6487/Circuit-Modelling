@@ -20,9 +20,9 @@ Specifically the obtained equations from section \ref{MNA_Matrixform} are
 	\end{pmatrix}
 	*
 	\begin{pmatrix}
-		\dot{u} \\
-		\dot{i_L} \\
-		\dot{i_V}
+		u' \\
+		i_L' \\
+		i_V'
 	\end{pmatrix}
 	+
 	\begin{pmatrix}
@@ -51,7 +51,7 @@ Assuming the system only contains linear elements, or is linearized at an operat
 \paragraph{ODE-case:}
 	The matrix $B$ in \eqref{DAE-const-coeff} is regular. This is the case iff the circuit contains no voltage sources and there are no nodes which have no path to ground via capacitors. Then the system represents a linear-implicit system of ODEs and can be transformed into the explicit ODE sytstem
 	\begin{displaymath}
-		\dot{x}=B^{-1}(-Ax+f(t)).
+		x'=B^{-1}(-Ax+f(t)).
 	\end{displaymath}
 	Thus we obtain an index of $0$.
 		
@@ -134,7 +134,7 @@ These results can also be interpreted in a more formal way. As they are just des
 
 By perturbing the right hand side of of \eqref{MNA_Matrixform} with a slight perturbation $\delta = (\delta_C, \delta_L, \delta_V)^\top$ we get a corresponding solution $x^\delta = (u^\delta, i_l^\delta, i_V^\delta)^\top$. One can show that the difference of this perturbed solution to the solution $x$ of the unperturbed system is bounded by
 \begin{displaymath}
-	|| x^\delta - x(t) || \leq C * \left( ||x^\delta (0) - x(0)|| + \max_{0 \leq \tau \leq t} ||\delta(\tau)|| + \max_{0 \leq \tau \leq t} ||Q_{CRV}^\top \dot{\delta_C}|| + \max_{0 \leq \tau \leq t} ||\tilde{Q}_{V-C}^\top \dot{\delta_V}|| \right)
+	|| x^\delta - x(t) || \leq C * \left( ||x^\delta (0) - x(0)|| + \max_{0 \leq \tau \leq t} ||\delta(\tau)|| + \max_{0 \leq \tau \leq t} ||Q_{CRV}^\top \delta_C'|| + \max_{0 \leq \tau \leq t} ||\tilde{Q}_{V-C}^\top \delta_V'|| \right)
 \end{displaymath}
 
 using orthogonal projectors$Q_C$, $Q_{CRV}$ and $\tilde{Q}_{V-C}$  onto $ker(A_C^\top)$, $ker(A_CA_RA_V)^\top$ and $ker(Q_C^\top A_V)$ respectively. We denot $ker(A) = \{x: Ax = 0\}$.
