@@ -9,7 +9,7 @@ We will first focus on methods used to solve a more general problem
 \end{align}
 
 
-For this we presume that the function $f(t,y)$ is continuous and Lipschitz, thus \emph{Picard-Lindelöf} gives us, that for every $y_0$ it is uniquely solvable in $[t_0, t_l]$.
+For this we presume that the function $f(t,y)$ is continuous and Lipschitz, thus \emph{Picard-Lindelöf} \cite{NumerikGewöhnlicherDifferentialgleichungen} gives us, that for every $y_0$ it is uniquely solvable in $[t_0, t_l]$.
 
 Numerical Methods work by discretization, this means we divide the time-intervall into
 \begin{displaymath}
@@ -19,23 +19,23 @@ Numerical Methods work by discretization, this means we divide the time-interval
 and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a \emph{time-grid}. The step-size between two grid-points $t_i - t_j$ might not be choosen equidistant. This can be usefull in certain situations. For simplicity we will non the less assume the stepsize to be equidistant.
 
 \section{Single-Step-Methods}
-	The first class of numerical methods we will have a look at are single-step methods. These methods use the previous approximated value $y_j$ and (for implicit methods) also the current approximated value to determine the current value through a \emph{procedural function}.
+	The first class of numerical methods we will consider are single-step methods. These methods use the previous approximated value $y_j$ and (for implicit methods) also the current approximated value $y_{j+1}$ to determine the current value $y_{j+1}$ through a \emph{procedural function}.
 	
 	\begin{definition}
-		A numerical method to approximate a differential equation \ref{general numerical problem} on a time-grid $t_0,...,t_l$ with the intermediate values $y_0,...,y_l$ is called a single-step method if it is from the form
+		A numerical method to approximate a differential equation \ref{general numerical problem} on a time-grid $t_0,...,t_l$ with the intermediate values $y_0,...,y_l$ is called a single-step method if it is of the form
 		\begin{equation}
 			\label{single-step method}
 			y_{j+1} = y_j + h_j \phi(t_j,y_j, y_{j+1},h_j).
 		\end{equation}
-		With the \emph{procedural function} $\phi$. If $\phi$ is not dependent on $y_{j+1}$ then the method is called \emph{explicit}, otherwise it is called \emph{implicit}.
+		We call $\phi$ the \emph{procedural function}. If $\phi$ does not depend on $y_{j+1}$, then the method is called \emph{explicit}, otherwise it is called \emph{implicit}.
 	\end{definition}
 
 	\subsection{Consistency, Stability and Convergence}
 	
-	To compare different single-step methods we have to define some notions to compare their quality. This leads to the definition of the error of the mehtod, its consistency and its convergence.
+	In order to compare different single-step methods we have to define some notions to compare their quality. This leads to the definition of the error of the mehtod, its consistency and its convergence. We begin with the definition of the error.
 	
 	\begin{definition}\label{Discretization_Error_SingleStep}
-		Let $\tilde{y}_{m+1}$ be the result of one step of \ref{single-step method} with the exact start-vector $y_m = y(t_m)$ then
+		Let $\tilde{y}_{m+1}$ be the result of one step of a single step method \eqref{single-step method} with the exact start-vector $y_m = y(t_m)$ then
 		\begin{equation}
 			\label{local discretization error single step}
 			le_{m+1} = le(t_m+h) = y(t_{m+1}) - \tilde{y}_{m+1}, \quad m = 0,...,N-1
@@ -43,10 +43,10 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 		is called the \emph{local discretization error} of the single step method at the point $t_{m+1}$.
 	\end{definition}
 
-	The error encodes how far off the numerical method is from the true value of the solution. In real applications this solution is usually not known. This shows how important error bounds for numerical methods can be.
+	The error encodes how far off the numerical method is from the true value of the solution. In most applications the exact solution is not known. Next we consider the consistency.
 
 	\begin{definition}\label{Consistency_SingleStep}
-		A single-step method is called \emph{consistent} if for all initial value problems \ref{general numerical problem} 
+		A single-step method is called \emph{consistent} if for all initial value problems \eqref{general numerical problem} 
 		\begin{equation}
 			\lim\limits_{h \to 0} \frac{||le(t+h)||}{h} = 0 \quad \text{for} \quad t_0 \leq t \leq t_l
 		\end{equation}
@@ -55,10 +55,10 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 		\begin{equation}
 			||le(t+h)|| \leq Ch^{p+1} \quad \text{for all} \quad h \in \mathopen{(} 0,H \mathclose{]} \quad \text{and} \quad t_0 \leq t \leq t_l - h
 		\end{equation}
-		holds with $C$ not dependent on $h$.
+		holds with $C$ independent of $h$.
 	\end{definition}
 
-	Consistency aims to give insight in how similar the problem that the numerical methods solves it to the real problem that we want the solution from. 
+	Consistency aims to give insight in how similar the problem that the numerical methods solves it to the real problem that we want the solution from. Finally we consider the convergence.
 
 	\begin{definition}\label{Convergence_SingleStep}
 		A single-step method is called \emph{convergent}, if for all initial value problems \ref{general numerical problem} for the \emph{global discretization error}
@@ -101,7 +101,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 
 	\subsection{further stability properties}
 		from numpdgl skript \\
-		In this section we consider the following simple problem
+		In this section we consider as a model problem the Dahlquist equation, i.e. find $u$ such that
 		\begin{align}
 			u' &= \lambda u, \quad t > 0 \\
 			u(0) &= u_0
@@ -113,13 +113,13 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 				\item 
 				If a single-step method can be written in the form
 				\begin{equation}
-					u_{i+1} = R(z) u_i, \quad z:= h*y
+					u_{i+1} = R(z) \ u_i, \quad z:= h \ y
 				\end{equation}
 				then we call $R: \mathbb{C} \to \mathbb{C}$ the \emph{stability function} of the single-step method.
 				\item 
 				The set
 				\begin{equation}
-					S := {z \in \mathbb{C} : |R(z)| \leq 1}
+					S := \{z \in \mathbb{C} : |R(z)| \leq 1\}
 				\end{equation}
 				is called the region of stability of the method.
 				\item 
@@ -194,7 +194,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 			
 \section{Multistep-Methods}
 	based on chapter 4 of book num gew dgl steif nichtsteif \newline
-	Linear multistep methods use approximations $u_{m+l}$ along the gridpoints $t_{m+l}, \quad l=0,1,...,k-1$ to calculate the new approximation $u_{m+k}$ at $t_{m+k}$. We will first discuss topics related to the order of the methods depending on its parameters, stability and convergence.
+	Linear multistep methods (LMSV) use approximations $u_{m+l}$ along the gridpoints $t_{m+l}, \quad l=0,1,...,k-1$ to calculate the new approximation $u_{m+k}$ at $t_{m+k}$. We will first discuss topics related to the order of the methods depending on its parameters, stability and convergence.
 	
 	\begin{definition}
 		For given $\alpha_0, ..., \alpha_k$ and $\beta_0, ..., \beta_k$ the iteration rule
@@ -214,19 +214,19 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 	
 	For theoretical analysis of the multi-step methods we consider the generating polynomials
 	\begin{equation}
+		\label{eq:generating polynomials multistep method}
 		\rho(x) := \sum_{l=0}^{k} \alpha_l x^l
 		\qquad \text{and} \qquad
 		\sigma(x) := \sum_{l=0}^{k} \beta_l x^l
 	\end{equation}
-	
-		
+			
 	
 	\subsection{Consistency, Stability and Convergence}
 	\cite{NumerikGewöhnlicherDifferentialgleichungen}
 	
 	Again we need to define the properties consistency, stability and convergence for this method.
 	\begin{definition}
-		Let $\tilde{y}_{m+k}$ be the result of one step of the multi-step method \ref{linear-multistep-method} with the start-vectors $y_m = y(t_m)$. This means
+		Let $\tilde{y}_{m+k}$ be the result of one step of the multi-step method \ref{linear-multistep-method} with the start-values given as the exact results of the solution $y_{m+l} = y(t_m+l)$, $0 \leq l < k$. This means
 		\begin{displaymath}
 			\alpha_k \tilde{u}_{m+k} = \sum_{l=0}^{k-1} \left( h \beta_l f(t_{m+l}, y(t_{m+l})) - \alpha_l y(t_{m+l}) \right) + h \beta_k f(t_{m+k}, \tilde{u}_{m+k}) .
 		\end{displaymath}
@@ -244,11 +244,13 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 	to the local discretization error. Using this we gain the following definition.
 
 	\begin{definition}
-		A linear multi-step method is called \emph{preconsistent} if for all functions $y(t) \in C^1[t_0,t_l]$
-		\begin{displaymath}
-			\lim\limits_{h \to 0} L[y(t),h]=0
-		\end{displaymath}
-		holds. It is called \emph{consistent}, if for all functions $y(t) \in C^2[t_0,t_l]$
+		A linear multi-step method is called %\emph{preconsistent} if for all functions $y(t) \in C^1[t_0,t_l]$
+%		\begin{displaymath}
+%			\lim\limits_{h \to 0} L[y(t),h]=0
+%		\end{displaymath}
+%		holds. 
+%		It is called 
+		\emph{consistent}, if for all functions $y(t) \in C^2[t_0,t_l]$
 		\begin{displaymath}
 			\lim\limits_{h \to 0} \frac{1}{h} L[y(t),h] = 0
 		\end{displaymath}
@@ -259,12 +261,12 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 		holds.
 	\end{definition}
 
-	From the generating polynomials we can derive simple consistency conditions
+	From the generating polynomials \eqref{eq:generating polynomials multistep method} we can derive simple consistency conditions, i.e.
 	\begin{displaymath}
 		\rho(1) = 0 \quad \text{and} \quad \rho'(1) = \sigma(1).
 	\end{displaymath}
 
-	Of course we also need convergence of such methods.
+	Next we also need convergence of such methods.
 	
 	\begin{definition} \label{def: LMSV convergence}
 		We say that a linear multi-step method is convergent if for a solution $y$ of the problem a solution vector created by an LMSV $y_j$ for $j \in {0,...,k}$ we have that
@@ -354,7 +356,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 				 \begin{figure}[H]
 				 	\centering
 				 	\includegraphics[width=0.3\linewidth]{screenshot021}
-				 	\caption{$A(\alpha)$ stability}
+				 	\caption{$A(\alpha)$ stability for $\alpha = \frac{\pi}{4}$}
 				 	\label{fig:screenshot021}
 				 \end{figure}
 				 
@@ -366,7 +368,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 \section{Implicit linear multi-step formulas}
 These kinds of multi-step methods are conventionally used to numerically solve the systems obtained using modified nodal analysis. Our assumption that we only consider network equations arising from networks consisting of RLC components as well as controlled sources which keep the index between 1 and 2 still holds.
 
-We consider the equations in charge/flux oriented formulation
+We consider the equations in charge/flux oriented formulation introduced in section \ref{sec:charge flux oriented formulation}
 \begin{align*}
 	0 &=
 	\underbrace{ 

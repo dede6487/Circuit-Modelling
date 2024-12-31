@@ -1,15 +1,11 @@
-\chapter{Index Analysis of the MNA}
+\chapter{Index Analysis of the modified nodal analysis}
 
 %seite 22 kap 7 netw top and dae ind for rlc - modelling and discretization circ prob
 \cite{ModellingAndDiscretizationOfCircuitProblems}
 
 In the previous chapter we have seen two different kinds of Index concepts for differential algebraic equations. We have also seen that these two, even though they describe rather different structural aspects of the equation, are identical for our use-cases. This leads to the question, what indices we expect obtain for our MNA system.
 
-This chapter aims to answer that question for the linear case of circuits only containing resistors, inductors and capacities (RLC). Linear means that the RLC components are described by linear functions with positive capacitances, inductances and resistances. Thus the matrices
-\begin{displaymath}
-	C:=\frac{\partial q_C(w)}{\partial w}, \quad L:=\frac{\partial \phi_L(w)}{\partial w}, \quad G:=\frac{\partial r(w)}{\partial w}
-\end{displaymath}
-are positive definite and symmetric. The generalization of these results to the nonlinear case still relies on positive definiteness.
+This chapter aims to answer that question for the linear case of circuits only containing of resistors, inductors and capacities as well as current and voltage sources (RLC-circuits). Linear means that the RLC components are described by linear functions with positive capacitances, inductances and resistances. Thus the matrices $C$, $R$, and $L$ are positive definite and symmetric. The generalization of these results to the nonlinear case still relies on positive definiteness.
 
 Recall that we consider the equations resulting from the analysis above. These equations are of the form \eqref{DAE-const-coeff}:
 \begin{displaymath}
@@ -93,7 +89,7 @@ in the previous section, see \eqref{transformed-DAE-const-coeff}. We now conside
 
 We can see that the solution has to fulfill an algebraic constraint. In the case of index $\nu = 1$ this equation is given explicitly, while for index $\nu \geq 2$ it is given implicitly.
 
-The system is also sensitive to perturbations. Small noise in the input can have arbitrarily large derivatives which can influence $v$ as we it depends on them.
+This system is also sensitive to perturbations. Since in the solution formula for $v$ also derivatives of the input $q$ are present. Thus small noise in the input can have arbitrarily large derivatives which can influence the solution.
 
 This means no severe numerical problems arise from index-1 systems. Implicit numerical integration schemes for stiff systems are feasable. On the other hand severe nunmerical problems may occur in the case that the system has index greater or equal to $2$. The hidden constraints can only be resolved by an unstable differentiation process.
 
@@ -104,7 +100,7 @@ As the Kronecker index $k=ind\{A,B\}$ defines the behaviour of the system theore
 \cite{ModellingAndDiscretizationOfCircuitProblems}
 \cite{DesoerCharlesA1969Bct}
 
-From analyzing the MNA some conditions to the circuit topology can be obtained. We will be considering the impact of special arrangements of components on the index of the system. In \cite{Tischendorf2005Topological} they present very interesting results about the index of MNA equations.
+From analyzing the MNA some conditions to the circuit topology can be obtained. We will be considering the impact of special arrangements of components on the index of the system. In \cite{Tischendorf2005Topological} they present results about the index of MNA equations.
 
 
 \begin{theorem}[Index-1 condition \cite{Tischendorf2005Topological}] \label{Index-1 condition}

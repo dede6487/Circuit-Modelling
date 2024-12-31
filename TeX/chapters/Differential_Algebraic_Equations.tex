@@ -20,27 +20,32 @@ This chapter focuses on giving a brief overview of the different types of differ
 	
 	\begin{itemize}
 		\item \textbf{Linear systems with constant coeffiecients} \newline
-		are systems of the form 
+		are systems of the form: find $y$ such that
 		\begin{equation}
 			\label{DAE-const-coeff}
 			A y'(t) + B y(t) = f(t) ,
 		\end{equation}
-		with $A,B \in \mathbb{R}^{n \times n}$, $A$ singular, $B$ regular and $f(t)$ a function. If $A$ would not be singular this equation could be transformed into an ordinary differental equation. Thus it is reasonable to assume $A$ singular.
+		with $A,B \in \mathbb{R}^{n \times n}$, $A$ singular, $B$ regular and $f:\mathbb{R} \to \mathbb{R}^n$ a function in time. If $A$ would is regular this equation could be transformed into an ordinary differental equation, since
+		\begin{displaymath}
+			\dot{y}(t) + A^{-1}By(t) = A^{-1} f(t)
+		\end{displaymath}
+		
+		Thus it is reasonable to assume $A$ singular.
 		
 		\item \textbf{Linear time dependent systems}
-		are systems of the form
+		are systems of the form: find $y$ such that
 		\begin{displaymath}
 			A(t) y'(t) + B(t) y(t) = f(t) ,
 		\end{displaymath}
-		with $A(t),B(t),f(t)$ functions.
+		with $A, B:\mathbb{R} \to \mathbb{R}^{n \times n}$, $f:\mathbb{R} \to \mathbb{R}^n$ functions.
 		
 		\item  \textbf{Structured (non-linear) systems} \newline
-		are semi-explicit systems of the form
+		are semi-explicit systems of the form: find $(y,z)$ such that
 		\begin{align}
 			y'(t) &= f(t, y(t), z(t)) , \\
 			0 &= g(t,y(t),z(t)) ,
 		\end{align}
-		with $f$ and $g$ functions.
+		with $f:\mathbb{R} \to \mathbb{R}^n$ and $g\mathbb{R} \to \mathbb{R}^d$ functions.
 	\end{itemize}
 	
 	For our analysis of electrical networks we will focus on linear systems with constant coefficients. The other systems could for example occur when we also consider time-dependant component relations e.g. Temperature.
@@ -231,33 +236,6 @@ By $I_k$ we denote the identity matrix of size $k \times k$.
 	to get the statement.
 \end{proof}
 
-\begin{definition}
-	The nilpotency index $k$ from the Weierstraß-Kronecker Normalform of a matrix pencil $\{A,B\}$ with $A$ singular is called the \emph{Kronecker-Index} of $\{A,B\}$, denote $ind\{A,B\}$. Note that for $A$ regular we set $ind\{A,B\} = 0$.
-\end{definition}
-
-%lemma 13.2.1
-
-\begin{lemma}
-	The Kronecker-Index $ind\{A,B\}$ is independant of the choice of the matrices $P$ and $Q$.
-\end{lemma}
-
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=0.7\linewidth]{screenshot003}
-%	\caption{}
-%	\label{fig:screenshot003}
-%\end{figure}
-
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=0.7\linewidth]{screenshot004}
-%	\caption{}
-%	\label{fig:screenshot004}
-%\end{figure}
-
-
-%Lemma 13.2.2
-
 Using the findings above we are able to Transform the initial DAE \eqref{DAE-const-coeff} using the matrix $P$ from Theorem \ref{Kronecker-Normalform}. By multiplying with $P$ from the left, we obtain
 \begin{displaymath}
 	P A y'(t) + P B y(t) = P f(t) .
@@ -288,27 +266,76 @@ we get a system of the form
 \begin{equation}
 	\label{transformed-DAE-const-coeff}
 	\begin{aligned}
-		u'(t) + Ru(t) &= s(t) \\
-		Nv'(t) + v(t) &= q(t)
+		u'(t) + Ru(t) &= s(t), \\
+		Nv'(t) + v(t) &= q(t).
 	\end{aligned}
 \end{equation}
 
-The first equation of \eqref{transformed-DAE-const-coeff} is a first order ordinary differential equation and posesses a unique solution $u(t)$ in $[t_0,t_l]$ for any initial values $u_0 \in \mathbb{R}^d$. Now let $q(t) \in C^{k-1}([t_0,t_l])$ (where we denote by $C^{k-1}([I])$ the room of all functions with domain $I$ that is $k-1$ times differentiable) and differentiate the second equation in \ref{transformed-DAE-const-coeff} to obtain
-\begin{displaymath}
-	\begin{aligned}
-		v(t) &= q(t) - Nv'(t) = q(t) - N(\underbrace{q(t)-Nv'(t)}_{=v(t)})' = q-Nq'+N^2v'' \\
-		&= q-Nq'+N^2(q-Nv')'' = q-Nq'+N^2q''-N^3v''' \\
-		&\vdots \\
-		&= q-Nq'+...+(-1)^{k-1}N^{k-1}q^{(k-1)}+(-1) \underbrace{N^kv^{(k)}}_{=0}
-	\end{aligned}
-\end{displaymath}
-\begin{equation}
+We call this system the\emph{ Weierstraß-Kronecker normalform} of the DAE. The first equation of \eqref{transformed-DAE-const-coeff} is a first order ordinary differential equation and posesses a unique solution $u(t)$ in $[t_0,t_l]$ for any initial values $u_0 \in \mathbb{R}^d$. Now let $q(t) \in C^{k-1}([t_0,t_l])$ (where we denote by $C^{k-1}([I])$ the room of all functions with domain $I$ that is $k-1$ times differentiable) and differentiate the second equation in \ref{transformed-DAE-const-coeff} to obtain
+\begin{align}
+	\notag
+	v(t) &= q(t) - Nv'(t) = q(t) - N(\underbrace{q(t)-Nv'(t)}_{=v(t)})' = q-Nq'+N^2v'' \\ \notag
+	&= q-Nq'+N^2(q-Nv')'' = q-Nq'+N^2q''-N^3v''' \\ \notag
+	&\vdots \\ \notag
+	&= q-Nq'+...+(-1)^{k-1}N^{k-1}\underbrace{\frac{d^k}{dt^k}q}_{:=q^{(k-1)}}+(-1) \underbrace{N^kv^{(k)}}_{=0}\\ 
 	\label{solution-to-transformed-DAE-const-coeff-part2}
-	= \sum_{i=0}^{k-1} (-1)^iN^iq^{(i)}(t) 
-\end{equation}
-where $k$ is the nilpotency index of $N$. This expression gives an explicit solution for $v(t)$ in $[t_0,t_l]$ with $v(t) \in \mathbb{R}^{d-1}$. It shows the depencdency of the solution and its derivatives. The higher the Kronecker index $k$ gets, the more differentiations of $q(t)$ have to be performed.
+	&= \sum_{i=0}^{k-1} (-1)^iN^iq^{(i)}(t)
+\end{align}
+
+where $k$ is the nilpotency index of $N$. Hence we have an explicit  form of the solution of $v(t)$. It shows the depencdency of the solution and its derivatives. The higher the Kronecker index $k$ gets, the more differentiations of $q(t)$ have to be performed.
 
 The Kronecker index $k$ shows, that $k$ differentiations are required to receive an ordinary differential equation.
+
+We can also give a general definition of a DAE in Weierstraß-Kronecker normalform.
+\begin{definition}
+	A linear differential equation \eqref{DAE-const-coeff} is said to be in Weierstraß-Kronecker normalform if
+	\begin{displaymath}
+		A = 
+		\left(
+		\begin{matrix}
+			I & 0 \\
+			0 & N
+		\end{matrix}
+		\right), \quad
+		B = 
+		\left(
+		\begin{matrix}
+			R & 0 \\
+			0 & I
+		\end{matrix}
+		\right),
+	\end{displaymath}
+	where $N$ is a nilpotent Jordan-block matrix.
+\end{definition}
+
+\begin{definition}
+	The nilpotency index $k$ of the matrix $N$ from the Weierstraß-Kronecker Normalform of a matrix pencil $\{A,B\}$ with $A$ singular is called the \emph{Kronecker-Index} of $\{A,B\}$, denote $ind\{A,B\}$. Note that for $A$ regular we set $ind\{A,B\} = 0$.
+\end{definition}
+
+%lemma 13.2.1
+
+\begin{lemma}
+	The Kronecker-Index $ind\{A,B\}$ is independant of the choice of the matrices $P$ and $Q$.
+\end{lemma}
+
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=0.7\linewidth]{screenshot003}
+%	\caption{}
+%	\label{fig:screenshot003}
+%\end{figure}
+
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=0.7\linewidth]{screenshot004}
+%	\caption{}
+%	\label{fig:screenshot004}
+%\end{figure}
+
+
+%Lemma 13.2.2
+
+
 
 \section{Index of a Differential Algebraic Equation}
 
@@ -316,8 +343,10 @@ The Index of a DAE gives us insight about its numerical properties and in genera
 
 We will consider two types of index concepts, the differentiation index and the perturbation index.
 
+Since numerical differentiation is an unstable procedure the differentiation index aims to gives a measure for the numerical problems to be expected when solving such systems.
+
 \begin{definition}[differentiation index]
-	Consider the differential algebraic equation \ref{Abstract_DAE} to be uniquely locally solvable and $F$ suffieciently smooth differentiable. For a given $m \in \mathbb{N}$ consider
+	Consider the differential algebraic equation \ref{Abstract_DAE} to be uniquely locally solvable and $F$ suffieciently smooth. For a given $m \in \mathbb{N}$ consider
 	\begin{displaymath}
 		\begin{aligned}
 			F(t,y,y') &= 0, \\
@@ -333,9 +362,9 @@ We will consider two types of index concepts, the differentiation index and the 
 	from which $y$ can be determined is called \textbf{differentiation index}.
 \end{definition}
 
-In the previous chapter we have already discussed, that for a DAE with constant coefficients \eqref{DAE-const-coeff} and a regular matrix pencil $\{A,B\}$  we need $k = ind\{A,B\}$ differentiations to receive an ordinary differential equation. This means, that the Kronecker index $k$ is equal to the differentiation index (in the case of a DAE with constant coefficients).
+above definition from \cite{NumerikGewöhnlicherDifferentialgleichungen} seite 407
 
-Since numerical differentiation is an unstable procedure this index gives a measure for the numerical problems to be expected when solving such systems.
+In the previous chapter we have already discussed, that for a DAE with constant coefficients \eqref{DAE-const-coeff} and a regular matrix pencil $\{A,B\}$  we need $k = ind\{A,B\}$ differentiations to receive an ordinary differential equation. This means, that the Kronecker index $k$ is equal to the differentiation index (in the case of a DAE with constant coefficients).
 
 \begin{definition}[perturbation index]
 	Let $y(t)$ be the exact solution to \eqref{Abstract_DAE}. This problem has the \textbf{perturbation index} $k \in \mathbb{N}$ along $y(t), t_0 \leq t \leq T$, if for all  $\tilde{y}(t)$ with $F(t, \tilde{y}, \tilde{y}') = \delta(t)$ the inequality

@@ -2349,15 +2349,17 @@
     <bcf:citekey order="3">NumerikGewöhnlicherDifferentialgleichungen</bcf:citekey>
     <bcf:citekey order="4">NumerikGewöhnlicherDifferentialgleichungen</bcf:citekey>
     <bcf:citekey order="5">NumerikGewöhnlicherDifferentialgleichungen</bcf:citekey>
-    <bcf:citekey order="6">ModellingAndDiscretizationOfCircuitProblems</bcf:citekey>
-    <bcf:citekey order="7">Tischendorf2005Topological</bcf:citekey>
-    <bcf:citekey order="8">ModellingAndDiscretizationOfCircuitProblems</bcf:citekey>
-    <bcf:citekey order="9">DesoerCharlesA1969Bct</bcf:citekey>
-    <bcf:citekey order="10">Tischendorf2005Topological</bcf:citekey>
+    <bcf:citekey order="6">NumerikGewöhnlicherDifferentialgleichungen</bcf:citekey>
+    <bcf:citekey order="7">ModellingAndDiscretizationOfCircuitProblems</bcf:citekey>
+    <bcf:citekey order="8">Tischendorf2005Topological</bcf:citekey>
+    <bcf:citekey order="9">ModellingAndDiscretizationOfCircuitProblems</bcf:citekey>
+    <bcf:citekey order="10">DesoerCharlesA1969Bct</bcf:citekey>
     <bcf:citekey order="11">Tischendorf2005Topological</bcf:citekey>
     <bcf:citekey order="12">Tischendorf2005Topological</bcf:citekey>
-    <bcf:citekey order="13">NumerikGewöhnlicherDifferentialgleichungen</bcf:citekey>
-    <bcf:citekey order="14">ModellingAndDiscretizationOfCircuitProblems</bcf:citekey>
+    <bcf:citekey order="13">Tischendorf2005Topological</bcf:citekey>
+    <bcf:citekey order="14">NumerikGewöhnlicherDifferentialgleichungen</bcf:citekey>
+    <bcf:citekey order="15">NumerikGewöhnlicherDifferentialgleichungen</bcf:citekey>
+    <bcf:citekey order="16">ModellingAndDiscretizationOfCircuitProblems</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

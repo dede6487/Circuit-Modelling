@@ -28,13 +28,13 @@ To fully fix all the variables that arrise in the model of an electrical circuit
 	The sum of voltages along each loop of the network must equal to zero. Using the incidence matrix $A$ this law can be formulated as
 	\begin{equation}
 		\label{KVL}
-		A^\top * u = v.
+		A^\top  u = v.
 	\end{equation}
 	\item \textbf{Kirchhoff's current law (KCL):} \newline
 	For any node, the sum of currents flowing into the node is equal to the sum of currents flowing out of the node. Using the incidence matrix $A$ again, this law can be formulated as
 	\begin{equation}
 		\label{KCL}
-		A * i = 0.
+		A  i = 0.
 	\end{equation}
 \end{itemize}
 
@@ -42,9 +42,9 @@ To fully fix all the variables that arrise in the model of an electrical circuit
 Electrical components are described by equations relating their edge voltage $v$ to their edge current $i$. We will mainly focus on so-called RLC-networks which consist of resistors, capacitors, inductances, voltage sources and current sources. Diodes and Transistors as well as other electrical components can be described in a similar way, although these lead to a more difficult analysis of the system.
 \begin{itemize}
 	\item \textbf{Resistor} \newline
-	Resistors ''resist`` the flow of current, which causes voltage to drop. This behaviour is described by the \emph{resistance} $R$ which is given in \emph{Ohm} ($\Omega$) and its reciprocal, the \emph{conductance} $G$, which is given in \emph{Siemens} ($S=\frac{1}{\Omega}$). 
+	Resistors ''resist`` the flow of current, which causes voltage to drop. This behaviour is described by the \emph{resistance} $R \in \mathbb{R}^+ := \{x \in \mathbb{R}: x > 0\}$ which is given in \emph{Ohm} ($\Omega$) and its reciprocal, the \emph{conductance} $G \in \mathbb{R}^+$, which is given in \emph{Siemens} ($S=\frac{1}{\Omega}$). 
 	\begin{displaymath}
-		v = R*i \quad \text{or} \quad i = G*u.
+		v = R \ i \quad \text{or} \quad i = G \ u.
 	\end{displaymath}
 	\begin{figure}[H]
 		\label{fig:resistor symbol}
@@ -53,9 +53,9 @@ Electrical components are described by equations relating their edge voltage $v$
 		\caption{resistor symbol}
 	\end{figure}
 	\item \textbf{Capacitor} \newline
-	Capacitors ''store`` electrical energy by accumulating electrical charge. Their characteristic equations can be described directly using the stored charge $Q$ or indirectly using the change in charge, which is nothing other than the current $I$. The \emph{capacitance} $C$ is given in \emph{Farads} ($F$).
+	Capacitors ''store`` electrical energy by accumulating electrical charge. Their characteristic equations can be described directly using the stored charge $Q \in \mathbb{R}^+_0 := \{x \ in \mathbb{R}: x \geq 0\}$ or indirectly using the change in charge, which is nothing other than the current $I$. The \emph{capacitance} $C \in \mathbb{R}^+$ is given in \emph{Farads} ($F$).
 	\begin{displaymath}
-		Q = C * v \quad \text{and by derivation in t} \quad I = C*\dot{v}.
+		Q = C \ v \quad \text{and by derivation in t} \quad I = C \ \frac{d}{dt}v= C \ \dot{v}.
 	\end{displaymath}
 	\begin{figure}[H]
 		\label{fig:capacitor symbol}
@@ -64,9 +64,9 @@ Electrical components are described by equations relating their edge voltage $v$
 		\caption{capacitor symbol}
 	\end{figure}
 	\item \textbf{Inductor (Coil)} \newline
-	An electric current flowing through a conductor generates a magnetic field $\Phi$ surrounding it. This magnetic field causes a voltage drop dependant on the change in current. The \emph{inductance} $L$ is given in \emph{Henry} ($H$).
+	An electric current flowing through a conductor generates a magnetic field $\Phi \in \mathbb{R}$ surrounding it. This magnetic field causes a voltage drop dependant on the change in current. The \emph{inductance} $L \in \mathbb{R}^+$ is given in \emph{Henry} ($H$).
 	\begin{displaymath}
-		\Phi = L*i \quad \text{and by derivation in t} \quad v = L*\dot{i}.
+		\Phi = L \ i \quad \text{and by derivation in t} \quad v = L \ \dot{i}.
 	\end{displaymath}
 	\begin{figure}[H]
 		\label{fig:inductor symbol}
@@ -98,6 +98,8 @@ Electrical components are described by equations relating their edge voltage $v$
 	\end{figure}
 	\item Diode - to be filled with information after the rest is complete
 	\item Transistor - unlike the other components which were all two-teminal components a transisstor is a three-terminal component
+	
+	The resistance $R$, conductance $G$, capacitance $C$ and inductance $L$ are respectively described as a scalar constant that relates the edge-current to the edge-voltage. If there are more components of the same kind in one circuit their corresponding constants will usually be collected into a matrix which is also called the same and also denoted by the same letter, respectively. These matrices are then positive definite diagonal matrices.
 \end{itemize}
 
 \section{Modified Nodal Analysis - MNA}
@@ -113,7 +115,7 @@ To analyse the network further we will sort the reduced incidence matrix $A$ suc
 \end{displaymath}
 where $A_R$, $A_C$, $A_L$, $A_V$ and $A_I$ include the columns that are related to the resistors, capacitors, coils, voltage sources and current sources, respectively.
 
-To mathematically describe the circuit we will use \emph{modified nodal analysis} (or short MNA). MNA uses the node voltages as well as the currents of the coils and the voltage sources as unknowns and is based on the conservation laws \eqref{KCL} and \eqref{KVL} as well as on the voltage-current relations of the electrical components. By replacing all edge-currents with their respective voltage-current relation and all egde-voltages with their node-potentials, we obtain the MNA-equations
+To mathematically describe the circuit we will use \emph{modified nodal analysis} (or short MNA). MNA uses the node voltages as well as the currents of the coils and the voltage sources as unknowns. It is based on the conservation laws \eqref{KCL} and \eqref{KVL} as well as on the voltage-current relations of the electrical components. By replacing all edge-currents with their respective voltage-current relation and all egde-voltages with their node-potentials, we obtain the MNA-equations
 
 \begin{displaymath}
 	\begin{aligned}
@@ -162,7 +164,8 @@ The resulting systems are \emph{stiff} systems. This means that for their numeri
 \textbf{example}
 
 \section{Charge/Flux oriented formulation of MNA}
-Again using KCL \eqref{KCL} and the component equations we formulate a system of equations. This time we use the charge and flux based formulations. This means that instead of directly using current and voltage we use the flux of the magnetic field (used in the description of inductances) and the charge (used in the description of capacitors). We obtain
+\label{sec:charge flux oriented formulation}
+ This time we use the charge and flux based formulations. Again using KCL \eqref{KCL} and the component equations we formulate a system of equations. This means that instead of directly using current and voltage we use the flux of the magnetic field (used in the description of inductances) and the charge (used in the description of capacitors). We obtain
 
 \begin{align}
 	A_C\dot{q} + A_R r(A_R^\top u,t) + A_L i_L + A_V i_V + A_I i(A^\top u, \dot{q}, i_L, i_V, t) &= 0, \label{charge/flux-1} \\

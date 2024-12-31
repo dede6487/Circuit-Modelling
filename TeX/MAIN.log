@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.4.4)  28 DEC 2024 11:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.4.4)  31 DEC 2024 13:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1618,31 +1618,31 @@ File: pictures/capacitor.png Graphic file (type png)
 <use pictures/capacitor.png>
 Package pdftex.def Info: pictures/capacitor.png  used on input line 63.
 (pdftex.def)             Requested size: 56.9055pt x 53.0555pt.
-<pictures/inductance.png, id=135, 277.78781pt x 101.62968pt>
+
+[4 <./pictures/resistor.png> <./pictures/capacitor.png>]
+<pictures/inductance.png, id=141, 277.78781pt x 101.62968pt>
 File: pictures/inductance.png Graphic file (type png)
 <use pictures/inductance.png>
 Package pdftex.def Info: pictures/inductance.png  used on input line 74.
 (pdftex.def)             Requested size: 85.35826pt x 31.22884pt.
-
-[4 <./pictures/resistor.png> <./pictures/capacitor.png>]
-<pictures/voltage_source.png, id=141, 310.91156pt x 179.16937pt>
+<pictures/voltage_source.png, id=142, 310.91156pt x 179.16937pt>
 File: pictures/voltage_source.png Graphic file (type png)
 <use pictures/voltage_source.png>
 Package pdftex.def Info: pictures/voltage_source.png  used on input line 85.
 (pdftex.def)             Requested size: 113.81102pt x 65.58627pt.
-<pictures/current_source.png, id=142, 310.91156pt x 179.16937pt>
+<pictures/current_source.png, id=143, 310.91156pt x 179.16937pt>
 File: pictures/current_source.png Graphic file (type png)
 <use pictures/current_source.png>
 Package pdftex.def Info: pictures/current_source.png  used on input line 96.
 (pdftex.def)             Requested size: 113.81102pt x 65.58627pt.
- [5 <./pictures/inductance.png> <./pictures/voltage_source.png> <./pictures/cur
-rent_source.png>]
-[6]) [7]
+ [5 <./pictures/inductance.png> <./pictures/voltage_source.png>] [6 <./pictures
+/current_source.png>]
+[7]) [8]
 \openout2 = `chapters/Differential_Algebraic_Equations.aux'.
 
  (./chapters/Differential_Algebraic_Equations.tex
 chapter 3.
-[8
+[9
 
 
 
@@ -1650,132 +1650,130 @@ chapter 3.
 ]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 54.
+(mdframed)              on input line 59.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 58.
-Package mdframed Info: You first box width is to small
- mdframed fixed it
-(mdframed)              on input line 73.
- [9]
+(mdframed)              on input line 63.
+ [10]
+Package mdframed Info: Not enough space on this page on input line 78.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 78.
- [10] [11] [12]
+(mdframed)              on input line 83.
+ [11] [12] [13] [14]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 234.
+(mdframed)              on input line 290.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 240.
- [13]
+(mdframed)              on input line 311.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 319.
-Package mdframed Info: You first box width is to small
- mdframed fixed it
-(mdframed)              on input line 334.
- [14]
+(mdframed)              on input line 317.
+ [15]
+Package mdframed Info: Not enough space on this page on input line 319.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 340.
- [15]) [16]
+(mdframed)              on input line 348.
+ [16]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 369.
+) [17]
 \openout2 = `chapters/Index_Analysis.aux'.
 
  (./chapters/Index_Analysis.tex
 chapter 4.
 
-LaTeX Warning: Command \" invalid in math mode on input line 35.
+LaTeX Warning: Command \" invalid in math mode on input line 31.
 
 Missing character: There is no ä in font pplr7t!
-[17
+[18
 
 
 
 
-] [18]
+] [19] [20]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 110.
- [19]
-Package mdframed Info: Not enough space on this page on input line 112.
-<pictures/inductance-current-source_cutset.png, id=267, 948.54375pt x 543.53062
+(mdframed)              on input line 106.
+Package mdframed Info: Not enough space on this page on input line 108.
+<pictures/inductance-current-source_cutset.png, id=275, 948.54375pt x 543.53062
 pt>
 File: pictures/inductance-current-source_cutset.png Graphic file (type png)
 <use pictures/inductance-current-source_cutset.png>
 Package pdftex.def Info: pictures/inductance-current-source_cutset.png  used on
- input line 119.
+ input line 115.
 (pdftex.def)             Requested size: 192.05481pt x 110.04776pt.
-<pictures/capacitance-voltage-source_loop.png, id=268, 858.20625pt x 543.53062p
+<pictures/capacitance-voltage-source_loop.png, id=276, 858.20625pt x 543.53062p
 t>
 File: pictures/capacitance-voltage-source_loop.png Graphic file (type png)
 <use pictures/capacitance-voltage-source_loop.png>
 Package pdftex.def Info: pictures/capacitance-voltage-source_loop.png  used on 
-input line 124.
+input line 120.
 (pdftex.def)             Requested size: 192.05481pt x 121.63391pt.
 
-Overfull \hbox (2.08049pt too wide) in paragraph at lines 117--128
+Overfull \hbox (2.08049pt too wide) in paragraph at lines 113--124
 []$[]$ $[]$
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 133.
+(mdframed)              on input line 129.
 
-Overfull \hbox (10.01868pt too wide) detected at line 142
+Overfull \hbox (10.01868pt too wide) detected at line 138
  $\OMS/zplm/m/n/10.95 jj\OML/zplm/m/it/10.95 x[] \OMS/zplm/m/n/10.95 ^^@ \OML/z
 plm/m/it/10.95 x\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 t\OT1/zplm/m/n/10.95 
 )\OMS/zplm/m/n/10.95 jj ^^T \OML/zplm/m/it/10.95 C \OMS/zplm/m/n/10.95 ^^C []$ 
 
  []
 
-[20 <./pictures/inductance-current-source_cutset.png> <./pictures/capacitance-v
-oltage-source_loop.png>]) [21]
+[21 <./pictures/inductance-current-source_cutset.png> <./pictures/capacitance-v
+oltage-source_loop.png>]) [22]
 \openout2 = `chapters/Numerical_Solution.aux'.
 
  (./chapters/Numerical_Solution.tex
 chapter 5.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 24.
-[22
+[23
 
 
 
 
 ]
-Package mdframed Info: Not enough space on this page on input line 31.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 24.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 37.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 48.
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 59.
- [23]
+ [24]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 63.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 81.
- [24]
+ [25]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 96.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 111.
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 133.
- [25]
+ [26]
+Overfull \hbox (4.8282pt too wide) in paragraph at lines 196--198
+\T1/ppl/m/n/10.95 (-20) Linear mul-ti-step meth-ods (LMSV) use ap-prox-i-ma-tio
+ns $\OML/zplm/m/it/10.95 u[]$ \T1/ppl/m/n/10.95 (-20) along the grid-points $\O
+ML/zplm/m/it/10.95 t[]\OT1/ppl/m/n/10.95 (-20) ,  \OML/zplm/m/it/10.95 l \OT1/z
+plm/m/n/10.95 =
+ []
+
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 199.
- [26]
+[27]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 228.
@@ -1784,49 +1782,38 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 246.
 Package mdframed Info: You first box width is to small
  mdframed fixed it
-(mdframed)              on input line 260.
- [27]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 269.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 284.
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 294.
-Package mdframed Info: You first box width is to small
- mdframed fixed it
-(mdframed)              on input line 294.
+(mdframed)              on input line 262.
  [28]
-Underfull \hbox (badness 10000) in paragraph at lines 326--328
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 271.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 286.
+ [29]
+Underfull \hbox (badness 10000) in paragraph at lines 328--330
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 340.
-<screenshot021.png, id=355, 276.28218pt x 226.59656pt>
+(mdframed)              on input line 342.
+<screenshot021.png, id=367, 276.28218pt x 226.59656pt>
 File: screenshot021.png Graphic file (type png)
 <use screenshot021.png>
-Package pdftex.def Info: screenshot021.png  used on input line 356.
+Package pdftex.def Info: screenshot021.png  used on input line 358.
 (pdftex.def)             Requested size: 121.79866pt x 99.89294pt.
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 363.
-Package mdframed Info: You first box width is to small
- mdframed fixed it
-(mdframed)              on input line 363.
-[29] [30 <./screenshot021.png (PNG copy)>] [31] [32]
-<screenshot020.png, id=386, 761.84625pt x 522.45187pt>
+[30] [31 <./screenshot021.png>] [32]
+<screenshot020.png, id=392, 761.84625pt x 278.54062pt>
 File: screenshot020.png Graphic file (type png)
 <use screenshot020.png>
-Package pdftex.def Info: screenshot020.png  used on input line 468.
-(pdftex.def)             Requested size: 298.75267pt x 204.87148pt.
- [33 <./screenshot020.png>]) [34])
+Package pdftex.def Info: screenshot020.png  used on input line 470.
+(pdftex.def)             Requested size: 298.75267pt x 109.22542pt.
+ [33] [34 <./screenshot020.png>]) [35])
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
 75.
- (f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
+
+(f:/Anwendungen/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 Package microtype Info: Loading generic protrusion settings for font family
@@ -1836,7 +1823,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 AED: lastpage setting LastPage
-[35
+[36
 
 
 
@@ -1851,11 +1838,11 @@ Package logreq Info: Writing requests to 'MAIN.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35446 strings out of 478994
- 679761 string characters out of 5856172
- 1632952 words of memory out of 5000000
- 51704 multiletter control sequences out of 15000+600000
- 497823 words of font info for 395 fonts, out of 8000000 for 9000
+ 35482 strings out of 478994
+ 680135 string characters out of 5856172
+ 1633088 words of memory out of 5000000
+ 51706 multiletter control sequences out of 15000+600000
+ 501752 words of font info for 418 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  111i,27n,116p,10599b,3819s stack positions out of 5000i,500n,10000p,200000b,80000s
 {f:/Anwendungen/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.
@@ -1876,9 +1863,9 @@ ndungen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb><f:/Anwend
 ungen/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendung
 en/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><f:/Anwendungen/
 texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on MAIN.pdf (41 pages, 477802 bytes).
+Output written on MAIN.pdf (42 pages, 452829 bytes).
 PDF statistics:
- 585 PDF objects out of 1000 (max. 8388607)
- 158 named destinations out of 1000 (max. 500000)
- 108300 words of extra memory for PDF output out of 128383 (max. 10000000)
+ 596 PDF objects out of 1000 (max. 8388607)
+ 160 named destinations out of 1000 (max. 500000)
+ 110348 words of extra memory for PDF output out of 128383 (max. 10000000)
 
