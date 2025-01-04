@@ -1,0 +1,16 @@
+function [error] = compare(h, tspan, u0, eps)
+    
+    f = [1 1;1/eps 1/eps];
+
+    N = tspan/h +1;
+    u = Euler_Explicit(f, h, tspan, u0);
+    y = zeros(2, N+1);
+
+    for i = 1:(N+1)
+        y(:, i) = Solution7(N*h, u0(1), u0(2), eps);
+    end
+    error = zeros(1, 2);
+    error(1,1) = norm(u(1,:)-y(1,:),"inf");
+    error(1,2) = norm(u(1,:)-y(1,:),"inf");
+end
+

@@ -6,15 +6,16 @@
 \babel@toc {english}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces resistor symbol\relax }}{4}{figure.caption.6}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces capacitor symbol\relax }}{4}{figure.caption.7}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces inductor symbol\relax }}{5}{figure.caption.8}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces voltage source symbol\relax }}{5}{figure.caption.9}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces current source symbol\relax }}{6}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces charging capacitor with series resistor and voltage source\relax }}{3}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces resistor symbol\relax }}{5}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces capacitor symbol\relax }}{6}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces inductor symbol\relax }}{6}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces voltage source symbol\relax }}{6}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces current source symbol\relax }}{7}{figure.caption.11}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces cutset and loop\relax }}{22}{figure.caption.15}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces cutset and loop\relax }}{23}{figure.caption.16}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces $A(\alpha )$ stability for $\alpha = \frac {\pi }{4}$\relax }}{32}{figure.caption.16}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces stability regions of BDF-schemes\relax }}{35}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces $A(\alpha )$ stability for $\alpha = \frac {\pi }{4}$\relax }}{33}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces stability regions of BDF-schemes\relax }}{36}{figure.caption.18}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

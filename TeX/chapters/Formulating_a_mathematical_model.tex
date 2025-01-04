@@ -19,7 +19,93 @@ We call $u = (u_0, u_1, u_2, ...)$ the corresponding electrical potentials (or j
 
 We will later see, that the components of an electrical crircuit, which will be installed along the edges, describe a relationship between the edges current and its voltage. Thus a current vector $i = (i_1, i_2, i_3, ...)$ containing the currents along the edges is required.
 
-\textbf{example}
+
+\textbf{Example} \label{ex:network topology} \\
+As an example we consider the charging of a capacitor. The circuit is given as
+\begin{figure}[H]
+	\label{circuit:charging of capacitor}
+	\centering
+	\includegraphics[scale=0.5]{pictures/Example1_simple.png}
+	\caption{charging capacitor with series resistor and voltage source}
+\end{figure}
+with the node-potentials, the voltages and the currents collected in the vectors
+\begin{displaymath}
+	u=
+	\left(
+	\begin{matrix}
+		u_0 \\
+		u_1 \\
+		u_2 \\
+		u_3 
+	\end{matrix}
+	\right),
+	\quad
+	v=
+	\left(
+	\begin{matrix}
+		v_0 \\
+		v_1 \\
+		v_2 \\
+		v_3 
+	\end{matrix}
+	\right),
+	\quad
+	i=
+	\left(
+	\begin{matrix}
+		i_0 \\
+		i_1 \\
+		i_2 \\
+		i_3 
+	\end{matrix}
+	\right).
+\end{displaymath}
+The incidence matrix of this circuit has the form
+\begin{displaymath}
+	\tilde{A} = 
+	\left(
+	\begin{matrix}
+		1 & 0 & 0 & -1 \\
+		-1 & 1 & 0 & 0 \\
+		0 & -1 & 1 & 0 \\
+		0 & 0 & -1 & 1 
+	\end{matrix}
+	\right).
+\end{displaymath}
+The rows of this matric correspond with the nodes of the circuit and the columns correspond with the edges. By grounding node 0 this reduces to
+\begin{displaymath}
+	A = 
+	\left(
+	\begin{matrix}
+		-1 & 1 & 0 & 0 \\
+		0 & -1 & 1 & 0 \\
+		0 & 0 & -1 & 1 
+	\end{matrix}
+	\right).
+\end{displaymath}
+In this circuit edge 3 is not populated with any components. This means that the voltage along this edge does not change, or in formula
+\begin{displaymath}
+	u_0 - u_3 = 0.
+\end{displaymath}
+This means that we can consider this circuit with node 0 and node 3 merged. This leads to a slightly different incidence and reduced incidence matrix.
+\begin{displaymath}
+	\tilde{A} = 
+	\left(
+	\begin{matrix}
+		1 & 0 & -1 \\
+		-1 & 1 & 0 \\
+		0 & -1 & 1 \\
+	\end{matrix}
+	\right),
+	\qquad
+	A = 
+	\left(
+	\begin{matrix}
+		-1 & 1 & 0 \\
+		0 & -1 & 1 
+	\end{matrix}
+	\right).
+\end{displaymath}
 
 \section{Energy Conservation Laws}
 To fully fix all the variables that arrise in the model of an electrical circuit we will need some \emph{conservation laws}:
@@ -188,7 +274,54 @@ where the diagonal matrices $C$, $G$ and $L$ contain the capacities, conductivit
 
 The resulting systems are \emph{stiff} systems. This means that for their numerical solution special care has to be put into which methods are suitable for a solving these sytsems in a stable manner.
 
-\textbf{example}
+
+\textbf{Example} \label{ex:MNA} \\
+We again consider the charging of a capacitor. The circuit is again given as in \ref{ex:network topology}, where we have also already found the reduced incidence matrix
+\begin{displaymath}
+	A = 
+	\left(
+	\begin{matrix}
+		-1 & 1 & 0 \\
+		0 & -1 & 1 
+	\end{matrix}
+	\right).
+\end{displaymath} 
+ This matrix can be split into the three submatrices $A_V$, $A_R$ and $A_C$ containing the columns of the matrix $A$. The matrices $A_L$ and $A_V$ are empty in this case and the diagonal matrices containing the components constants are
+ \begin{displaymath}
+ 	C = (C), \qquad L = (), \qquad G = (\frac{1}{R}).
+ \end{displaymath}
+Plugging this into the formula \eqref{MNA_Matrixform} we obtain the system
+\begin{displaymath}
+	\begin{pmatrix}
+		0 & 0 & 0 \\
+		0 & C & 0 \\
+		0 & 0 & 0
+	\end{pmatrix}
+	*
+	\begin{pmatrix}
+		u_,' \\
+		u_2' \\
+		i_0'
+	\end{pmatrix}
+	+
+	\begin{pmatrix}
+		\frac{1}{R} & \frac{1}{R} & 0 \\
+		\frac{1}{R} & \frac{1}{R} & -1 \\
+		0 & -1 & 0 
+	\end{pmatrix}
+	*
+	\begin{pmatrix}
+		u_1 \\
+		u_2 \\
+		i_0
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		0 \\
+		0 \\
+		-v_{src}
+	\end{pmatrix}.
+\end{displaymath}
 
 \section{Charge/Flux oriented formulation of MNA}
 \label{sec:charge flux oriented formulation}

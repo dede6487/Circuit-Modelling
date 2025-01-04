@@ -1,0 +1,15 @@
+function [u] = Euer_Explicit(f, h, tspan, u0)
+    %t fehlt noch
+    t = zeros(tspan/h);
+    for i = 1:(h/tspan)
+        t(i) = i*tspan/;
+    end
+    u = zeros(2, tspan/h);
+    u(1,1) = u0(1);
+    u(2,1) = u0(2);
+    
+    for i = 1:N
+        u(:, i+1) = u(:, i) + h * f(t(i))*u(:, i);
+    end
+end
+

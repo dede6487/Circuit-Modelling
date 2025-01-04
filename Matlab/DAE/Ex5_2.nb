@@ -1,0 +1,108 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3062,         98]
+NotebookOptionsPosition[      2576,         81]
+NotebookOutlinePosition[      2983,         97]
+CellTagsIndexPosition[      2940,         94]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"DSolve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"D", "[", 
+        RowBox[{
+         RowBox[{"y2", "[", "t", "]"}], ",", "t"}], "]"}], "+", 
+       RowBox[{"y1", "[", "t", "]"}]}], " ", "==", " ", 
+      RowBox[{"f1", "[", "t", "]"}]}], ",", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"D", "[", 
+        RowBox[{
+         RowBox[{"y3", "[", "t", "]"}], ",", "t"}], "]"}], "+", 
+       RowBox[{"y2", "[", "t", "]"}]}], " ", "==", " ", 
+      RowBox[{"f2", "[", "t", "]"}]}], ",", " ", 
+     RowBox[{
+      RowBox[{"y3", "[", "t", "]"}], "==", 
+      RowBox[{"f3", "[", "t", "]"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"y1", "[", "t", "]"}], ",", 
+     RowBox[{"y2", "[", "t", "]"}], ",", 
+     RowBox[{"y3", "[", "t", "]"}]}], "}"}], ",", "t"}], "]"}]], "Input",
+ CellChangeTimes->{{3.9223730160016365`*^9, 3.922373021692009*^9}, {
+  3.922373091563046*^9, 3.92237309852619*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"603f49dd-860b-4f55-8f39-f34bfaae8454"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"y1", "[", "t", "]"}], "\[Rule]", 
+     RowBox[{
+      RowBox[{"f1", "[", "t", "]"}], "-", 
+      RowBox[{
+       SuperscriptBox["f2", "\[Prime]",
+        MultilineFunction->None], "[", "t", "]"}], "+", 
+      RowBox[{
+       SuperscriptBox["f3", "\[Prime]\[Prime]",
+        MultilineFunction->None], "[", "t", "]"}]}]}], ",", 
+    RowBox[{
+     RowBox[{"y2", "[", "t", "]"}], "\[Rule]", 
+     RowBox[{
+      RowBox[{"f2", "[", "t", "]"}], "-", 
+      RowBox[{
+       SuperscriptBox["f3", "\[Prime]",
+        MultilineFunction->None], "[", "t", "]"}]}]}], ",", 
+    RowBox[{
+     RowBox[{"y3", "[", "t", "]"}], "\[Rule]", 
+     RowBox[{"f3", "[", "t", "]"}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.9223730224893923`*^9, 3.9223730992745037`*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"ca1778bf-c2ee-4f7c-ba69-63219e8f1511"]
+}, Open  ]]
+},
+WindowSize->{1920., 1017.75},
+WindowMargins->{{-6, Automatic}, {Automatic, -6}},
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (December 2, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"74515899-1e6a-4e8c-a083-052ede1de152"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1061, 29, 43, "Input",ExpressionUUID->"603f49dd-860b-4f55-8f39-f34bfaae8454"],
+Cell[1644, 53, 916, 25, 32, "Output",ExpressionUUID->"ca1778bf-c2ee-4f7c-ba69-63219e8f1511"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

@@ -1,0 +1,6 @@
+function [y,z] = Solution7(t, y0, z0, eps)
+
+    y = y0*(exp(t/(eps+t))+1)/2 + z0*eps*(exp(t/()))
+
+end
+
