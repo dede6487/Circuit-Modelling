@@ -6,15 +6,16 @@ function y = BDFk(A, B, f, y0, tspan, h,k)
     % y0: Initial condition - vector of size k
     % tspan: Time interval [t0, tf]
     % h: Step size
+    % k: indicates the method used
 
     % Time vector
     t = tspan(1):h:tspan(2);
     n = length(t);
     
-    % Preallocate solution array
+    % Preallocate solution array (containing all the time steps)
     y = zeros(length(y0), n);
-    for i=1:k
-        y(:, i) = y0(:, i);
+    for i=1:length(y0)
+        y(i, 1) = y0(i, 1);
     end
 
     % BDF-k coefficients
@@ -32,8 +33,19 @@ function y = BDFk(A, B, f, y0, tspan, h,k)
     for i = k+1:n
         ti = t(i);
         % Solve implicit equation for y_i
-        y(:, i) = (-sum(y(:, i-1:i-k)*BDFalpha{k},2) + BDFbeta{k}*h*f(ti))/(BDFalpha{k}(k)*M+BDFbeta{k}*h*B);  %solve the implicit equation
-        %not sure if this summation makes sense
+        %doing the sum 
+        mysum = zeros(length(y0), 1);
+        for j = 1:k %from 0 to k
+            %               k-1 previous y and all the alpha except for
+            %               last one
+            %               y_i-j * a_k 
+            mysum = mysum + A*y(:,i-j)*BDFalpha{k}(k+1-j);
+        end
+        %(-sum(A*y(:, i-1:i-k)*BDFalpha{k}(i),2)
+        %dimensions       y0 x 1                    y0 x y0 + y0 x y0
+        y(:, i) = (mysum + BDFbeta(k)*h*f(ti))'/(BDFalpha{k}(k)*A+BDFbeta(k)*h*B);  %solve the implicit equation
+        %not sure if this summation makes sense - this should be the sum
+        %componentwise, because of dim 2 at the end
     end
 end
 
