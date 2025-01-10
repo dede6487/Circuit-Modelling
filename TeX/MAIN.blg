@@ -1,15 +1,17 @@
-[1] Config.pm:311> INFO - This is Biber 2.16
-[1] Config.pm:314> INFO - Logfile is 'MAIN.blg'
-[165] biber-MSWIN32:340> INFO - === 
-[215] Biber.pm:415> INFO - Reading 'MAIN.bcf'
-[372] Biber.pm:952> INFO - Found 4 citekeys in bib section 0
-[391] Biber.pm:4340> INFO - Processing section 0
-[408] Biber.pm:4531> INFO - Looking for bibtex format file 'literature.bib' for section 0
-[471] bibtex.pm:1689> INFO - LaTeX decoding ...
-[502] bibtex.pm:1494> INFO - Found BibTeX data source 'literature.bib'
-[605] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[605] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[605] Biber.pm:4168> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[605] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
-[611] bbl.pm:654> INFO - Writing 'MAIN.bbl' with encoding 'UTF-8'
-[613] bbl.pm:757> INFO - Output to MAIN.bbl
+[0] Config.pm:311> INFO - This is Biber 2.16
+[0] Config.pm:314> INFO - Logfile is 'MAIN.blg'
+[140] biber-MSWIN32:340> INFO - === 
+[210] Biber.pm:415> INFO - Reading 'MAIN.bcf'
+[379] Biber.pm:952> INFO - Found 4 citekeys in bib section 0
+[398] Biber.pm:4340> INFO - Processing section 0
+[414] Biber.pm:4531> INFO - Looking for bibtex format file 'literature.bib' for section 0
+[491] bibtex.pm:1689> INFO - LaTeX decoding ...
+[525] bibtex.pm:1494> INFO - Found BibTeX data source 'literature.bib'
+[568] Utils.pm:395> WARN - legacy month field 'Juni' in entry 'shashkov_tuprints27452' is not an integer - this will probably not sort properly.
+[609] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[609] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[609] Biber.pm:4168> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[609] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[619] bbl.pm:654> INFO - Writing 'MAIN.bbl' with encoding 'UTF-8'
+[621] bbl.pm:757> INFO - Output to MAIN.bbl
+[621] Biber.pm:128> INFO - WARNINGS: 1

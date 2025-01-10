@@ -5,13 +5,13 @@ von \cite{NumerikGewöhnlicherDifferentialgleichungen} und DAE lecture
 The resulting MNA of electrical circuits leads to a special form of differential equations, namely \emph{differential algebraic equations} (DAE). To understand the general solvability of those systems and to find good numerical methods we first have to take a look at the theory of such DAEs.
 
 In the most general form a DAE can be written as:
-Find $y:\mathbb{R} \to \mathbb{R}^N$ such that
+Find $y:\mathbb{R} \to \mathbb{R}^n$ such that
 \begin{equation}
 	\label{Abstract_DAE}
 	F(t, y(t), y'(t)) = 0, \qquad \forall t \in I
 \end{equation}
 
-with $F:\mathbb{R} \times \mathbb{R}^N \times \mathbb{R}^N \to \mathbb{R}^N$ sufficiently smooth and $I$ the time-interval. As this is usually too general one has to consider more specific types of DAEs.
+with $F:\mathbb{R} \times \mathbb{R}^n \times \mathbb{R}^n \to \mathbb{R}^n$ sufficiently smooth and $I$ the time-interval. As this is usually too general one has to consider more specific types of DAEs.
 This chapter focuses on giving a brief overview of the different types of differential algebraic equations. We will discuss the specific form of linear systems with constant coefficients in more detail as those are the systems that arise from modified nodal analysis. Additionally this chapter also discusses the notion of the index of an MNA-system.
 
 \section{Types of DAEs}
@@ -45,7 +45,7 @@ This chapter focuses on giving a brief overview of the different types of differ
 			y'(t) &= f(t, y(t), z(t)) , \\
 			0 &= g(t,y(t),z(t)) ,
 		\end{align}
-		with $f:\mathbb{R} \to \mathbb{R}^n$ and $g\mathbb{R} \to \mathbb{R}^d$ functions.
+		with $f:\mathbb{R} \to \mathbb{R}^n$ and $g:\mathbb{R} \to \mathbb{R}^d$ functions.
 	\end{itemize}
 	
 	For our analysis of electrical networks we will focus on linear systems with constant coefficients. The other systems could for example occur when we also consider time-dependant component relations e.g. Temperature.
@@ -60,8 +60,8 @@ To determine the solvability of a linear system with constant coefficients \eqre
 	The matrix pencil $\{ A,B\}$ is called \emph{regular} if there exists some $c \in \mathbb{R}$, such that $(cA+B)$ is regular ($det(cA+B) \neq 0$), otherwise it is called singular.
 \end{definition}
 
-\begin{theorem}[Jordan Normalform]
-	For every matrix $Q \in \mathbb{R}^{N \times N}$ there exists a regular matrix $T \in \mathbb{C}^{N \times N}$, such that
+\begin{theorem}[Jordan Normalform \protect{\cite[Theorem~13.2.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
+	For every matrix $Q \in \mathbb{R}^{n \times n}$ there exists a regular matrix $T \in \mathbb{C}^{n \times n}$, such that
 	\begin{displaymath}
 		T^{-1}QT = J = diag(J_1, ..., J_r) \quad \text{with} \quad J_i = 
 		\left(
@@ -80,7 +80,7 @@ To determine the solvability of a linear system with constant coefficients \eqre
 The matrix $J$ is called Jordan Normalform of $Q$, the matrices $J_i$ are called Jordan Blocks, where $\lambda_i$ are corresponding the eigenvalues of $Q$. The matrix $J$ is uniquely determined by $Q$ except for the arrangement of the diagonal blocks. If $Q$ posesses only real eigenvalues, then $T$ can also be choosen from the reals. \newline
 A transformation from $A$ and $B$ in \ref{DAE-const-coeff} enables a seperation into differential and algebraic variables.	
 %aus buch seite 401
-\begin{theorem}
+\begin{theorem}[\protect{\cite[Satz~13.2.2]{NumerikGewöhnlicherDifferentialgleichungen}}]
 	\label{Kronecker-Normalform}
 	Let $\{ A,B \}$ be a regular matrix pencil. There exist $P,Q \in \mathbb{C}^{n \times n}$ such that
 	\begin{displaymath}
@@ -285,7 +285,7 @@ We call this system the\emph{ Weierstraß-Kronecker normalform} of the DAE. The 
 where $k$ is the nilpotency index of $N$. Hence we have an explicit  form of the solution of $v(t)$. The Kronecker index $k$ thus tells us how many differentiations are required to obtain an ordinary differential equation.
 
 We can also give a general definition of a DAE in Weierstraß-Kronecker normalform.
-\begin{definition}
+\begin{definition}[\protecting{\cite[Definition~13.2.4]{NumerikGewöhnlicherDifferentialgleichungen}}]
 	A linear differential equation \eqref{DAE-const-coeff} is said to be in Weierstraß-Kronecker normalform if
 	\begin{displaymath}
 		A = 
@@ -313,8 +313,11 @@ We can also give a general definition of a DAE in Weierstraß-Kronecker normalfo
 %lemma 13.2.1
 
 \begin{lemma}
+	\label{Lemma:indipendence of Kronecker index}
 	The Kronecker-Index $ind\{A,B\}$ is independant of the choice of the matrices $P$ and $Q$.
 \end{lemma}
+
+For the proof of Lemma \ref{Lemma:indipendence of Kronecker index} see \protect{\cite[\pno403]{NumerikGewöhnlicherDifferentialgleichungen}}.
 
 %\begin{figure}
 %	\centering
@@ -343,8 +346,8 @@ We will consider two types of index concepts, the differentiation index and the 
 
 Since numerical differentiation is an unstable procedure the differentiation index aims to gives a measure for the numerical problems to be expected when solving such systems.
 
-\begin{definition}[differentiation index]
-	Consider the differential algebraic equation \ref{Abstract_DAE} to be uniquely locally solvable and $F$ suffieciently smooth. For a given $m \in \mathbb{N}$ consider
+\begin{definition}[differentiation index \protect{\cite[Definition~13.3.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
+	Consider the differential algebraic equation \ref{Abstract_DAE} to be uniquely locally solvable and $F$ suffieciently smooth. For a given $m \in \mathbb{N}$ consider the equations
 	\begin{displaymath}
 		\begin{aligned}
 			F(t,y,y') &= 0, \\
@@ -353,26 +356,26 @@ Since numerical differentiation is an unstable procedure the differentiation ind
 			\diff[m]{F(t,y,y')}{t} &= 0.
 		\end{aligned}
 	\end{displaymath}
-	The smallest natural number $m$ for which the above System results in an explicit system of the form
+	The smallest natural number $m$ for which the above System results in an explicit system of ordinary differential equations (ODEs), i.e. has the form
 	\begin{displaymath}
 		y' = \phi(t,y)
 	\end{displaymath}
-	from which $y$ can be determined is called \textbf{differentiation index}.
+	is called \textbf{differentiation index}.
 \end{definition}
 
 above definition from \cite{NumerikGewöhnlicherDifferentialgleichungen} seite 407
 
 In the previous chapter we have already discussed, that for a DAE with constant coefficients \eqref{DAE-const-coeff} and a regular matrix pencil $\{A,B\}$  we need $k = ind\{A,B\}$ differentiations to receive an ordinary differential equation. This means, that the Kronecker index $k$ is equal to the differentiation index (in the case of a DAE with constant coefficients).
 
-\begin{definition}[perturbation index]
-	Let $y(t)$ be the exact solution to \eqref{Abstract_DAE}. This problem has the \textbf{perturbation index} $k \in \mathbb{N}$ along $y(t), t_0 \leq t \leq T$, if for all  $\tilde{y}(t)$ with $F(t, \tilde{y}, \tilde{y}') = \delta(t)$ the inequality
+\begin{definition}[perturbation index \protect{\cite[Definition~13.3.3]{NumerikGewöhnlicherDifferentialgleichungen}}]
+	Let $y(t)$ be the exact solution of \eqref{Abstract_DAE} and $\tilde{y}(t)$ be the solution of the perturbed system $F(t, \tilde{y}, \tilde{y}') = \delta(t)$. The smallest number $k \in \mathbb{N}$ such that 
 	\begin{displaymath}
 		||y(t)-\tilde{y}(t)|| \leq C \left(||y(t_0)-\tilde{y}(t_0)||+\sum_{j=0}^{k}\max_{t_0 \leq \xi \leq T} \left\rVert 		\int_{t_0}^{\xi}\diff[j]{\delta}{\tau}(\tau)d \tau \right\rVert \right)
 	\end{displaymath}
-	for the smallest number $k$.
+	for all $\tilde{y}(t)$, is called the \textbf{perturbation index} of this system.
 \end{definition}	
 
-In the case of linear DAEs with constant coefficients and a regular matrix pencil ${A,B}$, we can transform the DAE
+In the case of linear DAEs with constant coefficients and a regular matrix pencil $\{A,B\}$, we can transform the DAE
 \begin{displaymath}
 	A(y'(t)-\tilde{y}'(t)) + B(y'(t)-\tilde{y}(t)) = \delta(t)
 \end{displaymath}
@@ -383,7 +386,7 @@ into% (\textbf{how?} - bemerkung 13.3.5
 	N(v'(t) - \tilde{v}'(t)) &= \delta_2(t).
 \end{align*}
 
-According to \eqref{solution-to-transformed-DAE-const-coeff-part2} the solution of the algebraic variable has the form
+Where $u(t)$ holds the first $d$ entries of $y(t):\mathbb{R} \to \mathbb{R}^n$ and $v(t$ holds the remaining $n-d$ entries. According to \eqref{solution-to-transformed-DAE-const-coeff-part2} the solution of the algebraic variable has the form
 \begin{displaymath}
 	v(t) - \tilde{v}(t) = \sum_{i=0}^{k-1} (-1)^iN^i \delta_2^{(i)}(t) 
 \end{displaymath}

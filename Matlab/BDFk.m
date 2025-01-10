@@ -28,7 +28,13 @@ function y = BDFk(A, B, f, y0, tspan, h,k)
                 BDF3alpha};
 
     BDFbeta = [1 2 6 12 60 60];
-    
+    %construct initial k values using BDF1 method
+    if k ~= 1
+        tempspan = [0+h,h*k];
+        y(:,1:k) = BDFk(A, B, f, y0, tempspan, h,1);
+    end
+     
+
     % Time-stepping loop for BDF-k
     for i = k+1:n
         ti = t(i);

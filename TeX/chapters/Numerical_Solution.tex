@@ -9,14 +9,21 @@ We will first focus on methods used to solve a more general problem
 \end{align}
 
 
-For this we presume that the function $f(t,y)$ is continuous and Lipschitz, thus \emph{Picard-Lindelöf} \cite{NumerikGewöhnlicherDifferentialgleichungen} gives us, that for every $y_0$ it is uniquely solvable in $[t_0, t_l]$.
+For this we presume that the function $f(t,y)$ is continuous and Lipschitz, thus \emph{Picard-Lindelöf} \protecting{\cite[Satz~1.2.1]{NumerikGewöhnlicherDifferentialgleichungen}} gives us, that for every $y_0$ it is uniquely solvable in $[t_0, t_l]$.
 
-Numerical Methods work by discretization, this means we divide the time-intervall into
+Numerical Methods work by discretization, this means we divide the time-intervall $[t_0, t_l]$ into
 \begin{displaymath}
 	t_0 < t_1 < ... < t_N \leq t_l
 \end{displaymath}
 
-and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a \emph{time-grid}. The step-size between two grid-points $t_i - t_j$ might not be choosen equidistant. This can be usefull in certain situations. For simplicity we will non the less assume the stepsize to be equidistant.
+and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$, see picture. We call this a \emph{time-grid} and we call the difference $h_ij = t_j - t_i$ with $0 \leq i < j \leq N$ the step size from $t_i$ to $t_j$. We Will only consider equidistant grids, which means that this step size does not differ, thus we simply denote it by $h$.
+
+\begin{figure}[H]
+	\label{fig:numerical approximation}
+	\centering
+	\includegraphics[scale=0.7]{pictures/num_approx.png}
+	\caption{approximation of a function using numerical methods}
+\end{figure}
 
 \section{Single-Step-Methods}
 	The first class of numerical methods we will consider are single-step methods. These methods use the previous approximated value $y_j$ and (for implicit methods) also the current approximated value $y_{j+1}$ to determine the current value $y_{j+1}$ through a \emph{procedural function}.
@@ -38,22 +45,22 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 		Let $\tilde{y}_{m+1}$ be the result of one step of a single step method \eqref{single-step method} with the exact start-vector $y_m = y(t_m)$ then
 		\begin{equation}
 			\label{local discretization error single step}
-			le_{m+1} = le(t_m+h) = y(t_{m+1}) - \tilde{y}_{m+1}, \quad m = 0,...,N-1
+			 \delta_{m+1} = \delta(t_m+h) = y(t_{m+1}) - \tilde{y}_{m+1}, \quad m = 0,...,N-1
 		\end{equation}
 		is called the \emph{local discretization error} of the single step method at the point $t_{m+1}$.
 	\end{definition}
 
-	The error encodes how far off the numerical method is from the true value of the solution. In most applications the exact solution is not known. Next we consider the consistency.
+	The local error quantifies the error of every step of the method with respect to the exact solution. In most applications the exact solution is not known. Next we consider the consistency.
 
 	\begin{definition}\label{Consistency_SingleStep}
 		A single-step method is called \emph{consistent} if for all initial value problems \eqref{general numerical problem} 
 		\begin{equation}
-			\lim\limits_{h \to 0} \frac{||le(t+h)||}{h} = 0 \quad \text{for} \quad t_0 \leq t \leq t_l
+			\lim\limits_{h \to 0} \frac{||\delta(t+h)||}{h} = 0 \quad \text{for} \quad t_0 \leq t \leq t_l
 		\end{equation}
 		holds.\newline
 		It is called \emph{consistent of order p}, if for a sufficiently smooth function $f$
 		\begin{equation}
-			||le(t+h)|| \leq Ch^{p+1} \quad \text{for all} \quad h \in \mathopen{(} 0,H \mathclose{]} \quad \text{and} \quad t_0 \leq t \leq t_l - h
+			||\delta(t+h)|| \leq Ch^{p+1} \quad \text{for all} \quad h \in \mathopen{(} 0,H \mathclose{]} \quad \text{and} \quad t_0 \leq t \leq t_l - h
 		\end{equation}
 		holds with $C$ independent of $h$.
 	\end{definition}
@@ -232,16 +239,17 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$. We call this a
 		\end{displaymath}
 		Then
 		\begin{displaymath}
-			le_{m+k} = le(t_{m+k}) = y(t_{m+k}) - \tilde{u}_{m+k}, \quad m=0,1,...,N-k
+			\delta_{m+k} = \delta(t_{m+k}) = y(t_{m+k}) - \tilde{u}_{m+k}, \quad m=0,1,...,N-k
 		\end{displaymath}
 		is called the \emph{local discretization error} (local error) of the linear multi-step method \ref{linear-multistep-method} at the point $t_{m+k}$.
 	\end{definition}
 	
-	We will assign the linear difference operator
+	For $k=1$ this definition agrees with the definition of the local discretization error for single-step methods \ref{Discretization_Error_SingleStep}.
+	By assigning the linear difference operator
 	\begin{equation}
 		L[y(t),h] = \sum_{l=0}^{k} \left( \alpha_l y(t+lh) - h \beta_l y'(t+lh) \right)
 	\end{equation}
-	to the local discretization error. Using this we gain the following definition.
+	to the local discretization error we gain the following definition.
 
 	\begin{definition}
 		A linear multi-step method is called %\emph{preconsistent} if for all functions $y(t) \in C^1[t_0,t_l]$
@@ -488,27 +496,35 @@ In the following two subchapters we will give a short overview over the two most
 	\begin{displaymath}
 		u_h (t+h) = u_h(t) +\frac{h}{2}[f(t,u_h(t)) + f(t+h, u_h(t+h))].
 	\end{displaymath}
+%	
+%	This iteration rule can also be formulated using the butcher tableau	
+%	\begin{displaymath}
+%		\begin{array}{c|cc}
+%			0 & 0 & 0 \\
+%			1 & \frac{1}{2} & \frac{1}{2} \\
+%			\hline
+%			& \frac{1}{2} & \frac{1}{2}
+%		\end{array}
+%	\end{displaymath}
 	
-	This iteration rule can also be formulated using the butcher tableau	
-	\begin{displaymath}
-		\begin{array}{c|cc}
-			0 & 0 & 0 \\
-			1 & \frac{1}{2} & \frac{1}{2} \\
-			\hline
-			& \frac{1}{2} & \frac{1}{2}
-		\end{array}
-	\end{displaymath}
-	
-	Because $u_h(t+h)$ appears in $f$ again we see that this is an implicit method. The butcher tableau confirms this as well.
+	Because $u_h(t+h)$ appears in $f$ again we see that this is an implicit method. %The butcher tableau confirms this as well.
 	
 \section{Numerical Examples}
 	
-	In this section we will give two explicit examples of circuits being solved using either of the above mentioned methods and compare the convergence speed between the methods as well as comparing the suitability of the methods for systems of different index.
+	In this section we will give two explicit examples of circuits being solved using both of the above mentioned methods and compare the convergence speed between the methods as well as comparing the suitability of the methods for systems of different index.
 	
-
-
+	\textbf{Example 1} \\
 		
-		
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.4]{pictures/Example1_simple_p2.png}
+		\caption{charging capacitor with series resistor and voltage source}
+	\end{figure}
+
+	\textbf{Example 2} \\
 	
-	
-	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.4]{pictures/Example1_simple_p2.png}
+		\caption{LC-circuit}
+	\end{figure}

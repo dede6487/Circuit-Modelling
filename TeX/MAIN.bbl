@@ -19,36 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
-    \entry{DesoerCharlesA1969Bct}{book}{}
-      \name{author}{1}{}{%
-        {{hash=e7de661fc904819635359324043e9f78}{%
-           family={Desoer},
-           familyi={D\bibinitperiod},
-           given={Charles\bibnamedelima A},
-           giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {eng}%
-      }
-      \list{publisher}{1}{%
-        {McGraw-Hill Kogakusha}%
-      }
-      \strng{namehash}{e7de661fc904819635359324043e9f78}
-      \strng{fullhash}{e7de661fc904819635359324043e9f78}
-      \strng{bibnamehash}{e7de661fc904819635359324043e9f78}
-      \strng{authorbibnamehash}{e7de661fc904819635359324043e9f78}
-      \strng{authornamehash}{e7de661fc904819635359324043e9f78}
-      \strng{authorfullhash}{e7de661fc904819635359324043e9f78}
-      \field{sortinit}{D}
-      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{Internat. student ed.}
-      \field{isbn}{0070851832}
-      \field{title}{Basic circuit theory}
-      \field{year}{1969}
-      \keyw{Schaltungstheorie}
-    \endentry
     \entry{ModellingAndDiscretizationOfCircuitProblems}{book}{}
       \name{author}{3}{}{%
         {{hash=8b3a5d76aa159898985a14f33b458c28}{%
@@ -114,6 +84,49 @@
       \field{year}{2012}
       \verb{doi}
       \verb https://doi.org/10.1007/978-3-8348-2263-5
+      \endverb
+    \endentry
+    \entry{shashkov_tuprints27452}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=f47633e9cc126b2828d27fd7c3a20b16}{%
+           family={Shashkov},
+           familyi={S\bibinitperiod},
+           given={Vsevolod},
+           giveni={V\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Technische Universität Darmstadt}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{location}{1}{%
+        {Darmstadt}%
+      }
+      \strng{namehash}{f47633e9cc126b2828d27fd7c3a20b16}
+      \strng{fullhash}{f47633e9cc126b2828d27fd7c3a20b16}
+      \strng{bibnamehash}{f47633e9cc126b2828d27fd7c3a20b16}
+      \strng{authorbibnamehash}{f47633e9cc126b2828d27fd7c3a20b16}
+      \strng{authornamehash}{f47633e9cc126b2828d27fd7c3a20b16}
+      \strng{authorfullhash}{f47633e9cc126b2828d27fd7c3a20b16}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{title}{On structure preserving simulations in nonlinear electromagnetics, electric circuits, and efficient treatment of systems with memory}
+      \field{type}{phdthesis}
+      \field{year}{2024}
+      \field{pages}{133 Seiten}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb https://doi.org/10.26083/tuprints-00027452
+      \endverb
+      \verb{urlraw}
+      \verb http://tuprints.ulb.tu-darmstadt.de/27452/
+      \endverb
+      \verb{url}
+      \verb http://tuprints.ulb.tu-darmstadt.de/27452/
       \endverb
     \endentry
     \entry{Tischendorf2005Topological}{book}{}
