@@ -7,6 +7,8 @@ function y = BDFk(A, B, f, y0, tspan, h,k)
     % tspan: Time interval [t0, tf]
     % h: Step size
     % k: indicates the method used
+    %output: vector y of size length(y0) x length(tspan(1):h:tspan(2)
+    %containing the calculated timesteps of the method
 
     % Time vector
     t = tspan(1):h:tspan(2);

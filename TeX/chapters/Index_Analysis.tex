@@ -202,7 +202,47 @@ We will apply those results to some examples:
 	\end{figure}
 	Because this circuit only contains one loop, which has a voltage source as well as a capacitor we expect the resulting MNA-system to be of index $\nu=2$. 
 	
-	check ker conditions!!!
+	The incidence matrix for this system is
+	\begin{displaymath}
+		A = [A_V~A_R~A_C] = 
+		\left(
+		\begin{matrix}
+			-1 & 1 & 0 \\
+			0 & -1 & 1 
+		\end{matrix}
+		\right).
+	\end{displaymath} 
+	Thus condition 1 gives us (first ker is indeed not 0, no? - would need to not have transposed - maybe because $A_L$ is empty)
+	\begin{displaymath}
+		ker([A_R, A_C, A_V, A_L]^\top) = ker
+		\left(
+		\begin{matrix}
+			 1 & 0 & -1\\
+			-1 & 1 & 0
+		\end{matrix}
+		\right) = 0 
+		\quad \text{and} \quad 
+		ker(A_V) = 0
+	\end{displaymath}
+	This condition is fulfilled, thus the index has to be smaller or equal to 2.
+	But condition 2 results in
+	\begin{displaymath}
+		ker([A_R, A_C, A_V]^\top) = ker\left(
+		\begin{matrix}
+			1 & 0 & -1\\
+			-1 & 1 & 0
+		\end{matrix}
+		\right) \neq 0
+		\quad \text{and} \quad
+		ker([A_C, A_V]) = ker
+		\left(
+		\begin{matrix}
+			0 & -1\\
+			1 & 0
+		\end{matrix}
+		\right) = 0.
+	\end{displaymath}
+	We see that this condition is violated, thus the index can not be smaller than 2.
 	
 \textbf{Example2} \\
 	This example depicts an energy conserving system. The electric energy stored in the capacitor is converted into the the magnetic energy of the coil and vice versa.
@@ -213,4 +253,55 @@ We will apply those results to some examples:
 	\end{figure}
 	Because this circuit only contains only one capacitor and one inductance, the absence of sources means that we expect the resulting MNA-system to be of index $\nu=0$. This means that the system is an ODE!
 	
-	check ker conditions!!!
+	The incidence matrix for this system is
+	\begin{displaymath}
+		A = [A_L~A_C] = 
+		\left(
+		\begin{matrix}
+			-1 & 1
+		\end{matrix}
+		\right).
+	\end{displaymath} 
+	Thus condition 1 gives us (empty matrices, thus fulfilled)
+	\begin{displaymath}
+		ker([A_R, A_C, A_V, A_L]^\top) = ker
+		\left(
+		\begin{matrix}
+			1 & -1
+		\end{matrix}
+		\right) = 0 
+		\quad \text{and} \quad 
+		ker(A_V) = 0
+	\end{displaymath}
+	This condition is fulfilled, thus the index has to be smaller or equal to 2.
+	Condition 2 results in
+	\begin{displaymath}
+		ker([A_R, A_C, A_V]^\top) = ker\left(
+		\begin{matrix}
+			1
+		\end{matrix}
+		\right) \neq 0
+		\quad \text{and} \quad
+		ker([A_C, A_V]) = ker
+		\left(
+		\begin{matrix}
+			0 & -1\\
+			1 & 0
+		\end{matrix}
+		\right) = 0.
+	\end{displaymath}
+	This condtion is also fulfilled, thus the index has to be smaller or equal to 1.
+	Condition 3 results in
+	\begin{displaymath}
+		ker(A_C^\top) = 0 \quad \text{and} \quad dim(v_src) = 0
+	\end{displaymath}
+	Thus it is fulfilled and we obtain index 0.
+	
+	If we have a look at the MNA we can also directly see that this system is of index 0. The MNA has the form
+	\begin{displaymath}
+		\begin{aligned}
+			C \dot{u}_1 - i_L &= 0, \\
+			L \dot{i}_L + u_1 &= 0
+		\end{aligned}
+	\end{displaymath}
+	which is an ODE.

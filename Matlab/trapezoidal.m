@@ -6,6 +6,8 @@ function y = trapezoidal(A, B, f, y0, tspan, h)
     % y0: Initial condition - vector of size k
     % tspan: Time interval [t0, tf]
     % h: Step size
+    %output: vector y of size length(y0) x length(tspan(1):h:tspan(2)
+    %containing the calculated timesteps of the method
     
     % Time vector
     t = tspan(1):h:tspan(2);
@@ -17,6 +19,7 @@ function y = trapezoidal(A, B, f, y0, tspan, h)
         y(i, 1) = y0(i, 1);
     end
 
+    %time-stepping loop for Trapezoidal
     for i = 2:n
         y(:, i) = (((-h/2)*B+A)*y(:,i-1) + (h/2)*(f(t(i))+f(t(i-1))))' / (A+(h/2)*B);  %solve the implicit equation
     end

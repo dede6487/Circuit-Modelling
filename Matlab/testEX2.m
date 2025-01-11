@@ -44,6 +44,8 @@ y1_BDF3 = BDFk(A1, B1, f1, y0, tspan, h, 3)
 
 y1_Trapezoidal = trapezoidal(A1, B1, f1, y0, tspan, h)
 
+%illustration of one of the components at a time, i.e. graph =1,2 for u1,
+%iL
 
 graph = 1;
 figure
