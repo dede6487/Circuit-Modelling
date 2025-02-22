@@ -43,14 +43,16 @@ function y = BDFk(A, B, f, y0, tspan, h,k)
         % Solve implicit equation for y_i
         %doing the sum 
         mysum = zeros(length(y0), 1);
-        for j = 1:k %from 0 to k
+        for j = 1:k %from 0 to k-1
             %               k-1 previous y and all the alpha except for
             %               last one
             %               y_i-j * a_k 
+            %                                      k+1-j
             mysum = mysum + A*y(:,i-j)*BDFalpha{k}(k+1-j);
         end
         %(-sum(A*y(:, i-1:i-k)*BDFalpha{k}(i),2)
         %dimensions       y0 x 1                    y0 x y0 + y0 x y0
+        %          -?
         y(:, i) = (mysum + BDFbeta(k)*h*f(ti))'/(BDFalpha{k}(k)*A+BDFbeta(k)*h*B);  %solve the implicit equation
         %not sure if this summation makes sense - this should be the sum
         %componentwise, because of dim 2 at the end

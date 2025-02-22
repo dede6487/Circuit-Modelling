@@ -21,6 +21,7 @@ f1 = @(t) [0 0 sin(pi*t)]';
 y0 = [0 0 0]';
 
 %exact solution u1 = u2 = -vsrc
+% y = [u1, u2, iV]
 
 y = @(t) [-subsref(f1(t), struct('type', '()', 'subs', {{3}})); %first and second component returns third component of f1
           -subsref(f1(t), struct('type', '()', 'subs', {{3}}));
