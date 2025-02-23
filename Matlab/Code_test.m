@@ -9,9 +9,9 @@ x = 0:h:tspan(2);
 %u = exp(-x)
 
 %system matrices
-A1 = [-1];
+A1 = [1];
 
-B1 = [-1];
+B1 = [1];
 
 f1 = @(t) [0]';
 
@@ -32,19 +32,19 @@ end
 
 %BDF1
 
-y1_BDF1 = BDFk(A1, B1, f1, y0, tspan, h, 1)
+y1_BDF1 = BDFk(A1, B1, f1, y0, tspan, h, 1);
 
 %BDF2
 
-y1_BDF2 = BDFk(A1, B1, f1, y0, tspan, h, 2)
+y1_BDF2 = BDFk(A1, B1, f1, y0, tspan, h, 2);
 
 %BDF3
 
-y1_BDF3 = BDFk(A1, B1, f1, y0, tspan, h, 3)
+y1_BDF3 = BDFk(A1, B1, f1, y0, tspan, h, 3);
 
 %Trapezoidal
 
-y1_Trapezoidal = trapezoidal(A1, B1, f1, y0, tspan, h)
+y1_Trapezoidal = trapezoidal(A1, B1, f1, y0, tspan, h);
 
 %illustration of one of the components at a time, i.e. graph =1,2 for u1,
 %iL
