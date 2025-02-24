@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.1 $
+% $ biblatex bbl format version 3.3 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -18,8 +18,8 @@
 
 
 \refsection{0}
-  \datalist[entry]{nty/global//global/global}
-    \entry{ModellingAndDiscretizationOfCircuitProblems}{book}{}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{ModellingAndDiscretizationOfCircuitProblems}{book}{}{}
       \name{author}{3}{}{%
         {{hash=8b3a5d76aa159898985a14f33b458c28}{%
            family={Günther},
@@ -45,10 +45,12 @@
       }
       \strng{namehash}{6cc4365b17d0c6b0525b773f9bdd5d3b}
       \strng{fullhash}{6cc4365b17d0c6b0525b773f9bdd5d3b}
+      \strng{fullhashraw}{6cc4365b17d0c6b0525b773f9bdd5d3b}
       \strng{bibnamehash}{6cc4365b17d0c6b0525b773f9bdd5d3b}
       \strng{authorbibnamehash}{6cc4365b17d0c6b0525b773f9bdd5d3b}
       \strng{authornamehash}{6cc4365b17d0c6b0525b773f9bdd5d3b}
       \strng{authorfullhash}{6cc4365b17d0c6b0525b773f9bdd5d3b}
+      \strng{authorfullhashraw}{6cc4365b17d0c6b0525b773f9bdd5d3b}
       \field{sortinit}{G}
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
       \field{labelnamesource}{author}
@@ -57,7 +59,7 @@
       \field{title}{Modelling and discretization of circuit problems}
       \field{year}{2005}
     \endentry
-    \entry{NumerikGewöhnlicherDifferentialgleichungen}{book}{}
+    \entry{NumerikGewöhnlicherDifferentialgleichungen}{book}{}{}
       \name{author}{1}{}{%
         {{hash=fc4fef8c9ff00f23a193ed01b6c1c2db}{%
            family={Karl\bibnamedelima Strehmel},
@@ -72,10 +74,12 @@
       }
       \strng{namehash}{fc4fef8c9ff00f23a193ed01b6c1c2db}
       \strng{fullhash}{fc4fef8c9ff00f23a193ed01b6c1c2db}
+      \strng{fullhashraw}{fc4fef8c9ff00f23a193ed01b6c1c2db}
       \strng{bibnamehash}{fc4fef8c9ff00f23a193ed01b6c1c2db}
       \strng{authorbibnamehash}{fc4fef8c9ff00f23a193ed01b6c1c2db}
       \strng{authornamehash}{fc4fef8c9ff00f23a193ed01b6c1c2db}
       \strng{authorfullhash}{fc4fef8c9ff00f23a193ed01b6c1c2db}
+      \strng{authorfullhashraw}{fc4fef8c9ff00f23a193ed01b6c1c2db}
       \field{sortinit}{K}
       \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
       \field{labelnamesource}{author}
@@ -86,7 +90,7 @@
       \verb https://doi.org/10.1007/978-3-8348-2263-5
       \endverb
     \endentry
-    \entry{shashkov_tuprints27452}{thesis}{}
+    \entry{shashkov_tuprints27452}{thesis}{}{}
       \name{author}{1}{}{%
         {{hash=f47633e9cc126b2828d27fd7c3a20b16}{%
            family={Shashkov},
@@ -105,10 +109,12 @@
       }
       \strng{namehash}{f47633e9cc126b2828d27fd7c3a20b16}
       \strng{fullhash}{f47633e9cc126b2828d27fd7c3a20b16}
+      \strng{fullhashraw}{f47633e9cc126b2828d27fd7c3a20b16}
       \strng{bibnamehash}{f47633e9cc126b2828d27fd7c3a20b16}
       \strng{authorbibnamehash}{f47633e9cc126b2828d27fd7c3a20b16}
       \strng{authornamehash}{f47633e9cc126b2828d27fd7c3a20b16}
       \strng{authorfullhash}{f47633e9cc126b2828d27fd7c3a20b16}
+      \strng{authorfullhashraw}{f47633e9cc126b2828d27fd7c3a20b16}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
@@ -129,7 +135,7 @@
       \verb http://tuprints.ulb.tu-darmstadt.de/27452/
       \endverb
     \endentry
-    \entry{Tischendorf2005Topological}{book}{}
+    \entry{Tischendorf2005Topological}{book}{}{}
       \name{author}{1}{}{%
         {{hash=f31e597f9ce1e216940725c8d991def9}{%
            family={Tischendorf},
@@ -142,10 +148,12 @@
       }
       \strng{namehash}{f31e597f9ce1e216940725c8d991def9}
       \strng{fullhash}{f31e597f9ce1e216940725c8d991def9}
+      \strng{fullhashraw}{f31e597f9ce1e216940725c8d991def9}
       \strng{bibnamehash}{f31e597f9ce1e216940725c8d991def9}
       \strng{authorbibnamehash}{f31e597f9ce1e216940725c8d991def9}
       \strng{authornamehash}{f31e597f9ce1e216940725c8d991def9}
       \strng{authorfullhash}{f31e597f9ce1e216940725c8d991def9}
+      \strng{authorfullhashraw}{f31e597f9ce1e216940725c8d991def9}
       \field{sortinit}{T}
       \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
       \field{labelnamesource}{author}
