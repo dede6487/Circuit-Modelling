@@ -20,19 +20,20 @@ function y = BDFk(A, B, f, y0, tspan, h,k)
         y(i, 1) = y0(i, 1);
     end
 
-    % BDF-k coefficients
-    BDF1alpha = [1 -1];
-    BDF2alpha = [3 -4 1];
-    BDF3alpha = [11 -18 9 -2];
+    % % BDF-k coefficients
+    % BDF1alpha = [1 -1];
+    % BDF2alpha = [3 -4 1];
+    % BDF3alpha = [11 -18 9 -2];
+    % 
+    % BDFalpha =  {BDF1alpha;
+    %             BDF2alpha;
+    %             BDF3alpha};
+    % 
+    % BDFbeta = [1 2 6 12 60 60];
 
-    BDFalpha =  {BDF1alpha;
-                BDF2alpha;
-                BDF3alpha};
-
-    BDFbeta = [1 2 6 12 60 60];
     %construct initial k values using BDF1 method
     if k ~= 1
-        tempspan = [0+h,h*k];
+        tempspan = [tspan(1),tspan(1)+h*(k-1)]; %yk is already calculated by BDFk method
         y(:,1:k) = BDFk(A, B, f, y0, tempspan, h,1);
     end
      

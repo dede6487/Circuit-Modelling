@@ -18,7 +18,7 @@ f1 = @(t) [0 0 -sin(pi*t)]';
 
 %consistent initial values (as calculated)
 
-y0 = [0 0 0]';
+y0 = [0 0 pi]';
 
 %exact solution u2 = vsrc, u1 = -u2
 % y = [u1, u2, iV]
@@ -84,7 +84,7 @@ plot(x, y_exact(graph,:), 'DisplayName', 'exact solution');
 plot(x, y1_BDF1(graph,:), 'DisplayName', 'BDF1');
 plot(x, y1_BDF2(graph,:), 'DisplayName', 'BDF2');
 plot(x, y1_BDF3(graph,:), 'DisplayName', 'BDF3');
-%plot(x, y1_Trapezoidal(graph,:), 'DisplayName', 'Trapezoidal');
+plot(x, y1_Trapezoidal(graph,:), 'DisplayName', 'Trapezoidal');
 hold off
 
 legend

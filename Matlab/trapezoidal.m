@@ -21,7 +21,7 @@ function y = trapezoidal(A, B, f, y0, tspan, h)
 
     %time-stepping loop for Trapezoidal
     for i = 2:n
-        y(:, i) = (((-h/2)*B+A)*y(:,i-1) + (h/2)*(f(t(i))+f(t(i-1))))' / (A+(h/2)*B);  %solve the implicit equation
+        y(:, i) = ((A-(h/2)*B)*y(:,i-1) + (h/2)*(f(t(i)) + f(t(i-1))))' / (A+(h/2)*B);  %solve the implicit equation
     end
 
 end
