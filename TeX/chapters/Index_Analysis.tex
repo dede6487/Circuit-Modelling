@@ -3,15 +3,15 @@
 %seite 22 kap 7 netw top and dae ind for rlc - modelling and discretization circ prob
 \cite{ModellingAndDiscretizationOfCircuitProblems}
 
-In the previous chapter we have seen two different kinds of Index concepts for differential algebraic equations. We have also seen that these two, even though they describe rather different structural aspects of the equation, are identical for our use-cases. This leads to the question, what indices we expect obtain for our MNA system.
+In the previous chapter we have seen two different kinds of index concepts for differential algebraic equations. We have also seen that these two, even though they describe rather different structural aspects of the equation, are identical for our use-cases. This leads to the question, what indices we expect obtain for our MNA system.
 
-This chapter aims to answer that question for the linear case of circuits only containing of resistors, inductors and capacities as well as current and voltage sources (RLC-circuits). Linear means that the RLC components are described by linear functions with positive capacitances, inductances and resistances. Thus the matrices $C$, $R$, and $L$ are positive definite and symmetric. The generalization of these results to the nonlinear case still relies on positive definiteness.
+This chapter answers this question for the case of linear RLC-circuits. As already discussed in Section \ref{Sec:Electrical Components and their relations}, RLC circuits contain only resistors, inductors and capacities as well as current and voltage sources (RLC-circuits). Linear means that all circuit components are described by linear positive functions. Thus the matrices $C$, $R$, and $L$ are positive definite and symmetric.
 
-Recall that we consider the equations resulting from the analysis above. These equations are of the form \eqref{DAE-const-coeff}:
+Recall that we consider the equations resulting from the analysis in Section \ref{sec:MNA}. These equations are of the form \eqref{DAE-const-coeff}: find $y$ such that
 \begin{displaymath}
 	A y'(t) + B y(t) = f(t).
 \end{displaymath}
-Specifically the obtained equations from section \ref{sec:MNA} are
+In particular we obtain the equation
 \begin{displaymath}
 	\begin{pmatrix}
 		A_C C A_C^\top & 0 & 0 \\
@@ -46,7 +46,7 @@ Specifically the obtained equations from section \ref{sec:MNA} are
 
 \section{General Index analysis}
 
-Assuming the system only contains linear elements, or is linearized at an operating point in order to investigate the system behaviour, then the corresponding network equation represents a DAE with constant coefficients \eqref{DAE-const-coeff}. We denote $x(t)=(u(t), i_L(t), i_V(t))^\top$. The structure of the system is reliant on the matrix $B$, thus we consider two cases
+Assuming the system only contains linear elements, or is linearized at an operating point in order to investigate the system behaviour, then the corresponding network equation represents a DAE with constant coefficients \eqref{DAE-const-coeff}. We collect all unknowns in $x(t)=(u(t), i_L(t), i_V(t))^\top$. The structure of the system is reliant on the matrix $B$, thus we consider two cases.
 
 \paragraph{ODE-case:}
 	The matrix $B$ in \eqref{DAE-const-coeff} is regular. This is the case iff the circuit contains no voltage sources and there are no nodes which have no path to ground via capacitors. Then the system represents a linear-implicit system of ODEs and can be transformed into the explicit ODE sytstem
@@ -59,16 +59,16 @@ Assuming the system only contains linear elements, or is linearized at an operat
 	The matrix $B$  in \eqref{DAE-const-coeff} is singular. This is the interesting case which we will analyse in the following.
 
 
-For the singular matrix $B$ we have already obtained a representation of the form
+For a singular matrix $B$ we have already obtained a representation of the form
 \begin{align*}
 	u'(t) + Ru(t) &= s(t), \\
 	Nv'(t) + v(t) &= q(t)
 \end{align*}
-in the previous section, see \eqref{transformed-DAE-const-coeff}. We now consider the nilpotency index $\nu$ of the matrix $N$, since we already know that this index correlates with the differentiation as well as the perturbation index. We consider two cases:
+in the previous section, see \eqref{transformed-DAE-const-coeff}. We now consider the nilpotency index $\nu$ of the matrix $N$, since we already know that this index correlates with the differentiation index as well as the perturbation index. We consider two cases:
 
 \begin{enumerate}
 	\item \textbf{The nilpotency index is 1} \newline
-		Because $N$ is nilpotent with nipotency index $\nu = 1$ it holds that $N^1 = 0$, thus the system transforms to
+		Because $N$ is nilpotent with nipotency index $\nu = 1$, it holds that $N^1 = 0$, thus the system transforms to
 		\begin{align*}
 			u'(t) + Ru(t) &= s(t), \\
 			v(t) &= q(t).
@@ -76,20 +76,22 @@ in the previous section, see \eqref{transformed-DAE-const-coeff}. We now conside
 		This means that the algebraic variables are given explicitly. Thus the system is in ODE form.
 
 	\item \textbf{The nilpotency index is $\geq$ 2} \newline
-		This case is the situation we have seen in section \ref{chap:Weierstraß-Kronecker Normalform}, it led to \eqref{solution-to-transformed-DAE-const-coeff-part2}
-		\begin{displaymath}
+		This case is the situation we have discussed in section \ref{chap:Weierstraß-Kronecker Normalform}, where we obtained the representation \eqref{solution-to-transformed-DAE-const-coeff-part2}
+		\begin{equation}
+			\label{eq:representation differential variable with nilpotency index}
 			v(t) = \sum_{i=0}^{\nu-1} (-1)^iN^iq^{(i)}(t).
-		\end{displaymath}
+		\end{equation}
 		By differentiating the above equation one more time, we obtain
 		\begin{equation}
+			\label{eq:hidden constraint}
 			v'(t) = \sum_{i=0}^{\nu-1} (-1)^iN^iq^{(i+1)}(t)
 		\end{equation}
 		with the assumption that $q$ is $\nu$ times differentiable.
 \end{enumerate}
 
-We can see that the solution has to fulfill an algebraic constraint. In the case of index $\nu = 1$ this equation is given explicitly, while for index $\nu \geq 2$ it is given implicitly.
+We observe that in both cases the solution $v$ has to fulfill an algebraic constraint. In the case of index $\nu = 1$ this equation is given explicitly, while for index $\nu \geq 2$ it is given implicitly by \eqref{eq:hidden constraint}.
 
-This system is also sensitive to perturbations. Since in the solution formula for $v$ also derivatives of the input $q$ are present. Thus small noise in the input can have arbitrarily large derivatives which can influence the solution.
+This system is also sensitive to perturbations. Note that the solution formula \eqref{eq:representation differential variable with nilpotency index} for $v$ also contains derivatives of the input $q$. Thus small noise in the input can have arbitrarily large derivatives, which can influence the solution.
 
 %This means no severe numerical problems arise from index-1 systems. Implicit numerical integration schemes for stiff systems are feasable. On the other hand severe nunmerical problems may occur in the case that the system has index greater or equal to $2$. The hidden constraints can only be resolved by an unstable differentiation process.
 
@@ -164,14 +166,14 @@ From analyzing the MNA some conditions to the circuit topology can be obtained. 
 		\item If
 		\begin{equation}
 			\label{eq:index condition leq 2}
-			ker([A_R, A_C, A_V, A_L]^\top) = 0 \quad \text{and} \quad ker(A_V) = 0
+			ker([A_R, A_C, A_V, A_L]^\top) = \{0\} \quad \text{and} \quad ker(A_V) = \{0\}
 		\end{equation}
 		holds, then the MNA \eqref{MNA_Matrixform} leads to a system with index $\nu \leq 2$.
 		
 		\item If additionally
 		\begin{equation}
 			\label{eq:index condition leq 1}
-			ker([A_R, A_C, A_V]^\top) = 0 \quad \text{and} \quad ker([A_C, A_V]) = 0
+			ker([A_R, A_C, A_V]^\top) = \{0\} \quad \text{and} \quad ker([A_C, A_V]) = \{0\}
 		\end{equation}
 		holds, then the system is of index $\nu \leq 1$
 		
@@ -184,11 +186,11 @@ From analyzing the MNA some conditions to the circuit topology can be obtained. 
 	\end{itemize}
 \end{theorem}
 
-By $ker(A)$ we denote the nullspace of the matrix $A$ and by $dim(y)$ the size of the vector $y$. The conditions \eqref{eq:index condition leq 2} - \eqref{eq:index condition leq 0} can be interpreted in terms of the circuit topology as follows:
+By $ker(A)$ we denote the nullspace of the matrix $A$ and by $dim(y)$ the size of the vector $y$. The conditions \eqref{eq:index condition leq 2} - \eqref{eq:index condition eq 0} can be interpreted in terms of the circuit topology as follows:
 \begin{itemize}
 	\item Condition \eqref{eq:index condition leq 2} can be interpreted, as the circuit neither containing loops of voltage sources nor cutsets of current sources.
-	\item Condition \eqref{eq:index condition leq 2} can be interpreted, as the circuit containing neither loops of capacitors and/or voltage sources not cutsets of inductors and/or current sources.
-	\item Condition \eqref{eq:index condition leq 2} can be interpreted, as every node in the circuit being connected to the reference node (ground) through a path containing only the capacitors.
+	\item Condition \eqref{eq:index condition leq 1} can be interpreted, as the circuit containing neither loops of capacitors and/or voltage sources not cutsets of inductors and/or current sources.
+	\item Condition \eqref{eq:index condition eq 0} can be interpreted, as every node in the circuit being connected to the reference node (ground) through a path containing only the capacitors.
 \end{itemize}
 
 We will apply those results to some examples: 
@@ -198,7 +200,7 @@ We will apply those results to some examples:
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale = 0.4]{pictures/Example1_simple_p2.png}
-		\caption{charging capacitor with series resistor and voltage source}
+		\caption{charging capacitor with series resistor and voltage source (note the difference to \ref{circuit:charging of capacitor})} 
 	\end{figure}
 	Because this circuit only contains one loop, which has a voltage source as well as a capacitor we expect the resulting MNA-system to be of index $\nu=2$. 
 	
@@ -280,7 +282,7 @@ We will apply those results to some examples:
 		\begin{matrix}
 			1
 		\end{matrix}
-		\right) \neq 0
+		\right) = 0
 		\quad \text{and} \quad
 		ker([A_C, A_V]) = ker
 		\left(
@@ -297,11 +299,11 @@ We will apply those results to some examples:
 	\end{displaymath}
 	Thus it is fulfilled and we obtain index 0.
 	
-	If we have a look at the MNA we can also directly see that this system is of index 0. The MNA has the form
+	If we have consider the MNA we can also directly see that this system is of index 0. The MNA has the form
 	\begin{displaymath}
 		\begin{aligned}
-			C \dot{u}_1 - i_L &= 0, \\
-			L \dot{i}_L + u_1 &= 0
+			C u'_1 - i_L &= 0, \\
+			L u'_L + u_1 &= 0
 		\end{aligned}
 	\end{displaymath}
 	which is an ODE.

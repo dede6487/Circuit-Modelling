@@ -14,18 +14,18 @@ B1 = [1 1 0;
       1 1 -1;
       0 -1 0];
 
-f1 = @(t) [0 0 sin(pi*t)]';
+f1 = @(t) [0 0 -sin(pi*t)]';
 
 %consistent initial values (as calculated)
 
 y0 = [0 0 0]';
 
-%exact solution u1 = u2 = -vsrc
+%exact solution u2 = vsrc, u1 = -u2
 % y = [u1, u2, iV]
 
-y = @(t) [-subsref(f1(t), struct('type', '()', 'subs', {{3}})); %first and second component returns third component of f1
+y = @(t) [subsref(f1(t), struct('type', '()', 'subs', {{3}})); %first and second component returns third component of f1
           -subsref(f1(t), struct('type', '()', 'subs', {{3}}));
-          -pi*cos(pi*t)]; %last component  i_v = -(d/dt)v_src
+          pi*cos(pi*t)]; %last component  i_v = -(d/dt)v_src
 y_exact = zeros(length(y0), length(x));
 y_exact(:,1) = y0;
 
@@ -75,7 +75,7 @@ fprintf('in iV: %f \n', max(abs(diff_Trapezoidal(3,:)),[],"all"))
 %illustration of one of the components at a time, i.e. graph =1,2,3 for u1,
 %u2, iV
 
-graph = 1;
+graph = 3;
 figure
 title('comparison of the solutions of the different methods')
 
@@ -84,7 +84,7 @@ plot(x, y_exact(graph,:), 'DisplayName', 'exact solution');
 plot(x, y1_BDF1(graph,:), 'DisplayName', 'BDF1');
 plot(x, y1_BDF2(graph,:), 'DisplayName', 'BDF2');
 plot(x, y1_BDF3(graph,:), 'DisplayName', 'BDF3');
-plot(x, y1_Trapezoidal(graph,:), 'DisplayName', 'Trapezoidal');
+%plot(x, y1_Trapezoidal(graph,:), 'DisplayName', 'Trapezoidal');
 hold off
 
 legend

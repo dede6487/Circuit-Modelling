@@ -56,8 +56,8 @@ title('comparison of the solutions of the different methods')
 hold on
 plot(x, y_exact(graph,:), 'DisplayName', 'exact solution');
 plot(x, y1_BDF1(graph,:), 'DisplayName', 'BDF1');
-%plot(x, y1_BDF2(graph,:), 'DisplayName', 'BDF2');
-%plot(x, y1_BDF3(graph,:), 'DisplayName', 'BDF3');
+plot(x, y1_BDF2(graph,:), 'DisplayName', 'BDF2');
+plot(x, y1_BDF3(graph,:), 'DisplayName', 'BDF3');
 plot(x, y1_Trapezoidal(graph,:), 'DisplayName', 'Trapezoidal');
 hold off
 

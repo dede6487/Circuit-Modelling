@@ -29,6 +29,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$, see picture. W
 	The first class of numerical methods we will consider are single-step methods. These methods use the previous approximated value $y_j$ and (for implicit methods) also the current approximated value $y_{j+1}$ to determine the current value $y_{j+1}$ through a \emph{procedural function}.
 	
 	\begin{definition}
+		\label{def:single step mehod}
 		A numerical method to approximate a differential equation \ref{general numerical problem} on a time-grid $t_0,...,t_l$ with the intermediate values $y_0,...,y_l$ is called a single-step method if it is of the form
 		\begin{equation}
 			\label{single-step method}
@@ -39,7 +40,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$, see picture. W
 
 	\subsection{Consistency, Stability and Convergence}
 	
-	In order to compare different single-step methods we have to define some notions to compare their quality. This leads to the definition of the error of the mehtod, its consistency and its convergence. We begin with the definition of the error.
+	In order to compare different single-step methods we have to define some notions to compare their quality. This leads to the definition of the error of the method, its consistency and its convergence. We begin with the definition of the error.
 	
 	\begin{definition}\label{Discretization_Error_SingleStep}
 		Let $\tilde{y}_{m+1}$ be the result of one step of a single step method \eqref{single-step method} with the exact start-vector $y_m = y(t_m)$ then
@@ -55,53 +56,53 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$, see picture. W
 	\begin{definition}\label{Consistency_SingleStep}
 		A single-step method is called \emph{consistent} if for all initial value problems \eqref{general numerical problem} 
 		\begin{equation}
-			\lim\limits_{h \to 0} \frac{||\delta(t+h)||}{h} = 0 \quad \text{for} \quad t_0 \leq t \leq t_l
+			\lim\limits_{h \to 0} \frac{\|\delta(t+h)\|}{h} = 0 \quad \text{for} \quad t_0 \leq t \leq t_l
 		\end{equation}
 		holds.\newline
 		It is called \emph{consistent of order p}, if for a sufficiently smooth function $f$
 		\begin{equation}
-			||\delta(t+h)|| \leq Ch^{p+1} \quad \text{for all} \quad h \in \mathopen{(} 0,H \mathclose{]} \quad \text{and} \quad t_0 \leq t \leq t_l - h
+			\|\delta(t+h)\| \leq Ch^{p+1} \quad \text{for all} \quad h \in \mathopen{(} 0,H \mathclose{]} \quad \text{and} \quad t_0 \leq t \leq t_l - h
 		\end{equation}
 		holds with $C$ independent of $h$.
 	\end{definition}
 
-	Consistency aims to give insight in how similar the problem that the numerical methods solves it to the real problem that we want the solution from. Finally we consider the convergence.
+	Consistency aims to give insight in how similar the problem \eqref{single-step method} that the numerical method solves is to the real problem \eqref{general numerical problem}. Finally we consider convergence of a single step method \ref{def:single step mehod}.
 
 	\begin{definition}\label{Convergence_SingleStep}
-		A single-step method is called \emph{convergent}, if for all initial value problems \ref{general numerical problem} for the \emph{global discretization error}
+		A single-step method is called \emph{convergent}, if for all initial value problems \eqref{general numerical problem} for the \emph{global discretization error}
 		\begin{displaymath}
 			e_m = y(t_m)-y_h(t_m)
 		\end{displaymath}
 		holds that
 		\begin{displaymath}
-			\max\limits_{m}||e_m|| \to 0 \quad \text{for} \quad h_{max} \to 0.
+			\max\limits_{m}\|e_m\| \to 0 \quad \text{for} \quad h_{max} \to 0.
 		\end{displaymath}
 		The single-step method is called to have the \emph{convergence order} $p$, if
 		\begin{displaymath}
-			\max\limits_{m} ||e_m|| \leq C h_max^p \quad \text{for} \quad h_{max} \in \mathopen{(} 0,H \mathclose{]} \quad \text{with} \quad t_0 \leq t_m \leq t_l
+			\max\limits_{m} \|e_m\| \leq C h_{max}^p \quad \text{for} \quad h_{max} \in \mathopen{(} 0,H \mathclose{]} \quad \text{with} \quad t_0 \leq t_m \leq t_l
 		\end{displaymath}
 		with the constant $C$ not dependent on the step size $h$.
 	\end{definition}
 
-	As the name suggestes convergence tries to quantify how far off a numerical solution is from the real solution of a system. A very interesting result follows if we also require the Single-Step Method to be stable.
+	As the name suggestes convergence tries to quantify how far off a numerical solution is from the real solution of a system. A very interesting result follows if we additionally require the single-step method to be stable.
 	
 	\begin{definition}\label{Discrete_Stability_SingleStep - lecture notes for numpdgl}
-		A Single-Step Method is called \emph{(discretely) stable} if for grid-functions $y_h$ and $\tilde{y}_h$ with
+		A single-step method is called \emph{(discretely) stable} if for grid-functions $y_h$ and $\tilde{y}_h$ with
 		\begin{align}
 			y_{i+1} &= y_i + h \phi(t_i, y_i), \\
 			\tilde{y}_{i+1} &=  \tilde{y}_i + h [\phi(t_i, \tilde{y}_i) + \theta_i],
 		\end{align}
-		and perturbations $\theta_i = \theta_h(t_i)$ of the right side as well as a bounded perturbation in the staring-values $y_0 - \tilde{y}_0$ the Error is bounded by
+		and perturbations $\theta_i = \theta_h(t_i)$ of the right side as well as a bounded perturbation in the initial-values $y_0 - \tilde{y}_0$ the error is bounded by
 		\begin{displaymath}
-			||y_h - \tilde{y}_h||_{\infty,h} \leq C (||y_0 - \tilde{y}_0||_{l^2} + ||\theta_h||_{\infty,h}
+			\|y_h - \tilde{y}_h\|_{\infty,h} \leq C (\|y_0 - \tilde{y}_0\|_{l^2} + \|\theta_h\|_{\infty,h})
 		\end{displaymath}
 		with a constant $C$ which is not dependent on $h$.
 	\end{definition}
 	
-	For Single-Step Methods which are consistent and stable we obtain the following convergence theorem.
+	For single-step methods which are consistent and stable we obtain the following convergence theorem.
 	
 	\begin{theorem}[Lax-Richtmyer]\label{Lax-Richtmyer}
-		A consistent (with order $p$) and discretely stable Single-Step Method is convergent (with order $p$). (assuming smootheness of the solution $y$)
+		A consistent (with order $p$) and discretely stable single-step method is convergent (with order $p$). (assuming smootheness of the solution $y$)
 	\end{theorem}
 	
 	This theorem is due to Lax and Richtmyer. The converse of this statement is also true. 
@@ -128,7 +129,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$, see picture. W
 				\begin{equation}
 					S := \{z \in \mathbb{C} : |R(z)| \leq 1\}
 				\end{equation}
-				is called the region of stability of the method.
+				is called the \emph{region of stability} of the method.
 				\item 
 				A single-step method is called
 				\begin{itemize}
@@ -201,9 +202,10 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$, see picture. W
 			
 \section{Multistep-Methods}
 	based on chapter 4 of book num gew dgl steif nichtsteif \newline
-	Linear multistep methods (LMSV) use approximations $u_{m+l}$ along the gridpoints $t_{m+l}, \quad l=0,1,...,k-1$ to calculate the new approximation $u_{m+k}$ at $t_{m+k}$. We will first discuss topics related to the order of the methods depending on its parameters, stability and convergence.
+	Linear multistep methods (LMSM) use approximations $u_{m+l}$ along the gridpoints $t_{m+l}, \quad l=0,1,...,k-1$ to calculate the new approximation $u_{m+k}$ at $t_{m+k}$. We will first discuss topics related to the order of the methods depending on its parameters, stability and convergence.
 	
 	\begin{definition}
+		\label{def:multi step method}
 		For given $\alpha_0, ..., \alpha_k$ and $\beta_0, ..., \beta_k$ the iteration rule
 		\begin{equation}
 			\label{linear-multistep-method}
@@ -214,12 +216,12 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$, see picture. W
 	
 	A linear multi-step method consists of two parts:
 	\begin{enumerate}
-		\item In the \emph{starting-phase} approximations $u_1,...,u_{k-1}$ for the first $k-1$ gridpoints $t_l = t_0+th, l=1,...,k-1$ are calculated using a single-step method. For example using an explicit Runge-Kutta Method or a multi-step method with fewer steps.
+		\item In the \emph{starting-phase} approximations $u_1,...,u_{k-1}$ for the first $k-1$ gridpoints $t_l = t_0+th, l=1,...,k-1$ have to be calculated. For example we can use aa single-step method or a multi-step method with fewer steps.
 		
 		\item  In the \emph{run-phase} the multi-step formula is used to determine new approximations $u_{m+k}$ for the gridpoint $t_{m+k}$
 	\end{enumerate}
 	
-	For theoretical analysis of the multi-step methods we consider the generating polynomials
+	For theoretical analysis of the multi-step methods we consider the generating polynomials of a multi-step method \ref{def:multi step method}.
 	\begin{equation}
 		\label{eq:generating polynomials multistep method}
 		\rho(x) := \sum_{l=0}^{k} \alpha_l x^l
@@ -233,7 +235,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$, see picture. W
 	
 	Again we need to define the properties consistency, stability and convergence for this method.
 	\begin{definition}
-		Let $\tilde{y}_{m+k}$ be the result of one step of the multi-step method \ref{linear-multistep-method} with the start-values given as the exact results of the solution $y_{m+l} = y(t_m+l)$, $0 \leq l < k$. This means
+		Let $\tilde{y}_{m+k}$ be the result of one step of the multi-step method \eqref{linear-multistep-method} with the start-values given as the exact results of the solution $y_{m+l} = y(t_m+l)$, $0 \leq l < k$. This means
 		\begin{displaymath}
 			\alpha_k \tilde{u}_{m+k} = \sum_{l=0}^{k-1} \left( h \beta_l f(t_{m+l}, y(t_{m+l})) - \alpha_l y(t_{m+l}) \right) + h \beta_k f(t_{m+k}, \tilde{u}_{m+k}) .
 		\end{displaymath}
@@ -241,7 +243,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$, see picture. W
 		\begin{displaymath}
 			\delta_{m+k} = \delta(t_{m+k}) = y(t_{m+k}) - \tilde{u}_{m+k}, \quad m=0,1,...,N-k
 		\end{displaymath}
-		is called the \emph{local discretization error} (local error) of the linear multi-step method \ref{linear-multistep-method} at the point $t_{m+k}$.
+		is called the \emph{local discretization error} (local error) of the linear multi-step method, see Def. \ref{linear-multistep-method} at the point $t_{m+k}$.
 	\end{definition}
 	
 	For $k=1$ this definition agrees with the definition of the local discretization error for single-step methods \ref{Discretization_Error_SingleStep}.
@@ -258,7 +260,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$, see picture. W
 %		\end{displaymath}
 %		holds. 
 %		It is called 
-		\emph{consistent}, if for all functions $y(t) \in C^2[t_0,t_l]$
+		\emph{consistent}, if for all functions $y(t) \in C^2([t_0,t_l])$
 		\begin{displaymath}
 			\lim\limits_{h \to 0} \frac{1}{h} L[y(t),h] = 0
 		\end{displaymath}
@@ -276,8 +278,8 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$, see picture. W
 
 	Next we also need convergence of such methods.
 	
-	\begin{definition} \label{def: LMSV convergence}
-		We say that a linear multi-step method is convergent if for a solution $y$ of the problem a solution vector created by an LMSV $y_j$ for $j \in {0,...,k}$ we have that
+	\begin{definition} \label{def: LMSM convergence}
+		We say that a linear multi-step method is convergent if for a solution $y$ of the problem a solution vector created by an LMSM $y_j$ for $j \in {0,...,k}$ we have that
 		\begin{displaymath}
 			\lim\limits_{h \to \infty} \max_{0 \leq j \leq k} ||y(t_j) - y_j|| = 0.
 		\end{displaymath}
@@ -360,21 +362,21 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$, see picture. W
 			\begin{itemize}
 				\item \emph{0-stable}, if $0 \in S$.
 				\item stable in the point $z \in \mathbb{C}$, if Wurzelbedingung erfüllt bei z, aber doch eigentlich z in S oder?
-				\item \emph{$A(\alpha)$-stable}, if it is stable in all $z$ that lie within the set $\{z \in \mathbb{C}^- : |arg(z)-\pi| \leq \alpha\}$ for $\alpha \in (0, \frac{\pi}{2})$.
-				 \begin{figure}[H]
-				 	\centering
-				 	\includegraphics[width=0.3\linewidth]{screenshot021}
-				 	\caption{$A(\alpha)$ stability for $\alpha = \frac{\pi}{4}$}
-				 	\label{fig:screenshot021}
-				 \end{figure}
-				 
+				\item \emph{$A(\alpha)$-stable}, if it is stable in all $z$ that lie within the set $\{z \in \mathbb{C}^- : |arg(z)-\pi| \leq \alpha\}$ for $\alpha \in (0, \frac{\pi}{2})$.		 
 			\end{itemize}
 		\end{enumerate}
 	\end{definition}
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\linewidth]{screenshot021}
+		\caption{$A(\alpha)$ stability for $\alpha = \frac{\pi}{4}$}
+		\label{fig:screenshot021}
+	\end{figure}
+	
 
 \section{Implicit linear multi-step formulas}
-These kinds of multi-step methods are conventionally used to numerically solve the systems obtained using modified nodal analysis. Our assumption that we only consider network equations arising from networks consisting of RLC components as well as controlled sources which keep the index between 1 and 2 still holds.
+These kinds of multi-step methods are commonly used to numerically solve the systems obtained using modified nodal analysis. Our assumption that we only consider network equations arising from networks consisting of RLC components as well as controlled sources which keep the index between 1 and 2 still holds.
 
 We consider the equations in charge/flux oriented formulation introduced in section \ref{sec:charge flux oriented formulation}
 \begin{align*}
@@ -417,11 +419,11 @@ or simply
 \end{align*}
 with the unknowns $x:=(u, i_L, i_V)^\top$.
 
-The conventional approach to solve those systems numerically can be split into three main steps:
+The approach to solve those systems numerically can be split into three main steps:
 \begin{enumerate}
 	\item Computation of consistent initial values
 	
-	The first step is to compute consistant inital values $(x_0, y_0)$ at the initial time point $t_0$. In the index-1 case this can be done by solving a so called steady state problem. Steady state means that we consider a not time-dependent circuit (DC operating point). This means we have to solve
+	The first step is to compute consistent inital values $(x_0, y_0)$ at the initial time point $t_0$. In the index-1 case this can be done by solving a so called steady state problem. Steady state means that we consider a time-independent circuit (DC operating point). This means we have to solve
 	\begin{displaymath}
 		F(0,x_0,t_0) = 0
 	\end{displaymath}
@@ -430,7 +432,7 @@ The conventional approach to solve those systems numerically can be split into t
 	
 	\item Numerical integration based on multi-step schemes
 	
-	Using the consistent initial values we obtain solutions of the network equations at discrete timepoints $t_1, t_2, ...$ by integration with linear multi-step methods.
+	Using the consistent initial values, we obtain solutions of the network equations at discrete timepoints $t_1, t_2, ...$ by integration with linear multi-step methods.
 	
 	\item Transformation of the DAE into a nonlinear system of equations. 
 	
@@ -450,28 +452,28 @@ In the following two subchapters we will give a short overview over the two most
 	
 	The most commonly used numerical methods for solving the systems that arise in electrical circuits are the BDF-scheme and the trapezoidal rule. 
 	
-	We will not give a deeper look into their construction but will only state their properties. BDF schemes are appealing because they save function evaluation as much as possible, since this is very costly in circuit simulation.
+	We will not give a deeper look into their construction but will only state their properties. BDF schemes are appealing because they save function evaluations as much as possible, since this is very costly in circuit simulation.
 	
 	The \emph{backward differentiation formula (BDF)} is a family of implicit linear multistep methods. They have the general form
 	\begin{equation}
 		\sum_{k=0}^{s} \alpha_k y_{n+k} = h \beta f(t_{n+s}, y_{n+s})
 	\end{equation}
 
-	Since we are interested in the unknown $y_{n+s}$ which is used to evaluate $f$, this method is implicit. The coefficients $\alpha_k$ and $\beta$ are chosen, such that the method achieves order $s$ which is the best possible.
+	Since we are interested in the unknown $y_{n+s}$ which is used to evaluate $f$, this method is implicit. The coefficients $\alpha_k$ and $\beta$ are chosen, such that the method achieves the best possible order $s$.
 	
 	The BDF or BDF-k formulas for $k=1,...,3$ have the following form %or till 6
 	\begin{align*}
 		k = 1 &: h f_{m+1} = u_{m+1} - u_m \\
-		k = 2 &: h f_{m+2} = \frac{1}{2} (3 u_{m+2} - 4 iu_{m+1} + u_m) \\
+		k = 2 &: h f_{m+2} = \frac{1}{2} (3 u_{m+2} - 4 u_{m+1} + u_m) \\
 		k = 3 &: h f_{m+3} = \frac{1}{6} (11 u_{m+3} - 18 u_{m+2} + 9 u_{m+1} - 2 u_m) %\\
 %		k = 4 &: h f_{m+4} = \frac{1}{12} (25 u_{m+4} - 48 u_{m+3} + 36 u_{m+2} - 16 u_{m+1} + 3 u_m) \\
 %		k = 5 &: h f_{m+5} = \frac{1}{260} (137 u_{m+5} - 300 u_{m+4} + 300 u_{m+3} - 200 u_{m+2} +75 u_{m+1} -12 u_m) \\
 %		k = 6 &: h f_{m+6} = \frac{1}{60} (147 u_{m+6} - 360 u_{m+5} + 450 u_{m+4} - 400 u_{m+3} + 225 u_{m+2} - 72 u_{m+1} + 10 u_m)
 	\end{align*}
 	
-	Methods with $s > 6$ are not zero-stable. Indeed in reality methods with order greater than 3 are rarely used because of their low smoothness properties.
+	Methods with $s > 6$ are not zero-stable. Indeed in practice, methods with order greater than 3 are rarely used because of their low smoothness properties.
 	
-	BDF schemes have consistency order $p = k$. They are methods for solving stiff equations, thus their stability is indicated by their region of absolute stability. Unfortunately not all BDF-schemes are A stable, but their stability region still contains a large part of the complex left half-plane (see figure \ref{fig:screenshot020} They are the most efficient linear multistep methods of this kind.
+	BDF schemes have consistency order $p = k$. They are methods for solving stiff equations, thus their stability is indicated by their region of absolute stability. Unfortunately not all BDF-schemes are A-stable, but their stability region still contains a large part of the complex left half-plane, see Figure \ref{fig:screenshot020} They are the most efficient linear multistep methods of this kind.
 	
 	\begin{figure}[H]
 		\centering
@@ -485,14 +487,14 @@ In the following two subchapters we will give a short overview over the two most
 	
 \subsection{trapezoidal rule}
 
-	The trapezoidal rule is a natural alternative to BDF2 since it is A-stable and as a linear multistep method of order 2 the one with the smallest leading error coefficient. (\cite{ModellingAndDiscretizationOfCircuitProblems})
+	The trapezoidal rule is a natural alternative to BDF2 since it is A-stable and a linear multistep method of order 2 the one with the smallest leading error coefficient. (\cite{ModellingAndDiscretizationOfCircuitProblems})
 	
 	It works by approximating the region under the graph of the function $f(x)$ as a trapezoid, hence the name. It follows that	
 	\begin{displaymath}
 		\int_{a}^{b} f(x) dx \approx (b-a)\frac{1}{2} (f(a)+f(b))
 	\end{displaymath}
 	
-	This procedure is repeated for small subsections of the Intervall $[a,b]$. Thus we obtain the iteration formula
+	This procedure is repeated for small subsections of the intervall $[a,b]$. Thus we obtain the iteration formula
 	\begin{displaymath}
 		u_h (t+h) = u_h(t) +\frac{h}{2}[f(t,u_h(t)) + f(t+h, u_h(t+h))].
 	\end{displaymath}
