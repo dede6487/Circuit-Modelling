@@ -131,7 +131,7 @@ To fully fix all the variables that arise in the model of an electrical circuit 
 
 \section{Electrical Components and their relations}
 \label{Sec:Electrical Components and their relations}
-Electrical components are described by equations relating their edge voltage $v$ to their edge current $i$. We will mainly focus on so-called RLC-networks (short for Resistor, Inductor, Capacitor), which consist of resistors, capacitors, inductors, voltage sources and current sources. Diodes and transistors as well as other electrical components can be described in a similar way, although these lead to a more difficult analysis of the system, see e.g. \textbf{refer to suited literature!!!!!!!!!!!!}. Using the notation introduced in Section \ref{Sec:Network Topology}, the relations read as:
+Electrical components are described by equations relating their edge voltage $v$ to their edge current $i$. We will mainly focus on so-called RLC-networks (short for Resistor, Inductor, Capacitor), which consist of resistors, capacitors, inductors, voltage sources and current sources. Diodes and transistors as well as other electrical components can be described in a similar way, although these lead to a more difficult analysis of the system, see e.g. \cite{ModellingAndDiscretizationOfCircuitProblems} and \cite{SchwarzTischendorfCircuitMNA}. Using the notation introduced in Section \ref{Sec:Network Topology}, the relations read as:
 \begin{itemize}
 	\item \textbf{Resistor} \newline
 	Resistors ''resist`` the flow of current, which causes voltage to drop. This behaviour is described by the \emph{resistance} $R \in \mathbb{R}^+ := \{x \in \mathbb{R}: x > 0\}$ which is given in \emph{Ohm} ($\Omega$) and its reciprocal, the \emph{conductance} $G \in \mathbb{R}^+$, which is given in \emph{Siemens} ($S=\frac{1}{\Omega}$). 
@@ -217,7 +217,7 @@ To analyse the network further we will rearrange the columns of the reduced inci
 \end{displaymath}
 where $A_R$, $A_C$, $A_L$, $A_V$ and $A_I$ include the columns that are related to the resistors, capacitors, coils, voltage sources and current sources, respectively.
 
-To mathematically describe the circuit we will use \emph{modified nodal analysis} (or short MNA), first introducced in \textbf{reference original paper!!!!!!!!!!!!!!!!!!!}. MNA uses the node voltages as well as the currents of the coils and the voltage sources as unknowns. It is based on the conservation laws \eqref{KCL} and \eqref{KVL} as well as on the voltage-current relations of the electrical components, discussed in Section \ref{Sec:Electrical Components and their relation}. The voltages can be represented using the node-potentials
+To mathematically describe the circuit we will use \emph{modified nodal analysis} (or short MNA), first introducced in \textbf{reference original paper!!!!!!!!!!!!!!!!!!!, maybe this? https://ieeexplore.ieee.org/document/1084079}. MNA uses the node voltages as well as the currents of the coils and the voltage sources as unknowns. It is based on the conservation laws \eqref{KCL} and \eqref{KVL} as well as on the voltage-current relations of the electrical components, discussed in Section \ref{Sec:Electrical Components and their relation}. The voltages can be represented using the node-potentials
 \begin{displaymath}
 	v = A^\top u
 \end{displaymath}
