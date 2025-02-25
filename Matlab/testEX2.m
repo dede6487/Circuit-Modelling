@@ -9,7 +9,7 @@ x = 0:h:tspan(2);
 A1 = [1 0
       0 1];
 
-B1 = [0 1;
+B1 = [0 1
       -1 0];
 
 f1 = @(t) [0 0]';
@@ -27,7 +27,7 @@ y_exact = zeros(length(y0), length(x));
 y_exact(:,1) = y0;
 
 for i=2:length(x)
-    y_exact(:,i) = y(i*h);
+    y_exact(:,i) = y((i-1)*h);
 end
 
 %BDF1
@@ -49,7 +49,7 @@ y1_Trapezoidal = trapezoidal(A1, B1, f1, y0, tspan, h);
 %illustration of one of the components at a time, i.e. graph =1,2 for u1,
 %iL
 
-graph = 2;
+graph = 1;
 figure
 title('comparison of the solutions of the different methods')
 
@@ -58,7 +58,7 @@ plot(x, y_exact(graph,:), 'DisplayName', 'exact solution');
 plot(x, y1_BDF1(graph,:), 'DisplayName', 'BDF1');
 plot(x, y1_BDF2(graph,:), 'DisplayName', 'BDF2');
 plot(x, y1_BDF3(graph,:), 'DisplayName', 'BDF3');
-%plot(x, y1_Trapezoidal(graph,:), 'DisplayName', 'Trapezoidal');
+plot(x, y1_Trapezoidal(graph,:), 'DisplayName', 'Trapezoidal');
 hold off
 
 legend

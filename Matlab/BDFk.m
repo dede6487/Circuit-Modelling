@@ -1,4 +1,4 @@
-function y = BDFk(A, B, f, y0, tspan, h,k)
+function y = BDFk(A, B, f, y0, tspan, h,k, yexact)
 % BDF-k method for solving Ay' + By = f or Ay' = f - By or Ay' + By - f = 0
     % A: Matrix
     % B: Matrix
@@ -34,20 +34,24 @@ function y = BDFk(A, B, f, y0, tspan, h,k)
     %construct initial k values using BDF1 method
     if k ~= 1
         tempspan = [tspan(1),tspan(1)+h*(k-1)]; %yk is already calculated by BDFk method
-        y(:,1:k) = BDFk(A, B, f, y0, tempspan, h,1);
+        if nargin == 8
+            y(:,1:k) = yexact(tspan(1):h:tspan(1) + h*(k-1));
+        else
+            y(:,1:k) = BDFk(A, B, f, y0, tempspan, h,k-1);
+        end
     end
      
     if k == 1 %for k=1 we just implicit euler
         for i = k+1:n
-            y(:,i) = (A*y(:,i-1) + h*f(t(i)))'/(A+h*B);
+            y(:,i) = (A+h*B) \ (A*y(:,i-1) + h*f(t(i)));
         end
     elseif k == 2
         for i = k+1:n
-            y(:,i) = (-A*y(:,i-2) + 4*A*y(:,i-1) + 2*h*f(t(i)))'/(3*A+2*h*B);
+            y(:,i) = (3*A+2*h*B) \ (-A*y(:,i-2) + 4*A*y(:,i-1) + 2*h*f(t(i)));
         end
     elseif k == 3
         for i = k+1:n
-            y(:,i) = (18*A*y(:,i-1) - 9*A*y(:,i-2) + 2*A*y(:,i-3) + 6*h*f(t(i)))'/(11*A+6*h*B);
+            y(:,i) = (11*A+6*h*B) \ (18*A*y(:,i-1) - 9*A*y(:,i-2) + 2*A*y(:,i-3) + 6*h*f(t(i)));
         end
     % else %implemented the methods explicitly cause there was an issue with some code below
     %     % Time-stepping loop for BDF-k
