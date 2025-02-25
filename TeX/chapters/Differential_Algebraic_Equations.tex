@@ -79,7 +79,7 @@ To determine the solvability of a linear system with constant coefficients \eqre
 \end{theorem}
 
 The matrix $J$ is called Jordan Normalform of $Q$, the matrices $J_i$ are called Jordan Blocks, where $\lambda_i$ are corresponding the eigenvalues of $Q$. The matrix $J$ is uniquely determined by $Q$ except for the arrangement of the diagonal blocks. If $Q$ posesses only real eigenvalues, then $T$ can also be choosen from the reals. \newline
-A transformation from $A$ and $B$ in \ref{DAE-const-coeff} enables a seperation into differential and algebraic variables.	
+In order to seperate the equation \eqref{DAE-const-coeff} into an algebraic and a differential part, we transform the matrices $A$ and $B$ according to the following theorem.
 %aus buch seite 401
 \begin{theorem}[\protect{\cite[Satz~13.2.2]{NumerikGewöhnlicherDifferentialgleichungen}}]
 	\label{Kronecker-Normalform}
@@ -256,21 +256,20 @@ Setting
 		s(t) \\
 		q(t)
 	\end{matrix}
-	\right)
-	\quad \text{with} \quad
-	u(t),s(t) : \mathbb{R} \to \mathbb{R}^d ,
+	\right),
 \end{displaymath}
+with $u(t),s(t) : \mathbb{R} \to \mathbb{R}^d$ and $q(t),v(t) : \mathbb{R} \to \mathbb{R}^{n-d}$.
 
-we get a system of the form
+We get a system of the form
 \begin{equation}
 	\label{transformed-DAE-const-coeff}
 	\begin{aligned}
 		u'(t) + Ru(t) &= s(t), \\
-		Nv'(t) + v(t) &= q(t).
+		Nv'(t) + v(t) &= q(t),
 	\end{aligned}
 \end{equation}
 
-Where $PAQ = 
+where $PAQ = 
 \left( 
 \begin{matrix}
 	I & \\
@@ -328,11 +327,11 @@ We can also give a general definition of a DAE in Weierstraß-Kronecker normalfo
 
 \begin{lemma}
 	\label{Lemma:indipendence of Kronecker index}
-	The Kronecker-Index $ind\{A,B\}$ is independant of the choice of the matrices $P$ and $Q$.
+	The Kronecker-Index $ind\{A,B\}$ is independent of the choice of the matrices $P$ and $Q$.
 \end{lemma}
 
 \begin{proof}
-	See ... in \protect{\cite[\pno403]{NumerikGewöhnlicherDifferentialgleichungen}}.
+	See Lemma 13.2.1 in \protect{\cite[\pno403]{NumerikGewöhnlicherDifferentialgleichungen}}.
 \end{proof}
 
 %\begin{figure}
@@ -384,17 +383,22 @@ In the previous chapter we have already discussed, that for a DAE with constant 
 \begin{definition}[perturbation index \protect{\cite[Definition~13.3.3]{NumerikGewöhnlicherDifferentialgleichungen}}]
 	Let $y(t)$ be the exact solution of \eqref{Abstract_DAE} and $\tilde{y}(t)$ be the solution of the perturbed system $F(t, \tilde{y}, \tilde{y}') = \delta(t)$. The smallest number $k \in \mathbb{N}$ such that 
 	\begin{displaymath}
-		||y(t)-\tilde{y}(t)|| \leq C \left(||y(t_0)-\tilde{y}(t_0)||+\sum_{j=0}^{k}\max_{t_0 \leq \xi \leq T} \left\rVert 		\int_{t_0}^{\xi}\diff[j]{\delta}{\tau}(\tau)d \tau \right\rVert \right)
+		\|y(t)-\tilde{y}(t)\| \leq C \left(\|y(t_0)-\tilde{y}(t_0)\|+\sum_{j=0}^{k}\max_{t_0 \leq \xi \leq T} \left\rVert 		\int_{t_0}^{\xi}\diff[j]{\delta}{\tau}(\tau)d \tau \right\rVert \right)
 	\end{displaymath}
 	for all $\tilde{y}(t)$, is called the \textbf{perturbation index} of this system.
 \end{definition}	
 
-In the case of linear DAEs with constant coefficients and a regular matrix pencil $\{A,B\}$, we can transform the DAE
+Considering the case of a perturbed linear DAE with constant coefficients and a regular matrix pencil $\{A,B\}$
+\begin{displaymath}
+	A \tilde{y}'(t) + B \tilde{y}(t) = -\delta(t).
+\end{displaymath}
+
+Then for the difference of the unperturbed system with the perturbed system we obtain
 \begin{displaymath}
 	A(y'(t)-\tilde{y}'(t)) + B(y'(t)-\tilde{y}(t)) = \delta(t)
 \end{displaymath}
 
-into% (\textbf{how?} - bemerkung 13.3.5
+Due to \ref{Kronecker-Normalform} we can transform this system into a system of the form \eqref{transformed-DAE-const-coeff} % (\textbf{how?} - bemerkung 13.3.5
 \begin{align*}
 	u'(t) - \tilde{u}'(t) + \hat{R} (u(t) - \tilde{u}(t) ) &= \delta_1(t), \\
 	N(v'(t) - \tilde{v}'(t)) &= \delta_2(t).

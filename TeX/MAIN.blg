@@ -1,17 +1,13 @@
-[0] Config.pm:308> INFO - This is Biber 2.20
-[0] Config.pm:311> INFO - Logfile is 'MAIN.blg'
-[147] biber-MSWIN64:340> INFO - === 
-[194] Biber.pm:420> INFO - Reading 'MAIN.bcf'
-[338] Biber.pm:994> INFO - Found 4 citekeys in bib section 0
-[359] Biber.pm:4463> INFO - Processing section 0
-[375] Biber.pm:4654> INFO - Looking for bibtex file 'literature.bib' for section 0
-[443] bibtex.pm:1713> INFO - LaTeX decoding ...
-[460] bibtex.pm:1519> INFO - Found BibTeX data source 'literature.bib'
-[541] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[542] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[542] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[542] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[552] bbl.pm:676> INFO - Writing 'MAIN.bbl' with encoding 'UTF-8'
-[555] bbl.pm:779> INFO - Output to MAIN.bbl
-[555] Biber.pm:131> WARN - legacy month field 'Juni' in entry 'shashkov_tuprints27452' is not an integer - this will probably not sort properly.
-[555] Biber.pm:133> INFO - WARNINGS: 1
+[2] Config.pm:308> INFO - This is Biber 2.20
+[3] Config.pm:311> INFO - Logfile is 'MAIN.blg'
+[984] biber-MSWIN64:340> INFO - === 
+[1183] Biber.pm:420> INFO - Reading 'MAIN.bcf'[[2275] Biber.pm:994> INFO - Found 5 citekeys in bib section 0[[2425] Biber.pm:4463> INFO - Processing section 0
+[2563] Biber.pm:4654> INFO - Looking for bibtex file 'literature.bib' for section 0[[2840] bibtex.pm:1713> INFO - LaTeX decoding ...
+[2978] bibtex.pm:1519> INFO - Found BibTeX data source 'literature.bib'[[3515] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[3516] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[3516] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[3516] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[3578] bbl.pm:676> INFO - Writing 'MAIN.bbl' with encoding 'UTF-8'
+[3593] bbl.pm:779> INFO - Output to MAIN.bbl
+[3594] Biber.pm:131> WARN - legacy month field 'Juni' in entry 'shashkov_tuprints27452' is not an integer - this will probably not sort properly.
+[3594] Biber.pm:133> INFO - WARNINGS: 1

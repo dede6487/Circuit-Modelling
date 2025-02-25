@@ -19,6 +19,52 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
+    \entry{SchwarzTischendorfCircuitMNA}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=767373cca0ba1dced1d86ab7ae4295c2}{%
+           family={Estévez\bibnamedelima Schwarz},
+           familyi={E\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=104a70cc101766dc0555b20926ee5010}{%
+           family={Tischendorf},
+           familyi={T\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{97f4a9a9f38f334ed75ac17d36b6b7e6}
+      \strng{fullhash}{97f4a9a9f38f334ed75ac17d36b6b7e6}
+      \strng{fullhashraw}{97f4a9a9f38f334ed75ac17d36b6b7e6}
+      \strng{bibnamehash}{97f4a9a9f38f334ed75ac17d36b6b7e6}
+      \strng{authorbibnamehash}{97f4a9a9f38f334ed75ac17d36b6b7e6}
+      \strng{authornamehash}{97f4a9a9f38f334ed75ac17d36b6b7e6}
+      \strng{authorfullhash}{97f4a9a9f38f334ed75ac17d36b6b7e6}
+      \strng{authorfullhashraw}{97f4a9a9f38f334ed75ac17d36b6b7e6}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Circuit Theory and Applications}
+      \field{number}{2}
+      \field{title}{Structural analysis of electric circuits and consequences for MNA}
+      \field{volume}{28}
+      \field{year}{2000}
+      \field{pages}{131\bibrangedash 162}
+      \range{pages}{32}
+      \verb{doi}
+      \verb https://doi.org/10.1002/(SICI)1097-007X(200003/04)28:2<131::AID-CTA100>3.0.CO;2-W
+      \endverb
+      \verb{eprint}
+      \verb https://onlinelibrary.wiley.com/doi/pdf/10.1002/%28SICI%291097-007X%28200003/04%2928%3A2%3C131%3A%3AAID-CTA100%3E3.0.CO%3B2-W
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/%28SICI%291097-007X%28200003/04%2928%3A2%3C131%3A%3AAID-CTA100%3E3.0.CO%3B2-W
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/%28SICI%291097-007X%28200003/04%2928%3A2%3C131%3A%3AAID-CTA100%3E3.0.CO%3B2-W
+      \endverb
+      \keyw{circuit simulation,differential-algebraic equation,DAE,index,modified nodal analysis,MNA,structural properties,modelling,state-space form,state-variable approach,normal form,consistent initial values,topological criteria}
+    \endentry
     \entry{ModellingAndDiscretizationOfCircuitProblems}{book}{}{}
       \name{author}{3}{}{%
         {{hash=8b3a5d76aa159898985a14f33b458c28}{%

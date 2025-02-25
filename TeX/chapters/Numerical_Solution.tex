@@ -1,23 +1,25 @@
 \chapter{Numerical Solutions}
-As we are usually interested in finding real (or complex) valued solutions of our systems we also have to look into solving them numerically. This chapter focuses on the numerical solution of the mentioned systems.
+As we are interested in finding real valued solutions of our systems we also have to look into solving them numerically. This chapter focuses on the numerical solution of the mentioned systems.
 
-We will first focus on methods used to solve a more general problem
+We will first focus on methods used to solve a more general initial value problem of the form:
+
+Find y, such that
 \begin{align}
 	\label{general numerical problem}
 	y'(t) &= f(t,y), \quad t \in [t_0, t_l], \\
 	y(t_0) &= y_0.
 \end{align}
 
+For this we presume that the function $f(t,y)$ is continuous and Lipschitz, we can apply the theorem of \emph{Picard-Lindelöf} \protecting{\cite[Satz~1.2.1]{NumerikGewöhnlicherDifferentialgleichungen}}, which states, that for every initial value $y_0$, the initial value problem \eqref{general numerical problem} is uniquely solvable in $[t_0, t_l]$.
 
-For this we presume that the function $f(t,y)$ is continuous and Lipschitz, thus \emph{Picard-Lindelöf} \protecting{\cite[Satz~1.2.1]{NumerikGewöhnlicherDifferentialgleichungen}} gives us, that for every $y_0$ it is uniquely solvable in $[t_0, t_l]$.
-
-Numerical Methods work by discretization, this means we divide the time-intervall $[t_0, t_l]$ into
+In order to obtain an approximation to this unique solution we have to discretize. We first divide the time-intervall $[t_0, t_l]$ into
 \begin{displaymath}
 	t_0 < t_1 < ... < t_N \leq t_l
 \end{displaymath}
 
-and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$, see picture. We call this a \emph{time-grid} and we call the difference $h_ij = t_j - t_i$ with $0 \leq i < j \leq N$ the step size from $t_i$ to $t_j$. We Will only consider equidistant grids, which means that this step size does not differ, thus we simply denote it by $h$.
+and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$, see \ref{fig:numerical approximation}. We call this a \emph{time-grid} and we call the difference $h_{ij} = t_j - t_i$ with $0 \leq i < j \leq N$ the \emph{step size} from $t_i$ to $t_j$. We will only consider equidistant grids, i.e. $h_{ij} = h$ for all $0 \leq i,j \leq N$. A function defined on such a grid is called a \emph{grid-function}.
 
+The grid function $y_h : T \to A$ with the time-grid $T={t_0, ..., t_N}$ and the approximated values $A = {y_0, ..., y_N}$ is called the \emph{numerical approximation} (of $y$ on the time grid).
 \begin{figure}[H]
 	\label{fig:numerical approximation}
 	\centering
@@ -71,7 +73,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$, see picture. W
 	\begin{definition}\label{Convergence_SingleStep}
 		A single-step method is called \emph{convergent}, if for all initial value problems \eqref{general numerical problem} for the \emph{global discretization error}
 		\begin{displaymath}
-			e_m = y(t_m)-y_h(t_m)
+			e_m = y(t_m)-y_m
 		\end{displaymath}
 		holds that
 		\begin{displaymath}
@@ -96,13 +98,13 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$, see picture. W
 		\begin{displaymath}
 			\|y_h - \tilde{y}_h\|_{\infty,h} \leq C (\|y_0 - \tilde{y}_0\|_{l^2} + \|\theta_h\|_{\infty,h})
 		\end{displaymath}
-		with a constant $C$ which is not dependent on $h$.
+		with a constant $C$ which is not dependent on $h$. The norm $\|.\|_{\infty,h}$ denotes the maximum norm over the time-grid, i.e. for a function $b: T={t_0,...,t_N} \to \mathbb{R}^d$ we have $\|b\|_{\infty,h} = \max\limits_{t \in T}\|b(t)\|$, $\|b\|$ is the euclidean norm.
 	\end{definition}
 	
 	For single-step methods which are consistent and stable we obtain the following convergence theorem.
 	
 	\begin{theorem}[Lax-Richtmyer]\label{Lax-Richtmyer}
-		A consistent (with order $p$) and discretely stable single-step method is convergent (with order $p$). (assuming smootheness of the solution $y$)
+		A consistent (with order $p$) and discretely stable single-step method is convergent (with order $p$).
 	\end{theorem}
 	
 	This theorem is due to Lax and Richtmyer. The converse of this statement is also true. 
@@ -235,7 +237,7 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$, see picture. W
 	
 	Again we need to define the properties consistency, stability and convergence for this method.
 	\begin{definition}
-		Let $\tilde{y}_{m+k}$ be the result of one step of the multi-step method \eqref{linear-multistep-method} with the start-values given as the exact results of the solution $y_{m+l} = y(t_m+l)$, $0 \leq l < k$. This means
+		Let $\tilde{y}_{m+k}$ be the result of one step of the multi-step method \eqref{linear-multistep-method} with the start-values given as the evaluations of the exact solution $y_{m+l} = y(t_{m+l})$ at $0 \leq l < k$. This means
 		\begin{displaymath}
 			\alpha_k \tilde{u}_{m+k} = \sum_{l=0}^{k-1} \left( h \beta_l f(t_{m+l}, y(t_{m+l})) - \alpha_l y(t_{m+l}) \right) + h \beta_k f(t_{m+k}, \tilde{u}_{m+k}) .
 		\end{displaymath}
@@ -247,12 +249,12 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$, see picture. W
 	\end{definition}
 	
 	For $k=1$ this definition agrees with the definition of the local discretization error for single-step methods \ref{Discretization_Error_SingleStep}.
-	By assigning the linear difference operator
+	If we assign the difference operator
 	\begin{equation}
 		L[y(t),h] = \sum_{l=0}^{k} \left( \alpha_l y(t+lh) - h \beta_l y'(t+lh) \right)
 	\end{equation}
-	to the local discretization error we gain the following definition.
-
+	to the linear mutli-step method, we gain the following definition for consistency of such a methods.
+	
 	\begin{definition}
 		A linear multi-step method is called %\emph{preconsistent} if for all functions $y(t) \in C^1[t_0,t_l]$
 %		\begin{displaymath}
@@ -376,7 +378,8 @@ and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$, see picture. W
 	
 
 \section{Implicit linear multi-step formulas}
-These kinds of multi-step methods are commonly used to numerically solve the systems obtained using modified nodal analysis. Our assumption that we only consider network equations arising from networks consisting of RLC components as well as controlled sources which keep the index between 1 and 2 still holds.
+These kinds of multi-step methods are commonly used to numerically solve the systems obtained using modified nodal analysis.
+%Our assumption that we only consider network equations arising from networks consisting of RLC components as well as controlled sources which keep the index between 1 and 2 still holds.
 
 We consider the equations in charge/flux oriented formulation introduced in section \ref{sec:charge flux oriented formulation}
 \begin{align*}
@@ -471,7 +474,7 @@ In the following two subchapters we will give a short overview over the two most
 %		k = 6 &: h f_{m+6} = \frac{1}{60} (147 u_{m+6} - 360 u_{m+5} + 450 u_{m+4} - 400 u_{m+3} + 225 u_{m+2} - 72 u_{m+1} + 10 u_m)
 	\end{align*}
 	
-	Methods with $s > 6$ are not zero-stable. Indeed in practice, methods with order greater than 3 are rarely used because of their low smoothness properties.
+	Methods with $k > 6$ are not zero-stable. Indeed in practice, methods with order greater than 3 are rarely used because of their stability properties. The stability-region shrinks with increasing order.
 	
 	BDF schemes have consistency order $p = k$. They are methods for solving stiff equations, thus their stability is indicated by their region of absolute stability. Unfortunately not all BDF-schemes are A-stable, but their stability region still contains a large part of the complex left half-plane, see Figure \ref{fig:screenshot020} They are the most efficient linear multistep methods of this kind.
 	

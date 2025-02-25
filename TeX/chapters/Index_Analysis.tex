@@ -49,7 +49,7 @@ In particular we obtain the equation
 Assuming the system only contains linear elements, or is linearized at an operating point in order to investigate the system behaviour, then the corresponding network equation represents a DAE with constant coefficients \eqref{DAE-const-coeff}. We collect all unknowns in $x(t)=(u(t), i_L(t), i_V(t))^\top$. The structure of the system is reliant on the matrix $B$, thus we consider two cases.
 
 \paragraph{ODE-case:}
-	The matrix $B$ in \eqref{DAE-const-coeff} is regular. This is the case iff the circuit contains no voltage sources and there are no nodes which have no path to ground via capacitors. Then the system represents a linear-implicit system of ODEs and can be transformed into the explicit ODE sytstem
+	The matrix $B$ in \eqref{DAE-const-coeff} is regular. This is the case iff the circuit contains no voltage sources and every node has a path to ground, that leads through at least one capacitor. Then the system represents a linear-implicit system of ODEs and can be transformed into the explicit ODE sytstem
 	\begin{displaymath}
 		x'=B^{-1}(-Ax+f(t)).
 	\end{displaymath}
@@ -214,7 +214,7 @@ We will apply those results to some examples:
 		\end{matrix}
 		\right).
 	\end{displaymath} 
-	Thus condition 1 gives us (first ker is indeed not 0, no? - would need to not have transposed - maybe because $A_L$ is empty)
+	Thus condition \eqref{eq:index condition leq 2} gives us (first ker is indeed not 0, no? - would need to not have transposed - maybe because $A_L$ is empty)
 	\begin{displaymath}
 		ker([A_R, A_C, A_V, A_L]^\top) = ker
 		\left(
@@ -227,7 +227,7 @@ We will apply those results to some examples:
 		ker(A_V) = 0
 	\end{displaymath}
 	This condition is fulfilled, thus the index has to be smaller or equal to 2.
-	But condition 2 results in
+	But condition \eqref{eq:index condition leq 1} results in
 	\begin{displaymath}
 		ker([A_R, A_C, A_V]^\top) = ker\left(
 		\begin{matrix}
@@ -264,7 +264,7 @@ We will apply those results to some examples:
 		\end{matrix}
 		\right).
 	\end{displaymath} 
-	Thus condition 1 gives us (empty matrices, thus fulfilled)
+	Thus condition \eqref{eq:index condition leq 2} gives us (empty matrices, thus fulfilled)
 	\begin{displaymath}
 		ker([A_R, A_C, A_V, A_L]^\top) = ker
 		\left(
@@ -276,7 +276,7 @@ We will apply those results to some examples:
 		ker(A_V) = 0
 	\end{displaymath}
 	This condition is fulfilled, thus the index has to be smaller or equal to 2.
-	Condition 2 results in
+	Condition \eqref{eq:index condition leq 1} results in
 	\begin{displaymath}
 		ker([A_R, A_C, A_V]^\top) = ker\left(
 		\begin{matrix}
@@ -292,8 +292,8 @@ We will apply those results to some examples:
 		\end{matrix}
 		\right) = 0.
 	\end{displaymath}
-	This condtion is also fulfilled, thus the index has to be smaller or equal to 1.
-	Condition 3 results in
+	This condition is also fulfilled, thus the index has to be smaller or equal to 1.
+	Condition \eqref{eq:index condition eq 0} results in
 	\begin{displaymath}
 		ker(A_C^\top) = 0 \quad \text{and} \quad dim(v_src) = 0
 	\end{displaymath}
