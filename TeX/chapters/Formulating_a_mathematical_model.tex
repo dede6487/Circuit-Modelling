@@ -73,7 +73,7 @@ The incidence matrix of this circuit has the form
 	\end{matrix}
 	\right).
 \end{displaymath}
-The rows of this matric correspond with the nodes of the circuit and the columns correspond with the edges. By grounding node 0 this reduces to
+The rows of this matric correspond to the nodes of the circuit and the columns correspond to the edges. By grounding node 0 this reduces to
 \begin{displaymath}
 	A = 
 	\left(
@@ -108,7 +108,60 @@ Thus we can consider this circuit with node 0 and node 3 merged. This leads to a
 \end{displaymath}
 
 
-\textbf{Example 2}
+\textbf{Example 2} \label{ex:LC-circuit incidence matrix} \\
+Another example is the a circuit that only contains a capacitor and an inductor. This circuit will oscillate, if given appropriate initial conditions.
+\begin{figure}[H]
+	\label{circuit:LC-circuit}
+	\centering
+	\includegraphics[scale=0.5]{pictures/Example2_index0.png}
+	\caption{capacitor and inductor oscillator}
+\end{figure}
+
+we again collect the node-potentials, the voltages and the currents in the vectors
+\begin{displaymath}
+	u=
+	\left(
+	\begin{matrix}
+		u_0 \\
+		u_1
+	\end{matrix}
+	\right),
+	\quad
+	v=
+	\left(
+	\begin{matrix}
+		v_0 \\
+		v_1
+	\end{matrix}
+	\right),
+	\quad
+	i=
+	\left(
+	\begin{matrix}
+		i_0 \\
+		i_1
+	\end{matrix}
+	\right).
+\end{displaymath}
+The incidence matrix of this circuit has the form
+\begin{displaymath}
+	\tilde{A} = 
+	\left(
+	\begin{matrix}
+		1 & -1  \\
+		-1 & 1 
+	\end{matrix}
+	\right).
+\end{displaymath}
+The rows of this matric correspond to the nodes of the circuit and the columns correspond to the edges. By grounding node 0 this reduces to
+\begin{displaymath}
+	A = 
+	\left(
+	\begin{matrix}
+		-1 & 1  
+	\end{matrix}
+	\right).
+\end{displaymath}
 
 \textbf{Example 3}
 
@@ -294,7 +347,7 @@ The resulting systems are \emph{stiff} systems. This means that for their numeri
 
 
 \textbf{Example 1} \label{ex:MNA} \\
-We again consider the charging of a capacitor. The circuit is again given as in Section \ref{ex:network topology}, where we have already derived the reduced incidence matrix
+We again consider the charging of a capacitor. The circuit is again given as in Example 1, \ref{ex:network topology}, where we have already derived the reduced incidence matrix
 \begin{displaymath}
 	A = 
 	\left(
@@ -304,7 +357,7 @@ We again consider the charging of a capacitor. The circuit is again given as in 
 	\end{matrix}
 	\right).
 \end{displaymath} 
- This matrix can be split into the three submatrices $A_V$, $A_R$ and $A_C$ containing the columns of the matrix $A$. The matrices $A_L$ and $A_V$ are empty in this case and the diagonal matrices containing the components constants are
+ This matrix can be split into the three submatrices $A_V$, $A_R$ and $A_C$ containing the columns of the matrix $A$. The matrices $A_L$ and $A_V$ are empty in this case. The diagonal matrices containing the components constants are
  \begin{displaymath}
  	C = (C), \qquad L = (), \qquad G = (\frac{1}{R}).
  \end{displaymath}
@@ -340,6 +393,50 @@ Plugging this into the formula \eqref{MNA_Matrixform} we obtain the system
 		-v_{src}
 	\end{pmatrix}.
 \end{displaymath}
+
+\textbf{Example 2} \label{ex:LC-circuit MNA} \\
+Similarly we also derived the incidence Matrix of \ref{circuit:LC-circuit} in Example 2, \eqref{ex:LC-circuit incidence matrix}.
+\begin{displaymath}
+	A = 
+	\left(
+	\begin{matrix}
+		-1 & 1  
+	\end{matrix}
+	\right).
+\end{displaymath}
+
+ This matrix can be split into the two submatrices $A_C$ and $A_L$ containing the columns of the matrix $A$. The matrices $A_R$, $A_V$ and $A_I$ are empty in this case. The diagonal matrices containing the components constants are
+\begin{displaymath}
+	C = (C), \qquad L = (L).
+\end{displaymath}
+Plugging this into the formula \eqref{MNA_Matrixform} we obtain the system
+\begin{displaymath}
+	\begin{pmatrix}
+		C & 0 \\
+		0 & L 
+	\end{pmatrix}
+	*
+	\begin{pmatrix}
+		u_1' \\
+		i_L'
+	\end{pmatrix}
+	+
+	\begin{pmatrix}
+		0 & 1 \\
+		-1 & 0
+	\end{pmatrix}
+	*
+	\begin{pmatrix}
+		u_1 \\
+		i_L
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		0 \\
+		0 
+	\end{pmatrix}.
+\end{displaymath}
+
 
 \section{Charge-Flux oriented formulation of MNA}
 \label{sec:charge flux oriented formulation}
