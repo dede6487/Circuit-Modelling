@@ -8,20 +8,21 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces charging capacitor with series resistor and voltage source}}{3}{figure.caption.6}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces capacitor and inductor oscillator}}{5}{figure.caption.7}%
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Capacitor with resistor and current source}}{6}{figure.caption.8}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces resistor symbol}}{7}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces resistor symbol}}{8}{figure.caption.9}%
 \contentsline {figure}{\numberline {2.5}{\ignorespaces capacitor symbol}}{8}{figure.caption.10}%
 \contentsline {figure}{\numberline {2.6}{\ignorespaces inductor symbol}}{8}{figure.caption.11}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces voltage source symbol}}{8}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces voltage source symbol}}{9}{figure.caption.12}%
 \contentsline {figure}{\numberline {2.8}{\ignorespaces current source symbol}}{9}{figure.caption.13}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces charging capacitor with series resistor and voltage source (note the difference to \ref {circuit:charging of capacitor})}}{27}{figure.caption.18}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces LC circuit}}{28}{figure.caption.19}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces charging capacitor with series resistor and voltage source (note the difference to \ref {circuit:charging of capacitor})}}{28}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces LC circuit}}{29}{figure.caption.19}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces approximation of a function using numerical methods}}{31}{figure.caption.20}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces $A(\alpha )$ stability for $\alpha = \frac {\pi }{4}$}}{38}{figure.caption.21}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces stability regions of BDF-schemes}}{41}{figure.caption.22}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces charging capacitor with series resistor and voltage source}}{42}{figure.caption.23}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces LC-circuit}}{43}{figure.caption.24}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Current source with capacitor and resistor.}}{44}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces approximation of a function using numerical methods}}{32}{figure.caption.20}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces $A(\alpha )$ stability for $\alpha = \frac {\pi }{4}$}}{39}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces stability regions of BDF-schemes}}{42}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces \relax }}{42}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces charging capacitor with series resistor and voltage source}}{44}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces LC-circuit}}{45}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Current source with capacitor and resistor.}}{46}{figure.caption.26}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

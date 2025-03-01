@@ -6,28 +6,28 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Formulating a Mathematical Model}{2}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Network Topology}{2}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Energy Conservation Laws}{6}{section.2.2}%
+\contentsline {section}{\numberline {2.2}Energy Conservation Laws}{7}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Electrical Components and their relations}{7}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Modified Nodal Analysis - MNA}{9}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Charge-Flux oriented formulation of MNA}{12}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Differential Algebraic Equations}{13}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Types of DAEs}{13}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Weierstraß-Kronecker Normalform}{14}{subsection.3.1.1}%
-\contentsline {section}{\numberline {3.2}Index of a Differential Algebraic Equation}{20}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Index Analysis of the modified nodal analysis}{23}{chapter.4}%
-\contentsline {section}{\numberline {4.1}General Index analysis}{24}{section.4.1}%
-\contentsline {paragraph}{\nonumberline ODE-case:}{24}{paragraph*.15}%
-\contentsline {paragraph}{\nonumberline DAE-case:}{24}{paragraph*.17}%
-\contentsline {section}{\numberline {4.2}Topological Conditions}{26}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Numerical Solutions}{30}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Single-Step-Methods}{31}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Consistency, Stability and Convergence}{31}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}further stability properties}{34}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Multistep-Methods}{34}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Consistency, Stability and Convergence}{35}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}further stability properties}{37}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Implicit linear multi-step formulas}{39}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}BDF-schemes}{40}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}trapezoidal rule}{41}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}Numerical Examples}{42}{section.5.4}%
+\contentsline {section}{\numberline {2.4}Modified Nodal Analysis - MNA}{10}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Charge-Flux oriented formulation of MNA}{13}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Differential Algebraic Equations}{14}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Types of DAEs}{14}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Weierstraß-Kronecker Normalform}{15}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Index of a Differential Algebraic Equation}{21}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Index Analysis of the modified nodal analysis}{24}{chapter.4}%
+\contentsline {section}{\numberline {4.1}General Index analysis}{25}{section.4.1}%
+\contentsline {paragraph}{\nonumberline ODE-case:}{25}{paragraph*.15}%
+\contentsline {paragraph}{\nonumberline DAE-case:}{25}{paragraph*.17}%
+\contentsline {section}{\numberline {4.2}Topological Conditions}{27}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Numerical Solutions}{31}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Single-Step-Methods}{32}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Consistency, Stability and Convergence}{32}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}further stability properties}{35}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Multistep-Methods}{35}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Consistency, Stability and Convergence}{36}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}further stability properties}{38}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Implicit linear multi-step formulas}{40}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}BDF-schemes}{41}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}trapezoidal rule}{43}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Numerical Examples}{43}{section.5.4}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
