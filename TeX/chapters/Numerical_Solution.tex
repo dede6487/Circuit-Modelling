@@ -520,6 +520,7 @@ In the following two subchapters we will give a short overview over the two most
 	
 	In this section we will apply the Trapezoidal rule as well as the BDF-k schemes for our three examples (reference!!!!!!!!!).
 	
+	
 	\textbf{Example 1} \\
 		
 	\begin{figure}[H]
@@ -578,6 +579,7 @@ In the following two subchapters we will give a short overview over the two most
 		\end{tabular}
 	\end{center}
 
+
 	\textbf{Example 2} \\
 	
 	\begin{figure}[H]
@@ -600,5 +602,27 @@ In the following two subchapters we will give a short overview over the two most
 			1 & number & number & number & number & number & number \\
 			0,1 & number & number & number & number & number & number \\
 			0,01 & number & number & number & number & number & number
+		\end{tabular}
+	\end{center}
+
+
+	\textbf{Example 3} \\
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.4]{pictures/Example3.png}
+		\caption{Current source with capacitor and resistor.}
+	\end{figure}
+	
+	\begin{center}
+		\begin{tabular}{ c || c c c | c c c | c c c | } 
+			h & \multicolumn{3}{c|}{k = 1} & \multicolumn{3}{c|}{k = 2} & \multicolumn{3}{c|}{k = 3} \\
+			& u1 & u2 & iL & u1 & u2 & iL & u1 & u2 & iL \\
+			\hline
+			& \multicolumn{3}{c|}{Error} & \multicolumn{3}{c|}{Error} & \multicolumn{3}{c|}{Error} \\
+			\hline
+			1 & number & number & number & number & number & number & number & number & number \\
+			0,1 & number & number & number & number & number & number & number & number & number \\
+			0,01 & number & number & number & number & number & number & number & number & number
 		\end{tabular}
 	\end{center}

@@ -7,17 +7,17 @@
 \contentsline {chapter}{\numberline {2}Formulating a Mathematical Model}{2}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Network Topology}{2}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Energy Conservation Laws}{6}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Electrical Components and their relations}{6}{section.2.3}%
+\contentsline {section}{\numberline {2.3}Electrical Components and their relations}{7}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Modified Nodal Analysis - MNA}{9}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Charge-Flux oriented formulation of MNA}{11}{section.2.5}%
+\contentsline {section}{\numberline {2.5}Charge-Flux oriented formulation of MNA}{12}{section.2.5}%
 \contentsline {chapter}{\numberline {3}Differential Algebraic Equations}{13}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Types of DAEs}{13}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Weierstraß-Kronecker Normalform}{14}{subsection.3.1.1}%
 \contentsline {section}{\numberline {3.2}Index of a Differential Algebraic Equation}{20}{section.3.2}%
 \contentsline {chapter}{\numberline {4}Index Analysis of the modified nodal analysis}{23}{chapter.4}%
 \contentsline {section}{\numberline {4.1}General Index analysis}{24}{section.4.1}%
-\contentsline {paragraph}{\nonumberline ODE-case:}{24}{paragraph*.14}%
-\contentsline {paragraph}{\nonumberline DAE-case:}{24}{paragraph*.16}%
+\contentsline {paragraph}{\nonumberline ODE-case:}{24}{paragraph*.15}%
+\contentsline {paragraph}{\nonumberline DAE-case:}{24}{paragraph*.17}%
 \contentsline {section}{\numberline {4.2}Topological Conditions}{26}{section.4.2}%
 \contentsline {chapter}{\numberline {5}Numerical Solutions}{30}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Single-Step-Methods}{31}{section.5.1}%
