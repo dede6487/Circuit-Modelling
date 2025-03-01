@@ -487,6 +487,8 @@ In the following two subchapters we will give a short overview over the two most
 	
 	The first timestep is always performed by BDF1 (implicit Euler scheme) as a starting procedure.
 	
+
+	
 	
 \subsection{trapezoidal rule}
 
@@ -516,7 +518,7 @@ In the following two subchapters we will give a short overview over the two most
 	
 \section{Numerical Examples}
 	
-	In this section we will give two explicit examples of circuits being solved using both of the above mentioned methods and compare the convergence speed between the methods as well as comparing the suitability of the methods for systems of different index.
+	In this section we will apply the Trapezoidal rule as well as the BDF-k schemes for our three examples (reference!!!!!!!!!).
 	
 	\textbf{Example 1} \\
 		
@@ -525,11 +527,78 @@ In the following two subchapters we will give a short overview over the two most
 		\includegraphics[scale=0.4]{pictures/Example1_simple_p2.png}
 		\caption{charging capacitor with series resistor and voltage source}
 	\end{figure}
+	
+	The MNA-system for this example reads as
+	
+	\begin{equation}
+		\label{eq:MNA-system of chargin capacitor}
+		\begin{pmatrix}
+			0 & 0 & 0 \\
+			0 & C & 0 \\
+			0 & 0 & 0
+		\end{pmatrix}
+		*
+		\begin{pmatrix}
+			u_,' \\
+			u_2' \\
+			i_0'
+		\end{pmatrix}
+		+
+		\begin{pmatrix}
+			\frac{1}{R} & \frac{1}{R} & 0 \\
+			\frac{1}{R} & \frac{1}{R} & -1 \\
+			0 & -1 & 0 
+		\end{pmatrix}
+		*
+		\begin{pmatrix}
+			u_1 \\
+			u_2 \\
+			i_0
+		\end{pmatrix}
+		=
+		\begin{pmatrix}
+			0 \\
+			0 \\
+			-v_{src}
+		\end{pmatrix}.
+	\end{equation}
+
+	For testing we set the resistance to $R=1$ and the capacitance to $C=1$. In our case we let the  voltage source supply a voltage of the form $v_{src} = sin(\pi t)$.
+	
+	\begin{center}
+		\begin{tabular}{ c || c c c | c c c | c c c | } 
+			h & \multicolumn{3}{c|}{k = 1} & \multicolumn{3}{c|}{k = 2} & \multicolumn{3}{c|}{k = 3} \\
+			 & u1 & u2 & iL & u1 & u2 & iL & u1 & u2 & iL \\
+			\hline
+			 & \multicolumn{3}{c|}{Error} & \multicolumn{3}{c|}{Error} & \multicolumn{3}{c|}{Error} \\
+			\hline
+			1 & number & number & number & number & number & number & number & number & number \\
+			0,1 & number & number & number & number & number & number & number & number & number \\
+			0,01 & number & number & number & number & number & number & number & number & number
+		\end{tabular}
+	\end{center}
 
 	\textbf{Example 2} \\
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.4]{pictures/Example1_simple_p2.png}
+		\includegraphics[scale=0.4]{pictures/Example2_index0.png}
 		\caption{LC-circuit}
 	\end{figure}
+
+	The MNA-system for this example reads as
+	
+	For testing we set the capacitance to $C=1$ and the inductance to $L=1$.
+	
+	\begin{center}
+		\begin{tabular}{ c || c c | c c | c c | } 
+			h & \multicolumn{2}{c|}{k = 1} & \multicolumn{2}{c|}{k = 2} & \multicolumn{2}{c|}{k = 3} \\
+			& u1 & iL & u1 & iL & u1 & iL \\
+			\hline
+			& \multicolumn{2}{c|}{Error} & \multicolumn{2}{c|}{Error} & \multicolumn{2}{c|}{Error} \\
+			\hline
+			1 & number & number & number & number & number & number \\
+			0,1 & number & number & number & number & number & number \\
+			0,01 & number & number & number & number & number & number
+		\end{tabular}
+	\end{center}
