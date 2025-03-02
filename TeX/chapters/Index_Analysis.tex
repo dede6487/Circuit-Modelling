@@ -180,7 +180,7 @@ From analyzing the MNA some conditions to the circuit topology can be obtained. 
 		\item If further
 		\begin{equation}
 			\label{eq:index condition eq 0}
-			ker(A_C^\top) = 0 \quad \text{and} \quad dim(v_src) = 0
+			ker(A_C^\top) = 0 \quad \text{and} \quad dim(v_{src}) = 0
 		\end{equation}
 		holds, then the system has index $\nu = 0$.
 	\end{itemize}
@@ -189,7 +189,7 @@ From analyzing the MNA some conditions to the circuit topology can be obtained. 
 By $ker(A)$ we denote the nullspace of the matrix $A$ and by $dim(y)$ the size of the vector $y$. The conditions \eqref{eq:index condition leq 2} - \eqref{eq:index condition eq 0} can be interpreted in terms of the circuit topology as follows:
 \begin{itemize}
 	\item Condition \eqref{eq:index condition leq 2} can be interpreted, as the circuit neither containing loops of voltage sources nor cutsets of current sources.
-	\item Condition \eqref{eq:index condition leq 1} can be interpreted, as the circuit containing neither loops of capacitors and/or voltage sources not cutsets of inductors and/or current sources.
+	\item Condition \eqref{eq:index condition leq 1} can be interpreted, as the circuit containing neither loops of capacitors and/or voltage sources nor cutsets of inductors and/or current sources.
 	\item Condition \eqref{eq:index condition eq 0} can be interpreted, as every node in the circuit being connected to the reference node (ground) through a path containing only the capacitors.
 \end{itemize}
 
@@ -206,7 +206,7 @@ We will apply those results to some examples:
 	
 	The incidence matrix for this system is
 	\begin{displaymath}
-		A = [A_V~A_R~A_C] = 
+		A = [A_V, A_R, A_C] = 
 		\left(
 		\begin{matrix}
 			-1 & 1 & 0 \\
@@ -244,7 +244,7 @@ We will apply those results to some examples:
 		\end{matrix}
 		\right) = 0.
 	\end{displaymath}
-	We see that this condition is violated, thus the index can not be smaller than 2.
+	We see that this condition is violated, thus the index can not be smaller than $2$.
 	
 \textbf{Example2} \\
 	This example depicts an energy conserving system. The electric energy stored in the capacitor is converted into the the magnetic energy of the coil and vice versa.
@@ -309,3 +309,53 @@ We will apply those results to some examples:
 	which is an ODE.
 	
 	\textbf{Example3} \\
+
+	Finally, as the third example is very similar to the first one, we might also expect them to have the same index. But this is indeed not the case as the following analysis shows. 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale = 0.4]{pictures/Example3.png}
+		\caption{current source with resistor and capacitor} 
+	\end{figure}
+	Because this circuit only contains one loop, which has a current source, we expect the circuit to have index $\nu = 1$.
+	
+	The incidence matrix for this system is
+	\begin{displaymath}
+		A = [A_V~A_R~A_C] = 
+		\left(
+		\begin{matrix}
+			-1 & 1 & 0 \\
+			0 & -1 & 1 
+		\end{matrix}
+		\right).
+	\end{displaymath} 
+	Thus condition \eqref{eq:index condition leq 2} gives us (first ker is indeed not 0, no? - would need to not have transposed - maybe because $A_L$ is empty)
+	\begin{displaymath}
+		ker([A_R, A_C, A_V, A_L]^\top) = ker
+		\left(
+		\begin{matrix}
+			1 & -1 \\
+			0 & 1
+		\end{matrix}
+		\right) = \{0\}
+		\quad \text{and} \quad 
+		ker(A_V) = {0}
+	\end{displaymath}
+	This condition is fulfilled, thus the index has to be smaller or equal to 2.
+	Condition \eqref{eq:index condition leq 1} results in
+	\begin{displaymath}
+		ker([A_R, A_C, A_V]^\top) = ker\left(
+		\begin{matrix}
+			1 & -1 \\
+			0 & 1 
+		\end{matrix}
+		\right) = \{0\}
+		\quad \text{and} \quad
+		ker([A_C, A_V]) = ker
+		\left(
+		\begin{matrix}
+			0 \\
+			1
+		\end{matrix}
+		\right) \neq \{0\}.
+	\end{displaymath}
+	Thus it also has index $2$.

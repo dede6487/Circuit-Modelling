@@ -356,7 +356,10 @@ The grid function $y_h : T \to A$ with the time-grid $T={t_0, ..., t_N}$ and the
 			\item 
 			The set
 			\begin{equation}
-				S := \{z \in \mathbb{C} : \rho(\xi) - z \sigma(\xi) = 0 \implies \xi \in \mathbb{C} \text{fullfills root criteria}\}
+				\begin{aligned}
+					S := \{z \in \mathbb{C} : \rho(\xi) - z \sigma(\xi) = 0 \implies \xi \in \mathbb{C} \text{ and } |\xi| \leq 1. \\
+					\text{ If $\xi$ has multiplicity greater than $1$, then } |\xi| < 1\}
+				\end{aligned}
 			\end{equation}
 			is called the region of stability of the method.
 			\item 
