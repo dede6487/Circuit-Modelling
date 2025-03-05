@@ -381,6 +381,19 @@ The grid function $y_h : T \to A$ with the time-grid $T={t_0, ..., t_N}$ and the
 		\label{fig:screenshot021}
 	\end{figure}
 	
+	following from numerik buch seite 134
+	\begin{theorem}
+		\label{th: null-stbaility and consistence is convergence}
+	\end{theorem}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{screenshot029}
+		\caption{}
+		\label{fig:screenshot029}
+	\end{figure}
+	
+	
 
 \section{Implicit linear multi-step formulas}
 These kinds of multi-step methods are commonly used to numerically solve the systems obtained using modified nodal analysis.
@@ -454,7 +467,8 @@ The approach to solve those systems numerically can be split into three main ste
 
 In the following two subchapters we will give a short overview over the two most commonly used methods for solving those systems.
 
-\subsection{BDF-schemes}
+\subsection{BDF-k methods}
+	\label{ch:BDf-k methods}
 	chapter 9.2 numerik book
 	wikipedia
 	
@@ -490,7 +504,15 @@ In the following two subchapters we will give a short overview over the two most
 		\label{fig:screenshot020}
 	\end{figure}
 	
-	The first timestep is always performed by BDF1 (implicit Euler scheme) as a starting procedure.
+	The first timestep is always performed by BDF1 (implicit Euler scheme) as a starting procedure. sure? not really
+	
+	The Order of consistency of this family of multi-step methods is given by the following theorem
+	
+	\begin{theorem}[\protecting{\cite[Satz~9.2.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
+		The BDF-k methods have consistency order $p=k$.
+	\end{theorem}
+	
+	Due to Theorem \ref{th: null-stbaility and consistence is convergence} and the fact that BDF-k methods are $0$-stable, they are also convergent with order k.
 	
 	seite 325 num buch
 	\begin{figure}[H]
@@ -503,7 +525,8 @@ In the following two subchapters we will give a short overview over the two most
 	
 	
 \subsection{trapezoidal rule}
-
+	\label{ch:trapezoidal rule}
+	
 	The trapezoidal rule is a natural alternative to BDF2 since it is A-stable and a linear multistep method of order 2 the one with the smallest leading error coefficient. (\cite{ModellingAndDiscretizationOfCircuitProblems})
 	
 	It works by approximating the region under the graph of the function $f(x)$ as a trapezoid, hence the name. It follows that	
@@ -604,19 +627,33 @@ In the following two subchapters we will give a short overview over the two most
 	
 	For testing we set the capacitance to $C=1$ and the inductance to $L=1$.
 	
+	With the initial conditions $u_1(0) = 1$ and $i_L(0) = 0$, the exact solutions for the voltage $u_1$ and the current $i_L$ then have the form
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{pictures/exact_solution_ex2.png}
+		\caption{Exact solution for example 2.}
+	\end{figure}
+	
+	Applying the BDF-k methods \ref{ch:BDf-k methods} and the Trapezoidal rule \ref{ch:trapezoidal rule} to this problem we can observe the maximal error $err = \max\limits_{0 \leq t \leq T} \| y(t) - \tilde{y}(t) \|$. This error is displayed in table \ref{tab:error ex2}.
+	\begin{table}[H]
 	\begin{center}
-		\begin{tabular}{ c || c c | c c | c c | } 
-			h & \multicolumn{2}{c|}{k = 1} & \multicolumn{2}{c|}{k = 2} & \multicolumn{2}{c|}{k = 3} \\
-			& u1 & iL & u1 & iL & u1 & iL \\
+		\label{tab:error ex2}
+		\begin{tabular}{ c || c c | c c | c c | c c |} 
+			h & \multicolumn{2}{c|}{k = 1} & \multicolumn{2}{c|}{k = 2} & \multicolumn{2}{c|}{k = 3} & \multicolumn{2}{c|}{Trapezoidal} \\
+			& u1 & iL & u1 & iL & u1 & iL & u1 & iL \\
 			\hline
-			& \multicolumn{2}{c|}{Error} & \multicolumn{2}{c|}{Error} & \multicolumn{2}{c|}{Error} \\
+			& \multicolumn{2}{c|}{err x e-1} & \multicolumn{2}{c|}{err x e-3} & \multicolumn{2}{c|}{err x e-4} & \multicolumn{2}{c|}{err x e-3} \\
 			\hline
-			1 & number & number & number & number & number & number \\
-			0,1 & number & number & number & number & number & number \\
-			0,01 & number & number & number & number & number & number
+			$1$ & $0,1$ & $0,1$ & $1180$ & $1220$ & $25100$ & $22000$ & $1390$ & $1460$ \\
+			$0,1$ & $7,14$ & $6,90$ & $78,3$ & $80,2$ & $639$ & $615$ & $19,6$ &  $20,8$ \\
+			$0,01$ & $1,18$ & $1,11$ & $0,79$ & $0,83$ & $0,68$ & $0,63$ & $0,19$ & $0,20$
 		\end{tabular}
+		\caption{Error for BDF-1, -2, -3 methods and trapezoidal rule applied to ex2.}
 	\end{center}
+	\end{table}
 
+	By comparing the errors of the methods we can see that they indeed have the predicted convergence order. (reference appropriate theorems here)
 
 	\textbf{Example 3} \\
 	
