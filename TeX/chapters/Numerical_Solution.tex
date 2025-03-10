@@ -366,7 +366,7 @@ The grid function $y_h : T \to A$ with the time-grid $T={t_0, ..., t_N}$ and the
 			A linear multistep method is called
 			\begin{itemize}
 				\item \emph{0-stable}, if $0 \in S$.
-				\item stable in the point $z \in \mathbb{C}$, if Wurzelbedingung erfüllt bei z, aber doch eigentlich z in S oder?
+				\item stable in the point $z \in \mathbb{C}$, if $z \in S$.
 				\item \emph{$A(\alpha)$-stable}, if it is stable in all $z$ that lie within the set $\{z \in \mathbb{C}^- : |arg(z)-\pi| \leq \alpha\}$ for $\alpha \in (0, \frac{\pi}{2})$.		 
 			\end{itemize}
 		\end{enumerate}
@@ -386,6 +386,8 @@ The grid function $y_h : T \to A$ with the time-grid $T={t_0, ..., t_N}$ and the
 		\label{th: null-stbaility and consistence is convergence}
 	\end{theorem}
 	
+	equivalent to lax richtmyer in single step
+	
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.7\linewidth]{screenshot029}
@@ -399,46 +401,48 @@ The grid function $y_h : T \to A$ with the time-grid $T={t_0, ..., t_N}$ and the
 These kinds of multi-step methods are commonly used to numerically solve the systems obtained using modified nodal analysis.
 %Our assumption that we only consider network equations arising from networks consisting of RLC components as well as controlled sources which keep the index between 1 and 2 still holds.
 
-We consider the equations in charge/flux oriented formulation introduced in section \ref{sec:charge flux oriented formulation}
-\begin{align*}
-	0 &=
-	\underbrace{ 
-	\left( \begin{matrix}
-		A_c & 0 \\
-		0 & I \\
-		0 & 0
-	\end{matrix} \right)}_{=:A}
-	\underbrace{
-	\left( \begin{matrix}
-		q' \\
-		\phi'
-	\end{matrix} \right)}_{=:y'}
-	+
-	\underbrace{
-	\left( \begin{matrix}
-		A_R r(A_R^\top u,t) + A_L i_L + A_V i_V + A_I i(u, i_L, i_V, t) \\
-		- A_L^\top u \\
-		v(u, i_L, i_V, t) - A_V^\top u
-	\end{matrix} \right)}_{=:f(x,t)}, \\
-	\underbrace{
-	\left( \begin{matrix}
-		q \\
-		\phi 
-	\end{matrix} \right)}_{=:y} 
-	&=
-	\underbrace{
-	\left( \begin{matrix}
-		q_C(A_C^\top u) \\
-		\phi_L(i_L) 
-	\end{matrix} \right)}_{=:g(x,t)},
-\end{align*}
+What equations do we consider?
 
-or simply
-\begin{align*}
-	0 &= F(y'(t), x(t), t) :=A y'(t) + f(x(t),t), \\
-	0 &= y(t) - g(x(t)).
-\end{align*}
-with the unknowns $x:=(u, i_L, i_V)^\top$.
+%We consider the equations in charge/flux oriented formulation introduced in section \ref{sec:charge flux oriented formulation}
+%\begin{align*}
+%	0 &=
+%	\underbrace{ 
+%	\left( \begin{matrix}
+%		A_c & 0 \\
+%		0 & I \\
+%		0 & 0
+%	\end{matrix} \right)}_{=:A}
+%	\underbrace{
+%	\left( \begin{matrix}
+%		q' \\
+%		\phi'
+%	\end{matrix} \right)}_{=:y'}
+%	+
+%	\underbrace{
+%	\left( \begin{matrix}
+%		A_R r(A_R^\top u,t) + A_L i_L + A_V i_V + A_I i(u, i_L, i_V, t) \\
+%		- A_L^\top u \\
+%		v(u, i_L, i_V, t) - A_V^\top u
+%	\end{matrix} \right)}_{=:f(x,t)}, \\
+%	\underbrace{
+%	\left( \begin{matrix}
+%		q \\
+%		\phi 
+%	\end{matrix} \right)}_{=:y} 
+%	&=
+%	\underbrace{
+%	\left( \begin{matrix}
+%		q_C(A_C^\top u) \\
+%		\phi_L(i_L) 
+%	\end{matrix} \right)}_{=:g(x,t)},
+%\end{align*}
+%
+%or simply
+%\begin{align*}
+%	0 &= F(y'(t), x(t), t) :=A y'(t) + f(x(t),t), \\
+%	0 &= y(t) - g(x(t)).
+%\end{align*}
+%with the unknowns $x:=(u, i_L, i_V)^\top$.
 
 The approach to solve those systems numerically can be split into three main steps:
 \begin{enumerate}
@@ -464,6 +468,8 @@ The approach to solve those systems numerically can be split into three main ste
 	
 	which can be solved iteratively using Newton's method.
 \end{enumerate}
+
+- we are linear, thus no newton needed, only for nonlinear - numerik buch auch mit nur zwei schritten - adams lin mehrschrittverfahre besteht aus usw.
 
 In the following two subchapters we will give a short overview over the two most commonly used methods for solving those systems.
 
@@ -514,15 +520,7 @@ In the following two subchapters we will give a short overview over the two most
 	
 	Due to Theorem \ref{th: null-stbaility and consistence is convergence} and the fact that BDF-k methods are $0$-stable, they are also convergent with order k.
 	
-	seite 325 num buch
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.7\linewidth]{screenshot028}
-		\caption{}
-		\label{fig:screenshot028}
-	\end{figure}
-	
-	
+	Seite 106 numerik - schrittweite für startwerte bei bdf3 kleiner für kleineren fehler, halbieren, vierteln, achteln whatever
 	
 \subsection{trapezoidal rule}
 	\label{ch:trapezoidal rule}
@@ -637,6 +635,14 @@ In the following two subchapters we will give a short overview over the two most
 	\end{figure}
 	
 	Applying the BDF-k methods \ref{ch:BDf-k methods} and the Trapezoidal rule \ref{ch:trapezoidal rule} to this problem we can observe the maximal error $err = \max\limits_{0 \leq t \leq T} \| y(t) - \tilde{y}(t) \|$. This error is displayed in table \ref{tab:error ex2}.
+	
+	für tabellen anschauen:
+	SI - unit x - packet
+	csvsimple for tables
+	
+	für pfade:
+	graphicspath
+	
 	\begin{table}[H]
 	\begin{center}
 		\label{tab:error ex2}

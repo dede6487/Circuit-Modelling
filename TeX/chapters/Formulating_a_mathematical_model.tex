@@ -548,20 +548,20 @@ Plugging this into the formula \eqref{MNA_Matrixform} we obtain the system
 
 
 
-\section{Charge-Flux oriented formulation of MNA}
-\label{sec:charge flux oriented formulation}
- This time we derive the charge and flux based formulations. We again use the KCL \eqref{KCL} and the component equations to formulate a system of equations. This means that instead of directly using current and voltage, we instead use the flux of the magnetic field \eqref{eq:inductor law} and the charge \eqref{eq:capacitor law}. We then obtain
-
-\begin{align}
-	A_C q' + A_R r(A_R^\top u,t) + A_L i_L + A_V i_V + A_I i(A^\top u, q', i_L, i_V, t) &= 0, \label{charge/flux-1} \\
-	\phi' - A_L^\top u &= 0, \label{charge/flux-2} \\
-	v(A^\top u, q', i_L, i_V, t) - A_V^\top u &= 0, \label{charge/flux-3} \\
-	q - q_C(A_C^\top u) &= 0, \label{charge/flux-4} \\
-	\phi - \phi_L(i_L) &= 0.  \label{charge/flux-5} 
-\end{align}
-
-Using node potentials $u$, branch currents through voltage and flux controlled elements $i_V$ and $i_L$, charges and fluxes $q$ and $\phi$, voltage dependent resistors $r$, voltage and current dependent charge and flux sources $q_C$ and $\phi_L$, controlled current and voltage sources $i_{src}$ and $v_{src}$.
-
-We call this formulation the \emph{charge-flux oriented modified nodal analysis}.
-
-%so it makes sense to use the conventional approach of MNA - compare with phd thesis 
+%\section{Charge-Flux oriented formulation of MNA}
+%\label{sec:charge flux oriented formulation}
+% This time we derive the charge and flux based formulations. We again use the KCL \eqref{KCL} and the component equations to formulate a system of equations. This means that instead of directly using current and voltage, we instead use the flux of the magnetic field \eqref{eq:inductor law} and the charge \eqref{eq:capacitor law}. We then obtain
+%
+%\begin{align}
+%	A_C q' + A_R r(A_R^\top u,t) + A_L i_L + A_V i_V + A_I i(A^\top u, q', i_L, i_V, t) &= 0, \label{charge/flux-1} \\
+%	\phi' - A_L^\top u &= 0, \label{charge/flux-2} \\
+%	v(A^\top u, q', i_L, i_V, t) - A_V^\top u &= 0, \label{charge/flux-3} \\
+%	q - q_C(A_C^\top u) &= 0, \label{charge/flux-4} \\
+%	\phi - \phi_L(i_L) &= 0.  \label{charge/flux-5} 
+%\end{align}
+%
+%Using node potentials $u$, branch currents through voltage and flux controlled elements $i_V$ and $i_L$, charges and fluxes $q$ and $\phi$, voltage dependent resistors $r$, voltage and current dependent charge and flux sources $q_C$ and $\phi_L$, controlled current and voltage sources $i_{src}$ and $v_{src}$.
+%
+%We call this formulation the \emph{charge-flux oriented modified nodal analysis}.
+%
+%%so it makes sense to use the conventional approach of MNA - compare with phd thesis 
