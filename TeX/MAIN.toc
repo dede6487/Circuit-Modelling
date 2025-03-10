@@ -6,7 +6,7 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Formulating a Mathematical Model}{2}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Network Topology}{2}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Energy Conservation Laws}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.2}Energy Conservation Laws}{6}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Electrical Components and their relations}{7}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Modified Nodal Analysis - MNA}{10}{section.2.4}%
 \contentsline {chapter}{\numberline {3}Differential Algebraic Equations}{14}{chapter.3}%

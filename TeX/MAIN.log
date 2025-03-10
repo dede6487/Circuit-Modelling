@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.11)  10 MAR 2025 14:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.11)  10 MAR 2025 15:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1984,7 +1984,7 @@ File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 
 
 ]
-<pictures/Example1_simple.png, id=153, 581.17125pt x 477.28313pt>
+<pictures/Example1_simple.png, id=151, 581.17125pt x 477.28313pt>
 File: pictures/Example1_simple.png Graphic file (type png)
 <use pictures/Example1_simple.png>
 Package pdftex.def Info: pictures/Example1_simple.png  used on input line 29.
@@ -1992,7 +1992,7 @@ Package pdftex.def Info: pictures/Example1_simple.png  used on input line 29.
 
 
 [3 <./pictures/Example1_simple.png>]
-<pictures/Example2_index0.png, id=161, 581.17125pt x 477.28313pt>
+<pictures/Example2_index0.png, id=159, 581.17125pt x 477.28313pt>
 File: pictures/Example2_index0.png Graphic file (type png)
 <use pictures/Example2_index0.png>
 Package pdftex.def Info: pictures/Example2_index0.png  used on input line 116.
@@ -2000,52 +2000,53 @@ Package pdftex.def Info: pictures/Example2_index0.png  used on input line 116.
 
 
 [4]
-<pictures/Example3.png, id=167, 581.17125pt x 477.28313pt>
+<pictures/Example3.png, id=165, 551.661pt x 347.49825pt>
 File: pictures/Example3.png Graphic file (type png)
 <use pictures/Example3.png>
 Package pdftex.def Info: pictures/Example3.png  used on input line 172.
-(pdftex.def)             Requested size: 290.58492pt x 238.64098pt.
+(pdftex.def)             Requested size: 275.82982pt x 173.74869pt.
 
 
 [5 <./pictures/Example2_index0.png>]
 
 [6 <./pictures/Example3.png>]
 LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 2
-36.
+30.
 
 (c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )
-
-[7]
-<pictures/resistor.png, id=189, 201.00093pt x 76.03406pt>
+<pictures/resistor.png, id=179, 201.00093pt x 76.03406pt>
 File: pictures/resistor.png Graphic file (type png)
 <use pictures/resistor.png>
-Package pdftex.def Info: pictures/resistor.png  used on input line 263.
+Package pdftex.def Info: pictures/resistor.png  used on input line 257.
 (pdftex.def)             Requested size: 56.9055pt x 21.52606pt.
-<pictures/capacitor.png, id=190, 100.12407pt x 93.34875pt>
+
+
+[7]
+<pictures/capacitor.png, id=191, 100.12407pt x 93.34875pt>
 File: pictures/capacitor.png Graphic file (type png)
 <use pictures/capacitor.png>
-Package pdftex.def Info: pictures/capacitor.png  used on input line 276.
+Package pdftex.def Info: pictures/capacitor.png  used on input line 270.
 (pdftex.def)             Requested size: 56.9055pt x 53.0555pt.
-<pictures/inductance.png, id=191, 277.78781pt x 101.62968pt>
+<pictures/inductance.png, id=192, 277.78781pt x 101.62968pt>
 File: pictures/inductance.png Graphic file (type png)
 <use pictures/inductance.png>
-Package pdftex.def Info: pictures/inductance.png  used on input line 289.
+Package pdftex.def Info: pictures/inductance.png  used on input line 283.
 (pdftex.def)             Requested size: 85.35826pt x 31.22884pt.
 
 
 [8 <./pictures/resistor.png> <./pictures/capacitor.png> <./pictures/inductance.
 png>]
-<pictures/voltage_source.png, id=201, 310.91156pt x 179.16937pt>
+<pictures/voltage_source.png, id=199, 310.91156pt x 179.16937pt>
 File: pictures/voltage_source.png Graphic file (type png)
 <use pictures/voltage_source.png>
-Package pdftex.def Info: pictures/voltage_source.png  used on input line 302.
+Package pdftex.def Info: pictures/voltage_source.png  used on input line 296.
 (pdftex.def)             Requested size: 113.81102pt x 65.58627pt.
-<pictures/current_source.png, id=202, 310.91156pt x 179.16937pt>
+<pictures/current_source.png, id=200, 310.91156pt x 179.16937pt>
 File: pictures/current_source.png Graphic file (type png)
 <use pictures/current_source.png>
-Package pdftex.def Info: pictures/current_source.png  used on input line 315.
+Package pdftex.def Info: pictures/current_source.png  used on input line 309.
 (pdftex.def)             Requested size: 113.81102pt x 65.58627pt.
 
 
@@ -2060,7 +2061,7 @@ See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `circuit:LC-circuit' on page 12 undefined on input lin
-e 463.
+e 457.
 
 
 
@@ -2157,7 +2158,7 @@ Package mdframed Info: mdframed detected package amsthm
 
 
 [27]
-<pictures/Example1_simple_p2.png, id=369, 581.17125pt x 477.28313pt>
+<pictures/Example1_simple_p2.png, id=367, 581.17125pt x 477.28313pt>
 File: pictures/Example1_simple_p2.png Graphic file (type png)
 <use pictures/Example1_simple_p2.png>
 Package pdftex.def Info: pictures/Example1_simple_p2.png  used on input line 21
@@ -2183,21 +2184,32 @@ n input line 211.
 
 
 [28 <./pictures/Example1_simple_p2.png>]
+Overfull \hbox (15.79478pt too wide) detected at line 265
+ $\OML/zplm/m/it/10.95 ker\OT1/zplm/m/n/10.95 ([\OML/zplm/m/it/10.95 A[]\OT1/pp
+l/m/n/10.95 , \OML/zplm/m/it/10.95 A[]\OT1/ppl/m/n/10.95 , \OML/zplm/m/it/10.95
+ A[]\OT1/zplm/m/n/10.95 ][]) = \OML/zplm/m/it/10.95 ker [] \OT1/zplm/m/n/10.95 
+= \OMS/zplm/m/n/10.95 f\OT1/ppl/m/n/10.95 0\OMS/zplm/m/n/10.95 g [] \OML/zplm/m
+/it/10.95 ker\OT1/zplm/m/n/10.95 ([\OML/zplm/m/it/10.95 A[]\OT1/ppl/m/n/10.95 ,
+ \OML/zplm/m/it/10.95 A[]\OT1/zplm/m/n/10.95 ]) = \OML/zplm/m/it/10.95 ker [] \
+OT1/zplm/m/n/10.95 = \OMS/zplm/m/n/10.95 f\OT1/ppl/m/n/10.95 0\OMS/zplm/m/n/10.
+95 g\OT1/ppl/m/n/10.95 .$ 
+ []
+
 File: pictures/Example2_index0.png Graphic file (type png)
 <use pictures/Example2_index0.png>
-Package pdftex.def Info: pictures/Example2_index0.png  used on input line 261.
+Package pdftex.def Info: pictures/Example2_index0.png  used on input line 285.
 (pdftex.def)             Requested size: 232.46437pt x 190.90987pt.
 
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 319--320
+Underfull \hbox (badness 10000) in paragraph at lines 343--344
 
  []
 
 File: pictures/Example3.png Graphic file (type png)
 <use pictures/Example3.png>
-Package pdftex.def Info: pictures/Example3.png  used on input line 324.
-(pdftex.def)             Requested size: 232.46437pt x 190.90987pt.
+Package pdftex.def Info: pictures/Example3.png  used on input line 348.
+(pdftex.def)             Requested size: 220.66049pt x 138.99683pt.
 
 
 [30])
@@ -2215,7 +2227,7 @@ See the caption package documentation for explanation.
 LaTeX Warning: Reference `fig:numerical approximation' on page 32 undefined on 
 input line 20.
 
-<pictures/num_approx.png, id=400, 391.4625pt x 222.07968pt>
+<pictures/num_approx.png, id=399, 391.4625pt x 222.07968pt>
 File: pictures/num_approx.png Graphic file (type png)
 <use pictures/num_approx.png>
 Package pdftex.def Info: pictures/num_approx.png  used on input line 26.
@@ -2305,7 +2317,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 340--342
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 354.
-<screenshot021.png, id=483, 276.28218pt x 226.59656pt>
+<screenshot021.png, id=482, 276.28218pt x 226.59656pt>
 File: screenshot021.png Graphic file (type png)
 <use screenshot021.png>
 Package pdftex.def Info: screenshot021.png  used on input line 379.
@@ -2317,7 +2329,7 @@ Package mdframed Info: mdframed detected package amsthm
 
 [40 <./screenshot021.png>]
 Package mdframed Info: Not enough space on this page on input line 387.
-<screenshot029.png, id=493, 490.83376pt x 53.44969pt>
+<screenshot029.png, id=492, 490.83376pt x 53.44969pt>
 File: screenshot029.png Graphic file (type png)
 <use screenshot029.png>
 Package pdftex.def Info: screenshot029.png  used on input line 393.
@@ -2327,7 +2339,7 @@ Package pdftex.def Info: screenshot029.png  used on input line 393.
 [41 <./screenshot029.png>]
 
 [42]
-<pictures/bdf_stability_regions.png, id=509, 904.88063pt x 255.95625pt>
+<pictures/bdf_stability_regions.png, id=508, 904.88063pt x 255.95625pt>
 File: pictures/bdf_stability_regions.png Graphic file (type png)
 <use pictures/bdf_stability_regions.png>
 Package pdftex.def Info: pictures/bdf_stability_regions.png  used on input line
@@ -2375,7 +2387,7 @@ See the caption package documentation for explanation.
 LaTeX Warning: Reference `fig: Exact solution for example 2' on page 46 undefin
 ed on input line 628.
 
-<pictures/exact_solution_ex2.png, id=529, 350.05782pt x 276.28218pt>
+<pictures/exact_solution_ex2.png, id=528, 350.05782pt x 276.28218pt>
 File: pictures/exact_solution_ex2.png Graphic file (type png)
 <use pictures/exact_solution_ex2.png>
 Package pdftex.def Info: pictures/exact_solution_ex2.png  used on input line 63
@@ -2399,7 +2411,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 665--666
 File: pictures/Example3.png Graphic file (type png)
 <use pictures/Example3.png>
 Package pdftex.def Info: pictures/Example3.png  used on input line 669.
-(pdftex.def)             Requested size: 232.46437pt x 190.90987pt.
+(pdftex.def)             Requested size: 220.66049pt x 138.99683pt.
 
 Overfull \hbox (60.79874pt too wide) in paragraph at lines 674--684
  [] 
@@ -2442,35 +2454,31 @@ Package logreq Info: Writing requests to 'MAIN.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39584 strings out of 473361
- 809110 string characters out of 5725029
- 1814807 words of memory out of 5000000
- 61423 multiletter control sequences out of 15000+600000
+ 39577 strings out of 473361
+ 808986 string characters out of 5725029
+ 1814391 words of memory out of 5000000
+ 61417 multiletter control sequences out of 15000+600000
  654466 words of font info for 423 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,20n,142p,10899b,4097s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{section.2.5} has been referenced but does not exist
-, replaced by a fixed one
-
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texli
-ve/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/typ
-e1/public/mathpazo/fplmbb.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/ma
-thpazo/fplmr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/mathpazo/fplmri
-.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><c:/t
-exlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb><c:/texlive/202
-4/texmf-dist/fonts/type1/urw/grotesq/ugqb8a.pfb><c:/texlive/2024/texmf-dist/fon
-ts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/he
-lvetic/uhvr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplb8a.p
-fb><c:/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb><c:/texlive
-/2024/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2024/texmf-dis
-t/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/u
-rw/palatino/uplri8a.pfb>
-Output written on MAIN.pdf (55 pages, 553979 bytes).
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/tex
+live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/t
+ype1/public/mathpazo/fplmbb.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/
+mathpazo/fplmr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/mathpazo/fplm
+ri.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><c:
+/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb><c:/texlive/2
+024/texmf-dist/fonts/type1/urw/grotesq/ugqb8a.pfb><c:/texlive/2024/texmf-dist/f
+onts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/
+helvetic/uhvr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplb8a
+.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb><c:/texli
+ve/2024/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2024/texmf-d
+ist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1
+/urw/palatino/uplri8a.pfb>
+Output written on MAIN.pdf (55 pages, 554727 bytes).
 PDF statistics:
- 754 PDF objects out of 1000 (max. 8388607)
- 193 named destinations out of 1000 (max. 500000)
+ 752 PDF objects out of 1000 (max. 8388607)
+ 192 named destinations out of 1000 (max. 500000)
  106269 words of extra memory for PDF output out of 106986 (max. 10000000)
 

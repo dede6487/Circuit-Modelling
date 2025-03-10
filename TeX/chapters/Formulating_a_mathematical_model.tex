@@ -165,12 +165,12 @@ The rows of this matric correspond to the nodes of the circuit and the columns c
 
 
 \textbf{Example 3} \label{ex:Example 3 - incidence matrix } \\
-As a third example we consider a similar circuit to the circuit presented in \ref{ex:network topology}, but with a current source instead of a voltage source.
+As a third example we consider a similar circuit to the circuit presented in \ref{ex:network topology}, the only difference is that we connected the resistor parallel to the capacitor instead of in series.
 \begin{figure}[H]
 	\label{circuit:Example 3}
 	\centering
 	\includegraphics[scale=0.5]{pictures/Example3.png}
-	\caption{Capacitor with resistor and current source}
+	\caption{Capacitor with resistor and voltage source}
 \end{figure}
 
 We collect the node-potentials, the voltages and the currents collected in the vectors
@@ -179,9 +179,7 @@ We collect the node-potentials, the voltages and the currents collected in the v
 	\left(
 	\begin{matrix}
 		u_0 \\
-		u_1 \\
-		u_2 \\
-		u_3 
+		u_1 
 	\end{matrix}
 	\right),
 	\quad
@@ -190,8 +188,7 @@ We collect the node-potentials, the voltages and the currents collected in the v
 	\begin{matrix}
 		v_0 \\
 		v_1 \\
-		v_2 \\
-		v_3 
+		v_2 
 	\end{matrix}
 	\right),
 	\quad
@@ -200,8 +197,7 @@ We collect the node-potentials, the voltages and the currents collected in the v
 	\begin{matrix}
 		i_0 \\
 		i_1 \\
-		i_2 \\
-		i_3 
+		i_2 
 	\end{matrix}
 	\right).
 \end{displaymath}
@@ -211,9 +207,8 @@ The incidence matrix of this circuit has the form
 	\tilde{A} = 
 	\left(
 	\begin{matrix}
-		1 & 0 & -1 \\
-		-1 & 1 & 0 \\
-		0 & -1 & 1 \\
+		1 & -1 & -1 \\
+		-1 & 1 & 1 
 	\end{matrix}
 	\right),
 \end{displaymath}
@@ -222,8 +217,7 @@ this leads to the reduced incidence matrix
 	A = 
 	\left(
 	\begin{matrix}
-		-1 & 1 & 0 \\
-		0 & -1 & 1 
+		-1 & 1 & 1
 	\end{matrix}
 	\right).
 \end{displaymath}
@@ -509,8 +503,7 @@ We again consider Example 3, \ref{ex:Example 3 - incidence matrix }. We have alr
 	A = 
 	\left(
 	\begin{matrix}
-		-1 & 1 & 0 \\
-		0 & -1 & 1 
+		-1 & 1 & 1
 	\end{matrix}
 	\right).
 \end{displaymath} 
@@ -521,28 +514,28 @@ This matrix can be split into the three submatrices $A_I$, $A_R$ and $A_C$ conta
 Plugging this into the formula \eqref{MNA_Matrixform} we obtain the system
 \begin{displaymath}
 	\begin{pmatrix}
-		0 & 0 \\
-		0 & C 
+		C & 0 \\
+		0 & 0 
 	\end{pmatrix}
 	*
 	\begin{pmatrix}
 		u_1' \\
-		u_2'
+		i_V'
 	\end{pmatrix}
 	+
 	\begin{pmatrix}
-		\frac{1}{R} & -\frac{1}{R} \\
-		-\frac{1}{R} & \frac{1}{R}
+		\frac{1}{R} & -1 \\
+		1 & 0
 	\end{pmatrix}
 	*
 	\begin{pmatrix}
 		u_1 \\
-		u_2 
+		i_V
 	\end{pmatrix}
 	=
 	\begin{pmatrix}
-		i_{src} \\
-		0
+		0 \\
+		-v_{src}
 	\end{pmatrix}.
 \end{displaymath}
 
