@@ -6,26 +6,23 @@ x = 0:h:tspan(2);
 %example 1
 
 %system matrices
-A1 = [0 0 0;
-      0 1 0;
-      0 0 0];
+A1 = [1 0;
+      0 0];
 
-B1 = [1 -1 0;
-      -1 1 -1;
-      0 -1 0];
+B1 = [1 -1;
+      1 0];
 
-f1 = @(t) [0 0 -sin(pi*t)]';
+f1 = @(t) [0 -sin(pi*t)]';
 
 %consistent initial values (as calculated)
 
-y0 = [0 0 pi]';
+y0 = [0 pi]';
 
 %exact solution u2 = vsrc, u1 = -u2
-% y = [u1, u2, iV]
+% y = [u1,, iV]
 
-y = @(t) [-subsref(f1(t), struct('type', '()', 'subs', {{3}})); %first and second component returns third component of f1
-          -subsref(f1(t), struct('type', '()', 'subs', {{3}}));
-          pi*cos(pi*t)]; %last component  i_v = -(d/dt)v_src
+y = @(t) [0; 
+          0]; 
 y_exact = zeros(length(y0), length(x));
 y_exact(:,1) = y0;
 
@@ -57,20 +54,16 @@ diff_BDF3 = y1_BDF3-y_exact;
 diff_Trapezoidal = y1_Trapezoidal-y_exact;
 
 fprintf('The BDF1 method has a maximum error of in u1: %e \n', max(abs(diff_BDF1(1,:)),[],"all"))
-fprintf('in u2: %e \n', max(abs(diff_BDF1(2,:)),[],"all"))
-fprintf('in iV: %.15e \n', max(abs(diff_BDF1(3,:)),[],"all"))
+fprintf('in iV: %e \n', max(abs(diff_BDF1(2,:)),[],"all"))
 
 fprintf('The BDF2 method has a maximum error of in u1: %e \n', max(abs(diff_BDF2(1,:)),[],"all"))
-fprintf('in u2: %e \n', max(abs(diff_BDF2(2,:)),[],"all"))
-fprintf('in iV: %.15e \n', max(abs(diff_BDF2(3,:)),[],"all"))
+fprintf('in iV: %e \n', max(abs(diff_BDF2(2,:)),[],"all"))
 
 fprintf('The BDF3 method has a maximum error of in u1: %e \n', max(abs(diff_BDF3(1,:)),[],"all"))
-fprintf('in u2: %e \n', max(abs(diff_BDF3(2,:)),[],"all"))
-fprintf('in iV: %.15e \n', max(abs(diff_BDF3(3,:)),[],"all"))
+fprintf('in iV: %e \n', max(abs(diff_BDF3(2,:)),[],"all"))
 
 fprintf('The Trapezoidal method has a maximum error of in u1: %e \n', max(abs(diff_Trapezoidal(1,:)),[],"all"))
-fprintf('in u2: %e \n', max(abs(diff_Trapezoidal(2,:)),[],"all"))
-fprintf('in iV: %.15e \n', max(abs(diff_Trapezoidal(3,:)),[],"all"))
+fprintf('in iV: %e \n', max(abs(diff_Trapezoidal(2,:)),[],"all"))
 
 %illustration of one of the components at a time, i.e. graph =1,2,3 for u1,
 %u2, iV

@@ -354,15 +354,14 @@ We will apply those results to some examples:
 		\includegraphics[scale = 0.4]{pictures/Example3.png}
 		\caption{current source with resistor and capacitor} 
 	\end{figure}
-	This circuit...
+	This circuit contains two loops, the first with only a voltage source and a capacitor and the second with a capacitor and a resistor. Because of the first loop, we expect this circuit to omit a system of index $\nu = 2$.
 	
 	The incidence matrix for this system is
 	\begin{displaymath}
-		A = [A_V~A_R~A_C] = 
+		A = [A_V~A_C~A_R] = 
 		\left(
 		\begin{matrix}
-			-1 & 1 & 0 \\
-			0 & -1 & 1 
+			-1 & 1 & 1
 		\end{matrix}
 		\right).
 	\end{displaymath} 
@@ -371,29 +370,34 @@ We will apply those results to some examples:
 		ker([A_R, A_C, A_V, A_L]^\top) = ker
 		\left(
 		\begin{matrix}
-			1 & -1 \\
-			0 & 1
+			1 \\
+			1 \\ 
+			-1
 		\end{matrix}
 		\right) = \{0\}
 		\quad \text{and} \quad 
-		ker(A_V) = {0}
+		ker(A_V) = ker
+		\begin{matrix}
+			-1
+		\end{matrix}
+		\right) = \{0\}
 	\end{displaymath}
 	This condition is fulfilled, thus the index has to be smaller or equal to 2.
 	Condition \eqref{eq:index condition leq 1} results in
 	\begin{displaymath}
 		ker([A_R, A_C, A_V]^\top) = ker\left(
 		\begin{matrix}
-			1 & -1 \\
-			0 & 1 
+			1 \\
+			1 \\
+			-1
 		\end{matrix}
 		\right) = \{0\}
 		\quad \text{and} \quad
 		ker([A_C, A_V]) = ker
 		\left(
 		\begin{matrix}
-			0 \\
-			1
+			1 & -1
 		\end{matrix}
 		\right) \neq \{0\}.
 	\end{displaymath}
-	Thus it also has index $2$.
+	Thus this condition is not fulfilled, which means that the system indeed has index $\nu = 2$.
