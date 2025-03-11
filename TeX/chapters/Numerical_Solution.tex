@@ -643,22 +643,33 @@ In the following two subchapters we will give a short overview over the two most
 	für pfade:
 	graphicspath
 	
-	\begin{table}[H]
-	\begin{center}
-		\label{tab:error ex2}
-		\begin{tabular}{ c || c c | c c | c c | c c |} 
-			h & \multicolumn{2}{c|}{k = 1} & \multicolumn{2}{c|}{k = 2} & \multicolumn{2}{c|}{k = 3} & \multicolumn{2}{c|}{Trapezoidal} \\
-			& u1 & iL & u1 & iL & u1 & iL & u1 & iL \\
-			\hline
-			& \multicolumn{2}{c|}{err x e-1} & \multicolumn{2}{c|}{err x e-3} & \multicolumn{2}{c|}{err x e-4} & \multicolumn{2}{c|}{err x e-3} \\
-			\hline
-			$1$ & $0,1$ & $0,1$ & $1180$ & $1220$ & $25100$ & $22000$ & $1390$ & $1460$ \\
-			$0,1$ & $7,14$ & $6,90$ & $78,3$ & $80,2$ & $639$ & $615$ & $19,6$ &  $20,8$ \\
-			$0,01$ & $1,18$ & $1,11$ & $0,79$ & $0,83$ & $0,68$ & $0,63$ & $0,19$ & $0,20$
-		\end{tabular}
-		\caption{Error for BDF-1, -2, -3 methods and trapezoidal rule applied to ex2.}
+	\begin{center}	
+		\csvreader[tabular= | c || c c | c c | c c | c c | ,
+		table head = \hline h & \multicolumn{2}{c|}{k = 1} & \multicolumn{2}{c|}{k = 2} & \multicolumn{2}{c|}{k = 3} & \multicolumn{2}{c|}{Trapezoidal} \\
+		& u1 & iL & u1 & iL & u1 & iL & u1 & iL \\
+		\hline,
+		late after line=\\\hline]
+		{tables/err_ex2.csv}{h=\h, oneu=\oneu, onei=\onei, twou=\twou, twoi=\twoi, threeu=\threeu, threei=\threei, trapu=\trapu, trapil=\trapil}
+		{\h & \num{\oneu} & \num{\onei} & \num{\twou} & \num{\twoi} & \num{\threeu} & \num{\threei} & \num{\trapu} & \num{\trapil}}
 	\end{center}
-	\end{table}
+	
+	
+%	\begin{table}[H]
+%	\begin{center}
+%		\label{tab:error ex2}
+%		\begin{tabular}{ c || c c | c c | c c | c c |} 
+%			h & \multicolumn{2}{c|}{k = 1} & \multicolumn{2}{c|}{k = 2} & \multicolumn{2}{c|}{k = 3} & \multicolumn{2}{c|}{Trapezoidal} \\
+%			& u1 & iL & u1 & iL & u1 & iL & u1 & iL \\
+%			\hline
+%			& \multicolumn{2}{c|}{err x e-1} & \multicolumn{2}{c|}{err x e-3} & \multicolumn{2}{c|}{err x e-4} & \multicolumn{2}{c|}{err x e-3} \\
+%			\hline
+%			$1$ & $0,1$ & $0,1$ & $1180$ & $1220$ & $25100$ & $22000$ & $1390$ & $1460$ \\
+%			$0,1$ & $7,14$ & $6,90$ & $78,3$ & $80,2$ & $639$ & $615$ & $19,6$ &  $20,8$ \\
+%			$0,01$ & $1,18$ & $1,11$ & $0,79$ & $0,83$ & $0,68$ & $0,63$ & $0,19$ & $0,20$
+%		\end{tabular}
+%		\caption{Error for BDF-1, -2, -3 methods and trapezoidal rule applied to ex2.}
+%	\end{center}
+%	\end{table}
 
 	By comparing the errors of the methods we can see that they indeed have the predicted convergence order. (reference appropriate theorems here)
 

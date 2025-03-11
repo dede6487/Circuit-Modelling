@@ -1,5 +1,5 @@
 tspan = [0;8*pi];
-h = 0.01;
+h = 1;
 
 fprintf('the step size is %d \n',h)
 
@@ -73,12 +73,9 @@ fprintf('in iL: %e \n', max(abs(diff_BDF3(2,:)),[],"all"))
 fprintf('The Trapezoidal method has a maximum error of \nin u1: %e \n', max(abs(diff_Trapezoidal(1,:)),[],"all"))
 fprintf('in iL: %e \n', max(abs(diff_Trapezoidal(2,:)),[],"all"))
 
-% err_ex2 = [max_err_BDF1;
-%        max_err_BDF2;
-%        max_err_BDF3;
-%        max_err_Trapezoidal];
-% 
-% writematrix(err_ex2);
+err_ex2 = [max_err_BDF1 max_err_BDF2 max_err_BDF3 max_err_Trapezoidal];
+
+writematrix(err_ex2);
 
 %illustration of one of the components at a time, i.e. graph =1,2 for u1,
 %iL
