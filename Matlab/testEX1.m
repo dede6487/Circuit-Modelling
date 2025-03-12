@@ -75,7 +75,7 @@ fprintf('in iV: %.15e \n', max(abs(diff_Trapezoidal(3,:)),[],"all"))
 %illustration of one of the components at a time, i.e. graph =1,2,3 for u1,
 %u2, iV
 
-graph = 3;
+graph = 1;
 figure
 title('comparison of the solutions of the different methods')
 

@@ -384,20 +384,10 @@ The grid function $y_h : T \to A$ with the time-grid $T={t_0, ..., t_N}$ and the
 	following from numerik buch seite 134
 	\begin{theorem}[\protecting{\cite[Satz~4.2.10]{NumerikGewöhnlicherDifferentialgleichungen}}]
 		\label{th: null-stbaility and consistence is convergence}
-		Let the linear multi-step method be zero-stable and consistent of order $p$, then it is also convergent of order $p$.
+		Let $f(t,y)$ be sufficiently smooth and the linear multi-step method be zero-stable and consistent of order $p$, then it is also convergent of order $p$.
 	\end{theorem}
 	
-	equivalent to lax richtmyer in single step
-	
-	am streifen S, was ist f genau?
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.7\linewidth]{screenshot029}
-		\caption{}
-		\label{fig:screenshot029}
-	\end{figure}
-	
+	equivalent to lax richtmyer in single step because for lmsm zero stable = stable
 	
 
 \section{Implicit linear multi-step formulas}
@@ -461,20 +451,9 @@ The approach to solve those systems numerically can be split into three main ste
 	\item Numerical integration based on multi-step schemes
 	
 	Using the consistent initial values, we obtain solutions of the network equations at discrete timepoints $t_1, t_2, ...$ by integration with linear multi-step methods.
-	
-	\item Transformation of the DAE into a nonlinear system of equations. 
-	
-	The numerical solution is now reduced into solving a system of equations of the form
-	\begin{displaymath}
-		F(\alpha_k g(x_k) + r_k, x_k, t_k) = 0
-	\end{displaymath}
-	
-	which can be solved iteratively using Newton's method.
 \end{enumerate}
 
-- we are linear, thus no newton needed, only for nonlinear - numerik buch auch mit nur zwei schritten - adams lin mehrschrittverfahre besteht aus usw.
-
-In the following two subchapters we will give a short overview over the two most commonly used methods for solving those systems.
+In the following two subchapters we will give a short overview over the two most commonly used methods for solving these kinds of systems.
 
 \subsection{BDF-k methods}
 	\label{ch:BDf-k methods}
@@ -638,21 +617,14 @@ In the following two subchapters we will give a short overview over the two most
 	\end{figure}
 	
 	Applying the BDF-k methods \ref{ch:BDf-k methods} and the Trapezoidal rule \ref{ch:trapezoidal rule} to this problem we can observe the maximal error $err = \max\limits_{0 \leq t \leq T} \| y(t) - \tilde{y}(t) \|$. This error is displayed in table \ref{tab:error ex2}.
-	
-	für tabellen anschauen:
-	SI - unit x - packet
-	csvsimple for tables
-	
-	für pfade:
-	graphicspath
-	
+		
 	\begin{center}	
 		\csvreader[tabular= | c || c c | c c | c c | c c | ,
 		table head = \hline h & \multicolumn{2}{c|}{k = 1} & \multicolumn{2}{c|}{k = 2} & \multicolumn{2}{c|}{k = 3} & \multicolumn{2}{c|}{Trapezoidal} \\
 		& u1 & iL & u1 & iL & u1 & iL & u1 & iL \\
 		\hline,
 		late after line=\\\hline]
-		{tables/err_ex2.csv}{h=\h, oneu=\oneu, onei=\onei, twou=\twou, twoi=\twoi, threeu=\threeu, threei=\threei, trapu=\trapu, trapil=\trapil}
+		{../Matlab/err_ex2.csv}{h=\h, oneu=\oneu, onei=\onei, twou=\twou, twoi=\twoi, threeu=\threeu, threei=\threei, trapu=\trapu, trapil=\trapil}
 		{\h & \num{\oneu} & \num{\onei} & \num{\twou} & \num{\twoi} & \num{\threeu} & \num{\threei} & \num{\trapu} & \num{\trapil}}
 	\end{center}
 	

@@ -2392,7 +2392,8 @@
     <bcf:citekey order="18" intorder="1">NumerikGewöhnlicherDifferentialgleichungen</bcf:citekey>
     <bcf:citekey order="19" intorder="1">NumerikGewöhnlicherDifferentialgleichungen</bcf:citekey>
     <bcf:citekey order="20" intorder="1">NumerikGewöhnlicherDifferentialgleichungen</bcf:citekey>
-    <bcf:citekey order="21" intorder="1">ModellingAndDiscretizationOfCircuitProblems</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">NumerikGewöhnlicherDifferentialgleichungen</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">ModellingAndDiscretizationOfCircuitProblems</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
