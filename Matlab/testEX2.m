@@ -1,5 +1,5 @@
 tspan = [0;8*pi];
-h = 1;
+h = 0.1;
 
 fprintf('the step size is %d \n',h)
 
