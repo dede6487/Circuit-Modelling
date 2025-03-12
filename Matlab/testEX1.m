@@ -1,5 +1,5 @@
 tspan = [0;10];
-h = 0.01;
+h = 0.1;
 
 x = 0:h:tspan(2);
 
@@ -56,19 +56,19 @@ diff_BDF2 = y1_BDF2-y_exact;
 diff_BDF3 = y1_BDF3-y_exact;
 diff_Trapezoidal = y1_Trapezoidal-y_exact;
 
-fprintf('The BDF1 method has a maximum error of in u1: %e \n', max(abs(diff_BDF1(1,:)),[],"all"))
+fprintf('The BDF1 method has a maximum error of \n in u1: %e \n', max(abs(diff_BDF1(1,:)),[],"all"))
 fprintf('in u2: %e \n', max(abs(diff_BDF1(2,:)),[],"all"))
 fprintf('in iV: %.15e \n', max(abs(diff_BDF1(3,:)),[],"all"))
 
-fprintf('The BDF2 method has a maximum error of in u1: %e \n', max(abs(diff_BDF2(1,:)),[],"all"))
+fprintf('The BDF2 method has a maximum error of \n in u1: %e \n', max(abs(diff_BDF2(1,:)),[],"all"))
 fprintf('in u2: %e \n', max(abs(diff_BDF2(2,:)),[],"all"))
 fprintf('in iV: %.15e \n', max(abs(diff_BDF2(3,:)),[],"all"))
 
-fprintf('The BDF3 method has a maximum error of in u1: %e \n', max(abs(diff_BDF3(1,:)),[],"all"))
+fprintf('The BDF3 method has a maximum error of \n in u1: %e \n', max(abs(diff_BDF3(1,:)),[],"all"))
 fprintf('in u2: %e \n', max(abs(diff_BDF3(2,:)),[],"all"))
 fprintf('in iV: %.15e \n', max(abs(diff_BDF3(3,:)),[],"all"))
 
-fprintf('The Trapezoidal method has a maximum error of in u1: %e \n', max(abs(diff_Trapezoidal(1,:)),[],"all"))
+fprintf('The Trapezoidal method has a maximum error of \n in u1: %e \n', max(abs(diff_Trapezoidal(1,:)),[],"all"))
 fprintf('in u2: %e \n', max(abs(diff_Trapezoidal(2,:)),[],"all"))
 fprintf('in iV: %.15e \n', max(abs(diff_Trapezoidal(3,:)),[],"all"))
 
