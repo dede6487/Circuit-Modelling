@@ -363,7 +363,7 @@ Combining this with the component law for inductors \eqref{eq:inductor law} and 
 	\begin{aligned}
 		A_C C A_C^\top u' + A_R G A_R^\top u + A_L i_L + A_V i_V &= - A_I i_{src} , \\
 		L i_L'	- A_L^\top u &= 0 , \\
-		-A_V^\top &=  -v_{src}.
+		-A_V^\top u &=  -v_{src}.
 	\end{aligned}	
 \end{displaymath}
 
@@ -402,7 +402,7 @@ In matrix form these read
 \end{equation}
 where the diagonal matrices $C$, $G$ and $L$ contain the capacities, conductivities and inductivities.
 
-The resulting systems are \emph{stiff} systems. This means that for their numerical solution special care has to be put into which methods are suitable for a solving these systems in a stable manner.
+The resulting systems are \emph{stiff} systems. This means that for their numerical solution special care has to be put into which methods are suitable for solving these systems in a stable manner.
 
 
 \textbf{Example 1} \label{ex:MNA} \\
