@@ -105,6 +105,48 @@
       \field{title}{Modelling and discretization of circuit problems}
       \field{year}{2005}
     \endentry
+    \entry{MNA75}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=de255eee521e49aed4c2d9295d277bd2}{%
+           family={Ho},
+           familyi={H\bibinitperiod},
+           given={Chung-Wen},
+           giveni={C\bibinithyphendelim W\bibinitperiod}}}%
+        {{hash=46347275f2b0e9379312df8beec5ff3f}{%
+           family={Ruehli},
+           familyi={R\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=510987cda6b9316f2b1c8006dff542cf}{%
+           family={Brennan},
+           familyi={B\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{bcff144359f6c23ccd764a57bfe83b93}
+      \strng{fullhash}{bcff144359f6c23ccd764a57bfe83b93}
+      \strng{fullhashraw}{bcff144359f6c23ccd764a57bfe83b93}
+      \strng{bibnamehash}{bcff144359f6c23ccd764a57bfe83b93}
+      \strng{authorbibnamehash}{bcff144359f6c23ccd764a57bfe83b93}
+      \strng{authornamehash}{bcff144359f6c23ccd764a57bfe83b93}
+      \strng{authorfullhash}{bcff144359f6c23ccd764a57bfe83b93}
+      \strng{authorfullhashraw}{bcff144359f6c23ccd764a57bfe83b93}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Circuits and Systems}
+      \field{number}{6}
+      \field{title}{The modified nodal approach to network analysis}
+      \field{volume}{22}
+      \field{year}{1975}
+      \field{pages}{504\bibrangedash 509}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/TCS.1975.1084079
+      \endverb
+      \keyw{Equations;Voltage;Circuit analysis computing;Cancer;Computer networks;Gyrators;Inductors;Capacitors;Admittance}
+    \endentry
     \entry{NumerikGewöhnlicherDifferentialgleichungen}{book}{}{}
       \name{author}{1}{}{%
         {{hash=fc4fef8c9ff00f23a193ed01b6c1c2db}{%
@@ -134,6 +176,79 @@
       \field{year}{2012}
       \verb{doi}
       \verb https://doi.org/10.1007/978-3-8348-2263-5
+      \endverb
+    \endentry
+    \entry{Reis2014}{inbook}{}{}
+      \name{author}{1}{}{%
+        {{hash=25a0976997dbea4a30187f0bf1173213}{%
+           family={Reis},
+           familyi={R\bibinitperiod},
+           given={Timo},
+           giveni={T\bibinitperiod}}}%
+      }
+      \name{editor}{5}{}{%
+        {{hash=8a4cdf8b13f7500bf3d444308098cf91}{%
+           family={Benner},
+           familyi={B\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=cafa0666847adef4d293bfeb9125ca66}{%
+           family={Findeisen},
+           familyi={F\bibinitperiod},
+           given={Rolf},
+           giveni={R\bibinitperiod}}}%
+        {{hash=9c2bbf1f6d1c7b13d870faeb9515cb66}{%
+           family={Flockerzi},
+           familyi={F\bibinitperiod},
+           given={Dietrich},
+           giveni={D\bibinitperiod}}}%
+        {{hash=8715cff19cfa0748adabef18d2c564c1}{%
+           family={Reichl},
+           familyi={R\bibinitperiod},
+           given={Udo},
+           giveni={U\bibinitperiod}}}%
+        {{hash=a5148fca6c6bde4ba775cee31842e0b4}{%
+           family={Sundmacher},
+           familyi={S\bibinitperiod},
+           given={Kai},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{25a0976997dbea4a30187f0bf1173213}
+      \strng{fullhash}{25a0976997dbea4a30187f0bf1173213}
+      \strng{fullhashraw}{25a0976997dbea4a30187f0bf1173213}
+      \strng{bibnamehash}{25a0976997dbea4a30187f0bf1173213}
+      \strng{authorbibnamehash}{25a0976997dbea4a30187f0bf1173213}
+      \strng{authornamehash}{25a0976997dbea4a30187f0bf1173213}
+      \strng{authorfullhash}{25a0976997dbea4a30187f0bf1173213}
+      \strng{authorfullhashraw}{25a0976997dbea4a30187f0bf1173213}
+      \strng{editorbibnamehash}{2a58a14c8753d8b84235b8a64fe18251}
+      \strng{editornamehash}{2a58a14c8753d8b84235b8a64fe18251}
+      \strng{editorfullhash}{e2ca85aa68df8e608be45e2b8abf4435}
+      \strng{editorfullhashraw}{e2ca85aa68df8e608be45e2b8abf4435}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Large-Scale Networks in Engineering and Life Sciences}
+      \field{isbn}{978-3-319-08437-4}
+      \field{title}{Mathematical Modeling and Analysis of Nonlinear Time-Invariant RLC Circuits}
+      \field{year}{2014}
+      \field{pages}{125\bibrangedash 198}
+      \range{pages}{74}
+      \verb{doi}
+      \verb 10.1007/978-3-319-08437-4_2
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-3-319-08437-4_2
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-3-319-08437-4_2
       \endverb
     \endentry
     \entry{shashkov_tuprints27452}{thesis}{}{}

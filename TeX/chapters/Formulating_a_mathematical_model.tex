@@ -1,8 +1,8 @@
 \chapter{Formulating a Mathematical Model}
 based on DAE lecture and \cite{ModellingAndDiscretizationOfCircuitProblems}
 
-To accurately represent a physical system in a mathematical model we first have to think about \textbf{how} to best formulate a mathematical model that formulates this system accurately enough.
-This chapter aims to elaborate on the Modified Nodal Analysis (MNA) of an electrical circuit, which is the a common choice for these kinds of models. For this we have to introduce the notions of network topology as well as some basic electrical components and laws. Most of the following notions such as voltage, current and electrical potentials are time dependent. For better readability we will leave out the time argument $t$ in some cases.
+To accurately represent a physical system in a mathematical model we first have to think about \textbf{how} to best formulate a mathematical model that formulates this system precise enough.
+This chapter aims to elaborate on the Modified Nodal Analysis (MNA) of an electrical circuit, which is the a common choice for these kinds of models. For this we have to introduce the notions of network topology as well as some basic electrical components and physical laws. Most of the following notions such as voltage, current and electrical potentials can depend on time. For better readability we will leave out the time argument $t$ in some cases.
 
 \section{Network Topology}
 \label{Sec:Network Topology}
@@ -22,14 +22,14 @@ We will later see, that the components of an electrical circuit, which will be i
 
 
 \textbf{Example 1} \label{ex:network topology} \\
-As an example we consider the charging of a capacitor. The circuit is given as
+As an example we consider the charging of a capacitor. The circuit is given in Figure \ref{circuit:charging of capacitor}.
 \begin{figure}[H]
 	\label{circuit:charging of capacitor}
 	\centering
 	\includegraphics[scale=0.5]{pictures/Example1_simple.png}
 	\caption{charging capacitor with series resistor and voltage source}
 \end{figure}
-with the node-potentials, the voltages and the currents collected in the vectors
+With the node-potentials, the voltages and the currents collected in the vectors
 \begin{displaymath}
 	u=
 	\left(
@@ -59,9 +59,9 @@ with the node-potentials, the voltages and the currents collected in the vectors
 		i_2 \\
 		i_3 
 	\end{matrix}
-	\right).
+	\right),
 \end{displaymath}
-The incidence matrix of this circuit has the form
+the incidence matrix of this circuit has the form
 \begin{displaymath}
 	\tilde{A} = 
 	\left(
@@ -73,7 +73,7 @@ The incidence matrix of this circuit has the form
 	\end{matrix}
 	\right).
 \end{displaymath}
-The rows of this matric correspond to the nodes of the circuit and the columns correspond to the edges. By grounding node 0 this reduces to
+The rows of this matric correspond to the nodes of the circuit and the columns correspond to the edges and tell us if the edge either starts ($1$) or end ($-1$) at a node. By grounding node $u_0$ this matrix reduces to
 \begin{displaymath}
 	A = 
 	\left(
@@ -109,7 +109,7 @@ Thus we can consider this circuit with node 0 and node 3 merged. This leads to a
 
 
 \textbf{Example 2} \label{ex:LC-circuit incidence matrix} \\
-Another example is the a circuit that only contains a capacitor and an inductor. This circuit will oscillate, if given appropriate initial conditions.
+Another example is the a circuit that only contains a capacitor and an inductor, see Figure \ref{circuit:LC-circuit}. This circuit will oscillate, if given appropriate initial conditions.
 \begin{figure}[H]
 	\label{circuit:LC-circuit}
 	\centering
@@ -117,7 +117,7 @@ Another example is the a circuit that only contains a capacitor and an inductor.
 	\caption{capacitor and inductor oscillator}
 \end{figure}
 
-we again collect the node-potentials, the voltages and the currents in the vectors
+We again collect the node-potentials, the voltages and the currents in the vectors
 \begin{displaymath}
 	u=
 	\left(
@@ -153,7 +153,7 @@ The incidence matrix of this circuit has the form
 	\end{matrix}
 	\right).
 \end{displaymath}
-The rows of this matric correspond to the nodes of the circuit and the columns correspond to the edges. By grounding node 0 this reduces to
+By grounding node $u_0$ this can again be reduced, we obtain the reduced incidence matrix
 \begin{displaymath}
 	A = 
 	\left(
@@ -165,7 +165,7 @@ The rows of this matric correspond to the nodes of the circuit and the columns c
 
 
 \textbf{Example 3} \label{ex:Example 3 - incidence matrix } \\
-As a third example we consider a similar circuit to the circuit presented in \ref{ex:network topology}, the only difference is that we connected the resistor parallel to the capacitor instead of in series.
+As a third example we consider a similar circuit to the circuit presented in \textbf{Example 1}, the only difference is that we connected the resistor parallel to the capacitor instead of in series.
 \begin{figure}[H]
 	\label{circuit:Example 3}
 	\centering
@@ -323,18 +323,15 @@ The resistance $R$, conductance $G$, capacitance $C$ and inductance $L$ are resp
 
 \cite{ModellingAndDiscretizationOfCircuitProblems} and \cite{NumerikGewöhnlicherDifferentialgleichungen}
 
-To analyse the network further we will rearrange the columns of the reduced incidence matrix $A$ such that is has the block form
+To analyse the network further we will rearrange the columns of the reduced incidence matrix $A$ such that it has the block form
 \begin{displaymath}
 	A = (A_R A_C A_L A_V A_I)
 \end{displaymath}
 where $A_R$, $A_C$, $A_L$, $A_V$ and $A_I$ include the columns that are related to the resistors, capacitors, coils, voltage sources and current sources, respectively.
 
-To mathematically describe the circuit we will use \emph{modified nodal analysis} (or short MNA), first introducced in \textbf{reference original paper!!!!!!!!!!!!!!!!!!!, maybe this?}
+To mathematically describe the circuit we will use \emph{modified nodal analysis} (or short MNA), see \cite{MNA75}.
 	
-	introduced by ALBERT E. RUEHLI, see paper	
-	
-	
-	 %https://ieeexplore.ieee.org/document/1084079}. MNA uses the node voltages as well as the currents of the coils and the voltage sources as unknowns. It is based on the conservation laws \eqref{KCL} and \eqref{KVL} as well as on the voltage-current relations of the electrical components, discussed in Section \ref{Sec:Electrical Components and their relation}. The voltages can be represented using the node-potentials
+MNA uses the node voltages as well as the currents of the coils and the voltage sources as unknowns. It is based on the conservation laws \eqref{KCL} and \eqref{KVL} as well as on the voltage-current relations of the electrical components, discussed in Section \ref{Sec:Electrical Components and their relation}. The voltages can be represented using the node-potentials
 \begin{displaymath}
 	v = A^\top u
 \end{displaymath}
@@ -406,7 +403,7 @@ The resulting systems are \emph{stiff} systems. This means that for their numeri
 
 
 \textbf{Example 1} \label{ex:MNA} \\
-We again consider the charging of a capacitor. The circuit is again given as in Example 1, \ref{ex:network topology}, where we have already derived the reduced incidence matrix
+We again consider the charging of a capacitor. The circuit is again given as in \textbf{Example 1}, \ref{ex:network topology}, where we have already derived the reduced incidence matrix
 \begin{displaymath}
 	A = 
 	\left(
@@ -453,8 +450,10 @@ Plugging this into the formula \eqref{MNA_Matrixform} we obtain the system
 	\end{pmatrix}.
 \end{displaymath}
 
+Note that because $L$ is empty, the system does not contain any related equations to inductances.
+
 \textbf{Example 2} \label{ex:LC-circuit MNA} \\
-Similarly we also derived the incidence Matrix of \ref{circuit:LC-circuit} in Example 2, \eqref{ex:LC-circuit incidence matrix}.
+Similarly we also derived the incidence Matrix of \ref{circuit:LC-circuit} in \textbf{Example 2}, \eqref{ex:LC-circuit incidence matrix}.
 \begin{displaymath}
 	A = 
 	\left(
@@ -466,7 +465,7 @@ Similarly we also derived the incidence Matrix of \ref{circuit:LC-circuit} in Ex
 
  This matrix can be split into the two submatrices $A_C$ and $A_L$ containing the columns of the matrix $A$. The matrices $A_R$, $A_V$ and $A_I$ are empty in this case. The diagonal matrices containing the components constants are
 \begin{displaymath}
-	C = (C), \qquad L = (L).
+	C = (C), \qquad L = (L), \qquad G=().
 \end{displaymath}
 Plugging this into the formula \eqref{MNA_Matrixform} we obtain the system
 \begin{displaymath}
@@ -498,7 +497,7 @@ Plugging this into the formula \eqref{MNA_Matrixform} we obtain the system
 
 
 \textbf{Example 3} \label{ex:Example 3 - MNA} \\
-We again consider Example 3, \ref{ex:Example 3 - incidence matrix }. We have already found the incidence matrix for this circuit.
+Consider the circuit of \textbf{Example 3}, \ref{ex:Example 3 - incidence matrix }. We have already found the incidence matrix for this circuit.
 \begin{displaymath}
 	A = 
 	\left(

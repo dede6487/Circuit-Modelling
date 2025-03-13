@@ -49,7 +49,8 @@ This chapter focuses on giving a brief overview of the different types of differ
 		with $f:\mathbb{R} \to \mathbb{R}^n$ and $g:\mathbb{R} \to \mathbb{R}^d$ functions.
 	\end{itemize}
 	
-	For our analysis of electrical networks we will focus on linear systems with constant coefficients. The other systems could for example occur when we also consider time-dependant component relations e.g. Temperature.
+	For our analysis of electrical networks we will focus on linear systems with constant coefficients. The other systems could for example occur when we also consider time-dependant component relations e.g. Temperature. 
+	A splitting of the variable $y$ is usually common, where we differ between the \emph{differential variable} and the \emph{algebraic variable}. A differential variable in this sense is the part of $y$, which derivatives also appear in the differential algebraic equation. The algebraic variable on the other hand only appears in algebraic equations.
 
 \subsection{Weierstraß-Kronecker Normalform}
 \label{chap:Weierstraß-Kronecker Normalform}
@@ -295,7 +296,7 @@ We call this system the\emph{ Weierstraß-Kronecker normalform} of the DAE. The 
 	&= \sum_{i=0}^{k-1} (-1)^iN^iq^{(i)}(t)
 \end{align}
 
-where $k$ is the nilpotency index of $N$. Hence we have an explicit  form of the solution of $v(t)$. The Kronecker index $k$ thus tells us how many differentiations are required to obtain an ordinary differential equation.
+where $k$ is the nilpotency index of $N$. Hence we have an explicit  form of the solution of $v(t)$. The Kronecker index $k$ thus tells us how many differentiations are required to obtain an ordinary differential equation. Note that this way of splitting the DAE allows us to differ between algebraic and differential variables.
 
 We can also give a general definition of a DAE in Weierstraß-Kronecker normalform.
 \begin{definition}[\protecting{\cite[Definition~13.2.4]{NumerikGewöhnlicherDifferentialgleichungen}}]

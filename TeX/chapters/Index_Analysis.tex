@@ -158,12 +158,10 @@ This system is also sensitive to perturbations. Note that the solution formula \
 
 %alternative version:
 
-From analyzing the MNA some conditions to the circuit topology can be obtained. We will be considering the impact of special arrangements of components on the index of the system. In \cite{Tischendorf2005Topological} as well as in \cite{shashkov_tuprints27452} they present results about the index of MNA equations.
+From analyzing the MNA some conditions to the circuit topology can be obtained. We will be considering the impact of special arrangements of components on the index of the system. In \cite{Tischendorf2005Topological} as well as in \cite{shashkov_tuprints27452} and \cite{Reis2014} they present results about the index of MNA equations.
 
 
-theorem 6.14 aus large scale networks
-
-below also refernece to Large-scale Networks In Engineering And Life Sciences -- Peter Benner, Rolf Findeisen, Dietrich Flockerzi, Udo -- Modeling and Simulation in Science, -- 9783319084367 -- 7f382b99407ecebac61ae901c9d5da7e
+%theorem 6.14 aus large scale networks auch ähnlich
 
 \begin{theorem}[Index conditions \protect{\cite[Theorem~2.2.1]{shashkov_tuprints27452}}]
 	Let the matrices of the capacitances, inductances and resistances be positive definite.
@@ -203,8 +201,8 @@ check again, maybe need to add "only contains" somwhere - maybe at index 1 condi
 
 We will apply those results to some examples: 
 
-\textbf{Example1} \label{ex:Index_Analysis} \\
-	As our first example we consider again the charging of a capacitor with a series resistor.
+\textbf{Example 1} \label{ex:Index_Analysis} \\
+	As our first example we consider again the charging of a capacitor with a series resistor as in \textbf{Example 1}.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale = 0.4]{pictures/Example1_simple_p2.png}
@@ -230,8 +228,8 @@ We will apply those results to some examples:
 			1 & -1 \\
 			0 & 1 \\
 			-1 & 0
-		\end{matrix}^\top
-		\right) 
+		\end{matrix}
+		\right)
 		 = \{0\} 
 		\quad \text{and} \quad 
 		ker(A_V) = ker
@@ -239,7 +237,7 @@ We will apply those results to some examples:
 		\begin{matrix}
 			-1 \\
 			0
-		\end{matrix}^\top
+		\end{matrix}
 		\right) = \{0\}.
 	\end{displaymath}
 	This condition is fulfilled, thus the index has to be smaller or equal to $2$.
@@ -251,7 +249,7 @@ We will apply those results to some examples:
 			1 & -1 \\
 			0 & 1 \\
 			-1 & 0
-		\end{matrix}^\top
+		\end{matrix}
 		\right) 
 		= \{0\} 
 		\quad \text{and} \quad
@@ -270,7 +268,7 @@ We will apply those results to some examples:
 		\left(
 		\begin{matrix}
 			0 & 1
-		\end{matrix}^\top
+		\end{matrix}
 		\right) 
 		= \{0\} 
 		\quad \text{and} \quad
@@ -278,14 +276,14 @@ We will apply those results to some examples:
 	\end{displaymath}
 	This means that this system has index $\nu = 1$.
 	
-\textbf{Example2} \\
+\textbf{Example 2} \\
 	This example depicts an energy conserving system. The electric energy stored in the capacitor is converted into the the magnetic energy of the coil and vice versa.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale = 0.4]{pictures/Example2_index0.png}
 		\caption{LC circuit}
 	\end{figure}
-	Because this circuit only contains only one capacitor and one inductance, the absence of sources means that we expect the resulting MNA-system to be of index $\nu=0$. This means that the system is an ODE!
+	Because this circuit only contains one capacitor and one inductance in a singular loop and also has no sources, we expect the resulting MNA-system to be of index $\nu=0$. This means that the system is an ODE!
 	
 	The incidence matrix for this system is
 	\begin{displaymath}
@@ -296,7 +294,7 @@ We will apply those results to some examples:
 		\end{matrix}
 		\right).
 	\end{displaymath} 
-	Thus condition \eqref{eq:index condition leq 2} gives us (empty matrices, thus fulfilled)
+	Thus condition \eqref{eq:index condition leq 2} gives us
 	\begin{displaymath}
 		ker([A_R, A_C, A_V, A_L]^\top) = ker
 		\left(
@@ -308,7 +306,7 @@ We will apply those results to some examples:
 		\quad \text{and} \quad 
 		ker(A_V) = \{0\}.
 	\end{displaymath}
-	This condition is fulfilled, thus the index has to be smaller or equal to 2.
+	This condition is fulfilled, thus the index has to be smaller or equal to 2. \\
 	Condition \eqref{eq:index condition leq 1} results in
 	\begin{displaymath}
 		ker([A_R, A_C, A_V]^\top) = ker\left(
@@ -324,7 +322,7 @@ We will apply those results to some examples:
 		\end{matrix}
 		\right) = \{0\}.
 	\end{displaymath}
-	This condition is also fulfilled, thus the index has to be smaller or equal to 1.
+	This condition is also fulfilled, thus the index has to be smaller or equal to 1.\\
 	Finally condition \eqref{eq:index condition eq 0} results in
 	\begin{displaymath}
 		ker(A_C^\top) = ker\left(
@@ -337,7 +335,7 @@ We will apply those results to some examples:
 	\end{displaymath}
 	Thus it is fulfilled and we obtain index 0.
 	
-	If we have consider the MNA we can also directly see that this system is of index 0. The MNA has the form
+	If we have consider the MNA directly, we also see that this system is of index $\nu = 0$, because the MNA has the form
 	\begin{displaymath}
 		\begin{aligned}
 			C u'_1 - i_L &= 0, \\
@@ -346,7 +344,7 @@ We will apply those results to some examples:
 	\end{displaymath}
 	which is an ODE.
 	
-	\textbf{Example3} \\
+	\textbf{Example 3} \\
 
 	Finally, as the third example seems very similar to the first one, we might also expect them to have the same index. But this is indeed not the case as the following analysis shows. 
 	\begin{figure}[H]

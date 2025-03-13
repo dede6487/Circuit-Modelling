@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.11)  12 MAR 2025 15:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.11)  13 MAR 2025 13:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2027,7 +2027,15 @@ File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 
 
 ]
-<pictures/Example1_simple.png, id=147, 581.17125pt x 477.28313pt>
+
+Package caption Warning: \label without proper reference on input line 27.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `circuit:charging of capacitor' on page 3 undefined on
+ input line 25.
+
+<pictures/Example1_simple.png, id=148, 581.17125pt x 477.28313pt>
 File: pictures/Example1_simple.png Graphic file (type png)
 <use pictures/Example1_simple.png>
 Package pdftex.def Info: pictures/Example1_simple.png  used on input line 29.
@@ -2035,7 +2043,15 @@ Package pdftex.def Info: pictures/Example1_simple.png  used on input line 29.
 
 
 [3 <./pictures/Example1_simple.png>]
-<pictures/Example2_index0.png, id=155, 581.17125pt x 477.28313pt>
+
+Package caption Warning: \label without proper reference on input line 114.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `circuit:LC-circuit' on page 4 undefined on input line
+ 112.
+
+<pictures/Example2_index0.png, id=157, 581.17125pt x 477.28313pt>
 File: pictures/Example2_index0.png Graphic file (type png)
 <use pictures/Example2_index0.png>
 Package pdftex.def Info: pictures/Example2_index0.png  used on input line 116.
@@ -2043,7 +2059,7 @@ Package pdftex.def Info: pictures/Example2_index0.png  used on input line 116.
 
 
 [4]
-<pictures/Example3.png, id=161, 551.661pt x 347.49825pt>
+<pictures/Example3.png, id=162, 551.661pt x 347.49825pt>
 File: pictures/Example3.png Graphic file (type png)
 <use pictures/Example3.png>
 Package pdftex.def Info: pictures/Example3.png  used on input line 172.
@@ -2059,7 +2075,7 @@ LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 2
 (c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )
-<pictures/resistor.png, id=175, 201.00093pt x 76.03406pt>
+<pictures/resistor.png, id=176, 201.00093pt x 76.03406pt>
 File: pictures/resistor.png Graphic file (type png)
 <use pictures/resistor.png>
 Package pdftex.def Info: pictures/resistor.png  used on input line 257.
@@ -2067,12 +2083,12 @@ Package pdftex.def Info: pictures/resistor.png  used on input line 257.
 
 
 [7]
-<pictures/capacitor.png, id=187, 100.12407pt x 93.34875pt>
+<pictures/capacitor.png, id=188, 100.12407pt x 93.34875pt>
 File: pictures/capacitor.png Graphic file (type png)
 <use pictures/capacitor.png>
 Package pdftex.def Info: pictures/capacitor.png  used on input line 270.
 (pdftex.def)             Requested size: 56.9055pt x 53.0555pt.
-<pictures/inductance.png, id=188, 277.78781pt x 101.62968pt>
+<pictures/inductance.png, id=189, 277.78781pt x 101.62968pt>
 File: pictures/inductance.png Graphic file (type png)
 <use pictures/inductance.png>
 Package pdftex.def Info: pictures/inductance.png  used on input line 283.
@@ -2081,12 +2097,12 @@ Package pdftex.def Info: pictures/inductance.png  used on input line 283.
 
 [8 <./pictures/resistor.png> <./pictures/capacitor.png> <./pictures/inductance.
 png>]
-<pictures/voltage_source.png, id=195, 310.91156pt x 179.16937pt>
+<pictures/voltage_source.png, id=196, 310.91156pt x 179.16937pt>
 File: pictures/voltage_source.png Graphic file (type png)
 <use pictures/voltage_source.png>
 Package pdftex.def Info: pictures/voltage_source.png  used on input line 296.
 (pdftex.def)             Requested size: 113.81102pt x 65.58627pt.
-<pictures/current_source.png, id=196, 310.91156pt x 179.16937pt>
+<pictures/current_source.png, id=197, 310.91156pt x 179.16937pt>
 File: pictures/current_source.png Graphic file (type png)
 <use pictures/current_source.png>
 Package pdftex.def Info: pictures/current_source.png  used on input line 309.
@@ -2094,6 +2110,11 @@ Package pdftex.def Info: pictures/current_source.png  used on input line 309.
 
 
 [9 <./pictures/voltage_source.png> <./pictures/current_source.png>]
+
+LaTeX Warning: Reference `Sec:Electrical Components and their relation' on page
+ 10 undefined on input line 334.
+
+
 
 [10]
 
@@ -2104,7 +2125,7 @@ See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `circuit:LC-circuit' on page 12 undefined on input lin
-e 457.
+e 456.
 
 
 
@@ -2127,13 +2148,13 @@ chapter 3.
 [15]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 60.
+(mdframed)              on input line 61.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 64.
+(mdframed)              on input line 65.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 84.
+(mdframed)              on input line 85.
 
 
 [16]
@@ -2145,31 +2166,31 @@ Package mdframed Info: mdframed detected package amsthm
 [19]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 301.
+(mdframed)              on input line 302.
 Package mdframed Info: You first box width is to small
  mdframed fixed it
-(mdframed)              on input line 320.
+(mdframed)              on input line 321.
 
 
 [20]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 322.
+(mdframed)              on input line 323.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 328.
+(mdframed)              on input line 329.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 364.
+(mdframed)              on input line 365.
 Package mdframed Info: You first box width is to small
  mdframed fixed it
-(mdframed)              on input line 379.
+(mdframed)              on input line 380.
 
 
 [21]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 383.
+(mdframed)              on input line 384.
 
 
 [22])
@@ -2197,15 +2218,12 @@ Missing character: There is no ä in font pplr7t!
 [26]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 168.
-
-
-[27]
-<pictures/Example1_simple_p2.png, id=363, 581.17125pt x 477.28313pt>
+(mdframed)              on input line 166.
+<pictures/Example1_simple_p2.png, id=359, 581.17125pt x 477.28313pt>
 File: pictures/Example1_simple_p2.png Graphic file (type png)
 <use pictures/Example1_simple_p2.png>
-Package pdftex.def Info: pictures/Example1_simple_p2.png  used on input line 21
-0.
+Package pdftex.def Info: pictures/Example1_simple_p2.png  used on input line 20
+8.
 (pdftex.def)             Requested size: 232.46437pt x 190.90987pt.
 
 
@@ -2213,21 +2231,21 @@ Package caption Warning: \label without proper reference on input line 27.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `circuit:charging of capacitor' on page 28 undefined o
-n input line 211.
+LaTeX Warning: Reference `circuit:charging of capacitor' on page 27 undefined o
+n input line 209.
 
 
 Package caption Warning: \label without proper reference on input line 27.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `circuit:charging of capacitor' on page 28 undefined o
-n input line 211.
+LaTeX Warning: Reference `circuit:charging of capacitor' on page 27 undefined o
+n input line 209.
 
 
 
-[28 <./pictures/Example1_simple_p2.png>]
-Overfull \hbox (15.79478pt too wide) detected at line 265
+[27]
+Overfull \hbox (15.79478pt too wide) detected at line 263
  $\OML/zplm/m/it/10.95 ker\OT1/zplm/m/n/10.95 ([\OML/zplm/m/it/10.95 A[]\OT1/pp
 l/m/n/10.95 , \OML/zplm/m/it/10.95 A[]\OT1/ppl/m/n/10.95 , \OML/zplm/m/it/10.95
  A[]\OT1/zplm/m/n/10.95 ][]) = \OML/zplm/m/it/10.95 ker [] \OT1/zplm/m/n/10.95 
@@ -2238,20 +2256,23 @@ OT1/zplm/m/n/10.95 = \OMS/zplm/m/n/10.95 f\OT1/ppl/m/n/10.95 0\OMS/zplm/m/n/10.
 95 g\OT1/ppl/m/n/10.95 .$ 
  []
 
+
+
+[28 <./pictures/Example1_simple_p2.png>]
 File: pictures/Example2_index0.png Graphic file (type png)
 <use pictures/Example2_index0.png>
-Package pdftex.def Info: pictures/Example2_index0.png  used on input line 285.
+Package pdftex.def Info: pictures/Example2_index0.png  used on input line 283.
 (pdftex.def)             Requested size: 232.46437pt x 190.90987pt.
 
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 349--350
+Underfull \hbox (badness 10000) in paragraph at lines 347--348
 
  []
 
 File: pictures/Example3.png Graphic file (type png)
 <use pictures/Example3.png>
-Package pdftex.def Info: pictures/Example3.png  used on input line 354.
+Package pdftex.def Info: pictures/Example3.png  used on input line 352.
 (pdftex.def)             Requested size: 220.66049pt x 138.99683pt.
 
 
@@ -2270,7 +2291,7 @@ See the caption package documentation for explanation.
 LaTeX Warning: Reference `fig:numerical approximation' on page 32 undefined on 
 input line 20.
 
-<pictures/num_approx.png, id=395, 391.4625pt x 222.07968pt>
+<pictures/num_approx.png, id=402, 391.4625pt x 222.07968pt>
 File: pictures/num_approx.png Graphic file (type png)
 <use pictures/num_approx.png>
 Package pdftex.def Info: pictures/num_approx.png  used on input line 26.
@@ -2360,7 +2381,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 340--342
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 354.
-<screenshot021.png, id=478, 276.28218pt x 226.59656pt>
+<screenshot021.png, id=485, 276.28218pt x 226.59656pt>
 File: screenshot021.png Graphic file (type png)
 <use screenshot021.png>
 Package pdftex.def Info: screenshot021.png  used on input line 379.
@@ -2375,7 +2396,7 @@ Package mdframed Info: Not enough space on this page on input line 388.
 
 
 [41]
-<pictures/bdf_stability_regions.png, id=497, 904.88063pt x 255.95625pt>
+<pictures/bdf_stability_regions.png, id=504, 904.88063pt x 255.95625pt>
 File: pictures/bdf_stability_regions.png Graphic file (type png)
 <use pictures/bdf_stability_regions.png>
 Package pdftex.def Info: pictures/bdf_stability_regions.png  used on input line
@@ -2426,7 +2447,7 @@ See the caption package documentation for explanation.
 LaTeX Warning: Reference `fig: Exact solution for example 2' on page 46 undefin
 ed on input line 610.
 
-<pictures/exact_solution_ex2.png, id=522, 350.05782pt x 276.28218pt>
+<pictures/exact_solution_ex2.png, id=529, 350.05782pt x 276.28218pt>
 File: pictures/exact_solution_ex2.png Graphic file (type png)
 <use pictures/exact_solution_ex2.png>
 Package pdftex.def Info: pictures/exact_solution_ex2.png  used on input line 61
@@ -2437,23 +2458,23 @@ LaTeX Warning: Reference `tab:error ex2' on page 46 undefined on input line 619
 .
 
 
-Overfull \hbox (152.45483pt too wide) in paragraph at lines 635--636
+Overfull \hbox (152.45483pt too wide) in paragraph at lines 628--629
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 658--659
+Underfull \hbox (badness 10000) in paragraph at lines 651--652
 
  []
 
 File: pictures/Example3.png Graphic file (type png)
 <use pictures/Example3.png>
-Package pdftex.def Info: pictures/Example3.png  used on input line 662.
+Package pdftex.def Info: pictures/Example3.png  used on input line 655.
 (pdftex.def)             Requested size: 220.66049pt x 138.99683pt.
 
 
 [46 <./pictures/exact_solution_ex2.png (PNG copy)>]
-Overfull \hbox (60.79874pt too wide) in paragraph at lines 667--677
+Overfull \hbox (60.79874pt too wide) in paragraph at lines 660--670
  [] 
  []
 
@@ -2475,6 +2496,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 {c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
 
+[50] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./MAIN.aux (./cover/coversheet.aux) (./chapters/Introduction.aux)
 (./chapters/Formulating_a_mathematical_model.aux)
@@ -2495,11 +2517,11 @@ Package logreq Info: Writing requests to 'MAIN.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40878 strings out of 473361
- 841651 string characters out of 5725029
- 1842314 words of memory out of 5000000
- 62681 multiletter control sequences out of 15000+600000
- 654466 words of font info for 423 fonts, out of 8000000 for 9000
+ 40907 strings out of 473361
+ 842336 string characters out of 5725029
+ 1842411 words of memory out of 5000000
+ 62695 multiletter control sequences out of 15000+600000
+ 655113 words of font info for 432 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,20n,142p,10899b,4097s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/tex
@@ -2517,9 +2539,9 @@ helvetic/uhvr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplb8a
 ve/2024/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2024/texmf-d
 ist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1
 /urw/palatino/uplri8a.pfb>
-Output written on MAIN.pdf (55 pages, 536845 bytes).
+Output written on MAIN.pdf (56 pages, 541477 bytes).
 PDF statistics:
- 745 PDF objects out of 1000 (max. 8388607)
- 189 named destinations out of 1000 (max. 500000)
+ 760 PDF objects out of 1000 (max. 8388607)
+ 192 named destinations out of 1000 (max. 500000)
  106264 words of extra memory for PDF output out of 106986 (max. 10000000)
 
