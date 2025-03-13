@@ -617,17 +617,19 @@ In the following two subchapters we will give a short overview over the two most
 	\end{figure}
 	
 	Applying the BDF-k methods \ref{ch:BDf-k methods} and the Trapezoidal rule \ref{ch:trapezoidal rule} to this problem we can observe the maximal error $err = \max\limits_{0 \leq t \leq T} \| y(t) - \tilde{y}(t) \|$. This error is displayed in table \ref{tab:error ex2}.
-		
-	\begin{center}	
-		\csvreader[tabular= | c || c c | c c | c c | c c | ,
-		table head = \hline h & \multicolumn{2}{c|}{k = 1} & \multicolumn{2}{c|}{k = 2} & \multicolumn{2}{c|}{k = 3} & \multicolumn{2}{c|}{Trapezoidal} \\
-		& u1 & iL & u1 & iL & u1 & iL & u1 & iL \\
-		\hline,
-		late after line=\\\hline]
-		{../Matlab/err_ex2.csv}{h=\h, oneu=\oneu, onei=\onei, twou=\twou, twoi=\twoi, threeu=\threeu, threei=\threei, trapu=\trapu, trapil=\trapil}
-		{\h & \num{\oneu} & \num{\onei} & \num{\twou} & \num{\twoi} & \num{\threeu} & \num{\threei} & \num{\trapu} & \num{\trapil}}
-	\end{center}
 	
+	
+	\begin{table}[H]
+		\resizebox*{\textwidth}{!}{%
+			\csvreader[tabular= | c || c c | c c | c c | c c | ,
+			table head = \hline h & \multicolumn{2}{c|}{k = 1} & \multicolumn{2}{c|}{k = 2} & \multicolumn{2}{c|}{k = 3} & \multicolumn{2}{c|}{Trapezoidal} \\
+			& u1 & iL & u1 & iL & u1 & iL & u1 & iL \\
+			\hline,
+			late after line=\\\hline]
+			{../Matlab/err_ex2.csv}{h=\h, oneu=\oneu, onei=\onei, twou=\twou, twoi=\twoi, threeu=\threeu, threei=\threei, trapu=\trapu, trapil=\trapil}
+			{\h & \num{\oneu} & \num{\onei} & \num{\twou} & \num{\twoi} & \num{\threeu} & \num{\threei} & \num{\trapu} & \num{\trapil}}
+		}
+	\end{table}
 	
 %	\begin{table}[H]
 %	\begin{center}

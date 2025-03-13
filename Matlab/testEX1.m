@@ -1,5 +1,5 @@
 tspan = [0;10];
-h = 0.1;
+h = 0.001;
 
 x = 0:h:tspan(2);
 
@@ -10,15 +10,15 @@ A1 = [0 0 0;
       0 1 0;
       0 0 0];
 
-B1 = [1 -1 0;
-      -1 1 -1;
-      0 -1 0];
+B1 = [1 -1 -1;
+      -1 1 0;
+      -1 0 0];
 
 f1 = @(t) [0 0 -sin(pi*t)]';
 
 %consistent initial values (as calculated)
 
-y0 = [0 0 pi]'; % consistent initial values
+y0 = [0 -1 1]'; % consistent initial values
 
 %exact solution u2 = vsrc, u1 = -u2
 % y = [u1, u2, iV]
@@ -75,7 +75,7 @@ fprintf('in iV: %.15e \n', max(abs(diff_Trapezoidal(3,:)),[],"all"))
 %illustration of one of the components at a time, i.e. graph =1,2,3 for u1,
 %u2, iV
 
-graph = 1;
+graph = 3;
 figure
 title('comparison of the solutions of the different methods')
 

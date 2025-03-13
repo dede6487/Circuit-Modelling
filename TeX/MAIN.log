@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.11)  13 MAR 2025 13:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.11)  13 MAR 2025 13:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1968,16 +1968,7 @@ Package tocbasic Info: character protrusion at toc deactivated on input line 17
 ]
 Package tocbasic Info: character protrusion at lof deactivated on input line 17
 3.
- (./MAIN.lof
-
-Package caption Warning: \label without proper reference on input line 27.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `circuit:charging of capacitor' on page iv undefined o
-n input line 18.
-
-)
+ (./MAIN.lof)
 \tf@lof=\write8
 \openout8 = `MAIN.lof'.
 
@@ -2027,18 +2018,10 @@ File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 
 
 ]
-
-Package caption Warning: \label without proper reference on input line 27.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `circuit:charging of capacitor' on page 3 undefined on
- input line 25.
-
 <pictures/Example1_simple.png, id=148, 581.17125pt x 477.28313pt>
 File: pictures/Example1_simple.png Graphic file (type png)
 <use pictures/Example1_simple.png>
-Package pdftex.def Info: pictures/Example1_simple.png  used on input line 29.
+Package pdftex.def Info: pictures/Example1_simple.png  used on input line 28.
 (pdftex.def)             Requested size: 290.58492pt x 238.64098pt.
 
 
@@ -2227,25 +2210,8 @@ Package pdftex.def Info: pictures/Example1_simple_p2.png  used on input line 20
 (pdftex.def)             Requested size: 232.46437pt x 190.90987pt.
 
 
-Package caption Warning: \label without proper reference on input line 27.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `circuit:charging of capacitor' on page 27 undefined o
-n input line 209.
-
-
-Package caption Warning: \label without proper reference on input line 27.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `circuit:charging of capacitor' on page 27 undefined o
-n input line 209.
-
-
-
 [27]
-Overfull \hbox (15.79478pt too wide) detected at line 263
+Overfull \hbox (8.61487pt too wide) detected at line 263
  $\OML/zplm/m/it/10.95 ker\OT1/zplm/m/n/10.95 ([\OML/zplm/m/it/10.95 A[]\OT1/pp
 l/m/n/10.95 , \OML/zplm/m/it/10.95 A[]\OT1/ppl/m/n/10.95 , \OML/zplm/m/it/10.95
  A[]\OT1/zplm/m/n/10.95 ][]) = \OML/zplm/m/it/10.95 ker [] \OT1/zplm/m/n/10.95 
@@ -2458,23 +2424,18 @@ LaTeX Warning: Reference `tab:error ex2' on page 46 undefined on input line 619
 .
 
 
-Overfull \hbox (152.45483pt too wide) in paragraph at lines 628--629
- [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 651--652
+Underfull \hbox (badness 10000) in paragraph at lines 653--654
 
  []
 
 File: pictures/Example3.png Graphic file (type png)
 <use pictures/Example3.png>
-Package pdftex.def Info: pictures/Example3.png  used on input line 655.
+Package pdftex.def Info: pictures/Example3.png  used on input line 657.
 (pdftex.def)             Requested size: 220.66049pt x 138.99683pt.
 
 
 [46 <./pictures/exact_solution_ex2.png (PNG copy)>]
-Overfull \hbox (60.79874pt too wide) in paragraph at lines 660--670
+Overfull \hbox (60.79874pt too wide) in paragraph at lines 662--672
  [] 
  []
 
@@ -2517,31 +2478,35 @@ Package logreq Info: Writing requests to 'MAIN.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40907 strings out of 473361
- 842336 string characters out of 5725029
- 1842411 words of memory out of 5000000
- 62695 multiletter control sequences out of 15000+600000
- 655113 words of font info for 432 fonts, out of 8000000 for 9000
+ 40899 strings out of 473361
+ 842316 string characters out of 5725029
+ 1842405 words of memory out of 5000000
+ 62697 multiletter control sequences out of 15000+600000
+ 653335 words of font info for 424 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,20n,142p,10899b,4097s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/tex
-live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/t
-ype1/public/mathpazo/fplmbb.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/
-mathpazo/fplmr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/mathpazo/fplm
-ri.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><c:
-/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb><c:/texlive/2
-024/texmf-dist/fonts/type1/urw/grotesq/ugqb8a.pfb><c:/texlive/2024/texmf-dist/f
-onts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/
-helvetic/uhvr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplb8a
-.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb><c:/texli
-ve/2024/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2024/texmf-d
-ist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1
-/urw/palatino/uplri8a.pfb>
-Output written on MAIN.pdf (56 pages, 541477 bytes).
+
+pdfTeX warning (dest): name{figure.caption.27} has been referenced but does not
+ exist, replaced by a fixed one
+
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texli
+ve/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/typ
+e1/public/mathpazo/fplmbb.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/ma
+thpazo/fplmr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/mathpazo/fplmri
+.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><c:/t
+exlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb><c:/texlive/202
+4/texmf-dist/fonts/type1/urw/grotesq/ugqb8a.pfb><c:/texlive/2024/texmf-dist/fon
+ts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/he
+lvetic/uhvr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplb8a.p
+fb><c:/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb><c:/texlive
+/2024/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2024/texmf-dis
+t/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/u
+rw/palatino/uplri8a.pfb>
+Output written on MAIN.pdf (56 pages, 541747 bytes).
 PDF statistics:
- 760 PDF objects out of 1000 (max. 8388607)
- 192 named destinations out of 1000 (max. 500000)
- 106264 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 763 PDF objects out of 1000 (max. 8388607)
+ 194 named destinations out of 1000 (max. 500000)
+ 102168 words of extra memory for PDF output out of 106986 (max. 10000000)
 
