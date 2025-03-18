@@ -16,7 +16,7 @@ f1 = @(t) [0 -sin(pi*t)]';
 
 %consistent initial values (as calculated)
 
-y0 = [0 pi]';
+y0 = [0 0]';
 
 %exact solution u2 = vsrc, u1 = -u2
 % y = [u1,, iV]
@@ -68,7 +68,7 @@ fprintf('in iV: %e \n', max(abs(diff_Trapezoidal(2,:)),[],"all"))
 %illustration of one of the components at a time, i.e. graph =1,2,3 for u1,
 %u2, iV
 
-graph = 1;
+graph = 2;
 figure
 title('comparison of the solutions of the different methods')
 

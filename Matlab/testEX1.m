@@ -1,5 +1,5 @@
 tspan = [0;10];
-h = 0.001;
+h = 0.01;
 
 x = 0:h:tspan(2);
 
@@ -18,14 +18,17 @@ f1 = @(t) [0 0 -sin(pi*t)]';
 
 %consistent initial values (as calculated)
 
-y0 = [0 -1 1]'; % consistent initial values
+y0 = [0 0 0]'; % consistent initial values
+
+c1 = pi/(1+pi*pi);
+u2 = @(t) (c1*exp(-t) + (sin(pi * t)/(1+ pi*pi)) - ((pi*cos(pi * t))/(1+pi*pi)));
 
 %exact solution u2 = vsrc, u1 = -u2
 % y = [u1, u2, iV]
 
-y = @(t) [-subsref(f1(t), struct('type', '()', 'subs', {{3}})); %first and second component returns third component of f1
-          -subsref(f1(t), struct('type', '()', 'subs', {{3}}));
-          pi*cos(pi*t)]; %last component  i_v = -(d/dt)v_src
+y = @(t) [sin(pi*t);
+          u2(t);
+          sin(pi*t) - u2(t)];
 y_exact = zeros(length(y0), length(x));
 y_exact(:,1) = y0;
 
