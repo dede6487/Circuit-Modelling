@@ -13,20 +13,23 @@
 \contentsline {section}{\numberline {3.1}Types of DAEs}{14}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Weierstraß-Kronecker Normalform}{16}{subsection.3.1.1}%
 \contentsline {section}{\numberline {3.2}Index of a Differential Algebraic Equation}{21}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Index Analysis of the modified nodal analysis}{24}{chapter.4}%
-\contentsline {section}{\numberline {4.1}General Index analysis}{25}{section.4.1}%
-\contentsline {paragraph}{\nonumberline ODE-case:}{25}{paragraph*.15}%
-\contentsline {paragraph}{\nonumberline DAE-case:}{25}{paragraph*.17}%
-\contentsline {section}{\numberline {4.2}Topological Conditions}{26}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Numerical Solutions}{32}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Single-Step-Methods}{33}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Consistency, Stability and Convergence}{33}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}further stability properties}{36}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Multistep-Methods}{36}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Consistency, Stability and Convergence}{37}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}further stability properties}{39}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Implicit linear multi-step formulas}{41}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}BDF-k methods}{42}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}trapezoidal rule}{43}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}Numerical Examples}{44}{section.5.4}%
+\contentsline {section}{\numberline {3.3}Consistant Initial Values}{23}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Case: Index $\nu = 1$}{23}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Case: Index $\nu = 2$}{24}{subsection.3.3.2}%
+\contentsline {chapter}{\numberline {4}Index Analysis of the modified nodal analysis}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}General Index analysis}{26}{section.4.1}%
+\contentsline {paragraph}{\nonumberline ODE-case:}{26}{paragraph*.17}%
+\contentsline {paragraph}{\nonumberline DAE-case:}{26}{paragraph*.19}%
+\contentsline {section}{\numberline {4.2}Topological Conditions}{27}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Numerical Solutions}{33}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Single-Step-Methods}{34}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Consistency, Stability and Convergence}{34}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}further stability properties}{37}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Multistep-Methods}{37}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Consistency, Stability and Convergence}{38}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}further stability properties}{40}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Implicit linear multi-step formulas}{42}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}BDF-k methods}{43}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}trapezoidal rule}{44}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Numerical Examples}{45}{section.5.4}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
