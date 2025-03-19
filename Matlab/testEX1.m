@@ -1,7 +1,7 @@
 clear; close all;
 
 tspan = [0;10];
-hspan = [1,0.1,0.01];
+hspan = [0.1,0.05,0.05/2];
 
 %initialize error output
 

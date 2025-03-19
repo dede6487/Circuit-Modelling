@@ -505,7 +505,7 @@ In the following two subchapters we will give a short overview over the two most
 	Seite 106 numerik - schrittweite für startwerte bei bdf3 kleiner für kleineren fehler, halbieren, vierteln, achteln whatever
 	
 \subsection{trapezoidal rule}
-	\label{sex:Trapezoidal}
+	\label{sec:Trapezoidal}
 	
 	The trapezoidal rule is a natural alternative to BDF2 since it is A-stable and a linear multistep method of order 2 the one with the smallest leading error coefficient. (\cite{ModellingAndDiscretizationOfCircuitProblems})
 	
@@ -530,6 +530,7 @@ In the following two subchapters we will give a short overview over the two most
 %	\end{displaymath}
 	
 	Because $u_h(t+h)$ appears in $f$ again we see that this is an implicit method. %The butcher tableau confirms this as well.
+	The trapezoidal rule has convergence order $p=2$.
 	
 \section{Numerical Examples}
 	
@@ -547,13 +548,13 @@ In the following two subchapters we will give a short overview over the two most
 		\label{fig:charging capacitor}
 	\end{figure}
 	
-	The MNA-system for this example reads
+	For testing we set the resistance to $R=1$ and the capacitance to $C=1$. In our case we let the  voltage source supply a voltage of the form $v_{src} = sin(\pi t)$. The resulting MNA-system for this example reads
 	
 	\begin{equation}
-		\label{eq:MNA-system of chargin capacitor}
+		\label{eq:MNA-system of chargin capacitor with explicit values}
 		\begin{pmatrix}
 			0 & 0 & 0 \\
-			0 & C & 0 \\
+			0 & 1 & 0 \\
 			0 & 0 & 0
 		\end{pmatrix}
 		*
@@ -564,9 +565,9 @@ In the following two subchapters we will give a short overview over the two most
 		\end{pmatrix}
 		+
 		\begin{pmatrix}
-			\frac{1}{R} & \frac{1}{R} & 0 \\
-			\frac{1}{R} & \frac{1}{R} & -1 \\
-			0 & -1 & 0 
+			1 & 1 & -1 \\
+			1 & 1 & 0 \\
+			1 & 0 & 0 
 		\end{pmatrix}
 		*
 		\begin{pmatrix}
@@ -578,12 +579,22 @@ In the following two subchapters we will give a short overview over the two most
 		\begin{pmatrix}
 			0 \\
 			0 \\
-			-v_{src}
+			-sin(\pi t)
 		\end{pmatrix}.
 	\end{equation}
 
-	For testing we set the resistance to $R=1$ and the capacitance to $C=1$. In our case we let the  voltage source supply a voltage of the form $v_{src} = sin(\pi t)$. 
+	Of course we still need to find consistent initial values. Knowing the fact, that this system is of index $\nu=1$, this can be done by means of Section \ref{sec:consistant initial values}. Due to the fact that $u_1$ and $i_V$ are only algebraically constrained, we have to determine their initial values by solving for them at the point $t=0$. On the other hand $u_2$ and its derivative both appears, thus we can simply prescribe an initial value for $u_2$. Prescribing an arbitrary initial value might make sense from a mathematical perspective, since we might only be interested in the existence of a solution. But due to the physical interpretation of $u_2$ as being related to the charge that might already be stored in the capacitor, it makes sense to consider the capacitor to have no initial charge, i.e. $u_2(0) = 0$.
+	The third line of the MNA \eqref{eq:MNA-system of chargin capacitor with explicit values} immediately gives us, that
+	\begin{displaymath}
+		u_1(0) = -sin(\pi * 0) = 0.
+	\end{displaymath}
+	From line one follows, that
+	\begin{displaymath}
+		u_1(0) - u_2(0) - i_V(0) = 0,
+	\end{displaymath}
+	thus $i_V(0) = 0$ is a consistent initial value for $i_V$.
 	
+	We expect the resulting potentials and currents to be of the form seen in Figure \ref{fig: Exact solution for example 1}.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.7]{pictures/exact_solution_ex1.png}
@@ -591,45 +602,63 @@ In the following two subchapters we will give a short overview over the two most
 		\label{fig: Exact solution for example 1}
 	\end{figure}
 	
-	 Of course we still need to find consistent initial values. This can be done by means of Section \ref{sec:consistant initial values}
+	The resulting errors for our numerical tests are displayed in table \ref{tab:num results ex1}, we omit $u_1$ since it just equals $-v_{src}$ and thus produces no interesting error results. The reported errors are computed using $err = \max\limits_{0 \leq n \leq N} | a_n)t_n - \tilde{y}(t_n) |$ where $y_n(t_n)$ denotes the numerical approximation and $\tilde{y}(t_n)$ denoted the exact solution at the time-step $t_n$. 
 	
 	\begin{table}[H]
 		\resizebox*{\textwidth}{!}{%
-			\csvreader[tabular= | c || c c c | c c c | c c c | c c c |,
-			table head = \hline h & \multicolumn{3}{c|}{k = 1} & \multicolumn{3}{c|}{k = 2} & \multicolumn{3}{c|}{k = 3} & \multicolumn{3}{c|}{trapezoidal}\\
-			& u1 & u2 & iV & u1 & u2 & iV & u1 & u2 & iV & u1 & u2 & iV \\
+			\csvreader[tabular= | c || c c | c c | c c | c c |,
+			table head = \hline h & \multicolumn{2}{c|}{k = 1} & \multicolumn{2}{c|}{k = 2} & \multicolumn{2}{c|}{k = 3} & \multicolumn{2}{c|}{trapezoidal}\\
+			& u2 & iV & u2 & iV & u2 & iV & u2 & iV \\
 			\hline,
 			late after line=\\\hline]
 			{../Matlab/err_ex1.csv}{h=\h, oneu=\oneu, oneuu=\oneuu, onei=\onei, twou=\twou, twouu=\twouu, twoi=\twoi, threeu=\threeu, threeuu=\threeuu, threei=\threei, trapu=\trapu, trapuu=\trapuu, trapil=\trapil}
-			{\h & \num{\oneu} & \num{\oneuu} & \num{\onei} & \num{\twou} & \num{\twouu} & \num{\twoi} & \num{\threeu} & \num{\threeuu} & \num{\threei} & \num{\trapu} & \num{\trapuu} & \num{\trapil}}
+			{\h  & \num{\oneuu} & \num{\onei}  & \num{\twouu} & \num{\twoi}  & \num{\threeuu} & \num{\threei}  & \num{\trapuu} & \num{\trapil}}
 		}
+		\caption{resulting errors for the BDF-k methods and ther trapezoidal rule.}
+		\label{tab:num results ex1}
 	\end{table}
 	
-%	\begin{center}
-%		\begin{tabular}{ c || c c c | c c c | c c c | } 
-%			h & \multicolumn{3}{c|}{k = 1} & \multicolumn{3}{c|}{k = 2} & \multicolumn{3}{c|}{k = 3} \\
-%			 & u1 & u2 & iL & u1 & u2 & iL & u1 & u2 & iL \\
-%			\hline
-%			 & \multicolumn{3}{c|}{Error} & \multicolumn{3}{c|}{Error} & \multicolumn{3}{c|}{Error} \\
-%			\hline
-%			1 & number & number & number & number & number & number & number & number & number \\
-%			0,1 & number & number & number & number & number & number & number & number & number \\
-%			0,01 & number & number & number & number & number & number & number & number & number
-%		\end{tabular}
-%	\end{center}
-
-
+	The table \ref{tab:num results ex1} confirms our results from Section \ref{sec:BDFk} and \ref{sec:Trapezoidal}, that the BDF-k schemes have convergence order of $p=k$ and the trapezoidal rule has convergence order $p=2$.
+	
 	\textbf{Example 2} \\
+	
+	In example 2 we considered the circuit in Figure \ref{fig: LC-circuit}.
 	
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.4]{pictures/Example2_index0.png}
 		\caption{LC-circuit}
+		\label{fig: LC-circuit}
 	\end{figure}
 
-	The MNA-system for this example reads as
+	We again set $L=1$ and $C=1$. The resulting MNA-system for this example then reads
 	
-	For testing we set the capacitance to $C=1$ and the inductance to $L=1$.
+	\begin{displaymath}
+		\begin{pmatrix}
+			1 & 0 \\
+			0 & 1 
+		\end{pmatrix}
+		*
+		\begin{pmatrix}
+			u_1' \\
+			i_L'
+		\end{pmatrix}
+		+
+		\begin{pmatrix}
+			0 & 1 \\
+			-1 & 0
+		\end{pmatrix}
+		*
+		\begin{pmatrix}
+			u_1 \\
+			i_L
+		\end{pmatrix}
+		=
+		\begin{pmatrix}
+			0 \\
+			0 
+		\end{pmatrix}.
+	\end{displaymath}
 	
 	With the initial conditions $u_1(0) = 1$ and $i_L(0) = 0$, the exact solutions for the voltage $u_1$ and the current $i_L$ then have the form \ref{fig: Exact solution for example 2}.	
 	
@@ -656,23 +685,6 @@ In the following two subchapters we will give a short overview over the two most
 	\end{table}
 	
 	Idea: comment that u1 is just the evaluation of of vsrc, thus we ommit it in the table.
-	
-%	\begin{table}[H]
-%	\begin{center}
-%		\label{tab:error ex2}
-%		\begin{tabular}{ c || c c | c c | c c | c c |} 
-%			h & \multicolumn{2}{c|}{k = 1} & \multicolumn{2}{c|}{k = 2} & \multicolumn{2}{c|}{k = 3} & \multicolumn{2}{c|}{Trapezoidal} \\
-%			& u1 & iL & u1 & iL & u1 & iL & u1 & iL \\
-%			\hline
-%			& \multicolumn{2}{c|}{err x e-1} & \multicolumn{2}{c|}{err x e-3} & \multicolumn{2}{c|}{err x e-4} & \multicolumn{2}{c|}{err x e-3} \\
-%			\hline
-%			$1$ & $0,1$ & $0,1$ & $1180$ & $1220$ & $25100$ & $22000$ & $1390$ & $1460$ \\
-%			$0,1$ & $7,14$ & $6,90$ & $78,3$ & $80,2$ & $639$ & $615$ & $19,6$ &  $20,8$ \\
-%			$0,01$ & $1,18$ & $1,11$ & $0,79$ & $0,83$ & $0,68$ & $0,63$ & $0,19$ & $0,20$
-%		\end{tabular}
-%		\caption{Error for BDF-1, -2, -3 methods and trapezoidal rule applied to ex2.}
-%	\end{center}
-%	\end{table}
 
 	By comparing the errors of the methods we can see that they indeed have the predicted convergence order. (reference appropriate theorems here)
 
