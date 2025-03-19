@@ -534,13 +534,12 @@ In the following two subchapters we will give a short overview over the two most
 	
 \section{Numerical Examples}
 	
-	In this section we will apply the Trapezoidal rule as well as the BDF-k schemes discussed in Section \ref{sec:BDFk} and  Section \ref{sec:Trapezoidal} for our three examples.
+	In this section we will apply the Trapezoidal rule as well as the BDF-k schemes discussed in Section \ref{sec:BDFk} and  Section \ref{sec:Trapezoidal} to our three examples. We will also discuss the occurring errors in the solution and compute appropriate consistant inital values for our problems.
 	
 	
-	\textbf{Example 1} \\
-		
+\begin{example}
 	For the first example we considered the circuit \ref{fig:charging capacitor}.
-		
+	
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.4]{pictures/Example1_simple_p2.png}
@@ -582,7 +581,7 @@ In the following two subchapters we will give a short overview over the two most
 			-sin(\pi t)
 		\end{pmatrix}.
 	\end{equation}
-
+	
 	Of course we still need to find consistent initial values. Knowing the fact, that this system is of index $\nu=1$, this can be done by means of Section \ref{sec:consistant initial values}. Due to the fact that $u_1$ and $i_V$ are only algebraically constrained, we have to determine their initial values by solving for them at the point $t=0$. On the other hand $u_2$ and its derivative both appears, thus we can simply prescribe an initial value for $u_2$. Prescribing an arbitrary initial value might make sense from a mathematical perspective, since we might only be interested in the existence of a solution. But due to the physical interpretation of $u_2$ as being related to the charge that might already be stored in the capacitor, it makes sense to consider the capacitor to have no initial charge, i.e. $u_2(0) = 0$.
 	The third line of the MNA \eqref{eq:MNA-system of chargin capacitor with explicit values} immediately gives us, that
 	\begin{displaymath}
@@ -619,9 +618,10 @@ In the following two subchapters we will give a short overview over the two most
 	\end{table}
 	
 	The table \ref{tab:num results ex1} confirms our results from Section \ref{sec:BDFk} and \ref{sec:Trapezoidal}, that the BDF-k schemes have convergence order of $p=k$ and the trapezoidal rule has convergence order $p=2$.
+\end{example}
+		
 	
-	\textbf{Example 2} \\
-	
+\begin{example}
 	In example 2 we considered the circuit in Figure \ref{fig: LC-circuit}.
 	
 	\begin{figure}[H]
@@ -630,7 +630,7 @@ In the following two subchapters we will give a short overview over the two most
 		\caption{LC-circuit}
 		\label{fig: LC-circuit}
 	\end{figure}
-
+	
 	We again set $L=1$ and $C=1$. The resulting MNA-system for this example then reads
 	
 	\begin{displaymath}
@@ -685,11 +685,13 @@ In the following two subchapters we will give a short overview over the two most
 	\end{table}
 	
 	Idea: comment that u1 is just the evaluation of of vsrc, thus we ommit it in the table.
-
-	By comparing the errors of the methods we can see that they indeed have the predicted convergence order. (reference appropriate theorems here)
-
-	\textbf{Example 3} \\
 	
+	By comparing the errors of the methods we can see that they indeed have the predicted convergence order. (reference appropriate theorems here)
+\end{example}
+	
+	
+
+\begin{example}
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.4]{pictures/Example3.png}
@@ -716,6 +718,9 @@ In the following two subchapters we will give a short overview over the two most
 	\end{table}
 	
 	again ommit u1, as it is just vsrc and not interesting.
+\end{example}
+	
+	
 	
 %	\begin{center}
 %		\begin{tabular}{ c || c c c | c c c | c c c | } 

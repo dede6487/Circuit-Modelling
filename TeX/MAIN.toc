@@ -13,13 +13,13 @@
 \contentsline {section}{\numberline {3.1}Types of DAEs}{14}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Weierstraß-Kronecker Normalform}{16}{subsection.3.1.1}%
 \contentsline {section}{\numberline {3.2}Index of a Differential Algebraic Equation}{21}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Consistant Initial Values}{23}{section.3.3}%
+\contentsline {section}{\numberline {3.3}Consistent Initial Values}{23}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Case: Index $\nu = 1$}{23}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Case: Index $\nu = 2$}{24}{subsection.3.3.2}%
 \contentsline {chapter}{\numberline {4}Index Analysis of the modified nodal analysis}{25}{chapter.4}%
 \contentsline {section}{\numberline {4.1}General Index analysis}{26}{section.4.1}%
-\contentsline {paragraph}{\nonumberline ODE-case:}{26}{paragraph*.17}%
-\contentsline {paragraph}{\nonumberline DAE-case:}{26}{paragraph*.19}%
+\contentsline {paragraph}{\nonumberline ODE-case:}{26}{paragraph*.15}%
+\contentsline {paragraph}{\nonumberline DAE-case:}{26}{paragraph*.17}%
 \contentsline {section}{\numberline {4.2}Topological Conditions}{27}{section.4.2}%
 \contentsline {chapter}{\numberline {5}Numerical Solutions}{33}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Single-Step-Methods}{34}{section.5.1}%

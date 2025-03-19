@@ -21,208 +21,210 @@ We call $u = (u_0, u_1, u_2, ...)$ the corresponding electrical potentials (or j
 We will later see, that the components of an electrical circuit, which will be installed along the edges, describe a relationship between the current along the edge the corresponding voltage. Thus a current vector $i = (i_1, i_2, i_3, ...)$ containing the currents along the edges is required.
 
 
-\textbf{Example 1} \label{ex:network topology} \\
-As an example we consider the charging of a capacitor. The circuit is given in Figure \ref{circuit:charging of capacitor}.
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.5]{pictures/Example1_simple.png}
-	\caption{charging capacitor with series resistor and voltage source}
-	\label{circuit:charging of capacitor}
-\end{figure}
-With the node-potentials, the voltages and the currents collected in the vectors
-\begin{displaymath}
-	u=
-	\left(
-	\begin{matrix}
-		u_0 \\
-		u_1 \\
-		u_2 \\
-		u_3 
-	\end{matrix}
-	\right),
-	\quad
-	v=
-	\left(
-	\begin{matrix}
-		v_0 \\
-		v_1 \\
-		v_2 \\
-		v_3 
-	\end{matrix}
-	\right),
-	\quad
-	i=
-	\left(
-	\begin{matrix}
-		i_0 \\
-		i_1 \\
-		i_2 \\
-		i_3 
-	\end{matrix}
-	\right),
-\end{displaymath}
-the incidence matrix of this circuit has the form
-\begin{displaymath}
-	\tilde{A} = 
-	\left(
-	\begin{matrix}
-		1 & 0 & 0 & -1 \\
-		-1 & 1 & 0 & 0 \\
-		0 & -1 & 1 & 0 \\
-		0 & 0 & -1 & 1 
-	\end{matrix}
-	\right).
-\end{displaymath}
-The rows of this matric correspond to the nodes of the circuit and the columns correspond to the edges and tell us if the edge either starts ($1$) or end ($-1$) at a node. By grounding node $u_0$ this matrix reduces to
-\begin{displaymath}
-	A = 
-	\left(
-	\begin{matrix}
-		-1 & 1 & 0 & 0 \\
-		0 & -1 & 1 & 0 \\
-		0 & 0 & -1 & 1 
-	\end{matrix}
-	\right).
-\end{displaymath}
-In this circuit edge 3 is not populated with any components. This means that the voltage along this edge does not change, or in terms of potentials
-\begin{displaymath}
-	u_0 - u_3 = 0.
-\end{displaymath}
-Thus we can consider this circuit with node 0 and node 3 merged. This leads to a slightly different incidence and reduced incidence matrix, i.e.
-\begin{displaymath}
-	\tilde{A} = 
-	\left(
-	\begin{matrix}
-		1 & 0 & -1 \\
-		-1 & 1 & 0 \\
-		0 & -1 & 1 \\
-	\end{matrix}
-	\right) \quad \text{and} \quad
-	A = 
-	\left(
-	\begin{matrix}
-		-1 & 1 & 0 \\
-		0 & -1 & 1 
-	\end{matrix}
-	\right), \quad \text{respectively.}
-\end{displaymath}
+\begin{example}
+	\label{ex:network topology}
+	As an example we consider the charging of a capacitor. The circuit is given in Figure \ref{circuit:charging of capacitor}.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{pictures/Example1_simple.png}
+		\caption{charging capacitor with series resistor and voltage source}
+		\label{circuit:charging of capacitor}
+	\end{figure}
+	With the node-potentials, the voltages and the currents collected in the vectors
+	\begin{displaymath}
+		u=
+		\left(
+		\begin{matrix}
+			u_0 \\
+			u_1 \\
+			u_2 \\
+			u_3 
+		\end{matrix}
+		\right),
+		\quad
+		v=
+		\left(
+		\begin{matrix}
+			v_0 \\
+			v_1 \\
+			v_2 \\
+			v_3 
+		\end{matrix}
+		\right),
+		\quad
+		i=
+		\left(
+		\begin{matrix}
+			i_0 \\
+			i_1 \\
+			i_2 \\
+			i_3 
+		\end{matrix}
+		\right),
+	\end{displaymath}
+	the incidence matrix of this circuit has the form
+	\begin{displaymath}
+		\tilde{A} = 
+		\left(
+		\begin{matrix}
+			1 & 0 & 0 & -1 \\
+			-1 & 1 & 0 & 0 \\
+			0 & -1 & 1 & 0 \\
+			0 & 0 & -1 & 1 
+		\end{matrix}
+		\right).
+	\end{displaymath}
+	The rows of this matric correspond to the nodes of the circuit and the columns correspond to the edges and tell us if the edge either starts ($1$) or end ($-1$) at a node. By grounding node $u_0$ this matrix reduces to
+	\begin{displaymath}
+		A = 
+		\left(
+		\begin{matrix}
+			-1 & 1 & 0 & 0 \\
+			0 & -1 & 1 & 0 \\
+			0 & 0 & -1 & 1 
+		\end{matrix}
+		\right).
+	\end{displaymath}
+	In this circuit edge 3 is not populated with any components. This means that the voltage along this edge does not change, or in terms of potentials
+	\begin{displaymath}
+		u_0 - u_3 = 0.
+	\end{displaymath}
+	Thus we can consider this circuit with node 0 and node 3 merged. This leads to a slightly different incidence and reduced incidence matrix, i.e.
+	\begin{displaymath}
+		\tilde{A} = 
+		\left(
+		\begin{matrix}
+			1 & 0 & -1 \\
+			-1 & 1 & 0 \\
+			0 & -1 & 1 \\
+		\end{matrix}
+		\right) \quad \text{and} \quad
+		A = 
+		\left(
+		\begin{matrix}
+			-1 & 1 & 0 \\
+			0 & -1 & 1 
+		\end{matrix}
+		\right), \quad \text{respectively.}
+	\end{displaymath}
+\end{example}
 
+\begin{example}
+	\label{ex:LC-circuit incidence matrix}
+	Another example is the a circuit that only contains a capacitor and an inductor, see Figure \ref{circuit:LC-circuit}. This circuit will oscillate, if given appropriate initial conditions.
+	\begin{figure}[H]
+		\label{circuit:LC-circuit}
+		\centering
+		\includegraphics[scale=0.5]{pictures/Example2_index0.png}
+		\caption{capacitor and inductor oscillator}
+	\end{figure}
+	
+	We again collect the node-potentials, the voltages and the currents in the vectors
+	\begin{displaymath}
+		u=
+		\left(
+		\begin{matrix}
+			u_0 \\
+			u_1
+		\end{matrix}
+		\right),
+		\quad
+		v=
+		\left(
+		\begin{matrix}
+			v_0 \\
+			v_1
+		\end{matrix}
+		\right),
+		\quad
+		i=
+		\left(
+		\begin{matrix}
+			i_0 \\
+			i_1
+		\end{matrix}
+		\right).
+	\end{displaymath}
+	The incidence matrix of this circuit has the form
+	\begin{displaymath}
+		\tilde{A} = 
+		\left(
+		\begin{matrix}
+			1 & -1  \\
+			-1 & 1 
+		\end{matrix}
+		\right).
+	\end{displaymath}
+	By grounding node $u_0$ this can again be reduced, we obtain the reduced incidence matrix
+	\begin{displaymath}
+		A = 
+		\left(
+		\begin{matrix}
+			-1 & 1  
+		\end{matrix}
+		\right).
+	\end{displaymath}
+\end{example}
 
-\textbf{Example 2} \label{ex:LC-circuit incidence matrix} \\
-Another example is the a circuit that only contains a capacitor and an inductor, see Figure \ref{circuit:LC-circuit}. This circuit will oscillate, if given appropriate initial conditions.
-\begin{figure}[H]
-	\label{circuit:LC-circuit}
-	\centering
-	\includegraphics[scale=0.5]{pictures/Example2_index0.png}
-	\caption{capacitor and inductor oscillator}
-\end{figure}
-
-We again collect the node-potentials, the voltages and the currents in the vectors
-\begin{displaymath}
-	u=
-	\left(
-	\begin{matrix}
-		u_0 \\
-		u_1
-	\end{matrix}
-	\right),
-	\quad
-	v=
-	\left(
-	\begin{matrix}
-		v_0 \\
-		v_1
-	\end{matrix}
-	\right),
-	\quad
-	i=
-	\left(
-	\begin{matrix}
-		i_0 \\
-		i_1
-	\end{matrix}
-	\right).
-\end{displaymath}
-The incidence matrix of this circuit has the form
-\begin{displaymath}
-	\tilde{A} = 
-	\left(
-	\begin{matrix}
-		1 & -1  \\
-		-1 & 1 
-	\end{matrix}
-	\right).
-\end{displaymath}
-By grounding node $u_0$ this can again be reduced, we obtain the reduced incidence matrix
-\begin{displaymath}
-	A = 
-	\left(
-	\begin{matrix}
-		-1 & 1  
-	\end{matrix}
-	\right).
-\end{displaymath}
-
-
-\textbf{Example 3} \label{ex:Example 3 - incidence matrix } \\
-As a third example we consider a similar circuit to the circuit presented in \textbf{Example 1}, the only difference is that we connected the resistor parallel to the capacitor instead of in series.
-\begin{figure}[H]
-	\label{circuit:Example 3}
-	\centering
-	\includegraphics[scale=0.5]{pictures/Example3.png}
-	\caption{Capacitor with resistor and voltage source}
-\end{figure}
-
-We collect the node-potentials, the voltages and the currents collected in the vectors
-\begin{displaymath}
-	u=
-	\left(
-	\begin{matrix}
-		u_0 \\
-		u_1 
-	\end{matrix}
-	\right),
-	\quad
-	v=
-	\left(
-	\begin{matrix}
-		v_0 \\
-		v_1 \\
-		v_2 
-	\end{matrix}
-	\right),
-	\quad
-	i=
-	\left(
-	\begin{matrix}
-		i_0 \\
-		i_1 \\
-		i_2 
-	\end{matrix}
-	\right).
-\end{displaymath}
-The incidence matrix of this circuit has the form
-
-\begin{displaymath}
-	\tilde{A} = 
-	\left(
-	\begin{matrix}
-		1 & -1 & -1 \\
-		-1 & 1 & 1 
-	\end{matrix}
-	\right),
-\end{displaymath}
-this leads to the reduced incidence matrix
-\begin{displaymath}
-	A = 
-	\left(
-	\begin{matrix}
-		-1 & 1 & 1
-	\end{matrix}
-	\right).
-\end{displaymath}
-
-
+\begin{example}
+	\label{ex:Example 3 - incidence matrix }
+	As a third example we consider a similar circuit to the circuit presented in \textbf{Example 1}, the only difference is that we connected the resistor parallel to the capacitor instead of in series.
+	\begin{figure}[H]
+		\label{circuit:Example 3}
+		\centering
+		\includegraphics[scale=0.5]{pictures/Example3.png}
+		\caption{Capacitor with resistor and voltage source}
+	\end{figure}
+	
+	We collect the node-potentials, the voltages and the currents collected in the vectors
+	\begin{displaymath}
+		u=
+		\left(
+		\begin{matrix}
+			u_0 \\
+			u_1 
+		\end{matrix}
+		\right),
+		\quad
+		v=
+		\left(
+		\begin{matrix}
+			v_0 \\
+			v_1 \\
+			v_2 
+		\end{matrix}
+		\right),
+		\quad
+		i=
+		\left(
+		\begin{matrix}
+			i_0 \\
+			i_1 \\
+			i_2 
+		\end{matrix}
+		\right).
+	\end{displaymath}
+	The incidence matrix of this circuit has the form
+	
+	\begin{displaymath}
+		\tilde{A} = 
+		\left(
+		\begin{matrix}
+			1 & -1 & -1 \\
+			-1 & 1 & 1 
+		\end{matrix}
+		\right),
+	\end{displaymath}
+	this leads to the reduced incidence matrix
+	\begin{displaymath}
+		A = 
+		\left(
+		\begin{matrix}
+			-1 & 1 & 1
+		\end{matrix}
+		\right).
+	\end{displaymath}
+\end{example}
 
 \section{Energy Conservation Laws}
 To fully fix all the variables that arise in the model of an electrical circuit we will need some \emph{conservation laws}. In this context, conservation laws are a description of physical properties that can be observed in electrical circuits. This means that they have to be fulfilled non the less, thus including them into the system also makes sense from a physical perspective. 
@@ -402,143 +404,148 @@ where the diagonal matrices $C$, $G$ and $L$ contain the capacities, conductivit
 The resulting systems are \emph{stiff} systems. This means that for their numerical solution special care has to be put into which methods are suitable for solving these systems in a stable manner.
 
 
-\textbf{Example 1} \label{ex:MNA} \\
-We again consider the charging of a capacitor. The circuit is again given as in \textbf{Example 1}, \ref{ex:network topology}, where we have already derived the reduced incidence matrix
-\begin{displaymath}
-	A = 
-	\left(
-	\begin{matrix}
-		-1 & 1 & 0 \\
-		0 & -1 & 1 
-	\end{matrix}
-	\right).
-\end{displaymath} 
- This matrix can be split into the three submatrices $A_V$, $A_R$ and $A_C$ containing the columns of the matrix $A$. The matrices $A_L$ and $A_V$ are empty in this case. The diagonal matrices containing the components constants are
- \begin{displaymath}
- 	C = (C), \qquad L = (), \qquad G = (\frac{1}{R}).
- \end{displaymath}
-Plugging this into the formula \eqref{MNA_Matrixform} we obtain the system
-\begin{displaymath}
-	\begin{pmatrix}
-		0 & 0 & 0 \\
-		0 & C & 0 \\
-		0 & 0 & 0
-	\end{pmatrix}
-	*
-	\begin{pmatrix}
-		u_1' \\
-		u_2' \\
-		i_0'
-	\end{pmatrix}
-	+
-	\begin{pmatrix}
-		\frac{1}{R} & -\frac{1}{R} & 0 \\
-		-\frac{1}{R} & \frac{1}{R} & -1 \\
-		0 & -1 & 0 
-	\end{pmatrix}
-	*
-	\begin{pmatrix}
-		u_1 \\
-		u_2 \\
-		i_0
-	\end{pmatrix}
-	=
-	\begin{pmatrix}
-		0 \\
-		0 \\
-		-v_{src}
-	\end{pmatrix}.
-\end{displaymath}
-
-Note that because $L$ is empty, the system does not contain any related equations to inductances.
-
-\textbf{Example 2} \label{ex:LC-circuit MNA} \\
-Similarly we also derived the incidence Matrix of \ref{circuit:LC-circuit} in \textbf{Example 2}, \eqref{ex:LC-circuit incidence matrix}.
-\begin{displaymath}
-	A = 
-	\left(
-	\begin{matrix}
-		-1 & 1  
-	\end{matrix}
-	\right).
-\end{displaymath}
-
- This matrix can be split into the two submatrices $A_C$ and $A_L$ containing the columns of the matrix $A$. The matrices $A_R$, $A_V$ and $A_I$ are empty in this case. The diagonal matrices containing the components constants are
-\begin{displaymath}
-	C = (C), \qquad L = (L), \qquad G=().
-\end{displaymath}
-Plugging this into the formula \eqref{MNA_Matrixform} we obtain the system
-\begin{displaymath}
-	\begin{pmatrix}
-		C & 0 \\
-		0 & L 
-	\end{pmatrix}
-	*
-	\begin{pmatrix}
-		u_1' \\
-		i_L'
-	\end{pmatrix}
-	+
-	\begin{pmatrix}
-		0 & 1 \\
-		-1 & 0
-	\end{pmatrix}
-	*
-	\begin{pmatrix}
-		u_1 \\
-		i_L
-	\end{pmatrix}
-	=
-	\begin{pmatrix}
-		0 \\
-		0 
-	\end{pmatrix}.
-\end{displaymath}
+\begin{example}
+	\label{ex:MNA}
+	We again consider the charging of a capacitor. The circuit is again given as in \textbf{Example 1}, \ref{ex:network topology}, where we have already derived the reduced incidence matrix
+	\begin{displaymath}
+		A = 
+		\left(
+		\begin{matrix}
+			-1 & 1 & 0 \\
+			0 & -1 & 1 
+		\end{matrix}
+		\right).
+	\end{displaymath} 
+	This matrix can be split into the three submatrices $A_V$, $A_R$ and $A_C$ containing the columns of the matrix $A$. The matrices $A_L$ and $A_V$ are empty in this case. The diagonal matrices containing the components constants are
+	\begin{displaymath}
+		C = (C), \qquad L = (), \qquad G = (\frac{1}{R}).
+	\end{displaymath}
+	Plugging this into the formula \eqref{MNA_Matrixform} we obtain the system
+	\begin{displaymath}
+		\begin{pmatrix}
+			0 & 0 & 0 \\
+			0 & C & 0 \\
+			0 & 0 & 0
+		\end{pmatrix}
+		*
+		\begin{pmatrix}
+			u_1' \\
+			u_2' \\
+			i_0'
+		\end{pmatrix}
+		+
+		\begin{pmatrix}
+			\frac{1}{R} & -\frac{1}{R} & 0 \\
+			-\frac{1}{R} & \frac{1}{R} & -1 \\
+			0 & -1 & 0 
+		\end{pmatrix}
+		*
+		\begin{pmatrix}
+			u_1 \\
+			u_2 \\
+			i_0
+		\end{pmatrix}
+		=
+		\begin{pmatrix}
+			0 \\
+			0 \\
+			-v_{src}
+		\end{pmatrix}.
+	\end{displaymath}
+	
+	Note that because $L$ is empty, the system does not contain any related equations to inductances.
+\end{example}
 
 
-\textbf{Example 3} \label{ex:Example 3 - MNA} \\
-Consider the circuit of \textbf{Example 3}, \ref{ex:Example 3 - incidence matrix }. We have already found the incidence matrix for this circuit.
-\begin{displaymath}
-	A = 
-	\left(
-	\begin{matrix}
-		-1 & 1 & 1
-	\end{matrix}
-	\right).
-\end{displaymath} 
-This matrix can be split into the three submatrices $A_I$, $A_R$ and $A_C$ containing the columns of the matrix $A$. The matrices $A_L$ and $A_V$ are empty in this case. The diagonal matrices containing the components constants are
-\begin{displaymath}
-	C = (C), \qquad L = (), \qquad G = (\frac{1}{R}).
-\end{displaymath}
-Plugging this into the formula \eqref{MNA_Matrixform} we obtain the system
-\begin{displaymath}
-	\begin{pmatrix}
-		C & 0 \\
-		0 & 0 
-	\end{pmatrix}
-	*
-	\begin{pmatrix}
-		u_1' \\
-		i_V'
-	\end{pmatrix}
-	+
-	\begin{pmatrix}
-		\frac{1}{R} & -1 \\
-		1 & 0
-	\end{pmatrix}
-	*
-	\begin{pmatrix}
-		u_1 \\
-		i_V
-	\end{pmatrix}
-	=
-	\begin{pmatrix}
-		0 \\
-		-v_{src}
-	\end{pmatrix}.
-\end{displaymath}
+\begin{example}
+	\label{ex:LC-circuit MNA}
+	Similarly we also derived the incidence Matrix of \ref{circuit:LC-circuit} in \textbf{Example 2}, \eqref{ex:LC-circuit incidence matrix}.
+	\begin{displaymath}
+		A = 
+		\left(
+		\begin{matrix}
+			-1 & 1  
+		\end{matrix}
+		\right).
+	\end{displaymath}
+	
+	This matrix can be split into the two submatrices $A_C$ and $A_L$ containing the columns of the matrix $A$. The matrices $A_R$, $A_V$ and $A_I$ are empty in this case. The diagonal matrices containing the components constants are
+	\begin{displaymath}
+		C = (C), \qquad L = (L), \qquad G=().
+	\end{displaymath}
+	Plugging this into the formula \eqref{MNA_Matrixform} we obtain the system
+	\begin{displaymath}
+		\begin{pmatrix}
+			C & 0 \\
+			0 & L 
+		\end{pmatrix}
+		*
+		\begin{pmatrix}
+			u_1' \\
+			i_L'
+		\end{pmatrix}
+		+
+		\begin{pmatrix}
+			0 & 1 \\
+			-1 & 0
+		\end{pmatrix}
+		*
+		\begin{pmatrix}
+			u_1 \\
+			i_L
+		\end{pmatrix}
+		=
+		\begin{pmatrix}
+			0 \\
+			0 
+		\end{pmatrix}.
+	\end{displaymath}
+\end{example}
 
 
+\begin{example}
+	\label{ex:Example 3 - MNA}
+	Consider the circuit of \textbf{Example 3}, \ref{ex:Example 3 - incidence matrix }. We have already found the incidence matrix for this circuit.
+	\begin{displaymath}
+		A = 
+		\left(
+		\begin{matrix}
+			-1 & 1 & 1
+		\end{matrix}
+		\right).
+	\end{displaymath} 
+	This matrix can be split into the three submatrices $A_I$, $A_R$ and $A_C$ containing the columns of the matrix $A$. The matrices $A_L$ and $A_V$ are empty in this case. The diagonal matrices containing the components constants are
+	\begin{displaymath}
+		C = (C), \qquad L = (), \qquad G = (\frac{1}{R}).
+	\end{displaymath}
+	Plugging this into the formula \eqref{MNA_Matrixform} we obtain the system
+	\begin{displaymath}
+		\begin{pmatrix}
+			C & 0 \\
+			0 & 0 
+		\end{pmatrix}
+		*
+		\begin{pmatrix}
+			u_1' \\
+			i_V'
+		\end{pmatrix}
+		+
+		\begin{pmatrix}
+			\frac{1}{R} & -1 \\
+			1 & 0
+		\end{pmatrix}
+		*
+		\begin{pmatrix}
+			u_1 \\
+			i_V
+		\end{pmatrix}
+		=
+		\begin{pmatrix}
+			0 \\
+			-v_{src}
+		\end{pmatrix}.
+	\end{displaymath}
+\end{example}
 
 %\section{Charge-Flux oriented formulation of MNA}
 %\label{sec:charge flux oriented formulation}

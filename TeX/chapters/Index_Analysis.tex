@@ -201,7 +201,8 @@ check again, maybe need to add "only contains" somwhere - maybe at index 1 condi
 
 We will apply those results to some examples: 
 
-\textbf{Example 1} \label{ex:Index_Analysis} \\
+\begin{example}
+	\label{ex:Index_Analysis}
 	As our first example we consider again the charging of a capacitor with a series resistor as in \textbf{Example 1}.
 	\begin{figure}[H]
 		\centering
@@ -230,7 +231,7 @@ We will apply those results to some examples:
 			-1 & 0
 		\end{matrix}
 		\right)
-		 = \{0\} 
+		= \{0\} 
 		\quad \text{and} \quad 
 		ker(A_V) = ker
 		\left(
@@ -275,8 +276,11 @@ We will apply those results to some examples:
 		dim(v_src) \neq 0.
 	\end{displaymath}
 	This means that this system has index $\nu = 1$.
+\end{example}
+
+
 	
-\textbf{Example 2} \\
+\begin{example}
 	This example depicts an energy conserving system. The electric energy stored in the capacitor is converted into the the magnetic energy of the coil and vice versa.
 	\begin{figure}[H]
 		\centering
@@ -343,9 +347,9 @@ We will apply those results to some examples:
 		\end{aligned}
 	\end{displaymath}
 	which is an ODE.
+\end{example}
 	
-	\textbf{Example 3} \\
-
+\begin{example}
 	Finally, as the third example seems very similar to the first one, we might also expect them to have the same index. But this is indeed not the case as the following analysis shows. 
 	\begin{figure}[H]
 		\centering
@@ -400,3 +404,5 @@ We will apply those results to some examples:
 		\right) \neq \{0\}.
 	\end{displaymath}
 	Thus this condition is not fulfilled, which means that the system indeed has index $\nu = 2$.
+\end{example}
+	
