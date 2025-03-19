@@ -456,7 +456,7 @@ The approach to solve those systems numerically can be split into three main ste
 In the following two subchapters we will give a short overview over the two most commonly used methods for solving these kinds of systems.
 
 \subsection{BDF-k methods}
-	\label{ch:BDf-k methods}
+	\label{sec:BDFk}
 	chapter 9.2 numerik book
 	wikipedia
 	
@@ -505,7 +505,7 @@ In the following two subchapters we will give a short overview over the two most
 	Seite 106 numerik - schrittweite für startwerte bei bdf3 kleiner für kleineren fehler, halbieren, vierteln, achteln whatever
 	
 \subsection{trapezoidal rule}
-	\label{ch:trapezoidal rule}
+	\label{sex:Trapezoidal}
 	
 	The trapezoidal rule is a natural alternative to BDF2 since it is A-stable and a linear multistep method of order 2 the one with the smallest leading error coefficient. (\cite{ModellingAndDiscretizationOfCircuitProblems})
 	
@@ -533,18 +533,21 @@ In the following two subchapters we will give a short overview over the two most
 	
 \section{Numerical Examples}
 	
-	In this section we will apply the Trapezoidal rule as well as the BDF-k schemes for our three examples (reference!!!!!!!!!).
+	In this section we will apply the Trapezoidal rule as well as the BDF-k schemes discussed in Section \ref{sec:BDFk} and  Section \ref{sec:Trapezoidal} for our three examples.
 	
 	
 	\textbf{Example 1} \\
+		
+	For the first example we considered the circuit \ref{fig:charging capacitor}.
 		
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.4]{pictures/Example1_simple_p2.png}
 		\caption{charging capacitor with series resistor and voltage source}
+		\label{fig:charging capacitor}
 	\end{figure}
 	
-	The MNA-system for this example reads as
+	The MNA-system for this example reads
 	
 	\begin{equation}
 		\label{eq:MNA-system of chargin capacitor}
@@ -579,7 +582,7 @@ In the following two subchapters we will give a short overview over the two most
 		\end{pmatrix}.
 	\end{equation}
 
-	For testing we set the resistance to $R=1$ and the capacitance to $C=1$. In our case we let the  voltage source supply a voltage of the form $v_{src} = sin(\pi t)$.
+	For testing we set the resistance to $R=1$ and the capacitance to $C=1$. In our case we let the  voltage source supply a voltage of the form $v_{src} = sin(\pi t)$. 
 	
 	\begin{figure}[H]
 		\centering
@@ -587,6 +590,8 @@ In the following two subchapters we will give a short overview over the two most
 		\caption{Exact solution for example 1.}
 		\label{fig: Exact solution for example 1}
 	\end{figure}
+	
+	 Of course we still need to find consistent initial values. This can be done by means of Section \ref{sec:consistant initial values}
 	
 	\begin{table}[H]
 		\resizebox*{\textwidth}{!}{%
