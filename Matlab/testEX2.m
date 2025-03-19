@@ -1,3 +1,5 @@
+clear; close all;
+
 tspan = [0;8*pi];
 hspan = [1,0.1,0.01];
 
@@ -13,7 +15,7 @@ for n = 1:3
     
     x = 0:h:tspan(2);
     
-    %example 1
+    %example 2
     
     %system matrices
     A1 = [1 0

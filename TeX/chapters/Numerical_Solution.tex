@@ -581,14 +581,21 @@ In the following two subchapters we will give a short overview over the two most
 
 	For testing we set the resistance to $R=1$ and the capacitance to $C=1$. In our case we let the  voltage source supply a voltage of the form $v_{src} = sin(\pi t)$.
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{pictures/exact_solution_ex1.png}
+		\caption{Exact solution for example 1.}
+		\label{fig: Exact solution for example 1}
+	\end{figure}
+	
 	\begin{table}[H]
 		\resizebox*{\textwidth}{!}{%
 			\csvreader[tabular= | c || c c c | c c c | c c c | c c c |,
 			table head = \hline h & \multicolumn{3}{c|}{k = 1} & \multicolumn{3}{c|}{k = 2} & \multicolumn{3}{c|}{k = 3} & \multicolumn{3}{c|}{trapezoidal}\\
-			& u1 & u2 & iL & u1 & u2 & iL & u1 & u2 & iL & u1 & u2 & iL \\
+			& u1 & u2 & iV & u1 & u2 & iV & u1 & u2 & iV & u1 & u2 & iV \\
 			\hline,
 			late after line=\\\hline]
-			{../Matlab/err_ex1_test.csv}{h=\h, oneu=\oneu, oneuu=\oneuu, onei=\onei, twou=\twou, twouu=\twouu, twoi=\twoi, threeu=\threeu, threeuu=\threeuu, threei=\threei, trapu=\trapu, trapuu=\trapuu, trapil=\trapil}
+			{../Matlab/err_ex1.csv}{h=\h, oneu=\oneu, oneuu=\oneuu, onei=\onei, twou=\twou, twouu=\twouu, twoi=\twoi, threeu=\threeu, threeuu=\threeuu, threei=\threei, trapu=\trapu, trapuu=\trapuu, trapil=\trapil}
 			{\h & \num{\oneu} & \num{\oneuu} & \num{\onei} & \num{\twou} & \num{\twouu} & \num{\twoi} & \num{\threeu} & \num{\threeuu} & \num{\threei} & \num{\trapu} & \num{\trapuu} & \num{\trapil}}
 		}
 	\end{table}
@@ -622,10 +629,10 @@ In the following two subchapters we will give a short overview over the two most
 	With the initial conditions $u_1(0) = 1$ and $i_L(0) = 0$, the exact solutions for the voltage $u_1$ and the current $i_L$ then have the form \ref{fig: Exact solution for example 2}.	
 	
 	\begin{figure}[H]
-		\label{fig: Exact solution for example 2}
 		\centering
 		\includegraphics[scale=0.7]{pictures/exact_solution_ex2.png}
 		\caption{Exact solution for example 2.}
+		\label{fig: Exact solution for example 2}
 	\end{figure}
 	
 	Applying the BDF-k methods \ref{ch:BDf-k methods} and the Trapezoidal rule \ref{ch:trapezoidal rule} to this problem we can observe the maximal error $err = \max\limits_{0 \leq t \leq T} \| y(t) - \tilde{y}(t) \|$. This error is displayed in table \ref{tab:error ex2}.
@@ -642,6 +649,8 @@ In the following two subchapters we will give a short overview over the two most
 			{\h & \num{\oneu} & \num{\onei} & \num{\twou} & \num{\twoi} & \num{\threeu} & \num{\threei} & \num{\trapu} & \num{\trapil}}
 		}
 	\end{table}
+	
+	Idea: comment that u1 is just the evaluation of of vsrc, thus we ommit it in the table.
 	
 %	\begin{table}[H]
 %	\begin{center}
@@ -670,6 +679,13 @@ In the following two subchapters we will give a short overview over the two most
 		\caption{Current source with capacitor and resistor.}
 	\end{figure}
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{pictures/exact_solution_ex3.png}
+		\caption{Exact solution for example 3.}
+		\label{fig: Exact solution for example 3}
+	\end{figure}
+	
 	\begin{table}[H]
 		\resizebox*{\textwidth}{!}{%
 			\csvreader[tabular= | c || c c | c c | c c | c c | ,
@@ -681,6 +697,8 @@ In the following two subchapters we will give a short overview over the two most
 			{\h & \num{\oneu} & \num{\onei} & \num{\twou} & \num{\twoi} & \num{\threeu} & \num{\threei} & \num{\trapu} & \num{\trapil}}
 		}
 	\end{table}
+	
+	again ommit u1, as it is just vsrc and not interesting.
 	
 %	\begin{center}
 %		\begin{tabular}{ c || c c c | c c c | c c c | } 
