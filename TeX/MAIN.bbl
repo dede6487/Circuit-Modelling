@@ -54,15 +54,6 @@
       \verb{doi}
       \verb https://doi.org/10.1002/(SICI)1097-007X(200003/04)28:2<131::AID-CTA100>3.0.CO;2-W
       \endverb
-      \verb{eprint}
-      \verb https://onlinelibrary.wiley.com/doi/pdf/10.1002/%28SICI%291097-007X%28200003/04%2928%3A2%3C131%3A%3AAID-CTA100%3E3.0.CO%3B2-W
-      \endverb
-      \verb{urlraw}
-      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/%28SICI%291097-007X%28200003/04%2928%3A2%3C131%3A%3AAID-CTA100%3E3.0.CO%3B2-W
-      \endverb
-      \verb{url}
-      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/%28SICI%291097-007X%28200003/04%2928%3A2%3C131%3A%3AAID-CTA100%3E3.0.CO%3B2-W
-      \endverb
       \keyw{circuit simulation,differential-algebraic equation,DAE,index,modified nodal analysis,MNA,structural properties,modelling,state-space form,state-variable approach,normal form,consistent initial values,topological criteria}
     \endentry
     \entry{ModellingAndDiscretizationOfCircuitProblems}{book}{}{}

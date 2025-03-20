@@ -417,7 +417,7 @@ Thus the perturbation index is the same as the Kronecker-index $ind\{A,B\}$ \cit
 \section{Consistent Initial Values}
 \label{sec:consistant initial values}
 
-Especially for numerical considerations the calculation of initial values that are consistent with the problem is important. This leads us to differentiate between three cases. Namely we need to differ with respect to the index of the DAE. As we will later see, only indices less or equal to $2$ are important for our situation, this is why we will consider them especially. For this we also refer to \protect{\cite[chapter~14.2~and~14.3]{NumerikGewöhnlicherDifferentialgleichungen}}
+Especially for numerical considerations the calculation of initial values that are consistent with the problem is important. This leads us to differentiate between three cases. Namely we need to differ with respect to the index of the DAE. As we will later see, only indices less or equal to $2$ are important for our situation, this is why we will consider them especially. For this we also refer to \protect{\cite[chapter~13.3.1]{NumerikGewöhnlicherDifferentialgleichungen}}
 
 from imp funkionensatz usw
 
@@ -426,6 +426,18 @@ from imp funkionensatz usw
 wrong, seite 411 mit zeitabhängig
 
 \paragraph{Case: Index $\nu = 1$.}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{screenshot020}
+	\caption{}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{screenshot030}
+	\caption{}
+\end{figure}
+
 
 We consider so called semi-explicit index 1 Hessenberg systems
 
@@ -438,6 +450,13 @@ For consistent initial values, $y_0$ and $z_0$ have to fulfill $g(y_0, z_0) = 0$
 
 \paragraph{Case: Index $\nu = 2$.}
 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{screenshot032}
+	\caption{}
+	\label{fig:screenshot032}
+\end{figure}
+
 We again consider semi-explicit index-2 Hessenberg systems, this means systems of the form
 
 \begin{align*}
@@ -447,4 +466,32 @@ We again consider semi-explicit index-2 Hessenberg systems, this means systems o
 
 Consistent initial values $y_0, z_0$ have to fulfill $g(y_0) = 0$ as well as the hidden constraint $g_y(y_0)f(y_0, z_0) = 0$, where $g_y$ denotes the derivative of $g$ with respect to $y$.
 	
+\begin{example1}[Consistent initial vaues]
+	we will later see that ind 1
+		Of course we still need to find consistent initial values. Knowing the fact, that this system is of index $\nu=1$, this can be done by means of Section \ref{sec:consistant initial values}. Due to the fact that $u_1$ and $i_V$ are only algebraically constrained, we have to determine their initial values by solving for them at the point $t=0$. On the other hand $u_2$ and its derivative both appears, thus we can simply prescribe an initial value for $u_2$. Prescribing an arbitrary initial value might make sense from a mathematical perspective, since we might only be interested in the existence of a solution. But due to the physical interpretation of $u_2$ as being related to the charge that might already be stored in the capacitor, it makes sense to consider the capacitor to have no initial charge, i.e. $u_2(0) = 0$.
+	The third line of the MNA \eqref{eq:MNA-system of chargin capacitor with explicit values} immediately gives us, that
+	\begin{displaymath}
+		u_1(0) = -sin(\pi * 0) = 0.
+	\end{displaymath}
+	From line one follows, that
+	\begin{displaymath}
+		u_1(0) - u_2(0) - i_V(0) = 0,
+	\end{displaymath}
+	thus $i_V(0) = 0$ is a consistent initial value for $i_V$.
+\end{example1}
+
+\begin{example2}[Consistent initial vaues]
+	we will later see that ind 0
+	Because this system has an index of $\nu = 0$ it results in an ODE. This means that we can prescribe arbitrary initial values. We will assume, that at time $t=0$ the capacitor holds charge, i.e. $u_1(0) = 1$ and that there is no energy stored in the inductance $i_L(0) = 0$. The potential $u_1$ and the current $i_L$ then have the form illustrated in Figure \ref{fig: Exact solution for example 2}.	
+\end{example2}
+
+\begin{example3}[Consistent initial vaues]
+	we will later see that ind 2
 	
+	We have already investigated that the resulting system is of index $\nu = 2$. With this, Section \ref{sec:consistant initial values} gives us a method to compute consistent initial values by solving
+	\begin{displaymath}
+		this equation for y_0 z_0
+	\end{displaymath}
+	
+	This leads us to the initial values $u_1 = $ and $i_V = $.
+\end{example3}
