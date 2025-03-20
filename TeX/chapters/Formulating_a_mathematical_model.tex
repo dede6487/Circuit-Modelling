@@ -2,7 +2,7 @@
 based on DAE lecture and \cite{ModellingAndDiscretizationOfCircuitProblems}
 
 To accurately represent a physical system in a mathematical model we first have to think about \textbf{how} to best formulate a mathematical model that formulates this system precise enough.
-This chapter aims to elaborate on the Modified Nodal Analysis (MNA) of an electrical circuit, which is the a common choice for these kinds of models. For this we have to introduce the notions of network topology as well as some basic electrical components and physical laws. Most of the following notions such as voltage, current and electrical potentials can depend on time. For better readability we will leave out the time argument $t$ in some cases.
+This chapter aims to elaborate on the Modified Nodal Analysis (MNA) of an electrical circuit, which is the common choice for these kinds of models. For this we have to introduce the notions of network topology as well as some basic electrical components and physical laws. Most of the following notions such as voltage, current and electrical potentials can depend on time. For better readability we will leave out the time argument $t$ in some cases.
 
 \section{Network Topology}
 \label{Sec:Network Topology}
@@ -21,7 +21,7 @@ We call $u = (u_0, u_1, u_2, ...)$ the corresponding electrical potentials (or j
 We will later see, that the components of an electrical circuit, which will be installed along the edges, describe a relationship between the current along the edge the corresponding voltage. Thus a current vector $i = (i_1, i_2, i_3, ...)$ containing the currents along the edges is required.
 
 
-\begin{example1}
+\begin{example1}[Incidence Matrix]
 	\label{ex:network topology}
 	As an example we consider the charging of a capacitor. The circuit is given in Figure \ref{circuit:charging of capacitor}.
 	\begin{figure}[H]
@@ -109,7 +109,7 @@ We will later see, that the components of an electrical circuit, which will be i
 	\end{displaymath}
 \end{example1}
 
-\begin{example2}
+\begin{example2}[Incidence Matrix]
 	\label{ex:LC-circuit incidence matrix}
 	Another example is the a circuit that only contains a capacitor and an inductor, see Figure \ref{circuit:LC-circuit}. This circuit will oscillate, if given appropriate initial conditions.
 	\begin{figure}[H]
@@ -166,9 +166,9 @@ We will later see, that the components of an electrical circuit, which will be i
 	\end{displaymath}
 \end{example2}
 
-\begin{example3}
+\begin{example3}[Incidence Matrix]
 	\label{ex:Example 3 - incidence matrix }
-	As a third example we consider a similar circuit to the circuit presented in \textbf{Example 1}, the only difference is that we connected the resistor parallel to the capacitor instead of in series.
+	As a third example we consider a similar circuit to the circuit presented in Example 1.\ref{ex:network topology}, the only difference is that we connected the resistor parallel to the capacitor instead of connecting it in series.
 	\begin{figure}[H]
 		\label{circuit:Example 3}
 		\centering
@@ -176,7 +176,7 @@ We will later see, that the components of an electrical circuit, which will be i
 		\caption{Capacitor with resistor and voltage source}
 	\end{figure}
 	
-	We collect the node-potentials, the voltages and the currents collected in the vectors
+	We collect the node-potentials, the voltages and the currents in the vectors
 	\begin{displaymath}
 		u=
 		\left(
@@ -205,8 +205,7 @@ We will later see, that the components of an electrical circuit, which will be i
 		\right).
 	\end{displaymath}
 	The incidence matrix of this circuit has the form
-	
-	\begin{displaymath}
+		\begin{displaymath}
 		\tilde{A} = 
 		\left(
 		\begin{matrix}
@@ -244,7 +243,7 @@ To fully fix all the variables that arise in the model of an electrical circuit 
 \end{itemize}
 
 \section{Electrical Components and their relations}
-\label{Sec:Electrical Components and their relations}
+\label{Sec:Components relations}
 Electrical components are described by equations relating their edge voltage $v$ to their edge current $i$. We will mainly focus on so-called RLC-networks (short for Resistor, Inductor, Capacitor), which consist of resistors, capacitors, inductors, voltage sources and current sources. Diodes and transistors as well as other electrical components can be described in a similar way, although these lead to a more difficult analysis of the system, see e.g. \cite{ModellingAndDiscretizationOfCircuitProblems} and \cite{SchwarzTischendorfCircuitMNA}. Using the notation introduced in Section \ref{Sec:Network Topology}, the relations read as:
 \begin{itemize}
 	\item \textbf{Resistor} \newline
@@ -331,11 +330,10 @@ To analyse the network further we will rearrange the columns of the reduced inci
 \end{displaymath}
 where $A_R$, $A_C$, $A_L$, $A_V$ and $A_I$ include the columns that are related to the resistors, capacitors, coils, voltage sources and current sources, respectively.
 
-To mathematically describe the circuit we will use \emph{modified nodal analysis} (or short MNA), see the paper by Chung-Wen Ho, Albert E. Ruehli and Pierce A. Brennan, \cite{MNA75}. MNA uses the node voltages as well as the currents of the coils and the voltage sources as unknowns. It is based on the conservation laws \eqref{KCL} and \eqref{KVL} as well as on the voltage-current relations of the electrical components, discussed in Section \ref{Sec:Electrical Components and their relation}. The voltages can be represented using the node-potentials
+To mathematically describe the circuit we will use \emph{modified nodal analysis} (or short MNA), see the paper by Chung-Wen Ho, Albert E. Ruehli and Pierce A. Brennan, \cite{MNA75}. MNA uses the node voltages as well as the currents of the coils and the voltage sources as unknowns. It is based on the conservation laws \eqref{KCL} and \eqref{KVL} as well as on the voltage-current relations of the electrical components, discussed in Section \ref{Sec:Components relations}. The voltages can be represented using the node-potentials
 \begin{displaymath}
 	v = A^\top u
 \end{displaymath}
-
 The vector $v$ can thus be rearranged into $v = (v_R, v_C, v_L, v_{src}, v_I)$. In a similar way we also rearrange the current vector into $i = (i_R, i_C, i_L, i_V, i_src)$. Using the sorted incidence matrix blocks we can rewrite the resistor current relation as
 	\begin{displaymath}
 		i_R = G \ v_R = G \ A_R^\top u.
@@ -399,12 +397,12 @@ In matrix form these read
 \end{equation}
 where the diagonal matrices $C$, $G$ and $L$ contain the capacities, conductivities and inductivities.
 
-The resulting systems are \emph{stiff} systems. This means that for their numerical solution special care has to be put into which methods are suitable for solving these systems in a stable manner.
+The resulting systems are \emph{stiff} systems. This means that for their numerical solution special care has to be put into which methods are suitable for solving these systems in a stable manner. For analyzing nonlinear components, the charge-flux oriented formulation might be useful for numerical considerations, for this see \cite{ModellingAndDiscretizationOfCircuitProblems}.
 
 
-\begin{example1}
+\begin{example1}[Modified Nodal Analysis System]
 	\label{ex:MNA}
-	We again consider the charging of a capacitor. The circuit is again given as in \textbf{Example 1}, \ref{ex:network topology}, where we have already derived the reduced incidence matrix
+	We again consider the charging of a capacitor. The circuit is again given as in Example 1.\ref{ex:network topology}, where we have already derived the reduced incidence matrix
 	\begin{displaymath}
 		A = 
 		\left(
@@ -419,7 +417,8 @@ The resulting systems are \emph{stiff} systems. This means that for their numeri
 		C = (C), \qquad L = (), \qquad G = (\frac{1}{R}).
 	\end{displaymath}
 	Plugging this into the formula \eqref{MNA_Matrixform} we obtain the system
-	\begin{displaymath}
+	\begin{equation}
+		\label{eq:ex1 MNA}
 		\begin{pmatrix}
 			0 & 0 & 0 \\
 			0 & C & 0 \\
@@ -433,9 +432,9 @@ The resulting systems are \emph{stiff} systems. This means that for their numeri
 		\end{pmatrix}
 		+
 		\begin{pmatrix}
-			\frac{1}{R} & -\frac{1}{R} & 0 \\
-			-\frac{1}{R} & \frac{1}{R} & -1 \\
-			0 & -1 & 0 
+			\frac{1}{R} & -\frac{1}{R} & -1 \\
+			-\frac{1}{R} & \frac{1}{R} & 0 \\
+			1 & 0 & 0 
 		\end{pmatrix}
 		*
 		\begin{pmatrix}
@@ -449,15 +448,15 @@ The resulting systems are \emph{stiff} systems. This means that for their numeri
 			0 \\
 			-v_{src}
 		\end{pmatrix}.
-	\end{displaymath}
+	\end{equation}
 	
 	Note that because $L$ is empty, the system does not contain any related equations to inductances.
 \end{example1}
 
 
-\begin{example2}
+\begin{example2}[Modified Nodal Analysis System]
 	\label{ex:LC-circuit MNA}
-	Similarly we also derived the incidence Matrix of \ref{circuit:LC-circuit} in \textbf{Example 2}, \eqref{ex:LC-circuit incidence matrix}.
+	Similarly we also derived the incidence Matrix for this system in Example 2.\ref{ex:LC-circuit incidence matrix}.
 	\begin{displaymath}
 		A = 
 		\left(
@@ -501,9 +500,9 @@ The resulting systems are \emph{stiff} systems. This means that for their numeri
 \end{example2}
 
 
-\begin{example3}
+\begin{example3}[Modified Nodal Analysis System]
 	\label{ex:Example 3 - MNA}
-	Consider the circuit of \textbf{Example 3}, \ref{ex:Example 3 - incidence matrix }. We have already found the incidence matrix for this circuit.
+	Consider the circuit of Example 3.\ref{ex:Example 3 - incidence matrix }. We have already found the incidence matrix for this circuit.
 	\begin{displaymath}
 		A = 
 		\left(
@@ -517,7 +516,8 @@ The resulting systems are \emph{stiff} systems. This means that for their numeri
 		C = (C), \qquad L = (), \qquad G = (\frac{1}{R}).
 	\end{displaymath}
 	Plugging this into the formula \eqref{MNA_Matrixform} we obtain the system
-	\begin{displaymath}
+	\begin{equation}
+		\label{eq:ex3 MNA}
 		\begin{pmatrix}
 			C & 0 \\
 			0 & 0 
@@ -542,7 +542,7 @@ The resulting systems are \emph{stiff} systems. This means that for their numeri
 			0 \\
 			-v_{src}
 		\end{pmatrix}.
-	\end{displaymath}
+	\end{equation}
 \end{example3}
 
 %\section{Charge-Flux oriented formulation of MNA}

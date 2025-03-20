@@ -408,7 +408,7 @@ Where $u(t)$ holds the first $d$ entries of $y(t):\mathbb{R} \to \mathbb{R}^n$ a
 	v(t) - \tilde{v}(t) = \sum_{i=0}^{k-1} (-1)^iN^i \delta_2^{(i)}(t) 
 \end{displaymath}
 
-Thus the perturbation index is the same as the Kronecker-index $ind\{A,B\}$ \cite{NumerikGewöhnlicherDifferentialgleichungen}. More over we observe that the error depends on the derivatives of the pertubation.
+Thus the perturbation index is the same as the Kronecker-index $ind\{A,B\}$, see \cite{NumerikGewöhnlicherDifferentialgleichungen}. More over we observe that the error depends on the derivatives of the pertubation.
 
 %might want to elaborate on that
 
@@ -421,55 +421,28 @@ Especially for numerical considerations the calculation of initial values that a
 
 from imp funkionensatz usw
 
-\paragraph{index $\nu = 0$. } this case leads to an ODE, and Picard-Lindelöff t theorem \protecting{\cite[Satz~1.2.1]{NumerikGewöhnlicherDifferentialgleichungen}} tells us that every initial condition is consistent, we only consider index $\nu = 1$ and $\nu = 2$.
+\paragraph{index $\nu = 0$. } 
+We have already discussed, that this case leads to an ODE, and Picard-Lindelöff theorem \protecting{\cite[Satz~1.2.1]{NumerikGewöhnlicherDifferentialgleichungen}} tells us that every initial condition is consistent for ordinary differential equations.
 
-wrong, seite 411 mit zeitabhängig
+\begin{example2}[Consistent initial vaues]
+	We will later see that this system is of index $\nu = 0$. This means that we can prescribe arbitrary initial values. As the initial values still have a physical interpretation, still not every consistent initial value also makes sense! We will assume, that at time $t=0$ the capacitor holds charge, i.e. $u_1(0) = 1$ and that there is no energy stored in the inductance $i_L(0) = 0$.
+\end{example2}
+
 
 \paragraph{Case: Index $\nu = 1$.}
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{screenshot020}
-	\caption{}
-\end{figure}
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{screenshot030}
-	\caption{}
-\end{figure}
-
-
-We consider so called semi-explicit index 1 Hessenberg systems
+By rewriting our system into the form
 
 \begin{align*}
-	y' = f(y,z), \\
-	0 = g(y,z).
+	y'(t) = f(t,y(t),z(t)), \\
+	0 = g(t,y(t),z(t)).
 \end{align*}
 
-For consistent initial values, $y_0$ and $z_0$ have to fulfill $g(y_0, z_0) = 0$.
+we are able to give conditions for consistent initial values. Namely $y_0$ and $z_0$ are consistent initial values for this system, if $g(t_0, y_0, z_0) = 0$ holds.
 
-\paragraph{Case: Index $\nu = 2$.}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{screenshot032}
-	\caption{}
-	\label{fig:screenshot032}
-\end{figure}
-
-We again consider semi-explicit index-2 Hessenberg systems, this means systems of the form
-
-\begin{align*}
-	y' = f(y,z), \\
-	0 = g(y).
-\end{align*}
-
-Consistent initial values $y_0, z_0$ have to fulfill $g(y_0) = 0$ as well as the hidden constraint $g_y(y_0)f(y_0, z_0) = 0$, where $g_y$ denotes the derivative of $g$ with respect to $y$.
-	
 \begin{example1}[Consistent initial vaues]
-	we will later see that ind 1
-		Of course we still need to find consistent initial values. Knowing the fact, that this system is of index $\nu=1$, this can be done by means of Section \ref{sec:consistant initial values}. Due to the fact that $u_1$ and $i_V$ are only algebraically constrained, we have to determine their initial values by solving for them at the point $t=0$. On the other hand $u_2$ and its derivative both appears, thus we can simply prescribe an initial value for $u_2$. Prescribing an arbitrary initial value might make sense from a mathematical perspective, since we might only be interested in the existence of a solution. But due to the physical interpretation of $u_2$ as being related to the charge that might already be stored in the capacitor, it makes sense to consider the capacitor to have no initial charge, i.e. $u_2(0) = 0$.
-	The third line of the MNA \eqref{eq:MNA-system of chargin capacitor with explicit values} immediately gives us, that
+	We will later find, that this system is of index $\nu=1$. Due to the fact that $u_1$ and $i_V$ are only algebraically constrained, we have to determine their initial values by solving for them at the point $t=0$. On the other hand $u_2$ and its derivative both appear, thus we can simply prescribe an initial value for $u_2$. Again prescribing an arbitrary initial value might make sense from a mathematical perspective, since we might only be interested in the existence of a solution. But due to the physical interpretation of $u_2$ as being related to the charge that might already be stored in the capacitor, it makes sense to consider the capacitor to have no initial charge, i.e. $u_2(0) = 0$.
+	The third line of the MNA-system \eqref{eq:ex1 MNA} together with setting $v_{src} = sin(\pi t)$ immediately gives us, that
 	\begin{displaymath}
 		u_1(0) = -sin(\pi * 0) = 0.
 	\end{displaymath}
@@ -480,18 +453,31 @@ Consistent initial values $y_0, z_0$ have to fulfill $g(y_0) = 0$ as well as the
 	thus $i_V(0) = 0$ is a consistent initial value for $i_V$.
 \end{example1}
 
-\begin{example2}[Consistent initial vaues]
-	we will later see that ind 0
-	Because this system has an index of $\nu = 0$ it results in an ODE. This means that we can prescribe arbitrary initial values. We will assume, that at time $t=0$ the capacitor holds charge, i.e. $u_1(0) = 1$ and that there is no energy stored in the inductance $i_L(0) = 0$. The potential $u_1$ and the current $i_L$ then have the form illustrated in Figure \ref{fig: Exact solution for example 2}.	
-\end{example2}
+\paragraph{Case: Index $\nu = 2$.}
+
+For index-2 systems we rewrite our system into
+
+\begin{align*}
+	y' = f(t,y(t),z(t)), \\
+	0 = g(t,y(t)).
+\end{align*}
+
+Consistent initial values $y_0$, $z_0$ for this case not only have to fulfill $g(t_0, y_0) = 0$ but also the \emph{hidden constraint} $g_t(t_0, y_0) + g_y(t_0, y_0)f(t_0, y_0, z_0)$. By $g_t$ and $g_y$ we denote the derivative of $g$ with respect to $t$ or $y$, respectively.
+	
 
 \begin{example3}[Consistent initial vaues]
-	we will later see that ind 2
-	
-	We have already investigated that the resulting system is of index $\nu = 2$. With this, Section \ref{sec:consistant initial values} gives us a method to compute consistent initial values by solving
+	Again we will soon investigate the index of this system, it will turn out to be $\nu = 2$. Considering \eqref{eq:ex3 MNA}, we can define
+	\begin{align*}
+		f(t,u_1(t),i_v(t)) &= i_v(t) - u_1(t), \\
+		g(t, u_1(t)) &= u_1(t) + v_{src}(t).
+	\end{align*}
+	Computing the first condition gives together with the choice $v_{src} = sin(\pi t)$
 	\begin{displaymath}
-		this equation for y_0 z_0
+		u_1(0) = -v_{src}(0) = -sin(\pi *0) = 0.
 	\end{displaymath}
-	
-	This leads us to the initial values $u_1 = $ and $i_V = $.
+	While the second condition leads to
+	\begin{displaymath}
+		0 = v_{src}'(0) + 1*(i_V(0)-u_1(0)) = \pi cos(\pi *0) + i_v(0) - 0 = \pi + i_V(0).
+	\end{displaymath}
+	Thus we obtain $i_V(0) = -\pi$.
 \end{example3}

@@ -96,6 +96,44 @@
       \field{title}{Modelling and discretization of circuit problems}
       \field{year}{2005}
     \endentry
+    \entry{HairerErnst1989Tnso}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=83e9309b497414bd7c7550110d37b3d7}{%
+           family={Hairer},
+           familyi={H\bibinitperiod},
+           given={Ernst},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {eng}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{83e9309b497414bd7c7550110d37b3d7}
+      \strng{fullhash}{83e9309b497414bd7c7550110d37b3d7}
+      \strng{fullhashraw}{83e9309b497414bd7c7550110d37b3d7}
+      \strng{bibnamehash}{83e9309b497414bd7c7550110d37b3d7}
+      \strng{authorbibnamehash}{83e9309b497414bd7c7550110d37b3d7}
+      \strng{authornamehash}{83e9309b497414bd7c7550110d37b3d7}
+      \strng{authorfullhash}{83e9309b497414bd7c7550110d37b3d7}
+      \strng{authorfullhashraw}{83e9309b497414bd7c7550110d37b3d7}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{0387518606}
+      \field{series}{(AT-OBV)AC00001636 1409}
+      \field{title}{The numerical solution of differential-algebraic systems by Runge-Kutta methods}
+      \field{year}{1989}
+      \verb{urlraw}
+      \verb http://media.obvsg.at/AC00065128-1001
+      \endverb
+      \verb{url}
+      \verb http://media.obvsg.at/AC00065128-1001
+      \endverb
+      \keyw{Differential-algebraisches Gleichungssystem ; Runge-Kutta-Verfahren}
+    \endentry
     \entry{MNA75}{article}{}{}
       \name{author}{3}{}{%
         {{hash=de255eee521e49aed4c2d9295d277bd2}{%
