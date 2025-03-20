@@ -113,10 +113,10 @@ We will later see, that the components of an electrical circuit, which will be i
 	\label{ex:LC-circuit incidence matrix}
 	Another example is the a circuit that only contains a capacitor and an inductor, see Figure \ref{circuit:LC-circuit}. This circuit will oscillate, if given appropriate initial conditions.
 	\begin{figure}[H]
-		\label{circuit:LC-circuit}
 		\centering
 		\includegraphics[scale=0.5]{pictures/Example2_index0.png}
 		\caption{capacitor and inductor oscillator}
+		\label{circuit:LC-circuit}
 	\end{figure}
 	
 	We again collect the node-potentials, the voltages and the currents in the vectors
@@ -331,9 +331,7 @@ To analyse the network further we will rearrange the columns of the reduced inci
 \end{displaymath}
 where $A_R$, $A_C$, $A_L$, $A_V$ and $A_I$ include the columns that are related to the resistors, capacitors, coils, voltage sources and current sources, respectively.
 
-To mathematically describe the circuit we will use \emph{modified nodal analysis} (or short MNA), see the paper by ruehli etc ... \cite{MNA75}.\textbf{!!!!!}
-	
-MNA uses the node voltages as well as the currents of the coils and the voltage sources as unknowns. It is based on the conservation laws \eqref{KCL} and \eqref{KVL} as well as on the voltage-current relations of the electrical components, discussed in Section \ref{Sec:Electrical Components and their relation}. The voltages can be represented using the node-potentials
+To mathematically describe the circuit we will use \emph{modified nodal analysis} (or short MNA), see the paper by Chung-Wen Ho, Albert E. Ruehli and Pierce A. Brennan, \cite{MNA75}. MNA uses the node voltages as well as the currents of the coils and the voltage sources as unknowns. It is based on the conservation laws \eqref{KCL} and \eqref{KVL} as well as on the voltage-current relations of the electrical components, discussed in Section \ref{Sec:Electrical Components and their relation}. The voltages can be represented using the node-potentials
 \begin{displaymath}
 	v = A^\top u
 \end{displaymath}

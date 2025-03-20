@@ -372,7 +372,7 @@ The grid function $y_h : T \to A$ with the time-grid $T={t_0, ..., t_N}$ and the
 		\end{enumerate}
 	\end{definition}
 	
-	seite 314 im buch numerik 
+	%seite 314 im buch numerik 
 	
 	\begin{figure}[H]
 		\centering
@@ -381,7 +381,7 @@ The grid function $y_h : T \to A$ with the time-grid $T={t_0, ..., t_N}$ and the
 		\label{fig:screenshot021}
 	\end{figure}
 	
-	following from numerik buch seite 134
+	%following from numerik buch seite 134
 	\begin{theorem}[\protecting{\cite[Satz~4.2.10]{NumerikGewöhnlicherDifferentialgleichungen}}]
 		\label{th: null-stbaility and consistence is convergence}
 		Let $f(t,y)$ be sufficiently smooth and the linear multi-step method be zero-stable and consistent of order $p$, then it is also convergent of order $p$.
@@ -389,6 +389,7 @@ The grid function $y_h : T \to A$ with the time-grid $T={t_0, ..., t_N}$ and the
 	
 	equivalent to lax richtmyer in single step because for lmsm zero stable = stable
 	
+	To achieve these convergent rates it is also important to compute the initial steps for the multi-step method appropriately, i.e. the methods with which these initial steps are calculated have to also be of the same order as we would want our solution to be. (In applications this can mean that we calculate the initial steps with methods of lower order, but using a smaller step-size)
 
 \section{Implicit linear multi-step formulas}
 These kinds of multi-step methods are commonly used to numerically solve the systems obtained using modified nodal analysis.
@@ -538,7 +539,7 @@ In the following two subchapters we will give a short overview over the two most
 	
 	
 \begin{example}
-	For the first example we considered the circuit \ref{fig:charging capacitor}.
+	We again consider the charging of a capacitor, depicted in the schematics in Figure \ref{fig:charging capacitor}.
 	
 	\begin{figure}[H]
 		\centering
@@ -613,7 +614,7 @@ In the following two subchapters we will give a short overview over the two most
 			{../Matlab/err_ex1.csv}{h=\h, oneu=\oneu, oneuu=\oneuu, onei=\onei, twou=\twou, twouu=\twouu, twoi=\twoi, threeu=\threeu, threeuu=\threeuu, threei=\threei, trapu=\trapu, trapuu=\trapuu, trapil=\trapil}
 			{\h  & \num{\oneuu} & \num{\onei}  & \num{\twouu} & \num{\twoi}  & \num{\threeuu} & \num{\threei}  & \num{\trapuu} & \num{\trapil}}
 		}
-		\caption{resulting errors for the BDF-k methods and ther trapezoidal rule.}
+		\caption{Resulting errors for the BDF-k methods and ther trapezoidal rule.}
 		\label{tab:num results ex1}
 	\end{table}
 	
@@ -622,7 +623,7 @@ In the following two subchapters we will give a short overview over the two most
 		
 	
 \begin{example}
-	In example 2 we considered the circuit in Figure \ref{fig: LC-circuit}.
+	For this example we again want to consider the LC-circuit given in Figure \ref{fig: LC-circuit}.
 	
 	\begin{figure}[H]
 		\centering
@@ -660,7 +661,7 @@ In the following two subchapters we will give a short overview over the two most
 		\end{pmatrix}.
 	\end{displaymath}
 	
-	With the initial conditions $u_1(0) = 1$ and $i_L(0) = 0$, the exact solutions for the voltage $u_1$ and the current $i_L$ then have the form \ref{fig: Exact solution for example 2}.	
+	Because this system has an index of $\nu = 0$ it results in an ODE. This means that we can prescribe arbitrary initial values. We will assume, that at time $t=0$ the capacitor holds charge, i.e. $u_1(0) = 1$ and that there is no energy stored in the inductance $i_L(0) = 0$. The potential $u_1$ and the current $i_L$ then have the form illustrated in Figure \ref{fig: Exact solution for example 2}.	
 	
 	\begin{figure}[H]
 		\centering
@@ -669,9 +670,8 @@ In the following two subchapters we will give a short overview over the two most
 		\label{fig: Exact solution for example 2}
 	\end{figure}
 	
-	Applying the BDF-k methods \ref{ch:BDf-k methods} and the Trapezoidal rule \ref{ch:trapezoidal rule} to this problem we can observe the maximal error $err = \max\limits_{0 \leq t \leq T} \| y(t) - \tilde{y}(t) \|$. This error is displayed in table \ref{tab:error ex2}.
-	
-	
+	When applying the BDF-k methods \ref{sec:BDfk} and the Trapezoidal rule \ref{sec:Trapezoidal} to this problem, we can observe the maximal error $err = \max\limits_{0 \leq t \leq T} \| y(t) - \tilde{y}(t) \|$. This error is displayed in table \ref{tab:error ex2}.
+		
 	\begin{table}[H]
 		\resizebox*{\textwidth}{!}{%
 			\csvreader[tabular= | c || c c | c c | c c | c c | ,
@@ -682,21 +682,61 @@ In the following two subchapters we will give a short overview over the two most
 			{../Matlab/err_ex2.csv}{h=\h, oneu=\oneu, onei=\onei, twou=\twou, twoi=\twoi, threeu=\threeu, threei=\threei, trapu=\trapu, trapil=\trapil}
 			{\h & \num{\oneu} & \num{\onei} & \num{\twou} & \num{\twoi} & \num{\threeu} & \num{\threei} & \num{\trapu} & \num{\trapil}}
 		}
+		\caption{Resulting errors for the BDF-k methods and ther trapezoidal rule.}
+		\label{tab:error ex2}
 	\end{table}
-	
-	Idea: comment that u1 is just the evaluation of of vsrc, thus we ommit it in the table.
-	
-	By comparing the errors of the methods we can see that they indeed have the predicted convergence order. (reference appropriate theorems here)
+
+	once again we may see, that the errors reflect the predicted convergence rates.
 \end{example}
 	
-	
+
 
 \begin{example}
+	
+	In our last example we consider again the circuit given in Figure \ref{fig:num ex3}.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.4]{pictures/Example3.png}
 		\caption{Current source with capacitor and resistor.}
+		\label{fig:num ex3}
 	\end{figure}
+	
+	Setting $R=1$, $C=1$ and $v_{src} = sin(\pi t)$ the resulting system has the form
+	\begin{displaymath}
+			\begin{pmatrix}
+			1 & 0 \\
+			0 & 0 
+		\end{pmatrix}
+		*
+		\begin{pmatrix}
+			u_1' \\
+			i_V'
+		\end{pmatrix}
+		+
+		\begin{pmatrix}
+			1 & -1 \\
+			1 & 0
+		\end{pmatrix}
+		*
+		\begin{pmatrix}
+			u_1 \\
+			i_V
+		\end{pmatrix}
+		=
+		\begin{pmatrix}
+			0 \\
+			-sin(\pi t)
+		\end{pmatrix}.
+	\end{displaymath}
+	
+	We have already investigated that the resulting system is of index $\nu = 2$. With this, Section \ref{sec:consistant initial values} gives us a method to compute consistent initial values by solving
+	\begin{displaymath}
+		this equation for y_0 z_0
+	\end{displaymath}
+	
+	This leads us to the initial values $u_1 = $ and $i_V = $.
+	
+	With this we expect the potential and current to be given as illustrated in Figure \ref{fig: Exact solution for example 3}.
 	
 	\begin{figure}[H]
 		\centering
@@ -705,19 +745,24 @@ In the following two subchapters we will give a short overview over the two most
 		\label{fig: Exact solution for example 3}
 	\end{figure}
 	
+	The numerical methods result in errors displayed in Table \ref{tab:error ex3}. Due to the fact, that $u_1$ is again the same as $-v_src$, it is not of interest for our comparison of the errors. We omit $u_1$.
+	
 	\begin{table}[H]
 		\resizebox*{\textwidth}{!}{%
-			\csvreader[tabular= | c || c c | c c | c c | c c | ,
-			table head = \hline h & \multicolumn{2}{c|}{k = 1} & \multicolumn{2}{c|}{k = 2} & \multicolumn{2}{c|}{k = 3} & \multicolumn{2}{c|}{trapezoidal} \\
-			& u1 & iV & u1 & iV & u1 & iV & u1 & iV \\
+			\csvreader[tabular= | c || c | c | c | c | ,
+			table head = \hline h & {k = 1} & {k = 2} & {k = 3} & trapezoidal \\ %\multicolumn{1}{c|}{}
+			& iV & iV & iV & iV \\
 			\hline,
 			late after line=\\\hline]
 			{../Matlab/err_ex3.csv}{h=\h, oneu=\oneu, onei=\onei, twou=\twou, twoi=\twoi, threeu=\threeu, threei=\threei, trapu=\trapu, trapil=\trapil}
-			{\h & \num{\oneu} & \num{\onei} & \num{\twou} & \num{\twoi} & \num{\threeu} & \num{\threei} & \num{\trapu} & \num{\trapil}}
+			{\h & \num{\onei} & \num{\twoi} & \num{\threei} & \num{\trapil}}
 		}
+		\caption{Resulting errors for the BDF-k methods and the trapezoidal rule.}
+		\label{tab:error ex3}
 	\end{table}
+
 	
-	again ommit u1, as it is just vsrc and not interesting.
+	
 \end{example}
 	
 	

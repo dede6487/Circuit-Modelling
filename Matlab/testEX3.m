@@ -1,7 +1,7 @@
 clear; close all;
 
 tspan = [0;10];
-hspan = [1,0.1,0.01];
+hspan = [0.1,0.05,0.05/2];
 
 %initialize error output
 
@@ -97,7 +97,7 @@ for n = 1:3
     plot(x, y1_BDF1(graph,:), 'DisplayName', 'BDF1');
     plot(x, y1_BDF2(graph,:), 'DisplayName', 'BDF2');
     plot(x, y1_BDF3(graph,:), 'DisplayName', 'BDF3');
-    %plot(x, y1_Trapezoidal(graph,:), 'DisplayName', 'Trapezoidal');
+    plot(x, y1_Trapezoidal(graph,:), 'DisplayName', 'Trapezoidal');
     hold off
     
     legend
