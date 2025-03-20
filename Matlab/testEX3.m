@@ -28,7 +28,7 @@ for n = 1:3
     
     %consistent initial values (as calculated)
     
-    y0 = [0 0]';
+    y0 = [0 -pi]';
     
     %exact solution u1 = -vsrc, iV = u1 + u1'
     % y = [u1, iV]
