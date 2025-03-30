@@ -17,7 +17,7 @@
 \contentsline {paragraph}{\nonumberline index $\nu = 0$.}{23}{paragraph*.15}%
 \contentsline {paragraph}{\nonumberline Case: Index $\nu = 1$.}{24}{paragraph*.17}%
 \contentsline {paragraph}{\nonumberline Case: Index $\nu = 2$.}{25}{paragraph*.19}%
-\contentsline {chapter}{\numberline {4}Index Analysis of the modified nodal analysis}{26}{chapter.4}%
+\contentsline {chapter}{\numberline {4}Index Analysis of the Modified Nodal Analysis}{26}{chapter.4}%
 \contentsline {section}{\numberline {4.1}General Index analysis}{27}{section.4.1}%
 \contentsline {paragraph}{\nonumberline ODE-case:}{27}{paragraph*.21}%
 \contentsline {paragraph}{\nonumberline DAE-case:}{27}{paragraph*.23}%
