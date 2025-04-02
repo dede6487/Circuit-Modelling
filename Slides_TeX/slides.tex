@@ -339,19 +339,400 @@
 	\end{frame}
 
 \section{Numerical Solutions}
+	\begin{frame}
+		general initial value problem
+		Find y, such that
+		\begin{align}
+			\label{general numerical problem}
+			y'(t) &= f(t,y), \quad t \in [t_0, t_l], \\
+			y(t_0) &= y_0.
+		\end{align}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.7]{../Tex/pictures/num_approx.png}
+			\caption{approximation of a function using numerical methods}
+			\label{fig:numerical approximation}
+		\end{figure}
+		
+	\end{frame}
 	\subsection{Single-Step Methods}
 	\begin{frame}
-		content...
+		\begin{definition}
+			\label{def:single step mehod}
+			A numerical method to approximate a differential equation \ref{general numerical problem} on a time-grid $t_0,...,t_l$ with the intermediate values $y_0,...,y_l$ is called a single-step method if it is of the form
+			\begin{equation}
+				\label{single-step method}
+				y_{j+1} = y_j + h_j \phi(t_j,y_j, y_{j+1},h_j).
+			\end{equation}
+			We call $\phi$ the \emph{procedural function}. If $\phi$ does not depend on $y_{j+1}$, then the method is called \emph{explicit}, otherwise it is called \emph{implicit}.
+		\end{definition}
 	\end{frame}
+	
+	\subsubsection{Consistency, Stability and Convergence}
+	\begin{frame}
+		\begin{definition}\label{Discretization_Error_SingleStep}
+			Let $y_{m+1}$ be the result of one step of a single step method \eqref{single-step method} with the exact start-vector $y_m = y(t_m)$ then
+			\begin{equation}
+				\label{local discretization error single step}
+				\delta_{m+1} = \delta(t_m+h) = y(t_{m+1}) - \tilde{y}_{m+1}, \quad m = 0,...,N-1
+			\end{equation}
+			is called the \emph{local discretization error} of the single step method at the point $t_{m+1}$.
+		\end{definition}
+	\end{frame}
+	
+	\begin{frame}
+		\begin{definition}\label{Consistency_SingleStep}
+			A single-step method is called \emph{consistent} if for all initial value problems \eqref{general numerical problem} 
+			\begin{equation}
+				\lim\limits_{h \to 0} \frac{\|\delta(t+h)\|}{h} = 0 \quad \text{for} \quad t_0 \leq t \leq t_l
+			\end{equation}
+			holds.\newline
+			It is called \emph{consistent of order p}, if for a sufficiently smooth function $f$
+			\begin{equation}
+				\|\delta(t+h)\| \leq Ch^{p+1} \quad \text{for all} \quad h \in \mathopen{(} 0,H \mathclose{]} \quad \text{and} \quad t_0 \leq t \leq t_l - h
+			\end{equation}
+			holds with $C$ independent of $h$.
+		\end{definition}
+	\end{frame}
+	
+	\begin{frame}
+		\begin{definition}\label{Convergence_SingleStep}
+			A single-step method is called \emph{convergent}, if for all initial value problems \eqref{general numerical problem} for the \emph{global discretization error}
+			\begin{displaymath}
+				e_m = y(t_m)-y_m
+			\end{displaymath}
+			holds that
+			\begin{displaymath}
+				\max\limits_{m}\|e_m\| \to 0 \quad \text{for} \quad h_{max} \to 0.
+			\end{displaymath}
+			The single-step method is called to have the \emph{convergence order} $p$, if
+			\begin{displaymath}
+				\max\limits_{m} \|e_m\| \leq C h_{max}^p \quad \text{for} \quad h_{max} \in \mathopen{(} 0,H \mathclose{]} \quad \text{with} \quad t_0 \leq t_m \leq t_l
+			\end{displaymath}
+			with the constant $C$ not dependent on the step size $h$.
+		\end{definition}
+	\end{frame}
+	
+	\begin{frame}
+		\begin{definition}\label{Discrete_Stability_SingleStep - lecture notes for numpdgl}
+			A single-step method is called \emph{(discretely) stable} if for grid-functions $y_h$ and $\tilde{y}_h$ with
+			\begin{align}
+				y_{i+1} &= y_i + h \phi(t_i, y_i), \\
+				\tilde{y}_{i+1} &=  \tilde{y}_i + h [\phi(t_i, \tilde{y}_i) + \theta_i],
+			\end{align}
+			and perturbations $\theta_i = \theta_h(t_i)$ of the right side as well as a bounded perturbation in the initial-values $y_0 - \tilde{y}_0$ the error is bounded by
+			\begin{displaymath}
+				\|y_h - \tilde{y}_h\|_{\infty,h} \leq C (\|y_0 - \tilde{y}_0\|_{l^2} + \|\theta_h\|_{\infty,h})
+			\end{displaymath}
+			with a constant $C$ which is not dependent on $h$. The norm $\|.\|_{\infty,h}$ denotes the maximum norm over the time-grid, i.e. for a function $b: T={t_0,...,t_N} \to \mathbb{R}^d$ we have $\|b\|_{\infty,h} = \max\limits_{t \in T}\|b(t)\|$, $\|b\|$ is the euclidean norm.
+		\end{definition}
+	\end{frame}
+	
+	\subsubsection{further stability properties}
+	
+	\begin{frame}
+		 Dahlquist equation, i.e. find $y$ such that
+		\begin{align}
+			y' &= \lambda y, \quad t > 0 \\
+			y(0) &= y_0
+		\end{align}
+		with $\lambda \in \mathbb{C}$ and $u_0$ fixed.
+	\end{frame}
+	
+	\begin{frame}
+		\begin{definition}
+			\begin{enumerate}
+				\item 
+				If a single-step method can be written in the form
+				\begin{equation}
+					y_{i+1} = R(z) \ y_i, \quad z:= h \lambda
+				\end{equation}
+				then we call $R: \mathbb{C} \to \mathbb{C}$ the \emph{stability function} of the single-step method.
+				\item 
+				The set
+				\begin{equation}
+					S := \{z \in \mathbb{C} : |R(z)| \leq 1\}
+				\end{equation}
+				is called the \emph{region of stability} of the method.
+				\item 
+				A single-step method is called
+				\begin{itemize}
+					\item \emph{0-stable}, if $0 \in S$.
+					\item \emph{A-stable}, if $\mathbb{C}^- \subset S$.
+					\item \emph{L-stable}, if $R(z) \to 0$ for $Re(z) \to -\infty$.
+				\end{itemize}
+			\end{enumerate}
+		\end{definition}
+	\end{frame}
+	
 	\subsection{Multistep Methods}
 	\begin{frame}
-		content...
+		\begin{definition}
+			\label{def:multi step method}
+			For given $\alpha_0, ..., \alpha_k$ and $\beta_0, ..., \beta_k$ the iteration rule
+			\begin{equation}
+				\label{linear-multistep-method}
+				\sum_{l=0}^{k} \alpha_l y_{m+l} = h \sum_{l=0}^{k} \beta_l f(t_{m+l}, y_{m+l}), \quad m=0,1,...,N-k
+			\end{equation}
+			is called a \emph{linear multistep method} (linear k-step method). It is always assumed that $\alpha_k \neq 0$ and $|\alpha_0| + |\beta_k| > 0$. If $\beta_k=0$ holds, then the method is called explicit, otherwise implicit.
+		\end{definition}
 	\end{frame}
+	
+	\subsubsection{Consistency, Convergence and Stability}
+	
+	\begin{frame}
+		\begin{definition}
+			Let $y_{m+k}$ be the result of one step of the multi-step method \eqref{linear-multistep-method} with the start-values given as the evaluations of the exact solution $y_{m+l} = y(t_{m+l})$ at $0 \leq l < k$. This means
+			\begin{displaymath}
+				\alpha_k \tilde{u}_{m+k} = \sum_{l=0}^{k-1} \left( h \beta_l f(t_{m+l}, y(t_{m+l})) - \alpha_l y(t_{m+l}) \right) + h \beta_k f(t_{m+k}, y_{m+k}) .
+			\end{displaymath}
+			Then
+			\begin{displaymath}
+				\delta_{m+k} = \delta(t_{m+k}) = y(t_{m+k}) - y_{m+k}, \quad m=0,1,...,N-k
+			\end{displaymath}
+			is called the \emph{local discretization error} (local error) of the linear multi-step method, see Def. \ref{linear-multistep-method} at the point $t_{m+k}$.
+		\end{definition}
+	\end{frame}
+	
+	\begin{frame}
+		\begin{definition}
+			A linear multi-step method is called %\emph{preconsistent} if for all functions $y(t) \in C^1[t_0,t_l]$
+			%		\begin{displaymath}
+				%			\lim\limits_{h \to 0} L[y(t),h]=0
+				%		\end{displaymath}
+			%		holds. 
+			%		It is called 
+			\emph{consistent}, if for all functions $y(t) \in C^2([t_0,t_l])$
+			\begin{displaymath}
+				\lim\limits_{h \to 0} \frac{1}{h} L[y(t),h] = 0
+			\end{displaymath}
+			holds. It has the \emph{consistency order p}, if for all functions $y(t) \in C^{p+1}[t_0, t_l]$
+			\begin{displaymath}
+				L[y(t),h] = \mathcal{O}(h^{p+1}) \quad \text{for} \quad h \to 0
+			\end{displaymath}
+			holds.
+		\end{definition}
+	\end{frame}
+	
+	\begin{frame}
+		\begin{definition} \label{def: LMSM convergence}
+			We say that a linear multi-step method is convergent if for a solution $y$ of the problem a solution vector created by an LMSM $y_j$ for $j \in {0,...,k}$ we have that
+			\begin{displaymath}
+				\lim\limits_{h \to \infty} \max_{0 \leq j \leq k} ||y(t_j) - y_j|| = 0.
+			\end{displaymath}
+		\end{definition}
+	\end{frame}
+	
+	\begin{frame}
+		\begin{definition} \label{discrete stability LMSM}
+			A linear multi-step method is called (discretely) stable, if for solutions $y_h$ and $\tilde{y}_h$ of
+			\begin{align}
+				\sum_{l=0}^{k} \alpha_l y_{m+l} &= h \sum_{l=0}^{k} \beta_l f(t_{m+l}, y_{m+l}), \\
+				\sum_{l=0}^{k} \alpha_l \tilde{y}_{m+l} &= h \sum_{l=0}^{k} \beta_l f(t_{m+l}, \tilde{y}_{m+l}) + h\theta_n
+			\end{align} 
+			and bounded initial values $y_j - \tilde{y}_j$ for $j \in {0,...,k}$ we have that
+			\begin{displaymath}
+				\max_{t_0 \leq t_n \leq T} ||y_n - \tilde{y}_n|| \leq C \sum_{j=0}^{k-1} ||y_j - \tilde{y}_j|| + \max_{t_0 \leq t_n \leq T} ||\theta_n||.
+			\end{displaymath}
+		\end{definition}
+	\end{frame}
+	
+	\subsubsection{further stability properties}
+	
+	\begin{frame}
+		Dahlquist test problem as a model problem, find $y$ such that
+		\begin{align}
+			y' &= \lambda y, \quad t > 0 \\
+			y(0) &= y_0
+		\end{align}
+		with $\lambda \in \mathbb{C}$ and $y_0$ fixed. \\
+		Thus the resulting linear multistep method is of the form
+		\begin{align*}
+			\sum_{l=0}^{k} \alpha_l y_{n+l} = h \sum_{l=0}^{k} \beta_l \lambda y_{n+l} \\
+			\iff \sum_{l=0}^{k}  [\alpha_l - h \beta_l \lambda] y_{n+l}
+		\end{align*}
+	\end{frame}
+	
+	\begin{frame}
+			\begin{definition}
+			\begin{enumerate}
+				\item 
+				The set
+				\begin{equation}
+					\begin{aligned}
+						S := \{z \in \mathbb{C} : \rho(\xi) - z \sigma(\xi) = 0 \implies \xi \in \mathbb{C} \text{ and } |\xi| \leq 1. \\
+						\text{ If $\xi$ has multiplicity greater than $1$, then } |\xi| < 1\}
+					\end{aligned}
+				\end{equation}
+				is called the region of stability of the method.
+				\item 
+				A linear multistep method is called
+				\begin{itemize}
+					\item \emph{0-stable}, if $0 \in S$.
+					\item stable in the point $z \in \mathbb{C}$, if $z \in S$.
+					\item \emph{$A(\alpha)$-stable}, if it is stable in all $z$ that lie within the set $\{z \in \mathbb{C}^- : |arg(z)-\pi| \leq \alpha\}$ for $\alpha \in (0, \frac{\pi}{2})$.		 
+				\end{itemize}
+			\end{enumerate}
+		\end{definition}
+	\end{frame}
+	
+	\begin{frame}
+		\begin{theorem}%[\protecting{\cite[Satz~4.2.10]{NumerikGewöhnlicherDifferentialgleichungen}}]
+			\label{th: null-stbaility and consistence is convergence}
+			Let $f(t,y)$ be sufficiently smooth and the linear multi-step method be zero-stable and consistent of order $p$, then it is also convergent of order $p$.
+		\end{theorem}
+	\end{frame}
+	
+	
 	\subsection{Implicit Linear Multistep Formulas}
+	
+	\subsubsection{BDK-k Methods}
+	
 	\begin{frame}
-		content...
+		The \emph{backward differentiation formula (BDF)} is a family of implicit linear multistep methods. They have the general form
+		\begin{equation}
+			\sum_{k=0}^{s} \alpha_k y_{n+k} = h \beta f(t_{n+s}, y_{n+s})
+		\end{equation}
+		The BDF or BDF-k formulas for $k=1,...,3$ have the following form %or till 6
+		\begin{align*}
+			k = 1 &: h f_{m+1} = y_{m+1} - y_m \\
+			k = 2 &: h f_{m+2} = \frac{1}{2} (3 y_{m+2} - 4 y_{m+1} + y_m) \\
+			k = 3 &: h f_{m+3} = \frac{1}{6} (11 y_{m+3} - 18 y_{m+2} + 9 y_{m+1} - 2 y_m) %\\
+			%		k = 4 &: h f_{m+4} = \frac{1}{12} (25 u_{m+4} - 48 u_{m+3} + 36 u_{m+2} - 16 u_{m+1} + 3 u_m) \\
+			%		k = 5 &: h f_{m+5} = \frac{1}{260} (137 u_{m+5} - 300 u_{m+4} + 300 u_{m+3} - 200 u_{m+2} +75 u_{m+1} -12 u_m) \\
+			%		k = 6 &: h f_{m+6} = \frac{1}{60} (147 u_{m+6} - 360 u_{m+5} + 450 u_{m+4} - 400 u_{m+3} + 225 u_{m+2} - 72 u_{m+1} + 10 u_m)
+		\end{align*}
 	\end{frame}
-	\subsection{Numerical Examples}
+	
 	\begin{frame}
-		content...
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\linewidth]{../Tex/pictures/bdf_stability_regions.png}
+			\caption{stability regions of BDF-schemes}
+			\label{fig:screenshot020}
+		\end{figure}
+		\begin{theorem}[\protecting{\cite[Satz~9.2.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
+			The BDF-k methods have consistency order $p=k$.
+		\end{theorem}
+	\end{frame}
+	
+	\subsubsection{Trapezoidal rule}
+	
+	\begin{frame}
+		This procedure is repeated for small subsections of the interval $[a,b]$. Thus we obtain the iteration formula
+		\begin{displaymath}
+			u_h (t+h) = u_h(t) +\frac{h}{2}[f(t,u_h(t)) + f(t+h, u_h(t+h))].
+		\end{displaymath}
+	\end{frame}
+	
+	\subsection{Numerical Examples}
+	
+	\subsubsection{Example1}
+	
+	\begin{frame}
+		\begin{figure}[H]
+			\centering
+			\begin{minipage}{.5\textwidth}
+				\centering
+				\includegraphics[width=\linewidth]{../Tex/pictures/Example1_simple_p2.png}
+				\caption{charging capacitor with series resistor and voltage source}
+				\label{fig:charging capacitor}
+			\end{minipage}%
+			\begin{minipage}{.5\textwidth}
+				\centering
+				\includegraphics[width=\linewidth]{../Tex/pictures/exact_solution_ex1.png}
+				\caption{Exact solution for example 1.}
+				\label{fig: Exact solution for example 1}
+			\end{minipage}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\begin{table}[H]
+			\resizebox*{\textwidth}{!}{%
+				\csvreader[tabular= | c || c c | c c | c c | c c |,
+				table head = \hline h & \multicolumn{2}{c|}{k = 1} & \multicolumn{2}{c|}{k = 2} & \multicolumn{2}{c|}{k = 3} & \multicolumn{2}{c|}{trapezoidal}\\
+				& u2 & iV & u2 & iV & u2 & iV & u2 & iV \\
+				\hline,
+				late after line=\\\hline]
+				{../Matlab/err_ex1.csv}{h=\h, oneu=\oneu, oneuu=\oneuu, onei=\onei, twou=\twou, twouu=\twouu, twoi=\twoi, threeu=\threeu, threeuu=\threeuu, threei=\threei, trapu=\trapu, trapuu=\trapuu, trapil=\trapil}
+				{\h  & \num{\oneuu} & \num{\onei}  & \num{\twouu} & \num{\twoi}  & \num{\threeuu} & \num{\threei}  & \num{\trapuu} & \num{\trapil}}
+			}
+			\caption{Resulting errors for the BDF-k methods and ther trapezoidal rule.}
+			\label{tab:num results ex1}
+		\end{table}
+	\end{frame}
+	
+	\subsubsection{Example 2}
+	
+	\begin{frame}
+		\begin{figure}[H]
+			\centering
+			\begin{minipage}{.5\textwidth}
+				\centering
+				\includegraphics[width=\linewidth]{../Tex/pictures/Example2_index0.png}
+				\caption{LC-circuit}
+				\label{fig: LC-circuit}
+			\end{minipage}%
+			\begin{minipage}{.5\textwidth}
+				\centering
+				\includegraphics[width=\linewidth]{../Tex/pictures/exact_solution_ex2.png}
+				\caption{Exact solution for example 2.}
+				\label{fig: Exact solution for example 2}
+			\end{minipage}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\begin{table}[H]
+			\resizebox*{\textwidth}{!}{%
+				\csvreader[tabular= | c || c c | c c | c c | c c | ,
+				table head = \hline h & \multicolumn{2}{c|}{k = 1} & \multicolumn{2}{c|}{k = 2} & \multicolumn{2}{c|}{k = 3} & \multicolumn{2}{c|}{trapezoidal} \\
+				& u1 & iL & u1 & iL & u1 & iL & u1 & iL \\
+				\hline,
+				late after line=\\\hline]
+				{../Matlab/err_ex2.csv}{h=\h, oneu=\oneu, onei=\onei, twou=\twou, twoi=\twoi, threeu=\threeu, threei=\threei, trapu=\trapu, trapil=\trapil}
+				{\h & \num{\oneu} & \num{\onei} & \num{\twou} & \num{\twoi} & \num{\threeu} & \num{\threei} & \num{\trapu} & \num{\trapil}}
+			}
+			\caption{Resulting errors for the BDF-k methods and ther trapezoidal rule.}
+			\label{tab:error ex2}
+		\end{table}
+	\end{frame}
+	
+	\subsubsection{Example 3}
+	
+	\begin{frame}
+		\begin{figure}[H]
+			\centering
+			\begin{minipage}{.5\textwidth}
+				\centering
+				\includegraphics[width=\linewidth]{../Tex/pictures/Example3.png}
+				\caption{Current source with capacitor and resistor.}
+				\label{fig:num ex3}
+			\end{minipage}%
+			\begin{minipage}{.5\textwidth}
+				\centering
+				\includegraphics[width=\linewidth]{../Tex/pictures/exact_solution_ex3.png}
+				\caption{Exact solution for example 3.}
+				\label{fig: Exact solution for example 3}
+			\end{minipage}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\begin{table}[H]
+			%\resizebox*{\textwidth}{!}{%
+				\centering
+				\csvreader[tabular= | c || c | c | c | c | ,
+				table head = \hline h & {k = 1} & {k = 2} & {k = 3} & trapezoidal \\ %\multicolumn{1}{c|}{}
+				& iV & iV & iV & iV \\
+				\hline,
+				late after line=\\\hline]
+				{../Matlab/err_ex3.csv}{h=\h, oneu=\oneu, onei=\onei, twou=\twou, twoi=\twoi, threeu=\threeu, threei=\threei, trapu=\trapu, trapil=\trapil}
+				{\h & \num{\onei} & \num{\twoi} & \num{\threei} & \num{\trapil}}
+				%}
+			\caption{Resulting errors for the BDF-k methods and the trapezoidal rule.}
+			\label{tab:error ex3}
+		\end{table}
 	\end{frame}
