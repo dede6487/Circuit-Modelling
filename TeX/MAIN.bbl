@@ -207,6 +207,46 @@
       \verb https://doi.org/10.1007/978-3-8348-2263-5
       \endverb
     \endentry
+    \entry{KirchhoffsLaws}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=3f35496cc260c616007bcfcfc472f47a}{%
+           family={Kirchhoff},
+           familyi={K\bibinitperiod},
+           given={Studiosus},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{3f35496cc260c616007bcfcfc472f47a}
+      \strng{fullhash}{3f35496cc260c616007bcfcfc472f47a}
+      \strng{fullhashraw}{3f35496cc260c616007bcfcfc472f47a}
+      \strng{bibnamehash}{3f35496cc260c616007bcfcfc472f47a}
+      \strng{authorbibnamehash}{3f35496cc260c616007bcfcfc472f47a}
+      \strng{authornamehash}{3f35496cc260c616007bcfcfc472f47a}
+      \strng{authorfullhash}{3f35496cc260c616007bcfcfc472f47a}
+      \strng{authorfullhashraw}{3f35496cc260c616007bcfcfc472f47a}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annalen der Physik}
+      \field{number}{4}
+      \field{title}{Ueber den Durchgang eines elektrischen Stromes durch eine Ebene, insbesondere durch eine kreisförmige}
+      \field{volume}{140}
+      \field{year}{1845}
+      \field{pages}{497\bibrangedash 514}
+      \range{pages}{18}
+      \verb{doi}
+      \verb https://doi.org/10.1002/andp.18451400402
+      \endverb
+      \verb{eprint}
+      \verb https://onlinelibrary.wiley.com/doi/pdf/10.1002/andp.18451400402
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/andp.18451400402
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/andp.18451400402
+      \endverb
+    \endentry
     \entry{Reis2014}{inbook}{}{}
       \name{author}{1}{}{%
         {{hash=25a0976997dbea4a30187f0bf1173213}{%

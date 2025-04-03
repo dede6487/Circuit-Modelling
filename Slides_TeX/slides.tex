@@ -11,6 +11,16 @@
 \section{Formulating a Mathematical Model}
 	\subsection{Network Topology}
 	\begin{frame}
+		Introducing example: Charging of a capacitor:\\
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.5]{../Tex/pictures/Example1_simple.png}
+			\caption{charging capacitor with series resistor and voltage source}
+			\label{circuit:charging of capacitor}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
 		Incidence Matrix $A = (a_{ij}) \in \mathbb{R}^{k \times l}$:
 		\begin{displaymath}
 			\tilde{a}_{ij} = 
@@ -22,7 +32,7 @@
 		\end{displaymath}
 		With $\mathcal{N} = (n_0, n_1, n_2, ..., n_k)$ nodes and $\mathcal{E} = \{e_{j}: j = 1,...,l\}$ edges, where $|\mathcal{N}| = k$ is the number of nodes and $|\mathcal{E}| = l$ \\
 		$u = (u_0, u_1, u_2, ...)$ the corresponding electrical potentials to the nodes.\\
-		$\to$ reduced incidence matrix
+		ground one node $\to$ reduced incidence matrix
 	\end{frame}
 
 	\subsection{Energy Conservation Laws}
@@ -119,6 +129,44 @@
 
 	\subsection{Modified Nodal Analysis - MNA}
 	\begin{frame}
+		To analyse the network further we will rearrange the columns of the reduced incidence matrix $A$ such that it has the block form
+		\begin{displaymath}
+			A = (A_R A_C A_L A_V A_I)
+		\end{displaymath}
+		where $A_R$, $A_C$, $A_L$, $A_V$ and $A_I$ include the columns that are related to the resistors, capacitors, coils, voltage sources and current sources, respectively.\\
+		The voltages can be represented using the node-potentials
+		\begin{displaymath}
+			v = A^\top u
+		\end{displaymath}
+		The vector $v$ can thus be rearranged into $v = (v_R, v_C, v_L, v_{src}, v_I)$. In a similar way we also rearrange the current vector into $i = (i_R, i_C, i_L, i_V, i_src)$. Using the sorted incidence matrix blocks we can rewrite the resistor current relation as
+		\begin{displaymath}
+			i_R = G \ v_R = G \ A_R^\top u.
+		\end{displaymath}
+		Analogously, we rewrite the capacitor relation as
+		\begin{displaymath}
+			i_C = C \ v'_C = C \ A_C^\top u'.
+		\end{displaymath}
+		Kirchhoffs current law \eqref{KCL} gives us that
+		\begin{displaymath}
+			A_C i_C + A_R i_R + A_L i_L + A_V i_V = -A_I i_{src}.
+		\end{displaymath}
+		
+		We plug in the component relations derived above and obtain
+		\begin{displaymath}
+			A_C C A_C^\top u' + A_R G A_R^\top u + A_L i_L + A_V i_V = -A_I i_{src}.
+		\end{displaymath}
+	\end{frame}
+
+	\begin{frame}
+		Combining this with the component law for inductors \eqref{eq:inductor law} and the potential-voltage relation for voltage sources \eqref{eq:voltage source law} we finally get the modified nodal analysis equations
+		\begin{displaymath}
+			\begin{aligned}
+				A_C C A_C^\top u' + A_R G A_R^\top u + A_L i_L + A_V i_V &= - A_I i_{src} , \\
+				L i_L'	- A_L^\top u &= 0 , \\
+				-A_V^\top u &=  -v_{src}.
+			\end{aligned}	
+		\end{displaymath}
+		In matrix form they read as
 		\begin{equation}
 			\label{MNA_Matrixform}
 			\begin{pmatrix}
@@ -149,7 +197,7 @@
 				-A_I i_{src} \\
 				0 \\
 				-v_{src}
-			\end{pmatrix} , 
+			\end{pmatrix} . 
 		\end{equation}
 	\end{frame}
 
@@ -195,7 +243,26 @@
 	\subsection{Weierstrass-Kronecker Normalform}
 	
 	\begin{frame}
-		prerequisites
+		prerequisites: \\
+		\begin{definition}
+			The matrix pencil $\{ A,B\}$ is called \emph{regular} if there exists some $c \in \mathbb{R}$, such that $(cA+B)$ is regular (i.e. $det(cA+B) \neq 0$), otherwise it is called singular.
+		\end{definition}
+		\begin{theorem}%[Jordan Normalform \protect{\cite[Theorem~13.2.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
+			For every matrix $Q \in \mathbb{R}^{n \times n}$ there exists a regular matrix $T \in \mathbb{C}^{n \times n}$, such that
+			\begin{displaymath}
+				T^{-1}QT = J = diag(J_1, ..., J_r) \quad \text{with} \quad J_i = 
+				\left(
+				\begin{matrix}
+					\lambda_i & 1 & & 0 \\
+					0 & \lambda_i & \ddots & \vdots \\
+					& \ddots & \ddots & 1 \\
+					0 & \hdots & 0 & \lambda_i
+				\end{matrix}
+				\right)
+				\in \mathbb{C}^{m_i \times m_i}
+			\end{displaymath} 
+			and $n = m_1 + ... + m_r$.
+		\end{theorem}
 	\end{frame}
 	
 	\begin{frame}
@@ -237,7 +304,77 @@
 		Proof on blackboard
 	\end{frame}
 	
-	\subsection{Index of a Differential Algebraic Equation}
+	\begin{frame}
+		using these findings:
+		Using the findings above we are able to transform the initial DAE \eqref{DAE-const-coeff} using the matrix $P$ from Theorem \ref{Kronecker-Normalform}. By multiplying with $P$ from the left, we obtain
+		\begin{displaymath}
+			P A y'(t) + P B y(t) = P f(t) .
+		\end{displaymath}
+		
+		Setting
+		\begin{displaymath}
+			y(t) = Q
+			\left(
+			\begin{matrix}
+				u(t) \\
+				v(t)
+			\end{matrix}  
+			\right) 
+			, \quad
+			Pf(t) = 
+			\left(
+			\begin{matrix}
+				s(t) \\
+				q(t)
+			\end{matrix}
+			\right),
+		\end{displaymath}
+		with $u(t),s(t) : \mathbb{R} \to \mathbb{R}^d$ and $q(t),v(t) : \mathbb{R} \to \mathbb{R}^{n-d}$.
+		
+		We get a system of the form
+		\begin{equation}
+			\label{transformed-DAE-const-coeff}
+			\begin{aligned}
+				u'(t) + Ru(t) &= s(t), \\
+				Nv'(t) + v(t) &= q(t),
+			\end{aligned}
+		\end{equation}
+		where $PAQ = 
+		\left( 
+		\begin{matrix}
+			I & \\
+			& N
+		\end{matrix} 
+		\right)$
+		and $PBQ = 
+		\left( 
+		\begin{matrix}
+			R & \\
+			& I
+		\end{matrix} 
+		\right)$.
+	\end{frame}
+	
+	\begin{frame}
+		\begin{align}
+			\notag
+			v(t) &= q(t) - Nv'(t) = q(t) - N(\underbrace{q(t)-Nv'(t)}_{=v(t)})' = q-Nq'+N^2v'' \\ \notag
+			&= q-Nq'+N^2(q-Nv')'' = q-Nq'+N^2q''-N^3v''' \\ \notag
+			&\vdots \\ \notag
+			&= q-Nq'+...+(-1)^{k-1}N^{k-1}\underbrace{\frac{d^k}{dt^k}q}_{:=q^{(k-1)}}+(-1) \underbrace{N^kv^{(k)}}_{=0}\\ 
+			\label{solution-to-transformed-DAE-const-coeff-part2}
+			&= \sum_{i=0}^{k-1} (-1)^iN^iq^{(i)}(t)
+		\end{align}
+		where $k$ is the nilpotency index of $N$.
+		\begin{definition}
+			The nilpotency index $k$ of the matrix $N$ from the Weierstraß-Kronecker Normalform of a matrix pencil $\{A,B\}$ with $A$ singular is called the \emph{Kronecker-Index} of $\{A,B\}$, which we denote by $ind\{A,B\}$. Note that for $A$ regular we set $ind\{A,B\} = 0$.
+		\end{definition}
+	\end{frame}
+	
+	
+	
+	\subsubsection{Index of a Differential Algebraic Equation}
+	
 	\begin{frame}
 		\begin{definition}%[differentiation index \protect{\cite[Definition~13.3.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
 			Consider the differential algebraic equation \eqref{Abstract_DAE} to be uniquely locally solvable and $F$ sufficiently smooth. For a given $m \in \mathbb{N}$ consider the equations
@@ -267,7 +404,7 @@
 		\end{definition}
 	\end{frame}
 
-	\subsection{Consistent Initial Values}
+	\subsubsection{Consistent Initial Values}
 	\begin{frame}
 		index $\nu = 0$.\\ 
 		
@@ -587,7 +724,7 @@
 	
 	\subsection{Implicit Linear Multistep Formulas}
 	
-	\subsubsection{BDK-k Methods}
+	\subsubsection{BDF-k Methods}
 	
 	\begin{frame}
 		The \emph{backward differentiation formula (BDF)} is a family of implicit linear multistep methods. They have the general form
