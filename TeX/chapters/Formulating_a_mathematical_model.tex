@@ -1,8 +1,8 @@
 \chapter{Formulating a Mathematical Model}
-based on DAE lecture and \cite{ModellingAndDiscretizationOfCircuitProblems}
+%based on DAE lecture and \cite{ModellingAndDiscretizationOfCircuitProblems}
 
-To accurately represent a physical system in a mathematical model we first have to think about \textbf{how} to best formulate a mathematical model that formulates this system precise enough.
-This chapter aims to elaborate on the Modified Nodal Analysis (MNA) of an electrical circuit, which is the common choice for these kinds of models. For this we have to introduce the notions of network topology as well as some basic electrical components and physical laws. Most of the following notions such as voltage, current and electrical potentials can depend on time. For better readability we will leave out the time argument $t$ in some cases.
+To accurately represent a physical system in a mathematical model we first have to think about \textbf{how} to best formulate this mathematical model.
+This chapter aims to elaborate on the Modified Nodal Analysis (MNA) of an electrical circuit, which is the common choice for these kinds of models. For this we have to introduce the notions of network topology as well as some basic electrical components and physical laws. Most of the following notions such as voltage, current and electrical potentials can depend on time. For better readability we will leave out the time argument $t$ in some cases. This chapter is based on \cite{ModellingAndDiscretizationOfCircuitProblems}.
 
 \section{Network Topology}
 \label{Sec:Network Topology}
@@ -16,9 +16,9 @@ We can store this information in an \emph{incidence matrix} $\tilde{A} = (\tilde
 		0 & \text{else}.				
 	\end{cases}
 \end{displaymath}
-We call $u = (u_0, u_1, u_2, ...)$ the corresponding electrical potentials (or just potentials) to the nodes $\mathcal{N}$. The difference between the potentials at two connected nodes is called the voltage at the respective edge. To fix the absolute values of these potentials we have to set one node to a fixed value. We will do that by ``grounding'' the node $n_0$, which means we set the potential $u_0 = 0$. The grounding of a node allows us to remove the corresponding row from the incidence matrix to get the \emph{reduced incidence matrix} $A$. The vector $v = (v_{ij})_{ij}$ represents the voltages at the edges. For some $i$ and some $j$ the voltage at edge $ij$ is $v_{ij} = u_i - u_j$.
+We call $u = (u_0, u_1, u_2, ...)$ the corresponding \emph{electrical potentials} (or just \emph{potentials}) to the nodes $\mathcal{N}$. The difference between the potentials at two connected nodes is called the \emph{voltage} at the respective edge. To fix the absolute values of these potentials we have to set one node to a fixed value. We will do that by ``grounding'' the node $n_0$, which means we set the potential $u_0 = 0$. The grounding of a node allows us to remove the corresponding row from the incidence matrix to get the \emph{reduced incidence matrix} $A$. The vector $v = (v_{ij})_{ij}$ represents the voltages at the edges. For some indices $i$ and $j$, the voltage at edge $ij$ is defined as $v_{ij} = u_i - u_j$.
 
-We will later see, that the components of an electrical circuit, which will be installed along the edges, describe a relationship between the current along the edge the corresponding voltage. Thus a current vector $i = (i_1, i_2, i_3, ...)$ containing the currents along the edges is required.
+We will later see that the components of an electrical circuit, which will be installed along the edges, describe a relationship between the current along the edge the corresponding voltage. Thus a current vector $i = (i_1, i_2, i_3, ...)$ containing the currents along the edges is required.
 
 
 \begin{example1}[Incidence Matrix]
