@@ -8,20 +8,22 @@
 
 
 
-\section{Formulating a Mathematical Model}
-	\subsection{Network Topology}
 	\begin{frame}
 		Introducing example: Charging of a capacitor:\\
 		\begin{figure}[H]
 			\centering
-			\includegraphics[scale=0.5]{../Tex/pictures/Example1_simple.png}
+			\includegraphics[scale=0.4]{../Tex/pictures/Example1_simple.png}
 			\caption{charging capacitor with series resistor and voltage source}
 			\label{circuit:charging of capacitor}
 		\end{figure}
 	\end{frame}
-	
+
+\section*{Formulating a Mathematical Model}
+
+	\subsection{Network Topology}
+		
 	\begin{frame}
-		Incidence Matrix $A = (a_{ij}) \in \mathbb{R}^{k \times l}$:
+		Define the incidence matrix $A = (a_{ij}) \in \mathbb{R}^{k \times l}$:
 		\begin{displaymath}
 			\tilde{a}_{ij} = 
 			\begin{cases}
@@ -30,25 +32,32 @@
 				0 & \text{else}.				
 			\end{cases}
 		\end{displaymath}
-		With $\mathcal{N} = (n_0, n_1, n_2, ..., n_k)$ nodes and $\mathcal{E} = \{e_{j}: j = 1,...,l\}$ edges, where $|\mathcal{N}| = k$ is the number of nodes and $|\mathcal{E}| = l$ \\
-		$u = (u_0, u_1, u_2, ...)$ the corresponding electrical potentials to the nodes.\\
-		ground one node $\to$ reduced incidence matrix
+		With 
+		\begin{align*}
+			\mathcal{N} = (n_0, n_1, n_2, ..., n_k) \quad &\cdots \quad \text{nodes},\\
+			\mathcal{E} = \{e_{j}: j = 1,...,l\} \quad &\cdots \quad \text{edges},
+		\end{align*}
+		furthermore
+		\begin{displaymath}
+			u = (u_0, u_1, u_2, ...) \quad \cdots \quad \text{corresponding electrical potentials at the nodes}.
+		\end{displaymath}
+		By grounding node $0$, i.e. $u_0 = 0$ we obtain the reduced incidence matrix.
 	\end{frame}
 
 	\subsection{Energy Conservation Laws}
 	\begin{frame}
 		\begin{itemize}
 			\item \textbf{Kirchhoff's voltage law (KVL):} \newline
-			The sum of voltages along each loop of the network must equal to zero. Using the incidence matrix $A$ this law can be formulated as
+			The sum of voltages along each loop of the network must equal to zero.
 			\begin{equation}
 				\label{KVL}
-				A^\top  u = v.
+				\to A^\top  u = v.
 			\end{equation}
 			\item \textbf{Kirchhoff's current law (KCL):} \newline
-			For any node, the sum of currents flowing into the node is equal to the sum of currents flowing out of the node. Using the incidence matrix $A$ again, this law can be formulated as
+			For any node, the sum of currents flowing into the node is equal to the sum of currents flowing out of the node.
 			\begin{equation}
 				\label{KCL}
-				A  i = 0.
+				\to A  i = 0.
 			\end{equation}
 		\end{itemize}
 	\end{frame}
@@ -129,36 +138,33 @@
 
 	\subsection{Modified Nodal Analysis - MNA}
 	\begin{frame}
-		To analyse the network further we will rearrange the columns of the reduced incidence matrix $A$ such that it has the block form
+		Rearrange the columns of the reduced incidence matrix $A$ into
 		\begin{displaymath}
 			A = (A_R A_C A_L A_V A_I)
 		\end{displaymath}
-		where $A_R$, $A_C$, $A_L$, $A_V$ and $A_I$ include the columns that are related to the resistors, capacitors, coils, voltage sources and current sources, respectively.\\
-		The voltages can be represented using the node-potentials
+		$A_R$, $A_C$, $A_L$, $A_V$ and $A_I$ ... columns related to components\\
+		Represent voltages:
 		\begin{displaymath}
 			v = A^\top u
 		\end{displaymath}
-		The vector $v$ can thus be rearranged into $v = (v_R, v_C, v_L, v_{src}, v_I)$. In a similar way we also rearrange the current vector into $i = (i_R, i_C, i_L, i_V, i_src)$. Using the sorted incidence matrix blocks we can rewrite the resistor current relation as
-		\begin{displaymath}
-			i_R = G \ v_R = G \ A_R^\top u.
-		\end{displaymath}
-		Analogously, we rewrite the capacitor relation as
-		\begin{displaymath}
-			i_C = C \ v'_C = C \ A_C^\top u'.
-		\end{displaymath}
-		Kirchhoffs current law \eqref{KCL} gives us that
+		$\to$ rearrange $v$ into $v = (v_R, v_C, v_L, v_{src}, v_I)$ and $i$ into $i = (i_R, i_C, i_L, i_V, i_src)$. 
+		Rewrite component relations:
+		\begin{align*}
+			i_R = G \ v_R &= G \ A_R^\top u, \\
+			i_C = C \ v'_C &= C \ A_C^\top u'.
+		\end{align*}
+		Kirchhoffs current law:
 		\begin{displaymath}
 			A_C i_C + A_R i_R + A_L i_L + A_V i_V = -A_I i_{src}.
 		\end{displaymath}
-		
-		We plug in the component relations derived above and obtain
+		Combine:
 		\begin{displaymath}
 			A_C C A_C^\top u' + A_R G A_R^\top u + A_L i_L + A_V i_V = -A_I i_{src}.
 		\end{displaymath}
 	\end{frame}
 
 	\begin{frame}
-		Combining this with the component law for inductors \eqref{eq:inductor law} and the potential-voltage relation for voltage sources \eqref{eq:voltage source law} we finally get the modified nodal analysis equations
+		Together with component law for inductors \eqref{eq:inductor law} and potential-voltage relation for voltage sources \eqref{eq:voltage source law}:
 		\begin{displaymath}
 			\begin{aligned}
 				A_C C A_C^\top u' + A_R G A_R^\top u + A_L i_L + A_V i_V &= - A_I i_{src} , \\
@@ -166,7 +172,7 @@
 				-A_V^\top u &=  -v_{src}.
 			\end{aligned}	
 		\end{displaymath}
-		In matrix form they read as
+		In matrix form:
 		\begin{equation}
 			\label{MNA_Matrixform}
 			\begin{pmatrix}
@@ -201,7 +207,7 @@
 		\end{equation}
 	\end{frame}
 
-\section{Differential Algebraic Equations}
+\section*{Differential Algebraic Equations}
 	\subsection{Types of DAEs}
 	\begin{frame}
 		In the most general form a DAE can be written as:
@@ -434,7 +440,7 @@
 		Consistent initial values $y_0$, $z_0$ for this case not only have to fulfill $g(t_0, y_0) = 0$ but also the \emph{hidden constraint} $g_t(t_0, y_0) + g_y(t_0, y_0)f(t_0, y_0, z_0)$. By $g_t$ and $g_y$ we denote the derivative of $g$ with respect to $t$ or $y$, respectively.
 	\end{frame}
 
-\section{Index Analysis of the Modified Nodal Analysis}
+\section*{Index Analysis of the Modified Nodal Analysis}
 	\subsection{General Index Analysis}
 	\begin{frame}
 		content...
@@ -475,7 +481,7 @@
 		\end{itemize}
 	\end{frame}
 
-\section{Numerical Solutions}
+\section*{Numerical Solutions}
 	\begin{frame}
 		general initial value problem
 		Find y, such that
