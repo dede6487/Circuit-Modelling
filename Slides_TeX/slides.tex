@@ -222,7 +222,7 @@
 	\begin{frame}
 		\begin{itemize}
 			\item \textbf{Linear systems with constant coeffiecients} \newline
-			are systems of the form: find $y$ such that
+			find $y$ such that
 			\begin{equation}
 				\label{DAE-const-coeff}
 				A y'(t) + B y(t) = f(t) ,
@@ -234,7 +234,7 @@
 			\begin{displaymath}
 				A(t) y'(t) + B(t) y(t) = f(t) ,
 			\end{displaymath}
-			with $A, B:\mathbb{R} \to \mathbb{R}^{n \times n}$, $f:\mathbb{R} \to \mathbb{R}^n$ functions, such that for every $t \in \mathbb{R}$ the matrix $A(t)$ is singular and the matrix $B(t)$ regular.
+			with $A, B:\mathbb{R} \to \mathbb{R}^{n \times n}$, $f:\mathbb{R} \to \mathbb{R}^n$ functions, $\forall t \in \mathbb{R}$: $A(t)$ is singular and $B(t)$ regular.
 			
 			\item  \textbf{Structured (non-linear) systems} \newline
 			are semi-explicit systems of the form: find $(y,z)$ such that
@@ -246,14 +246,14 @@
 		\end{itemize}
 	\end{frame}
 
-	\subsection{Weierstrass-Kronecker Normalform}
+	\subsection{Weierstrass-Kronecker normalform}
 	
 	\begin{frame}
 		prerequisites: \\
 		\begin{definition}
 			The matrix pencil $\{ A,B\}$ is called \emph{regular} if there exists some $c \in \mathbb{R}$, such that $(cA+B)$ is regular (i.e. $det(cA+B) \neq 0$), otherwise it is called singular.
 		\end{definition}
-		\begin{theorem}%[Jordan Normalform \protect{\cite[Theorem~13.2.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
+		\begin{theorem}[Jordan Normalform] %\protect{\cite[Theorem~13.2.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
 			For every matrix $Q \in \mathbb{R}^{n \times n}$ there exists a regular matrix $T \in \mathbb{C}^{n \times n}$, such that
 			\begin{displaymath}
 				T^{-1}QT = J = diag(J_1, ..., J_r) \quad \text{with} \quad J_i = 
@@ -272,7 +272,7 @@
 	\end{frame}
 	
 	\begin{frame}
-		\begin{theorem}%[\protect{\cite[Satz~13.2.2]{NumerikGewöhnlicherDifferentialgleichungen}}]
+		\begin{theorem}[Weierstrass-Kronecker normalform]%[\protect{\cite[Satz~13.2.2]{NumerikGewöhnlicherDifferentialgleichungen}}]
 			\label{Kronecker-Normalform}
 			Let $\{ A,B \}$ be a regular matrix pencil. There exist $P,Q \in \mathbb{C}^{n \times n}$ such that
 			\begin{displaymath}
@@ -291,7 +291,6 @@
 				\end{matrix}
 				\right)
 			\end{displaymath}
-			
 			where
 			\begin{displaymath}
 				N = diag(N_1, ..., N_r) \quad \text{with} \quad N_i = 
@@ -307,7 +306,7 @@
 			\end{displaymath}
 			and R has Jordan Normalform. By $I_k$ we denote the identity matrix of size $k \times k$.
 		\end{theorem}
-		Proof on blackboard
+		%Proof on blackboard
 	\end{frame}
 	
 	\begin{frame}
@@ -372,6 +371,9 @@
 			&= \sum_{i=0}^{k-1} (-1)^iN^iq^{(i)}(t)
 		\end{align}
 		where $k$ is the nilpotency index of $N$.
+	\end{frame}
+
+	\begin{frame}
 		\begin{definition}
 			The nilpotency index $k$ of the matrix $N$ from the Weierstraß-Kronecker Normalform of a matrix pencil $\{A,B\}$ with $A$ singular is called the \emph{Kronecker-Index} of $\{A,B\}$, which we denote by $ind\{A,B\}$. Note that for $A$ regular we set $ind\{A,B\} = 0$.
 		\end{definition}
@@ -379,7 +381,7 @@
 	
 	
 	
-	\subsubsection{Index of a Differential Algebraic Equation}
+	\subsection{Index of a Differential Algebraic Equation}
 	
 	\begin{frame}
 		\begin{definition}%[differentiation index \protect{\cite[Definition~13.3.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
@@ -402,7 +404,7 @@
 
 	\begin{frame}
 		\begin{definition}%[perturbation index \protect{\cite[Definition~13.3.3]{NumerikGewöhnlicherDifferentialgleichungen}}]
-			Let $y(t)$ be the exact solution of \emph{Abstract-DAE!!!!!!!!} and $\tilde{y}(t)$ be the solution of the perturbed system $F(t, \tilde{y}, \tilde{y}') = \delta(t)$. The smallest number $k \in \mathbb{N}$ such that 
+			Let $y(t)$ be the exact solution of \eqref{Abstract_DAE} and $\tilde{y}(t)$ be the solution of the perturbed system $F(t, \tilde{y}, \tilde{y}') = \delta(t)$. The smallest number $k \in \mathbb{N}$ such that 
 			\begin{displaymath}
 				\|y(t)-\tilde{y}(t)\| \leq C \left(\|y(t_0)-\tilde{y}(t_0)\|+\sum_{j=0}^{k}\max_{t_0 \leq \xi \leq T} \left\rVert 		\int_{t_0}^{\xi}\diff[j]{\delta}{\tau}(\tau)d \tau \right\rVert \right)
 			\end{displaymath}
@@ -410,7 +412,7 @@
 		\end{definition}
 	\end{frame}
 
-	\subsubsection{Consistent Initial Values}
+	\subsection{Consistent Initial Values}
 	\begin{frame}
 		index $\nu = 0$.\\ 
 		
@@ -447,7 +449,7 @@
 	\end{frame}
 	\subsection{Topological Conditions}
 	\begin{frame}
-		\begin{theorem}[Index conditions \protect{\cite[Theorem~2.2.1]{shashkov_tuprints27452}}]
+		\begin{theorem}[Index conditions] %\protect{\cite[Theorem~2.2.1]{shashkov_tuprints27452}}]
 			Let the matrices of the capacitances, inductances and resistances be positive definite.
 			\begin{itemize}
 				\item If
@@ -755,7 +757,7 @@
 			\caption{stability regions of BDF-schemes}
 			\label{fig:screenshot020}
 		\end{figure}
-		\begin{theorem}[\protecting{\cite[Satz~9.2.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
+		\begin{theorem}%[\protecting{\cite[Satz~9.2.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
 			The BDF-k methods have consistency order $p=k$.
 		\end{theorem}
 	\end{frame}
@@ -769,7 +771,7 @@
 		\end{displaymath}
 	\end{frame}
 	
-	\subsection{Numerical Examples}
+	\subsection*{Numerical Examples}
 	
 	\subsubsection{Example1}
 	
