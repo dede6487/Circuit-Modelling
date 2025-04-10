@@ -345,7 +345,7 @@ The grid function $y_h : T \to A$ with the time-grid $T={t_0, ..., t_N}$ and the
 	Thus the resulting linear multistep method is of the form
 	\begin{align*}
 		\sum_{l=0}^{k} \alpha_l y_{n+l} = h \sum_{l=0}^{k} \beta_l \lambda y_{n+l} \\
-		\iff \sum_{l=0}^{k}  [\alpha_l - h \beta_l \lambda] y_{n+l}
+		\iff \sum_{l=0}^{k}  [\alpha_l - h \beta_l \lambda] y_{n+l} = 0
 	\end{align*}
 	
 	%in numerik book auf seite 326
@@ -600,7 +600,7 @@ In the following two subchapters we will give a short overview over the two most
 			{../Matlab/err_ex1.csv}{h=\h, oneu=\oneu, oneuu=\oneuu, onei=\onei, twou=\twou, twouu=\twouu, twoi=\twoi, threeu=\threeu, threeuu=\threeuu, threei=\threei, trapu=\trapu, trapuu=\trapuu, trapil=\trapil}
 			{\h  & \num{\oneuu} & \num{\onei}  & \num{\twouu} & \num{\twoi}  & \num{\threeuu} & \num{\threei}  & \num{\trapuu} & \num{\trapil}}
 		}
-		\caption{Resulting errors for the BDF-k methods and ther trapezoidal rule.}
+		\caption{Resulting errors for the BDF-k methods and the trapezoidal rule.}
 		\label{tab:num results ex1}
 	\end{table}
 	
@@ -668,7 +668,7 @@ In the following two subchapters we will give a short overview over the two most
 			{../Matlab/err_ex2.csv}{h=\h, oneu=\oneu, onei=\onei, twou=\twou, twoi=\twoi, threeu=\threeu, threei=\threei, trapu=\trapu, trapil=\trapil}
 			{\h & \num{\oneu} & \num{\onei} & \num{\twou} & \num{\twoi} & \num{\threeu} & \num{\threei} & \num{\trapu} & \num{\trapil}}
 		}
-		\caption{Resulting errors for the BDF-k methods and ther trapezoidal rule.}
+		\caption{Resulting errors for the BDF-k methods and the trapezoidal rule.}
 		\label{tab:error ex2}
 	\end{table}
 

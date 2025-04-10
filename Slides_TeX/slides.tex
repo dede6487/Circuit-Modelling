@@ -1,15 +1,13 @@
 
-%\newmdtheoremenv{definition}{Definition}
-%\newmdtheoremenv{theorem}{Theorem}
-%\newmdtheoremenv{lemma}{Lemma}
 
+\newcommand{\RomanNumeralCaps}[1]{\MakeUppercase{\romannumeral #1}}
 
 
 
 
 
 	\begin{frame}
-		Introduction example: Charging of a capacitor:\\
+		\textbf{Example:} Charging of a capacitor:\\
 		\begin{figure}[H]
 			\centering
 			\includegraphics[scale=0.4]{../Tex/pictures/Example1_simple.png}
@@ -69,76 +67,96 @@
 	\subsection{Electrical Components and their Relations}
 		
 	\begin{frame}
-		\begin{itemize}
-			\item \textbf{Resistor} \newline
-			\begin{equation}
-				\label{eq:resistor law}
-				v = R \ i \quad \text{or} \quad i = G \ u.
-			\end{equation}
-			\begin{figure}[H]
-				\label{fig:resistor symbol}
-				\centering
-				\includegraphics[width=2cm]{../Tex/pictures/resistor.png}
-				\caption{resistor symbol}
-			\end{figure}
-			
-			\item \textbf{Capacitor} \newline
-			\begin{equation}
-				\label{eq:capacitor law}
-				Q = C \ v \quad \text{and by derivation in t} \quad I = C \ \frac{d}{dt}v = C \ v'.
-			\end{equation}
-			\begin{figure}[H]
-				\label{fig:capacitor symbol}
-				\centering
-				\includegraphics[width=2cm]{../Tex/pictures/capacitor.png}
-				\caption{capacitor symbol}
-			\end{figure}
-		\end{itemize}
+		\vfill
+		\begin{table}
+			\centering
+			\begin{tabular}{| c | c | c |}
+				\hline
+				\textbf{Name} & \textbf{Symbol} & \textbf{Component Law} \\
+				\hline\hline
+				Resistor & \includegraphics[height=1cm]{../Tex/pictures/resistor.png} & 	$v = R \ i \quad \text{or} \quad i = G \ u$ \\
+				Capacitor & \includegraphics[height=1cm]{../Tex/pictures/capacitor.png} & $Q = C \ v \quad \text{and by derivation in t} \quad I = C \ \frac{d}{dt}v = C \ v'$ \\
+				Inductor & \includegraphics[height=1cm]{../Tex/pictures/inductance.png} & $\Phi = L \ i \quad \text{and by derivation in t} \quad v = L \ i'$ \\
+				Voltage Source & \includegraphics[height=1cm]{../Tex/pictures/voltage_source.png} & $v = v_{src}$ \\
+				Current Source & \includegraphics[height=1cm]{../Tex/pictures/current_source.png} & $i = i_{src}$ \\
+				\hline
+			\end{tabular}
+		\end{table}
+		\vfill
 	\end{frame}
-			
-	\begin{frame}	
-		\begin{itemize}
-			\item \textbf{Inductor (Coil)} \newline
-			\begin{equation}
-				\label{eq:inductor law}
-				\Phi = L \ i \quad \text{and by derivation in t} \quad v = L \ i'.
-			\end{equation}
-			\begin{figure}[H]
-				\label{fig:inductor symbol}
-				\centering
-				\includegraphics[width=3cm]{../Tex/pictures/inductance.png}
-				\caption{inductor symbol}
-			\end{figure}
-			
-			\item \textbf{Voltage Source} \newline
-			\begin{equation}
-				\label{eq:voltage source law}
-				v = v_{src}
-			\end{equation}
-			\begin{figure}[H]
-				\label{fig:voltage source symbol}
-				\centering
-				\includegraphics[width=4cm]{../Tex/pictures/voltage_source.png}
-				\caption{voltage source symbol}
-			\end{figure}
-		\end{itemize}
-	\end{frame}
-			
-	\begin{frame}
-		\begin{itemize}
-			\item \textbf{Current Source} \newline
-			\begin{equation}
-				\label{eq:current source law}
-				i = i_{src}
-			\end{equation}
-			\begin{figure}[H]
-				\label{fig:current source symbol}
-				\centering
-				\includegraphics[width=4cm]{../Tex/pictures/current_source.png}
-				\caption{current source symbol}
-			\end{figure}
-		\end{itemize}
-	\end{frame}
+		
+		
+%	\begin{frame}
+%		\begin{itemize}
+%			\item \textbf{Resistor} \newline
+%			\begin{equation}
+%				\label{eq:resistor law}
+%				v = R \ i \quad \text{or} \quad i = G \ u.
+%			\end{equation}
+%			\begin{figure}[H]
+%				\label{fig:resistor symbol}
+%				\centering
+%				\includegraphics[width=2cm]{../Tex/pictures/resistor.png}
+%				\caption{resistor symbol}
+%			\end{figure}
+%			
+%			\item \textbf{Capacitor} \newline
+%			\begin{equation}
+%				\label{eq:capacitor law}
+%				Q = C \ v \quad \text{and by derivation in t} \quad I = C \ \frac{d}{dt}v = C \ v'.
+%			\end{equation}
+%			\begin{figure}[H]
+%				\label{fig:capacitor symbol}
+%				\centering
+%				\includegraphics[width=2cm]{../Tex/pictures/capacitor.png}
+%				\caption{capacitor symbol}
+%			\end{figure}
+%		\end{itemize}
+%	\end{frame}
+%			
+%	\begin{frame}	
+%		\begin{itemize}
+%			\item \textbf{Inductor (Coil)} \newline
+%			\begin{equation}
+%				\label{eq:inductor law}
+%				\Phi = L \ i \quad \text{and by derivation in t} \quad v = L \ i'.
+%			\end{equation}
+%			\begin{figure}[H]
+%				\label{fig:inductor symbol}
+%				\centering
+%				\includegraphics[width=3cm]{../Tex/pictures/inductance.png}
+%				\caption{inductor symbol}
+%			\end{figure}
+%			
+%			\item \textbf{Voltage Source} \newline
+%			\begin{equation}
+%				\label{eq:voltage source law}
+%				v = v_{src}
+%			\end{equation}
+%			\begin{figure}[H]
+%				\label{fig:voltage source symbol}
+%				\centering
+%				\includegraphics[width=4cm]{../Tex/pictures/voltage_source.png}
+%				\caption{voltage source symbol}
+%			\end{figure}
+%		\end{itemize}
+%	\end{frame}
+%			
+%	\begin{frame}
+%		\begin{itemize}
+%			\item \textbf{Current Source} \newline
+%			\begin{equation}
+%				\label{eq:current source law}
+%				i = i_{src}
+%			\end{equation}
+%			\begin{figure}[H]
+%				\label{fig:current source symbol}
+%				\centering
+%				\includegraphics[width=4cm]{../Tex/pictures/current_source.png}
+%				\caption{current source symbol}
+%			\end{figure}
+%		\end{itemize}
+%	\end{frame}
 
 	\subsection{Modified Nodal Analysis - MNA}
 %	\begin{frame}
@@ -169,7 +187,7 @@
 
 	\begin{frame}
 %		Together with component law for inductors \eqref{eq:inductor law} and potential-voltage relation for voltage sources \eqref{eq:voltage source law}:
-		Combining the component relations with the reduced incidence matrix and the Kirchhoff's laws we get:
+		Combining the component relations with the reduced incidence matrix and the Kirchhoff's laws we get: 
 		\begin{displaymath}
 			\begin{aligned}
 				A_C C A_C^\top u' + A_R G A_R^\top u + A_L i_L + A_V i_V &= - A_I i_{src} , \\
@@ -215,6 +233,7 @@
 \section*{Differential Algebraic Equations}
 	\subsection{Types of DAEs}
 	\begin{frame}
+		\vfill
 		In the most general form a DAE can be written as:
 		Find $y:\mathbb{R} \to \mathbb{R}^n$ such that
 		\begin{equation}
@@ -231,13 +250,7 @@
 			A y'(t) + B y(t) = f(t) ,
 		\end{equation}
 		with $A,B \in \mathbb{R}^{n \times n}$, $A$ singular, $B$ regular and $f:\mathbb{R} \to \mathbb{R}^n$ a function in time.
-		
-		\textbf{Linear time dependent systems}
-		are systems of the form: find $y$ such that
-		\begin{displaymath}
-			A(t) y'(t) + B(t) y(t) = f(t) ,
-		\end{displaymath}
-		with $A, B:\mathbb{R} \to \mathbb{R}^{n \times n}$, $f:\mathbb{R} \to \mathbb{R}^n$ functions, $\forall t \in \mathbb{R}$: $A(t)$ is singular and $B(t)$ regular.
+		\vfill
 	\end{frame}
 	
 %	\begin{frame}
@@ -270,10 +283,19 @@
 	\subsection{Weierstrass-Kronecker normalform}
 	
 	\begin{frame}
-		prerequisites: \\
 		\begin{definition}
 			The matrix pencil $\{ A,B\}$ is called \emph{regular} if there exists some $c \in \mathbb{R}$, such that $(cA+B)$ is regular (i.e. $det(cA+B) \neq 0$), otherwise it is called singular.
 		\end{definition}
+		
+			By applying equivalence transformations on he system matrices we can transform the initial sytsem into a system of the form
+		\begin{equation}
+			\label{transformed-DAE-const-coeff}
+			\begin{aligned}
+				u'(t) + Ru(t) &= s(t), \\
+				Nv'(t) + v(t) &= q(t),
+			\end{aligned}
+		\end{equation}
+		where $N$ is a nilpotent matrix and the matrix $R$ is regular.
 %		\begin{theorem}[Jordan Normalform] %\protect{\cite[Theorem~13.2.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
 %			For every matrix $Q \in \mathbb{R}^{n \times n}$ there exists a regular matrix $T \in \mathbb{C}^{n \times n}$, such that
 %			\begin{displaymath}
@@ -330,7 +352,7 @@
 %		%Proof on blackboard
 %	\end{frame}
 	
-	\begin{frame}
+%	\begin{frame}
 %		using these findings:
 %		Using the findings above we are able to transform the initial DAE \eqref{DAE-const-coeff} using the matrix $P$ from Theorem \ref{Kronecker-Normalform}. By multiplying with $P$ from the left, we obtain
 %		\begin{displaymath}
@@ -357,29 +379,29 @@
 %		\end{displaymath}
 %		with $u(t),s(t) : \mathbb{R} \to \mathbb{R}^d$ and $q(t),v(t) : \mathbb{R} \to \mathbb{R}^{n-d}$.
 %		
-		We get a system of the form
-		\begin{equation}
-			\label{transformed-DAE-const-coeff}
-			\begin{aligned}
-				u'(t) + Ru(t) &= s(t), \\
-				Nv'(t) + v(t) &= q(t),
-			\end{aligned}
-		\end{equation}
-		where $PAQ = 
-		\left( 
-		\begin{matrix}
-			I & \\
-			& N
-		\end{matrix} 
-		\right)$
-		and $PBQ = 
-		\left( 
-		\begin{matrix}
-			R & \\
-			& I
-		\end{matrix} 
-		\right)$.
-	\end{frame}
+%		We get a system of the form
+%		\begin{equation}
+%			\label{transformed-DAE-const-coeff}
+%			\begin{aligned}
+%				u'(t) + Ru(t) &= s(t), \\
+%				Nv'(t) + v(t) &= q(t),
+%			\end{aligned}
+%		\end{equation}
+%		where $PAQ = 
+%		\left( 
+%		\begin{matrix}
+%			I & \\
+%			& N
+%		\end{matrix} 
+%		\right)$
+%		and $PBQ = 
+%		\left( 
+%		\begin{matrix}
+%			R & \\
+%			& I
+%		\end{matrix} 
+%		\right)$.
+%	\end{frame}
 	
 %	\begin{frame}
 %		\begin{align}
@@ -398,6 +420,8 @@
 		\begin{definition}
 			The nilpotency index $k$ of the matrix $N$ from the Weierstraß-Kronecker Normalform of a matrix pencil $\{A,B\}$ with $A$ singular is called the \emph{Kronecker-Index} of $\{A,B\}$, which we denote by $ind\{A,B\}$. Note that for $A$ regular we set $ind\{A,B\} = 0$.
 		\end{definition}
+		
+		Auf Tafel oder auf slides: how to obtain that this means that for $k$ differentiations of the system we obtain an ODE.
 	\end{frame}
 	
 	
@@ -424,6 +448,7 @@
 	\end{frame}
 
 	\begin{frame}
+		\vfill
 		\begin{definition}%[perturbation index \protect{\cite[Definition~13.3.3]{NumerikGewöhnlicherDifferentialgleichungen}}]
 			Let $y(t)$ be the exact solution of \eqref{Abstract_DAE} and $\tilde{y}(t)$ be the solution of the perturbed system $F(t, \tilde{y}, \tilde{y}') = \delta(t)$. The smallest number $k \in \mathbb{N}$ such that 
 			\begin{displaymath}
@@ -431,6 +456,7 @@
 			\end{displaymath}
 			for all $\tilde{y}(t)$, is called the \textbf{perturbation index} of this system.
 		\end{definition}
+		\vfill
 	\end{frame}
 
 \section*{Index Analysis of the Modified Nodal Analysis}
@@ -468,9 +494,13 @@
 	\end{frame}
 	\begin{frame}
 		\begin{itemize}
+			\vfill
 			\item Condition \eqref{eq:index condition leq 2} can be interpreted, as the circuit neither containing loops of voltage sources nor cutsets of current sources.
 			\item Condition \eqref{eq:index condition leq 1} can be interpreted, as the circuit containing neither loops of capacitors and/or voltage sources nor cutsets of inductors and/or current sources.
 			\item Condition \eqref{eq:index condition eq 0} can be interpreted, as every node in the circuit being connected to the reference node (ground) through a path containing only the capacitors.
+			\vfill
+			examples/pictures?
+			\vfill
 		\end{itemize}
 	\end{frame}
 
@@ -604,7 +634,8 @@
 	
 	\subsection{Multistep Methods}
 	\begin{frame}
-		\begin{definition}
+		\vfill
+		\begin{definition}[Multistep method]
 			\label{def:multi step method}
 			For given $\alpha_0, ..., \alpha_k$ and $\beta_0, ..., \beta_k$ the iteration rule
 			\begin{equation}
@@ -613,6 +644,7 @@
 			\end{equation}
 			is called a \emph{linear multistep method} (linear k-step method). It is always assumed that $\alpha_k \neq 0$ and $|\alpha_0| + |\beta_k| > 0$. If $\beta_k=0$ holds, then the method is called explicit, otherwise implicit.
 		\end{definition}
+		\vfill
 	\end{frame}
 	
 %	\subsubsection{Consistency, Convergence and Stability}
@@ -652,12 +684,14 @@
 %	\end{frame}
 	
 	\begin{frame}
-		\begin{definition} \label{def: LMSM convergence}
+		\vfill
+		\begin{definition}[Convergence] \label{def: LMSM convergence}
 			We say that a linear multi-step method is convergent if for a solution $y$ of the problem a solution vector created by an LMSM $y_j$ for $j \in {0,...,k}$ we have that
 			\begin{displaymath}
 				\lim\limits_{h \to \infty} \max_{0 \leq j \leq k} ||y(t_j) - y_j|| = 0.
 			\end{displaymath}
 		\end{definition}
+		\vfill
 	\end{frame}
 	
 %	\begin{frame}
@@ -686,11 +720,12 @@
 		Thus the resulting linear multistep method is of the form
 		\begin{align*}
 			\sum_{l=0}^{k} \alpha_l y_{n+l} = h \sum_{l=0}^{k} \beta_l \lambda y_{n+l} \\
-			\iff \sum_{l=0}^{k}  [\alpha_l - h \beta_l \lambda] y_{n+l}
+			\iff \sum_{l=0}^{k}  [\alpha_l - h \beta_l \lambda] y_{n+l} = 0
 		\end{align*}
 	\end{frame}
 	
 	\begin{frame}
+		\vfill
 			\begin{definition}
 			\begin{enumerate}
 				\item 
@@ -711,20 +746,24 @@
 				\end{itemize}
 			\end{enumerate}
 		\end{definition}
+		\vfill
 	\end{frame}
 	
 	\begin{frame}
+		\vfill
 		\begin{theorem}%[\protecting{\cite[Satz~4.2.10]{NumerikGewöhnlicherDifferentialgleichungen}}]
 			\label{th: null-stbaility and consistence is convergence}
 			Let $f(t,y)$ be sufficiently smooth and the linear multi-step method be zero-stable and consistent of order $p$, then it is also convergent of order $p$.
 		\end{theorem}
+		\vfill
 	\end{frame}
 	
 	\subsection{Consistent Initial Values}
 	\begin{frame}
-		index $\nu = 0$.\\ 
+		\vfill
+		\textbf{Index $\nu = 0$:} $\to$ arbitrary initial values since ODE.\\ 
 		
-		Case: Index $\nu = 1$.\\
+		\textbf{Index $\nu = 1$:}\\
 		
 		By rewriting our system into the form
 		
@@ -734,11 +773,12 @@
 		\end{align*}
 		
 		we are able to give conditions for consistent initial values. Namely $y_0$ and $z_0$ are consistent initial values for this system, if $g(t_0, y_0, z_0) = 0$ holds.
-		
+		\vfill
 	\end{frame}
 	
 	\begin{frame}
-		Case: Index $\nu = 2$.\\
+		\vfill
+		\textbf{Index $\nu = 2$:}\\
 		
 		For index-2 systems we rewrite our system into
 		
@@ -748,6 +788,7 @@
 		\end{align*}
 		
 		Consistent initial values $y_0$, $z_0$ for this case not only have to fulfill $g(t_0, y_0) = 0$ but also the \emph{hidden constraint} $g_t(t_0, y_0) + g_y(t_0, y_0)f(t_0, y_0, z_0)$. By $g_t$ and $g_y$ we denote the derivative of $g$ with respect to $t$ or $y$, respectively.
+		\vfill
 	\end{frame}
 	
 	\subsection*{Implicit Linear Multistep Formulas}
@@ -773,22 +814,26 @@
 	\begin{frame}
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=1\linewidth]{../Tex/pictures/bdf_stability_regions.png}
+			\includegraphics[width=0.8\linewidth]{../Tex/pictures/bdf_stability_regions.png}
 			\caption{stability regions of BDF-schemes}
 			\label{fig:screenshot020}
 		\end{figure}
 		\begin{theorem}%[\protecting{\cite[Satz~9.2.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
 			The BDF-k methods have consistency order $p=k$.
 		\end{theorem}
+		Using Theorem \ref{th: null-stbaility and consistence is convergence} we get that the BDF-k methods also have convergence order $p=k$.
 	\end{frame}
 	
 	\subsubsection{Trapezoidal rule}
 	
 	\begin{frame}
+		\vfill
 		This procedure is repeated for small subsections of the interval $[a,b]$. Thus we obtain the iteration formula
 		\begin{displaymath}
 			u_h (t+h) = u_h(t) +\frac{h}{2}[f(t,u_h(t)) + f(t+h, u_h(t+h))].
 		\end{displaymath}
+		The trapezoidal rule, considered as a Lobatto~\RomanNumeralCaps{3}~A method, has convergence order $p=2$.
+		\vfill
 	\end{frame}
 	
 	\subsection*{Numerical Examples}
@@ -814,6 +859,7 @@
 	\end{frame}
 	
 	\begin{frame}
+		\vfill
 		\begin{table}[H]
 			\resizebox*{\textwidth}{!}{%
 				\csvreader[tabular= | c || c c | c c | c c | c c |,
@@ -824,9 +870,10 @@
 				{../Matlab/err_ex1.csv}{h=\h, oneu=\oneu, oneuu=\oneuu, onei=\onei, twou=\twou, twouu=\twouu, twoi=\twoi, threeu=\threeu, threeuu=\threeuu, threei=\threei, trapu=\trapu, trapuu=\trapuu, trapil=\trapil}
 				{\h  & \num{\oneuu} & \num{\onei}  & \num{\twouu} & \num{\twoi}  & \num{\threeuu} & \num{\threei}  & \num{\trapuu} & \num{\trapil}}
 			}
-			\caption{Resulting errors for the BDF-k methods and ther trapezoidal rule.}
+			\caption{Resulting errors for the BDF-k methods and the trapezoidal rule.}
 			\label{tab:num results ex1}
 		\end{table}
+		\vfill
 	\end{frame}
 	
 %	\subsubsection{Example 2}
