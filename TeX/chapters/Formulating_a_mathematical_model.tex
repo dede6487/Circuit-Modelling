@@ -18,12 +18,12 @@ We can store this information in an \emph{incidence matrix} $\tilde{A} = (\tilde
 \end{displaymath}
 We call $u = (u_0, u_1, u_2, ...)$ the corresponding \emph{electrical potentials} (or just \emph{potentials}) to the nodes $\mathcal{N}$. The difference between the potentials at two connected nodes is called the \emph{voltage} at the respective edge. To fix the absolute values of these potentials we have to set one node to a fixed value. We will do that by ``grounding'' the node $n_0$, which means we set the potential $u_0 = 0$. The grounding of a node allows us to remove the corresponding row from the incidence matrix to get the \emph{reduced incidence matrix} $A$. The vector $v = (v_{ij})_{ij}$ represents the voltages at the edges. For some indices $i$ and $j$, the voltage at edge $ij$ is defined as $v_{ij} = u_i - u_j$.
 
-We will later see that the components of an electrical circuit, which will be installed along the edges, describe a relationship between the current along the edge the corresponding voltage. Thus a current vector $i = (i_1, i_2, i_3, ...)$ containing the currents along the edges is required.
+We will later see that the components of an electrical circuit, which will be installed along the edges, describe a relationship between the current along the edge and the corresponding voltage. Thus a current vector $i = (i_1, i_2, i_3, ...)$ containing the currents along the edges is required.
 
 
-\begin{example1}[Incidence Matrix]
+\begin{example1}[Charging of a Capacitor]
 	\label{ex:network topology}
-	As an example we consider the charging of a capacitor. The circuit is given in Figure \ref{circuit:charging of capacitor}.
+	As an example we consider the charging of a capacitor. The circuit consists of a capacitor which is to be charged by a voltage source. This charging is also influenced by a resistor which is placed in series to the other components. This is depicted in Figure \ref{circuit:charging of capacitor}.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.5]{pictures/Example1_simple.png}
@@ -109,9 +109,9 @@ We will later see that the components of an electrical circuit, which will be in
 	\end{displaymath}
 \end{example1}
 
-\begin{example2}[Incidence Matrix]
+\begin{example2}[LC-Circuit]
 	\label{ex:LC-circuit incidence matrix}
-	Another example is the a circuit that only contains a capacitor and an inductor, see Figure \ref{circuit:LC-circuit}. This circuit will oscillate, if given appropriate initial conditions.
+	Our second example is a circuit that only contains a capacitor and an inductor, see Figure \ref{circuit:LC-circuit}. This circuit will oscillate, if given appropriate initial conditions.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.5]{pictures/Example2_index0.png}
@@ -166,7 +166,7 @@ We will later see that the components of an electrical circuit, which will be in
 	\end{displaymath}
 \end{example2}
 
-\begin{example3}[Incidence Matrix]
+\begin{example3}[Parallel Voltage Source, Capacitor and Resistor]
 	\label{ex:Example 3 - incidence matrix }
 	As a third example we consider a similar circuit to the circuit presented in Example 1.\ref{ex:network topology}, the only difference is that we connected the resistor parallel to the capacitor instead of connecting it in series.
 	\begin{figure}[H]
@@ -226,16 +226,16 @@ We will later see that the components of an electrical circuit, which will be in
 \end{example3}
 
 \section{Energy Conservation Laws}
-To fully fix all the variables that arise in the model of an electrical circuit we will need some \emph{conservation laws}. In this context, conservation laws are a description of physical properties that can be observed in electrical circuits. This means that they have to be fulfilled non the less, thus including them into the system also makes sense from a physical perspective. They were proposed by Kirchhoff in 1845, see \cite{KirchhoffsLaws}.
+To fully fix all the variables that arise in the model of an electrical circuit we will need some \emph{conservation laws}. In this context, conservation laws are a description of physical properties that can be observed in electrical circuits. This means that they have to be fulfilled non-the-less, thus including them into the system also makes sense from a physical perspective. They were proposed by Kirchhoff in 1845, see \cite{KirchhoffsLaws}.
 \begin{itemize}
 	\item \textbf{Kirchhoff's voltage law (KVL):} \newline
-	The sum of voltages along each loop of the network must equal to zero. Using the incidence matrix $A$ this law can be formulated as
+	The sum of voltages along each loop of the network must equal to zero. Using the incidence matrix $A$ and the vector of potentials $u$ as well as the voltage vector $v$, this law can be formulated as
 	\begin{equation}
 		\label{KVL}
 		A^\top  u = v.
 	\end{equation}
 	\item \textbf{Kirchhoff's current law (KCL):} \newline
-	For any node, the sum of currents flowing into the node is equal to the sum of currents flowing out of the node. Using the incidence matrix $A$ again, this law can be formulated as
+	For any node, the sum of currents flowing into the node is equal to the sum of currents flowing out of the node. Using again the incidence matrix $A$ and the vector of currents $i$, this law can be formulated as
 	\begin{equation}
 		\label{KCL}
 		A  i = 0.
@@ -244,7 +244,7 @@ To fully fix all the variables that arise in the model of an electrical circuit 
 
 \section{Electrical Components and their relations}
 \label{Sec:Components relations}
-Electrical components are described by equations relating their edge voltage $v$ to their edge current $i$. We will mainly focus on so-called RLC-networks (short for Resistor, Inductor, Capacitor), which consist of resistors, capacitors, inductors, voltage sources and current sources. Diodes and transistors as well as other electrical components can be described in a similar way, although these lead to a more difficult analysis of the system, see e.g. \cite{ModellingAndDiscretizationOfCircuitProblems} and \cite{SchwarzTischendorfCircuitMNA}. Using the notation introduced in Section \ref{Sec:Network Topology}, the relations read as:
+Electrical components are described by equations relating their edge voltage $v$ to their edge current $i$. We will mainly focus on so-called RLC-networks (short for Resistor, Inductor and Capacitor). These networks consist only of resistors, capacitors, inductors, voltage sources and current sources. Diodes and transistors as well as other electrical components can be described in a similar way, although these lead to a more difficult analysis of the system, see e.g. \cite{ModellingAndDiscretizationOfCircuitProblems} and \cite{SchwarzTischendorfCircuitMNA}. Using the notation introduced in Section \ref{Sec:Network Topology}, the relations read as:
 \begin{itemize}
 	\item \textbf{Resistor} \newline
 	Resistors ''resist`` the flow of current, which causes voltage to drop. This behaviour is described by the \emph{resistance} $R \in \mathbb{R}^+ := \{x \in \mathbb{R}: x > 0\}$ which is given in \emph{Ohm} ($\Omega$) and its reciprocal, the \emph{conductance} $G \in \mathbb{R}^+$, which is given in \emph{Siemens} ($S=\frac{1}{\Omega}$). 
@@ -252,6 +252,7 @@ Electrical components are described by equations relating their edge voltage $v$
 		\label{eq:resistor law}
 		v = R \ i \quad \text{or} \quad i = G \ u.
 	\end{equation}
+	The electrical schematic symbol for resistors is depicted in Figure \ref{fig:resistor symbol}.
 	\begin{figure}[H]
 		\label{fig:resistor symbol}
 		\centering
@@ -263,8 +264,9 @@ Electrical components are described by equations relating their edge voltage $v$
 	Capacitors ''store`` electrical energy by accumulating electrical charge. Their characteristic equations can be described directly using the stored charge $Q \in \mathbb{R}^+_0 := \{x \in \mathbb{R}: x \geq 0\}$ or indirectly using the change in charge, which is nothing other than the current $I$. The \emph{capacitance} $C \in \mathbb{R}^+$ is given in \emph{Farads} ($F$).
 	\begin{equation}
 		\label{eq:capacitor law}
-		Q = C \ v \quad \text{and by derivation in t} \quad I = C \ \frac{d}{dt}v = C \ v'.
+		Q = C \ v \quad \text{and by derivation in t} \quad I = \frac{d}{dt}Q = C \ \frac{d}{dt}v = C \ v'.
 	\end{equation}
+	The electrical schematic symbol for capacitors is depicted in Figure \ref{fig:capacitor symbol}.
 	\begin{figure}[H]
 		\label{fig:capacitor symbol}
 		\centering
@@ -272,12 +274,13 @@ Electrical components are described by equations relating their edge voltage $v$
 		\caption{capacitor symbol}
 	\end{figure}
 
-	\item \textbf{Inductor (Coil)} \newline
-	An electric current flowing through a conductor generates a magnetic field $\Phi \in \mathbb{R}^{n \times n}$ surrounding it. This magnetic field causes a voltage drop dependant on the change in current. The \emph{inductance} $L \in \mathbb{R}^+$ is given in \emph{Henry} ($H$).
+	\item \textbf{Inductor} \newline
+	An electric current flowing through a conductor generates a magnetic field $\Phi \in \mathbb{R}^{n \times n}$ surrounding it. This magnetic field causes a voltage drop dependent on the change in current. The \emph{inductance} $L \in \mathbb{R}^+$ is given in \emph{Henry} ($H$).
 	\begin{equation}
 		\label{eq:inductor law}
-		\Phi = L \ i \quad \text{and by derivation in t} \quad v = L \ i'.
+		\Phi = L \ i \quad \text{and by derivation in t} \quad v = \Phi' = L \ i'.
 	\end{equation}
+	The electrical schematic symbol for inductors is depicted in Figure \ref{fig:inductor symbol}.
 	\begin{figure}[H]
 		\label{fig:inductor symbol}
 		\centering
@@ -291,6 +294,7 @@ Electrical components are described by equations relating their edge voltage $v$
 		\label{eq:voltage source law}
 		v = v_{src}
 	\end{equation}
+	The electrical schematic symbol for voltage sources is depicted in Figure \ref{fig:voltage source symbol}.
 	\begin{figure}[H]
 		\label{fig:voltage source symbol}
 		\centering
@@ -299,11 +303,12 @@ Electrical components are described by equations relating their edge voltage $v$
 	\end{figure}
 
 	\item \textbf{Current Source} \newline
-	A current source supplies the system with current. It can either supply varying amounts of current (with the special case of alternating current AC) or a fixed amount of current. The unit of current is \emph{Ampere} ($A$).
+	A current source supplies the system with electrical current. It can either supply varying amounts of current (with the special case of alternating current AC) or a fixed amount of current. The unit of current is \emph{Ampere} ($A$).
 	\begin{equation}
 		\label{eq:current source law}
 		i = i_{src}
 	\end{equation}
+	The electrical schematic symbol for current sources is depicted in Figure \ref{fig:current source symbol}.
 	\begin{figure}[H]
 		\label{fig:current source symbol}
 		\centering
@@ -326,15 +331,18 @@ The resistance $R$, conductance $G$, capacitance $C$ and inductance $L$ are resp
 
 To analyse the network further we will rearrange the columns of the reduced incidence matrix $A$ such that it has the block form
 \begin{displaymath}
-	A = (A_R A_C A_L A_V A_I)
+	A = 
+	\begin{pmatrix}
+		A_R & A_C & A_L & A_V & A_I
+	\end{pmatrix}
 \end{displaymath}
 where $A_R$, $A_C$, $A_L$, $A_V$ and $A_I$ include the columns that are related to the resistors, capacitors, coils, voltage sources and current sources, respectively.
 
-To mathematically describe the circuit we will use \emph{modified nodal analysis} (or short MNA), see the paper by Chung-Wen Ho, Albert E. Ruehli and Pierce A. Brennan, \cite{MNA75}. MNA uses the node voltages as well as the currents of the coils and the voltage sources as unknowns. It is based on the conservation laws \eqref{KCL} and \eqref{KVL} as well as on the voltage-current relations of the electrical components, discussed in Section \ref{Sec:Components relations}. The voltages can be represented using the node-potentials
+To mathematically describe the circuit, we use \emph{modified nodal analysis} (or short MNA), see the paper by Ho, Ruehli and Brennan, \cite{MNA75}. MNA uses the node voltages as well as the currents of the coils and the voltage sources as unknowns. It is based on the conservation laws \eqref{KCL} and \eqref{KVL} as well as on the voltage-current relations of the electrical components, discussed in Section \ref{Sec:Components relations}. The voltages can be represented using the node-potentials and the incidence matrix $A$, i.e.
 \begin{displaymath}
-	v = A^\top u
+	v = A^\top u.
 \end{displaymath}
-The vector $v$ can thus be rearranged into $v = (v_R, v_C, v_L, v_{src}, v_I)$. In a similar way we also rearrange the current vector into $i = (i_R, i_C, i_L, i_V, i_src)$. Using the sorted incidence matrix blocks we can rewrite the resistor current relation as
+The vector $v$ can thus be rearranged into $v = (v_R, v_C, v_L, v_{src}, v_I)$. In a similar way we also rearrange the current vector into $i = (i_R, i_C, i_L, i_V, i_{src})$. Using the sorted incidence matrix blocks, we can rewrite the resistor current relation as
 	\begin{displaymath}
 		i_R = G \ v_R = G \ A_R^\top u.
 	\end{displaymath}
@@ -343,7 +351,7 @@ Analogously, we rewrite the capacitor relation as
 		i_C = C \ v'_C = C \ A_C^\top u'.
 	\end{displaymath}
 
-Kirchhoffs current law \eqref{KCL} gives us that
+From Kirchhoffs current law \eqref{KCL} we deduce that
 \begin{displaymath}
 	A_C i_C + A_R i_R + A_L i_L + A_V i_V = -A_I i_{src}.
 \end{displaymath}
@@ -353,7 +361,7 @@ We plug in the component relations derived above and obtain
 	A_C C A_C^\top u' + A_R G A_R^\top u + A_L i_L + A_V i_V = -A_I i_{src}.
  \end{displaymath}
 
-Combining this with the component law for inductors \eqref{eq:inductor law} and the potential-voltage relation for voltage sources \eqref{eq:voltage source law} we finally get the modified nodal analysis equations
+Combining this with the component law for inductors \eqref{eq:inductor law} and the potential-voltage relation for voltage sources \eqref{eq:voltage source law} we finally get the MNA equations
 \begin{displaymath}
 	\begin{aligned}
 		A_C C A_C^\top u' + A_R G A_R^\top u + A_L i_L + A_V i_V &= - A_I i_{src} , \\
@@ -395,12 +403,12 @@ In matrix form these read
 		-v_{src}
 	\end{pmatrix} , 
 \end{equation}
-where the diagonal matrices $C$, $G$ and $L$ contain the capacities, conductivities and inductivities.
+where the diagonal matrices $C$, $G$ and $L$ contain the capacities, conductivities and inductors, respectively.
 
 The resulting systems are \emph{stiff} systems. This means that for their numerical solution special care has to be put into which methods are suitable for solving these systems in a stable manner. For analyzing nonlinear components, the charge-flux oriented formulation might be useful for numerical considerations, for this see \cite{ModellingAndDiscretizationOfCircuitProblems}.
 
 
-\begin{example1}[Modified Nodal Analysis System]
+\begin{example1}[Charging of a Capacitor]
 	\label{ex:MNA}
 	We again consider the charging of a capacitor. The circuit is again given as in Example 1.\ref{ex:network topology}, where we have already derived the reduced incidence matrix
 	\begin{displaymath}
@@ -412,7 +420,7 @@ The resulting systems are \emph{stiff} systems. This means that for their numeri
 		\end{matrix}
 		\right).
 	\end{displaymath} 
-	This matrix can be split into the three submatrices $A_V$, $A_R$ and $A_C$ containing the columns of the matrix $A$. The matrices $A_L$ and $A_V$ are empty in this case. The diagonal matrices containing the components constants are
+	This matrix can be split into the three submatrices $A_V$, $A_R$ and $A_C$ containing the columns of the matrix $A$. Because there are no inductors as well as no current sources resent, the matrices $A_L$ and $A_V$ are empty. The diagonal matrices containing the components constants are
 	\begin{displaymath}
 		C = (C), \qquad L = (), \qquad G = (\frac{1}{R}).
 	\end{displaymath}
@@ -454,9 +462,9 @@ The resulting systems are \emph{stiff} systems. This means that for their numeri
 \end{example1}
 
 
-\begin{example2}[Modified Nodal Analysis System]
+\begin{example2}[LC-Circuit]
 	\label{ex:LC-circuit MNA}
-	Similarly we also derived the incidence Matrix for this system in Example 2.\ref{ex:LC-circuit incidence matrix}.
+	Similarly we also derived the incidence Matrix for this system in Example 2.\ref{ex:LC-circuit incidence matrix}, i.e.
 	\begin{displaymath}
 		A = 
 		\left(
@@ -466,7 +474,7 @@ The resulting systems are \emph{stiff} systems. This means that for their numeri
 		\right).
 	\end{displaymath}
 	
-	This matrix can be split into the two submatrices $A_C$ and $A_L$ containing the columns of the matrix $A$. The matrices $A_R$, $A_V$ and $A_I$ are empty in this case. The diagonal matrices containing the components constants are
+	This matrix can be split into the two submatrices $A_C$ and $A_L$ containing the columns of the matrix $A$. Because we do not have any resistors, voltage sources or current sources, the matrices $A_R$, $A_V$ and $A_I$ are empty. The diagonal matrices containing the components constants are
 	\begin{displaymath}
 		C = (C), \qquad L = (L), \qquad G=().
 	\end{displaymath}
@@ -500,9 +508,9 @@ The resulting systems are \emph{stiff} systems. This means that for their numeri
 \end{example2}
 
 
-\begin{example3}[Modified Nodal Analysis System]
+\begin{example3}[Parallel Voltage Source, Capacitor and Resistor]
 	\label{ex:Example 3 - MNA}
-	Consider the circuit of Example 3.\ref{ex:Example 3 - incidence matrix }. We have already found the incidence matrix for this circuit.
+	We consider the circuit introduced in Example 3.\ref{ex:Example 3 - incidence matrix }, with the corresponding incidence matrix
 	\begin{displaymath}
 		A = 
 		\left(
@@ -511,7 +519,7 @@ The resulting systems are \emph{stiff} systems. This means that for their numeri
 		\end{matrix}
 		\right).
 	\end{displaymath} 
-	This matrix can be split into the three submatrices $A_I$, $A_R$ and $A_C$ containing the columns of the matrix $A$. The matrices $A_L$ and $A_V$ are empty in this case. The diagonal matrices containing the components constants are
+	This matrix can be split into the three submatrices $A_I$, $A_R$ and $A_C$ containing the columns of the matrix $A$. As there are no inductors and no voltage sources present, the matrices $A_L$ and $A_V$ are empty. The diagonal matrices containing the components constants are
 	\begin{displaymath}
 		C = (C), \qquad L = (), \qquad G = (\frac{1}{R}).
 	\end{displaymath}
