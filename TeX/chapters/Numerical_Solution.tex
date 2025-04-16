@@ -4,11 +4,13 @@ As we are interested in finding real valued solutions of our systems we also hav
 We will first focus on methods used to solve a more general initial value problem of the form:
 
 Find y, such that
-\begin{align}
+\begin{equation}
+	\begin{aligned}
+		y'(t) &= f(t,y), \quad t \in [t_0, t_l], \\
+		y(t_0) &= y_0.
+	\end{aligned}
 	\label{general numerical problem}
-	y'(t) &= f(t,y), \quad t \in [t_0, t_l], \\
-	y(t_0) &= y_0.
-\end{align}
+\end{equation}
 
 For this we presume that the function $f(t,y)$ is continuous and Lipschitz, we can apply the theorem of \emph{Picard-Lindelöf} \protecting{\cite[Satz~1.2.1]{NumerikGewöhnlicherDifferentialgleichungen}}, which states, that for every initial value $y_0$, the initial value problem \eqref{general numerical problem} is uniquely solvable in $[t_0, t_l]$.
 
@@ -17,22 +19,22 @@ In order to obtain an approximation to this unique solution we have to discretiz
 	t_0 < t_1 < ... < t_N \leq t_l
 \end{displaymath}
 
-and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$, see \ref{fig:numerical approximation}. We call this a \emph{time-grid} and we call the difference $h_{ij} = t_j - t_i$ with $0 \leq i < j \leq N$ the \emph{step size} from $t_i$ to $t_j$. We will only consider equidistant grids, i.e. $h_{ij} = h$ for all $0 \leq i,j \leq N$. A function defined on such a grid is called a \emph{grid-function}.
+and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$, see \ref{fig:numerical approximation}. We call this a \emph{time-grid} and we call the difference $h_{ij} = t_j - t_i$ with $0 \leq i < j \leq N$ the \emph{step size} from $t_i$ to $t_j$. We will only consider equidistant grids, i.e. $h_{ij} = h$ for all $0 \leq i,j \leq N$. A function defined on such a grid is called a \emph{grid function}.
 
-The grid function $y_h : T \to A$ with the time-grid $T={t_0, ..., t_N}$ and the approximated values $A = {y_0, ..., y_N}$ is called the \emph{numerical approximation} (of $y$ on the time grid).
+The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and the approximated values $A = \{y_0, ..., y_N\}$ is called the \emph{numerical approximation} (of $y$ on the time grid).
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.7]{pictures/num_approx.png}
-	\caption{approximation of a function using numerical methods}
+	\caption{approximation of a function}
 	\label{fig:numerical approximation}
 \end{figure}
 
-\section{Single-Step-Methods}
-	The first class of numerical methods we will consider are single-step methods. These methods use the previous approximated value $y_j$ and (for implicit methods) also the current approximated value $y_{j+1}$ to determine the current value $y_{j+1}$ through a \emph{procedural function}.
+\section{Single Step Methods}
+	The first class of numerical methods we will consider are single step methods. These methods use the previous approximated value $y_j$ and (for implicit methods) also the current approximated value $y_{j+1}$ to determine the current value $y_{j+1}$ through a \emph{procedural function}.
 	
 	\begin{definition}
 		\label{def:single step mehod}
-		A numerical method to approximate a differential equation \ref{general numerical problem} on a time-grid $t_0,...,t_l$ with the intermediate values $y_0,...,y_l$ is called a single-step method if it is of the form
+		A numerical method to approximate a differential equation \ref{general numerical problem} on a time-grid $T =\{t_0,...,t_l\}$ with the intermediate values $y_0,...,y_l$ is called a single step method, if it is of the form
 		\begin{equation}
 			\label{single-step method}
 			y_{j+1} = y_j + h_j \phi(t_j,y_j, y_{j+1},h_j).
@@ -42,7 +44,7 @@ The grid function $y_h : T \to A$ with the time-grid $T={t_0, ..., t_N}$ and the
 
 	\subsection{Consistency, Stability and Convergence}
 	
-	In order to compare different single-step methods we have to define some notions to compare their quality. This leads to the definition of the error of the method, its consistency and its convergence. We begin with the definition of the error.
+	In order to compare different single-step methods we have to define the notions of consistency, stability and convergence. This leads to the definition of the error of the method, its consistency and its convergence. We begin with the definition of the error.
 	
 	\begin{definition}\label{Discretization_Error_SingleStep}
 		Let $y_{m+1}$ be the result of one step of a single step method \eqref{single-step method} with the exact start-vector $y_m = y(t_m)$ then
@@ -109,7 +111,7 @@ The grid function $y_h : T \to A$ with the time-grid $T={t_0, ..., t_N}$ and the
 	
 	This theorem is due to Lax and Richtmyer. The converse of this statement is also true. 
 
-	\subsection{further stability properties}
+	\subsection{Further stability properties}
 		from numpdgl skript \\
 		In this section we consider as a model problem the Dahlquist equation, i.e. find $y$ such that
 		\begin{align}
@@ -235,7 +237,7 @@ The grid function $y_h : T \to A$ with the time-grid $T={t_0, ..., t_N}$ and the
 	\subsection{Consistency, Stability and Convergence}
 	\cite{NumerikGewöhnlicherDifferentialgleichungen}
 	
-	Again we need to define the properties consistency, stability and convergence for this method.
+	Again we need to define the properties consistency, stability and convergence for this class of methods.
 	\begin{definition}
 		Let $y_{m+k}$ be the result of one step of the multi-step method \eqref{linear-multistep-method} with the start-values given as the evaluations of the exact solution $y_{m+l} = y(t_{m+l})$ at $0 \leq l < k$. This means
 		\begin{displaymath}
@@ -331,9 +333,9 @@ The grid function $y_h : T \to A$ with the time-grid $T={t_0, ..., t_N}$ and the
 	
 	%\textbf{from circuit book below, above from modelling book}
 	
-	\subsection{further stability properties}
+	\subsection{Further stability properties}
 	
-	In this section we consider again the Dahlquist test problem as a model problem, find $y$ such that
+	In this section we consider again the Dahlquist test problem as a model problem, i.e. find $y$ such that
 	\begin{align}
 		y' &= \lambda y, \quad t > 0 \\
 		y(0) &= y_0
@@ -455,7 +457,7 @@ In the following two subchapters we will give a short overview over the two most
 	
 	The most commonly used numerical methods for solving the systems that arise in electrical circuits are the BDF-scheme and the trapezoidal rule. 
 	
-	We will not give a deeper look into their construction but will only state their properties. BDF schemes are appealing because they save function evaluations as much as possible, since this is very costly in circuit simulation.
+	We will not give a deeper look into their construction but will only state their properties. BDF schemes are appealing because they save function evaluations as much as possible.
 	
 	The \emph{backward differentiation formula (BDF)} is a family of implicit linear multistep methods. They have the general form
 	\begin{equation}
@@ -474,7 +476,7 @@ In the following two subchapters we will give a short overview over the two most
 %		k = 6 &: h f_{m+6} = \frac{1}{60} (147 u_{m+6} - 360 u_{m+5} + 450 u_{m+4} - 400 u_{m+3} + 225 u_{m+2} - 72 u_{m+1} + 10 u_m)
 	\end{align*}
 	
-	Methods with $k > 6$ are not zero-stable. Indeed in practice, methods with order greater than 3 are rarely used because of their stability properties. The stability-region shrinks with increasing order.
+	Methods with $k > 6$ are not zero-stable. In practice, methods with order greater than 3 are rarely used because of their stability properties, as the stability-region shrinks with increasing order.
 	
 	BDF schemes have consistency order $p = k$. They are methods for solving stiff equations, thus their stability is indicated by their region of absolute stability. Unfortunately not all BDF-schemes are A-stable, but their stability region still contains a large part of the complex left half-plane, see Figure \ref{fig:screenshot020} They are the most efficient linear multistep methods of this kind.
 	
@@ -484,10 +486,8 @@ In the following two subchapters we will give a short overview over the two most
 		\caption{stability regions of BDF-schemes}
 		\label{fig:screenshot020}
 	\end{figure}
-	
-	The first timestep is always performed by BDF1 (implicit Euler scheme) as a starting procedure. sure? not really
-	
-	The Order of consistency of this family of multi-step methods is given by the following theorem
+
+	The order of consistency of this family of multi-step methods is given by the following theorem
 	
 	\begin{theorem}[\protecting{\cite[Satz~9.2.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
 		The BDF-k methods have consistency order $p=k$.
@@ -497,7 +497,7 @@ In the following two subchapters we will give a short overview over the two most
 	
 	%Seite 106 numerik - schrittweite für startwerte bei bdf3 kleiner für kleineren fehler, halbieren, vierteln, achteln whatever
 	
-\subsection{trapezoidal rule}
+\subsection{Trapezoidal rule}
 	\label{sec:Trapezoidal}
 	
 	The trapezoidal rule is a natural alternative to BDF2 since it is A-stable and a linear multistep method of order 2. It also has the smallest leading error coefficient. (\cite{ModellingAndDiscretizationOfCircuitProblems})

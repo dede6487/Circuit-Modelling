@@ -3,15 +3,16 @@
 %seite 22 kap 7 netw top and dae ind for rlc - modelling and discretization circ prob
 \cite{ModellingAndDiscretizationOfCircuitProblems}
 
-In the previous chapter we have seen two different kinds of index concepts for differential algebraic equations. We have also seen that these two, even though they describe rather different structural aspects of the equation, are identical for our use-cases. This leads to the question, what indices we expect obtain for our MNA system.
+In the previous chapter we have seen two different kinds of index concepts for differential algebraic equations. We have also seen that these two, even though they describe rather different structural aspects of the equation, are identical for the problems discussed in this thesis. %(i.e. linear?)
+ This leads to the question, what indices we expect obtain for our MNA system.
 
-This chapter answers this question for the case of linear RLC-circuits. As already discussed in Section \ref{Sec:Electrical Components and their relations}, RLC circuits contain only resistors, inductors and capacities as well as current and voltage sources (RLC-circuits). Linear means that all circuit components are described by linear positive functions. Thus the matrices $C$, $R$, and $L$ are positive definite and symmetric.
+This chapter answers this question for the case of linear RLC-circuits. As already discussed in Section \ref{Sec:Components relations}, RLC circuits contain only resistors, inductors and capacities as well as current and voltage sources. Linear means that all circuit components are described by linear positive functions. Thus the matrices $C$, $R$, and $L$ are positive definite and symmetric.
 
 Recall that we consider the equations resulting from the analysis in Section \ref{sec:MNA}. These equations are of the form \eqref{DAE-const-coeff}: find $y$ such that
 \begin{displaymath}
 	A y'(t) + B y(t) = f(t).
 \end{displaymath}
-In particular we obtain the equation
+In particular we obtain the system of equations
 \begin{displaymath}
 	\begin{pmatrix}
 		A_C C A_C^\top & 0 & 0 \\
@@ -194,12 +195,12 @@ By $ker(A)$ we denote the nullspace of the matrix $A$ and by $dim(y)$ the size o
 check again, maybe need to add "only contains" somwhere - maybe at index 1 condition
 
 \begin{itemize}
-	\item Condition \eqref{eq:index condition leq 2} can be interpreted, as the circuit neither containing loops of voltage sources nor cutsets of current sources.
-	\item Condition \eqref{eq:index condition leq 1} can be interpreted, as the circuit containing neither loops of capacitors and/or voltage sources nor cutsets of inductors and/or current sources.
-	\item Condition \eqref{eq:index condition eq 0} can be interpreted, as every node in the circuit being connected to the reference node (ground) through a path containing only the capacitors.
+	\item Condition \eqref{eq:index condition leq 2} can be interpreted as the circuit neither containing loops of voltage sources nor cutsets of current sources.
+	\item Condition \eqref{eq:index condition leq 1} can be interpreted as the circuit containing neither loops of capacitors and/or voltage sources nor cutsets of inductors and/or current sources.
+	\item Condition \eqref{eq:index condition eq 0} can be interpreted as every node in the circuit being connected to the reference node (ground) through a path containing only the capacitors.
 \end{itemize}
 
-We will apply those results to some examples: 
+We will apply those results to the previously considered examples: 
 
 \begin{example1}[Index analysis]
 	\label{ex:Index_Analysis}
@@ -287,7 +288,7 @@ We will apply those results to some examples:
 		\includegraphics[scale = 0.4]{pictures/Example2_index0.png}
 		\caption{LC circuit}
 	\end{figure}
-	Because this circuit only contains one capacitor and one inductance in a singular loop and also has no sources, we expect the resulting MNA-system to be of index $\nu=0$. This means that the system is an ODE!
+	Because this circuit only contains one capacitor and one inductance in a singular loop and also has no sources, we expect the resulting MNA-system to be of index $\nu=0$. This means that the system is an ODE.
 	
 	The incidence matrix for this system is
 	\begin{displaymath}
@@ -356,7 +357,7 @@ We will apply those results to some examples:
 		\includegraphics[scale = 0.4]{pictures/Example3.png}
 		\caption{current source with resistor and capacitor} 
 	\end{figure}
-	This circuit contains two loops, the first with only a voltage source and a capacitor and the second with a capacitor and a resistor. Because of the first loop, we expect this circuit to omit a system of index $\nu = 2$.
+	This circuit contains two loops, the first with only a voltage source and a capacitor and the second with a capacitor and a resistor. Because of the first loop, we expect this circuit to emit a system of index $\nu = 2$.
 	
 	The incidence matrix for this system is
 	\begin{displaymath}
@@ -367,7 +368,7 @@ We will apply those results to some examples:
 		\end{matrix}
 		\right).
 	\end{displaymath} 
-	Thus condition \eqref{eq:index condition leq 2} gives us (first ker is indeed not 0, no? - would need to not have transposed - maybe because $A_L$ is empty)
+	Thus condition \eqref{eq:index condition leq 2} gives us
 	\begin{displaymath}
 		ker([A_R, A_C, A_V, A_L]^\top) = ker
 		\left(
@@ -406,3 +407,71 @@ We will apply those results to some examples:
 	Thus this condition is not fulfilled, which means that the system indeed has index $\nu = 2$.
 \end{example3}
 	
+	
+\section{Consistent Initial Values}
+\label{sec:consistant initial values}
+
+Especially for numerical considerations the calculation of initial values that are consistent with the problem is important. This leads us to differentiate between three cases. Namely we need to differ with respect to the index of the DAE. As we will later see, only indices less or equal to $2$ are important for our situation, this is why we will consider them especially. For this we also refer to \protect{\cite[chapter~13.3.1]{NumerikGewöhnlicherDifferentialgleichungen}}
+
+from imp funkionensatz usw
+
+\paragraph{index $\nu = 0$. } 
+We have already discussed, that this case leads to an ODE, and Picard-Lindelöff theorem \protecting{\cite[Satz~1.2.1]{NumerikGewöhnlicherDifferentialgleichungen}} tells us that every initial condition is consistent for ordinary differential equations.
+
+\begin{example2}[Consistent initial vaues]
+	We will later see that this system is of index $\nu = 0$. This means that we can prescribe arbitrary initial values. As the initial values still have a physical interpretation, still not every consistent initial value also makes sense! We will assume, that at time $t=0$ the capacitor holds charge, i.e. $u_1(0) = 1$ and that there is no energy stored in the inductance $i_L(0) = 0$.
+\end{example2}
+
+
+\paragraph{Case: Index $\nu = 1$.}
+
+By rewriting our system into the form
+
+\begin{align*}
+	y'(t) = f(t,y(t),z(t)), \\
+	0 = g(t,y(t),z(t)).
+\end{align*}
+
+we are able to give conditions for consistent initial values. Namely $y_0$ and $z_0$ are consistent initial values for this system, if $g(t_0, y_0, z_0) = 0$ holds.
+
+\begin{example1}[Consistent initial vaues]
+	We will later find, that this system is of index $\nu=1$. Due to the fact that $u_1$ and $i_V$ are only algebraically constrained, we have to determine their initial values by solving for them at the point $t=0$. On the other hand $u_2$ and its derivative both appear, thus we can simply prescribe an initial value for $u_2$. Again prescribing an arbitrary initial value might make sense from a mathematical perspective, since we might only be interested in the existence of a solution. But due to the physical interpretation of $u_2$ as being related to the charge that might already be stored in the capacitor, it makes sense to consider the capacitor to have no initial charge, i.e. $u_2(0) = 0$.
+	The third line of the MNA-system \eqref{eq:ex1 MNA} together with setting $v_{src} = sin(\pi t)$ immediately gives us, that
+	\begin{displaymath}
+		u_1(0) = -sin(\pi * 0) = 0.
+	\end{displaymath}
+	From line one follows, that
+	\begin{displaymath}
+		u_1(0) - u_2(0) - i_V(0) = 0,
+	\end{displaymath}
+	thus $i_V(0) = 0$ is a consistent initial value for $i_V$.
+\end{example1}
+
+\paragraph{Case: Index $\nu = 2$.}
+
+For index-2 systems we rewrite our system into
+
+\begin{align*}
+	y' = f(t,y(t),z(t)), \\
+	0 = g(t,y(t)).
+\end{align*}
+
+Consistent initial values $y_0$, $z_0$ for this case not only have to fulfill $g(t_0, y_0) = 0$ but also the \emph{hidden constraint} $g_t(t_0, y_0) + g_y(t_0, y_0)f(t_0, y_0, z_0)$. By $g_t$ and $g_y$ we denote the derivative of $g$ with respect to $t$ or $y$, respectively.
+
+
+\begin{example3}[Consistent initial vaues]
+	Again we will soon investigate the index of this system, it will turn out to be $\nu = 2$. Considering \eqref{eq:ex3 MNA}, we can define
+	\begin{align*}
+		f(t,u_1(t),i_v(t)) &= i_v(t) - u_1(t), \\
+		g(t, u_1(t)) &= u_1(t) + v_{src}(t).
+	\end{align*}
+	Computing the first condition gives together with the choice $v_{src} = sin(\pi t)$
+	\begin{displaymath}
+		u_1(0) = -v_{src}(0) = -sin(\pi *0) = 0.
+	\end{displaymath}
+	While the second condition leads to
+	\begin{displaymath}
+		0 = v_{src}'(0) + 1*(i_V(0)-u_1(0)) = \pi cos(\pi *0) + i_v(0) - 0 = \pi + i_V(0).
+	\end{displaymath}
+	Thus we obtain $i_V(0) = -\pi$.
+\end{example3}

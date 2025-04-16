@@ -17,7 +17,7 @@ This chapter focuses on giving a brief overview of the different types of differ
 
 \section{Types of DAEs}
 
-	Commonly systems of either of the three types below are considered when talking about DAEs.
+	Let us consider the following three types of DAEs.
 	
 	\begin{itemize}
 		\item \textbf{Linear systems with constant coeffiecients} \newline
@@ -42,27 +42,27 @@ This chapter focuses on giving a brief overview of the different types of differ
 		
 		\item  \textbf{Structured (non-linear) systems} \newline
 		are semi-explicit systems of the form: find $(y,z)$ such that
-		\begin{align}
+		\begin{align*}
 			y'(t) &= f(t, y(t), z(t)) , \\
 			0 &= g(t,y(t),z(t)) ,
-		\end{align}
+		\end{align*}
 		with $f:\mathbb{R} \to \mathbb{R}^n$ and $g:\mathbb{R} \to \mathbb{R}^d$ functions.
 	\end{itemize}
 	
-	For our analysis of electrical networks we will focus on linear systems with constant coefficients. The other systems could for example occur when we also consider time-dependant component relations e.g. Temperature. 
-	A splitting of the variable $y$ is usually common, where we differ between the \emph{differential variable} and the \emph{algebraic variable}. A differential variable in this sense is the part of $y$, which derivatives also appear in the differential algebraic equation. The algebraic variable on the other hand only appears in algebraic equations.
+	For our analysis of electrical networks, we will focus on linear systems with constant coefficients \eqref{DAE-const-coeff}. The other systems could for example occur when we additionally consider time-dependent component relations e.g. temperature. 
+	A splitting of the variable $y$ is usually common, where we differ between the \emph{differential variable} and the \emph{algebraic variable}. A differential variable in this sense is the part of $y$, whose derivatives also appear in the differential algebraic equation. The algebraic variable on the other hand only appears in algebraic equations.
 
-\subsection{Weierstraß-Kronecker Normalform}
+\subsection{Weierstraß-Kronecker normal form}
 \label{chap:Weierstraß-Kronecker Normalform}
 %kapitel aus buch seite 399 num gew dgl steif, kapitel 13.2.2
 
-To determine the solvability of a linear system with constant coefficients \eqref{DAE-const-coeff} we first need to introduce a normalform for the system, the \emph{Weierstraß-Kronecker normalform}. This normalform is dependent on the family $\{A,B\} := \{ \mu A+B|\mu \in \mathbb{R} \}$, which is called the  \emph{matrix pencil} of the DAE.
+To determine the solvability of a linear system with constant coefficients \eqref{DAE-const-coeff}, we first need to introduce a normal form for the system, the \emph{Weierstraß-Kronecker normal form}. This normal form is dependent on the family $\{A,B\} := \{ \mu A+B|\mu \in \mathbb{R} \}$, which is called the  \emph{matrix pencil} of the DAE.
 
 \begin{definition}
 	The matrix pencil $\{ A,B\}$ is called \emph{regular} if there exists some $c \in \mathbb{R}$, such that $(cA+B)$ is regular (i.e. $det(cA+B) \neq 0$), otherwise it is called singular.
 \end{definition}
 
-\begin{theorem}[Jordan Normalform \protect{\cite[Theorem~13.2.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
+\begin{theorem}[Jordan normal form \protect{\cite[Theorem~13.2.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
 	For every matrix $Q \in \mathbb{R}^{n \times n}$ there exists a regular matrix $T \in \mathbb{C}^{n \times n}$, such that
 	\begin{displaymath}
 		T^{-1}QT = J = diag(J_1, ..., J_r) \quad \text{with} \quad J_i = 
@@ -79,7 +79,7 @@ To determine the solvability of a linear system with constant coefficients \eqre
 	and $n = m_1 + ... + m_r$.
 \end{theorem}
 
-The matrix $J$ is called Jordan Normalform of $Q$, the matrices $J_i$ are called Jordan Blocks, where $\lambda_i$ are corresponding the eigenvalues of $Q$. The matrix $J$ is uniquely determined by $Q$ except for the arrangement of the diagonal blocks. If $Q$ posesses only real eigenvalues, then $T$ can also be choosen from the reals. \newline
+The matrix $J$ is called Jordan normal form of $Q$, the matrices $J_i$ are called Jordan Blocks, where $\lambda_i$ are the corresponding eigenvalues of $Q$. The matrix $J$ is uniquely determined by $Q$ except for the arrangement of the diagonal blocks. If $Q$ posesses only real eigenvalues, then $T$ can also be choosen from the reals. \newline
 In order to seperate the equation \eqref{DAE-const-coeff} into an algebraic and a differential part, we transform the matrices $A$ and $B$ according to the following theorem.
 %aus buch seite 401
 \begin{theorem}[\protect{\cite[Satz~13.2.2]{NumerikGewöhnlicherDifferentialgleichungen}}]
@@ -115,7 +115,7 @@ In order to seperate the equation \eqref{DAE-const-coeff} into an algebraic and 
 		\right)
 		\in \mathbb{R}^{n_i \times n_i}
 	\end{displaymath}
-	and R has Jordan Normalform. By $I_k$ we denote the identity matrix of size $k \times k$.
+	and R has Jordan normal form. By $I_k$ we denote the identity matrix of size $k \times k$.
 \end{theorem}
 
 \begin{proof}
@@ -131,7 +131,7 @@ In order to seperate the equation \eqref{DAE-const-coeff} into an algebraic and 
 	\begin{displaymath}
 		\hat{B} = I-c \hat{A} .
 	\end{displaymath}
-	Let $J_ {\hat{A}}$ be the Jordan Normalform of $\hat{A}$, this means that there exists a regular matrix $T_1$ such that
+	Let $J_ {\hat{A}}$ be the Jordan normal form of $\hat{A}$, this means that there exists a regular matrix $T_1$ such that
 	\begin{displaymath}
 		T_1^{-1}AT_1 = J_{\hat{A}} =
 		\left(
@@ -141,8 +141,8 @@ In order to seperate the equation \eqref{DAE-const-coeff} into an algebraic and 
 		\end{matrix}
 		\right) .
 	\end{displaymath}
-	The matrix $W$ contains the Jordanblocks with Eigenvalues which are nonzero, the matrix $\tilde{N}$ contains the Jordan blocks with Eigenvalues equal to zero, thus $\tilde{N}$ is \emph{nilpotent}.
-	The Jordan Normalform $J_{\hat{B}}$ of $\hat{B}$ is given by
+	The matrix $W$ contains the Jordan blocks with eigenvalues which are nonzero, the matrix $\tilde{N}$ contains the Jordan blocks with eigenvalues equal to zero, thus $\tilde{N}$ is \emph{nilpotent}.
+	The Jordan normal form $J_{\hat{B}}$ of $\hat{B}$ is given by
 	\begin{displaymath}
 		T_1^{-1} \hat{B} T_1 = J_{\hat{B}} = 
 		\left(
@@ -183,12 +183,12 @@ In order to seperate the equation \eqref{DAE-const-coeff} into an algebraic and 
 		\end{matrix}
 		\right) .
 	\end{displaymath}
-	Let now $R$ be the Jordan Normalform of $(W^{-1}-cI)$ and $N$ be the Normalform of $(I-c\tilde{N})^{-1}\tilde{N}$, this means
+	Let now $R$ be the Jordan normal form of $(W^{-1}-cI)$ and $N$ be the normal form of $(I-c\tilde{N})^{-1}\tilde{N}$, this means
 	\begin{displaymath}
 		T_W^{-1}(W^{-1}-cI)T_W = R \quad \text{and} \quad T_{\tilde{N}}^{-1}(I-c\tilde{N})^{-1}\tilde{N}T_{\tilde{N}} = N
 	\end{displaymath}
 
-	Considering this definition together with the Neumann-series of $(I-c\tilde{N})^{-1}$ we obtain
+	Considering this definition together with the Neumann series of $(I-c\tilde{N})^{-1}$ we obtain
 	\begin{displaymath}
 		\tilde{N} (I-c\tilde{N})^{-1} = \tilde{N} (c \sum_{i=0}^{\infty} \tilde{N}^i) = \tilde{N} (c \sum_{i=0}^{k-1} \tilde{N}^i) = c \sum_{i=0}^{k-1} \tilde{N}^{i+1} = (c \sum_{i=0}^{k-1} \tilde{N}^{i}) \tilde{N}
 	\end{displaymath}
@@ -209,7 +209,7 @@ In order to seperate the equation \eqref{DAE-const-coeff} into an algebraic and 
 		\end{matrix}
 		\right)
 	\end{displaymath}
-	transforms $T_2^{-1}J_{\hat{A}}$ into the Jordan Normalform
+	transforms $T_2^{-1}J_{\hat{A}}$ into the Jordan normal form
 	\begin{displaymath}
 		J_{\tilde{A}} := T_3^{-1}T_2^{-1}J_{\hat{A}}T_3 = T_3^{-1}T_2^{-1}T_1^{-1}\hat{A}T_1T_3 = 
 		\left(
@@ -285,7 +285,7 @@ and $PBQ =
 \end{matrix} 
 \right)$.
 
-We call this system the\emph{ Weierstraß-Kronecker normalform} of the DAE. The first equation of \eqref{transformed-DAE-const-coeff} is a first order ordinary differential equation and posesses a unique solution $u(t)$ in $[t_0,t_l]$ for any initial values $u_0 \in \mathbb{R}^d$. Now let $q(t) \in C^{k-1}([t_0,t_l])$, where $C^{k-1}(I)$ denotes the space of all functions with domain $I$ that are $k-1$ times differentiable. We differentiate the second equation in \eqref{transformed-DAE-const-coeff} and obtain
+We call this system the\emph{ Weierstraß-Kronecker normal form} of the DAE. The first equation of \eqref{transformed-DAE-const-coeff} is a first order ordinary differential equation and posesses a unique solution $u(t)$ in $[t_0,t_l]$ for any initial values $u_0 \in \mathbb{R}^d$. Now let $q(t) \in C^{k-1}([t_0,t_l])$, where $C^{k-1}(I)$ denotes the space of all functions with domain $I$ that are $k-1$ times continuously differentiable. We differentiate the second equation in \eqref{transformed-DAE-const-coeff} and obtain
 \begin{align}
 	\notag
 	v(t) &= q(t) - Nv'(t) = q(t) - N(\underbrace{q(t)-Nv'(t)}_{=v(t)})' = q-Nq'+N^2v'' \\ \notag
@@ -298,9 +298,9 @@ We call this system the\emph{ Weierstraß-Kronecker normalform} of the DAE. The 
 
 where $k$ is the nilpotency index of $N$. Hence we have an explicit  form of the solution of $v(t)$. The Kronecker index $k$ thus tells us how many differentiations are required to obtain an ordinary differential equation. Note that this way of splitting the DAE allows us to differ between algebraic and differential variables.
 
-We can also give a general definition of a DAE in Weierstraß-Kronecker normalform.
+We can also give a general definition of a DAE in Weierstraß-Kronecker normal form.
 \begin{definition}[\protecting{\cite[Definition~13.2.4]{NumerikGewöhnlicherDifferentialgleichungen}}]
-	A linear differential equation \eqref{DAE-const-coeff} is said to be in Weierstraß-Kronecker normalform if
+	A linear differential equation \eqref{DAE-const-coeff} is said to be in Weierstraß-Kronecker normal form if
 	\begin{displaymath}
 		A = 
 		\left(
@@ -321,7 +321,7 @@ We can also give a general definition of a DAE in Weierstraß-Kronecker normalfo
 \end{definition}
 
 \begin{definition}
-	The nilpotency index $k$ of the matrix $N$ from the Weierstraß-Kronecker Normalform of a matrix pencil $\{A,B\}$ with $A$ singular is called the \emph{Kronecker-Index} of $\{A,B\}$, which we denote by $ind\{A,B\}$. Note that for $A$ regular we set $ind\{A,B\} = 0$.
+	The nilpotency index $k$ of the matrix $N$ from the Weierstraß-Kronecker Normalform of a matrix pencil $\{A,B\}$ with $A$ singular is called the \emph{Kronecker index} of $\{A,B\}$, which we denote by $ind\{A,B\}$. Note that for $A$ regular we set $ind\{A,B\} = 0$.
 \end{definition}
 
 %lemma 13.2.1
@@ -354,13 +354,13 @@ We can also give a general definition of a DAE in Weierstraß-Kronecker normalfo
 
 \section{Index of a Differential Algebraic Equation}
 
-The index of a DAE gives us insight about its numerical properties and in general about the solvability where the intuition is ``The higher the index, the harder to solve''.
+The index of a DAE gives us insight about its numerical properties and in general about the solvability of the equation. In particular, as we will also mention later, the index is relevant for choosing initial values that allow us to solve the system uniquely.
 
 We will consider two types of index concepts, the differentiation index and the perturbation index.
 
 Since numerical differentiation is an unstable procedure the differentiation index aims to give a measure for the numerical problems to be expected when solving such systems.
 
-\begin{definition}[differentiation index \protect{\cite[Definition~13.3.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
+\begin{definition}[Differentiation index \protect{\cite[Definition~13.3.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
 	Consider the differential algebraic equation \eqref{Abstract_DAE} to be uniquely locally solvable and $F$ sufficiently smooth. For a given $m \in \mathbb{N}$ consider the equations
 	\begin{displaymath}
 		\begin{aligned}
@@ -387,23 +387,23 @@ In the previous chapter we have already discussed, that for a DAE with constant 
 	for all $\tilde{y}(t)$, is called the \textbf{perturbation index} of this system.
 \end{definition}	
 
-Considering the case of a perturbed linear DAE with constant coefficients and a regular matrix pencil $\{A,B\}$
+We now consider the case of a perturbed linear DAE with constant coefficients and a regular matrix pencil $\{A,B\}$
 \begin{displaymath}
 	A \tilde{y}'(t) + B \tilde{y}(t) = -\delta(t).
 \end{displaymath}
 
-Then for the difference of the unperturbed system with the perturbed system we obtain
+Then we obtain for the difference of the unperturbed system with the perturbed system 
 \begin{displaymath}
 	A(y'(t)-\tilde{y}'(t)) + B(y'(t)-\tilde{y}(t)) = \delta(t)
 \end{displaymath}
 
-Due to \ref{Kronecker-Normalform} we can transform this system into a system of the form \eqref{transformed-DAE-const-coeff} % (\textbf{how?} - bemerkung 13.3.5
+Due to Theorem \ref{Kronecker-Normalform} we can transform this system into a system of the form \eqref{transformed-DAE-const-coeff} % (\textbf{how?} - bemerkung 13.3.5
 \begin{align*}
 	u'(t) - \tilde{u}'(t) + \hat{R} (u(t) - \tilde{u}(t) ) &= \delta_1(t), \\
-	N(v'(t) - \tilde{v}'(t)) &= \delta_2(t).
+	N(v'(t) - \tilde{v}'(t)) &= \delta_2(t),
 \end{align*}
 
-Where $u(t)$ holds the first $d$ entries of $y(t):\mathbb{R} \to \mathbb{R}^n$ and $v(t)$ holds the remaining $n-d$ entries. According to \eqref{solution-to-transformed-DAE-const-coeff-part2}, the solution of the algebraic variable has the form
+where $u(t)$ holds the first $d$ entries of $y(t):\mathbb{R} \to \mathbb{R}^n$ and $v(t)$ holds the remaining $n-d$ entries. According to \eqref{solution-to-transformed-DAE-const-coeff-part2}, the solution of the algebraic variable has the form
 \begin{displaymath}
 	v(t) - \tilde{v}(t) = \sum_{i=0}^{k-1} (-1)^iN^i \delta_2^{(i)}(t) 
 \end{displaymath}
@@ -413,71 +413,3 @@ Thus the perturbation index is the same as the Kronecker-index $ind\{A,B\}$, see
 %might want to elaborate on that
 
 %Another index concept is the so called \emph{tractability index}.  
-
-\section{Consistent Initial Values}
-\label{sec:consistant initial values}
-
-Especially for numerical considerations the calculation of initial values that are consistent with the problem is important. This leads us to differentiate between three cases. Namely we need to differ with respect to the index of the DAE. As we will later see, only indices less or equal to $2$ are important for our situation, this is why we will consider them especially. For this we also refer to \protect{\cite[chapter~13.3.1]{NumerikGewöhnlicherDifferentialgleichungen}}
-
-from imp funkionensatz usw
-
-\paragraph{index $\nu = 0$. } 
-We have already discussed, that this case leads to an ODE, and Picard-Lindelöff theorem \protecting{\cite[Satz~1.2.1]{NumerikGewöhnlicherDifferentialgleichungen}} tells us that every initial condition is consistent for ordinary differential equations.
-
-\begin{example2}[Consistent initial vaues]
-	We will later see that this system is of index $\nu = 0$. This means that we can prescribe arbitrary initial values. As the initial values still have a physical interpretation, still not every consistent initial value also makes sense! We will assume, that at time $t=0$ the capacitor holds charge, i.e. $u_1(0) = 1$ and that there is no energy stored in the inductance $i_L(0) = 0$.
-\end{example2}
-
-
-\paragraph{Case: Index $\nu = 1$.}
-
-By rewriting our system into the form
-
-\begin{align*}
-	y'(t) = f(t,y(t),z(t)), \\
-	0 = g(t,y(t),z(t)).
-\end{align*}
-
-we are able to give conditions for consistent initial values. Namely $y_0$ and $z_0$ are consistent initial values for this system, if $g(t_0, y_0, z_0) = 0$ holds.
-
-\begin{example1}[Consistent initial vaues]
-	We will later find, that this system is of index $\nu=1$. Due to the fact that $u_1$ and $i_V$ are only algebraically constrained, we have to determine their initial values by solving for them at the point $t=0$. On the other hand $u_2$ and its derivative both appear, thus we can simply prescribe an initial value for $u_2$. Again prescribing an arbitrary initial value might make sense from a mathematical perspective, since we might only be interested in the existence of a solution. But due to the physical interpretation of $u_2$ as being related to the charge that might already be stored in the capacitor, it makes sense to consider the capacitor to have no initial charge, i.e. $u_2(0) = 0$.
-	The third line of the MNA-system \eqref{eq:ex1 MNA} together with setting $v_{src} = sin(\pi t)$ immediately gives us, that
-	\begin{displaymath}
-		u_1(0) = -sin(\pi * 0) = 0.
-	\end{displaymath}
-	From line one follows, that
-	\begin{displaymath}
-		u_1(0) - u_2(0) - i_V(0) = 0,
-	\end{displaymath}
-	thus $i_V(0) = 0$ is a consistent initial value for $i_V$.
-\end{example1}
-
-\paragraph{Case: Index $\nu = 2$.}
-
-For index-2 systems we rewrite our system into
-
-\begin{align*}
-	y' = f(t,y(t),z(t)), \\
-	0 = g(t,y(t)).
-\end{align*}
-
-Consistent initial values $y_0$, $z_0$ for this case not only have to fulfill $g(t_0, y_0) = 0$ but also the \emph{hidden constraint} $g_t(t_0, y_0) + g_y(t_0, y_0)f(t_0, y_0, z_0)$. By $g_t$ and $g_y$ we denote the derivative of $g$ with respect to $t$ or $y$, respectively.
-	
-
-\begin{example3}[Consistent initial vaues]
-	Again we will soon investigate the index of this system, it will turn out to be $\nu = 2$. Considering \eqref{eq:ex3 MNA}, we can define
-	\begin{align*}
-		f(t,u_1(t),i_v(t)) &= i_v(t) - u_1(t), \\
-		g(t, u_1(t)) &= u_1(t) + v_{src}(t).
-	\end{align*}
-	Computing the first condition gives together with the choice $v_{src} = sin(\pi t)$
-	\begin{displaymath}
-		u_1(0) = -v_{src}(0) = -sin(\pi *0) = 0.
-	\end{displaymath}
-	While the second condition leads to
-	\begin{displaymath}
-		0 = v_{src}'(0) + 1*(i_V(0)-u_1(0)) = \pi cos(\pi *0) + i_v(0) - 0 = \pi + i_V(0).
-	\end{displaymath}
-	Thus we obtain $i_V(0) = -\pi$.
-\end{example3}
