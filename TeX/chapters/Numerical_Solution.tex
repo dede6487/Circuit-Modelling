@@ -532,7 +532,7 @@ In the following two subchapters we will give a short overview over the two most
 	When dealing with numerical methods for solving differential algebraic equations we have already seen that the trapezoidal rule and the BDF-k methods are relatively straight forward. But this is not always the case, many numerical methods can cause problems if one is not careful in choosing the right method. More detailed results can be found in \cite{HairerErnst1989Tnso}
 	To illustrate this we will have a look at the Gauss method with one stages, also called the implicit midpoint rule, i.e.
 	\begin{displaymath}
-		y_{n+1} = y_n + h f(t_n + \frac{h}{2}, \frac{y_m + y_{m+1}}{2})
+		y_{n+1} = y_n + h f(t_n + \frac{h}{2}, \frac{y_n + y_{n+1}}{2})
 	\end{displaymath}
 
 	Applied to ordinary differential equations, this method yields the maximum possible convergence order. For the special case of differential algebraic equations this does not hold true. Here we may observe lower convergence rates, especially in the algebraic variable. The convergence orders for this method are also different, if the amount of stages is even or odd. Table \ref{tab:convergence order Gauss} displays the according convergence orders.

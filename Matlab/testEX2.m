@@ -33,7 +33,6 @@ for n = 1:3
     %exact solution for y0 = [1 0]', C=L=1
     %y = [u1 iL]
     
-    %                - solves problem? why though?
     y = @(t) [cos(t) sin(t)]';
     y_exact = zeros(length(y0), length(x));
     y_exact(:,1) = y0;
