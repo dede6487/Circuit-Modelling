@@ -2401,6 +2401,7 @@
     <bcf:citekey order="27" intorder="1">NumerikGewöhnlicherDifferentialgleichungen</bcf:citekey>
     <bcf:citekey order="28" intorder="1">ModellingAndDiscretizationOfCircuitProblems</bcf:citekey>
     <bcf:citekey order="29" intorder="1">HairerErnst1989Tnso</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">HairerErnst1989Tnso</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

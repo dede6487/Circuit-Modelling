@@ -527,6 +527,31 @@ In the following two subchapters we will give a short overview over the two most
 	
 	%order p=2 because it is a special case of Lobatto 3 A with s=2, thus all the index cases just lead to p=2
 	
+\subsection{Gauss Method with one stage}
+
+	When dealing with numerical methods for solving differential algebraic equations we have already seen that the trapezoidal rule and the BDF-k methods are relatively straight forward. But this is not always the case, many numerical methods can cause problems if one is not careful in choosing the right method. More detailed results can be found in \cite{HairerErnst1989Tnso}
+	To illustrate this we will have a look at the Gauss method with one stages, also called the implicit midpoint rule, i.e.
+	\begin{displaymath}
+		y_{n+1} = y_n + h f(t_n + \frac{h}{2}, \frac{y_m + y_{m+1}}{2})
+	\end{displaymath}
+
+	Applied to ordinary differential equations, this method yields the maximum possible convergence order. For the special case of differential algebraic equations this does not hold true. Here we may observe lower convergence rates, especially in the algebraic variable. The convergence orders for this method are also different, if the amount of stages is even or odd. Table \ref{tab:convergence order Gauss} displays the according convergence orders.
+	
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{ | c | c c | c c |}
+			\hline
+			\multirow{2}*{number of stages $s$} & \multicolumn{2}{c |}{index $\nu = 1$} & \multicolumn{2}{ c |}{index $\nu = 2$} \\
+			 & differential & algebraic & differential & algebraic \\
+			 \hline
+			 even & \multirow{2}*{$2s$} & $s+1$ & $s+1$ & $s-1$ \\
+			 odd & & $s$ & $s$ & $s-2$ \\
+			 \hline
+		\end{tabular}
+		\caption{Convergence order for Gauss method.}
+		\label{tab:convergence order Gauss}
+	\end{table}
+	
 \section{Numerical Examples}
 	
 	In this section we will apply the Trapezoidal rule as well as the BDF-k schemes discussed in Section \ref{sec:BDFk} and  Section \ref{sec:Trapezoidal} to our three examples. We will also discuss the occurring errors in the solution and compute appropriate consistant inital values for our problems.
