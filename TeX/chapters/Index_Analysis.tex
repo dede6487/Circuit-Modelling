@@ -411,15 +411,15 @@ We will apply those results to the previously considered examples:
 \section{Consistent Initial Values}
 \label{sec:consistant initial values}
 
-Especially for numerical considerations the calculation of initial values that are consistent with the problem is important. This leads us to differentiate between three cases. Namely we need to differ with respect to the index of the DAE. As we will later see, only indices less or equal to $2$ are important for our situation, this is why we will consider them especially. For this we also refer to \protect{\cite[chapter~13.3.1]{NumerikGewöhnlicherDifferentialgleichungen}}
+When solving a problem numerically, we usually want this problem to poses a (unique) solution. If it would not have a solution, then the numerical method might converge to some arbitrary value that has nothing to do with a solution. When dealing with real-world problems there might be more than one choices of initial values, to ensure (unique) solvability. This is the reason why we want to find conditions to construct \emph{consistent} initial values. More details can be found in \protect{\cite[chapter~13.3.1]{NumerikGewöhnlicherDifferentialgleichungen}}
 
-from imp funkionensatz usw
+%from imp funkionensatz usw
 
-\paragraph{index $\nu = 0$. } 
-We have already discussed, that this case leads to an ODE, and Picard-Lindelöff theorem \protecting{\cite[Satz~1.2.1]{NumerikGewöhnlicherDifferentialgleichungen}} tells us that every initial condition is consistent for ordinary differential equations.
+\paragraph{Case Index $\nu = 0$. } 
+As already discussed previously, the case $\nu = 0$ leads to an ODE, and due to the Picard-Lindelöff theorem \protecting{\cite[Satz~1.2.1]{NumerikGewöhnlicherDifferentialgleichungen}} we know that every initial condition is consistent (for ordinary differential equations).
 
 \begin{example2}[Consistent initial vaues]
-	We will later see that this system is of index $\nu = 0$. This means that we can prescribe arbitrary initial values. As the initial values still have a physical interpretation, still not every consistent initial value also makes sense! We will assume, that at time $t=0$ the capacitor holds charge, i.e. $u_1(0) = 1$ and that there is no energy stored in the inductance $i_L(0) = 0$.
+	We have already seen, that this system is of index $\nu = 0$. This means that we can prescribe arbitrary initial values. As the initial values still have a physical interpretation, still not every consistent initial value also makes sense! We will assume that at time $t=0$ the capacitor holds no charge, i.e. $u_1(0) = 1$ and that there is no energy stored in the inductance, i.e. $i_L(0) = 0$.
 \end{example2}
 
 
@@ -435,7 +435,7 @@ By rewriting our system into the form
 we are able to give conditions for consistent initial values. Namely $y_0$ and $z_0$ are consistent initial values for this system, if $g(t_0, y_0, z_0) = 0$ holds.
 
 \begin{example1}[Consistent initial vaues]
-	We will later find, that this system is of index $\nu=1$. Due to the fact that $u_1$ and $i_V$ are only algebraically constrained, we have to determine their initial values by solving for them at the point $t=0$. On the other hand $u_2$ and its derivative both appear, thus we can simply prescribe an initial value for $u_2$. Again prescribing an arbitrary initial value might make sense from a mathematical perspective, since we might only be interested in the existence of a solution. But due to the physical interpretation of $u_2$ as being related to the charge that might already be stored in the capacitor, it makes sense to consider the capacitor to have no initial charge, i.e. $u_2(0) = 0$.
+	We have already seen, that this system is of index $\nu=1$. Due to the fact that $u_1$ and $i_V$ are only algebraically constrained, we have to determine their initial values by solving for them at the point $t=0$. On the other hand $u_2$ and its derivative both appear, thus we can simply prescribe an initial value for $u_2$. Again prescribing an arbitrary initial value might make sense from a mathematical perspective, since we might only be interested in the existence of a solution. But due to the physical interpretation of $u_2$ as being related to the charge that might already be stored in the capacitor, it makes sense to consider the capacitor to have no initial charge, i.e. $u_2(0) = 0$.
 	The third line of the MNA-system \eqref{eq:ex1 MNA} together with setting $v_{src} = sin(\pi t)$ immediately gives us, that
 	\begin{displaymath}
 		u_1(0) = -sin(\pi * 0) = 0.
@@ -459,8 +459,8 @@ For index-2 systems we rewrite our system into
 Consistent initial values $y_0$, $z_0$ for this case not only have to fulfill $g(t_0, y_0) = 0$ but also the \emph{hidden constraint} $g_t(t_0, y_0) + g_y(t_0, y_0)f(t_0, y_0, z_0)$. By $g_t$ and $g_y$ we denote the derivative of $g$ with respect to $t$ or $y$, respectively.
 
 
-\begin{example3}[Consistent initial vaues]
-	Again we will soon investigate the index of this system, it will turn out to be $\nu = 2$. Considering \eqref{eq:ex3 MNA}, we can define
+\begin{example3}[Consistent initial values]
+	Previously we found, that the index of this system, it will turn out to be $\nu = 2$. Considering \eqref{eq:ex3 MNA}, we can define
 	\begin{align*}
 		f(t,u_1(t),i_v(t)) &= i_v(t) - u_1(t), \\
 		g(t, u_1(t)) &= u_1(t) + v_{src}(t).
