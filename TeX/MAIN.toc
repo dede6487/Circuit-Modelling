@@ -26,12 +26,12 @@
 \contentsline {section}{\numberline {5.1}Single Step Methods}{36}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Consistency, Stability and Convergence}{36}{subsection.5.1.1}%
 \contentsline {subsection}{\numberline {5.1.2}Further stability properties}{39}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Multistep-Methods}{39}{section.5.2}%
+\contentsline {section}{\numberline {5.2}Multistep Methods}{39}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}Consistency, Stability and Convergence}{40}{subsection.5.2.1}%
 \contentsline {subsection}{\numberline {5.2.2}Further stability properties}{42}{subsection.5.2.2}%
 \contentsline {section}{\numberline {5.3}Implicit linear multi-step formulas}{44}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}BDF-k methods}{44}{subsection.5.3.1}%
 \contentsline {subsection}{\numberline {5.3.2}Trapezoidal rule}{46}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Gauss Method with one stage}{46}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.3}Gauss Method with one stage}{47}{subsection.5.3.3}%
 \contentsline {section}{\numberline {5.4}Numerical Examples}{47}{section.5.4}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

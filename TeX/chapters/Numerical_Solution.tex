@@ -204,7 +204,7 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 	%	\textbf{Remark:} The trapezoidal rule is a widely used Runge-Kutta method which we can also consider as a multistep-method. It will be discussed later on.
 	
 			
-\section{Multistep-Methods}
+\section{Multistep Methods}
 	based on chapter 4 of book num gew dgl steif nichtsteif \newline
 	Linear multistep methods (LMSM) use approximations $y_{m+l}$ along the gridpoints $t_{m+l}, \quad l=0,1,...,k-1$ to calculate the new approximation $y_{m+k}$ at $t_{m+k}$. We will first discuss topics related to the order of the methods depending on its parameters, stability and convergence.
 	
@@ -220,12 +220,12 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 	
 	A linear multi-step method consists of two parts:
 	\begin{enumerate}
-		\item In the \emph{starting-phase} approximations $y_1,...,y_{k-1}$ for the first $k-1$ gridpoints $t_l = t_0+th, l=1,...,k-1$ have to be calculated. For example we can use aa single-step method or a multi-step method with fewer steps.
+		\item In the \emph{starting-phase} approximations $y_1,...,y_{k-1}$ for the first $k-1$ gridpoints $t_l = t_0+l\ h, l=1,...,k-1$ have to be calculated. For example we can use a single-step method or a multi-step method with fewer steps.
 		
 		\item  In the \emph{run-phase} the multi-step formula is used to determine new approximations $u_{m+k}$ for the gridpoint $t_{m+k}$
 	\end{enumerate}
 	
-	For theoretical analysis of the multi-step methods we consider the generating polynomials of a multi-step method \ref{def:multi step method}.
+	For theoretical analysis of the multi-step methods we consider the generating polynomials of a multistep method.
 	\begin{equation}
 		\label{eq:generating polynomials multistep method}
 		\rho(x) := \sum_{l=0}^{k} \alpha_l x^l
@@ -250,7 +250,7 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 		is called the \emph{local discretization error} (local error) of the linear multi-step method, see Def. \ref{linear-multistep-method} at the point $t_{m+k}$.
 	\end{definition}
 	
-	For $k=1$ this definition agrees with the definition of the local discretization error for single-step methods \ref{Discretization_Error_SingleStep}.
+	For $k=1$ this definition agrees with definition \ref{Discretization_Error_SingleStep}, which is the local discretization error for single-step methods.
 	If we assign the difference operator
 	\begin{equation}
 		L[y(t),h] = \sum_{l=0}^{k} \left( \alpha_l y(t+lh) - h \beta_l y'(t+lh) \right)
@@ -283,7 +283,7 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 	Next we also need convergence of such methods.
 	
 	\begin{definition} \label{def: LMSM convergence}
-		We say that a linear multi-step method is convergent if for a solution $y$ of the problem a solution vector created by an LMSM $y_j$ for $j \in {0,...,k}$ we have that
+		We say that a linear multi-step method is convergent, if for a solution $y$ of the problem and a solution vector created by an LMSM $(y_j)_{j=0}^k$, we have that
 		\begin{displaymath}
 			\lim\limits_{h \to \infty} \max_{0 \leq j \leq k} ||y(t_j) - y_j|| = 0.
 		\end{displaymath}
@@ -476,9 +476,9 @@ In the following two subchapters we will give a short overview over the two most
 %		k = 6 &: h f_{m+6} = \frac{1}{60} (147 u_{m+6} - 360 u_{m+5} + 450 u_{m+4} - 400 u_{m+3} + 225 u_{m+2} - 72 u_{m+1} + 10 u_m)
 	\end{align*}
 	
-	Methods with $k > 6$ are not zero-stable. In practice, methods with order greater than 3 are rarely used because of their stability properties, as the stability-region shrinks with increasing order.
+	Methods with $k > 6$ are not zero-stable \protecting{\cite[page~325]{NumerikGewöhnlicherDifferentialgleichungen}}. In practice, methods with order greater than 3 are rarely used because of their stability properties, as the stability-region shrinks with increasing order.
 	
-	BDF schemes have consistency order $p = k$. They are methods for solving stiff equations, thus their stability is indicated by their region of absolute stability. Unfortunately not all BDF-schemes are A-stable, but their stability region still contains a large part of the complex left half-plane, see Figure \ref{fig:screenshot020} They are the most efficient linear multistep methods of this kind.
+	BDF schemes have consistency order $p = k$. They are methods for solving stiff equations, thus their stability is indicated by their region of absolute stability. Unfortunately not all BDF-schemes are A-stable, but their stability region still contains a large part of the complex left half-plane, see Figure \ref{fig:screenshot020}.
 	
 	\begin{figure}[H]
 		\centering
@@ -490,17 +490,24 @@ In the following two subchapters we will give a short overview over the two most
 	The order of consistency of this family of multi-step methods is given by the following theorem
 	
 	\begin{theorem}[\protecting{\cite[Satz~9.2.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
+		\label{th: BDK-k consistency}
 		The BDF-k methods have consistency order $p=k$.
 	\end{theorem}
 	
-	Due to Theorem \ref{th: null-stbaility and consistence is convergence} and the fact that BDF-k methods are $0$-stable, they are also convergent with order k.
+	\begin{corrolary}
+		The BDF-k methods with $k \leq 6$ are convergent with order$k$
+	\end{corrolary}
+	\begin{proof}
+		Due to Theorem \ref{th: null-stbaility and consistence is convergence} and the fact that BDF-k methods with $k \leq 6$  are $0$-stable as well as Theorem \ref{th: BDK-k consistency}, they are also convergent with order k.
+	\end{proof}
+	
 	
 	%Seite 106 numerik - schrittweite für startwerte bei bdf3 kleiner für kleineren fehler, halbieren, vierteln, achteln whatever
 	
 \subsection{Trapezoidal rule}
 	\label{sec:Trapezoidal}
 	
-	The trapezoidal rule is a natural alternative to BDF2 since it is A-stable and a linear multistep method of order 2. It also has the smallest leading error coefficient. (\cite{ModellingAndDiscretizationOfCircuitProblems})
+	The trapezoidal rule is a natural alternative to BDF2 since it is A-stable and a linear multistep method of order 2. (\cite{ModellingAndDiscretizationOfCircuitProblems})
 	
 	It works by approximating the region under the graph of the function $f(x)$ as a trapezoid, hence the name. It follows that	
 	\begin{displaymath}
@@ -554,7 +561,7 @@ In the following two subchapters we will give a short overview over the two most
 	
 \section{Numerical Examples}
 	
-	In this section we will apply the Trapezoidal rule as well as the BDF-k schemes discussed in Section \ref{sec:BDFk} and  Section \ref{sec:Trapezoidal} to our three examples. We will also discuss the occurring errors in the solution and compute appropriate consistant inital values for our problems.
+	In this section we will apply the trapezoidal rule as well as the BDF-k schemes discussed in Section \ref{sec:BDFk} and  Section \ref{sec:Trapezoidal} to our three examples. We will also discuss the discretization error in the solution and compute appropriate consistant inital values for our problems.
 	
 	
 \begin{example1}[Numerical computation]
