@@ -1,3 +1,5 @@
+clear; close all;
+
 tspan = [0;2*pi];
 h = 0.1/2;
 
@@ -46,12 +48,17 @@ y1_BDF3 = BDFk(A1, B1, f1, y0, tspan, h, 3, y);
 
 y1_Trapezoidal = trapezoidal(A1, B1, f1, y0, tspan, h);
 
+%gauss
+
+y1_gauss = gauss1(A1, B1, f1, y0, tspan, h);
+
 %error calculation
 
 diff_BDF1 = y1_BDF1-y_exact;
 diff_BDF2 = y1_BDF2-y_exact;
 diff_BDF3 = y1_BDF3-y_exact;
 diff_Trapezoidal = y1_Trapezoidal-y_exact;
+diff_gauss = y1_gauss-y_exact;
 
 fprintf('The BDF1 method has a maximum error of in u1: %e \n', max(abs(diff_BDF1(1,:)),[],"all"))
 
@@ -60,6 +67,8 @@ fprintf('The BDF2 method has a maximum error of in u1: %e \n', max(abs(diff_BDF2
 fprintf('The BDF3 method has a maximum error of in u1: %e \n', max(abs(diff_BDF3(1,:)),[],"all"))
 
 fprintf('The Trapezoidal method has a maximum error of in u1: %e \n', max(abs(diff_Trapezoidal(1,:)),[],"all"))
+
+fprintf('The Gauss1 method has a maximum error of in u1: %e \n', max(abs(diff_gauss(1,:)),[],"all"))
 
 %illustration of one of the components at a time, i.e. graph =1,2 for u1,
 %iL
@@ -74,6 +83,7 @@ plot(x, y1_BDF1(graph,:), 'DisplayName', 'BDF1');
 plot(x, y1_BDF2(graph,:), 'DisplayName', 'BDF2');
 plot(x, y1_BDF3(graph,:), 'DisplayName', 'BDF3');
 plot(x, y1_Trapezoidal(graph,:), 'DisplayName', 'Trapezoidal');
+plot(x, y1_gauss(graph,:),'DisplayName', 'Gauss1');
 hold off
 
 legend

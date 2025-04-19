@@ -93,7 +93,6 @@ for n=1:3
     y3_exact(:,1) = y30;
 
     for i=2:length(x)
-        i
         y1_exact(:,i) = y1((i-1)*h);
         y2_exact(:,i) = y2((i-1)*h);
         y3_exact(:,i) = y3((i-1)*h);
@@ -125,6 +124,40 @@ for n=1:3
     err_gauss(n,2:end) = [max_err_y1 max_err_y2 max_err_y3];
 
 end
+
+    %illustration of one of the components at a time, i.e. graph =1,2,3 for u1,
+    %u2, iL
+    
+    graph = 1;
+    figure
+    title('example 1')
+
+    hold on
+    plot(x, y1_gauss(graph,:), 'DisplayName', 'gauss');
+    plot(x, y1_exact(graph,:), 'DisplayName', 'exact');
+    hold off
+
+    legend
+    
+    figure
+    title('example 2')
+
+    hold on
+    plot(x, y2_gauss(graph,:), 'DisplayName', 'gauss');
+    plot(x, y2_exact(graph,:), 'DisplayName', 'exact');
+    hold off
+
+    legend
+    
+    figure
+    title('example 3')
+
+    hold on
+    plot(x, y2_gauss(graph,:), 'DisplayName', 'gauss');
+    plot(x, y2_exact(graph,:), 'DisplayName', 'exact');
+    hold off
+
+    legend
 
 %output error
 out = array2table(err_gauss);

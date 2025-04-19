@@ -779,7 +779,20 @@ In the following two subchapters we will give a short overview over the two most
 		
 \end{example3}
 	
-	
+\subsection{Results for the Gauss method}
+	\begin{table}[H]
+		\resizebox*{\textwidth}{!}{%
+			\csvreader[tabular= | c || c c c | c c | c c |,
+			table head = \hline h & \multicolumn{3}{c|}{example 1} & \multicolumn{2}{c|}{example 2} & \multicolumn{2}{c|}{example 3}\\
+			& u1 & u2 & iV & u1 & iL & u1 & iV\\
+			\hline,
+			late after line=\\\hline]
+			{../Matlab/err_gauss.csv}{h=\h, oneu=\oneu, oneuu=\oneuu, onei=\onei, twou=\twou, twoi=\twoi, twoignore=\twoignore, threeu=\threeu, threei=\threei, threeignore=\threeignore}
+			{\h  & \num{\oneu} & \num{\oneuu} & \num{\onei}  & \num{\twou} & \num{\twoi}  & \num{\threeu} & \num{\threei}}
+		}
+		\caption{Resulting errors for the BDF-k methods and the trapezoidal rule.}
+		\label{tab:error gauss}
+	\end{table}
 	
 %	\begin{center}
 %		\begin{tabular}{ c || c c c | c c c | c c c | } 
