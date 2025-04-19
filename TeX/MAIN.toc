@@ -19,7 +19,7 @@
 \contentsline {paragraph}{\nonumberline DAE-case:}{25}{paragraph*.17}%
 \contentsline {section}{\numberline {4.2}Topological Conditions}{26}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Consistent Initial Values}{32}{section.4.3}%
-\contentsline {paragraph}{\nonumberline index $\nu = 0$.}{32}{paragraph*.22}%
+\contentsline {paragraph}{\nonumberline Case Index $\nu = 0$.}{32}{paragraph*.22}%
 \contentsline {paragraph}{\nonumberline Case: Index $\nu = 1$.}{32}{paragraph*.24}%
 \contentsline {paragraph}{\nonumberline Case: Index $\nu = 2$.}{33}{paragraph*.26}%
 \contentsline {chapter}{\numberline {5}Numerical Solutions}{35}{chapter.5}%

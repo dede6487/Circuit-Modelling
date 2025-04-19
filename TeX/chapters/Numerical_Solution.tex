@@ -113,12 +113,12 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 
 	\subsection{Further stability properties}
 		from numpdgl skript \\
-		In this section we consider as a model problem the Dahlquist equation, i.e. find $y$ such that
+		In this section we consider as a model problem the Dahlquist equation, i.e. find $y:\mathbb{R} \to \mathbb{C}$ such that
 		\begin{align}
 			y' &= \lambda y, \quad t > 0 \\
 			y(0) &= y_0
 		\end{align}
-		with $\lambda \in \mathbb{C}$ and $u_0$ fixed.
+		with $\lambda \in \mathbb{C}$ and $y_0 \in \mathbb{C}$ fixed.
 		
 		\begin{definition}
 			\begin{enumerate}
@@ -138,7 +138,7 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 				A single-step method is called
 				\begin{itemize}
 					\item \emph{0-stable}, if $0 \in S$.
-					\item \emph{A-stable}, if $\mathbb{C}^- \subset S$.
+					\item \emph{A-stable}, if $\mathbb{C}^- \subset S$, where $\mathbb{C}^- = \{x \in \mathbb{C} : Re(x) \leq 0 \}$
 					\item \emph{L-stable}, if $R(z) \to 0$ for $Re(z) \to -\infty$.
 				\end{itemize}
 			\end{enumerate}
@@ -335,12 +335,12 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 	
 	\subsection{Further stability properties}
 	
-	In this section we consider again the Dahlquist test problem as a model problem, i.e. find $y$ such that
+	In this section we consider again the Dahlquist test problem as a model problem, i.e. find $y:\mathbb{R} \to \mathbb{C}$ such that
 	\begin{align}
 		y' &= \lambda y, \quad t > 0 \\
 		y(0) &= y_0
 	\end{align}
-	with $\lambda \in \mathbb{C}$ and $y_0$ fixed.\\
+	with $\lambda \in \mathbb{C}$ and $y_0 \in \mathbb{C}$ fixed.\\
 	
 	%Asessment for stiff equations lt wikipedia (LMSM)
 	
