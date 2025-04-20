@@ -21,7 +21,7 @@ function y = gauss1(A, B, f, y0, tspan, h)
 
     %time-stepping loop for Gauss
     for i = 2:n
-        y(:, i) = (A+(1/2)*B) \ ((A-(1/2)*B)*y(:,i-1) + h*(f(t(i)+h/2)));  %solve the implicit equation
+        y(:, i) = (A+h*(1/2)*B) \ ((A-h*(1/2)*B)*y(:,i-1) + h*(f(t(i)+h/2)));  %solve the implicit equation
     end
 
 end
