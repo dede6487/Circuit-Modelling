@@ -20,12 +20,12 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces current source with resistor and capacitor}}{31}{figure.caption.20}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces approximation of a function}}{36}{figure.caption.27}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces $A(\alpha )$ stability for $\alpha = \frac {\pi }{4}$}}{43}{figure.caption.28}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces stability regions of BDF-schemes}}{45}{figure.caption.29}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces charging capacitor with series resistor and voltage source}}{48}{figure.caption.31}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Exact solution for example 1.}}{48}{figure.caption.31}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces LC-circuit}}{49}{figure.caption.33}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Exact solution for example 2.}}{49}{figure.caption.33}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Current source with capacitor and resistor.}}{50}{figure.caption.35}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Exact solution for example 3.}}{50}{figure.caption.35}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces $A(\alpha )$ stability for $\alpha = \frac {\pi }{4}$}}{40}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces stability regions of BDF-schemes}}{42}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces charging capacitor with series resistor and voltage source}}{45}{figure.caption.31}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Exact solution for example 1.}}{45}{figure.caption.31}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces LC-circuit}}{46}{figure.caption.33}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Exact solution for example 2.}}{46}{figure.caption.33}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Current source with capacitor and resistor.}}{47}{figure.caption.35}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Exact solution for example 3.}}{47}{figure.caption.35}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

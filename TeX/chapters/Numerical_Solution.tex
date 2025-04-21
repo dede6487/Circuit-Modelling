@@ -29,120 +29,120 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 	\label{fig:numerical approximation}
 \end{figure}
 
-\section{Single Step Methods}
-	The first class of numerical methods we will consider are single step methods. These methods use the previous approximated value $y_j$ and (for implicit methods) also the current approximated value $y_{j+1}$ to determine the current value $y_{j+1}$ through a \emph{procedural function}.
-	
-	\begin{definition}
-		\label{def:single step mehod}
-		A numerical method to approximate a differential equation \ref{general numerical problem} on a time-grid $T =\{t_0,...,t_l\}$ with the intermediate values $y_0,...,y_l$ is called a single step method, if it is of the form
-		\begin{equation}
-			\label{single-step method}
-			y_{j+1} = y_j + h_j \phi(t_j,y_j, y_{j+1},h_j).
-		\end{equation}
-		We call $\phi$ the \emph{procedural function}. If $\phi$ does not depend on $y_{j+1}$, then the method is called \emph{explicit}, otherwise it is called \emph{implicit}.
-	\end{definition}
-
-	\subsection{Consistency, Stability and Convergence}
-	
-	In order to compare different single-step methods we have to define the notions of consistency, stability and convergence. This leads to the definition of the error of the method, its consistency and its convergence. We begin with the definition of the error.
-	
-	\begin{definition}\label{Discretization_Error_SingleStep}
-		Let $y_{m+1}$ be the result of one step of a single step method \eqref{single-step method} with the exact start-vector $y_m = y(t_m)$ then
-		\begin{equation}
-			\label{local discretization error single step}
-			 \delta_{m+1} = \delta(t_m+h) = y(t_{m+1}) - \tilde{y}_{m+1}, \quad m = 0,...,N-1
-		\end{equation}
-		is called the \emph{local discretization error} of the single step method at the point $t_{m+1}$.
-	\end{definition}
-
-	The local error quantifies the error of every step of the method with respect to the exact solution. In most applications the exact solution is not known. Next we consider the consistency.
-
-	\begin{definition}\label{Consistency_SingleStep}
-		A single-step method is called \emph{consistent} if for all initial value problems \eqref{general numerical problem} 
-		\begin{equation}
-			\lim\limits_{h \to 0} \frac{\|\delta(t+h)\|}{h} = 0 \quad \text{for} \quad t_0 \leq t \leq t_l
-		\end{equation}
-		holds.\newline
-		It is called \emph{consistent of order p}, if for a sufficiently smooth function $f$
-		\begin{equation}
-			\|\delta(t+h)\| \leq Ch^{p+1} \quad \text{for all} \quad h \in \mathopen{(} 0,H \mathclose{]} \quad \text{and} \quad t_0 \leq t \leq t_l - h
-		\end{equation}
-		holds with $C$ independent of $h$.
-	\end{definition}
-
-	Consistency aims to give insight in how similar the problem \eqref{single-step method} that the numerical method solves is to the real problem \eqref{general numerical problem}. Finally we consider convergence of a single step method \ref{def:single step mehod}.
-
-	\begin{definition}\label{Convergence_SingleStep}
-		A single-step method is called \emph{convergent}, if for all initial value problems \eqref{general numerical problem} for the \emph{global discretization error}
-		\begin{displaymath}
-			e_m = y(t_m)-y_m
-		\end{displaymath}
-		holds that
-		\begin{displaymath}
-			\max\limits_{m}\|e_m\| \to 0 \quad \text{for} \quad h_{max} \to 0.
-		\end{displaymath}
-		The single-step method is called to have the \emph{convergence order} $p$, if
-		\begin{displaymath}
-			\max\limits_{m} \|e_m\| \leq C h_{max}^p \quad \text{for} \quad h_{max} \in \mathopen{(} 0,H \mathclose{]} \quad \text{with} \quad t_0 \leq t_m \leq t_l
-		\end{displaymath}
-		with the constant $C$ not dependent on the step size $h$.
-	\end{definition}
-
-	As the name suggestes convergence tries to quantify how far off a numerical solution is from the real solution of a system. A very interesting result follows if we additionally require the single-step method to be stable.
-	
-	\begin{definition}\label{Discrete_Stability_SingleStep - lecture notes for numpdgl}
-		A single-step method is called \emph{(discretely) stable} if for grid-functions $y_h$ and $\tilde{y}_h$ with
-		\begin{align}
-			y_{i+1} &= y_i + h \phi(t_i, y_i), \\
-			\tilde{y}_{i+1} &=  \tilde{y}_i + h [\phi(t_i, \tilde{y}_i) + \theta_i],
-		\end{align}
-		and perturbations $\theta_i = \theta_h(t_i)$ of the right side as well as a bounded perturbation in the initial-values $y_0 - \tilde{y}_0$ the error is bounded by
-		\begin{displaymath}
-			\|y_h - \tilde{y}_h\|_{\infty,h} \leq C (\|y_0 - \tilde{y}_0\|_{l^2} + \|\theta_h\|_{\infty,h})
-		\end{displaymath}
-		with a constant $C$ which is not dependent on $h$. The norm $\|.\|_{\infty,h}$ denotes the maximum norm over the time-grid, i.e. for a function $b: T={t_0,...,t_N} \to \mathbb{R}^d$ we have $\|b\|_{\infty,h} = \max\limits_{t \in T}\|b(t)\|$, $\|b\|$ is the euclidean norm.
-	\end{definition}
-	
-	For single-step methods which are consistent and stable we obtain the following convergence theorem.
-	
-	\begin{theorem}[Lax-Richtmyer]\label{Lax-Richtmyer}
-		A consistent (with order $p$) and discretely stable single-step method is convergent (with order $p$).
-	\end{theorem}
-	
-	This theorem is due to Lax and Richtmyer. The converse of this statement is also true. 
-
-	\subsection{Further stability properties}
-		from numpdgl skript \\
-		In this section we consider as a model problem the Dahlquist equation, i.e. find $y:\mathbb{R} \to \mathbb{C}$ such that
-		\begin{align}
-			y' &= \lambda y, \quad t > 0 \\
-			y(0) &= y_0
-		\end{align}
-		with $\lambda \in \mathbb{C}$ and $y_0 \in \mathbb{C}$ fixed.
-		
-		\begin{definition}
-			\begin{enumerate}
-				\item 
-				If a single-step method can be written in the form
-				\begin{equation}
-					y_{i+1} = R(z) \ y_i, \quad z:= h \lambda
-				\end{equation}
-				then we call $R: \mathbb{C} \to \mathbb{C}$ the \emph{stability function} of the single-step method.
-				\item 
-				The set
-				\begin{equation}
-					S := \{z \in \mathbb{C} : |R(z)| \leq 1\}
-				\end{equation}
-				is called the \emph{region of stability} of the method.
-				\item 
-				A single-step method is called
-				\begin{itemize}
-					\item \emph{0-stable}, if $0 \in S$.
-					\item \emph{A-stable}, if $\mathbb{C}^- \subset S$, where $\mathbb{C}^- = \{x \in \mathbb{C} : Re(x) \leq 0 \}$
-					\item \emph{L-stable}, if $R(z) \to 0$ for $Re(z) \to -\infty$.
-				\end{itemize}
-			\end{enumerate}
-		\end{definition}
+%\section{Single Step Methods}
+%	The first class of numerical methods we will consider are single step methods. These methods use the previous approximated value $y_j$ and (for implicit methods) also the current approximated value $y_{j+1}$ to determine the current value $y_{j+1}$ through a \emph{procedural function}.
+%	
+%	\begin{definition}
+%		\label{def:single step mehod}
+%		A numerical method to approximate a differential equation \ref{general numerical problem} on a time-grid $T =\{t_0,...,t_l\}$ with the intermediate values $y_0,...,y_l$ is called a single step method, if it is of the form
+%		\begin{equation}
+%			\label{single-step method}
+%			y_{j+1} = y_j + h_j \phi(t_j,y_j, y_{j+1},h_j).
+%		\end{equation}
+%		We call $\phi$ the \emph{procedural function}. If $\phi$ does not depend on $y_{j+1}$, then the method is called \emph{explicit}, otherwise it is called \emph{implicit}.
+%	\end{definition}
+%
+%	\subsection{Consistency, Stability and Convergence}
+%	
+%	In order to compare different single-step methods we have to define the notions of consistency, stability and convergence. This leads to the definition of the error of the method, its consistency and its convergence. We begin with the definition of the error.
+%	
+%	\begin{definition}\label{Discretization_Error_SingleStep}
+%		Let $y_{m+1}$ be the result of one step of a single step method \eqref{single-step method} with the exact start-vector $y_m = y(t_m)$ then
+%		\begin{equation}
+%			\label{local discretization error single step}
+%			 \delta_{m+1} = \delta(t_m+h) = y(t_{m+1}) - \tilde{y}_{m+1}, \quad m = 0,...,N-1
+%		\end{equation}
+%		is called the \emph{local discretization error} of the single step method at the point $t_{m+1}$.
+%	\end{definition}
+%
+%	The local error quantifies the error of every step of the method with respect to the exact solution. In most applications the exact solution is not known. Next we consider the consistency.
+%
+%	\begin{definition}\label{Consistency_SingleStep}
+%		A single-step method is called \emph{consistent} if for all initial value problems \eqref{general numerical problem} 
+%		\begin{equation}
+%			\lim\limits_{h \to 0} \frac{\|\delta(t+h)\|}{h} = 0 \quad \text{for} \quad t_0 \leq t \leq t_l
+%		\end{equation}
+%		holds.\newline
+%		It is called \emph{consistent of order p}, if for a sufficiently smooth function $f$
+%		\begin{equation}
+%			\|\delta(t+h)\| \leq Ch^{p+1} \quad \text{for all} \quad h \in \mathopen{(} 0,H \mathclose{]} \quad \text{and} \quad t_0 \leq t \leq t_l - h
+%		\end{equation}
+%		holds with $C$ independent of $h$.
+%	\end{definition}
+%
+%	Consistency aims to give insight in how similar the problem \eqref{single-step method} that the numerical method solves is to the real problem \eqref{general numerical problem}. Finally we consider convergence of a single step method \ref{def:single step mehod}.
+%
+%	\begin{definition}\label{Convergence_SingleStep}
+%		A single-step method is called \emph{convergent}, if for all initial value problems \eqref{general numerical problem} for the \emph{global discretization error}
+%		\begin{displaymath}
+%			e_m = y(t_m)-y_m
+%		\end{displaymath}
+%		holds that
+%		\begin{displaymath}
+%			\max\limits_{m}\|e_m\| \to 0 \quad \text{for} \quad h_{max} \to 0.
+%		\end{displaymath}
+%		The single-step method is called to have the \emph{convergence order} $p$, if
+%		\begin{displaymath}
+%			\max\limits_{m} \|e_m\| \leq C h_{max}^p \quad \text{for} \quad h_{max} \in \mathopen{(} 0,H \mathclose{]} \quad \text{with} \quad t_0 \leq t_m \leq t_l
+%		\end{displaymath}
+%		with the constant $C$ not dependent on the step size $h$.
+%	\end{definition}
+%
+%	As the name suggestes convergence tries to quantify how far off a numerical solution is from the real solution of a system. A very interesting result follows if we additionally require the single-step method to be stable.
+%	
+%	\begin{definition}\label{Discrete_Stability_SingleStep - lecture notes for numpdgl}
+%		A single-step method is called \emph{(discretely) stable} if for grid-functions $y_h$ and $\tilde{y}_h$ with
+%		\begin{align}
+%			y_{i+1} &= y_i + h \phi(t_i, y_i), \\
+%			\tilde{y}_{i+1} &=  \tilde{y}_i + h [\phi(t_i, \tilde{y}_i) + \theta_i],
+%		\end{align}
+%		and perturbations $\theta_i = \theta_h(t_i)$ of the right side as well as a bounded perturbation in the initial-values $y_0 - \tilde{y}_0$ the error is bounded by
+%		\begin{displaymath}
+%			\|y_h - \tilde{y}_h\|_{\infty,h} \leq C (\|y_0 - \tilde{y}_0\|_{l^2} + \|\theta_h\|_{\infty,h})
+%		\end{displaymath}
+%		with a constant $C$ which is not dependent on $h$. The norm $\|.\|_{\infty,h}$ denotes the maximum norm over the time-grid, i.e. for a function $b: T={t_0,...,t_N} \to \mathbb{R}^d$ we have $\|b\|_{\infty,h} = \max\limits_{t \in T}\|b(t)\|$, $\|b\|$ is the euclidean norm.
+%	\end{definition}
+%	
+%	For single-step methods which are consistent and stable we obtain the following convergence theorem.
+%	
+%	\begin{theorem}[Lax-Richtmyer]\label{Lax-Richtmyer}
+%		A consistent (with order $p$) and discretely stable single-step method is convergent (with order $p$).
+%	\end{theorem}
+%	
+%	This theorem is due to Lax and Richtmyer. The converse of this statement is also true. 
+%
+%	\subsection{Further stability properties}
+%		from numpdgl skript \\
+%		In this section we consider as a model problem the Dahlquist equation, i.e. find $y:\mathbb{R} \to \mathbb{C}$ such that
+%		\begin{align}
+%			y' &= \lambda y, \quad t > 0 \\
+%			y(0) &= y_0
+%		\end{align}
+%		with $\lambda \in \mathbb{C}$ and $y_0 \in \mathbb{C}$ fixed.
+%		
+%		\begin{definition}
+%			\begin{enumerate}
+%				\item 
+%				If a single-step method can be written in the form
+%				\begin{equation}
+%					y_{i+1} = R(z) \ y_i, \quad z:= h \lambda
+%				\end{equation}
+%				then we call $R: \mathbb{C} \to \mathbb{C}$ the \emph{stability function} of the single-step method.
+%				\item 
+%				The set
+%				\begin{equation}
+%					S := \{z \in \mathbb{C} : |R(z)| \leq 1\}
+%				\end{equation}
+%				is called the \emph{region of stability} of the method.
+%				\item 
+%				A single-step method is called
+%				\begin{itemize}
+%					\item \emph{0-stable}, if $0 \in S$.
+%					\item \emph{A-stable}, if $\mathbb{C}^- \subset S$, where $\mathbb{C}^- = \{x \in \mathbb{C} : Re(x) \leq 0 \}$
+%					\item \emph{L-stable}, if $R(z) \to 0$ for $Re(z) \to -\infty$.
+%				\end{itemize}
+%			\end{enumerate}
+%		\end{definition}
 
 	%\subsection{Runge-Kutta Methods}
 	%	A very prevalent family of numerical single-step methods are the \emph{Runge-Kutta} methods. 
@@ -206,7 +206,7 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 			
 \section{Multistep Methods}
 	based on chapter 4 of book num gew dgl steif nichtsteif \newline
-	Linear multistep methods (LMSM) use approximations $y_{m+l}$ along the gridpoints $t_{m+l}, \quad l=0,1,...,k-1$ to calculate the new approximation $y_{m+k}$ at $t_{m+k}$. We will first discuss topics related to the order of the methods depending on its parameters, stability and convergence.
+	In this thesis we will only consider the class of \emph{linear multistep methods} (LMSM). These methods use multiple previously approximated values $y_{m+l}$ at the gridpooints  $t_{m+l}, \quad l=0,1,...,k-1$ to approximate the current value $y_{m+k}$ at $t_{m+k}$. The definition for such a method is given in \ref{def:multi step method}
 	
 	\begin{definition}
 		\label{def:multi step method}
@@ -215,42 +215,34 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 			\label{linear-multistep-method}
 			\sum_{l=0}^{k} \alpha_l y_{m+l} = h \sum_{l=0}^{k} \beta_l f(t_{m+l}, y_{m+l}), \quad m=0,1,...,N-k
 		\end{equation}
-		is called a \emph{linear multistep method} (linear k-step method). It is always assumed that $\alpha_k \neq 0$ and $|\alpha_0| + |\beta_k| > 0$. If $\beta_k=0$ holds, then the method is called explicit, otherwise implicit.
+		is called a \emph{linear multistep method} (linear k-step method). It is always assumed that $\alpha_k \neq 0$ and $|\alpha_0| + |\beta_k| > 0$. If $\beta_k=0$ holds, then the method is called \emph{explicit}, otherwise it is called \emph{implicit}.
 	\end{definition}
 	
-	A linear multi-step method consists of two parts:
+	The calculation of approximations using a multistep method consists of two phases:
 	\begin{enumerate}
 		\item In the \emph{starting-phase} approximations $y_1,...,y_{k-1}$ for the first $k-1$ gridpoints $t_l = t_0+l\ h, l=1,...,k-1$ have to be calculated. For example we can use a single-step method or a multi-step method with fewer steps.
 		
 		\item  In the \emph{run-phase} the multi-step formula is used to determine new approximations $u_{m+k}$ for the gridpoint $t_{m+k}$
 	\end{enumerate}
 	
-	For theoretical analysis of the multi-step methods we consider the generating polynomials of a multistep method.
-	\begin{equation}
-		\label{eq:generating polynomials multistep method}
-		\rho(x) := \sum_{l=0}^{k} \alpha_l x^l
-		\qquad \text{and} \qquad
-		\sigma(x) := \sum_{l=0}^{k} \beta_l x^l
-	\end{equation}
-			
+
 	
 	\subsection{Consistency, Stability and Convergence}
 	\cite{NumerikGewöhnlicherDifferentialgleichungen}
 	
-	Again we need to define the properties consistency, stability and convergence for this class of methods.
+	In order to compare different multistep methods we have to introduce the notions of error, consistency, stability and convergence. We begin with the definition of the error.
 	\begin{definition}
 		Let $y_{m+k}$ be the result of one step of the multi-step method \eqref{linear-multistep-method} with the start-values given as the evaluations of the exact solution $y_{m+l} = y(t_{m+l})$ at $0 \leq l < k$. This means
 		\begin{displaymath}
-			\alpha_k \tilde{u}_{m+k} = \sum_{l=0}^{k-1} \left( h \beta_l f(t_{m+l}, y(t_{m+l})) - \alpha_l y(t_{m+l}) \right) + h \beta_k f(t_{m+k}, y_{m+k}) .
+			\alpha_k y_{m+k} = \sum_{l=0}^{k-1} \left( h \beta_l f(t_{m+l}, y(t_{m+l})) - \alpha_l y(t_{m+l}) \right) + h \beta_k f(t_{m+k}, y_{m+k}) .
 		\end{displaymath}
 		Then
 		\begin{displaymath}
-			\delta_{m+k} = \delta(t_{m+k}) = y(t_{m+k}) - y_{m+k}, \quad m=0,1,...,N-k
+			\delta_{m+k} = y(t_{m+k}) - y_{m+k}, \quad m=0,1,...,N-k
 		\end{displaymath}
-		is called the \emph{local discretization error} (local error) of the linear multi-step method, see Def. \ref{linear-multistep-method} at the point $t_{m+k}$.
+		is called the \emph{local discretization error} (local error) of the linear multi-step method \eqref{linear-multistep-method} at the point $t_{m+k}$.
 	\end{definition}
 	
-	For $k=1$ this definition agrees with definition \ref{Discretization_Error_SingleStep}, which is the local discretization error for single-step methods.
 	If we assign the difference operator
 	\begin{equation}
 		L[y(t),h] = \sum_{l=0}^{k} \left( \alpha_l y(t+lh) - h \beta_l y'(t+lh) \right)
@@ -268,7 +260,7 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 		\begin{displaymath}
 			\lim\limits_{h \to 0} \frac{1}{h} L[y(t),h] = 0
 		\end{displaymath}
-		holds. It has the \emph{consistency order p}, if for all functions $y(t) \in C^{p+1}[t_0, t_l]$
+		holds. It is called \emph{consistency with order p}, if for all functions $y(t) \in C^{p+1}[t_0, t_l]$
 		\begin{displaymath}
 			L[y(t),h] = \mathcal{O}(h^{p+1}) \quad \text{for} \quad h \to 0
 		\end{displaymath}
@@ -283,10 +275,15 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 	Next we also need convergence of such methods.
 	
 	\begin{definition} \label{def: LMSM convergence}
-		We say that a linear multi-step method is convergent, if for a solution $y$ of the problem and a solution vector created by an LMSM $(y_j)_{j=0}^k$, we have that
+		We say that a linear multi-step method is convergent, if for a solution $y$ of the problem and a vector $(y_j)_{j=0}^k$ created by an LMSM , we have that
 		\begin{displaymath}
 			\lim\limits_{h \to \infty} \max_{0 \leq j \leq k} ||y(t_j) - y_j|| = 0.
 		\end{displaymath}
+		If for $p \in \mathbb{N}$ and a constant $C$ not dependent on the step size $h$ we have
+		\begin{displaymath}
+			\max_{0 \leq j \leq k} ||y(t_j) - y_j|| \leq Ch^p,
+		\end{displaymath}
+		then we call the LMSM \emph{convergent with order $p$}.
 	\end{definition}
 	
 	%\begin{figure}
@@ -296,14 +293,14 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 	%	\label{fig:screenshot025}
 	%\end{figure}
 	
-	The discrete stability is also very similar to the single-step methods.
+	The notion of stability output continuously dependent on input. Thus we consider two different inputs for this definition and compare their outputs.
 	\begin{definition} \label{discrete stability LMSM}
-		A linear multi-step method is called (discretely) stable, if for solutions $y_h$ and $\tilde{y}_h$ of
+		A linear multi-step method is called (discretely) stable, if for solution vectors $(y_l)_{l=0}^k$ and $(\tilde{y}_l)_{l=0}^k$ of
 		\begin{align}
 			\sum_{l=0}^{k} \alpha_l y_{m+l} &= h \sum_{l=0}^{k} \beta_l f(t_{m+l}, y_{m+l}), \\
-			\sum_{l=0}^{k} \alpha_l \tilde{y}_{m+l} &= h \sum_{l=0}^{k} \beta_l f(t_{m+l}, \tilde{y}_{m+l}) + h\theta_n
+			\sum_{l=0}^{k} \alpha_l \tilde{y}_{m+l} &= h \sum_{l=0}^{k} \beta_l f(t_{m+l}, \tilde{y}_{m+l}) + h\theta_m,
 		\end{align} 
-		and bounded initial values $y_j - \tilde{y}_j$ for $j \in {0,...,k}$ we have that
+		where and bounded initial values $y_j$, $\tilde{y}_j$ for $j \in {0,...,k}$, we have that
 		\begin{displaymath}
 			\max_{t_0 \leq t_n \leq T} ||y_n - \tilde{y}_n|| \leq C \sum_{j=0}^{k-1} ||y_j - \tilde{y}_j|| + \max_{t_0 \leq t_n \leq T} ||\theta_n||.
 		\end{displaymath}
@@ -351,6 +348,16 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 	\end{align*}
 	
 	%in numerik book auf seite 326
+	
+	We define the two polynomials $\rho(x)$ and $\sigma(x)$ to ...
+	For theoretical analysis of the multi-step methods we consider the generating polynomials of a multistep method.
+	\begin{equation}
+		\label{eq:generating polynomials multistep method}
+		\rho(x) := \sum_{l=0}^{k} \alpha_l x^l
+		\qquad \text{and} \qquad
+		\sigma(x) := \sum_{l=0}^{k} \beta_l x^l
+	\end{equation}
+	
 	
 	Using this we define the following important stability notions.
 	\begin{definition}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.24)  20 APR 2025 09:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.24)  21 APR 2025 12:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2088,7 +2088,7 @@ File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 
 
 ]
-<pictures/Example1_simple.png, id=165, 581.17125pt x 477.28313pt>
+<pictures/Example1_simple.png, id=159, 581.17125pt x 477.28313pt>
 File: pictures/Example1_simple.png Graphic file (type png)
 <use pictures/Example1_simple.png>
 Package pdftex.def Info: pictures/Example1_simple.png  used on input line 29.
@@ -2096,7 +2096,7 @@ Package pdftex.def Info: pictures/Example1_simple.png  used on input line 29.
 
 
 [3 <./pictures/Example1_simple.png>]
-<pictures/Example2_index0.png, id=175, 435.12563pt x 423.08063pt>
+<pictures/Example2_index0.png, id=169, 435.12563pt x 423.08063pt>
 File: pictures/Example2_index0.png Graphic file (type png)
 <use pictures/Example2_index0.png>
 Package pdftex.def Info: pictures/Example2_index0.png  used on input line 117.
@@ -2104,7 +2104,7 @@ Package pdftex.def Info: pictures/Example2_index0.png  used on input line 117.
 
 
 [4]
-<pictures/Example3.png, id=182, 654.94687pt x 395.22656pt>
+<pictures/Example3.png, id=176, 654.94687pt x 395.22656pt>
 File: pictures/Example3.png Graphic file (type png)
 <use pictures/Example3.png>
 Package pdftex.def Info: pictures/Example3.png  used on input line 175.
@@ -2128,7 +2128,7 @@ See the caption package documentation for explanation.
 LaTeX Warning: Reference `fig:resistor symbol' on page 7 undefined on input lin
 e 255.
 
-<pictures/resistor.png, id=199, 201.00093pt x 76.03406pt>
+<pictures/resistor.png, id=193, 201.00093pt x 76.03406pt>
 File: pictures/resistor.png Graphic file (type png)
 <use pictures/resistor.png>
 Package pdftex.def Info: pictures/resistor.png  used on input line 259.
@@ -2144,7 +2144,7 @@ See the caption package documentation for explanation.
 LaTeX Warning: Reference `fig:capacitor symbol' on page 8 undefined on input li
 ne 269.
 
-<pictures/capacitor.png, id=213, 85.06781pt x 87.32625pt>
+<pictures/capacitor.png, id=207, 85.06781pt x 87.32625pt>
 File: pictures/capacitor.png Graphic file (type png)
 <use pictures/capacitor.png>
 Package pdftex.def Info: pictures/capacitor.png  used on input line 273.
@@ -2157,7 +2157,7 @@ See the caption package documentation for explanation.
 LaTeX Warning: Reference `fig:inductor symbol' on page 8 undefined on input lin
 e 283.
 
-<pictures/inductance.png, id=215, 277.78781pt x 101.62968pt>
+<pictures/inductance.png, id=209, 277.78781pt x 101.62968pt>
 File: pictures/inductance.png Graphic file (type png)
 <use pictures/inductance.png>
 Package pdftex.def Info: pictures/inductance.png  used on input line 287.
@@ -2174,7 +2174,7 @@ See the caption package documentation for explanation.
 LaTeX Warning: Reference `fig:voltage source symbol' on page 9 undefined on inp
 ut line 297.
 
-<pictures/voltage_source.png, id=224, 237.13594pt x 126.4725pt>
+<pictures/voltage_source.png, id=218, 237.13594pt x 126.4725pt>
 File: pictures/voltage_source.png Graphic file (type png)
 <use pictures/voltage_source.png>
 Package pdftex.def Info: pictures/voltage_source.png  used on input line 301.
@@ -2187,7 +2187,7 @@ See the caption package documentation for explanation.
 LaTeX Warning: Reference `fig:current source symbol' on page 9 undefined on inp
 ut line 311.
 
-<pictures/current_source.png, id=226, 237.13594pt x 127.97812pt>
+<pictures/current_source.png, id=220, 237.13594pt x 127.97812pt>
 File: pictures/current_source.png Graphic file (type png)
 <use pictures/current_source.png>
 Package pdftex.def Info: pictures/current_source.png  used on input line 315.
@@ -2288,7 +2288,7 @@ Package mdframed Info: mdframed detected package amsthm
 
 
 [27]
-<pictures/Example1_simple_p2.png, id=407, 569.12625pt x 435.87843pt>
+<pictures/Example1_simple_p2.png, id=401, 569.12625pt x 435.87843pt>
 File: pictures/Example1_simple_p2.png Graphic file (type png)
 <use pictures/Example1_simple_p2.png>
 Package pdftex.def Info: pictures/Example1_simple_p2.png  used on input line 21
@@ -2335,7 +2335,7 @@ Package pdftex.def Info: pictures/Example3.png  used on input line 357.
 
  (./chapters/Numerical_Solution.tex
 chapter 5.
-<pictures/num_approx.png, id=466, 391.4625pt x 222.07968pt>
+<pictures/num_approx.png, id=460, 391.4625pt x 222.07968pt>
 File: pictures/num_approx.png Graphic file (type png)
 <use pictures/num_approx.png>
 Package pdftex.def Info: pictures/num_approx.png  used on input line 27.
@@ -2350,41 +2350,39 @@ Package pdftex.def Info: pictures/num_approx.png  used on input line 27.
 ]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 35.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 49.
+(mdframed)              on input line 211.
 
 
 [36 <./pictures/num_approx.png>]
-Package mdframed Info: Not enough space on this page on input line 56.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 60.
+(mdframed)              on input line 234.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 75.
+(mdframed)              on input line 252.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 268.
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 268.
 
 
 [37]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 93.
+(mdframed)              on input line 277.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 108.
+(mdframed)              on input line 297.
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 307.
 
 
 [38]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 123.
+Underfull \hbox (badness 10000) in paragraph at lines 339--341
 
-Overfull \hbox (6.61873pt too wide) in paragraph at lines 208--210
-\T1/ppl/m/n/10.95 (-20) Linear mul-ti-step meth-ods (LMSM) use ap-prox-i-ma-tio
-ns $\OML/zplm/m/it/10.95 y[]$ \T1/ppl/m/n/10.95 (-20) along the grid-points $\O
-ML/zplm/m/it/10.95 t[]\OT1/ppl/m/n/10.95 (-20) ,  \OML/zplm/m/it/10.95 l \OT1/z
-plm/m/n/10.95 =
  []
 
 
@@ -2392,146 +2390,115 @@ plm/m/n/10.95 =
 [39]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 211.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 241.
-Package mdframed Info: You first box width is to small
- mdframed fixed it
-(mdframed)              on input line 251.
-
-
-[40]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 260.
-
-
-[41]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 285.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 300.
-
-Underfull \hbox (badness 10000) in paragraph at lines 342--344
-
- []
-
-
-
-[42]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 356.
-<pictures/A_alpha_stability.png.png, id=547, 276.28218pt x 226.59656pt>
+(mdframed)              on input line 363.
+<pictures/A_alpha_stability.png.png, id=502, 276.28218pt x 226.59656pt>
 File: pictures/A_alpha_stability.png.png Graphic file (type png)
 <use pictures/A_alpha_stability.png.png>
 Package pdftex.def Info: pictures/A_alpha_stability.png.png  used on input line
- 381.
+ 388.
 (pdftex.def)             Requested size: 128.03871pt x 105.01016pt.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 387.
+(mdframed)              on input line 394.
 
 
-[43 <./pictures/A_alpha_stability.png.png>]
+[40 <./pictures/A_alpha_stability.png.png>]
 
-[44]
-<pictures/bdf_stability_regions.png, id=568, 904.88063pt x 255.95625pt>
+[41]
+<pictures/bdf_stability_regions.png, id=523, 904.88063pt x 255.95625pt>
 File: pictures/bdf_stability_regions.png Graphic file (type png)
 <use pictures/bdf_stability_regions.png>
 Package pdftex.def Info: pictures/bdf_stability_regions.png  used on input line
- 485.
+ 492.
 (pdftex.def)             Requested size: 426.7914pt x 120.72124pt.
-
-
-[45 <./pictures/bdf_stability_regions.png (PNG copy)>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 492.
+(mdframed)              on input line 499.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 497.
+(mdframed)              on input line 504.
 
 
-[46]
+[42 <./pictures/bdf_stability_regions.png (PNG copy)>]
+Package mdframed Info: Not enough space on this page on input line 506.
+
+
+[43]
 File: pictures/Example1_simple_p2.png Graphic file (type png)
 <use pictures/Example1_simple_p2.png>
-Package pdftex.def Info: pictures/Example1_simple_p2.png  used on input line 57
-4.
+Package pdftex.def Info: pictures/Example1_simple_p2.png  used on input line 58
+1.
 (pdftex.def)             Requested size: 213.39569pt x 163.43405pt.
-<pictures/exact_solution_ex1.png, id=591, 350.05782pt x 276.28218pt>
+<pictures/exact_solution_ex1.png, id=546, 350.05782pt x 276.28218pt>
 File: pictures/exact_solution_ex1.png Graphic file (type png)
 <use pictures/exact_solution_ex1.png>
 Package pdftex.def Info: pictures/exact_solution_ex1.png  used on input line 58
-0.
+7.
 (pdftex.def)             Requested size: 213.39569pt x 168.42648pt.
 
 
-[47]
+[44]
 
-[48 <./pictures/exact_solution_ex1.png (PNG copy)>]
+[45 <./pictures/exact_solution_ex1.png (PNG copy)>]
 File: pictures/Example2_index0.png Graphic file (type png)
 <use pictures/Example2_index0.png>
-Package pdftex.def Info: pictures/Example2_index0.png  used on input line 650.
+Package pdftex.def Info: pictures/Example2_index0.png  used on input line 657.
 (pdftex.def)             Requested size: 213.39569pt x 207.49208pt.
-<pictures/exact_solution_ex2.png, id=608, 350.05782pt x 276.28218pt>
+<pictures/exact_solution_ex2.png, id=563, 350.05782pt x 276.28218pt>
 File: pictures/exact_solution_ex2.png Graphic file (type png)
 <use pictures/exact_solution_ex2.png>
-Package pdftex.def Info: pictures/exact_solution_ex2.png  used on input line 65
-6.
+Package pdftex.def Info: pictures/exact_solution_ex2.png  used on input line 66
+3.
 (pdftex.def)             Requested size: 213.39569pt x 168.42648pt.
 
 
-LaTeX Warning: Reference `sec:BDfk' on page 49 undefined on input line 691.
+LaTeX Warning: Reference `sec:BDfk' on page 46 undefined on input line 698.
 
 
 
-[49 <./pictures/exact_solution_ex2.png (PNG copy)>]
+[46 <./pictures/exact_solution_ex2.png (PNG copy)>]
 File: pictures/Example3.png Graphic file (type png)
 <use pictures/Example3.png>
-Package pdftex.def Info: pictures/Example3.png  used on input line 719.
+Package pdftex.def Info: pictures/Example3.png  used on input line 726.
 (pdftex.def)             Requested size: 213.39569pt x 128.77275pt.
-<pictures/exact_solution_ex3.png, id=618, 341.77687pt x 276.28218pt>
+<pictures/exact_solution_ex3.png, id=572, 341.77687pt x 276.28218pt>
 File: pictures/exact_solution_ex3.png Graphic file (type png)
 <use pictures/exact_solution_ex3.png>
-Package pdftex.def Info: pictures/exact_solution_ex3.png  used on input line 72
-5.
+Package pdftex.def Info: pictures/exact_solution_ex3.png  used on input line 73
+2.
 (pdftex.def)             Requested size: 213.39569pt x 172.5073pt.
 
 
-[50 <./pictures/exact_solution_ex3.png (PNG copy)>])
+[47 <./pictures/exact_solution_ex3.png (PNG copy)>])
 
-[51]
+[48]
 \openout2 = `chapters/Appendix.aux'.
 
  (./chapters/Appendix.tex (../Matlab/BDFk.m)
 
-[52
+[49
 
 
 
 ] (../Matlab/trapezoidal.m)
 
-[53] (../Matlab/gauss1.m))
+[50] (../Matlab/gauss1.m))
 
-[54])
+[51])
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
 
-[55
+[52
 
 
 
 {d:/Anwendungen/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.en
 c}]
 
-[56] 
+[53] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./MAIN.aux (./cover/coversheet.aux) (./chapters/Introduction.aux)
 (./chapters/Formulating_a_mathematical_model.aux)
@@ -2553,11 +2520,11 @@ Package logreq Info: Writing requests to 'MAIN.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43365 strings out of 473206
- 886706 string characters out of 5714188
- 2349273 words of memory out of 5000000
- 65085 multiletter control sequences out of 15000+600000
- 655191 words of font info for 443 fonts, out of 8000000 for 9000
+ 43313 strings out of 473206
+ 886023 string characters out of 5714188
+ 2349042 words of memory out of 5000000
+ 65074 multiletter control sequences out of 15000+600000
+ 654568 words of font info for 433 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,20n,142p,10899b,4222s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/Anwendungen/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
@@ -2577,9 +2544,9 @@ fb><d:/Anwendungen/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb
 ><d:/Anwendungen/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><d
 :/Anwendungen/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><d:/A
 nwendungen/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on MAIN.pdf (62 pages, 628229 bytes).
+Output written on MAIN.pdf (59 pages, 612303 bytes).
 PDF statistics:
- 1008 PDF objects out of 1200 (max. 8388607)
- 338 named destinations out of 1000 (max. 500000)
- 106298 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 947 PDF objects out of 1000 (max. 8388607)
+ 312 named destinations out of 1000 (max. 500000)
+ 106274 words of extra memory for PDF output out of 106986 (max. 10000000)
 
