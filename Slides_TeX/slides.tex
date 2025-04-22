@@ -159,31 +159,31 @@
 %	\end{frame}
 
 	\subsection{Modified Nodal Analysis - MNA}
-%	\begin{frame}
-%		Rearrange the columns of the reduced incidence matrix $A$ into
-%		\begin{displaymath}
-%			A = (A_R A_C A_L A_V A_I)
-%		\end{displaymath}
-%		$A_R$, $A_C$, $A_L$, $A_V$ and $A_I$ ... columns related to components\\
-%		Represent voltages:
-%		\begin{displaymath}
-%			v = A^\top u
-%		\end{displaymath}
-%		$\to$ rearrange $v$ into $v = (v_R, v_C, v_L, v_{src}, v_I)$ and $i$ into $i = (i_R, i_C, i_L, i_V, i_src)$. 
-%		Rewrite component relations:
-%		\begin{align*}
-%			i_R = G \ v_R &= G \ A_R^\top u, \\
-%			i_C = C \ v'_C &= C \ A_C^\top u'.
-%		\end{align*}
-%		Kirchhoffs current law:
-%		\begin{displaymath}
-%			A_C i_C + A_R i_R + A_L i_L + A_V i_V = -A_I i_{src}.
-%		\end{displaymath}
-%		Combine:
-%		\begin{displaymath}
-%			A_C C A_C^\top u' + A_R G A_R^\top u + A_L i_L + A_V i_V = -A_I i_{src}.
-%		\end{displaymath}
-%	\end{frame}
+	\begin{frame}
+		Rearrange the columns of the reduced incidence matrix $A$ into
+		\begin{displaymath}
+			A = (A_R A_C A_L A_V A_I)
+		\end{displaymath}
+		$A_R$, $A_C$, $A_L$, $A_V$ and $A_I$ ... columns related to components\\
+		Represent voltages:
+		\begin{displaymath}
+			v = A^\top u
+		\end{displaymath}
+		$\to$ rearrange $v$ into $v = (v_R, v_C, v_L, v_{src}, v_I)$ and $i$ into $i = (i_R, i_C, i_L, i_V, i_src)$. 
+		Rewrite component relations:
+		\begin{align*}
+			i_R = G \ v_R &= G \ A_R^\top u, \\
+			i_C = C \ v'_C &= C \ A_C^\top u'.
+		\end{align*}
+		Kirchhoffs current law:
+		\begin{displaymath}
+			A_C i_C + A_R i_R + A_L i_L + A_V i_V = -A_I i_{src}.
+		\end{displaymath}
+		Combine:
+		\begin{displaymath}
+			A_C C A_C^\top u' + A_R G A_R^\top u + A_L i_L + A_V i_V = -A_I i_{src}.
+		\end{displaymath}
+	\end{frame}
 
 	\begin{frame}
 %		Together with component law for inductors \eqref{eq:inductor law} and potential-voltage relation for voltage sources \eqref{eq:voltage source law}:
@@ -250,6 +250,7 @@
 			A y'(t) + B y(t) = f(t) ,
 		\end{equation}
 		with $A,B \in \mathbb{R}^{n \times n}$, $A$ singular, $B$ regular and $f:\mathbb{R} \to \mathbb{R}^n$ a function in time.
+		$\to$ differential and algebraic variables
 		\vfill
 	\end{frame}
 	
@@ -283,6 +284,7 @@
 	\subsection{Weierstrass-Kronecker normalform}
 	
 	\begin{frame}
+		\vfill
 		\begin{definition}
 			The matrix pencil $\{ A,B\}$ is called \emph{regular} if there exists some $c \in \mathbb{R}$, such that $(cA+B)$ is regular (i.e. $det(cA+B) \neq 0$), otherwise it is called singular.
 		\end{definition}
@@ -296,6 +298,7 @@
 			\end{aligned}
 		\end{equation}
 		where $N$ is a nilpotent matrix and the matrix $R$ is regular.
+		\vfill
 %		\begin{theorem}[Jordan Normalform] %\protect{\cite[Theorem~13.2.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
 %			For every matrix $Q \in \mathbb{R}^{n \times n}$ there exists a regular matrix $T \in \mathbb{C}^{n \times n}$, such that
 %			\begin{displaymath}
@@ -465,6 +468,29 @@
 %		content...
 %	\end{frame}
 	\subsection{Topological Conditions}
+	
+	\begin{frame}
+		\begin{itemize}
+			\vfill
+			\item The resulting equations have index $\nu \leq 2$, if the circuit neither contains loops of voltage sources nor cutsets of current sources.
+			\item They have index $\nu \leq 1$, if the circuit contains neither loops of capacitors and/or voltage sources nor cutsets of inductors and/or current sources.
+			\item They have index $\nu = 0$, if every node in the circuit is connected to the reference node (ground) through a path containing only capacitors.
+			\vfill
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+		\vfill
+		\begin{figure}
+			\includegraphics[width=0.475\linewidth]{../TeX/pictures/inductance-current-source_cutset.png}
+			\hfill
+			\includegraphics[width=0.475\linewidth]{../Tex/pictures/capacitance-voltage-source_loop.png}
+			\caption{Illustration of a cutset and a loop.}
+			\label{fig:cutset and loop}
+		\end{figure}
+		\vfill
+	\end{frame}
+	
 	\begin{frame}
 		\begin{theorem}[Index conditions] %\protect{\cite[Theorem~2.2.1]{shashkov_tuprints27452}}]
 			Let the matrices of the capacitances, inductances and resistances be positive definite.
@@ -492,17 +518,7 @@
 			\end{itemize}
 		\end{theorem}
 	\end{frame}
-	\begin{frame}
-		\begin{itemize}
-			\vfill
-			\item Condition \eqref{eq:index condition leq 2} can be interpreted, as the circuit neither containing loops of voltage sources nor cutsets of current sources.
-			\item Condition \eqref{eq:index condition leq 1} can be interpreted, as the circuit containing neither loops of capacitors and/or voltage sources nor cutsets of inductors and/or current sources.
-			\item Condition \eqref{eq:index condition eq 0} can be interpreted, as every node in the circuit being connected to the reference node (ground) through a path containing only the capacitors.
-			\vfill
-			examples/pictures?
-			\vfill
-		\end{itemize}
-	\end{frame}
+	
 
 \section*{Numerical Solutions}
 %	\begin{frame}
@@ -685,11 +701,16 @@
 	
 	\begin{frame}
 		\vfill
-		\begin{definition}[Convergence] \label{def: LMSM convergence}
-			We say that a linear multi-step method is convergent if for a solution $y$ of the problem a solution vector created by an LMSM $y_j$ for $j \in {0,...,k}$ we have that
+		\begin{definition} \label{def: LMSM convergence}
+			We say that a linear multi-step method is convergent, if for a solution $y$ of the problem and a vector $(y_j)_{j=0}^k$ created by an LMSM , we have that
 			\begin{displaymath}
 				\lim\limits_{h \to \infty} \max_{0 \leq j \leq k} ||y(t_j) - y_j|| = 0.
 			\end{displaymath}
+			If for $p \in \mathbb{N}$ and a constant $C$ not dependent on the step size $h$ we have
+			\begin{displaymath}
+				\max_{0 \leq j \leq k} ||y(t_j) - y_j|| \leq Ch^p,
+			\end{displaymath}
+			then we call the LMSM \emph{convergent with order $p$}.
 		\end{definition}
 		\vfill
 	\end{frame}

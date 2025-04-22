@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.24)  22 APR 2025 18:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.24)  22 APR 2025 19:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2361,51 +2361,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 350--352
 [39]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 374.
-<pictures/A_alpha_stability.png.png, id=520, 276.28218pt x 226.59656pt>
+(mdframed)              on input line 372.
+<pictures/A_alpha_stability.png.png, id=519, 276.28218pt x 226.59656pt>
 File: pictures/A_alpha_stability.png.png Graphic file (type png)
 <use pictures/A_alpha_stability.png.png>
 Package pdftex.def Info: pictures/A_alpha_stability.png.png  used on input line
- 399.
+ 397.
 (pdftex.def)             Requested size: 128.03871pt x 105.01016pt.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 405.
+(mdframed)              on input line 403.
+Package mdframed Info: Not enough space on this page on input line 406.
 
 
 [40 <./pictures/A_alpha_stability.png.png>]
+Package mdframed Info: Not enough space on this page on input line 406.
+
 
 [41]
-<pictures/bdf_stability_regions.png, id=544, 904.88063pt x 255.95625pt>
+<pictures/bdf_stability_regions.png, id=543, 904.88063pt x 255.95625pt>
 File: pictures/bdf_stability_regions.png Graphic file (type png)
 <use pictures/bdf_stability_regions.png>
 Package pdftex.def Info: pictures/bdf_stability_regions.png  used on input line
- 488.
+ 486.
 (pdftex.def)             Requested size: 426.7914pt x 120.72124pt.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 495.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 502.
-Package mdframed Info: Not enough space on this page on input line 504.
+(mdframed)              on input line 493.
 
 
 [42 <./pictures/bdf_stability_regions.png (PNG copy)>]
-Package mdframed Info: Not enough space on this page on input line 504.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 500.
 
 
 [43]
 File: pictures/Example1_simple_p2.png Graphic file (type png)
 <use pictures/Example1_simple_p2.png>
 Package pdftex.def Info: pictures/Example1_simple_p2.png  used on input line 57
-9.
+7.
 (pdftex.def)             Requested size: 213.39569pt x 163.43405pt.
 <pictures/exact_solution_ex1.png, id=569, 350.05782pt x 276.28218pt>
 File: pictures/exact_solution_ex1.png Graphic file (type png)
 <use pictures/exact_solution_ex1.png>
 Package pdftex.def Info: pictures/exact_solution_ex1.png  used on input line 58
-5.
+3.
 (pdftex.def)             Requested size: 213.39569pt x 168.42648pt.
 
 
@@ -2414,26 +2415,26 @@ Package pdftex.def Info: pictures/exact_solution_ex1.png  used on input line 58
 [45 <./pictures/exact_solution_ex1.png (PNG copy)>]
 File: pictures/Example2_index0.png Graphic file (type png)
 <use pictures/Example2_index0.png>
-Package pdftex.def Info: pictures/Example2_index0.png  used on input line 668.
+Package pdftex.def Info: pictures/Example2_index0.png  used on input line 666.
 (pdftex.def)             Requested size: 213.39569pt x 207.49208pt.
 <pictures/exact_solution_ex2.png, id=587, 350.05782pt x 276.28218pt>
 File: pictures/exact_solution_ex2.png Graphic file (type png)
 <use pictures/exact_solution_ex2.png>
 Package pdftex.def Info: pictures/exact_solution_ex2.png  used on input line 67
-4.
+2.
 (pdftex.def)             Requested size: 213.39569pt x 168.42648pt.
 
 
 [46 <./pictures/exact_solution_ex2.png (PNG copy)>]
 File: pictures/Example3.png Graphic file (type png)
 <use pictures/Example3.png>
-Package pdftex.def Info: pictures/Example3.png  used on input line 736.
+Package pdftex.def Info: pictures/Example3.png  used on input line 734.
 (pdftex.def)             Requested size: 213.39569pt x 128.77275pt.
 <pictures/exact_solution_ex3.png, id=597, 341.77687pt x 276.28218pt>
 File: pictures/exact_solution_ex3.png Graphic file (type png)
 <use pictures/exact_solution_ex3.png>
 Package pdftex.def Info: pictures/exact_solution_ex3.png  used on input line 74
-2.
+0.
 (pdftex.def)             Requested size: 213.39569pt x 172.5073pt.
 
 
@@ -2486,10 +2487,10 @@ Package logreq Info: Writing requests to 'MAIN.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  43342 strings out of 473206
- 887170 string characters out of 5714188
+ 887176 string characters out of 5714188
  2353044 words of memory out of 5000000
  65094 multiletter control sequences out of 15000+600000
- 655639 words of font info for 435 fonts, out of 8000000 for 9000
+ 655645 words of font info for 435 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,20n,142p,10899b,4222s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/Anwendungen/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
@@ -2507,7 +2508,7 @@ d:/Anwendungen/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb><d:
 /Anwendungen/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><d:/An
 wendungen/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><d:/Anwen
 dungen/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on MAIN.pdf (59 pages, 601178 bytes).
+Output written on MAIN.pdf (59 pages, 601400 bytes).
 PDF statistics:
  955 PDF objects out of 1000 (max. 8388607)
  313 named destinations out of 1000 (max. 500000)

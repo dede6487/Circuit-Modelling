@@ -209,7 +209,7 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 \section{Multistep Methods}
 	\label{sec:multistep methods}
 	
-	In this thesis we will only consider the class of \emph{linear multistep methods} (LMSM). This chapter is in large parts based on \cite{NumerikGewöhnlicherDifferentialgleichungen}. These methods use multiple previously approximated values $y_{m+l}$ at the gridpooints  $t_{m+l}, \quad l=0,1,...,k-1$ to approximate the current value $y_{m+k}$ at $t_{m+k}$. The definition for such a method is given in \ref{def:multi step method}
+	In this thesis we will only consider the class of \emph{linear multistep methods} (LMSM). This chapter is in large parts based on \cite{NumerikGewöhnlicherDifferentialgleichungen}. These methods use multiple previously approximated values $y_{m+l}$ at the gridpooints  $t_{m+l}$, $l=0,1,...,k-1$ to approximate the current value $y_{m+k}$ at $t_{m+k}$. The definition for such a method is given in Definition \ref{def:multi step method}
 	
 	\begin{definition}
 		\label{def:multi step method}
@@ -232,7 +232,7 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 	
 	\subsection{Consistency, Stability and Convergence}
 	
-	In order to compare different multistep methods we have to introduce the notions of error, consistency, stability and convergence. We begin with the definition of the error.
+	In order to compare different multistep methods, we have to introduce the notions of error, consistency, stability and convergence. We begin with the definition of the error.
 	\begin{definition}
 		Let $y_{m+k}$ be the result of one step of the multi-step method \eqref{linear-multistep-method} with the start-values given as the evaluations of the exact solution $y_{m+l} = y(t_{m+l})$ at $0 \leq l < k$. This means
 		\begin{displaymath}
@@ -249,7 +249,7 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 	\begin{equation}
 		L[y(t),h] = \sum_{l=0}^{k} \left( \alpha_l y(t+lh) - h \beta_l y'(t+lh) \right)
 	\end{equation}
-	to the linear mutli-step method, we gain the following definition for consistency of such a methods.
+	to the linear mutli-step method, we gain the following definition for consistency of such a method.
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%pagebreak%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\newpage
@@ -273,12 +273,12 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 		holds.
 	\end{definition}
 
-	From the generating polynomials \eqref{eq:generating polynomials multistep method} we can derive simple consistency conditions, i.e.
-	\begin{displaymath}
-		\rho(1) = 0 \quad \text{and} \quad \rho'(1) = \sigma(1).
-	\end{displaymath}
+%	From the generating polynomials \eqref{eq:generating polynomials multistep method} we can derive simple consistency conditions, i.e.
+%	\begin{displaymath}
+%		\rho(1) = 0 \quad \text{and} \quad \rho'(1) = \sigma(1).
+%	\end{displaymath}
 
-	Next we also need convergence of such methods.
+	Next we introduce the convergence and the convergence order of such methods.
 	
 	\begin{definition} \label{def: LMSM convergence}
 		We say that a linear multi-step method is convergent, if for a solution $y$ of the problem and a vector $(y_j)_{j=0}^k$ created by an LMSM , we have that
@@ -299,7 +299,7 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 	%	\label{fig:screenshot025}
 	%\end{figure}
 	
-	The notion of stability output continuously dependent on input. Thus we consider two different inputs for this definition and compare their outputs.
+	The notion of stability tells us, if the output is continuously dependent on input. Thus we consider two different inputs for this definition and compare their outputs.
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%pagebreak%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\newpage
@@ -360,8 +360,7 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 	
 	%in numerik book auf seite 326
 	
-	We define the two polynomials $\rho(x)$ and $\sigma(x)$ to ...
-	For theoretical analysis of the multi-step methods we consider the generating polynomials of a multistep method.
+	To be able to define further stability notions we first need to introduce the so called \emph{generating polynomials} of a multistep methods. They are defined using the coefficients of the method and thus hold a lot of information about the method. In the following we define these polynomials.
 	\begin{equation}
 		\label{eq:generating polynomials multistep method}
 		\rho(x) := \sum_{l=0}^{k} \alpha_l x^l
@@ -369,8 +368,7 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 		\sigma(x) := \sum_{l=0}^{k} \beta_l x^l
 	\end{equation}
 	
-	
-	Using this we define the following important stability notions.
+	For the simpler class of mehthods called \emph{singlestep methods} there is a notion of A-stability, see \cite{NumerikGewöhnlicherDifferentialgleichungen}. Unfortunately for many multistep methods we do not have A-stability, thus we define the weaker $A(\alpha)$-stability.
 	\begin{definition}
 		\begin{enumerate}
 			\item 
