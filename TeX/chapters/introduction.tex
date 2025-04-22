@@ -1,25 +1,7 @@
 \chapter{Introduction}
 
-	Circuit modelling is
+	Circuit modelling plays an essential part the design process of modern devices. Without the ability to model electrical networks...
 	
-	over the last x years
+	Beginning in the last century and still ongoing research has made many advancements in understanding electrical networks and in developing more sophisticated methods of analyzing and discretizing electrical networks. In the late 20th century, this lead to the introduction of the so called \emph{Modified Nodal Analysis} which overcame the previously wide spread \emph{Nodal Methods} limitations and was in turn widely used. The resulting system of equations of this Modified Nodal Analysis are of the form of so called \emph{Differential Algebraic Equations}. These equations themselves bring other challenges when it comes to discretization. 
 	
-	connecting to this ... MNA 
-	
-	
-	
-	The thesis is organized as follows. In Section \ref{sec:formulating a mathematical model} ... general derivation. first topology ... Resulting system of equations is DAE, then analyzed in Section \ref{sec:Differential Algebraic equations}. Section \ref{sec:index analysis of the modified nodal analysis} then applies results of the previous section to the specific problem. finally Section \ref{sec:Numerical Solutions} describes a way to discretize and applies to specific examples.
-
-
-
-
-	This chapter should include information about what circuit modelling wants to achieve as well as giving an overview of what this bachelor-thesis is about.
-
-What is this thesis about? \newline
-	Modelling and numerically solving systems that arrise from electrical circuits with RLC elements. Furthermore it will briefly discuss on expanding this baseline with more complicated electrical components.
-What is the goal of this thesis?\newline
-	The goal of this thesis is to give insight into the state of the art of circuit modelling. It aims to elaborate on the underlying concepts of MNA as well as on the most commonly used numerical methods.
-	
-	Kapitel zwei gibt Überblick über die Physikalischen Zusammenhänge und deren Mathematische Beschreibung. Anschließend wird ein Mathematisches Modell nach der Methode der ''Modified Nodal Analysis`` erstellt. Im dritten Kapitel analysieren wir die Systeme, welche durch diese Analyse entstehen, wobei das vierte Kapitel eine wichtige Eigenschaft dieser Systeme genauer untersucht. Das letzte Kapitel beschäftigt sich mit der Numerischen Lösung dieser Systeme.  
-	
-	je etwas mehr Text zu den Kapiteln (Struktur der Kapitel)
+	This thesis aims to give an overview of the Modified Nodal Analysis Method and its discretization by focusing on simpler networks only consisting of resistors, capacitors, inductors, voltage sources and current sources (so called RLC-networks). It is organized as follows. In Section \ref{sec:formulating a mathematical model} we start by describing electrical circuits and their components as well as physical laws. We first describe the topology of the electrical circuit mathematically, then we derive the Modified Nodal Analysis formulation. As already mentioned, the structure of the resulting system is a Differential Algebraic Equation. Section \ref{sec:Differential Algebraic equations} analyses this structure further. In Section \ref{sec:index analysis of the modified nodal analysis} we then apply the results of the previous section to the Modified Nodal Analysis. Finally in Section \ref{sec:Numerical Solutions} we find ways to discretize this system by means of \emph{Multistep Methods} and discuss their convergence rates.

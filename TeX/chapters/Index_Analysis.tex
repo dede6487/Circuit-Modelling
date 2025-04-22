@@ -2,12 +2,12 @@
 \label{sec:index analysis of the modified nodal analysis}
 
 %seite 22 kap 7 netw top and dae ind for rlc - modelling and discretization circ prob
-\cite{ModellingAndDiscretizationOfCircuitProblems}
 
 In the previous chapter we have seen two different kinds of index concepts for differential algebraic equations. We have also seen that these two, even though they describe rather different structural aspects of the equation, are identical for the problems discussed in this thesis. %(i.e. linear?)
- This leads to the question, what indices we expect obtain for our MNA system.
+This leads to the question, what indices we expect to obtain for our MNA system.
 
-This chapter answers this question for the case of linear RLC-circuits. As already discussed in Section \ref{Sec:Components relations}, RLC circuits contain only resistors, inductors and capacities as well as current and voltage sources. Linear means that all circuit components are described by linear positive functions. Thus the matrices $C$, $R$, and $L$ are positive definite and symmetric.
+This chapter answers this question for the case of linear RLC-circuits. It builds upon results discussed in \cite{ModellingAndDiscretizationOfCircuitProblems}, \cite{NumerikGewöhnlicherDifferentialgleichungen} and \cite{shashkov_tuprints27452}.
+As already discussed in Section \ref{Sec:Components relations}, RLC circuits contain only resistors, inductors and capacities as well as current and voltage sources. Linear means that all circuit components are described by linear positive functions. Thus the matrices $C$, $R$, and $L$ are positive definite and symmetric.
 
 Recall that we consider the equations resulting from the analysis in Section \ref{sec:MNA}. These equations are of the form \eqref{DAE-const-coeff}: find $y$ such that
 \begin{displaymath}
@@ -48,12 +48,12 @@ In particular we obtain the system of equations
 
 \section{General Index analysis}
 
-Assuming the system only contains linear elements, or is linearized at an operating point in order to investigate the system behaviour, then the corresponding network equation represents a DAE with constant coefficients \eqref{DAE-const-coeff}. We collect all unknowns in $x(t)=(u(t), i_L(t), i_V(t))^\top$. The structure of the system is reliant on the matrix $B$, thus we consider two cases.
+Assuming the system only contains linear elements, or is linearized at an operating point in order to investigate the system behaviour, then the corresponding network equation represents a DAE with constant coefficients \eqref{DAE-const-coeff}. We collect all unknowns in $y(t)=(u(t), i_L(t), i_V(t))^\top$. The structure of the system is reliant on the matrix $B$, thus we consider two cases.
 
 \paragraph{ODE-case:}
 	The matrix $B$ in \eqref{DAE-const-coeff} is regular. This is the case iff the circuit contains no voltage sources and every node has a path to ground, that leads through at least one capacitor. Then the system represents a linear-implicit system of ODEs and can be transformed into the explicit ODE sytstem
 	\begin{displaymath}
-		x'=B^{-1}(-Ax+f(t)).
+		y(t)'=B^{-1}(-Ay(t)+f(t)).
 	\end{displaymath}
 	Thus we obtain an index of $0$.
 		
@@ -160,7 +160,7 @@ This system is also sensitive to perturbations. Note that the solution formula \
 
 %alternative version:
 
-From analyzing the MNA some conditions to the circuit topology can be obtained. We will be considering the impact of special arrangements of components on the index of the system. In \cite{Tischendorf2005Topological} as well as in \cite{shashkov_tuprints27452} and \cite{Reis2014} they present results about the index of MNA equations.
+From analyzing the MNA equations, some conditions to the circuit topology can be obtained. We will be considering the impact of special arrangements of components on the index of the system. General results are presented in \cite{Tischendorf2005Topological} as well as in \cite{shashkov_tuprints27452} and \cite{Reis2014}.
 
 
 %theorem 6.14 aus large scale networks auch ähnlich
@@ -193,13 +193,28 @@ From analyzing the MNA some conditions to the circuit topology can be obtained. 
 
 By $ker(A)$ we denote the nullspace of the matrix $A$ and by $dim(y)$ the size of the vector $y$. As \eqref{eq:index condition leq 2} - \eqref{eq:index condition eq 0} are just conditions concerning the topology of the circuit they can also be interpreted as follows:
 
-check again, maybe need to add "only contains" somwhere - maybe at index 1 condition
-
 \begin{itemize}
-	\item Condition \eqref{eq:index condition leq 2} can be interpreted as the circuit neither containing loops of voltage sources nor cutsets of current sources.
-	\item Condition \eqref{eq:index condition leq 1} can be interpreted as the circuit containing neither loops of capacitors and/or voltage sources nor cutsets of inductors and/or current sources.
-	\item Condition \eqref{eq:index condition eq 0} can be interpreted as every node in the circuit being connected to the reference node (ground) through a path containing only the capacitors.
+	\item Condition \eqref{eq:index condition leq 2} means that the circuit neither contains loops of voltage sources nor cutsets of current sources.
+	\item Condition \eqref{eq:index condition leq 1} means that the circuit contains neither loops of capacitors and/or voltage sources nor cutsets of inductors and/or current sources.
+	\item Condition \eqref{eq:index condition eq 0} means that every node in the circuit is connected to the reference node (ground) through a path containing only capacitors.
 \end{itemize}
+
+Where a cutset of a circuit is a part (subcircuit) of the circuit, that can be separated from the main circuit by only ``cutting'' edges containing no components, the cutset and the original circuit without the cutset both cannot have any open edges. A loop is a subcircuit, which can be constructed by removing edges and nodes from the main circuit until we are left with only one continuous ``loop'' of edges and nodes. Figure \ref{fig:cutset and loop} illustrates the two concepts.
+
+\begin{figure}[H]
+	\begin{subfigure}{0.5\textwidth}
+			\centering
+			\includegraphics[height=4cm]{pictures/inductance-current-source_cutset.png}
+			\caption{inductance-current-source cutset}
+		\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+			\centering
+			\includegraphics[height=4cm]{pictures/capacitance-voltage-source_loop.png}
+			\caption{capacitance-voltage-source loop}
+		\end{subfigure}
+	\caption{Illustration of a cutset and a loop.}
+	\label{fig:cutset and loop}
+\end{figure}
 
 We will apply those results to the previously considered examples: 
 

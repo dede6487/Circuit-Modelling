@@ -5,7 +5,7 @@ hspan = [0.1,0.05,0.05/2];
 
 %initialize error output
 
-err_ex1 = zeros(3,13);
+err_ex1 = zeros(3,25); %three step sizes, 4 methods, 3 variables, eoc for each variable and each method
 
 err_ex1(:,1) = hspan;
 
@@ -95,7 +95,11 @@ for n=1:3
     fprintf('in iV: %.15e \n', max(abs(diff_Trapezoidal(3,:)),[],"all"))
     
     %save error in matrix
-    err_ex1(n,2:end) = [max_err_BDF1 max_err_BDF2 max_err_BDF3 max_err_Trapezoidal];
+    err_ex1(n,2:2:end) = [max_err_BDF1 max_err_BDF2 max_err_BDF3 max_err_Trapezoidal];
+
+    if n > 1
+        err_ex1(n,3:2:end) = log(err_ex1(n-1,2:2:end)./err_ex1(n,2:2:end))/log(1/2);
+    end
 
     %illustration of one of the components at a time, i.e. graph =1,2,3 for u1,
     %u2, iV
@@ -116,9 +120,11 @@ for n=1:3
 
 end
 
+
+
 %output error
 out = array2table(err_ex1);
-out.Properties.VariableNames(1:13) = {'h','oneu','oneuu','onei','twou','twouu','twoi','threeu','threeuu','threei','trapu','trapuu','trapil'};
+out.Properties.VariableNames(1:25) = {'h','oneu', 'oneueoc','oneuu','oneuueoc','onei','oneieoc','twou','twoueoc','twouu','twouueoc','twoi','twoieoc','threeu','threeueoc','threeuu','threeuueoc','threei','threeieoc','trapu','trapueoc','trapuu','trapuueoc','trapil','trapileoc'};
 writetable(out,'err_ex1.csv');
 
 %exact solution graph

@@ -1,7 +1,7 @@
 \chapter{Numerical Solutions}
 \label{sec:Numerical Solutions}
 
-As we are interested in finding real valued solutions of our systems we also have to look into solving them numerically. This chapter focuses on the numerical solution of the mentioned systems.
+This chapter focuses on the numerical solution of the mentioned systems. It is based on results presented in \cite{NumerikGewöhnlicherDifferentialgleichungen} and \cite{HairerErnst1989Tnso}.
 
 We will first focus on methods used to solve a more general initial value problem of the form:
 
@@ -14,14 +14,14 @@ Find y, such that
 	\label{general numerical problem}
 \end{equation}
 
-For this we presume that the function $f(t,y)$ is continuous and Lipschitz, we can apply the theorem of \emph{Picard-Lindelöf} \protecting{\cite[Satz~1.2.1]{NumerikGewöhnlicherDifferentialgleichungen}}, which states, that for every initial value $y_0$, the initial value problem \eqref{general numerical problem} is uniquely solvable in $[t_0, t_l]$.
+For this we presume that the function $f(t,y)$ is continuous and Lipschitz-continuous, we can apply the theorem of \emph{Picard-Lindelöf} \protecting{\cite[Satz~1.2.1]{NumerikGewöhnlicherDifferentialgleichungen}}, which states, that for every initial value $y_0$, the initial value problem \eqref{general numerical problem} is uniquely solvable in $[t_0, t_l]$.
 
-In order to obtain an approximation to this unique solution we have to discretize. We first divide the time-intervall $[t_0, t_l]$ into
+In order to obtain an approximation to this unique solution we have to discretize. We first divide the time-intervall $[t_0, t_l]$ into smaller intervals
 \begin{displaymath}
-	t_0 < t_1 < ... < t_N \leq t_l
+	I_{i+1} = [t_i, t_{i+1}] \quad \text{with} \quad i=0,...,N \text{ and } t_0 < t_1 < ... < t_N \leq t_l
 \end{displaymath}
 
-and consider approximations $y_m \approx y(t_m)$ for $m=1,...,N$, see \ref{fig:numerical approximation}. We call this a \emph{time-grid} and we call the difference $h_{ij} = t_j - t_i$ with $0 \leq i < j \leq N$ the \emph{step size} from $t_i$ to $t_j$. We will only consider equidistant grids, i.e. $h_{ij} = h$ for all $0 \leq i,j \leq N$. A function defined on such a grid is called a \emph{grid function}.
+and consider approximations $y_m \approx y(t_m)$ on each interval $I_m$ with $m=1,...,N$, see Figure \ref{fig:numerical approximation} for an illustration. We call this a \emph{time-grid} and we call the difference $h_{ij} = t_j - t_i$ with $0 \leq i < j \leq N$ the \emph{step size} from $t_i$ to $t_j$. We will only consider equidistant grids, i.e. $h_{ij} = h$ for all $0 \leq i,j \leq N$. A function defined on such a grid is called a \emph{grid function}.
 
 The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and the approximated values $A = \{y_0, ..., y_N\}$ is called the \emph{numerical approximation} (of $y$ on the time grid).
 \begin{figure}[H]
@@ -208,8 +208,8 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 			
 \section{Multistep Methods}
 	\label{sec:multistep methods}
-	based on chapter 4 of book num gew dgl steif nichtsteif \newline
-	In this thesis we will only consider the class of \emph{linear multistep methods} (LMSM). These methods use multiple previously approximated values $y_{m+l}$ at the gridpooints  $t_{m+l}, \quad l=0,1,...,k-1$ to approximate the current value $y_{m+k}$ at $t_{m+k}$. The definition for such a method is given in \ref{def:multi step method}
+	
+	In this thesis we will only consider the class of \emph{linear multistep methods} (LMSM). This chapter is in large parts based on \cite{NumerikGewöhnlicherDifferentialgleichungen}. These methods use multiple previously approximated values $y_{m+l}$ at the gridpooints  $t_{m+l}, \quad l=0,1,...,k-1$ to approximate the current value $y_{m+k}$ at $t_{m+k}$. The definition for such a method is given in \ref{def:multi step method}
 	
 	\begin{definition}
 		\label{def:multi step method}
@@ -231,7 +231,6 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 
 	
 	\subsection{Consistency, Stability and Convergence}
-	\cite{NumerikGewöhnlicherDifferentialgleichungen}
 	
 	In order to compare different multistep methods we have to introduce the notions of error, consistency, stability and convergence. We begin with the definition of the error.
 	\begin{definition}
@@ -554,7 +553,7 @@ In Section \ref{sec:multistep methods} we did already talk about the starting- a
 \section{Numerical Examples}
 	
 	\label{sec: numerical examples}
-	In this section we will apply the trapezoidal rule, the BDF-k method and the implicit midpoint rule, discussed in Section \ref{sec:BDFk}, Section \ref{sec:Trapezoidal} and Section \ref{sec:Gauss1} to our three examples. We will also discuss the discretization error in the solution and compute appropriate consistant inital values for our problems.
+	In this section we will apply the trapezoidal rule, the BDF-k method and the implicit midpoint rule, discussed in Section \ref{sec:BDFk}, Section \ref{sec:Trapezoidal} and Section \ref{sec:Gauss1} to our three examples. We will also discuss the discretization error in the solution and compute appropriate consistant inital values for our problems. The code used is provided in Section \ref{sec:Code listings}.
 	
 
 \subsection{BDF-k Method and Trapezoidal Rule}	
@@ -617,28 +616,42 @@ In Section \ref{sec:multistep methods} we did already talk about the starting- a
 		
 	We expect the resulting potentials and currents to be of the form seen in Figure \ref{fig: Exact solution for example 1}.
 
-	The resulting errors for our numerical tests are displayed in table \ref{tab:num results ex1}, we omit $u_1$ since it just equals $-v_{src}$ and thus produces no interesting error results. The reported errors are computed using $err = \max\limits_{0 \leq n \leq N} | a_n)t_n - \tilde{y}(t_n) |$ where $y_n(t_n)$ denotes the numerical approximation and $\tilde{y}(t_n)$ denoted the exact solution at the time-step $t_n$. 
+	The resulting errors for our numerical tests are displayed in table \ref{tab:num results ex1}, we omit $u_1$ since it just equals $-v_{src}$ and thus produces no interesting error results. The reported errors are computed using $err(y) = \max\limits_{0 \leq n \leq N} | y(t_n) - y_n |$ where $y_n$ denotes the numerical approximation and $y(t_n)$ denoted the exact solution at the time-step $t_n$. 
 	
 	\begin{table}[H]
 		\resizebox*{\textwidth}{!}{%
 			\csvreader[tabular= | c || c c | c c | c c | c c |,
 			table head = \hline h & \multicolumn{2}{c|}{k = 1} & \multicolumn{2}{c|}{k = 2} & \multicolumn{2}{c|}{k = 3} & \multicolumn{2}{c|}{trapezoidal}\\
-			& u2 & iV & u2 & iV & u2 & iV & u2 & iV \\
+			& $err(u_2)$ & $err(i_V)$ & $err(u_2)$ & $err(i_V)$ & $err(u_2)$ & $err(i_V)$ & $err(u_2)$ & $err(i_V)$  \\
 			\hline,
 			late after line=\\\hline]
-			{../Matlab/err_ex1.csv}{h=\h, oneu=\oneu, oneuu=\oneuu, onei=\onei, twou=\twou, twouu=\twouu, twoi=\twoi, threeu=\threeu, threeuu=\threeuu, threei=\threei, trapu=\trapu, trapuu=\trapuu, trapil=\trapil}
-			{\h  & \num{\oneuu} & \num{\onei}  & \num{\twouu} & \num{\twoi}  & \num{\threeuu} & \num{\threei}  & \num{\trapuu} & \num{\trapil}}
+			{../Matlab/err_ex1.csv}{h=\h, oneu=\oneu, oneueoc=\oneueoc, oneuu=\oneuu, oneuueoc=\oneuueoc, onei=\onei, oneieoc=\oneieoc, twou=\twou, twoueoc=\twoueoc, twouu=\twouu, twouueoc=\twouueoc, twoi=\twoi, twoieoc=\twoieoc, threeu=\threeu, threeueoc=\threeueoc, threeuu=\threeuu, threeuueoc=\threeuueoc, threei=\threei, threeieoc=\threeieoc, trapu=\trapu, trapueoc=\trapueoc, trapuu=\trapuu, trapuueoc=\trapuueoc, trapil=\trapil, trapileoc=\trapileoc}
+			{\h  & \num{\oneuu} & \num{\onei} & \num{\twouu} & \num{\twoi} & \num{\threeuu} & \num{\threei} & \num{\trapuu} & \num{\trapil}}
 		}
 		\caption{Resulting errors for the BDF-k methods and the trapezoidal rule.}
 		\label{tab:num results ex1}
 	\end{table}
 	
-	The table \ref{tab:num results ex1} confirms our results from Section \ref{sec:BDFk} and \ref{sec:Trapezoidal}, that the BDF-k schemes have convergence order of $p=k$ and the trapezoidal rule has convergence order $p=2$.
+%	\begin{table}[H]
+%		\resizebox*{\textwidth}{!}{%
+%			\csvreader[tabular= | c || c c c c | c c c c | c c c c | c c c c |,
+%			table head = \hline h & \multicolumn{2}{c|}{k = 1} & \multicolumn{2}{c|}{k = 2} & \multicolumn{2}{c|}{k = 3} & \multicolumn{2}{c|}{trapezoidal}\\
+%			& $err(u_2)$ & eoc & $err(i_V)$ & eoc & $err(u_2)$ & eoc & $err(i_V)$ & eoc & $err(u_2)$ & eoc & $err(i_V)$ & eoc & $err(u_2)$ & eoc & $err(i_V)$ & eoc \\
+%			\hline,
+%			late after line=\\\hline]
+%			{../Matlab/err_ex1.csv}{h=\h, oneu=\oneu, oneueoc=\oneueoc, oneuu=\oneuu, oneuueoc=\oneuueoc, onei=\onei, oneieoc=\oneieoc, twou=\twou, twoueoc=\twoueoc, twouu=\twouu, twouueoc=\twouueoc, twoi=\twoi, twoieoc=\twoieoc, threeu=\threeu, threeueoc=\threeueoc, threeuu=\threeuu, threeuueoc=\threeuueoc, threei=\threei, threeieoc=\threeieoc, trapu=\trapu, trapueoc=\trapueoc, trapuu=\trapuu, trapuueoc=\trapuueoc, trapil=\trapil, trapileoc=\trapileoc}
+%			{\h  & \num{\oneuu} & \num{\oneuueoc} & \num{\onei} & \num{\oneieoc} & \num{\twouu} & \num{\twouueoc} & \num{\twoi} & \num{\twoieoc} & \num{\threeuu} & \num{\threeuueoc} & \num{\threei} & \num{\threeieoc} & \num{\trapuu} & \num{\trapuueoc} & \num{\trapil} & \num{\trapileoc}}
+%		}
+%		\caption{Resulting errors for the BDF-k methods and the trapezoidal rule.}
+%		\label{tab:num results ex1}
+%	\end{table}
+	
+	The errors presented in Table \ref{tab:num results ex1} confirm our results from Section \ref{sec:BDFk} and \ref{sec:Trapezoidal}, i.e. the BDF-k schemes have convergence order $p=k$ and the trapezoidal rule has convergence order $p=2$.
 \end{example1}
 		
 	
 \begin{example2}[Numerical computation]
-	For this example we again want to consider the LC-circuit given in Figure \ref{fig: LC-circuit}.
+	For this example we again consider the LC-circuit given in Figure \ref{fig: LC-circuit}.
 	
 	\begin{figure}[H]
 		\centering
@@ -685,13 +698,13 @@ In Section \ref{sec:multistep methods} we did already talk about the starting- a
 		\end{pmatrix}.
 	\end{displaymath}
 	
-	When applying the BDF-k methods \ref{sec:BDfk} and the Trapezoidal rule \ref{sec:Trapezoidal} to this problem, we can observe the maximal error $err = \max\limits_{0 \leq t \leq T} \| y(t) - \tilde{y}(t) \|$. This error is displayed in table \ref{tab:error ex2}.
+	When applying the BDF-k methods in Section \ref{sec:BDFk} and the trapezoidal rule in Section \ref{sec:Trapezoidal} to this problem, we can observe the maximal error $err(y) = \max\limits_{0 \leq n \leq N} | y(t_n) - y_n |$. The error is displayed in Table \ref{tab:error ex2}, where we again observe, that the errors reflect the predicted convergence rates.
 		
 	\begin{table}[H]
 		\resizebox*{\textwidth}{!}{%
 			\csvreader[tabular= | c || c c | c c | c c | c c | ,
 			table head = \hline h & \multicolumn{2}{c|}{k = 1} & \multicolumn{2}{c|}{k = 2} & \multicolumn{2}{c|}{k = 3} & \multicolumn{2}{c|}{trapezoidal} \\
-			& u1 & iL & u1 & iL & u1 & iL & u1 & iL \\
+			& $err(u_1)$ & $err(i_l)$ & $err(u_1)$ & $err(i_l)$ & $err(u_1)$ & $err(i_l)$ & $err(u_1)$ & $err(i_l)$ \\
 			\hline,
 			late after line=\\\hline]
 			{../Matlab/err_ex2.csv}{h=\h, oneu=\oneu, onei=\onei, twou=\twou, twoi=\twoi, threeu=\threeu, threei=\threei, trapu=\trapu, trapil=\trapil}
@@ -701,7 +714,6 @@ In Section \ref{sec:multistep methods} we did already talk about the starting- a
 		\label{tab:error ex2}
 	\end{table}
 
-	once again we may see, that the errors reflect the predicted convergence rates.
 \end{example2}
 	
 
@@ -755,7 +767,7 @@ In Section \ref{sec:multistep methods} we did already talk about the starting- a
 		
 	With this we expect the potential and current to be given as illustrated in Figure \ref{fig: Exact solution for example 3}.
 
-	The numerical methods result in errors displayed in Table \ref{tab:error ex3}. Due to the fact, that $u_1$ is again the same as $-v_{src}$, it is not of interest for our comparison of the errors. We omit $u_1$.
+	The numerical methods result in errors displayed in Table \ref{tab:error ex3}. Due to the fact, that $u_1$ is again the same as $-v_{src}$, it is not of interest for our comparison of the errors, hence we omit $u_1$.
 	
 	\begin{table}[H]
 		%\resizebox*{\textwidth}{!}{%
@@ -772,7 +784,7 @@ In Section \ref{sec:multistep methods} we did already talk about the starting- a
 		\label{tab:error ex3}
 	\end{table}
 	
-	The errors lie again within expected convergence orders.
+	The errors rates are again within the expected range.
 		
 \end{example3}
 	
