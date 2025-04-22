@@ -251,6 +251,10 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 	\end{equation}
 	to the linear mutli-step method, we gain the following definition for consistency of such a methods.
 	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%pagebreak%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\newpage
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
 	\begin{definition}
 		A linear multi-step method is called %\emph{preconsistent} if for all functions $y(t) \in C^1[t_0,t_l]$
 %		\begin{displaymath}
@@ -296,6 +300,11 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 	%\end{figure}
 	
 	The notion of stability output continuously dependent on input. Thus we consider two different inputs for this definition and compare their outputs.
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%pagebreak%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\newpage
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
 	\begin{definition} \label{discrete stability LMSM}
 		A linear multi-step method is called (discretely) stable, if for solution vectors $(y_l)_{l=0}^k$ and $(\tilde{y}_l)_{l=0}^k$ of
 		\begin{align}
@@ -580,7 +589,6 @@ In Section \ref{sec:multistep methods} we did already talk about the starting- a
 	\end{figure}
 	
 	For testing we set the resistance to $R=1$ and the capacitance to $C=1$. In our case we let the  voltage source supply a voltage of the form $v_{src} = sin(\pi t)$. The resulting MNA-system for this example reads
-	
 	\begin{equation}
 		\label{eq:MNA-system of chargin capacitor with explicit values}
 		\begin{pmatrix}
@@ -774,7 +782,7 @@ In Section \ref{sec:multistep methods} we did already talk about the starting- a
 			\centering
 			\csvreader[tabular= | c || c | c | c | c | ,
 			table head = \hline h & {k = 1} & {k = 2} & {k = 3} & trapezoidal \\ %\multicolumn{1}{c|}{}
-			& iV & iV & iV & iV \\
+			& $err(i_V)$ & $err(i_V)$ & $err(i_V)$ & $err(i_V)$ \\
 			\hline,
 			late after line=\\\hline]
 			{../Matlab/err_ex3.csv}{h=\h, oneu=\oneu, onei=\onei, twou=\twou, twoi=\twoi, threeu=\threeu, threei=\threei, trapu=\trapu, trapil=\trapil}
@@ -796,7 +804,7 @@ In Section \ref{sec:multistep methods} we did already talk about the starting- a
 		\resizebox*{\textwidth}{!}{%
 			\csvreader[tabular= | c || c c c | c c | c c |,
 			table head = \hline h & \multicolumn{3}{c|}{example 1} & \multicolumn{2}{c|}{example 2} & \multicolumn{2}{c|}{example 3}\\
-			& $u_1$ (alg) & $u_2$ (diff) & $i_0$ (alg) & $u_1$ (diff) & $i_L$ (diff) & $u_1$ (diff) & $i_V$ (alg)\\
+			& $err(u_1)$ (alg) & $err(u_2)$ (diff) & $err(i_0)$ (alg) & $err(u_1)$ (diff) & $err(i_L)$ (diff) & $err(u_1)$ (diff) & $err(i_V)$ (alg)\\
 			\hline,
 			late after line=\\\hline]
 			{../Matlab/err_gauss.csv}{h=\h, oneu=\oneu, oneuu=\oneuu, onei=\onei, twou=\twou, twoi=\twoi, twoignore=\twoignore, threeu=\threeu, threei=\threei, threeignore=\threeignore}

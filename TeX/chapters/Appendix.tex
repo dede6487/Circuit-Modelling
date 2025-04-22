@@ -2,8 +2,14 @@
 
 \section*{Code Listings}
 	\label{sec:Code listings}
+	This chapter holds the code used in Section \ref{sec: numerical examples}. The first listing uses the BDF-k method for $k=1,2,3$ to solve the given system. If not supplied with starting values, it calculates the starting values for higher stage methods using the BDF methods with less stages.
+	
 	\lstinputlisting[style=Matlab-editor, basicstyle=\tiny, frame=single]{../Matlab/BDFk.m}
 	\newpage
+	
+	The second listing implements the trapezoidal rule.
 	\lstinputlisting[style=Matlab-editor, basicstyle=\tiny, frame=single]{../Matlab/trapezoidal.m}
 	\newpage
+	
+	In the third listing the Gauss method with one stage is implemented.
 	\lstinputlisting[style=Matlab-editor, basicstyle=\tiny, frame=single]{../Matlab/gauss1.m}

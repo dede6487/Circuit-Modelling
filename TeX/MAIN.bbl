@@ -51,10 +51,6 @@
       \field{year}{2000}
       \field{pages}{131\bibrangedash 162}
       \range{pages}{32}
-      \verb{doi}
-      \verb https://doi.org/10.1002/(SICI)1097-007X(200003/04)28:2<131::AID-CTA100>3.0.CO;2-W
-      \endverb
-      \keyw{circuit simulation,differential-algebraic equation,DAE,index,modified nodal analysis,MNA,structural properties,modelling,state-space form,state-variable approach,normal form,consistent initial values,topological criteria}
     \endentry
     \entry{ModellingAndDiscretizationOfCircuitProblems}{book}{}{}
       \name{author}{3}{}{%
@@ -104,9 +100,6 @@
            given={Ernst},
            giveni={E\bibinitperiod}}}%
       }
-      \list{language}{1}{%
-        {eng}%
-      }
       \list{publisher}{1}{%
         {Springer}%
       }
@@ -123,16 +116,8 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{0387518606}
-      \field{series}{(AT-OBV)AC00001636 1409}
       \field{title}{The numerical solution of differential-algebraic systems by Runge-Kutta methods}
       \field{year}{1989}
-      \verb{urlraw}
-      \verb http://media.obvsg.at/AC00065128-1001
-      \endverb
-      \verb{url}
-      \verb http://media.obvsg.at/AC00065128-1001
-      \endverb
-      \keyw{Differential-algebraisches Gleichungssystem ; Runge-Kutta-Verfahren}
     \endentry
     \entry{MNA75}{article}{}{}
       \name{author}{3}{}{%
@@ -171,10 +156,6 @@
       \field{year}{1975}
       \field{pages}{504\bibrangedash 509}
       \range{pages}{6}
-      \verb{doi}
-      \verb 10.1109/TCS.1975.1084079
-      \endverb
-      \keyw{Equations;Voltage;Circuit analysis computing;Cancer;Computer networks;Gyrators;Inductors;Capacitors;Admittance}
     \endentry
     \entry{NumerikGewöhnlicherDifferentialgleichungen}{book}{}{}
       \name{author}{1}{}{%
@@ -203,9 +184,6 @@
       \field{labeltitlesource}{title}
       \field{title}{Numerik gewöhnlicher Differentialgleichungen - Nichtsteife, steife und differential-algebraische Gleichungen}
       \field{year}{2012}
-      \verb{doi}
-      \verb https://doi.org/10.1007/978-3-8348-2263-5
-      \endverb
     \endentry
     \entry{KirchhoffsLaws}{article}{}{}
       \name{author}{1}{}{%
@@ -234,18 +212,6 @@
       \field{year}{1845}
       \field{pages}{497\bibrangedash 514}
       \range{pages}{18}
-      \verb{doi}
-      \verb https://doi.org/10.1002/andp.18451400402
-      \endverb
-      \verb{eprint}
-      \verb https://onlinelibrary.wiley.com/doi/pdf/10.1002/andp.18451400402
-      \endverb
-      \verb{urlraw}
-      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/andp.18451400402
-      \endverb
-      \verb{url}
-      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/andp.18451400402
-      \endverb
     \endentry
     \entry{Reis2014}{inbook}{}{}
       \name{author}{1}{}{%
@@ -282,9 +248,6 @@
            given={Kai},
            giveni={K\bibinitperiod}}}%
       }
-      \list{location}{1}{%
-        {Cham}%
-      }
       \list{publisher}{1}{%
         {Springer International Publishing}%
       }
@@ -310,15 +273,6 @@
       \field{year}{2014}
       \field{pages}{125\bibrangedash 198}
       \range{pages}{74}
-      \verb{doi}
-      \verb 10.1007/978-3-319-08437-4_2
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1007/978-3-319-08437-4_2
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1007/978-3-319-08437-4_2
-      \endverb
     \endentry
     \entry{shashkov_tuprints27452}{thesis}{}{}
       \name{author}{1}{}{%
@@ -330,12 +284,6 @@
       }
       \list{institution}{1}{%
         {Technische Universität Darmstadt}%
-      }
-      \list{language}{1}{%
-        {en}%
-      }
-      \list{location}{1}{%
-        {Darmstadt}%
       }
       \strng{namehash}{f47633e9cc126b2828d27fd7c3a20b16}
       \strng{fullhash}{f47633e9cc126b2828d27fd7c3a20b16}
@@ -349,21 +297,9 @@
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{month}{6}
       \field{title}{On structure preserving simulations in nonlinear electromagnetics, electric circuits, and efficient treatment of systems with memory}
       \field{type}{phdthesis}
       \field{year}{2024}
-      \field{pages}{133 Seiten}
-      \range{pages}{-1}
-      \verb{doi}
-      \verb https://doi.org/10.26083/tuprints-00027452
-      \endverb
-      \verb{urlraw}
-      \verb http://tuprints.ulb.tu-darmstadt.de/27452/
-      \endverb
-      \verb{url}
-      \verb http://tuprints.ulb.tu-darmstadt.de/27452/
-      \endverb
     \endentry
     \entry{Tischendorf2005Topological}{book}{}{}
       \name{author}{1}{}{%
@@ -390,9 +326,6 @@
       \field{labeltitlesource}{title}
       \field{title}{Topological index calculation of DAEs in circuit simulation}
       \field{year}{2005}
-      \verb{doi}
-      \verb http://dx.doi.org/10.18452/2717
-      \endverb
     \endentry
   \enddatalist
 \endrefsection

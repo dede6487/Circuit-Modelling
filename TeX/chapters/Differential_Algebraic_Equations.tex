@@ -38,6 +38,7 @@ This chapter focuses on giving a brief overview of the different types of differ
 		\begin{displaymath}
 			A(t) y'(t) + B(t) y(t) = f(t) ,
 		\end{displaymath}
+	
 		with $A, B:\mathbb{R} \to \mathbb{R}^{n \times n}$, $f:\mathbb{R} \to \mathbb{R}^n$ functions, such that for every $t \in \mathbb{R}$ the matrix $A(t)$ is singular and the matrix $B(t)$ regular.
 		
 		\item  \textbf{Structured (non-linear) systems} \newline
@@ -46,16 +47,17 @@ This chapter focuses on giving a brief overview of the different types of differ
 			y'(t) &= f(t, y(t), z(t)) , \\
 			0 &= g(t,y(t),z(t)) ,
 		\end{align*}
+	
 		with $f:\mathbb{R} \to \mathbb{R}^n$ and $g:\mathbb{R} \to \mathbb{R}^d$ functions.
 	\end{itemize}
-	
+
 	For our analysis of electrical networks, we will focus on linear systems with constant coefficients \eqref{DAE-const-coeff}. The other systems could for example occur when we additionally consider time-dependent component relations e.g. temperature. 
 	A splitting of the variable $y$ is usually common, where we differ between the \emph{differential variable} and the \emph{algebraic variable}. A differential variable in this sense is the part of $y$, whose derivatives also appear in the differential algebraic equation. The algebraic variable on the other hand only appears in algebraic equations.
 
 \subsection{Weierstraß-Kronecker normal form}
+
 \label{chap:Weierstraß-Kronecker Normalform}
 %kapitel aus buch seite 399 num gew dgl steif, kapitel 13.2.2
-
 To determine the solvability of a linear system with constant coefficients \eqref{DAE-const-coeff}, we first need to introduce a normal form for the system, the \emph{Weierstraß-Kronecker normal form}. This normal form is dependent on the family $\{A,B\} := \{ \mu A+B|\mu \in \mathbb{R} \}$, which is called the  \emph{matrix pencil} of the DAE.
 
 \begin{definition}
@@ -79,8 +81,12 @@ To determine the solvability of a linear system with constant coefficients \eqre
 	and $n = m_1 + ... + m_r$.
 \end{theorem}
 
-The matrix $J$ is called Jordan normal form of $Q$, the matrices $J_i$ are called Jordan Blocks, where $\lambda_i$ are the corresponding eigenvalues of $Q$. The matrix $J$ is uniquely determined by $Q$ except for the arrangement of the diagonal blocks. If $Q$ posesses only real eigenvalues, then $T$ can also be choosen from the reals. \newline
+The matrix $J$ is called Jordan normal form of $Q$, the matrices $J_i$ are called Jordan Blocks, where $\lambda_i$ are the corresponding eigenvalues of $Q$. The matrix $J$ is uniquely determined by $Q$ except for the arrangement of the diagonal blocks. If $Q$ posesses only real eigenvalues, then $T$ can also be choosen from the reals. \newline 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%pagebreak%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In order to seperate the equation \eqref{DAE-const-coeff} into an algebraic and a differential part, we transform the matrices $A$ and $B$ according to the following theorem.
+
 %aus buch seite 401
 \begin{theorem}[\protect{\cite[Satz~13.2.2]{NumerikGewöhnlicherDifferentialgleichungen}}]
 	\label{Kronecker-Normalform}
@@ -101,7 +107,6 @@ In order to seperate the equation \eqref{DAE-const-coeff} into an algebraic and 
 		\end{matrix}
 		\right)
 	\end{displaymath}
-
 	where
 	\begin{displaymath}
 		N = diag(N_1, ..., N_r) \quad \text{with} \quad N_i = 
@@ -297,6 +302,9 @@ We call this system the\emph{ Weierstraß-Kronecker normal form} of the DAE. The
 where $k$ is the nilpotency index of $N$. Hence we have an explicit  form of the solution of $v(t)$. The Kronecker index $k$ thus tells us how many differentiations are required to obtain an ordinary differential equation. Note that this way of splitting the DAE allows us to differ between algebraic and differential variables.
 
 We can also give a general definition of a DAE in Weierstraß-Kronecker normal form.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%pagebreak%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{definition}[\protecting{\cite[Definition~13.2.4]{NumerikGewöhnlicherDifferentialgleichungen}}]
 	A linear differential equation \eqref{DAE-const-coeff} is said to be in Weierstraß-Kronecker normal form if
 	\begin{displaymath}
@@ -357,6 +365,10 @@ The index of a DAE gives us insight about its numerical properties and in genera
 We will consider two types of index concepts, the differentiation index and the perturbation index.
 
 Since numerical differentiation is an unstable procedure the differentiation index aims to give a measure for the numerical problems to be expected when solving such systems.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%pagebreak%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{definition}[Differentiation index \protect{\cite[Definition~13.3.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
 	Consider the differential algebraic equation \eqref{Abstract_DAE} to be uniquely locally solvable and $F$ sufficiently smooth. For a given $m \in \mathbb{N}$ consider the equations
