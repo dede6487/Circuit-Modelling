@@ -1,4 +1,6 @@
 \chapter{Numerical Solutions}
+\label{sec:Numerical Solutions}
+
 As we are interested in finding real valued solutions of our systems we also have to look into solving them numerically. This chapter focuses on the numerical solution of the mentioned systems.
 
 We will first focus on methods used to solve a more general initial value problem of the form:
@@ -205,6 +207,7 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 	
 			
 \section{Multistep Methods}
+	\label{sec:multistep methods}
 	based on chapter 4 of book num gew dgl steif nichtsteif \newline
 	In this thesis we will only consider the class of \emph{linear multistep methods} (LMSM). These methods use multiple previously approximated values $y_{m+l}$ at the gridpooints  $t_{m+l}, \quad l=0,1,...,k-1$ to approximate the current value $y_{m+k}$ at $t_{m+k}$. The definition for such a method is given in \ref{def:multi step method}
 	
@@ -398,8 +401,9 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 	
 	%equivalent to lax richtmyer in single step because for lmsm zero stable = stable
 	
-\section{Implicit linear multi-step formulas}
-These kinds of multi-step methods are commonly used to numerically solve the systems obtained using modified nodal analysis.
+\section{Implicit linear multistep formulas}
+In this chapter we discuss three different linear multistep methods. Whereas the trapezoidal rule and the implicit midpoint rule (or Gauss with one stage) really only use one timestep to approximate the next value and might thus be considered as \emph{singlestep} methods, the Backward-Differentiation-Fomulas with $k$ stages (BDF-k) really use $k$ steps and thus are ``true'' multistep methods.
+We will see that the BDF-k methods as well as the trapezoidal rule are preferably used over the implicit midpoint rule due to their advantageous behaviour when applied to differential algebraic equations. Examples are discussed in \ref{sec: numerical examples}. For more detailed analysis of the mentioned methods we refer to \cite{NumerikGewöhnlicherDifferentialgleichungen} and \cite{HairerErnst1989Tnso}.
 %Our assumption that we only consider network equations arising from networks consisting of RLC components as well as controlled sources which keep the index between 1 and 2 still holds.
 
 %We consider the equations in charge/flux oriented formulation introduced in section \ref{sec:charge flux oriented formulation}
@@ -443,35 +447,21 @@ These kinds of multi-step methods are commonly used to numerically solve the sys
 %\end{align*}
 %with the unknowns $x:=(u, i_L, i_V)^\top$.
 
-The approach to solve those systems numerically can be split into two main steps:
-\begin{enumerate}
-	\item Start-Phase
-	
-	Here we calculate the first $k-1$ steps using a method of lower order than the method we want to use ultimately. To achieve the desired convergence rates it is also important to compute these initial steps appropriately, i.e. the methods with which these initial steps are calculated have to also be of the desired order with respect to the step size $h$. (In applications this can mean that we calculate the initial steps with methods of lower order, but compensate by using a smaller step-size)
-		
-	\item Run-Phase
-	
-	We successively apply the multi-step method to approximate at new points of the time-grid.
-	
-\end{enumerate}
-
-In the following two subchapters we will give a short overview over the two most commonly used methods for solving these kinds of systems.
+In Section \ref{sec:multistep methods} we did already talk about the starting- and the run-phase of a multistep method. However, we left out one important aspect of the starting phase. Recall that in the starting phase we calculate the first $k-1$ steps using a method with fewer stages than the method we want to use ultimately. This also means that this method might be of lower order than the final method. To achieve the desired convergence rates it is thus also important to compute these initial steps appropriately, i.e. the method with which these initial steps are calculated has to also be of the desired order with respect to the \emph{final} step size $h$. (In applications this can mean that we calculate the initial steps with methods of lower order, but compensate by using a smaller step-size)
 
 \subsection{BDF-k methods}
 	\label{sec:BDFk}
-	chapter 9.2 numerik book
-	wikipedia
-	
-	The most commonly used numerical methods for solving the systems that arise in electrical circuits are the BDF-scheme and the trapezoidal rule. 
-	
+
+	The Backward-Differentiation-Formulas with $k$ stages (or short \emph{BDF-k methods}) are constructed, such that they are $A(\alpha)$-stable with the largest possible angle $\alpha$. We will not go into detail about their construction, for this we again refer to \protecting{\cite[chapter~9.2]{NumerikGewöhnlicherDifferentialgleichungen}}
+
 	We will not give a deeper look into their construction but will only state their properties. BDF schemes are appealing because they save function evaluations as much as possible.
 	
-	The \emph{backward differentiation formula (BDF)} is a family of implicit linear multistep methods. They have the general form
+	The BDF-k methods have the general form
 	\begin{equation}
-		\sum_{k=0}^{s} \alpha_k y_{n+k} = h \beta f(t_{n+s}, y_{n+s})
+		\sum_{k=0}^{s} \alpha_k y_{n+k} = h \beta f(t_{n+s}, y_{n+s}).
 	\end{equation}
 
-	Since we are interested in the unknown $y_{n+s}$ which is used to evaluate $f$, this method is implicit. The coefficients $\alpha_k$ and $\beta$ are chosen, such that the method achieves the best possible order $s$.
+	Due to the construction of the method, which is not built around conserving zero-stability, the method is not zero-stabel for all $k \in \mathbb{N}$. It turns out that it is only zero-stable for $k \leq 6$, \protecting{\cite[page~325]{NumerikGewöhnlicherDifferentialgleichungen}}. However in practice, methods with order greater than $3$ are rarely used because of their stability properties, as the stability-region shrinks with increasing order.
 	
 	The BDF or BDF-k formulas for $k=1,...,3$ have the following form %or till 6
 	\begin{align*}
@@ -482,16 +472,14 @@ In the following two subchapters we will give a short overview over the two most
 %		k = 5 &: h f_{m+5} = \frac{1}{260} (137 u_{m+5} - 300 u_{m+4} + 300 u_{m+3} - 200 u_{m+2} +75 u_{m+1} -12 u_m) \\
 %		k = 6 &: h f_{m+6} = \frac{1}{60} (147 u_{m+6} - 360 u_{m+5} + 450 u_{m+4} - 400 u_{m+3} + 225 u_{m+2} - 72 u_{m+1} + 10 u_m)
 	\end{align*}
-	
-	Methods with $k > 6$ are not zero-stable \protecting{\cite[page~325]{NumerikGewöhnlicherDifferentialgleichungen}}. In practice, methods with order greater than 3 are rarely used because of their stability properties, as the stability-region shrinks with increasing order.
-	
-	BDF schemes have consistency order $p = k$. They are methods for solving stiff equations, thus their stability is indicated by their region of absolute stability. Unfortunately not all BDF-schemes are A-stable, but their stability region still contains a large part of the complex left half-plane, see Figure \ref{fig:screenshot020}.
-	
+		
+	As already mentioned BDF-k methods are not A-stable, but $A(\alpha)$ stable. In Figure \ref{fig:bdf-k stability regions} the stability regions for $k=1,2,3$ are depicted in cyan. Note that the zero-point is contained withing the stability regions.
+		
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=1\linewidth]{pictures/bdf_stability_regions.png}
-		\caption{stability regions of BDF-schemes}
-		\label{fig:screenshot020}
+		\caption{stability regions of BDF-k methods for $k=1,2,3$ (cyan)}
+		\label{fig:bdf-k stability regions}
 	\end{figure}
 
 	The order of consistency of this family of multi-step methods is given by the following theorem
@@ -501,32 +489,28 @@ In the following two subchapters we will give a short overview over the two most
 		The BDF-k methods have consistency order $p=k$.
 	\end{theorem}
 	
-	\begin{corrolary}
-		The BDF-k methods with $k \leq 6$ are convergent with order$k$
-	\end{corrolary}
-	\begin{proof}
-		Due to Theorem \ref{th: null-stbaility and consistence is convergence} and the fact that BDF-k methods with $k \leq 6$  are $0$-stable as well as Theorem \ref{th: BDK-k consistency}, they are also convergent with order k.
-	\end{proof}
+	Due to Theorem \ref{th: null-stbaility and consistence is convergence} and the fact that BDF-k methods with $k \leq 6$  are $0$-stable as well as Theorem \ref{th: BDK-k consistency} we immediately gain the following corollary.
 	
+	\begin{corollary}[Convergence rate]
+		The BDF-k methods with $k \leq 6$ are convergent with order$k$
+	\end{corollary}
 	
 	%Seite 106 numerik - schrittweite für startwerte bei bdf3 kleiner für kleineren fehler, halbieren, vierteln, achteln whatever
 	
 \subsection{Trapezoidal rule}
 	\label{sec:Trapezoidal}
 	
-	The trapezoidal rule is a natural alternative to BDF2 since it is A-stable and a linear multistep method of order 2. (\cite{ModellingAndDiscretizationOfCircuitProblems})
-	
-	It works by approximating the region under the graph of the function $f(x)$ as a trapezoid, hence the name. It follows that	
+	By approximating the area under a curve $f(x)$ on a short interval $[a,b]$ as a trapezoid, 
 	\begin{displaymath}
-		\int_{a}^{b} f(x) dx \approx (b-a)\frac{1}{2} (f(a)+f(b))
+		\int_{a}^{b} f(x) dx \approx (b-a)\frac{1}{2} (f(a)+f(b)),
 	\end{displaymath}
 	
-	This procedure is repeated for small subsections of the interval $[a,b]$. Thus we obtain the iteration formula
+	we can construct a numerical method for integrating a function. This method is called the trapezoidal rule, formally it has the iteration rule
 	\begin{displaymath}
-		u_h (t+h) = u_h(t) +\frac{h}{2}[f(t,u_h(t)) + f(t+h, u_h(t+h))].
+		y_{n+1} = y_n +\frac{h}{2}[f(t_n,y_n) + f(t_{n+1}, y_{n+1})].
 	\end{displaymath}
-%	
-%	This iteration rule can also be formulated using the butcher tableau	
+	
+	%	This iteration rule can also be formulated using the butcher tableau	
 %	\begin{displaymath}
 %		\begin{array}{c|cc}
 %			0 & 0 & 0 \\
@@ -536,20 +520,21 @@ In the following two subchapters we will give a short overview over the two most
 %		\end{array}
 %	\end{displaymath}
 	
-	Because $u_h(t+h)$ appears in $f$ again we see that this is an implicit method. %The butcher tableau confirms this as well.
-	The trapezoidal rule has convergence order $p=2$ for our applications. For details see \cite{HairerErnst1989Tnso}, where they discuss the more general form of the trapezoidal rule, namely the Lobatto~\RomanNumeralCaps{3}~A methods amongst other methods.
+	The trapezoidal rule has convergence order $p=2$ for our applications. For details see \cite{HairerErnst1989Tnso}, where more general the general form of the trapezoidal rule, namely the Lobatto~\RomanNumeralCaps{3}-A methods amongst other methods are discussed.
+	
+	Due to the fact that the trapezoidal rule is A-stabe  (\cite{ModellingAndDiscretizationOfCircuitProblems}) and of order $p=2$, it can be considered as a natural alternative to the BDF-2 method.
 	
 	%order p=2 because it is a special case of Lobatto 3 A with s=2, thus all the index cases just lead to p=2
 	
 \subsection{Gauss Method with one stage}
+	\label{sec:Gauss1}
 
-	When dealing with numerical methods for solving differential algebraic equations we have already seen that the trapezoidal rule and the BDF-k methods are relatively straight forward. But this is not always the case, many numerical methods can cause problems if one is not careful in choosing the right method. More detailed results can be found in \cite{HairerErnst1989Tnso}
-	To illustrate this we will have a look at the Gauss method with one stages, also called the implicit midpoint rule, i.e.
+	We have already seen that the results for the BDF-k methods as well as for the trapezoidal rule are relatively straight forward. But this is not always the case, many numerical methods can cause problems when applied to DAEs, see also \cite{HairerErnst1989Tnso}. To illustrate this we will have a look at the Gauss method with one stages, also called the implicit midpoint rule, i.e.
 	\begin{displaymath}
 		y_{n+1} = y_n + h f(t_n + \frac{h}{2}, \frac{y_n + y_{n+1}}{2})
 	\end{displaymath}
 
-	Applied to ordinary differential equations, this method yields the maximum possible convergence order. (source) For the special case of differential algebraic equations this does not hold true. Here we may observe lower convergence rates, especially in the algebraic variable. The convergence orders for this method are also different, if the amount of stages is even or odd. Table \ref{tab:convergence order Gauss} displays the according convergence orders.
+	Applied to ordinary differential equations, this method yields a convergence order of $p=2$ \protecting{\cite[chapter~8.1.2]{NumerikGewöhnlicherDifferentialgleichungen}}. For the special case of differential algebraic equations this does not hold true. Here we may observe lower convergence rates, especially in the algebraic variable. The convergence orders for this method are also different, if the amount of stages is even or odd. We say that this method is \emph{not stiffly accurate}. Table \ref{tab:convergence order Gauss} displays the according convergence orders.
 	
 	\begin{table}[H]
 		\centering
@@ -568,8 +553,13 @@ In the following two subchapters we will give a short overview over the two most
 	
 \section{Numerical Examples}
 	
-	In this section we will apply the trapezoidal rule as well as the BDF-k schemes discussed in Section \ref{sec:BDFk} and  Section \ref{sec:Trapezoidal} to our three examples. We will also discuss the discretization error in the solution and compute appropriate consistant inital values for our problems.
+	\label{sec: numerical examples}
+	In this section we will apply the trapezoidal rule, the BDF-k method and the implicit midpoint rule, discussed in Section \ref{sec:BDFk}, Section \ref{sec:Trapezoidal} and Section \ref{sec:Gauss1} to our three examples. We will also discuss the discretization error in the solution and compute appropriate consistant inital values for our problems.
 	
+
+\subsection{BDF-k Method and Trapezoidal Rule}	
+
+	We will start by applying the ``well-behaving'' methods to our examples.
 	
 \begin{example1}[Numerical computation]
 	We again consider the charging of a capacitor, depicted in the schematics in Figure \ref{fig:charging capacitor}.
@@ -787,20 +777,24 @@ In the following two subchapters we will give a short overview over the two most
 \end{example3}
 	
 \subsection{Results for the Gauss method}
+
+	Observer that in the first example only the derivative of $u_2$ appears, thus $u_2$ is the differential variable while $u_1$ and $i_0$ are algebraic variables. For the second example both $u_1$ and $i_L$ are differential variables. In the third example $u_1$ is differential and $i_V$ is algebraic. We indicate this in Table \ref{tab:error gauss} by ``alg'' and by ``diff''.
+	
 	\begin{table}[H]
 		\resizebox*{\textwidth}{!}{%
 			\csvreader[tabular= | c || c c c | c c | c c |,
 			table head = \hline h & \multicolumn{3}{c|}{example 1} & \multicolumn{2}{c|}{example 2} & \multicolumn{2}{c|}{example 3}\\
-			& u1 & u2 & iV & u1 & iL & u1 & iV\\
+			& $u_1$ (alg) & $u_2$ (diff) & $i_0$ (alg) & $u_1$ (diff) & $i_L$ (diff) & $u_1$ (diff) & $i_V$ (alg)\\
 			\hline,
 			late after line=\\\hline]
 			{../Matlab/err_gauss.csv}{h=\h, oneu=\oneu, oneuu=\oneuu, onei=\onei, twou=\twou, twoi=\twoi, twoignore=\twoignore, threeu=\threeu, threei=\threei, threeignore=\threeignore}
 			{\h  & \num{\oneu} & \num{\oneuu} & \num{\onei}  & \num{\twou} & \num{\twoi}  & \num{\threeu} & \num{\threei}}
 		}
-		\caption{Resulting errors for the BDF-k methods and the trapezoidal rule.}
+		\caption{Resulting errors for the Gauss method with one stage.}
 		\label{tab:error gauss}
 	\end{table}
 	
+	Comparing the table of errors \ref{tab:error gauss} with the table of convergence rates \ref{tab:convergence order Gauss} we observe that firstly the method converges as expected with approximately order $p=2$ for the ODE in example 2. In example 1 and in example 3 on the other hand we can observe different rates for the algebraic and the differential variables. In particular example 3, which has index $\nu = 2$ does not converge in its algebraic variables, in contrary, the error even grows.
 %	\begin{center}
 %		\begin{tabular}{ c || c c c | c c c | c c c | } 
 %			h & \multicolumn{3}{c|}{k = 1} & \multicolumn{3}{c|}{k = 2} & \multicolumn{3}{c|}{k = 3} \\

@@ -21,7 +21,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces approximation of a function}}{36}{figure.caption.27}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces $A(\alpha )$ stability for $\alpha = \frac {\pi }{4}$}}{40}{figure.caption.28}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces stability regions of BDF-schemes}}{42}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces stability regions of BDF-k methods for $k=1,2,3$ (cyan)}}{42}{figure.caption.29}%
 \contentsline {figure}{\numberline {5.4}{\ignorespaces charging capacitor with series resistor and voltage source}}{45}{figure.caption.31}%
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Exact solution for example 1.}}{45}{figure.caption.31}%
 \contentsline {figure}{\numberline {5.6}{\ignorespaces LC-circuit}}{46}{figure.caption.33}%
