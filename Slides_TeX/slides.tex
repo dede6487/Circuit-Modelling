@@ -420,12 +420,27 @@
 %	\end{frame}
 
 	\begin{frame}
-		\begin{definition}
-			The nilpotency index $k$ of the matrix $N$ from the Weierstraß-Kronecker Normalform of a matrix pencil $\{A,B\}$ with $A$ singular is called the \emph{Kronecker-Index} of $\{A,B\}$, which we denote by $ind\{A,B\}$. Note that for $A$ regular we set $ind\{A,B\} = 0$.
-		\end{definition}
-		
-		Auf Tafel oder auf slides: how to obtain that this means that for $k$ differentiations of the system we obtain an ODE.
+		We call this system the\emph{ Weierstraß-Kronecker normal form} of the DAE. The first equation of \eqref{transformed-DAE-const-coeff} is a first order ordinary differential equation and posesses a unique solution $u(t)$ in $[t_0,t_l]$ for any initial values $u_0 \in \mathbb{R}^d$. Now let $q(t) \in C^{k-1}([t_0,t_l])$, where $C^{k-1}(I)$ denotes the space of all functions with domain $I$ that are $k-1$ times continuously differentiable. We differentiate the second equation in \eqref{transformed-DAE-const-coeff} and obtain
+		\begin{align}
+			\notag
+			v(t) &= q(t) - Nv'(t) = q(t) - N(\underbrace{q(t)-Nv'(t)}_{=v(t)})' = q-Nq'+N^2v'' \\ \notag
+			&= q-Nq'+N^2(q-Nv')'' = q-Nq'+N^2q''-N^3v''' \\ \notag
+			&\vdots \\ \notag
+			&= q-Nq'+...+(-1)^{k-1}N^{k-1}\underbrace{\frac{d^k}{dt^k}q}_{:=q^{(k-1)}}+(-1) \underbrace{N^kv^{(k)}}_{=0}\\ 
+			\label{solution-to-transformed-DAE-const-coeff-part2}
+			&= \sum_{i=0}^{k-1} (-1)^iN^iq^{(i)}(t)
+		\end{align}	
+	
+		There exist other index concepts, for our case these are all the same.
 	\end{frame}
+
+%	\begin{frame}
+%		\begin{definition}
+%			The nilpotency index $k$ of the matrix $N$ from the Weierstraß-Kronecker Normalform of a matrix pencil $\{A,B\}$ with $A$ singular is called the \emph{Kronecker-Index} of $\{A,B\}$, which we denote by $ind\{A,B\}$. Note that for $A$ regular we set $ind\{A,B\} = 0$.
+%		\end{definition}
+%		
+%		Auf Tafel oder auf slides: how to obtain that this means that for $k$ differentiations of the system we obtain an ODE.
+%	\end{frame}
 	
 	
 	
@@ -450,17 +465,7 @@
 		\end{definition}
 	\end{frame}
 
-	\begin{frame}
-		\vfill
-		\begin{definition}%[perturbation index \protect{\cite[Definition~13.3.3]{NumerikGewöhnlicherDifferentialgleichungen}}]
-			Let $y(t)$ be the exact solution of \eqref{Abstract_DAE} and $\tilde{y}(t)$ be the solution of the perturbed system $F(t, \tilde{y}, \tilde{y}') = \delta(t)$. The smallest number $k \in \mathbb{N}$ such that 
-			\begin{displaymath}
-				\|y(t)-\tilde{y}(t)\| \leq C \left(\|y(t_0)-\tilde{y}(t_0)\|+\sum_{j=0}^{k}\max_{t_0 \leq \xi \leq T} \left\rVert 		\int_{t_0}^{\xi}\diff[j]{\delta}{\tau}(\tau)d \tau \right\rVert \right)
-			\end{displaymath}
-			for all $\tilde{y}(t)$, is called the \textbf{perturbation index} of this system.
-		\end{definition}
-		\vfill
-	\end{frame}
+	
 
 \section*{Index Analysis of the Modified Nodal Analysis}
 %	\subsection{General Index Analysis}
@@ -701,16 +706,12 @@
 	
 	\begin{frame}
 		\vfill
-		\begin{definition} \label{def: LMSM convergence}
-			We say that a linear multi-step method is convergent, if for a solution $y$ of the problem and a vector $(y_j)_{j=0}^k$ created by an LMSM , we have that
+		\begin{definition}[Convergence order] \label{def: LMSM convergence}
+			We say that a linear multi-step method is convergent of order $p \in \mathbb{N}$, if for a solution $y$ of the problem and a vector $(y_j)_{j=0}^k$ created by an LMSM, we have that
 			\begin{displaymath}
-				\lim\limits_{h \to \infty} \max_{0 \leq j \leq k} ||y(t_j) - y_j|| = 0.
+				\max_{0 \leq j \leq k} ||y(t_j) - y_j|| \leq Ch^p.
 			\end{displaymath}
-			If for $p \in \mathbb{N}$ and a constant $C$ not dependent on the step size $h$ we have
-			\begin{displaymath}
-				\max_{0 \leq j \leq k} ||y(t_j) - y_j|| \leq Ch^p,
-			\end{displaymath}
-			then we call the LMSM \emph{convergent with order $p$}.
+			Where $C$ is a constant not dependent on the step size $h$.
 		\end{definition}
 		\vfill
 	\end{frame}
@@ -729,21 +730,7 @@
 %		\end{definition}
 %	\end{frame}
 	
-	\subsubsection{further stability properties}
-	
-	\begin{frame}
-		Dahlquist test problem as a model problem, find $y$ such that
-		\begin{align}
-			y' &= \lambda y, \quad t > 0 \\
-			y(0) &= y_0
-		\end{align}
-		with $\lambda \in \mathbb{C}$ and $y_0$ fixed. \\
-		Thus the resulting linear multistep method is of the form
-		\begin{align*}
-			\sum_{l=0}^{k} \alpha_l y_{n+l} = h \sum_{l=0}^{k} \beta_l \lambda y_{n+l} \\
-			\iff \sum_{l=0}^{k}  [\alpha_l - h \beta_l \lambda] y_{n+l} = 0
-		\end{align*}
-	\end{frame}
+	\subsubsection{Stability properties}
 	
 	\begin{frame}
 		\vfill
@@ -782,12 +769,11 @@
 	\subsection{Consistent Initial Values}
 	\begin{frame}
 		\vfill
-		\textbf{Index $\nu = 0$:} $\to$ arbitrary initial values since ODE.\\ 
+		\textbf{Index $\nu = 0$:} no additional restrictions (ODE case).\\ 
 		
 		\textbf{Index $\nu = 1$:}\\
 		
 		By rewriting our system into the form
-		
 		\begin{align*}
 			y'(t) = f(t,y(t),z(t)), \\
 			0 = g(t,y(t),z(t)).
@@ -822,14 +808,14 @@
 			\sum_{k=0}^{s} \alpha_k y_{n+k} = h \beta f(t_{n+s}, y_{n+s})
 		\end{equation}
 		The BDF or BDF-k formulas for $k=1,...,3$ have the following form %or till 6
-		\begin{align*}
-			k = 1 &: h f_{m+1} = y_{m+1} - y_m \\
+		\begin{flalign*}
+			k = 1 &: h f_{m+1} = y_{m+1} - y_m && \text{(implicit euler)}\\
 			k = 2 &: h f_{m+2} = \frac{1}{2} (3 y_{m+2} - 4 y_{m+1} + y_m) \\
 			k = 3 &: h f_{m+3} = \frac{1}{6} (11 y_{m+3} - 18 y_{m+2} + 9 y_{m+1} - 2 y_m) %\\
 			%		k = 4 &: h f_{m+4} = \frac{1}{12} (25 u_{m+4} - 48 u_{m+3} + 36 u_{m+2} - 16 u_{m+1} + 3 u_m) \\
 			%		k = 5 &: h f_{m+5} = \frac{1}{260} (137 u_{m+5} - 300 u_{m+4} + 300 u_{m+3} - 200 u_{m+2} +75 u_{m+1} -12 u_m) \\
 			%		k = 6 &: h f_{m+6} = \frac{1}{60} (147 u_{m+6} - 360 u_{m+5} + 450 u_{m+4} - 400 u_{m+3} + 225 u_{m+2} - 72 u_{m+1} + 10 u_m)
-		\end{align*}
+		\end{flalign*}
 	\end{frame}
 	
 	\begin{frame}
@@ -842,7 +828,12 @@
 		\begin{theorem}%[\protecting{\cite[Satz~9.2.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
 			The BDF-k methods have consistency order $p=k$.
 		\end{theorem}
-		Using Theorem \ref{th: null-stbaility and consistence is convergence} we get that the BDF-k methods also have convergence order $p=k$.
+%		Due to Theorem \ref{th: null-stbaility and consistence is convergence} and the fact that BDF-k methods with $k \leq 6$  are $0$-stable as well as Theorem \ref{th: BDK-k consistency} we immediately gain the following corollary.
+%		
+		\begin{corollary}[Convergence rate]
+			The BDF-k methods with $k \leq 6$ are convergent with order$k$
+		\end{corollary}
+%		Using Theorem \ref{th: null-stbaility and consistence is convergence} we get that the BDF-k methods also have convergence order $p=k$.
 	\end{frame}
 	
 	\subsubsection{Trapezoidal rule}
@@ -874,7 +865,7 @@
 			\end{minipage}%
 			\begin{minipage}{.5\textwidth}
 				\centering
-				\includegraphics[width=\linewidth]{../Tex/pictures/exact_solution_ex1.png}
+				\includegraphics[width=\linewidth]{../Matlab/exact_solution_ex1.png}
 				\caption{Exact solution for example 1.}
 				\label{fig: Exact solution for example 1}
 			\end{minipage}
@@ -887,14 +878,55 @@
 			\resizebox*{\textwidth}{!}{%
 				\csvreader[tabular= | c || c c | c c | c c | c c |,
 				table head = \hline h & \multicolumn{2}{c|}{k = 1} & \multicolumn{2}{c|}{k = 2} & \multicolumn{2}{c|}{k = 3} & \multicolumn{2}{c|}{trapezoidal}\\
-				& u2 & iV & u2 & iV & u2 & iV & u2 & iV \\
+				& $err(u_2)$ & $err(i_V)$ & $err(u_2)$ & $err(i_V)$ & $err(u_2)$ & $err(i_V)$ & $err(u_2)$ & $err(i_V)$  \\
 				\hline,
 				late after line=\\\hline]
-				{../Matlab/err_ex1.csv}{h=\h, oneu=\oneu, oneuu=\oneuu, onei=\onei, twou=\twou, twouu=\twouu, twoi=\twoi, threeu=\threeu, threeuu=\threeuu, threei=\threei, trapu=\trapu, trapuu=\trapuu, trapil=\trapil}
-				{\h  & \num{\oneuu} & \num{\onei}  & \num{\twouu} & \num{\twoi}  & \num{\threeuu} & \num{\threei}  & \num{\trapuu} & \num{\trapil}}
+				{../Matlab/err_ex1.csv}{h=\h, oneu=\oneu, oneueoc=\oneueoc, oneuu=\oneuu, oneuueoc=\oneuueoc, onei=\onei, oneieoc=\oneieoc, twou=\twou, twoueoc=\twoueoc, twouu=\twouu, twouueoc=\twouueoc, twoi=\twoi, twoieoc=\twoieoc, threeu=\threeu, threeueoc=\threeueoc, threeuu=\threeuu, threeuueoc=\threeuueoc, threei=\threei, threeieoc=\threeieoc, trapu=\trapu, trapueoc=\trapueoc, trapuu=\trapuu, trapuueoc=\trapuueoc, trapil=\trapil, trapileoc=\trapileoc}
+				{\h  & \num{\oneuu} & \num{\onei} & \num{\twouu} & \num{\twoi} & \num{\threeuu} & \num{\threei} & \num{\trapuu} & \num{\trapil}}
 			}
 			\caption{Resulting errors for the BDF-k methods and the trapezoidal rule.}
 			\label{tab:num results ex1}
+		\end{table}
+		\vfill
+	\end{frame}
+	
+	\subsubsection{Gauss}
+	
+	\begin{frame}
+		\vfill
+		\begin{displaymath}
+			y_{n+1} = y_n + h f(t_n + \frac{h}{2}, \frac{y_n + y_{n+1}}{2})
+		\end{displaymath}
+		\begin{table}[H]
+		\begin{tabular}{ | c | c c | c c |}
+			\hline
+			\multirow{2}*{number of stages $s$} & \multicolumn{2}{c |}{index $\nu = 1$} & \multicolumn{2}{ c |}{index $\nu = 2$} \\
+			& differential & algebraic & differential & algebraic \\
+			\hline
+			even & \multirow{2}*{$2s$} & $s+1$ & $s+1$ & $s-1$ \\
+			odd & & $s$ & $s$ & $s-2$ \\
+			\hline
+		\end{tabular}
+		\caption{Convergence order for Gauss method.}
+		\label{tab:convergence order Gauss}
+		\end{table}
+		\vfill
+	\end{frame}
+
+	\begin{frame}
+		\vfill
+		\begin{table}[H]
+			\resizebox*{\textwidth}{!}{%
+				\csvreader[tabular= | c || c c c | c c | c c |,
+				table head = \hline h & \multicolumn{3}{c|}{example 1} & \multicolumn{2}{c|}{example 2} & \multicolumn{2}{c|}{example 3}\\
+				& $err(u_1)$ (alg) & $err(u_2)$ (diff) & $err(i_0)$ (alg) & $err(u_1)$ (diff) & $err(i_L)$ (diff) & $err(u_1)$ (diff) & $err(i_V)$ (alg)\\
+				\hline,
+				late after line=\\\hline]
+				{../Matlab/err_gauss.csv}{h=\h, oneu=\oneu, oneuu=\oneuu, onei=\onei, twou=\twou, twoi=\twoi, twoignore=\twoignore, threeu=\threeu, threei=\threei, threeignore=\threeignore}
+				{\h  & \num{\oneu} & \num{\oneuu} & \num{\onei}  & \num{\twou} & \num{\twoi}  & \num{\threeu} & \num{\threei}}
+			}
+			\caption{Resulting errors for the Gauss method with one stage.}
+			\label{tab:error gauss}
 		\end{table}
 		\vfill
 	\end{frame}
@@ -971,3 +1003,36 @@
 %			\label{tab:error ex3}
 %		\end{table}
 %	\end{frame}
+
+	\bgroup
+	\setbeamercolor{background canvas}{bg=black}
+	\begin{frame}[noframenumbering, plain]{}
+	\end{frame}
+	\egroup
+
+
+\begin{frame}[noframenumbering]
+	\vfill
+	\begin{definition}%[perturbation index \protect{\cite[Definition~13.3.3]{NumerikGewöhnlicherDifferentialgleichungen}}]
+		Let $y(t)$ be the exact solution of \eqref{Abstract_DAE} and $\tilde{y}(t)$ be the solution of the perturbed system $F(t, \tilde{y}, \tilde{y}') = \delta(t)$. The smallest number $k \in \mathbb{N}$ such that 
+		\begin{displaymath}
+			\|y(t)-\tilde{y}(t)\| \leq C \left(\|y(t_0)-\tilde{y}(t_0)\|+\sum_{j=0}^{k}\max_{t_0 \leq \xi \leq T} \left\rVert 		\int_{t_0}^{\xi}\diff[j]{\delta}{\tau}(\tau)d \tau \right\rVert \right)
+		\end{displaymath}
+		for all $\tilde{y}(t)$, is called the \textbf{perturbation index} of this system.
+	\end{definition}
+	\vfill
+\end{frame}
+
+\begin{frame}[noframenumbering]
+	Dahlquist test problem as a model problem, find $y$ such that
+	\begin{align}
+		y' &= \lambda y, \quad t > 0 \\
+		y(0) &= y_0
+	\end{align}
+	with $\lambda \in \mathbb{C}$ and $y_0$ fixed. \\
+	Thus the resulting linear multistep method is of the form
+	\begin{align*}
+		\sum_{l=0}^{k} \alpha_l y_{n+l} = h \sum_{l=0}^{k} \beta_l \lambda y_{n+l} \\
+		\iff \sum_{l=0}^{k}  [\alpha_l - h \beta_l \lambda] y_{n+l} = 0
+	\end{align*}
+\end{frame}
