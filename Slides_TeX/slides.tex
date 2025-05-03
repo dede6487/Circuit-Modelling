@@ -22,7 +22,7 @@
 		
 	\begin{frame}
 		\vfill
-		Define the incidence matrix $A = (a_{ij}) \in \mathbb{R}^{k \times l}$:
+		For a circuit with $l$ nodes and $k$ edges, define the incidence matrix $\tilde{A} = (\tilde{a}_{ij}) \in \mathbb{R}^{k \times l}$:
 		\begin{displaymath}
 			\tilde{a}_{ij} = 
 			\begin{cases}
@@ -40,7 +40,7 @@
 %		\begin{displaymath}
 %			u = (u_0, u_1, u_2, ...) \quad \cdots \quad \text{corresponding electrical potentials at the nodes}.
 %		\end{displaymath}
-		By grounding node $0$, i.e. $u_0 = 0$ we obtain the reduced incidence matrix.
+		By grounding node $0$, i.e. $u_0 = 0$ we obtain the reduced incidence matrix $\to$ $A$.
 		\vfill
 	\end{frame}
 
@@ -70,17 +70,19 @@
 		\vfill
 		\begin{table}
 			\centering
+			\resizebox{\textwidth}{!}{
 			\begin{tabular}{| c | c | c |}
 				\hline
 				\textbf{Name} & \textbf{Symbol} & \textbf{Component Law} \\
 				\hline\hline
-				Resistor & \includegraphics[height=1cm]{../Tex/pictures/resistor.png} & 	$v = R \ i \quad \text{or} \quad i = G \ u$ \\
+				Resistor & \includegraphics[height=0.9cm]{../Tex/pictures/resistor.png} & 	$v = R \ i \quad \text{or} \quad i = G \ u$ \\
 				Capacitor & \includegraphics[height=1cm]{../Tex/pictures/capacitor.png} & $Q = C \ v \quad \text{and by derivation in t} \quad I = C \ \frac{d}{dt}v = C \ v'$ \\
-				Inductor & \includegraphics[height=1cm]{../Tex/pictures/inductance.png} & $\Phi = L \ i \quad \text{and by derivation in t} \quad v = L \ i'$ \\
+				Inductor & \includegraphics[height=0.9cm]{../Tex/pictures/inductance.png} & $\Phi = L \ i \quad \text{and by derivation in t} \quad v = L \ i'$ \\
 				Voltage Source & \includegraphics[height=1cm]{../Tex/pictures/voltage_source.png} & $v = v_{src}$ \\
 				Current Source & \includegraphics[height=1cm]{../Tex/pictures/current_source.png} & $i = i_{src}$ \\
 				\hline
 			\end{tabular}
+			}	
 		\end{table}
 		\vfill
 	\end{frame}
@@ -179,10 +181,7 @@
 		\begin{displaymath}
 			A_C i_C + A_R i_R + A_L i_L + A_V i_V = -A_I i_{src}.
 		\end{displaymath}
-		Combine:
-		\begin{displaymath}
-			A_C C A_C^\top u' + A_R G A_R^\top u + A_L i_L + A_V i_V = -A_I i_{src}.
-		\end{displaymath}
+
 	\end{frame}
 
 	\begin{frame}
@@ -228,6 +227,7 @@
 				-v_{src}
 			\end{pmatrix} . 
 		\end{equation}
+		$\to$ differential and algebraic variables
 	\end{frame}
 
 \section*{Differential Algebraic Equations}
@@ -289,7 +289,7 @@
 			The matrix pencil $\{ A,B\}$ is called \emph{regular} if there exists some $c \in \mathbb{R}$, such that $(cA+B)$ is regular (i.e. $det(cA+B) \neq 0$), otherwise it is called singular.
 		\end{definition}
 		
-			By applying equivalence transformations on he system matrices we can transform the initial sytsem into a system of the form
+			By applying equivalence transformations on the system matrices, we can transform the initial system into a system of the form
 		\begin{equation}
 			\label{transformed-DAE-const-coeff}
 			\begin{aligned}
