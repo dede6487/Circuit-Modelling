@@ -98,7 +98,7 @@ for n=1:3
     err_ex1(n,2:2:end) = [max_err_BDF1 max_err_BDF2 max_err_BDF3 max_err_Trapezoidal];
 
     if n > 1
-        err_ex1(n,3:2:end) = log(err_ex1(n-1,2:2:end)./err_ex1(n,2:2:end))/log(1/2);
+        err_ex1(n,3:2:end) = log(err_ex1(n-1,2:2:end)./err_ex1(n,2:2:end))/log(2);
     end
 
     %illustration of one of the components at a time, i.e. graph =1,2,3 for u1,
