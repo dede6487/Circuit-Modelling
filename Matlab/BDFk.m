@@ -7,9 +7,8 @@ function y = BDFk(A, B, f, y0, tspan, h,k, yexact)
     % tspan: Time interval [t0, tf]
     % h: Step size
     % k: indicates the method used
-    % yexact: exact solution evaluated at the initial points (# depending
-    % on method used) - if given the initial values are taken directly from
-    % the exact solution
+    % yexact: exact solution as function - if given the initial values 
+    % are taken directly from the exact solution
     %output: vector y of size length(y0) x length(tspan(1):h:tspan(2)
     %containing the calculated timesteps of the method
 
@@ -24,11 +23,12 @@ function y = BDFk(A, B, f, y0, tspan, h,k, yexact)
     end
 
     %construct initial k values using BDF1 and BDF2 method on finer grid
-    g = 2; %factor by how much the grid is finer
+    if k == 2; g = 2; elseif k ==3; g=4; end %factor by how much the grid is finer
+    
     if k ~= 1
         tempspan = [tspan(1),tspan(1)+h*(k-1)]; %yk is already calculated by BDFk method
         if nargin == 8
-            y(:,1:k) = yexact(tspan(1):h:tspan(1) + h*(k-1));
+            y(:,1:k) = yexact(tspan(1):h:(tspan(1) + h*(k-1)));
         else
             initial = BDFk(A, B, f, y0, tempspan, h/g,k-1);
             y(:,1:k) = initial(:,1:g:end);

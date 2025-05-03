@@ -1,6 +1,6 @@
 clear; close all;
 
-tspan = [0;8*pi];
+tspan = [0;2*pi];
 hspan = [0.1,0.05,0.05/2];
 
 %initialize error output
@@ -88,19 +88,19 @@ for n = 1:3
     %illustration of one of the components at a time, i.e. graph =1,2 for u1,
     %iL
     
-    graph = 1;
-    figure
-    title('comparison of the solutions of the different methods')
-    
-    hold on
-    plot(x, y_exact(graph,:), 'DisplayName', 'exact solution');
-    plot(x, y1_BDF1(graph,:), 'DisplayName', 'BDF1');
-    plot(x, y1_BDF2(graph,:), 'DisplayName', 'BDF2');
-    plot(x, y1_BDF3(graph,:), 'DisplayName', 'BDF3');
-    plot(x, y1_Trapezoidal(graph,:), 'DisplayName', 'Trapezoidal');
-    hold off
-    
-    legend
+    % graph = 1;
+    % figure
+    % title('comparison of the solutions of the different methods')
+    % 
+    % hold on
+    % plot(x, y_exact(graph,:), 'DisplayName', 'exact solution');
+    % plot(x, y1_BDF1(graph,:), 'DisplayName', 'BDF1');
+    % plot(x, y1_BDF2(graph,:), 'DisplayName', 'BDF2');
+    % plot(x, y1_BDF3(graph,:), 'DisplayName', 'BDF3');
+    % plot(x, y1_Trapezoidal(graph,:), 'DisplayName', 'Trapezoidal');
+    % hold off
+    % 
+    % legend
 
 end
 

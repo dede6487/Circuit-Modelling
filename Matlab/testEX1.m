@@ -107,7 +107,7 @@ for n=1:3
     % graph = 3;
     % figure
     % title('comparison of the solutions of the different methods')
-    
+    % 
     % hold on
     % plot(x, y_exact(graph,:), 'DisplayName', 'exact solution');
     % plot(x, y1_BDF1(graph,:), 'DisplayName', 'BDF1');
