@@ -289,7 +289,7 @@
 			The matrix pencil $\{ A,B\}$ is called \emph{regular} if there exists some $c \in \mathbb{R}$, such that $(cA+B)$ is regular (i.e. $det(cA+B) \neq 0$), otherwise it is called singular.
 		\end{definition}
 		
-			By applying equivalence transformations on the system matrices, we can transform the initial system into a system of the form
+			Equivalence transformations lead to
 		\begin{equation}
 			\label{transformed-DAE-const-coeff}
 			\begin{aligned}
@@ -420,18 +420,17 @@
 %	\end{frame}
 
 	\begin{frame}
-		We call this system the\emph{ Weierstraß-Kronecker normal form} of the DAE. The first equation of \eqref{transformed-DAE-const-coeff} is a first order ordinary differential equation and posesses a unique solution $u(t)$ in $[t_0,t_l]$ for any initial values $u_0 \in \mathbb{R}^d$. Now let $q(t) \in C^{k-1}([t_0,t_l])$, where $C^{k-1}(I)$ denotes the space of all functions with domain $I$ that are $k-1$ times continuously differentiable. We differentiate the second equation in \eqref{transformed-DAE-const-coeff} and obtain
-		\begin{align}
-			\notag
-			v(t) &= q(t) - Nv'(t) = q(t) - N(\underbrace{q(t)-Nv'(t)}_{=v(t)})' = q-Nq'+N^2v'' \\ \notag
-			&= q-Nq'+N^2(q-Nv')'' = q-Nq'+N^2q''-N^3v''' \\ \notag
-			&\vdots \\ \notag
+		First equation of \eqref{transformed-DAE-const-coeff} is a first order ordinary differential equation and posesses a unique solution $u(t)$ in $[t_0,t_l]$ for any initial values $u_0 \in \mathbb{R}^d$. 
+		Now let $q(t) \in C^{k-1}([t_0,t_l])$ and differentiate the second equation in \eqref{transformed-DAE-const-coeff}:
+		\begin{align*}
+			v(t) &= q(t) - Nv'(t) = q(t) - N(\underbrace{q(t)-Nv'(t)}_{=v(t)})' = q-Nq'+N^2v'' \\
+			&= q-Nq'+N^2(q-Nv')'' = q-Nq'+N^2q''-N^3v''' \\
+			&\vdots \\
 			&= q-Nq'+...+(-1)^{k-1}N^{k-1}\underbrace{\frac{d^k}{dt^k}q}_{:=q^{(k-1)}}+(-1) \underbrace{N^kv^{(k)}}_{=0}\\ 
-			\label{solution-to-transformed-DAE-const-coeff-part2}
 			&= \sum_{i=0}^{k-1} (-1)^iN^iq^{(i)}(t)
-		\end{align}	
-	
-		There exist other index concepts, for our case these are all the same.
+		\end{align*}	
+		$\to$ differentiation index $\nu$.
+		(There exist other index concepts, for our case these are all equal.)
 	\end{frame}
 
 %	\begin{frame}
@@ -448,7 +447,7 @@
 	
 	\begin{frame}
 		\begin{definition}%[differentiation index \protect{\cite[Definition~13.3.1]{NumerikGewöhnlicherDifferentialgleichungen}}]
-			Consider the differential algebraic equation \eqref{Abstract_DAE} to be uniquely locally solvable and $F$ sufficiently smooth. For a given $m \in \mathbb{N}$ consider the equations
+			Consider the differential algebraic equation \eqref{Abstract_DAE} to be uniquely solvable and $F$ sufficiently smooth. For a given $m \in \mathbb{N}$ consider the equations
 			\begin{displaymath}
 				\begin{aligned}
 					F(t,y,y') &= 0, \\
@@ -463,6 +462,7 @@
 			\end{displaymath}
 			is called \textbf{differentiation index}.
 		\end{definition}
+		
 	\end{frame}
 
 	
@@ -665,6 +665,14 @@
 			\end{equation}
 			is called a \emph{linear multistep method} (linear k-step method). It is always assumed that $\alpha_k \neq 0$ and $|\alpha_0| + |\beta_k| > 0$. If $\beta_k=0$ holds, then the method is called explicit, otherwise implicit.
 		\end{definition}
+		\begin{definition}[generating polynomials]
+			\begin{equation*}
+				\label{eq:generating polynomials multistep method}
+				\rho(x) := \sum_{l=0}^{k} \alpha_l x^l
+				\qquad \text{and} \qquad
+				\sigma(x) := \sum_{l=0}^{k} \beta_l x^l
+			\end{equation*}
+		\end{definition}
 		\vfill
 	\end{frame}
 	
@@ -712,6 +720,13 @@
 				\max_{0 \leq j \leq k} ||y(t_j) - y_j|| \leq Ch^p.
 			\end{displaymath}
 			Where $C$ is a constant not dependent on the step size $h$.
+		\end{definition}
+		\begin{definition}[Consistency order]
+			A linear multi-step method is called \emph{consistent with order p}, if for all functions $y(t) \in C^{p+1}[t_0, t_l]$
+			\begin{displaymath}
+				L[y(t),h] = \mathcal{O}(h^{p+1}) \quad \text{for} \quad h \to 0
+			\end{displaymath}
+			holds.
 		\end{definition}
 		\vfill
 	\end{frame}
@@ -840,11 +855,17 @@
 	
 	\begin{frame}
 		\vfill
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.3\linewidth]{../Tex/pictures/trapezoidal_rule.png}
+			\caption{illustration of the trapezoidal rule}
+			\label{fig:trapezoidal rule}
+		\end{figure}
 		This procedure is repeated for small subsections of the interval $[a,b]$. Thus we obtain the iteration formula
 		\begin{displaymath}
 			u_h (t+h) = u_h(t) +\frac{h}{2}[f(t,u_h(t)) + f(t+h, u_h(t+h))].
 		\end{displaymath}
-		The trapezoidal rule, considered as a Lobatto~\RomanNumeralCaps{3}~A method, has convergence order $p=2$.
+		The trapezoidal rule has convergence order $p=2$.
 		\vfill
 	\end{frame}
 	
