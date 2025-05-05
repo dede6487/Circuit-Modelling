@@ -479,7 +479,7 @@
 		\begin{itemize}
 			\vfill
 			\item The resulting equations have index $\nu \leq 2$, if the circuit neither contains loops of only voltage sources nor cutsets of only current sources.
-			\item They have index $\nu \leq 1$, if the circuit contains neither loops of capacitors and/or voltage sources nor cutsets of inductors and/or current sources.
+			\item They have index $\nu \leq 1$, if the circuit contains neither loops of only capacitors and/or voltage sources nor cutsets of only inductors and/or current sources.
 			\item They have index $\nu = 0$, if every node in the circuit is connected to the reference node (ground) through a path containing only capacitors.
 			\vfill
 		\end{itemize}
@@ -777,7 +777,7 @@
 		\vfill
 		\begin{theorem}%[\protecting{\cite[Satz~4.2.10]{NumerikGewöhnlicherDifferentialgleichungen}}]
 			\label{th: null-stbaility and consistence is convergence}
-			Let $f(t,y)$ be sufficiently smooth and the linear multi-step method be zero-stable and consistent of order $p$, then it is also convergent of order $p$.
+			Let $f(t,y)$ be sufficiently smooth and the linear multi-step method be 0-stable and consistent of order $p$, then it is also convergent of order $p$.
 		\end{theorem}
 		\vfill
 	\end{frame}
@@ -851,7 +851,7 @@
 %		Due to Theorem \ref{th: null-stbaility and consistence is convergence} and the fact that BDF-k methods with $k \leq 6$  are $0$-stable as well as Theorem \ref{th: BDK-k consistency} we immediately gain the following corollary.
 %		
 		\begin{corollary}[Convergence rate]
-			The BDF-k methods with $k \leq 6$ are convergent with order$k$
+			The BDF-k methods with $k \leq 6$ are convergent with order $k$
 		\end{corollary}
 %		Using Theorem \ref{th: null-stbaility and consistence is convergence} we get that the BDF-k methods also have convergence order $p=k$.
 	\end{frame}
