@@ -10,7 +10,7 @@
 		\textbf{Example:} Charging of a capacitor:\\
 		\begin{figure}[H]
 			\centering
-			\includegraphics[scale=0.4]{../Tex/pictures/Example1_simple.png}
+			\includegraphics[scale=0.4]{../Tex/pictures/Example1_simple_p2.png}
 			\caption{charging capacitor with series resistor and voltage source}
 			\label{circuit:charging of capacitor}
 		\end{figure}
@@ -251,7 +251,7 @@
 			\label{DAE-const-coeff}
 			A y'(t) + B y(t) = f(t) ,
 		\end{equation}
-		with $A,B \in \mathbb{R}^{n \times n}$, $A$ singular, $B$ regular and $f:\mathbb{R} \to \mathbb{R}^n$ a function in time.
+		with $A,B \in \mathbb{R}^{n \times n}$, $A$ singular, $B$  and $f:\mathbb{R} \to \mathbb{R}^n$ a function in time.
 		$\to$ differential and algebraic variables
 		\vfill
 	\end{frame}
@@ -287,9 +287,9 @@
 	
 	\begin{frame}
 		\vfill
-		\begin{definition}
-			The matrix pencil $\{ A,B\}$ is called \emph{regular} if there exists some $c \in \mathbb{R}$, such that $(cA+B)$ is regular (i.e. $det(cA+B) \neq 0$), otherwise it is called singular.
-		\end{definition}
+%		\begin{definition}
+%			The matrix pencil $\{ A,B\}$ is called \emph{regular} if there exists some $c \in \mathbb{R}$, such that $(cA+B)$ is regular (i.e. $det(cA+B) \neq 0$), otherwise it is called singular.
+%		\end{definition}
 		
 			Equivalence transformations lead to
 		\begin{equation}
@@ -428,7 +428,7 @@
 			v(t) &= q(t) - Nv'(t) = q(t) - N(\underbrace{q(t)-Nv'(t)}_{=v(t)})' = q-Nq'+N^2v'' \\
 			&= q-Nq'+N^2(q-Nv')'' = q-Nq'+N^2q''-N^3v''' \\
 			&\vdots \\
-			&= q-Nq'+...+(-1)^{k-1}N^{k-1}\underbrace{\frac{d^k}{dt^k}q}_{:=q^{(k-1)}}+(-1) \underbrace{N^kv^{(k)}}_{=0}\\ 
+			&= q-Nq'+...+(-1)^{k-1}N^{k-1}\underbrace{\frac{d^{k-1}}{dt^{k-1}}q}_{:=q^{(k-1)}}+(-1)^{k-1} \underbrace{N^kv^{(k)}}_{=0}\\ 
 			&= \sum_{i=0}^{k-1} (-1)^iN^iq^{(i)}(t)
 		\end{align*}	
 		$\to$ differentiation index $\nu = k$.
@@ -722,13 +722,16 @@
 			\end{displaymath}
 			Where $C$ is a constant not dependent on the step size $h$.
 		\end{definition}
-		\begin{definition}[Consistency order]
-			A linear multi-step method is called \emph{consistent with order p}, if for all functions $y(t) \in C^{p+1}[t_0, t_l]$
-			\begin{displaymath}
-				L[y(t),h] = \mathcal{O}(h^{p+1}) \quad \text{for} \quad h \to 0
-			\end{displaymath}
-			holds.
-		\end{definition}
+		
+		Consistency is ...
+		
+%		\begin{definition}[Consistency order]
+%			A linear multi-step method is called \emph{consistent with order p}, if for all functions $y(t) \in C^{p+1}[t_0, t_l]$
+%			\begin{displaymath}
+%				L[y(t),h] = \mathcal{O}(h^{p+1}) \quad \text{for} \quad h \to 0
+%			\end{displaymath}
+%			holds.
+%		\end{definition}
 		\vfill
 	\end{frame}
 	
@@ -920,17 +923,19 @@
 	
 	\begin{frame}
 		\vfill
+		Gauss-1 method or implicit midpoint rule:
 		\begin{displaymath}
 			y_{n+1} = y_n + h f(t_n + \frac{h}{2}, \frac{y_n + y_{n+1}}{2})
 		\end{displaymath}
+		different convergence rates for algebraic and differential variables:
 		\begin{table}[H]
-		\begin{tabular}{ | c | c c | c c |}
+		\begin{tabular}{| c c | c c |}
 			\hline
-			\multirow{2}*{number of stages $s$} & \multicolumn{2}{c |}{index $\nu = 1$} & \multicolumn{2}{ c |}{index $\nu = 2$} \\
-			& differential & algebraic & differential & algebraic \\
+			\multicolumn{2}{| c |}{index $\nu = 1$} & \multicolumn{2}{ c |}{index $\nu = 2$} \\
+			differential & algebraic & differential & algebraic \\
 			\hline
-			even & \multirow{2}*{$2s$} & $s+1$ & $s+1$ & $s-1$ \\
-			odd & & $s$ & $s$ & $s-2$ \\
+			$2$ & $2$ & 
+			$2$ & $0$\\
 			\hline
 		\end{tabular}
 		\caption{Convergence order for Gauss method.}
