@@ -60,14 +60,25 @@ err_gauss(:,1) = hspan;
     %system matrices
     A3 = [1 0;
           0 0];
-    
+        
+
+    % for circuit with only capacitor and voltage source
+    % B3 = [0 -1;
+    %       1 0];
+
     B3 = [1 -1;
           1 0];
     
+    % for circuit with only capacitor and voltage source
+    % f3 = @(t) [0 -sin(10*pi*t)]';
+
     f3 = @(t) [0 -sin(pi*t)]';
     
     %consistent initial values (as calculated)
     
+    % for circuit with only capacitor and voltage source
+    % y30 = [0 -10*pi]';
+
     y30 = [0 -pi]';
     
     %exact solution u1 = -vsrc, iV = u1 + u1'
@@ -75,7 +86,11 @@ err_gauss(:,1) = hspan;
     
     y3 = @(t) [-sin(pi*t); 
               -sin(pi*t)-pi*cos(pi*t)]; 
-    
+
+    % for circuit with only capacitor and voltage source
+    % y3 = @(t) [-sin(10*pi*t); 
+    %           -10*pi*cos(10*pi*t)]; 
+
 for n=1:3
 
     h = hspan(n);
@@ -128,7 +143,7 @@ end
     %illustration of one of the components at a time, i.e. graph =1,2,3 for u1,
     %u2, iL
     
-    graph = 1;
+    graph = 2;
     figure
     title('example 1')
 
@@ -153,8 +168,8 @@ end
     title('example 3')
 
     hold on
-    plot(x, y2_gauss(graph,:), 'DisplayName', 'gauss');
-    plot(x, y2_exact(graph,:), 'DisplayName', 'exact');
+    plot(x, y3_gauss(graph,:), 'DisplayName', 'gauss');
+    plot(x, y3_exact(graph,:), 'DisplayName', 'exact');
     hold off
 
     legend
