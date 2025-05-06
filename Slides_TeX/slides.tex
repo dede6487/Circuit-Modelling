@@ -940,27 +940,23 @@
 		\caption{Convergence order for Gauss method.}
 		\label{tab:convergence order Gauss}
 		\end{table}
+%		\begin{table}[H]
+%			\centering
+%			\begin{tabular}{ | c | c c | c c |}
+%				\hline
+%				\multirow{2}*{number of stages $s$} & \multicolumn{2}{c |}{index $\nu = 1$} & \multicolumn{2}{ c |}{index $\nu = 2$} \\
+%				& differential & algebraic & differential & algebraic \\
+%				\hline
+%				even & \multirow{2}*{$2s$} & $s+1$ & $s+1$ & $s-1$ \\
+%				odd & & $s$ & $s$ & $s-2$ \\
+%				\hline
+%			\end{tabular}
+%			\caption{Convergence order for Gauss method.}
+%			\label{tab:convergence order Gauss}
+%		\end{table}
 		\vfill
 	\end{frame}
 
-	\begin{frame}
-		\vfill
-		\begin{table}[H]
-			\resizebox*{\textwidth}{!}{%
-				\csvreader[tabular= | c || c c c | c c | c c |,
-				table head = \hline h & \multicolumn{3}{c|}{example 1} & \multicolumn{2}{c|}{example 2} & \multicolumn{2}{c|}{example 3}\\
-				& $err(u_1)$ (alg) & $err(u_2)$ (diff) & $err(i_0)$ (alg) & $err(u_1)$ (diff) & $err(i_L)$ (diff) & $err(u_1)$ (diff) & $err(i_V)$ (alg)\\
-				\hline,
-				late after line=\\\hline]
-				{../Matlab/err_gauss.csv}{h=\h, oneu=\oneu, oneuu=\oneuu, onei=\onei, twou=\twou, twoi=\twoi, twoignore=\twoignore, threeu=\threeu, threei=\threei, threeignore=\threeignore}
-				{\h  & \num{\oneu} & \num{\oneuu} & \num{\onei}  & \num{\twou} & \num{\twoi}  & \num{\threeu} & \num{\threei}}
-			}
-			\caption{Resulting errors for the Gauss method with one stage.}
-			\label{tab:error gauss}
-		\end{table}
-		\vfill
-	\end{frame}
-	
 %	\subsubsection{Example 2}
 %	
 %	\begin{frame}
@@ -1040,6 +1036,24 @@
 	\end{frame}
 	\egroup
 
+
+\begin{frame}[noframenumbering]
+	\vfill
+	\begin{table}[H]
+		\resizebox*{\textwidth}{!}{%
+			\csvreader[tabular= | c || c c c | c c | c c |,
+			table head = \hline h & \multicolumn{3}{c|}{example 1} & \multicolumn{2}{c|}{example 2} & \multicolumn{2}{c|}{example 3}\\
+			& $err(u_1)$ (alg) & $err(u_2)$ (diff) & $err(i_0)$ (alg) & $err(u_1)$ (diff) & $err(i_L)$ (diff) & $err(u_1)$ (diff) & $err(i_V)$ (alg)\\
+			\hline,
+			late after line=\\\hline]
+			{../Matlab/err_gauss.csv}{h=\h, oneu=\oneu, oneuu=\oneuu, onei=\onei, twou=\twou, twoi=\twoi, twoignore=\twoignore, threeu=\threeu, threei=\threei, threeignore=\threeignore}
+			{\h  & \num{\oneu} & \num{\oneuu} & \num{\onei}  & \num{\twou} & \num{\twoi}  & \num{\threeu} & \num{\threei}}
+		}
+		\caption{Resulting errors for the Gauss method with one stage.}
+		\label{tab:error gauss}
+	\end{table}
+	\vfill
+\end{frame}
 
 \begin{frame}[noframenumbering]
 	\vfill
