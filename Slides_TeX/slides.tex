@@ -473,16 +473,17 @@
 %	\begin{frame}
 %		content...
 %	\end{frame}
-	\subsection{Topological Conditions}
+	\subsection*{Topological Conditions}
 	
 	\begin{frame}
+		\vfill
+		\textbf{Topological conditions:}
 		\begin{itemize}
-			\vfill
 			\item The resulting equations have index $\nu \leq 2$, if the circuit neither contains loops of only voltage sources nor cutsets of only current sources.
 			\item They have index $\nu \leq 1$, if the circuit contains neither loops of only capacitors and/or voltage sources nor cutsets of only inductors and/or current sources.
 			\item They have index $\nu = 0$, if every node in the circuit is connected to the reference node (ground) through a path containing only capacitors.
-			\vfill
 		\end{itemize}
+		\vfill
 	\end{frame}
 
 	\begin{frame}
@@ -880,7 +881,7 @@
 	
 	\subsection*{Numerical Examples}
 	
-	\subsubsection{Example1}
+	\subsubsection{Example}
 	
 	\begin{frame}
 		\begin{figure}[H]
@@ -918,49 +919,45 @@
 		\vfill
 	\end{frame}
 	
-	\subsubsection{Gauss}
+%	\subsubsection{Gauss}
 	
-	\begin{frame}
-		\vfill
-		Gauss-1 method or implicit midpoint rule:
-		\begin{displaymath}
-			y_{n+1} = y_n + h f(t_n + \frac{h}{2}, \frac{y_n + y_{n+1}}{2})
-		\end{displaymath}
-		different convergence rates for algebraic and differential variables:
-		\begin{table}[H]
-		\begin{tabular}{| c c | c c |}
-			\hline
-			\multicolumn{2}{| c |}{index $\nu = 1$} & \multicolumn{2}{ c |}{index $\nu = 2$} \\
-			differential & algebraic & differential & algebraic \\
-			\hline
-			$2$ & $2$ & 
-			$2$ & $0$\\
-			\hline
-		\end{tabular}
-		\caption{Convergence order for Gauss method.}
-		\label{tab:convergence order Gauss}
-		\end{table}
-		\vfill
-	\end{frame}
+%	\begin{frame}
+%		\vfill
+%		Gauss-1 method or implicit midpoint rule:
+%		\begin{displaymath}
+%			y_{n+1} = y_n + h f(t_n + \frac{h}{2}, \frac{y_n + y_{n+1}}{2})
+%		\end{displaymath}
+%		different convergence rates for algebraic and differential variables:
+%%		\begin{table}[H]
+%%		\begin{tabular}{| c c | c c |}
+%%			\hline
+%%			\multicolumn{2}{| c |}{index $\nu = 1$} & \multicolumn{2}{ c |}{index $\nu = 2$} \\
+%%			differential & algebraic & differential & algebraic \\
+%%			\hline
+%%			$2$ & $2$ & 
+%%			$2$ & $0$\\
+%%			\hline
+%%		\end{tabular}
+%%		\caption{Convergence order for Gauss method.}
+%%		\label{tab:convergence order Gauss}
+%%		\end{table}
+%		\begin{table}[H]
+%			\centering
+%			\begin{tabular}{ | c | c c | c c |}
+%				\hline
+%				\multirow{2}*{number of stages $s$} & \multicolumn{2}{c |}{index $\nu = 1$} & \multicolumn{2}{ c |}{index $\nu = 2$} \\
+%				& differential & algebraic & differential & algebraic \\
+%				\hline
+%				even & \multirow{2}*{$2s$} & $s+1$ & $s+1$ & $s-1$ \\
+%				odd & & $s$ & $s$ & $s-2$ \\
+%				\hline
+%			\end{tabular}
+%			\caption{Convergence order for Gauss method.}
+%			\label{tab:convergence order Gauss}
+%		\end{table}
+%		\vfill
+%	\end{frame}
 
-	\begin{frame}
-		\vfill
-		\begin{table}[H]
-			\resizebox*{\textwidth}{!}{%
-				\csvreader[tabular= | c || c c c | c c | c c |,
-				table head = \hline h & \multicolumn{3}{c|}{example 1} & \multicolumn{2}{c|}{example 2} & \multicolumn{2}{c|}{example 3}\\
-				& $err(u_1)$ (alg) & $err(u_2)$ (diff) & $err(i_0)$ (alg) & $err(u_1)$ (diff) & $err(i_L)$ (diff) & $err(u_1)$ (diff) & $err(i_V)$ (alg)\\
-				\hline,
-				late after line=\\\hline]
-				{../Matlab/err_gauss.csv}{h=\h, oneu=\oneu, oneuu=\oneuu, onei=\onei, twou=\twou, twoi=\twoi, twoignore=\twoignore, threeu=\threeu, threei=\threei, threeignore=\threeignore}
-				{\h  & \num{\oneu} & \num{\oneuu} & \num{\onei}  & \num{\twou} & \num{\twoi}  & \num{\threeu} & \num{\threei}}
-			}
-			\caption{Resulting errors for the Gauss method with one stage.}
-			\label{tab:error gauss}
-		\end{table}
-		\vfill
-	\end{frame}
-	
 %	\subsubsection{Example 2}
 %	
 %	\begin{frame}
@@ -1040,6 +1037,24 @@
 	\end{frame}
 	\egroup
 
+
+%\begin{frame}[noframenumbering]
+%	\vfill
+%	\begin{table}[H]
+%		\resizebox*{\textwidth}{!}{%
+%			\csvreader[tabular= | c || c c c | c c | c c |,
+%			table head = \hline h & \multicolumn{3}{c|}{example 1} & \multicolumn{2}{c|}{example 2} & \multicolumn{2}{c|}{example 3}\\
+%			& $err(u_1)$ (alg) & $err(u_2)$ (diff) & $err(i_0)$ (alg) & $err(u_1)$ (diff) & $err(i_L)$ (diff) & $err(u_1)$ (diff) & $err(i_V)$ (alg)\\
+%			\hline,
+%			late after line=\\\hline]
+%			{../Matlab/err_gauss.csv}{h=\h, oneu=\oneu, oneuu=\oneuu, onei=\onei, twou=\twou, twoi=\twoi, twoignore=\twoignore, threeu=\threeu, threei=\threei, threeignore=\threeignore}
+%			{\h  & \num{\oneu} & \num{\oneuu} & \num{\onei}  & \num{\twou} & \num{\twoi}  & \num{\threeu} & \num{\threei}}
+%		}
+%		\caption{Resulting errors for the Gauss method with one stage.}
+%		\label{tab:error gauss}
+%	\end{table}
+%	\vfill
+%\end{frame}
 
 \begin{frame}[noframenumbering]
 	\vfill
