@@ -7,7 +7,7 @@ This chapter aims to elaborate on the Modified Nodal Analysis (MNA) of an electr
 
 \section{Network Topology}
 \label{Sec:Network Topology}
-An electrical circuit is usually considered as a graph $(\mathcal{N},\mathcal{E})$ where $\mathcal{N} = (n_0, n_1, n_2, ..., n_k)$ denotes nodes and $\mathcal{E} = \{e_{j}: j = 1,...,l\}$ is the set of edges where $|\mathcal{N}| = k$ is the number of nodes and $|\mathcal{E}| = l$ the number of edges. If for some $i$ and some $j$ the nodes $n_i$ and  $n_j$ are connected, then there exists an edge connecting those two nodes.
+An electrical circuit is usually considered as a graph $(\mathcal{N},\mathcal{E})$ where $\mathcal{N} = (n_0, n_1, n_2, ..., n_k)$ denotes the set of nodes and $\mathcal{E} = \{e_{j}: j = 1,...,l\}$ is the set of edges where $|\mathcal{N}| = k$ is the number of nodes and $|\mathcal{E}| = l$ the number of edges. If for some $i$ and some $j$ the nodes $n_i$ and  $n_j$ are connected, then there exists an edge connecting those two nodes.
 We can store this information in an \emph{incidence matrix} $\tilde{A} = (\tilde{a}_{ij}) \in \mathbb{R}^{k \times l}$ which is defined by
 \begin{displaymath}
 	\tilde{a}_{ij} = 
@@ -31,7 +31,7 @@ We will later see that the components of an electrical circuit, which will be in
 		\caption{charging capacitor with series resistor and voltage source}
 		\label{circuit:charging of capacitor}
 	\end{figure}
-	With the node-potentials, the voltages and the currents collected in the vectors
+	With the node potentials, the voltages and the currents collected in the vectors
 	\begin{displaymath}
 		u=
 		\left(
@@ -120,7 +120,7 @@ We will later see that the components of an electrical circuit, which will be in
 		\label{circuit:LC-circuit}
 	\end{figure}
 	
-	We again collect the node-potentials, the voltages and the currents in the vectors
+	We again collect the node potentials, the voltages and the currents in the vectors
 	\begin{displaymath}
 		u=
 		\left(
@@ -156,7 +156,7 @@ We will later see that the components of an electrical circuit, which will be in
 		\end{matrix}
 		\right).
 	\end{displaymath}
-	By grounding node $u_0$ this can again be reduced, we obtain the reduced incidence matrix
+	By grounding node $u_0$ this can again be reduced and we obtain the reduced incidence matrix
 	\begin{displaymath}
 		A = 
 		\left(
@@ -169,7 +169,7 @@ We will later see that the components of an electrical circuit, which will be in
 
 \begin{example3}[Parallel Voltage Source, Capacitor and Resistor]
 	\label{ex:Example 3 - incidence matrix }
-	As a third example we consider a similar circuit to the circuit presented in Example 1.\ref{ex:network topology}, the only difference is that we connected the resistor parallel to the capacitor instead of connecting it in series.
+	As a third example we consider a similar circuit to the circuit presented in Example 1.\ref{ex:network topology}, the only difference is that we connect the resistor parallel to the capacitor instead of connecting it in series.
 	\begin{figure}[H]
 		\label{circuit:Example 3}
 		\centering
@@ -177,7 +177,7 @@ We will later see that the components of an electrical circuit, which will be in
 		\caption{Capacitor with resistor and voltage source}
 	\end{figure}
 	
-	We collect the node-potentials, the voltages and the currents in the vectors
+	We collect the node potentials, the voltages and the currents in the vectors
 	\begin{displaymath}
 		u=
 		\left(
@@ -245,7 +245,7 @@ To fully fix all the variables that arise in the model of an electrical circuit 
 
 \section{Electrical Components and their relations}
 \label{Sec:Components relations}
-Electrical components are described by equations relating their edge voltage $v$ to their edge current $i$. We will mainly focus on so-called RLC-networks (short for Resistor, Inductor and Capacitor). These networks consist only of resistors, capacitors, inductors, voltage sources and current sources. Diodes and transistors as well as other electrical components can be described in a similar way, although these lead to a more difficult analysis of the system, see e.g. \cite{ModellingAndDiscretizationOfCircuitProblems} and \cite{SchwarzTischendorfCircuitMNA}. Using the notation introduced in Section \ref{Sec:Network Topology}, the relations read as:
+Electrical components are described by equations relating their edge voltage $v$ to their edge current $i$. We will mainly focus on so-called RLC-networks (short for Resistor, Inductor and Capacitor). These networks consist only of \emph{resistors}, \emph{capacitors}, \emph{inductors}, \emph{voltage sources} and \emph{current sources}. Diodes and transistors as well as other electrical components can be described in a similar way, although these lead to a more difficult analysis of the system, see e.g. \cite{ModellingAndDiscretizationOfCircuitProblems} and \cite{SchwarzTischendorfCircuitMNA}. Using the notation introduced in Section \ref{Sec:Network Topology}, the relations read as:
 \begin{itemize}
 	\item \textbf{Resistor} \newline
 	Resistors ''resist`` the flow of current, which causes voltage to drop. This behaviour is described by the \emph{resistance} $R \in \mathbb{R}^+ := \{x \in \mathbb{R}: x > 0\}$ which is given in \emph{Ohm} ($\Omega$) and its reciprocal, the \emph{conductance} $G \in \mathbb{R}^+$, which is given in \emph{Siemens} ($S=\frac{1}{\Omega}$). 
@@ -320,7 +320,7 @@ Electrical components are described by equations relating their edge voltage $v$
 	%\item Transistor - unlike the other components which were all two-teminal components a transisstor is a three-terminal component
 \end{itemize}
 
-The resistance $R$, conductance $G$, capacitance $C$ and inductance $L$ are respectively described as a scalar constant that relates the edge-current to the edge-voltage. If there are more components of the same kind in one circuit their corresponding constants will usually be collected into a matrix which is also called the same and also denoted by the same letter, respectively. These matrices are then positive definite diagonal matrices.
+The resistance $R$, conductance $G$, capacitance $C$ and inductance $L$ are respectively described as a scalar constant that relates the edge current to the edge voltage. If there are more components of the same kind in one circuit their corresponding constants will usually be collected into a matrix which is also called the same and also denoted by the same letter, respectively. These matrices are then positive definite diagonal matrices.
 
 \section{Modified Nodal Analysis - MNA}
 \label{sec:MNA}
@@ -336,11 +336,11 @@ Based on \cite{ModellingAndDiscretizationOfCircuitProblems} and \cite{NumerikGew
 \end{displaymath}
 where $A_R$, $A_C$, $A_L$, $A_V$ and $A_I$ include the columns that are related to the resistors, capacitors, coils, voltage sources and current sources, respectively.
 
-To mathematically describe the circuit, we use \emph{modified nodal analysis} (or short MNA), see the paper by Ho, Ruehli and Brennan, \cite{MNA75}. MNA uses the node voltages as well as the currents of the coils and the voltage sources as unknowns. It is based on the conservation laws \eqref{KCL} and \eqref{KVL} as well as on the voltage-current relations of the electrical components, discussed in Section \ref{Sec:Components relations}. The voltages can be represented using the node-potentials and the incidence matrix $A$, i.e.
+To mathematically describe the circuit, we use \emph{modified nodal analysis} (or short MNA), see the paper by Ho, Ruehli and Brennan \cite{MNA75}. MNA uses the node voltages as well as the currents of the coils and the voltage sources as unknowns. It is based on the conservation laws \eqref{KCL} and \eqref{KVL}, as well as on the voltage-current relations of the electrical components discussed in Section \ref{Sec:Components relations}. The voltages can be represented using the node potentials and the incidence matrix $A$, i.e.
 \begin{displaymath}
 	v = A^\top u.
 \end{displaymath}
-The vector $v$ can thus be rearranged into $v = (v_R, v_C, v_L, v_{src}, v_I)$. In a similar way we also rearrange the current vector into $i = (i_R, i_C, i_L, i_V, i_{src})$. Using the sorted incidence matrix blocks, we can rewrite the resistor current relation as
+The vector $v$ can thus be rearranged into $v = (v_R, v_C, v_L, v_{src}, v_I)$. Analogously we also rearrange the current vector into $i = (i_R, i_C, i_L, i_V, i_{src})$. Using the sorted incidence matrix blocks, we can rewrite the resistor current relation as
 	\begin{displaymath}
 		i_R = G \ v_R = G \ A_R^\top u.
 	\end{displaymath}
@@ -403,7 +403,7 @@ In matrix form these read
 \end{equation}
 where the diagonal matrices $C$, $G$ and $L$ contain the capacities, conductivities and inductors, respectively.
 
-The resulting systems are \emph{stiff} systems. This means that for their numserical solution special care has to be put into which methods are suitable for solving these systems in a stable manner. For analyzing nonlinear components, other formulations can be used, e.g. the charge flux oriented formulation, for details see \cite{ModellingAndDiscretizationOfCircuitProblems}.
+The resulting systems are \emph{stiff} systems. This means that for their numerical solution special care has to be put into which methods are suitable for solving these systems in a stable manner. For analyzing nonlinear components, other formulations can be used, e.g. the charge flux oriented formulation, for details see \cite{ModellingAndDiscretizationOfCircuitProblems}.
 
 
 \begin{example1}[Charging of a Capacitor]
@@ -418,7 +418,7 @@ The resulting systems are \emph{stiff} systems. This means that for their numser
 		\end{matrix}
 		\right).
 	\end{displaymath} 
-	This matrix can be split into the three submatrices $A_V$, $A_R$ and $A_C$ containing the columns of the matrix $A$. Because there are no inductors as well as no current sources resent, the matrices $A_L$ and $A_V$ are empty. The diagonal matrices containing the components constants are
+	This matrix can be split into the three submatrices $A_V$, $A_R$ and $A_C$ containing the columns of the matrix $A$. Because there are no inductors as well as no current sources present, the matrices $A_L$ and $A_V$ are empty. The diagonal matrices containing the components constants are
 	\begin{displaymath}
 		C = (C), \qquad L = (), \qquad G = (\frac{1}{R}).
 	\end{displaymath}
@@ -456,13 +456,13 @@ The resulting systems are \emph{stiff} systems. This means that for their numser
 		\end{pmatrix}.
 	\end{equation}
 	
-	Note that because $L$ is empty, the system does not contain any related equations to inductances.
+	Note that because $L$ is empty, the system does not contain any equations related to inductances.
 \end{example1}
 
 
 \begin{example2}[LC-Circuit]
 	\label{ex:LC-circuit MNA}
-	Similarly we also derived the incidence Matrix for this system in Example 2.\ref{ex:LC-circuit incidence matrix}, i.e.
+	Similarly, we also derived the incidence matrix for this system in Example 2.\ref{ex:LC-circuit incidence matrix}, i.e.
 	\begin{displaymath}
 		A = 
 		\left(

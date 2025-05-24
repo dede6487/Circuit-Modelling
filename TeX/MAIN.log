@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.24)  5 MAY 2025 20:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.24)  24 MAY 2025 18:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2236,6 +2236,11 @@ Missing character: There is no ‰ in font pplr7t!
 
 ]
 
+LaTeX Warning: Reference `chap:Weierstra√ü-Kronecker Normalform' on page 25 und
+efined on input line 81.
+
+
+
 [25]
 
 [26]
@@ -2243,14 +2248,14 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 172.
 Package mdframed Info: Not enough space on this page on input line 196.
-<pictures/inductance-current-source_cutset.png, id=404, 948.54375pt x 543.53062
+<pictures/inductance-current-source_cutset.png, id=403, 948.54375pt x 543.53062
 pt>
 File: pictures/inductance-current-source_cutset.png Graphic file (type png)
 <use pictures/inductance-current-source_cutset.png>
 Package pdftex.def Info: pictures/inductance-current-source_cutset.png  used on
  input line 211.
 (pdftex.def)             Requested size: 198.60664pt x 113.81102pt.
-<pictures/capacitance-voltage-source_loop.png, id=405, 858.20625pt x 543.53062p
+<pictures/capacitance-voltage-source_loop.png, id=404, 858.20625pt x 543.53062p
 t>
 File: pictures/capacitance-voltage-source_loop.png Graphic file (type png)
 <use pictures/capacitance-voltage-source_loop.png>
@@ -2265,7 +2270,7 @@ Overfull \hbox (2.08049pt too wide) in paragraph at lines 209--219
 
 
 [27]
-<pictures/Example1_simple_p2.png, id=414, 569.12625pt x 435.87843pt>
+<pictures/Example1_simple_p2.png, id=413, 569.12625pt x 435.87843pt>
 File: pictures/Example1_simple_p2.png Graphic file (type png)
 <use pictures/Example1_simple_p2.png>
 Package pdftex.def Info: pictures/Example1_simple_p2.png  used on input line 23
@@ -2312,7 +2317,7 @@ Package pdftex.def Info: pictures/Example3.png  used on input line 377.
 
  (./chapters/Numerical_Solution.tex
 chapter 5.
-<pictures/num_approx.png, id=477, 391.4625pt x 222.07968pt>
+<pictures/num_approx.png, id=476, 391.4625pt x 222.07968pt>
 File: pictures/num_approx.png Graphic file (type png)
 <use pictures/num_approx.png>
 Package pdftex.def Info: pictures/num_approx.png  used on input line 29.
@@ -2362,7 +2367,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 350--352
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 372.
-<pictures/A_alpha_stability.png.png, id=519, 276.28218pt x 226.59656pt>
+<pictures/A_alpha_stability.png.png, id=518, 276.28218pt x 226.59656pt>
 File: pictures/A_alpha_stability.png.png Graphic file (type png)
 <use pictures/A_alpha_stability.png.png>
 Package pdftex.def Info: pictures/A_alpha_stability.png.png  used on input line
@@ -2379,7 +2384,7 @@ Package mdframed Info: Not enough space on this page on input line 406.
 
 
 [41]
-<pictures/bdf_stability_regions.png, id=543, 904.88063pt x 255.95625pt>
+<pictures/bdf_stability_regions.png, id=542, 904.88063pt x 255.95625pt>
 File: pictures/bdf_stability_regions.png Graphic file (type png)
 <use pictures/bdf_stability_regions.png>
 Package pdftex.def Info: pictures/bdf_stability_regions.png  used on input line
@@ -2402,7 +2407,7 @@ File: pictures/Example1_simple_p2.png Graphic file (type png)
 Package pdftex.def Info: pictures/Example1_simple_p2.png  used on input line 57
 7.
 (pdftex.def)             Requested size: 213.39569pt x 163.43405pt.
-<../Matlab/exact_solution_ex1.png, id=569, 354.57469pt x 276.28218pt>
+<../Matlab/exact_solution_ex1.png, id=568, 354.57469pt x 276.28218pt>
 File: ../Matlab/exact_solution_ex1.png Graphic file (type png)
 <use ../Matlab/exact_solution_ex1.png>
 Package pdftex.def Info: ../Matlab/exact_solution_ex1.png  used on input line 5
@@ -2417,7 +2422,7 @@ File: pictures/Example2_index0.png Graphic file (type png)
 <use pictures/Example2_index0.png>
 Package pdftex.def Info: pictures/Example2_index0.png  used on input line 666.
 (pdftex.def)             Requested size: 213.39569pt x 207.49208pt.
-<../Matlab/exact_solution_ex2.png, id=587, 350.05782pt x 276.28218pt>
+<../Matlab/exact_solution_ex2.png, id=586, 350.05782pt x 276.28218pt>
 File: ../Matlab/exact_solution_ex2.png Graphic file (type png)
 <use ../Matlab/exact_solution_ex2.png>
 Package pdftex.def Info: ../Matlab/exact_solution_ex2.png  used on input line 6
@@ -2430,7 +2435,7 @@ File: pictures/Example3.png Graphic file (type png)
 <use pictures/Example3.png>
 Package pdftex.def Info: pictures/Example3.png  used on input line 734.
 (pdftex.def)             Requested size: 213.39569pt x 128.77275pt.
-<../Matlab/exact_solution_ex3.png, id=597, 346.29375pt x 276.28218pt>
+<../Matlab/exact_solution_ex3.png, id=596, 346.29375pt x 276.28218pt>
 File: ../Matlab/exact_solution_ex3.png Graphic file (type png)
 <use ../Matlab/exact_solution_ex3.png>
 Package pdftex.def Info: ../Matlab/exact_solution_ex3.png  used on input line 7
@@ -2479,6 +2484,10 @@ enddocument/afterlastpage (AED): lastpage setting LastPage.
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `MAIN.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'MAIN.run.xml'.
@@ -2486,11 +2495,11 @@ Package logreq Info: Writing requests to 'MAIN.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43342 strings out of 473206
- 887197 string characters out of 5714188
+ 43343 strings out of 473206
+ 887242 string characters out of 5714188
  2354044 words of memory out of 5000000
- 65094 multiletter control sequences out of 15000+600000
- 655645 words of font info for 435 fonts, out of 8000000 for 9000
+ 65095 multiletter control sequences out of 15000+600000
+ 655721 words of font info for 435 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,20n,142p,10899b,4222s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/Anwendungen/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
@@ -2508,9 +2517,9 @@ d:/Anwendungen/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb><d:
 /Anwendungen/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><d:/An
 wendungen/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><d:/Anwen
 dungen/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on MAIN.pdf (59 pages, 594639 bytes).
+Output written on MAIN.pdf (59 pages, 595116 bytes).
 PDF statistics:
- 955 PDF objects out of 1000 (max. 8388607)
+ 954 PDF objects out of 1000 (max. 8388607)
  313 named destinations out of 1000 (max. 500000)
  108860 words of extra memory for PDF output out of 128383 (max. 10000000)
 

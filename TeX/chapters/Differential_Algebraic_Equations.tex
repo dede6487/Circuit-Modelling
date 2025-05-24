@@ -2,14 +2,14 @@
 
 \label{sec:Differential Algebraic equations}
 
-The resulting MNA of electrical circuits leads to a special form of differential equations, namely \emph{differential algebraic equations} (DAE). Additionally to differential equations they also contain algebraic equations or are equivalent to such a system. 
-To understand the general solvability of those systems and to find good numerical methods we first have to take a look at the theory of such DAEs. For this we build upon the results presented in \cite{NumerikGewöhnlicherDifferentialgleichungen}.
+The MNA of electrical circuits leads to a special form of differential equations, namely \emph{differential algebraic equations} (DAE). Additionally to differential equations they also contain algebraic equations, or are equivalent to a system of differential-algebraic equations. 
+To understand the general solvability of those systems, and to find good numerical methods we first have to take a look at the theory of DAEs. For this we build upon the results presented in \cite{NumerikGewöhnlicherDifferentialgleichungen}.
 
 In the most general form a DAE can be written as:
 Find $y:\mathbb{R} \to \mathbb{R}^n$ such that
 \begin{equation}
 	\label{Abstract_DAE}
-	F(t, y(t), y'(t)) = 0, \qquad \forall t \in I
+	F(t, y(t), y'(t)) = 0, \qquad \forall t \in I \subset \mathbb{R},
 \end{equation}
 
 with $F:\mathbb{R} \times \mathbb{R}^n \times \mathbb{R}^n \to \mathbb{R}^n$ sufficiently smooth and $I$ the time-interval. As this is usually too general, one has to consider more specific types of DAEs.
@@ -20,13 +20,13 @@ This chapter focuses on giving a brief overview of the different types of differ
 	Let us consider the following three types of DAEs.
 	
 	\begin{itemize}
-		\item \textbf{Linear systems with constant coeffiecients} \newline
-		are systems of the form: find $y$ such that
+		\item \textbf{Linear systems with constant coefficients} \newline
+		are systems of the form: Find $y$ such that
 		\begin{equation}
 			\label{DAE-const-coeff}
-			A y'(t) + B y(t) = f(t) ,
+			A y'(t) + B y(t) = f(t), \qquad \forall t \in I \subset \mathbb{R},
 		\end{equation}
-		with $A,B \in \mathbb{R}^{n \times n}$, $A$ singular, $B$ regular and $f:\mathbb{R} \to \mathbb{R}^n$ a function in time. If $A$ is regular this equation can be transformed into an ordinary differental equation, since
+		with $A,B \in \mathbb{R}^{n \times n}$, $A$ singular, $B$ regular and $f:\mathbb{R} \to \mathbb{R}^n$ a function in time. If $A$ is regular, this equation can be transformed into an ordinary differental equation, since
 		\begin{displaymath}
 			y'(t) + A^{-1}By(t) = A^{-1} f(t)
 		\end{displaymath}
@@ -34,17 +34,17 @@ This chapter focuses on giving a brief overview of the different types of differ
 		Thus it is reasonable to assume $A$ singular.
 		
 		\item \textbf{Linear time dependent systems}
-		are systems of the form: find $y$ such that
+		are systems of the form: Find $y$ such that
 		\begin{displaymath}
-			A(t) y'(t) + B(t) y(t) = f(t) ,
+			A(t) y'(t) + B(t) y(t) = f(t) , \qquad \forall t \in I \subset \mathbb{R},
 		\end{displaymath}
 	
 		with $A, B:\mathbb{R} \to \mathbb{R}^{n \times n}$, $f:\mathbb{R} \to \mathbb{R}^n$ functions, such that for every $t \in \mathbb{R}$ the matrix $A(t)$ is singular and the matrix $B(t)$ regular.
 		
 		\item  \textbf{Structured (non-linear) systems} \newline
-		are semi-explicit systems of the form: find $(y,z)$ such that
+		are semi-explicit systems of the form: Find $(y,z)$ such that
 		\begin{align*}
-			y'(t) &= f(t, y(t), z(t)) , \\
+			y'(t) &= f(t, y(t), z(t)) , \qquad \forall t \in I \subset \mathbb{R}, \\
 			0 &= g(t,y(t),z(t)) ,
 		\end{align*}
 	
@@ -56,7 +56,7 @@ This chapter focuses on giving a brief overview of the different types of differ
 
 \subsection{Weierstraß-Kronecker normal form}
 
-\label{chap:Weierstraß-Kronecker Normalform}
+\label{chap:Weierstraß-Kronecker normalform}
 %kapitel aus buch seite 399 num gew dgl steif, kapitel 13.2.2
 To determine the solvability of a linear system with constant coefficients \eqref{DAE-const-coeff}, we first need to introduce a normal form for the system, the \emph{Weierstraß-Kronecker normal form}. This normal form is dependent on the family $\{A,B\} := \{ \mu A+B|\mu \in \mathbb{R} \}$, which is called the  \emph{matrix pencil} of the DAE.
 
@@ -81,7 +81,7 @@ To determine the solvability of a linear system with constant coefficients \eqre
 	and $n = m_1 + ... + m_r$.
 \end{theorem}
 
-The matrix $J$ is called Jordan normal form of $Q$, the matrices $J_i$ are called Jordan Blocks, where $\lambda_i$ are the corresponding eigenvalues of $Q$. The matrix $J$ is uniquely determined by $Q$ except for the arrangement of the diagonal blocks. If $Q$ posesses only real eigenvalues, then $T$ can also be choosen from the reals. \newline 
+The matrix $J$ is called Jordan normal form of $Q$, the matrices $J_i$ are called Jordan Blocks, where $\lambda_i$ are the corresponding eigenvalues of $Q$. The matrix $J$ is uniquely determined by $Q$ except for the arrangement of the diagonal blocks. If $Q$ posesses only real eigenvalues, then $T$ can also be chosen from the reals. \newline 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%pagebreak%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -89,7 +89,7 @@ In order to seperate the equation \eqref{DAE-const-coeff} into an algebraic and 
 
 %aus buch seite 401
 \begin{theorem}[\protect{\cite[Satz~13.2.2]{NumerikGewöhnlicherDifferentialgleichungen}}]
-	\label{Kronecker-Normalform}
+	\label{Kronecker-normalform}
 	Let $\{ A,B \}$ be a regular matrix pencil. There exist $P,Q \in \mathbb{C}^{n \times n}$ such that
 	\begin{displaymath}
 		PAQ = 
@@ -114,7 +114,7 @@ In order to seperate the equation \eqref{DAE-const-coeff} into an algebraic and 
 		\begin{matrix}
 			0 & 1 & & 0\\
 			& \ddots &\ddots & \\
-			& & & 0 & 1 \\
+			& & 0 & 1 \\
 			0 & & & 0
 		\end{matrix}
 		\right)
@@ -157,7 +157,7 @@ In order to seperate the equation \eqref{DAE-const-coeff} into an algebraic and 
 		\end{matrix}
 		\right) .
 	\end{displaymath}
-	The following two transformations will allow us to get the desired structure.
+	The following two transformations will allow us to obtain the desired structure.
 	First we will transform $J_{\hat{A}}$ with
 	\begin{displaymath}
 		T_2 :=
@@ -199,12 +199,12 @@ In order to seperate the equation \eqref{DAE-const-coeff} into an algebraic and 
 	\end{displaymath}
 	where we used that $\tilde{N}$ is nilpotent with nilpotency index $k$. This shows that $\tilde{N}$ and $(I-c\tilde{N})^{-1}$ commute.
 	
-	From this we can conclude that
+	From this we conclude that
 	\begin{displaymath}
-		N^k = [T_{\tilde{N}}^{-1}(I-c\tilde{N})^{-1}\tilde{N}T_{\tilde{N}}]^k = T_{\tilde{N}}^{-1}[(I-c\tilde{N})^{-1}\tilde{N}]^kT_{\tilde{N}} = T_{\tilde{N}}^{-1}(I-c\tilde{N})^{-k}\underbrace{\tilde{N}^k}_{=0}T_{\tilde{N}} = 0
+		N^k = [T_{\tilde{N}}^{-1}(I-c\tilde{N})^{-1}\tilde{N}T_{\tilde{N}}]^k = T_{\tilde{N}}^{-1}[(I-c\tilde{N})^{-1}\tilde{N}]^kT_{\tilde{N}} = T_{\tilde{N}}^{-1}(I-c\tilde{N})^{-k}\underbrace{\tilde{N}^k}_{=0}T_{\tilde{N}} = 0,
 	\end{displaymath}
 	
-	We used the commutativity in the third step here. The nilpotent matrix $N$ thus also has the nilpotency index $k$. A transformation with
+	where we used the commutativity in the third step. The nilpotent matrix $N$ thus also has the nilpotency index $k$. A transformation with
 	\begin{displaymath}
 		T_3 := 
 		\left(
@@ -241,7 +241,7 @@ In order to seperate the equation \eqref{DAE-const-coeff} into an algebraic and 
 	to get the statement.
 \end{proof}
 
-Using the findings above we are able to transform the initial DAE \eqref{DAE-const-coeff} using the matrix $P$ from Theorem \ref{Kronecker-Normalform}. By multiplying with $P$ from the left, we obtain
+Using the findings above we are able to transform the initial DAE \eqref{DAE-const-coeff} using the matrix $P$ from Theorem \ref{Kronecker-normalform}. By multiplying with $P$ from the left, we obtain
 \begin{displaymath}
 	P A y'(t) + P B y(t) = P f(t) .
 \end{displaymath}
@@ -294,7 +294,7 @@ We call this system the\emph{ Weierstraß-Kronecker normal form} of the DAE. The
 	v(t) &= q(t) - Nv'(t) = q(t) - N(\underbrace{q(t)-Nv'(t)}_{=v(t)})' = q-Nq'+N^2v'' \\ \notag
 	&= q-Nq'+N^2(q-Nv')'' = q-Nq'+N^2q''-N^3v''' \\ \notag
 	&\vdots \\ \notag
-	&= q-Nq'+...+(-1)^{k-1}N^{k-1}\underbrace{\frac{d^k}{dt^k}q}_{:=q^{(k-1)}}+(-1) \underbrace{N^kv^{(k)}}_{=0}\\ 
+	&= q-Nq'+...+(-1)^{k-1}N^{k-1}\underbrace{\frac{d^{k-1}}{dt^{k-1}}q}_{:=q^{(k-1)}}+(-1)^k \underbrace{N^kv^{(k)}}_{=0}\\ 
 	\label{solution-to-transformed-DAE-const-coeff-part2}
 	&= \sum_{i=0}^{k-1} (-1)^iN^iq^{(i)}(t)
 \end{align}
@@ -327,14 +327,14 @@ We can also give a general definition of a DAE in Weierstraß-Kronecker normal f
 \end{definition}
 
 \begin{definition}
-	The nilpotency index $k$ of the matrix $N$ from the Weierstraß-Kronecker Normalform of a matrix pencil $\{A,B\}$ with $A$ singular is called the \emph{Kronecker index} of $\{A,B\}$, which we denote by $ind\{A,B\}$. Note that for $A$ regular we set $ind\{A,B\} = 0$.
+	The nilpotency index $k$ of the matrix $N$ from the Weierstraß-Kronecker normalform of a matrix pencil $\{A,B\}$ with $A$ singular is called the \emph{Kronecker index} of $\{A,B\}$, which we denote by $ind\{A,B\}$. Note that for $A$ regular we set $ind\{A,B\} = 0$.
 \end{definition}
 
 %lemma 13.2.1
 
 \begin{lemma}
 	\label{Lemma:indipendence of Kronecker index}
-	The Kronecker-Index $ind\{A,B\}$ is independent of the choice of the matrices $P$ and $Q$.
+	The Kronecker index $ind\{A,B\}$ is independent of the choice of $P$ and $Q$.
 \end{lemma}
 
 \begin{proof}
@@ -389,7 +389,7 @@ Since numerical differentiation is an unstable procedure the differentiation ind
 
 In the previous chapter we have already discussed, that for a DAE with constant coefficients \eqref{DAE-const-coeff} and a regular matrix pencil $\{A,B\}$  we need $k = ind\{A,B\}$ differentiations to receive an ordinary differential equation. Hence for a DAE with constant coefficients the Kronecker index $k$ is equal to the differentiation index.
 
-\begin{definition}[perturbation index \protect{\cite[Definition~13.3.3]{NumerikGewöhnlicherDifferentialgleichungen}}]
+\begin{definition}[Perturbation index \protect{\cite[Definition~13.3.3]{NumerikGewöhnlicherDifferentialgleichungen}}]
 	Let $y(t)$ be the exact solution of \eqref{Abstract_DAE} and $\tilde{y}(t)$ be the solution of the perturbed system $F(t, \tilde{y}, \tilde{y}') = \delta(t)$. The smallest number $k \in \mathbb{N}$ such that 
 	\begin{displaymath}
 		\|y(t)-\tilde{y}(t)\| \leq C \left(\|y(t_0)-\tilde{y}(t_0)\|+\sum_{j=0}^{k}\max_{t_0 \leq \xi \leq T} \left\rVert 		\int_{t_0}^{\xi}\diff[j]{\delta}{\tau}(\tau)d \tau \right\rVert \right)
@@ -407,7 +407,7 @@ Then we obtain for the difference of the unperturbed system with the perturbed s
 	A(y'(t)-\tilde{y}'(t)) + B(y'(t)-\tilde{y}(t)) = \delta(t)
 \end{displaymath}
 
-Due to Theorem \ref{Kronecker-Normalform} we can transform this system into a system of the form \eqref{transformed-DAE-const-coeff} % (\textbf{how?} - bemerkung 13.3.5
+Due to Theorem \ref{Kronecker-normalform} we can transform this system into a system of the form \eqref{transformed-DAE-const-coeff} % (\textbf{how?} - bemerkung 13.3.5
 \begin{align*}
 	u'(t) - \tilde{u}'(t) + \hat{R} (u(t) - \tilde{u}(t) ) &= \delta_1(t), \\
 	N(v'(t) - \tilde{v}'(t)) &= \delta_2(t),
