@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.24)  24 MAY 2025 18:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.24)  24 MAY 2025 19:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2248,20 +2248,25 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 172.
 Package mdframed Info: Not enough space on this page on input line 196.
-<pictures/inductance-current-source_cutset.png, id=403, 948.54375pt x 543.53062
-pt>
+<pictures/inductance-current-source_cutset.png, id=403, 930.47626pt x 578.16pt>
+
 File: pictures/inductance-current-source_cutset.png Graphic file (type png)
 <use pictures/inductance-current-source_cutset.png>
 Package pdftex.def Info: pictures/inductance-current-source_cutset.png  used on
  input line 211.
-(pdftex.def)             Requested size: 198.60664pt x 113.81102pt.
-<pictures/capacitance-voltage-source_loop.png, id=404, 858.20625pt x 543.53062p
-t>
+(pdftex.def)             Requested size: 183.15298pt x 113.81102pt.
+<pictures/capacitance-voltage-source_loop.png, id=404, 841.9455pt x 427.5975pt>
+
 File: pictures/capacitance-voltage-source_loop.png Graphic file (type png)
 <use pictures/capacitance-voltage-source_loop.png>
 Package pdftex.def Info: pictures/capacitance-voltage-source_loop.png  used on 
 input line 216.
-(pdftex.def)             Requested size: 179.69173pt x 113.81102pt.
+(pdftex.def)             Requested size: 224.09087pt x 113.81102pt.
+
+Overfull \hbox (10.69518pt too wide) in paragraph at lines 216--217
+ [][] 
+ []
+
 
 Overfull \hbox (2.08049pt too wide) in paragraph at lines 209--219
 [][] [] 
@@ -2317,10 +2322,10 @@ Package pdftex.def Info: pictures/Example3.png  used on input line 377.
 
  (./chapters/Numerical_Solution.tex
 chapter 5.
-<pictures/num_approx.png, id=476, 391.4625pt x 222.07968pt>
+<pictures/num_approx.png, id=477, 391.4625pt x 222.07968pt>
 File: pictures/num_approx.png Graphic file (type png)
 <use pictures/num_approx.png>
-Package pdftex.def Info: pictures/num_approx.png  used on input line 29.
+Package pdftex.def Info: pictures/num_approx.png  used on input line 27.
 (pdftex.def)             Requested size: 274.02187pt x 155.45471pt.
 
 
@@ -2332,32 +2337,32 @@ Package pdftex.def Info: pictures/num_approx.png  used on input line 29.
 ]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 214.
+(mdframed)              on input line 212.
 
 
 [36 <./pictures/num_approx.png>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 236.
+(mdframed)              on input line 234.
 
 
 [37]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 258.
-Package mdframed Info: Not enough space on this page on input line 274.
+(mdframed)              on input line 256.
+Package mdframed Info: Not enough space on this page on input line 272.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 283.
+(mdframed)              on input line 281.
 
 
 [38]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 308.
-Package mdframed Info: Not enough space on this page on input line 318.
+(mdframed)              on input line 306.
+Package mdframed Info: Not enough space on this page on input line 316.
 
-Underfull \hbox (badness 10000) in paragraph at lines 350--352
+Underfull \hbox (badness 10000) in paragraph at lines 348--350
 
  []
 
@@ -2366,52 +2371,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 350--352
 [39]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 372.
-<pictures/A_alpha_stability.png.png, id=518, 276.28218pt x 226.59656pt>
+(mdframed)              on input line 370.
+<pictures/A_alpha_stability.png.png, id=519, 276.28218pt x 226.59656pt>
 File: pictures/A_alpha_stability.png.png Graphic file (type png)
 <use pictures/A_alpha_stability.png.png>
 Package pdftex.def Info: pictures/A_alpha_stability.png.png  used on input line
- 397.
+ 395.
 (pdftex.def)             Requested size: 128.03871pt x 105.01016pt.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 403.
-Package mdframed Info: Not enough space on this page on input line 406.
+(mdframed)              on input line 401.
+Package mdframed Info: Not enough space on this page on input line 404.
 
 
 [40 <./pictures/A_alpha_stability.png.png>]
-Package mdframed Info: Not enough space on this page on input line 406.
+Package mdframed Info: Not enough space on this page on input line 404.
 
 
 [41]
-<pictures/bdf_stability_regions.png, id=542, 904.88063pt x 255.95625pt>
+<pictures/bdf_stability_regions.png, id=543, 904.88063pt x 255.95625pt>
 File: pictures/bdf_stability_regions.png Graphic file (type png)
 <use pictures/bdf_stability_regions.png>
 Package pdftex.def Info: pictures/bdf_stability_regions.png  used on input line
- 486.
+ 484.
 (pdftex.def)             Requested size: 426.7914pt x 120.72124pt.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 493.
+(mdframed)              on input line 491.
 
 
 [42 <./pictures/bdf_stability_regions.png (PNG copy)>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 500.
+(mdframed)              on input line 498.
 
 
 [43]
 File: pictures/Example1_simple_p2.png Graphic file (type png)
 <use pictures/Example1_simple_p2.png>
 Package pdftex.def Info: pictures/Example1_simple_p2.png  used on input line 57
-7.
+5.
 (pdftex.def)             Requested size: 213.39569pt x 163.43405pt.
-<../Matlab/exact_solution_ex1.png, id=568, 354.57469pt x 276.28218pt>
+<../Matlab/exact_solution_ex1.png, id=569, 354.57469pt x 276.28218pt>
 File: ../Matlab/exact_solution_ex1.png Graphic file (type png)
 <use ../Matlab/exact_solution_ex1.png>
 Package pdftex.def Info: ../Matlab/exact_solution_ex1.png  used on input line 5
-83.
+81.
 (pdftex.def)             Requested size: 213.39569pt x 166.28067pt.
 
 
@@ -2420,26 +2425,26 @@ Package pdftex.def Info: ../Matlab/exact_solution_ex1.png  used on input line 5
 [45 <../Matlab/exact_solution_ex1.png (PNG copy)>]
 File: pictures/Example2_index0.png Graphic file (type png)
 <use pictures/Example2_index0.png>
-Package pdftex.def Info: pictures/Example2_index0.png  used on input line 666.
+Package pdftex.def Info: pictures/Example2_index0.png  used on input line 664.
 (pdftex.def)             Requested size: 213.39569pt x 207.49208pt.
-<../Matlab/exact_solution_ex2.png, id=586, 350.05782pt x 276.28218pt>
+<../Matlab/exact_solution_ex2.png, id=587, 350.05782pt x 276.28218pt>
 File: ../Matlab/exact_solution_ex2.png Graphic file (type png)
 <use ../Matlab/exact_solution_ex2.png>
 Package pdftex.def Info: ../Matlab/exact_solution_ex2.png  used on input line 6
-72.
+70.
 (pdftex.def)             Requested size: 213.39569pt x 168.42648pt.
 
 
 [46 <../Matlab/exact_solution_ex2.png (PNG copy)>]
 File: pictures/Example3.png Graphic file (type png)
 <use pictures/Example3.png>
-Package pdftex.def Info: pictures/Example3.png  used on input line 734.
+Package pdftex.def Info: pictures/Example3.png  used on input line 732.
 (pdftex.def)             Requested size: 213.39569pt x 128.77275pt.
-<../Matlab/exact_solution_ex3.png, id=596, 346.29375pt x 276.28218pt>
+<../Matlab/exact_solution_ex3.png, id=597, 346.29375pt x 276.28218pt>
 File: ../Matlab/exact_solution_ex3.png Graphic file (type png)
 <use ../Matlab/exact_solution_ex3.png>
 Package pdftex.def Info: ../Matlab/exact_solution_ex3.png  used on input line 7
-40.
+38.
 (pdftex.def)             Requested size: 213.39569pt x 170.2561pt.
 
 
@@ -2496,10 +2501,10 @@ Package logreq Info: Writing requests to 'MAIN.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  43343 strings out of 473206
- 887242 string characters out of 5714188
+ 887239 string characters out of 5714188
  2354044 words of memory out of 5000000
  65095 multiletter control sequences out of 15000+600000
- 655721 words of font info for 435 fonts, out of 8000000 for 9000
+ 655715 words of font info for 435 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,20n,142p,10899b,4222s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/Anwendungen/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
@@ -2517,9 +2522,9 @@ d:/Anwendungen/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb><d:
 /Anwendungen/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><d:/An
 wendungen/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><d:/Anwen
 dungen/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on MAIN.pdf (59 pages, 595116 bytes).
+Output written on MAIN.pdf (59 pages, 597848 bytes).
 PDF statistics:
- 954 PDF objects out of 1000 (max. 8388607)
+ 955 PDF objects out of 1000 (max. 8388607)
  313 named destinations out of 1000 (max. 500000)
  108860 words of extra memory for PDF output out of 128383 (max. 10000000)
 

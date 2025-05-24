@@ -3,9 +3,7 @@
 
 This chapter focuses on the numerical solution of the mentioned systems. It is based on results presented in \cite{NumerikGewöhnlicherDifferentialgleichungen} and \cite{HairerErnst1989Tnso}.
 
-We will first focus on methods used to solve a more general initial value problem of the form:
-
-Find y, such that
+We will first focus on methods used to solve a more general initial value problem of the form: Find $y$, such that
 \begin{equation}
 	\begin{aligned}
 		y'(t) &= f(t,y), \quad t \in [t_0, t_l], \\
@@ -209,7 +207,7 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 \section{Multistep Methods}
 	\label{sec:multistep methods}
 	
-	In this thesis we will only consider the class of \emph{linear multistep methods} (LMSM). This chapter is in large parts based on \cite{NumerikGewöhnlicherDifferentialgleichungen}. These methods use multiple previously approximated values $y_{m+l}$ at the gridpooints  $t_{m+l}$, $l=0,1,...,k-1$ to approximate the current value $y_{m+k}$ at $t_{m+k}$. The definition for such a method is given in Definition \ref{def:multi step method}
+	In this thesis we will only consider the class of \emph{linear multistep methods} (LMSM). This chapter is in large parts based on \cite{NumerikGewöhnlicherDifferentialgleichungen}. These methods use multiple previously approximated values $y_{m+l}$ at the gridpoints  $t_{m+l}$, $l=0,1,...,k-1$ to approximate the current value $y_{m+k}$ at $t_{m+k}$. The definition for such a method is given in Definition \ref{def:multi step method}
 	
 	\begin{definition}
 		\label{def:multi step method}
@@ -223,9 +221,9 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 	
 	The calculation of approximations using a multistep method consists of two phases:
 	\begin{enumerate}
-		\item In the \emph{starting-phase} approximations $y_1,...,y_{k-1}$ for the first $k-1$ gridpoints $t_l = t_0+l\ h, l=1,...,k-1$ have to be calculated. For example we can use a single-step method or a multi-step method with fewer steps.
+		\item In the \emph{starting phase,} approximations $y_1,...,y_{k-1}$ for the first $k-1$ gridpoints $t_l = t_0+l\ h, l=1,...,k-1$ have to be calculated. For example we can use a single-step method or a multi-step method with fewer steps.
 		
-		\item  In the \emph{run-phase} the multi-step formula is used to determine new approximations $u_{m+k}$ for the gridpoint $t_{m+k}$
+		\item  In the \emph{run phase,} the multi-step formula is used to determine new approximations $u_{m+k}$ for the gridpoint $t_{m+k}$
 	\end{enumerate}
 	
 
@@ -266,7 +264,7 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 		\begin{displaymath}
 			\lim\limits_{h \to 0} \frac{1}{h} L[y(t),h] = 0
 		\end{displaymath}
-		holds. It is called \emph{consistency with order p}, if for all functions $y(t) \in C^{p+1}[t_0, t_l]$
+		holds. It is called \emph{consistent with order p}, if for all functions $y(t) \in C^{p+1}[t_0, t_l]$
 		\begin{displaymath}
 			L[y(t),h] = \mathcal{O}(h^{p+1}) \quad \text{for} \quad h \to 0
 		\end{displaymath}
@@ -311,7 +309,7 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 			\sum_{l=0}^{k} \alpha_l y_{m+l} &= h \sum_{l=0}^{k} \beta_l f(t_{m+l}, y_{m+l}), \\
 			\sum_{l=0}^{k} \alpha_l \tilde{y}_{m+l} &= h \sum_{l=0}^{k} \beta_l f(t_{m+l}, \tilde{y}_{m+l}) + h\theta_m,
 		\end{align} 
-		where and bounded initial values $y_j$, $\tilde{y}_j$ for $j \in {0,...,k}$, we have that
+		with bounded initial values $y_j$, $\tilde{y}_j$ for $j \in {0,...,k}$, we have that
 		\begin{displaymath}
 			\max_{t_0 \leq t_n \leq T} ||y_n - \tilde{y}_n|| \leq C \sum_{j=0}^{k-1} ||y_j - \tilde{y}_j|| + \max_{t_0 \leq t_n \leq T} ||\theta_n||.
 		\end{displaymath}
@@ -360,7 +358,7 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 	
 	%in numerik book auf seite 326
 	
-	To be able to define further stability notions we first need to introduce the so called \emph{generating polynomials} of a multistep methods. They are defined using the coefficients of the method and thus hold a lot of information about the method. In the following we define these polynomials.
+	To be able to define further stability notions we first need to introduce the so called \emph{generating polynomials} of a multistep method. They are defined using the coefficients of the method and thus hold information about the method. In the following we define these polynomials.
 	\begin{equation}
 		\label{eq:generating polynomials multistep method}
 		\rho(x) := \sum_{l=0}^{k} \alpha_l x^l
@@ -408,7 +406,7 @@ The grid function $y_h : T \to A$ with the time grid $T=\{t_0, ..., t_N\}$ and t
 	%equivalent to lax richtmyer in single step because for lmsm zero stable = stable
 	
 \section{Implicit linear multistep formulas}
-In this chapter we discuss three different linear multistep methods. Whereas the trapezoidal rule and the implicit midpoint rule (or Gauss with one stage) really only use one timestep to approximate the next value and might thus be considered as \emph{singlestep} methods, the Backward-Differentiation-Fomulas with $k$ stages (BDF-k) really use $k$ steps and thus are ``true'' multistep methods.
+In this chapter we discuss three different linear multistep methods. Whereas the trapezoidal rule and the implicit midpoint rule (or Gauss with one stage) really only use one timestep to approximate the next value and might thus be considered as \emph{singlestep} methods, the Backward Differentiation Fomulas with $k$ stages (BDF-k) really use $k$ steps and thus are ``true'' multistep methods.
 We will see that the BDF-k methods as well as the trapezoidal rule are preferably used over the implicit midpoint rule due to their advantageous behaviour when applied to differential algebraic equations. Examples are discussed in \ref{sec: numerical examples}. For more detailed analysis of the mentioned methods we refer to \cite{NumerikGewöhnlicherDifferentialgleichungen} and \cite{HairerErnst1989Tnso}.
 %Our assumption that we only consider network equations arising from networks consisting of RLC components as well as controlled sources which keep the index between 1 and 2 still holds.
 
@@ -453,7 +451,7 @@ We will see that the BDF-k methods as well as the trapezoidal rule are preferabl
 %\end{align*}
 %with the unknowns $x:=(u, i_L, i_V)^\top$.
 
-In Section \ref{sec:multistep methods} we did already talk about the starting- and the run-phase of a multistep method. However, we left out one important aspect of the starting phase. Recall that in the starting phase we calculate the first $k-1$ steps using a method with fewer stages than the method we want to use ultimately. This also means that this method might be of lower order than the final method. To achieve the desired convergence rates it is thus also important to compute these initial steps appropriately, i.e. the method with which these initial steps are calculated has to also be of the desired order with respect to the \emph{final} step size $h$. (In applications this can mean that we calculate the initial steps with methods of lower order, but compensate by using a smaller step-size)
+In Section \ref{sec:multistep methods} we briefly mentioned the starting phase and the run phase of a multistep method. However, we left out one important aspect of the starting phase. Recall that in the starting phase we calculate the first $k-1$ steps using a method with fewer stages than the method we want to use ultimately. This also means that this method might be of lower order than the final method. To achieve the desired convergence rates it is thus also important to compute these initial steps appropriately, i.e. the method with which these initial steps are calculated has to also be of the desired order with respect to the \emph{final} step size $h$. (In applications this can mean that we calculate the initial steps with methods of lower order, but compensate by using a smaller step-size)
 
 \subsection{BDF-k methods}
 	\label{sec:BDFk}
@@ -467,7 +465,7 @@ In Section \ref{sec:multistep methods} we did already talk about the starting- a
 		\sum_{k=0}^{s} \alpha_k y_{n+k} = h \beta f(t_{n+s}, y_{n+s}).
 	\end{equation}
 
-	Due to the construction of the method, which is not built around conserving zero-stability, the method is not zero-stabel for all $k \in \mathbb{N}$. It turns out that it is only zero-stable for $k \leq 6$, \protecting{\cite[page~325]{NumerikGewöhnlicherDifferentialgleichungen}}. However in practice, methods with order greater than $3$ are rarely used because of their stability properties, as the stability-region shrinks with increasing order.
+	Due to the construction of the method, which is not built around conserving zero-stability, the method is not zero-stabel for all $k \in \mathbb{N}$. It turns out that it is only zero-stable for $k \leq 6$, \protecting{\cite[page~325]{NumerikGewöhnlicherDifferentialgleichungen}}. However in practice, methods with order greater than $3$ are rarely used because of their stability properties, as the stability region shrinks with increasing order.
 	
 	The BDF or BDF-k formulas for $k=1,...,3$ have the following form %or till 6
 	\begin{align*}
@@ -498,7 +496,7 @@ In Section \ref{sec:multistep methods} we did already talk about the starting- a
 	Due to Theorem \ref{th: null-stbaility and consistence is convergence} and the fact that BDF-k methods with $k \leq 6$  are $0$-stable as well as Theorem \ref{th: BDK-k consistency} we immediately gain the following corollary.
 	
 	\begin{corollary}[Convergence rate]
-		The BDF-k methods with $k \leq 6$ are convergent with order$k$
+		The BDF-k methods with $k \leq 6$ are convergent with order $k$
 	\end{corollary}
 	
 	%Seite 106 numerik - schrittweite für startwerte bei bdf3 kleiner für kleineren fehler, halbieren, vierteln, achteln whatever
@@ -528,14 +526,14 @@ In Section \ref{sec:multistep methods} we did already talk about the starting- a
 	
 	The trapezoidal rule has convergence order $p=2$ for our applications. For details see \cite{HairerErnst1989Tnso}, where more general the general form of the trapezoidal rule, namely the Lobatto~\RomanNumeralCaps{3}-A methods amongst other methods are discussed.
 	
-	Due to the fact that the trapezoidal rule is A-stabe  (\cite{ModellingAndDiscretizationOfCircuitProblems}) and of order $p=2$, it can be considered as a natural alternative to the BDF-2 method.
+	Due to the fact that the trapezoidal rule is A-stable \cite{ModellingAndDiscretizationOfCircuitProblems} and of order $p=2$, it can be considered as a natural alternative to the BDF-2 method.
 	
 	%order p=2 because it is a special case of Lobatto 3 A with s=2, thus all the index cases just lead to p=2
 	
 \subsection{Gauss Method with one stage}
 	\label{sec:Gauss1}
 
-	We have already seen that the results for the BDF-k methods as well as for the trapezoidal rule are relatively straight forward. But this is not always the case, many numerical methods can cause problems when applied to DAEs, see also \cite{HairerErnst1989Tnso}. To illustrate this we will have a look at the Gauss method with one stages, also called the implicit midpoint rule, i.e.
+	We have already seen that the results for the BDF-k methods as well as for the trapezoidal rule are relatively straight forward. But this is not always the case, many numerical methods can cause problems when applied to DAEs, see also \cite{HairerErnst1989Tnso}. To illustrate this we will have a look at the Gauss method with one stage, also called the implicit midpoint rule, i.e.
 	\begin{displaymath}
 		y_{n+1} = y_n + h f(t_n + \frac{h}{2}, \frac{y_n + y_{n+1}}{2})
 	\end{displaymath}
@@ -581,7 +579,7 @@ In Section \ref{sec:multistep methods} we did already talk about the starting- a
 		\begin{minipage}{.5\textwidth}
 			\centering
 			\includegraphics[width=\linewidth]{../Matlab/exact_solution_ex1.png}
-			\caption{Exact solution for example 1.}
+			\caption{Exact solution for Example 1.}
 			\label{fig: Exact solution for example 1}
 		\end{minipage}
 	\end{figure}
@@ -670,7 +668,7 @@ In Section \ref{sec:multistep methods} we did already talk about the starting- a
 		\begin{minipage}{.5\textwidth}
 			\centering
 			\includegraphics[width=\linewidth]{../Matlab/exact_solution_ex2.png}
-			\caption{Exact solution for example 2.}
+			\caption{Exact solution for Example 2.}
 			\label{fig: Exact solution for example 2}
 		\end{minipage}
 	\end{figure}
@@ -738,7 +736,7 @@ In Section \ref{sec:multistep methods} we did already talk about the starting- a
 		\begin{minipage}{.5\textwidth}
 			\centering
 			\includegraphics[width=\linewidth]{../Matlab/exact_solution_ex3.png}
-			\caption{Exact solution for example 3.}
+			\caption{Exact solution for Example 3.}
 			\label{fig: Exact solution for example 3}
 		\end{minipage}
 	\end{figure}

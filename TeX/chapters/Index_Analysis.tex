@@ -209,12 +209,12 @@ A cutset of a circuit is a part (subcircuit) of the circuit that can be separate
 	\begin{subfigure}{0.5\textwidth}
 			\centering
 			\includegraphics[height=4cm]{pictures/inductance-current-source_cutset.png}
-			\caption{inductance-current-source cutset}
+			\caption{capacitor-voltage-source cutset}
 		\end{subfigure}
 	\begin{subfigure}{0.5\textwidth}
 			\centering
 			\includegraphics[height=4cm]{pictures/capacitance-voltage-source_loop.png}
-			\caption{capacitance-voltage-source loop}
+			\caption{inductance-current-source loop}
 		\end{subfigure}
 	\caption{Illustration of a cutset and a loop.}
 	\label{fig:cutset and loop}
@@ -230,7 +230,7 @@ We will apply those results to the previously considered examples:
 		\includegraphics[scale = 0.4]{pictures/Example1_simple_p2.png}
 		\caption{charging capacitor with series resistor and voltage source (note the difference to \ref{circuit:charging of capacitor})} 
 	\end{figure}
-	Because this circuit only contains one loop, which has a voltage source as well as a capacitor and a resistor we expect the resulting MNA-system to be of index $\nu=1$. 
+	Because this circuit only contains one loop, which has a voltage source as well as a capacitor and a resistor we expect the resulting MNA system to be of index $\nu=1$. 
 	
 	The incidence matrix for this system is
 	\begin{displaymath}
@@ -294,7 +294,7 @@ We will apply those results to the previously considered examples:
 		\right) 
 		= \{0\} 
 		\quad \text{and} \quad
-		dim(v_src) \neq 0.
+		dim(v_{src}) \neq 0.
 	\end{displaymath}
 	This means that this system has index $\nu = 1$.
 \end{example1}
@@ -308,7 +308,7 @@ We will apply those results to the previously considered examples:
 		\includegraphics[scale = 0.4]{pictures/Example2_index0.png}
 		\caption{LC circuit}
 	\end{figure}
-	Because this circuit only contains one capacitor and one inductance in a singular loop and also has no sources, we expect the resulting MNA-system to be of index $\nu=0$. This means that the system is an ODE.
+	Because this circuit only contains one capacitor and one inductance in a singular loop and also has no sources, we expect the resulting MNA system to be of index $\nu=0$. This means that the system is an ODE.
 	
 	The incidence matrix for this system is
 	\begin{displaymath}
@@ -356,7 +356,7 @@ We will apply those results to the previously considered examples:
 		\end{matrix}
 		\right) = \{0\}		
 		\quad \text{and} \quad 
-		dim(v_src) = 0.
+		dim(v_{src}) = 0.
 	\end{displaymath}
 	Thus it is fulfilled and we obtain index 0.
 	
@@ -367,7 +367,7 @@ We will apply those results to the previously considered examples:
 			L u'_L + u_1 &= 0
 		\end{aligned}
 	\end{displaymath}
-	which is an ODE.
+	which is clearly a system of ODEs.
 \end{example2}
 	
 \begin{example3}[Index analysis]
@@ -431,7 +431,7 @@ We will apply those results to the previously considered examples:
 \section{Consistent Initial Values}
 \label{sec:consistant initial values}
 
-When solving a problem numerically, we usually want this problem to poses a (unique) solution. If it would not have a solution, then the numerical method might converge to some arbitrary value that has nothing to do with a solution. When dealing with real-world problems there might be more than one choices of initial values, to ensure (unique) solvability. This is the reason why we want to find conditions to construct \emph{consistent} initial values. More details can be found in \protect{\cite[chapter~13.3.1]{NumerikGewöhnlicherDifferentialgleichungen}}
+When solving a problem numerically, it is important to ensure that the problem has a (unique) solution. Without a solution, a numerical method could converge to an arbitrary value unrelated to any actual solution. In real-world applications, there may be multiple possible initial values. To guarantee a (unique) solution, it is crucial to choose initial values that are consistent. This is why identifying conditions for constructing \emph{consistent} initial values is important. For further details, see \protect{\cite[chapter~13.3.1]{NumerikGewöhnlicherDifferentialgleichungen}}.
 
 %from imp funkionensatz usw
 
@@ -439,7 +439,7 @@ When solving a problem numerically, we usually want this problem to poses a (uni
 As already discussed previously, the case $\nu = 0$ leads to an ODE, and due to the Picard-Lindelöff theorem \protecting{\cite[Satz~1.2.1]{NumerikGewöhnlicherDifferentialgleichungen}} we know that every initial condition is consistent (for ordinary differential equations).
 
 \begin{example2}[Consistent initial vaues]
-	We have already seen, that this system is of index $\nu = 0$. This means that we can prescribe arbitrary initial values. As the initial values still have a physical interpretation, still not every consistent initial value also makes sense! We will assume that at time $t=0$ the capacitor holds no charge, i.e. $u_1(0) = 1$ and that there is no energy stored in the inductance, i.e. $i_L(0) = 0$.
+	We have already seen, that this system is of index $\nu = 0$. This means that any initial value is consistent. As the initial values still have a physical interpretation, hence not every consistent initial value also makes sense. We will assume that at time $t=0$ the capacitor holds no charge, i.e. $u_1(0) = 1$ and that there is no energy stored in the inductance, i.e. $i_L(0) = 0$.
 \end{example2}
 
 
@@ -452,11 +452,11 @@ By rewriting our system into the form
 	0 = g(t,y(t),z(t)).
 \end{align*}
 
-we are able to give conditions for consistent initial values. Namely $y_0$ and $z_0$ are consistent initial values for this system, if $g(t_0, y_0, z_0) = 0$ holds.
+we obtain conditions for consistent initial values. Namely $y_0 = y(0)$ and $z_0 = z(0)$ are consistent initial values for this system, if $g(t_0, y_0, z_0) = 0$ holds.
 
 \begin{example1}[Consistent initial vaues]
-	We have already seen, that this system is of index $\nu=1$. Due to the fact that $u_1$ and $i_V$ are only algebraically constrained, we have to determine their initial values by solving for them at the point $t=0$. On the other hand $u_2$ and its derivative both appear, thus we can simply prescribe an initial value for $u_2$. Again prescribing an arbitrary initial value might make sense from a mathematical perspective, since we might only be interested in the existence of a solution. But due to the physical interpretation of $u_2$ as being related to the charge that might already be stored in the capacitor, it makes sense to consider the capacitor to have no initial charge, i.e. $u_2(0) = 0$.
-	The third line of the MNA-system \eqref{eq:ex1 MNA} together with setting $v_{src} = sin(\pi t)$ immediately gives us, that
+	We have already seen that this system is of index $\nu=1$. Due to the fact that $u_1$ and $i_V$ are only algebraically constrained, we have to determine their initial values by solving for them at the point $t=0$. On the other hand $u_2$ and its derivative both appear, thus we can simply prescribe an initial value for $u_2$. Again prescribing an any initial value might make sense from a mathematical perspective, since we might only be interested in the existence of a solution. But due to the physical interpretation of $u_2$ as being related to the charge that might already be stored in the capacitor, it makes sense to consider the capacitor to have no initial charge, i.e. $u_2(0) = 0$.
+	The third line of the MNA system \eqref{eq:ex1 MNA} together with setting $v_{src} = sin(\pi t)$ immediately gives us, that
 	\begin{displaymath}
 		u_1(0) = -sin(\pi * 0) = 0.
 	\end{displaymath}
@@ -476,11 +476,11 @@ For index-2 systems we rewrite our system into
 	0 = g(t,y(t)).
 \end{align*}
 
-Consistent initial values $y_0$, $z_0$ for this case not only have to fulfill $g(t_0, y_0) = 0$ but also the \emph{hidden constraint} $g_t(t_0, y_0) + g_y(t_0, y_0)f(t_0, y_0, z_0)$. By $g_t$ and $g_y$ we denote the derivative of $g$ with respect to $t$ or $y$, respectively.
+Consistent initial values $y_0$, $z_0$ for this case not only have to fulfill $g(t_0, y_0) = 0$ but also the \emph{hidden constraint} $g_t(t_0, y_0) + g_y(t_0, y_0)f(t_0, y_0, z_0) = 0$. By $g_t$ and $g_y$ we denote the derivative of $g$ with respect to $t$ or $y$, respectively.
 
 
 \begin{example3}[Consistent initial values]
-	Previously we found, that the index of this system, it will turn out to be $\nu = 2$. Considering \eqref{eq:ex3 MNA}, we can define
+	We already found the index of this system to be $\nu = 2$. Considering \eqref{eq:ex3 MNA}, we can define
 	\begin{align*}
 		f(t,u_1(t),i_v(t)) &= i_v(t) - u_1(t), \\
 		g(t, u_1(t)) &= u_1(t) + v_{src}(t).
@@ -489,7 +489,7 @@ Consistent initial values $y_0$, $z_0$ for this case not only have to fulfill $g
 	\begin{displaymath}
 		u_1(0) = -v_{src}(0) = -sin(\pi *0) = 0.
 	\end{displaymath}
-	While the second condition leads to
+	While the second condition leads to the hidden constraint
 	\begin{displaymath}
 		0 = v_{src}'(0) + 1*(i_V(0)-u_1(0)) = \pi cos(\pi *0) + i_v(0) - 0 = \pi + i_V(0).
 	\end{displaymath}
